@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.Python
+venv/
+.env
+
+# Mac
+.DS_Store
+
+# Large generated files — not committed
+backtest_results*.png
+
+# Edgar cache is handled by GitHub Actions cache, not git
+# (too large + binary-like JSON files; rebuilt on cache miss)
+edgar_cache/
