@@ -2,9 +2,9 @@ name: Daily Factor Screener
 
 on:
   schedule:
-    - cron: '5 14 * * 1-5'   # 10:05 AM ET (14:05 UTC) — morning run
-    - cron: '5 21 * * 1-5'   # 5:05 PM ET  (21:05 UTC) — close-of-day run
-  workflow_dispatch:           # manual trigger from GitHub UI
+    - cron: '5 14 * * 1-5'   # 10:05 AM ET (14:05 UTC)
+    - cron: '5 21 * * 1-5'   # 5:05 PM ET  (21:05 UTC)
+  workflow_dispatch:
 
 jobs:
   run-screener:
@@ -22,9 +22,8 @@ jobs:
         uses: actions/cache@v4
         with:
           path: edgar_cache/
-          key: edgar-cache-${{ runner.os }}-${{ hashFiles('edgar_cache/**') }}
-          restore-keys: |
-            edgar-cache-${{ runner.os }}-
+          key: edgar-cache-${{ runner.os }}-v1
+          restore-keys: edgar-cache-${{ runner.os }}-
 
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
@@ -39,35 +38,27 @@ jobs:
         run: python live_monitor.py
 
       - name: Update index.html
-        run: python - <<'EOF'
-from pathlib import Path
-from datetime import date
-
-today   = date.today().isoformat()
-report  = Path(f"reports/{today}.html")
-reports = sorted(Path("reports").glob("*.html"), reverse=True)
-if not report.exists() and reports:
-    today = reports[0].stem
-
-Path("index.html").write_text(f"""<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=reports/{today}.html">
-  <title>Factor Screener</title>
-</head>
-<body>
-  <p>Redirecting to <a href="reports/{today}.html">latest report ({today})</a>…</p>
-  <h3>Recent reports:</h3>
-  <ul>
-""" + "".join(
-    f'    <li><a href="reports/{r.stem}.html">{r.stem}</a></li>\n'
-    for r in reports[:30]
-) + """  </ul>
-</body>
-</html>""")
-print(f"index.html → reports/{today}.html")
-EOF
+        run: |
+          python - <<'PYEOF'
+          from pathlib import Path
+          from datetime import date
+          today   = date.today().isoformat()
+          reports = sorted(Path("reports").glob("*.html"), reverse=True)
+          if not Path(f"reports/{today}.html").exists() and reports:
+              today = reports[0].stem
+          links = "".join(
+              f'<li><a href="reports/{r.stem}.html">{r.stem}</a></li>\n'
+              for r in reports[:30]
+          )
+          Path("index.html").write_text(
+              f'<!DOCTYPE html><html><head><meta charset="UTF-8">'
+              f'<meta http-equiv="refresh" content="0; url=reports/{today}.html">'
+              f'<title>Factor Screener</title></head><body>'
+              f'<p>Redirecting to <a href="reports/{today}.html">{today}</a>...</p>'
+              f'<ul>{links}</ul></body></html>'
+          )
+          print(f"index.html -> reports/{today}.html")
+          PYEOF
 
       - name: Commit and push results
         run: |
@@ -75,12 +66,10 @@ EOF
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add reports/ portfolio_state.json portfolio_nav.json index.html
           git diff --cached --quiet && echo "Nothing to commit" || \
-            git commit -m "screener: $(date -u '+%Y-%m-%d %H:%M') run [skip ci]"
+            git commit -m "screener: $(date -u '+%Y-%m-%d %H:%M') [skip ci]"
           git push
-          # Expose timestamp for the email step
           echo "RUN_LABEL=$(date -u '+%Y-%m-%d %H:%M UTC')" >> $GITHUB_ENV
 
-      # ── Email notification via Gmail ──────────────────────────────────────
       - name: Send email notification
         if: success()
         uses: dawidd6/action-send-mail@v3
@@ -91,16 +80,10 @@ EOF
           username: ${{ secrets.GMAIL_ADDRESS }}
           password: ${{ secrets.GMAIL_APP_PASSWORD }}
           to: ${{ secrets.NOTIFY_EMAIL }}
-          from: "Factor Screener <${{ secrets.GMAIL_ADDRESS }}>"
-          subject: "📊 Screener — ${{ env.RUN_LABEL }}"
-          html_body: |
-            <h2>📊 Factor Screener ran successfully</h2>
-            <p>
-              <b>Run time:</b> ${{ env.RUN_LABEL }}<br>
-              <b>Dashboard:</b> <a href="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/">
-                View latest report →
-              </a>
-            </p>
-            <p style="color:#888;font-size:12px">
-              Sent by GitHub Actions · ${{ github.repository }}
-            </p>
+          from: Factor Screener <${{ secrets.GMAIL_ADDRESS }}>
+          subject: "Screener - ${{ env.RUN_LABEL }}"
+          html_body: >
+            <h2>Factor Screener ran successfully</h2>
+            <p>Run time: ${{ env.RUN_LABEL }}</p>
+            <p><a href="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/">View latest report</a></p>
+            <p style="color:#888;font-size:12px">GitHub Actions - ${{ github.repository }}</p>
