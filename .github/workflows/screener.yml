@@ -70,20 +70,13 @@ jobs:
           git push
           echo "RUN_LABEL=$(date -u '+%Y-%m-%d %H:%M UTC')" >> $GITHUB_ENV
 
-      - name: Send email notification
+      - name: Send push notification
         if: success()
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          secure: true
-          username: ${{ secrets.GMAIL_ADDRESS }}
-          password: ${{ secrets.GMAIL_APP_PASSWORD }}
-          to: ${{ secrets.NOTIFY_EMAIL }}
-          from: Factor Screener <${{ secrets.GMAIL_ADDRESS }}>
-          subject: "Screener - ${{ env.RUN_LABEL }}"
-          html_body: >
-            <h2>Factor Screener ran successfully</h2>
-            <p>Run time: ${{ env.RUN_LABEL }}</p>
-            <p><a href="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/">View latest report</a></p>
-            <p style="color:#888;font-size:12px">GitHub Actions - ${{ github.repository }}</p>
+        continue-on-error: true
+        run: |
+          curl -s \
+            -H "Title: Factor Screener — ${{ env.RUN_LABEL }}" \
+            -H "Priority: default" \
+            -H "Tags: chart_increasing" \
+            -d "Dashboard ready: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/" \
+            https://ntfy.sh/${{ secrets.NTFY_TOPIC }}
