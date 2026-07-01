@@ -234,7 +234,7 @@ def fetch_xbrl_annual(concept_key: str, year: int) -> pd.Series:
 
 def get_available_quarter(as_of: pd.Timestamp, lag: int = FILING_LAG_DAYS) -> tuple[int, int]:
     cutoff    = as_of - pd.Timedelta(days=lag)
-    q_ends    = pd.date_range("2009-01-01", str(as_of.year + 1), freq="Q")
+    q_ends    = pd.date_range("2009-01-01", str(as_of.year + 1), freq="QE")
     available = [(d.year, (d.month - 1) // 3 + 1) for d in q_ends if d <= cutoff]
     return available[-1] if available else (2014, 4)
 
