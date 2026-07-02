@@ -727,6 +727,7 @@ def save_html_report(
     alert_set    = set(alert_tickers)
     positions    = positions or {}
     prev_prices  = prev_prices or {}
+    cost_basis   = sum(v.get("shares", 0) * v.get("price", 0) for v in positions.values()) or PORTFOLIO_VALUE
     # Always use yesterday's closing price for Day Delta
     if prices_df is not None and len(prices_df) >= 2:
         # Find the last row whose date is strictly before today
@@ -998,7 +999,7 @@ def save_html_report(
   <div class="section">
     <h2>Portfolio Performance</h2>
     <p style="color:#666;font-size:12px;margin:-4px 0 14px">
-      Inception: {inception_date or today.isoformat()} &nbsp;|&nbsp; Starting value: ${PORTFOLIO_VALUE:,.0f}
+      Inception: {inception_date or today.isoformat()} &nbsp;|&nbsp; Starting value: ${cost_basis:,.0f}
     </p>
     <div style="display:flex;align-items:stretch;gap:16px;margin-bottom:20px;flex-wrap:wrap">
       <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px">
@@ -1067,7 +1068,7 @@ def save_html_report(
 <script>
 // ── Live price refresh ────────────────────────────────────────────────────────
 (function() {{
-  const PORTFOLIO_BASE = {PORTFOLIO_VALUE};
+  const PORTFOLIO_BASE = {cost_basis:.2f};
 
   const rows = Array.from(document.querySelectorAll('tr[data-ticker]'));
   if (!rows.length) return;
