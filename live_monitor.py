@@ -573,18 +573,22 @@ def update_nav(
 
     last_nav = list(nav_history.values())[-1] if nav_history else 1.0
 
-    if prev_prices:
-        daily_ret = 0.0
-        for t in holdings:
-            w      = weights.get(t, 1.0 / len(holdings))
-            p_now  = p_today.get(t)
-            p_prev = prev_prices.get(t)
-            if p_now and p_prev and pd.notna(p_now) and pd.notna(p_prev) and float(p_prev) > 0:
-                daily_ret += w * (float(p_now) / float(p_prev) - 1)
-        new_nav = last_nav * (1 + daily_ret)
-    else:
-        new_nav   = last_nav
-        daily_ret = 0.0
+    # Derive previous close from price history (last 2 rows), falling back to saved prev_prices
+    try:
+        p_prev_row = prices.iloc[-2] if len(prices) >= 2 else None
+    except IndexError:
+        p_prev_row = None
+
+    daily_ret = 0.0
+    for t in holdings:
+        w     = weights.get(t, 1.0 / len(holdings))
+        p_now = p_today.get(t)
+        # prefer price history row, fall back to saved prev_prices dict
+        p_prev = (float(p_prev_row[t]) if p_prev_row is not None and t in p_prev_row.index and pd.notna(p_prev_row[t]) else None) \
+                 or prev_prices.get(t)
+        if p_now and p_prev and pd.notna(p_now) and float(p_prev) > 0:
+            daily_ret += w * (float(p_now) / float(p_prev) - 1)
+    new_nav = last_nav * (1 + daily_ret)
 
     nav_history[today_str] = new_nav
     return new_nav, daily_ret
@@ -716,6 +720,7 @@ def save_html_report(
     inception_date: str | None,
     positions: dict | None = None,
     prev_prices: dict | None = None,
+    prices_df: pd.DataFrame | None = None,
 ) -> str:
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
     path      = REPORT_DIR / f"{today.isoformat()}.html"
@@ -725,6 +730,12 @@ def save_html_report(
     alert_set    = set(alert_tickers)
     positions    = positions or {}
     prev_prices  = prev_prices or {}
+    # Derive yesterday's close from price history if available
+    if prices_df is not None and len(prices_df) >= 2:
+        prev_row = prices_df.iloc[-2]
+        for t in holdings_set:
+            if t not in prev_prices and t in prev_row.index and pd.notna(prev_row[t]):
+                prev_prices[t] = float(prev_row[t])
 
     # ── Performance cards ──────────────────────────────────────────────────────
     perf_rows = [
@@ -745,7 +756,26 @@ def save_html_report(
         f'</div>'
         for label, val in perf_rows
     )
-    nav_str = f"${today_nav * PORTFOLIO_VALUE:,.0f}" if nav_history else f"${PORTFOLIO_VALUE:,.0f}"
+    current_value = today_nav * PORTFOLIO_VALUE
+    gain_loss     = current_value - PORTFOLIO_VALUE
+    gain_loss_pct = (today_nav - 1.0) * 100
+    gain_color    = "#2e7d32" if gain_loss >= 0 else "#c62828"
+    gain_sign     = "+" if gain_loss >= 0 else ""
+    nav_str       = f"${current_value:,.0f}"
+
+    # Portfolio daily % change (raw value for coloring)
+    _dates = sorted(nav_history.keys())
+    _today_str = today.isoformat()
+    _port_day_raw = 0.0
+    if _today_str in _dates and _dates.index(_today_str) > 0:
+        _prev_date = _dates[_dates.index(_today_str) - 1]
+        _prev_nav  = nav_history.get(_prev_date, today_nav)
+        if _prev_nav > 0:
+            _port_day_raw = (today_nav / _prev_nav) - 1
+    port_day_color = "#2e7d32" if _port_day_raw >= 0 else "#c62828"
+    port_day_sign  = "+" if _port_day_raw >= 0 else ""
+    port_day_d     = _port_day_raw * current_value
+    port_day_str   = f'{port_day_sign}${abs(port_day_d):,.0f} ({port_day_sign}{_port_day_raw:.2%})'
 
     # ── Rebalance section ──────────────────────────────────────────────────────
     trade_html = ""
@@ -864,14 +894,32 @@ def save_html_report(
         if qty and cur_px_val and prev_px and prev_px > 0:
             day_chg_d = (cur_px_val - prev_px) * qty
             day_chg_p = (cur_px_val - prev_px) / prev_px
-            chg_color = "#2e7d32" if day_chg_d >= 0 else "#c62828"
-            sign      = "+" if day_chg_d >= 0 else ""
+            day_color = "#2e7d32" if day_chg_d >= 0 else "#c62828"
+            day_sign  = "+" if day_chg_d >= 0 else ""
             day_chg_str = (
-                f'<span style="color:{chg_color};font-weight:bold">'
-                f'{sign}{day_chg_d:,.0f} ({sign}{day_chg_p:.2%})</span>'
+                f'<span style="color:{day_color};font-weight:bold">'
+                f'{day_sign}${abs(day_chg_d):,.0f}</span>'
+            )
+            day_pct_str = (
+                f'<span style="color:{day_color};font-weight:bold">'
+                f'{day_sign}{day_chg_p:.2%}</span>'
             )
         else:
             day_chg_str = "—"
+            day_pct_str = "—"
+
+        # Total return: (cur - buy) × shares
+        if qty and cur_px_val and buy_px and buy_px > 0:
+            tot_ret_d = (cur_px_val - buy_px) * qty
+            tot_ret_p = (cur_px_val - buy_px) / buy_px
+            tot_color = "#2e7d32" if tot_ret_d >= 0 else "#c62828"
+            tot_sign  = "+" if tot_ret_d >= 0 else ""
+            tot_ret_str = (
+                f'<span style="color:{tot_color};font-weight:bold">'
+                f'{tot_sign}${abs(tot_ret_d):,.0f} ({tot_sign}{tot_ret_p:.2%})</span>'
+            )
+        else:
+            tot_ret_str = "—"
 
         # ── Compact holdings row ────────────────────────────────────────────
         holdings_rows += f"""
@@ -885,6 +933,8 @@ def save_html_report(
           <td style="text-align:right;color:#555;font-size:12px">{buy_dt}</td>
           <td style="text-align:right;font-weight:bold">{invested_str}</td>
           <td style="text-align:right">{day_chg_str}</td>
+          <td style="text-align:right">{day_pct_str}</td>
+          <td style="text-align:right">{tot_ret_str}</td>
           <td style="text-align:right;font-size:12px;color:#555">{_fmt(comp, '.3f')}</td>
         </tr>"""
 
@@ -947,7 +997,25 @@ def save_html_report(
   <!-- Performance -->
   <div class="section">
     <h2>Portfolio Performance</h2>
-    <p style="color:#666;font-size:12px;margin:-4px 0 10px">Inception: {inception_date or today.isoformat()} &nbsp;|&nbsp; Base: ${PORTFOLIO_VALUE:,.0f}</p>
+    <p style="color:#666;font-size:12px;margin:-4px 0 14px">
+      Inception: {inception_date or today.isoformat()} &nbsp;|&nbsp; Starting value: ${PORTFOLIO_VALUE:,.0f}
+    </p>
+    <div style="display:flex;align-items:stretch;gap:16px;margin-bottom:20px;flex-wrap:wrap">
+      <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px">
+        <div style="font-size:11px;color:#6c757d;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Current Value</div>
+        <div style="font-size:32px;font-weight:bold;color:#1a237e;line-height:1">{nav_str}</div>
+      </div>
+      <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px">
+        <div style="font-size:11px;color:#6c757d;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Today</div>
+        <div style="font-size:24px;font-weight:bold;color:{port_day_color};line-height:1">{port_day_str}</div>
+      </div>
+      <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px">
+        <div style="font-size:11px;color:#6c757d;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Total Return</div>
+        <div style="font-size:24px;font-weight:bold;color:{gain_color};line-height:1">
+          {gain_sign}${abs(gain_loss):,.0f} <span style="font-size:16px">({gain_sign}{gain_loss_pct:.2f}%)</span>
+        </div>
+      </div>
+    </div>
     <div class="card-row">{perf_cards}</div>
   </div>
 
@@ -965,7 +1033,7 @@ def save_html_report(
       <thead><tr>
         <th>#</th><th>Ticker</th><th>Price</th>
         <th>Alloc %</th><th>Qty</th><th>Buy Price</th><th>Buy Date</th>
-        <th>$ Invested</th><th>Day Δ</th><th>Score</th>
+        <th>$ Invested</th><th>Day Δ $</th><th>Day Δ %</th><th>Total Return</th><th>Score</th>
       </tr></thead>
       <tbody>{holdings_rows}</tbody>
     </table>
@@ -1228,6 +1296,7 @@ def run():
         weights=weights,
         positions=state.get("positions", {}),
         prev_prices=prev_prices,
+        prices_df=prices,
     )
 
     # 10. Console summary
@@ -1356,6 +1425,7 @@ def run_prices_only():
         weights=weights,
         positions=positions,
         prev_prices=prev_prices,
+        prices_df=prices,
     )
     print(f"Prices-only refresh done — {now.strftime('%H:%M UTC')} → {report_path}")
 
