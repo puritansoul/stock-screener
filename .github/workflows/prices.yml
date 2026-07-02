@@ -1,0 +1,64 @@
+name: Intraday Price Refresh
+
+on:
+  schedule:
+    # Every 15 min, 9:30 AM – 4:00 PM ET (13:30–20:00 UTC), Mon–Fri
+    - cron: '30,45 13 * * 1-5'
+    - cron: '0,15,30,45 14,15,16,17,18,19 * * 1-5'
+    - cron: '0 20 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  refresh-prices:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch latest prices and rebuild report
+        run: python live_monitor.py --prices-only
+
+      - name: Update index.html
+        run: |
+          python - <<'PYEOF'
+          from pathlib import Path
+          from datetime import date
+          today   = date.today().isoformat()
+          reports = sorted(Path("reports").glob("*.html"), reverse=True)
+          if not Path(f"reports/{today}.html").exists() and reports:
+              today = reports[0].stem
+          links = "".join(
+              f'<li><a href="reports/{r.stem}.html">{r.stem}</a></li>\n'
+              for r in reports[:30]
+          )
+          Path("index.html").write_text(
+              f'<!DOCTYPE html><html><head><meta charset="UTF-8">'
+              f'<meta http-equiv="refresh" content="0; url=reports/{today}.html">'
+              f'<title>Factor Screener</title></head><body>'
+              f'<p>Redirecting to <a href="reports/{today}.html">{today}</a>...</p>'
+              f'<ul>{links}</ul></body></html>'
+          )
+          PYEOF
+
+      - name: Commit and push
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f reports/ portfolio_nav.json portfolio_state.json index.html
+          git diff --cached --quiet && echo "No changes" || \
+            git commit -m "prices: $(date -u '+%Y-%m-%d %H:%M') [skip ci]"
+          git push

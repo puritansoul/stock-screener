@@ -1202,7 +1202,13 @@ def run():
         pass
     save_nav(nav)
 
-    state["last_run"] = today.isoformat()
+    state["last_run"]      = today.isoformat()
+    state["yq"]            = list(yq)
+    state["ann_year"]      = ann_year
+    state["n_target"]      = n_target
+    state["alert_tickers"] = alert_tickers
+    # Save scores so prices-only refresh can reload them without EDGAR
+    state["scores"] = scores.where(scores.notna(), other=None).to_dict(orient="index")
     save_state(state)
 
     # 9. Report
@@ -1285,13 +1291,86 @@ def setup():
     print(f"  Reports: {REPORT_DIR}")
     print(f"  Log    : {log}\n")
 
+# ── Prices-only refresh (fast, no EDGAR) ─────────────────────────────────────
+
+def run_prices_only():
+    """
+    Reload saved scores + state, fetch current prices only (~30s),
+    rebuild the HTML report. Used for intraday dashboard refreshes.
+    """
+    from datetime import datetime
+    now   = datetime.utcnow()
+    today = date.today()
+    state = load_state()
+    nav   = load_nav()
+
+    scores_raw = state.get("scores")
+    holdings   = state.get("holdings", [])
+    weights    = state.get("weights", {})
+    positions  = state.get("positions", {})
+
+    if not scores_raw or not holdings:
+        print("No saved scores found — run the full screener first.")
+        return
+
+    scores = pd.DataFrame(scores_raw).T
+    scores.index.name = "ticker"
+    # restore numeric columns
+    for col in scores.columns:
+        scores[col] = pd.to_numeric(scores[col], errors="ignore")
+
+    # Fetch current prices for holdings + top ranked tickers
+    tickers_needed = list(set(holdings) | set(scores.head(50).index.tolist()))
+    print(f"Fetching live prices for {len(tickers_needed)} tickers …")
+    prices = fetch_prices(tickers_needed, lookback_months=4)
+
+    # Update price column in scores
+    if len(prices):
+        last = prices.iloc[-1]
+        scores["price"] = scores.index.map(lambda t: last.get(t, scores.at[t, "price"] if t in scores.index else None))
+
+    # Update NAV
+    prev_prices = state.get("prev_prices", {})
+    today_nav, daily_ret = update_nav(nav, today, holdings, weights, prices, prev_prices)
+    save_nav(nav)
+
+    # Rebuild report
+    yq       = tuple(state.get("yq", [today.year, 1]))
+    ann_year = state.get("ann_year", today.year - 1)
+    n_target = state.get("n_target", len(holdings))
+    alert_tickers = state.get("alert_tickers", [])
+    inception_date = state.get("inception_date")
+
+    report_path = save_html_report(
+        today=today,
+        scores=scores,
+        trades=None,
+        yq=yq,
+        ann_year=ann_year,
+        n_target=n_target,
+        is_rebalance=False,
+        holdings=holdings,
+        alert_tickers=alert_tickers,
+        nav_history=nav,
+        inception_date=inception_date,
+        weights=weights,
+        positions=positions,
+        prev_prices=prev_prices,
+    )
+    print(f"Prices-only refresh done — {now.strftime('%H:%M UTC')} → {report_path}")
+
+
 # ── Entry ─────────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--setup", action="store_true")
+    parser.add_argument("--setup",        action="store_true")
+    parser.add_argument("--prices-only",  action="store_true",
+                        help="Fast refresh: reload saved scores, fetch live prices only")
     args = parser.parse_args()
     if args.setup:
         setup()
+    elif args.prices_only:
+        run_prices_only()
     else:
         run()
