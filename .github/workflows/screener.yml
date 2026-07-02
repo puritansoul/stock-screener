@@ -67,6 +67,7 @@ jobs:
           git add -f reports/ portfolio_state.json portfolio_nav.json index.html
           git diff --cached --quiet && echo "Nothing to commit" || \
             git commit -m "screener: $(date -u '+%Y-%m-%d %H:%M') [skip ci]"
+          git pull --rebase origin main
           git push
           echo "RUN_LABEL=$(date -u '+%Y-%m-%d %H:%M UTC')" >> $GITHUB_ENV
 

@@ -61,4 +61,5 @@ jobs:
           git add -f reports/ portfolio_nav.json portfolio_state.json index.html
           git diff --cached --quiet && echo "No changes" || \
             git commit -m "prices: $(date -u '+%Y-%m-%d %H:%M') [skip ci]"
+          git pull --rebase origin main
           git push
