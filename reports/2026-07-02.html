@@ -36,7 +36,7 @@
     <span class="badge">BS Q1/2026 | Flows 2025</span>&nbsp;
     <span class="badge">21 holdings</span>&nbsp;
     <span class="badge">Next rebalance: 2026-09-01</span>&nbsp;
-    <span class="badge">NAV: $106,525</span>
+    <span class="badge">NAV: $107,607</span>
   </p>
 
   <!-- Performance -->
@@ -48,7 +48,7 @@
     <div style="display:flex;align-items:stretch;gap:16px;margin-bottom:20px;flex-wrap:wrap">
       <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px">
         <div style="font-size:11px;color:#6c757d;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Current Value</div>
-        <div id="port-value" style="font-size:32px;font-weight:bold;color:#1a237e;line-height:1">$106,525</div>
+        <div id="port-value" style="font-size:32px;font-weight:bold;color:#1a237e;line-height:1">$107,607</div>
       </div>
       <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px">
         <div style="font-size:11px;color:#6c757d;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Today</div>
@@ -57,7 +57,7 @@
       <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px">
         <div style="font-size:11px;color:#6c757d;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Total Return</div>
         <div id="port-total" style="font-size:24px;font-weight:bold;color:#2e7d32;line-height:1">
-          +$6,525 <span style="font-size:16px">(+6.53%)</span>
+          +$7,607 <span style="font-size:16px">(+7.61%)</span>
         </div>
       </div>
     </div>
@@ -692,17 +692,22 @@
   const heldRows = rows.filter(r => parseFloat(r.dataset.qty) > 0);
   const tickers  = heldRows.map(r => r.dataset.ticker);
 
-  // Parallel requests to Finnhub (native CORS, no proxy needed)
+  // Sequential requests to Finnhub with stagger to stay under 60 req/min rate limit
   const FINNHUB_TOKEN = 'd93d6v1r01qgqnua64j0d93d6v1r01qgqnua64jg';
   const quotes = {};
 
-  Promise.all(tickers.map(tk =>
-    fetch(`https://finnhub.io/api/v1/quote?symbol=${tk}&token=${FINNHUB_TOKEN}`)
-      .then(r => r.json())
-      .then(q => { quotes[tk] = { price: q.c, prevClose: q.pc }; })
-      .catch(() => {})
-  ))
-  .then(() => {
+  const delay = ms => new Promise(res => setTimeout(res, ms));
+  const fetchAll = async () => {
+    for (const tk of tickers) {
+      try {
+        const q = await fetch(`https://finnhub.io/api/v1/quote?symbol=${tk}&token=${FINNHUB_TOKEN}`).then(r => r.json());
+        if (q.c) quotes[tk] = { price: q.c, prevClose: q.pc };
+      } catch(e) {}
+      await delay(120);
+    }
+  };
+
+  fetchAll().then(() => {
 
       let totalValue  = 0;
       let totalDayChg = 0;
