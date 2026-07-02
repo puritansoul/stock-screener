@@ -36,7 +36,7 @@
     <span class="badge">BS Q1/2026 | Flows 2025</span>&nbsp;
     <span class="badge">21 holdings</span>&nbsp;
     <span class="badge">Next rebalance: 2026-09-01</span>&nbsp;
-    <span class="badge">NAV: $107,607</span>
+    <span class="badge">NAV: $108,700</span>
   </p>
 
   <!-- Performance -->
@@ -48,7 +48,7 @@
     <div style="display:flex;align-items:stretch;gap:16px;margin-bottom:20px;flex-wrap:wrap">
       <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px">
         <div style="font-size:11px;color:#6c757d;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Current Value</div>
-        <div id="port-value" style="font-size:32px;font-weight:bold;color:#1a237e;line-height:1">$107,607</div>
+        <div id="port-value" style="font-size:32px;font-weight:bold;color:#1a237e;line-height:1">$108,700</div>
       </div>
       <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px">
         <div style="font-size:11px;color:#6c757d;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Today</div>
@@ -57,7 +57,7 @@
       <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px">
         <div style="font-size:11px;color:#6c757d;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Total Return</div>
         <div id="port-total" style="font-size:24px;font-weight:bold;color:#2e7d32;line-height:1">
-          +$7,607 <span style="font-size:16px">(+7.61%)</span>
+          +$8,700 <span style="font-size:16px">(+8.70%)</span>
         </div>
       </div>
     </div>
@@ -703,13 +703,14 @@
         const q = await fetch(`https://finnhub.io/api/v1/quote?symbol=${tk}&token=${FINNHUB_TOKEN}`).then(r => r.json());
         if (q.c) quotes[tk] = { price: q.c, prevClose: q.pc };
       } catch(e) {}
-      await delay(120);
+      await delay(1100);
     }
   };
 
   fetchAll().then(() => {
 
       let totalValue  = 0;
+      let totalCost   = 0;
       let totalDayChg = 0;
 
       heldRows.forEach(row => {
@@ -722,12 +723,14 @@
         const price     = q.price;
         const prevClose = q.prevClose;
         const curVal    = qty * price;
+        const cost      = qty * buyPx;
         const dayChgD   = (price - prevClose) * qty;
         const dayChgP   = prevClose > 0 ? (price - prevClose) / prevClose : 0;
         const totRetD   = (price - buyPx) * qty;
         const totRetP   = buyPx > 0 ? (price - buyPx) / buyPx : 0;
 
         totalValue  += curVal;
+        totalCost   += cost;
         totalDayChg += dayChgD;
 
         const fmt2 = n => '$' + Math.abs(n).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
@@ -745,9 +748,9 @@
           `<span style="color:${col(totRetD)};font-weight:bold">${sgn(totRetD)}$${fmtI(totRetD)} (${sgn(totRetP)}${Math.abs(totRetP*100).toFixed(2)}%)</span>`;
       });
 
-      // Update portfolio summary cards
-      const totalRet  = totalValue - PORTFOLIO_BASE;
-      const totalRetP = totalRet / PORTFOLIO_BASE;
+      // Update portfolio summary cards — use actual cost basis, not $100k target
+      const totalRet  = totalValue - totalCost;
+      const totalRetP = totalCost > 0 ? totalRet / totalCost : 0;
       const dayPct    = totalValue > 0 ? totalDayChg / (totalValue - totalDayChg) : 0;
       const col  = n => n >= 0 ? '#2e7d32' : '#c62828';
       const sgn  = n => n >= 0 ? '+' : '−';
