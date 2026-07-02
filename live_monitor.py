@@ -1086,13 +1086,14 @@ def save_html_report(
         const q = await fetch(`https://finnhub.io/api/v1/quote?symbol=${{tk}}&token=${{FINNHUB_TOKEN}}`).then(r => r.json());
         if (q.c) quotes[tk] = {{ price: q.c, prevClose: q.pc }};
       }} catch(e) {{}}
-      await delay(120);
+      await delay(1100);
     }}
   }};
 
   fetchAll().then(() => {{
 
       let totalValue  = 0;
+      let totalCost   = 0;
       let totalDayChg = 0;
 
       heldRows.forEach(row => {{
@@ -1105,12 +1106,14 @@ def save_html_report(
         const price     = q.price;
         const prevClose = q.prevClose;
         const curVal    = qty * price;
+        const cost      = qty * buyPx;
         const dayChgD   = (price - prevClose) * qty;
         const dayChgP   = prevClose > 0 ? (price - prevClose) / prevClose : 0;
         const totRetD   = (price - buyPx) * qty;
         const totRetP   = buyPx > 0 ? (price - buyPx) / buyPx : 0;
 
         totalValue  += curVal;
+        totalCost   += cost;
         totalDayChg += dayChgD;
 
         const fmt2 = n => '$' + Math.abs(n).toLocaleString('en-US', {{minimumFractionDigits:2, maximumFractionDigits:2}});
@@ -1128,9 +1131,9 @@ def save_html_report(
           `<span style="color:${{col(totRetD)}};font-weight:bold">${{sgn(totRetD)}}$${{fmtI(totRetD)}} (${{sgn(totRetP)}}${{Math.abs(totRetP*100).toFixed(2)}}%)</span>`;
       }});
 
-      // Update portfolio summary cards
-      const totalRet  = totalValue - PORTFOLIO_BASE;
-      const totalRetP = totalRet / PORTFOLIO_BASE;
+      // Update portfolio summary cards — use actual cost basis, not $100k target
+      const totalRet  = totalValue - totalCost;
+      const totalRetP = totalCost > 0 ? totalRet / totalCost : 0;
       const dayPct    = totalValue > 0 ? totalDayChg / (totalValue - totalDayChg) : 0;
       const col  = n => n >= 0 ? '#2e7d32' : '#c62828';
       const sgn  = n => n >= 0 ? '+' : '−';
