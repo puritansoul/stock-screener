@@ -923,18 +923,18 @@ def save_html_report(
 
         # ── Compact holdings row ────────────────────────────────────────────
         holdings_rows += f"""
-        <tr style="{row_style}">
+        <tr style="{row_style}" data-ticker="{tk}" data-qty="{qty}" data-buypx="{buy_px or 0}" data-prevpx="{prev_prices.get(tk, 0)}">
           <td style="text-align:center;font-size:12px;color:#666">{rank}</td>
           <td style="font-weight:bold;white-space:nowrap">{tk} {badge}</td>
-          <td style="text-align:right">{_fmt_price(row.get('price'))}</td>
+          <td class="live-price" style="text-align:right">{_fmt_price(row.get('price'))}</td>
           <td style="text-align:right;color:#1a237e;font-weight:bold">{alloc_str}</td>
           <td style="text-align:right">{qty_str}</td>
           <td style="text-align:right">{buy_str}</td>
           <td style="text-align:right;color:#555;font-size:12px">{buy_dt}</td>
-          <td style="text-align:right;font-weight:bold">{invested_str}</td>
-          <td style="text-align:right">{day_chg_str}</td>
-          <td style="text-align:right">{day_pct_str}</td>
-          <td style="text-align:right">{tot_ret_str}</td>
+          <td class="live-invested" style="text-align:right;font-weight:bold">{invested_str}</td>
+          <td class="live-day-d" style="text-align:right">{day_chg_str}</td>
+          <td class="live-day-pct" style="text-align:right">{day_pct_str}</td>
+          <td class="live-total-ret" style="text-align:right">{tot_ret_str}</td>
           <td style="text-align:right;font-size:12px;color:#555">{_fmt(comp, '.3f')}</td>
         </tr>"""
 
@@ -1003,15 +1003,15 @@ def save_html_report(
     <div style="display:flex;align-items:stretch;gap:16px;margin-bottom:20px;flex-wrap:wrap">
       <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px">
         <div style="font-size:11px;color:#6c757d;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Current Value</div>
-        <div style="font-size:32px;font-weight:bold;color:#1a237e;line-height:1">{nav_str}</div>
+        <div id="port-value" style="font-size:32px;font-weight:bold;color:#1a237e;line-height:1">{nav_str}</div>
       </div>
       <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px">
         <div style="font-size:11px;color:#6c757d;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Today</div>
-        <div style="font-size:24px;font-weight:bold;color:{port_day_color};line-height:1">{port_day_str}</div>
+        <div id="port-today" style="font-size:24px;font-weight:bold;color:{port_day_color};line-height:1">{port_day_str}</div>
       </div>
       <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px">
         <div style="font-size:11px;color:#6c757d;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Total Return</div>
-        <div style="font-size:24px;font-weight:bold;color:{gain_color};line-height:1">
+        <div id="port-total" style="font-size:24px;font-weight:bold;color:{gain_color};line-height:1">
           {gain_sign}${abs(gain_loss):,.0f} <span style="font-size:16px">({gain_sign}{gain_loss_pct:.2f}%)</span>
         </div>
       </div>
@@ -1061,7 +1061,109 @@ def save_html_report(
 
   <p style="color:#bbb;font-size:11px;margin-top:16px">
     live_monitor.py &nbsp;|&nbsp; Data: SEC EDGAR XBRL + Yahoo Finance &nbsp;|&nbsp; Not financial advice.
+    &nbsp;|&nbsp; <span id="live-status" style="color:#1a237e">⏳ Fetching live prices…</span>
   </p>
+
+<script>
+// ── Live price refresh ────────────────────────────────────────────────────────
+(function() {{
+  const PORTFOLIO_BASE = {PORTFOLIO_VALUE};
+
+  // Collect all holdings rows with their position data
+  const rows = Array.from(document.querySelectorAll('tr[data-ticker]'));
+  if (!rows.length) return;
+
+  const tickers  = rows.map(r => r.dataset.ticker);
+  const tickerStr = tickers.join('%2C');
+
+  // Yahoo Finance v8 quote endpoint via allorigins CORS proxy
+  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${{tickers[0]}}?interval=1d&range=5d`;
+
+  // Fetch each ticker individually using allorigins proxy
+  const fetches = tickers.map(tk =>
+    fetch(`https://api.allorigins.win/get?url=${{encodeURIComponent(
+      `https://query1.finance.yahoo.com/v8/finance/chart/${{tk}}?interval=1d&range=5d`
+    )}}`)
+    .then(r => r.json())
+    .then(data => {{
+      const parsed = JSON.parse(data.contents);
+      const meta   = parsed.chart.result[0].meta;
+      return {{
+        ticker:    tk,
+        price:     meta.regularMarketPrice,
+        prevClose: meta.chartPreviousClose,
+      }};
+    }})
+    .catch(() => null)
+  );
+
+  Promise.all(fetches).then(results => {{
+    const quotes = {{}};
+    results.filter(Boolean).forEach(q => {{ quotes[q.ticker] = q; }});
+
+    let totalValue  = 0;
+    let totalCost   = 0;
+    let totalDayChg = 0;
+
+    rows.forEach(row => {{
+      const tk      = row.dataset.ticker;
+      const qty     = parseFloat(row.dataset.qty)   || 0;
+      const buyPx   = parseFloat(row.dataset.buypx) || 0;
+      const q       = quotes[tk];
+      if (!q || !qty) return;
+
+      const price     = q.price;
+      const prevClose = q.prevClose;
+      const invested  = qty * buyPx;
+      const curVal    = qty * price;
+      const dayChgD   = (price - prevClose) * qty;
+      const dayChgP   = prevClose > 0 ? (price - prevClose) / prevClose : 0;
+      const totRetD   = (price - buyPx) * qty;
+      const totRetP   = buyPx > 0 ? (price - buyPx) / buyPx : 0;
+
+      totalValue  += curVal;
+      totalCost   += invested;
+      totalDayChg += dayChgD;
+
+      const fmt  = (n, pre='$') => pre + Math.abs(n).toLocaleString('en-US', {{minimumFractionDigits:2,maximumFractionDigits:2}});
+      const fmtI = (n, pre='$') => pre + Math.abs(n).toLocaleString('en-US', {{maximumFractionDigits:0}});
+      const col  = n => n >= 0 ? '#2e7d32' : '#c62828';
+      const sgn  = n => n >= 0 ? '+' : '−';
+
+      row.querySelector('.live-price').textContent  = fmt(price);
+      row.querySelector('.live-invested').textContent = fmtI(curVal);
+      row.querySelector('.live-day-d').innerHTML    =
+        `<span style="color:${{col(dayChgD)}};font-weight:bold">${{sgn(dayChgD)}}${{fmtI(dayChgD,'')}} </span>`;
+      row.querySelector('.live-day-pct').innerHTML  =
+        `<span style="color:${{col(dayChgP)}};font-weight:bold">${{sgn(dayChgP)}}${{Math.abs(dayChgP*100).toFixed(2)}}%</span>`;
+      row.querySelector('.live-total-ret').innerHTML =
+        `<span style="color:${{col(totRetD)}};font-weight:bold">${{sgn(totRetD)}}${{fmtI(totRetD,'')}} (${{sgn(totRetP)}}${{Math.abs(totRetP*100).toFixed(2)}}%)</span>`;
+    }});
+
+    // Update portfolio summary cards
+    const totalRet  = totalValue - PORTFOLIO_BASE;
+    const totalRetP = totalRet / PORTFOLIO_BASE;
+    const dayPct    = totalValue > 0 ? totalDayChg / (totalValue - totalDayChg) : 0;
+
+    const col  = n => n >= 0 ? '#2e7d32' : '#c62828';
+    const sgn  = n => n >= 0 ? '+' : '−';
+    const fmtI = n => Math.abs(n).toLocaleString('en-US', {{maximumFractionDigits:0}});
+
+    document.getElementById('port-value').textContent =
+      '$' + totalValue.toLocaleString('en-US', {{maximumFractionDigits:0}});
+    document.getElementById('port-today').innerHTML =
+      `<span style="color:${{col(totalDayChg)}}">${{sgn(totalDayChg)}}$${{fmtI(totalDayChg)}} (${{sgn(dayPct)}}${{Math.abs(dayPct*100).toFixed(2)}}%)</span>`;
+    document.getElementById('port-total').innerHTML =
+      `<span style="color:${{col(totalRet)}}">${{sgn(totalRet)}}$${{fmtI(totalRet)}} (${{sgn(totalRetP)}}${{Math.abs(totalRetP*100).toFixed(2)}}%)</span>`;
+
+    const now = new Date();
+    document.getElementById('live-status').innerHTML =
+      `✅ Live prices as of ${{now.toLocaleTimeString('en-US', {{hour:'2-digit',minute:'2-digit'}})}}`;
+  }}).catch(() => {{
+    document.getElementById('live-status').textContent = '⚠️ Live price fetch failed — showing last run data';
+  }});
+}})();
+</script>
 </body>
 </html>"""
 
