@@ -757,22 +757,31 @@ def save_html_report(
         f'</div>'
         for label, val in perf_rows
     )
-    current_value = today_nav * PORTFOLIO_VALUE
-    gain_loss     = current_value - PORTFOLIO_VALUE
-    gain_loss_pct = (today_nav - 1.0) * 100
+    # Use actual share prices for current value, not NAV × $100k
+    if prices_df is not None and not prices_df.empty:
+        _latest = prices_df.iloc[-1]
+        current_value = sum(
+            positions.get(t, {}).get("shares", 0) * float(_latest[t])
+            for t in positions
+            if t in _latest.index and pd.notna(_latest[t])
+        ) or (today_nav * PORTFOLIO_VALUE)
+    else:
+        current_value = today_nav * PORTFOLIO_VALUE
+    gain_loss     = current_value - cost_basis
+    gain_loss_pct = gain_loss / cost_basis * 100 if cost_basis else 0
     gain_color    = "#2e7d32" if gain_loss >= 0 else "#c62828"
     gain_sign     = "+" if gain_loss >= 0 else ""
     nav_str       = f"${current_value:,.0f}"
 
-    # Portfolio daily % change (raw value for coloring)
-    _dates = sorted(nav_history.keys())
-    _today_str = today.isoformat()
+    # Portfolio daily change using prev_prices
     _port_day_raw = 0.0
-    if _today_str in _dates and _dates.index(_today_str) > 0:
-        _prev_date = _dates[_dates.index(_today_str) - 1]
-        _prev_nav  = nav_history.get(_prev_date, today_nav)
-        if _prev_nav > 0:
-            _port_day_raw = (today_nav / _prev_nav) - 1
+    if prev_prices and positions:
+        _prev_val = sum(
+            positions.get(t, {}).get("shares", 0) * prev_prices[t]
+            for t in positions if t in prev_prices
+        )
+        if _prev_val > 0:
+            _port_day_raw = (current_value - _prev_val) / _prev_val
     port_day_color = "#2e7d32" if _port_day_raw >= 0 else "#c62828"
     port_day_sign  = "+" if _port_day_raw >= 0 else ""
     port_day_d     = _port_day_raw * current_value
