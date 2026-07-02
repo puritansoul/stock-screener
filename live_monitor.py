@@ -1075,21 +1075,17 @@ def save_html_report(
   const heldRows = rows.filter(r => parseFloat(r.dataset.qty) > 0);
   const tickers  = heldRows.map(r => r.dataset.ticker);
 
-  // Single batched request via allorigins proxy → Yahoo Finance v7 quote API
-  const yhooUrl = `https://query1.finance.yahoo.com/v7/finance/quote?symbols=${{tickers.join(',')}}`;
-  const proxyUrl = `https://api.allorigins.win/get?url=${{encodeURIComponent(yhooUrl)}}`;
+  // Parallel requests to Finnhub (native CORS, no proxy needed)
+  const FINNHUB_TOKEN = 'd93d6v1r01qgqnua64j0d93d6v1r01qgqnua64jg';
+  const quotes = {{}};
 
-  fetch(proxyUrl)
-    .then(r => r.json())
-    .then(data => {{
-      const result = JSON.parse(data.contents);
-      const quotes = {{}};
-      (result.quoteResponse.result || []).forEach(q => {{
-        quotes[q.symbol] = {{
-          price:     q.regularMarketPrice,
-          prevClose: q.regularMarketPreviousClose,
-        }};
-      }});
+  Promise.all(tickers.map(tk =>
+    fetch(`https://finnhub.io/api/v1/quote?symbol=${{tk}}&token=${{FINNHUB_TOKEN}}`)
+      .then(r => r.json())
+      .then(q => {{ quotes[tk] = {{ price: q.c, prevClose: q.pc }}; }})
+      .catch(() => {{}})
+  ))
+  .then(() => {{
 
       let totalValue  = 0;
       let totalDayChg = 0;
@@ -1145,71 +1141,8 @@ def save_html_report(
       const now = new Date();
       document.getElementById('live-status').innerHTML =
         `✅ Live prices as of ${{now.toLocaleTimeString('en-US', {{hour:'2-digit',minute:'2-digit'}})}}`;
-    }})
-    .catch(() => {{
-      document.getElementById('live-status').textContent = '⚠️ Live price fetch failed — showing last run data';
-    }});
-
-
-    let totalValue  = 0;
-    let totalCost   = 0;
-    let totalDayChg = 0;
-
-    rows.forEach(row => {{
-      const tk      = row.dataset.ticker;
-      const qty     = parseFloat(row.dataset.qty)   || 0;
-      const buyPx   = parseFloat(row.dataset.buypx) || 0;
-      const q       = quotes[tk];
-      if (!q || !qty) return;
-
-      const price     = q.price;
-      const prevClose = q.prevClose;
-      const invested  = qty * buyPx;
-      const curVal    = qty * price;
-      const dayChgD   = (price - prevClose) * qty;
-      const dayChgP   = prevClose > 0 ? (price - prevClose) / prevClose : 0;
-      const totRetD   = (price - buyPx) * qty;
-      const totRetP   = buyPx > 0 ? (price - buyPx) / buyPx : 0;
-
-      totalValue  += curVal;
-      totalCost   += invested;
-      totalDayChg += dayChgD;
-
-      const fmt  = (n, pre='$') => pre + Math.abs(n).toLocaleString('en-US', {{minimumFractionDigits:2,maximumFractionDigits:2}});
-      const fmtI = (n, pre='$') => pre + Math.abs(n).toLocaleString('en-US', {{maximumFractionDigits:0}});
-      const col  = n => n >= 0 ? '#2e7d32' : '#c62828';
-      const sgn  = n => n >= 0 ? '+' : '−';
-
-      row.querySelector('.live-price').textContent  = fmt(price);
-      row.querySelector('.live-invested').textContent = fmtI(curVal);
-      row.querySelector('.live-day-d').innerHTML    =
-        `<span style="color:${{col(dayChgD)}};font-weight:bold">${{sgn(dayChgD)}}${{fmtI(dayChgD,'')}} </span>`;
-      row.querySelector('.live-day-pct').innerHTML  =
-        `<span style="color:${{col(dayChgP)}};font-weight:bold">${{sgn(dayChgP)}}${{Math.abs(dayChgP*100).toFixed(2)}}%</span>`;
-      row.querySelector('.live-total-ret').innerHTML =
-        `<span style="color:${{col(totRetD)}};font-weight:bold">${{sgn(totRetD)}}${{fmtI(totRetD,'')}} (${{sgn(totRetP)}}${{Math.abs(totRetP*100).toFixed(2)}}%)</span>`;
-    }});
-
-    // Update portfolio summary cards
-    const totalRet  = totalValue - PORTFOLIO_BASE;
-    const totalRetP = totalRet / PORTFOLIO_BASE;
-    const dayPct    = totalValue > 0 ? totalDayChg / (totalValue - totalDayChg) : 0;
-
-    const col  = n => n >= 0 ? '#2e7d32' : '#c62828';
-    const sgn  = n => n >= 0 ? '+' : '−';
-    const fmtI = n => Math.abs(n).toLocaleString('en-US', {{maximumFractionDigits:0}});
-
-    document.getElementById('port-value').textContent =
-      '$' + totalValue.toLocaleString('en-US', {{maximumFractionDigits:0}});
-    document.getElementById('port-today').innerHTML =
-      `<span style="color:${{col(totalDayChg)}}">${{sgn(totalDayChg)}}$${{fmtI(totalDayChg)}} (${{sgn(dayPct)}}${{Math.abs(dayPct*100).toFixed(2)}}%)</span>`;
-    document.getElementById('port-total').innerHTML =
-      `<span style="color:${{col(totalRet)}}">${{sgn(totalRet)}}$${{fmtI(totalRet)}} (${{sgn(totalRetP)}}${{Math.abs(totalRetP*100).toFixed(2)}}%)</span>`;
-
-    const now = new Date();
-    document.getElementById('live-status').innerHTML =
-      `✅ Live prices as of ${{now.toLocaleTimeString('en-US', {{hour:'2-digit',minute:'2-digit'}})}}`;
-  }}).catch(() => {{
+  }})
+  .catch(() => {{
     document.getElementById('live-status').textContent = '⚠️ Live price fetch failed — showing last run data';
   }});
 }})();
