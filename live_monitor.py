@@ -1075,17 +1075,22 @@ def save_html_report(
   const heldRows = rows.filter(r => parseFloat(r.dataset.qty) > 0);
   const tickers  = heldRows.map(r => r.dataset.ticker);
 
-  // Parallel requests to Finnhub (native CORS, no proxy needed)
+  // Sequential requests to Finnhub with stagger to stay under 60 req/min rate limit
   const FINNHUB_TOKEN = 'd93d6v1r01qgqnua64j0d93d6v1r01qgqnua64jg';
   const quotes = {{}};
 
-  Promise.all(tickers.map(tk =>
-    fetch(`https://finnhub.io/api/v1/quote?symbol=${{tk}}&token=${{FINNHUB_TOKEN}}`)
-      .then(r => r.json())
-      .then(q => {{ quotes[tk] = {{ price: q.c, prevClose: q.pc }}; }})
-      .catch(() => {{}})
-  ))
-  .then(() => {{
+  const delay = ms => new Promise(res => setTimeout(res, ms));
+  const fetchAll = async () => {{
+    for (const tk of tickers) {{
+      try {{
+        const q = await fetch(`https://finnhub.io/api/v1/quote?symbol=${{tk}}&token=${{FINNHUB_TOKEN}}`).then(r => r.json());
+        if (q.c) quotes[tk] = {{ price: q.c, prevClose: q.pc }};
+      }} catch(e) {{}}
+      await delay(120);
+    }}
+  }};
+
+  fetchAll().then(() => {{
 
       let totalValue  = 0;
       let totalDayChg = 0;
