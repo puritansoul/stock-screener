@@ -573,17 +573,14 @@ def update_nav(
 
     last_nav = list(nav_history.values())[-1] if nav_history else 1.0
 
-    # Derive previous close from price history (last 2 rows), falling back to saved prev_prices
-    try:
-        p_prev_row = prices.iloc[-2] if len(prices) >= 2 else None
-    except IndexError:
-        p_prev_row = None
+    # Use yesterday's closing price (last row strictly before today)
+    prev_rows  = prices[prices.index.normalize() < pd.Timestamp(today)]
+    p_prev_row = prev_rows.iloc[-1] if len(prev_rows) else None
 
     daily_ret = 0.0
     for t in holdings:
         w     = weights.get(t, 1.0 / len(holdings))
         p_now = p_today.get(t)
-        # prefer price history row, fall back to saved prev_prices dict
         p_prev = (float(p_prev_row[t]) if p_prev_row is not None and t in p_prev_row.index and pd.notna(p_prev_row[t]) else None) \
                  or prev_prices.get(t)
         if p_now and p_prev and pd.notna(p_now) and float(p_prev) > 0:
@@ -730,12 +727,15 @@ def save_html_report(
     alert_set    = set(alert_tickers)
     positions    = positions or {}
     prev_prices  = prev_prices or {}
-    # Derive yesterday's close from price history if available
+    # Always use yesterday's closing price for Day Delta
     if prices_df is not None and len(prices_df) >= 2:
-        prev_row = prices_df.iloc[-2]
-        for t in holdings_set:
-            if t not in prev_prices and t in prev_row.index and pd.notna(prev_row[t]):
-                prev_prices[t] = float(prev_row[t])
+        # Find the last row whose date is strictly before today
+        prev_rows = prices_df[prices_df.index.normalize() < pd.Timestamp(today)]
+        if len(prev_rows):
+            prev_row = prev_rows.iloc[-1]
+            for t in holdings_set:
+                if t in prev_row.index and pd.notna(prev_row[t]):
+                    prev_prices[t] = float(prev_row[t])
 
     # ── Performance cards ──────────────────────────────────────────────────────
     perf_rows = [
