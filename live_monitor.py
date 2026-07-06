@@ -728,6 +728,7 @@ def save_html_report(
     positions    = positions or {}
     prev_prices  = prev_prices or {}
     cost_basis   = sum(v.get("shares", 0) * v.get("price", 0) for v in positions.values()) or PORTFOLIO_VALUE
+    nav_json     = json.dumps(nav_history)
     # Always use yesterday's closing price for Day Delta
     if prices_df is not None and len(prices_df) >= 2:
         # Find the last row whose date is strictly before today
@@ -750,11 +751,15 @@ def save_html_report(
         ("Since Inception", compute_period_return(nav_history, today,
             (today - date.fromisoformat(inception_date)).days if inception_date else 0)),
     ]
-    tile_ids = {"Today": "tile-today", "Since Inception": "tile-inception"}
+    tile_ids = {
+        "Today": "tile-today", "1 Month": "tile-1m", "3 Months": "tile-3m",
+        "6 Months": "tile-6m", "1 Year": "tile-1y", "3 Years": "tile-3y",
+        "5 Years": "tile-5y", "Since Inception": "tile-inception"
+    }
     perf_cards = "".join(
         f'<div style="background:#f8f9fa;border:1px solid #dee2e6;border-radius:8px;padding:14px 18px;min-width:110px;text-align:center">'
         f'<div style="font-size:11px;color:#6c757d;margin-bottom:4px">{label}</div>'
-        f'<div style="font-size:18px" {"id=" + repr(tile_ids[label]) if label in tile_ids else ""}>{val}</div>'
+        f'<div style="font-size:18px" id="{tile_ids[label]}">{val}</div>'
         f'</div>'
         for label, val in perf_rows
     )
@@ -1079,6 +1084,7 @@ def save_html_report(
 // ── Live price refresh ────────────────────────────────────────────────────────
 (function() {{
   const PORTFOLIO_BASE = {cost_basis:.2f};
+  const NAV_HISTORY = {nav_json};
 
   const rows = Array.from(document.querySelectorAll('tr[data-ticker]'));
   if (!rows.length) return;
@@ -1161,17 +1167,31 @@ def save_html_report(
       document.getElementById('live-status').innerHTML =
         `✅ Live prices as of ${{now.toLocaleTimeString('en-US', {{hour:'2-digit',minute:'2-digit'}})}}`;
 
-      // Update Today and Since Inception small tiles
+      // Update all period tiles using live current value as today's NAV
+      const currentNav = totalValue / PORTFOLIO_BASE;
+      const navDates   = Object.keys(NAV_HISTORY).sort();
+      const todayStr   = new Date().toISOString().slice(0,10);
+      const tileCol    = n => n >= 0 ? '#2ca02c' : '#d62728';
+      const tileSgn    = n => n >= 0 ? '+' : '';
+      const fmtTile    = pct => `<span style="color:${{tileCol(pct)}};font-weight:bold">${{tileSgn(pct)}}${{(pct*100).toFixed(2)}}%</span>`;
+
+      const getPastNav = daysAgo => {{
+        const target = new Date(); target.setDate(target.getDate() - daysAgo);
+        const tStr   = target.toISOString().slice(0,10);
+        const past   = navDates.filter(d => d <= tStr);
+        return past.length ? NAV_HISTORY[past[past.length-1]] : null;
+      }};
+
       const dayPctVal = totalValue > 0 ? totalDayChg / (totalValue - totalDayChg) : 0;
-      const incepPct  = {cost_basis:.2f} > 0 ? (totalValue - {cost_basis:.2f}) / {cost_basis:.2f} : 0;
-      const tileCol   = n => n >= 0 ? '#2ca02c' : '#d62728';
-      const tileSgn   = n => n >= 0 ? '+' : '';
-      const tileToday = document.getElementById('tile-today');
-      const tileIncep = document.getElementById('tile-inception');
-      if (tileToday) tileToday.innerHTML =
-        `<span style="color:${{tileCol(dayPctVal)}};font-weight:bold">${{tileSgn(dayPctVal)}}${{(dayPctVal*100).toFixed(2)}}%</span>`;
-      if (tileIncep) tileIncep.innerHTML =
-        `<span style="color:${{tileCol(incepPct)}};font-weight:bold">${{tileSgn(incepPct)}}${{(incepPct*100).toFixed(2)}}%</span>`;
+      const setTile   = (id, pct) => {{ const el = document.getElementById(id); if (el) el.innerHTML = fmtTile(pct); }};
+
+      setTile('tile-today', dayPctVal);
+      [['tile-1m',30],['tile-3m',91],['tile-6m',182],['tile-1y',365],['tile-3y',1095],['tile-5y',1825]].forEach(([id,days]) => {{
+        const pNav = getPastNav(days);
+        if (pNav) setTile(id, (currentNav / pNav) - 1);
+      }});
+      const inceptionNav = navDates.length ? NAV_HISTORY[navDates[0]] : null;
+      if (inceptionNav) setTile('tile-inception', (currentNav / inceptionNav) - 1);
   }})
   .catch(() => {{
     document.getElementById('live-status').textContent = '⚠️ Live price fetch failed — showing last run data';
