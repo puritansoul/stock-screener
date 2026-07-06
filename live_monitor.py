@@ -1167,31 +1167,28 @@ def save_html_report(
       document.getElementById('live-status').innerHTML =
         `✅ Live prices as of ${{now.toLocaleTimeString('en-US', {{hour:'2-digit',minute:'2-digit'}})}}`;
 
-      // Update all period tiles using live current value as today's NAV
-      const currentNav = totalValue / PORTFOLIO_BASE;
-      const navDates   = Object.keys(NAV_HISTORY).sort();
-      const todayStr   = new Date().toISOString().slice(0,10);
-      const tileCol    = n => n >= 0 ? '#2ca02c' : '#d62728';
-      const tileSgn    = n => n >= 0 ? '+' : '';
-      const fmtTile    = pct => `<span style="color:${{tileCol(pct)}};font-weight:bold">${{tileSgn(pct)}}${{(pct*100).toFixed(2)}}%</span>`;
+      // Update period tiles
+      const tileCol  = n => n >= 0 ? '#2ca02c' : '#d62728';
+      const tileSgn  = n => n >= 0 ? '+' : '';
+      const fmtTile  = pct => `<span style="color:${{tileCol(pct)}};font-weight:bold">${{tileSgn(pct)}}${{(pct*100).toFixed(2)}}%</span>`;
+      const setTile  = (id, pct) => {{ const el = document.getElementById(id); if (el) el.innerHTML = fmtTile(pct); }};
 
-      const getPastNav = daysAgo => {{
-        const target = new Date(); target.setDate(target.getDate() - daysAgo);
+      // Today: current value vs yesterday's close (already have totalDayChg)
+      const dayPctVal = totalValue > 0 ? totalDayChg / (totalValue - totalDayChg) : 0;
+      setTile('tile-today', dayPctVal);
+
+      // Since Inception: current value vs cost basis ($97,490)
+      setTile('tile-inception', PORTFOLIO_BASE > 0 ? (totalValue - PORTFOLIO_BASE) / PORTFOLIO_BASE : 0);
+
+      // 1M, 3M, 6M, 1Y, 3Y, 5Y: use NAV history where available
+      const navDates = Object.keys(NAV_HISTORY).sort();
+      const currentNav = totalValue / PORTFOLIO_BASE;
+      [['tile-1m',30],['tile-3m',91],['tile-6m',182],['tile-1y',365],['tile-3y',1095],['tile-5y',1825]].forEach(([id,days]) => {{
+        const target = new Date(); target.setDate(target.getDate() - days);
         const tStr   = target.toISOString().slice(0,10);
         const past   = navDates.filter(d => d <= tStr);
-        return past.length ? NAV_HISTORY[past[past.length-1]] : null;
-      }};
-
-      const dayPctVal = totalValue > 0 ? totalDayChg / (totalValue - totalDayChg) : 0;
-      const setTile   = (id, pct) => {{ const el = document.getElementById(id); if (el) el.innerHTML = fmtTile(pct); }};
-
-      setTile('tile-today', dayPctVal);
-      [['tile-1m',30],['tile-3m',91],['tile-6m',182],['tile-1y',365],['tile-3y',1095],['tile-5y',1825]].forEach(([id,days]) => {{
-        const pNav = getPastNav(days);
-        if (pNav) setTile(id, (currentNav / pNav) - 1);
+        if (past.length) setTile(id, (currentNav / NAV_HISTORY[past[past.length-1]]) - 1);
       }});
-      const inceptionNav = navDates.length ? NAV_HISTORY[navDates[0]] : null;
-      if (inceptionNav) setTile('tile-inception', (currentNav / inceptionNav) - 1);
   }})
   .catch(() => {{
     document.getElementById('live-status').textContent = '⚠️ Live price fetch failed — showing last run data';
