@@ -750,10 +750,11 @@ def save_html_report(
         ("Since Inception", compute_period_return(nav_history, today,
             (today - date.fromisoformat(inception_date)).days if inception_date else 0)),
     ]
+    tile_ids = {"Today": "tile-today", "Since Inception": "tile-inception"}
     perf_cards = "".join(
         f'<div style="background:#f8f9fa;border:1px solid #dee2e6;border-radius:8px;padding:14px 18px;min-width:110px;text-align:center">'
         f'<div style="font-size:11px;color:#6c757d;margin-bottom:4px">{label}</div>'
-        f'<div style="font-size:18px">{val}</div>'
+        f'<div style="font-size:18px" {"id=" + repr(tile_ids[label]) if label in tile_ids else ""}>{val}</div>'
         f'</div>'
         for label, val in perf_rows
     )
@@ -1159,6 +1160,18 @@ def save_html_report(
       const now = new Date();
       document.getElementById('live-status').innerHTML =
         `✅ Live prices as of ${{now.toLocaleTimeString('en-US', {{hour:'2-digit',minute:'2-digit'}})}}`;
+
+      // Update Today and Since Inception small tiles
+      const dayPctVal = totalValue > 0 ? totalDayChg / (totalValue - totalDayChg) : 0;
+      const incepPct  = {cost_basis:.2f} > 0 ? (totalValue - {cost_basis:.2f}) / {cost_basis:.2f} : 0;
+      const tileCol   = n => n >= 0 ? '#2ca02c' : '#d62728';
+      const tileSgn   = n => n >= 0 ? '+' : '';
+      const tileToday = document.getElementById('tile-today');
+      const tileIncep = document.getElementById('tile-inception');
+      if (tileToday) tileToday.innerHTML =
+        `<span style="color:${{tileCol(dayPctVal)}};font-weight:bold">${{tileSgn(dayPctVal)}}${{(dayPctVal*100).toFixed(2)}}%</span>`;
+      if (tileIncep) tileIncep.innerHTML =
+        `<span style="color:${{tileCol(incepPct)}};font-weight:bold">${{tileSgn(incepPct)}}${{(incepPct*100).toFixed(2)}}%</span>`;
   }})
   .catch(() => {{
     document.getElementById('live-status').textContent = '⚠️ Live price fetch failed — showing last run data';
