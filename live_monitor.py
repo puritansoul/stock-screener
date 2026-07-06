@@ -1519,7 +1519,7 @@ def run_prices_only():
     scores.index.name = "ticker"
     # restore numeric columns
     for col in scores.columns:
-        scores[col] = pd.to_numeric(scores[col], errors="ignore")
+        scores[col] = pd.to_numeric(scores[col], errors="coerce")
 
     # Fetch current prices for holdings + top ranked tickers
     tickers_needed = list(set(holdings) | set(scores.head(50).index.tolist()))
