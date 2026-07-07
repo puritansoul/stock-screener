@@ -730,6 +730,18 @@ def save_html_report(
     cost_basis      = sum(v.get("shares", 0) * v.get("price", 0) for v in positions.values()) or PORTFOLIO_VALUE
     nav_json        = json.dumps(nav_history)
     inception_days  = (today - date.fromisoformat(inception_date)).days if inception_date else 0
+
+    # Pre-fetch benchmark history for SPY and QQQ (baked into HTML, no browser proxy needed)
+    bench_json = "{}"
+    try:
+        import yfinance as _yf
+        _bench = _yf.download(["SPY", "QQQ"], period="5y", auto_adjust=True, progress=False)["Close"]
+        _bench_dict = {}
+        for sym in _bench.columns:
+            _bench_dict[sym] = {str(d.date()): float(v) for d, v in _bench[sym].dropna().items()}
+        bench_json = json.dumps(_bench_dict)
+    except Exception:
+        pass
     # Always use yesterday's closing price for Day Delta
     if prices_df is not None and len(prices_df) >= 2:
         # Find the last row whose date is strictly before today
@@ -1039,7 +1051,7 @@ def save_html_report(
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:4px">
       <div style="font-size:12px;color:#666;font-weight:bold">Portfolio</div>
       <div style="display:flex;gap:6px;align-items:center">
-        <input id="bench-input" type="text" placeholder="Compare vs. SPY, QQQ, BTC-USD…"
+        <input id="bench-input" type="text" placeholder="Compare vs. SPY or QQQ"
           style="padding:5px 10px;border:1px solid #c5cae9;border-radius:6px;font-size:12px;width:220px;outline:none"/>
         <button id="bench-btn" style="padding:5px 12px;background:#1a237e;color:white;border:none;border-radius:6px;font-size:12px;cursor:pointer">Compare</button>
         <button id="bench-clear" style="padding:5px 8px;background:#eee;color:#555;border:none;border-radius:6px;font-size:12px;cursor:pointer;display:none">✕</button>
@@ -1241,13 +1253,13 @@ def save_html_report(
 
   // ── Benchmark comparison ─────────────────────────────────────────────────────
   (function() {{
-    const FINNHUB_TOKEN = 'd93d6v1r01qgqnua64j0d93d6v1r01qgqnua64jg';
-    const input   = document.getElementById('bench-input');
-    const btn     = document.getElementById('bench-btn');
-    const clearBtn= document.getElementById('bench-clear');
-    const row     = document.getElementById('bench-row');
-    const cards   = document.getElementById('bench-cards');
-    const label   = document.getElementById('bench-label');
+    const BENCH_DATA = {bench_json};
+    const input    = document.getElementById('bench-input');
+    const btn      = document.getElementById('bench-btn');
+    const clearBtn = document.getElementById('bench-clear');
+    const row      = document.getElementById('bench-row');
+    const cards    = document.getElementById('bench-cards');
+    const label    = document.getElementById('bench-label');
     if (!input || !btn) return;
 
     const tileCol = n => n >= 0 ? '#2ca02c' : '#d62728';
@@ -1260,53 +1272,42 @@ def save_html_report(
       ['5 Years', 1825], ['Since Inception', {inception_days}]
     ];
 
-    const fetchBench = async (ticker) => {{
-      const now   = Math.floor(Date.now()/1000);
-      const from  = now - 1825 * 86400; // 5 years back
-      const url   = `https://finnhub.io/api/v1/stock/candle?symbol=${{ticker}}&resolution=D&from=${{from}}&to=${{now}}&token=${{FINNHUB_TOKEN}}`;
-      const res   = await fetch(url);
-      const data  = await res.json();
-      if (data.s !== 'ok' || !data.t) return null;
-      return {{ timestamps: data.t, closes: data.c }};
+    const getPriceAtDaysAgo = (priceMap, daysAgo) => {{
+      const target = new Date(); target.setDate(target.getDate() - daysAgo);
+      const tStr = target.toISOString().slice(0,10);
+      const dates = Object.keys(priceMap).sort();
+      const past  = dates.filter(d => d <= tStr);
+      return past.length ? priceMap[past[past.length-1]] : null;
     }};
 
-    const getPriceAtDaysAgo = (data, daysAgo) => {{
-      const target = Math.floor(Date.now()/1000) - daysAgo * 86400;
-      let best = null, bestDiff = Infinity;
-      data.timestamps.forEach((t, i) => {{
-        const diff = Math.abs(t - target);
-        if (diff < bestDiff) {{ bestDiff = diff; best = data.closes[i]; }}
-      }});
-      return best;
+    const showBench = (ticker, priceMap) => {{
+      const dates  = Object.keys(priceMap).sort();
+      const latest = priceMap[dates[dates.length-1]];
+      label.textContent = ticker;
+      cards.innerHTML = PERIODS.map(([name, days]) => {{
+        const past = days === 1
+          ? priceMap[dates[dates.length-2]]
+          : getPriceAtDaysAgo(priceMap, days);
+        const val = (past && latest) ? fmtPct((latest - past) / past) : '—';
+        return `<div style="background:#fff8e1;border:1px solid #ffe082;border-radius:8px;padding:14px 18px;min-width:110px;text-align:center">
+          <div style="font-size:11px;color:#6c757d;margin-bottom:4px">${{name}}</div>
+          <div style="font-size:18px">${{val}}</div></div>`;
+      }}).join('');
+      row.style.display = 'block';
+      clearBtn.style.display = 'inline-block';
     }};
 
-    const run = async () => {{
+    const run = () => {{
       const ticker = input.value.trim().toUpperCase();
       if (!ticker) return;
-      btn.textContent = '⏳';
-      btn.disabled = true;
-      try {{
-        const data = await fetchBench(ticker);
-        if (!data) {{ label.textContent = `${{ticker}}: no data`; row.style.display='block'; return; }}
-        const latest = data.closes[data.closes.length - 1];
-        label.textContent = ticker;
-        cards.innerHTML = PERIODS.map(([name, days]) => {{
-          const past = days === 1
-            ? data.closes[data.closes.length - 2]
-            : getPriceAtDaysAgo(data, days);
-          const val = past ? fmtPct((latest - past) / past) : '—';
-          return `<div style="background:#fff8e1;border:1px solid #ffe082;border-radius:8px;padding:14px 18px;min-width:110px;text-align:center">
-            <div style="font-size:11px;color:#6c757d;margin-bottom:4px">${{name}}</div>
-            <div style="font-size:18px">${{val}}</div></div>`;
-        }}).join('');
+      if (BENCH_DATA[ticker]) {{
+        showBench(ticker, BENCH_DATA[ticker]);
+      }} else {{
+        label.textContent = `${{ticker}}: not available — only SPY and QQQ are pre-loaded`;
+        cards.innerHTML = '';
         row.style.display = 'block';
         clearBtn.style.display = 'inline-block';
-      }} catch(e) {{
-        label.textContent = `${{ticker}}: fetch failed`;
-        row.style.display = 'block';
       }}
-      btn.textContent = 'Compare';
-      btn.disabled = false;
     }};
 
     btn.addEventListener('click', run);
