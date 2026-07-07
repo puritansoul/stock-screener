@@ -1044,10 +1044,11 @@ def save_html_report(
   <!-- Holdings table (always visible) -->
   <div class="section">
     <h2>Holdings &amp; Positions</h2>
-    <p style="color:#555;font-size:12px;margin:-4px 0 10px">
+    <p style="color:#555;font-size:12px;margin:-4px 0 6px">
       <span style="background:#e8f5e9;padding:2px 8px;border-radius:4px">Green = held</span>&nbsp;
       <span style="background:#fffde7;padding:2px 8px;border-radius:4px">Yellow = high-conviction alert (not held)</span>
     </p>
+    <div id="col-toggles" style="margin-bottom:8px;display:flex;flex-wrap:wrap;gap:6px;font-size:12px"></div>
     <table id="holdings-table">
       <thead><tr>
         <th data-col="0">#</th><th data-col="1">Ticker</th><th data-col="2">Price</th>
@@ -1221,6 +1222,43 @@ def save_html_report(
         }});
         rows.forEach(r => tbody.appendChild(r));
       }});
+    }});
+  }})();
+
+  // ── Column hide/show toggles ─────────────────────────────────────────────────
+  (function() {{
+    const table   = document.getElementById('holdings-table');
+    const toggles = document.getElementById('col-toggles');
+    if (!table || !toggles) return;
+    const ths = Array.from(table.querySelectorAll('thead th'));
+    const hidden = new Set();
+
+    const setCol = (col, show) => {{
+      table.querySelectorAll(`tr`).forEach(row => {{
+        if (row.cells[col]) row.cells[col].style.display = show ? '' : 'none';
+      }});
+    }};
+
+    ths.forEach((th, i) => {{
+      const btn = document.createElement('button');
+      btn.textContent = th.textContent.replace(/[▲▼]/g,'').trim();
+      btn.style.cssText = 'padding:2px 8px;border-radius:10px;border:1px solid #aaa;background:#e3f2fd;color:#0d47a1;cursor:pointer;font-size:11px';
+      btn.title = 'Click to hide/show column';
+      btn.addEventListener('click', () => {{
+        if (hidden.has(i)) {{
+          hidden.delete(i);
+          setCol(i, true);
+          btn.style.background = '#e3f2fd';
+          btn.style.textDecoration = '';
+        }} else {{
+          hidden.add(i);
+          setCol(i, false);
+          btn.style.background = '#eee';
+          btn.style.textDecoration = 'line-through';
+          btn.style.color = '#999';
+        }}
+      }});
+      toggles.appendChild(btn);
     }});
   }})();
 
