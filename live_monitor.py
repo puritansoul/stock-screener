@@ -1193,6 +1193,20 @@ def save_html_report(
   .catch(() => {{
     document.getElementById('live-status').textContent = '⚠️ Live price fetch failed — showing last run data';
   }});
+
+  // Auto-refresh every 60 seconds during market hours (9:30am–4pm ET Mon–Fri)
+  const isMarketHours = () => {{
+    const now = new Date();
+    const et = new Date(now.toLocaleString('en-US', {{timeZone:'America/New_York'}}));
+    const day = et.getDay();
+    const hour = et.getHours();
+    const min  = et.getMinutes();
+    const mins = hour * 60 + min;
+    return day >= 1 && day <= 5 && mins >= 570 && mins < 960; // 9:30–4:00
+  }};
+  if (isMarketHours()) {{
+    setTimeout(() => location.reload(), 60000);
+  }}
 }})();
 </script>
 </body>
