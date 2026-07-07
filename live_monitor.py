@@ -983,7 +983,10 @@ def save_html_report(
     h2     {{ color: #1a237e; font-size:16px; margin:0 0 10px 0; }}
     table  {{ border-collapse: collapse; width: 100%; font-size:13px; }}
     th     {{ background: #1a237e; color: white; padding: 8px 10px;
-              text-align: left; white-space: nowrap; }}
+              text-align: left; white-space: nowrap; cursor:pointer; user-select:none; }}
+    th:hover {{ background: #283593; }}
+    th.sort-asc::after  {{ content: " ▲"; font-size:10px; }}
+    th.sort-desc::after {{ content: " ▼"; font-size:10px; }}
     td     {{ padding: 6px 10px; border-bottom: 1px solid #eee; white-space: nowrap; }}
     tr:hover td {{ filter: brightness(0.97); }}
     .badge {{ background:#e3f2fd; color:#0d47a1; padding:3px 10px;
@@ -1045,11 +1048,11 @@ def save_html_report(
       <span style="background:#e8f5e9;padding:2px 8px;border-radius:4px">Green = held</span>&nbsp;
       <span style="background:#fffde7;padding:2px 8px;border-radius:4px">Yellow = high-conviction alert (not held)</span>
     </p>
-    <table>
+    <table id="holdings-table">
       <thead><tr>
-        <th>#</th><th>Ticker</th><th>Price</th>
-        <th>Alloc %</th><th>Qty</th><th>Buy Price</th><th>Buy Date</th>
-        <th>$ Invested</th><th>Day Δ $</th><th>Day Δ %</th><th>Total Return</th><th>Score</th>
+        <th data-col="0">#</th><th data-col="1">Ticker</th><th data-col="2">Price</th>
+        <th data-col="3">Alloc %</th><th data-col="4">Qty</th><th data-col="5">Buy Price</th><th data-col="6">Buy Date</th>
+        <th data-col="7">$ Invested</th><th data-col="8">Day Δ $</th><th data-col="9">Day Δ %</th><th data-col="10">Total Return</th><th data-col="11">Score</th>
       </tr></thead>
       <tbody>{holdings_rows}</tbody>
     </table>
@@ -1193,6 +1196,33 @@ def save_html_report(
   .catch(() => {{
     document.getElementById('live-status').textContent = '⚠️ Live price fetch failed — showing last run data';
   }});
+
+  // ── Column sort ──────────────────────────────────────────────────────────────
+  (function() {{
+    const table = document.getElementById('holdings-table');
+    if (!table) return;
+    let sortCol = -1, sortAsc = true;
+    table.querySelectorAll('thead th').forEach(th => {{
+      th.addEventListener('click', () => {{
+        const col = parseInt(th.dataset.col);
+        sortAsc = (sortCol === col) ? !sortAsc : true;
+        sortCol = col;
+        table.querySelectorAll('thead th').forEach(t => t.classList.remove('sort-asc','sort-desc'));
+        th.classList.add(sortAsc ? 'sort-asc' : 'sort-desc');
+        const tbody = table.querySelector('tbody');
+        const rows  = Array.from(tbody.querySelectorAll('tr'));
+        rows.sort((a, b) => {{
+          const aText = (a.cells[col] ? a.cells[col].textContent : '').trim();
+          const bText = (b.cells[col] ? b.cells[col].textContent : '').trim();
+          const aNum  = parseFloat(aText.replace(/[^0-9.\-]/g, ''));
+          const bNum  = parseFloat(bText.replace(/[^0-9.\-]/g, ''));
+          const cmp   = isNaN(aNum) || isNaN(bNum) ? aText.localeCompare(bText) : aNum - bNum;
+          return sortAsc ? cmp : -cmp;
+        }});
+        rows.forEach(r => tbody.appendChild(r));
+      }});
+    }});
+  }})();
 
   // Auto-refresh every 60 seconds during market hours (9:30am–4pm ET Mon–Fri)
   const isMarketHours = () => {{
