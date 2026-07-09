@@ -1,5 +1,5 @@
 {
-  "capital": 64188.55,
+  "capital": 51505.6,
   "open_positions": [
     {
       "ticker": "SNOW",
@@ -26,6 +26,19 @@
       "orb_width": 3.04,
       "cost": 15907.2,
       "vol_ratio": 2.08
+    },
+    {
+      "ticker": "AMGN",
+      "side": "short",
+      "entry_date": "2026-07-09",
+      "entry_time": "15:08 ET",
+      "entry_price": 362.37,
+      "shares": 35,
+      "target": 357.2801,
+      "stop": 364.9149,
+      "orb_width": 5.0899,
+      "cost": 12682.95,
+      "vol_ratio": 1.54
     }
   ],
   "closed_today": [],
@@ -259,7 +272,7 @@
     }
   },
   "nav_history": {
-    "2026-07-09": 100057.96
+    "2026-07-09": 100067.36
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -388,6 +401,24 @@
       "exits": [],
       "portfolio_value": 100057.96,
       "note": "$100,058 | cash=$64,189 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "15:08 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "AMGN",
+          "side": "short",
+          "price": 362.37,
+          "shares": 35,
+          "target": 357.28,
+          "stop": 364.91
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 100067.36,
+      "note": "$100,067 | cash=$51,506 | open=3 | closed today=0 | day PnL=$+0"
     }
   ]
 }
