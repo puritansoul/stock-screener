@@ -1,6 +1,20 @@
 {
-  "capital": 100000.0,
-  "open_positions": [],
+  "capital": 80095.75,
+  "open_positions": [
+    {
+      "ticker": "SNOW",
+      "side": "long",
+      "entry_date": "2026-07-09",
+      "entry_time": "14:52 ET",
+      "entry_price": 265.39,
+      "shares": 75,
+      "target": 276.71,
+      "stop": 259.73,
+      "orb_width": 11.32,
+      "cost": 19904.25,
+      "vol_ratio": 1.42
+    }
+  ],
   "closed_today": [],
   "all_closed": [],
   "today": "2026-07-09",
@@ -280,6 +294,24 @@
       "exits": [],
       "portfolio_value": 100000.0,
       "note": "$100,000 | cash=$100,000 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "14:52 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "SNOW",
+          "side": "long",
+          "price": 265.39,
+          "shares": 75,
+          "target": 276.71,
+          "stop": 259.73
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 100000.0,
+      "note": "$100,000 | cash=$80,096 | open=1 | closed today=0 | day PnL=$+0"
     }
   ]
 }
