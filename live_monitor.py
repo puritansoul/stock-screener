@@ -132,13 +132,7 @@ def save_nav(nav: dict) -> None:
 # ── Notifications ─────────────────────────────────────────────────────────────
 
 def notify(title: str, message: str) -> None:
-    try:
-        subprocess.run(
-            ["osascript", "-e", f'display notification "{message}" with title "{title}" sound name "Glass"'],
-            check=False, capture_output=True,
-        )
-    except Exception:
-        pass
+    pass
 
 def open_report(path: str) -> None:
     try:
