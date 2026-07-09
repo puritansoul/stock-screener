@@ -69,5 +69,5 @@ jobs:
           find reports -name 'paper_*.html' 2>/dev/null | xargs -r git add -f
           git diff --cached --quiet && echo "No changes" || \
             git commit -m "paper: $(date -u '+%Y-%m-%d %H:%M') [skip ci]"
-          git pull --rebase origin main
+          git pull --rebase -X theirs origin main
           git push

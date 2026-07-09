@@ -31,5 +31,5 @@ git add intraday_index.html trading_hub.html consolidated.html
 find reports -name 'intraday_*.html' 2>/dev/null | xargs -r git add -f
 git diff --cached --quiet && exit 0
 git commit -m "intraday: $(TZ='America/New_York' date '+%Y-%m-%d %H:%M') ET local [skip ci]" >> "$LOG" 2>&1
-git pull --rebase origin main >> "$LOG" 2>&1
+git pull --rebase -X theirs origin main >> "$LOG" 2>&1
 git push origin main >> "$LOG" 2>&1
