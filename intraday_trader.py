@@ -343,6 +343,58 @@ def mark_to_market(state: dict, data: dict[str, dict]) -> float:
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
+def scan_diagnostics(state: dict, data: dict[str, dict]) -> list[dict]:
+    """Return per-ticker scan results for the dashboard diagnostic table."""
+    orb   = state.get("today_orb", {})
+    rows  = []
+    open_tks = {p["ticker"] for p in state["open_positions"]}
+    for tk in INTRADAY_UNIVERSE:
+        orb_data = orb.get(tk)
+        if tk not in data:
+            rows.append({"ticker": tk, "status": "no data", "close": None,
+                         "orb_hi": None, "orb_lo": None, "rsi": None, "vol_ratio": None})
+            continue
+        bars    = data[tk]["bars"]
+        avg_vol = data[tk]["avg_bar_vol"]
+        if bars.empty:
+            rows.append({"ticker": tk, "status": "empty bars", "close": None,
+                         "orb_hi": None, "orb_lo": None, "rsi": None, "vol_ratio": None})
+            continue
+        close_px = float(bars["Close"].iloc[-1])
+        bar_vol  = float(bars["Volume"].iloc[-1]) if "Volume" in bars.columns else 0
+        vol_ratio = round(bar_vol / avg_vol, 2) if avg_vol > 0 else None
+
+        if orb_data is None:
+            rows.append({"ticker": tk, "status": "orb not ready", "close": round(close_px, 2),
+                         "orb_hi": None, "orb_lo": None, "rsi": None, "vol_ratio": vol_ratio})
+            continue
+
+        orb_hi = orb_data["high"]
+        orb_lo = orb_data["low"]
+        orb_w  = orb_data["width"]
+        vol_ok = (avg_vol == 0) or (bar_vol >= VOLUME_FILTER * avg_vol)
+
+        if tk in open_tks:
+            status = "in position"
+        elif orb_w < 0.01:
+            status = "orb too tight"
+        elif close_px > orb_hi and vol_ok:
+            status = "LONG signal"
+        elif close_px < orb_lo and vol_ok:
+            status = "SHORT signal"
+        elif close_px > orb_hi:
+            status = "breakout — low vol"
+        elif close_px < orb_lo:
+            status = "breakdown — low vol"
+        else:
+            status = "inside range"
+
+        rows.append({"ticker": tk, "status": status, "close": round(close_px, 2),
+                     "orb_hi": round(orb_hi, 2), "orb_lo": round(orb_lo, 2),
+                     "orb_w": round(orb_w, 2), "vol_ratio": vol_ratio})
+    return rows
+
+
 def run_intraday():
     today_str = date.today().isoformat()
     now_str   = datetime.now(ET).strftime("%H:%M ET")
@@ -351,40 +403,34 @@ def run_intraday():
 
     print(f"Intraday Trader — {today_str} {now_str}  phase={phase}")
 
-    if phase in ("pre_market", "after_hours"):
-        print("  Outside market hours — skipping.")
-        return
-
-    # Reset state for new day
+    # Always reset state for new day
     if state.get("today") != today_str:
         print(f"  New trading day — resetting state")
         reset_for_new_day(state, today_str)
 
     log_entry = {"date": today_str, "time": now_str, "phase": phase, "entries": [], "exits": []}
 
-    # Fetch data
+    # Always fetch data so dashboard shows current snapshot
     print(f"  Fetching 5-min bars for {len(INTRADAY_UNIVERSE)} tickers …")
     data = fetch_intraday(INTRADAY_UNIVERSE)
     print(f"  Got data for {len(data)} tickers")
 
-    # Refresh ORB (re-compute each run in case early bars are still forming)
-    if phase in ("orb_window", "trading", "force_close"):
+    if phase not in ("pre_market", "after_hours"):
+        # Refresh ORB
         state["today_orb"] = compute_orb(data)
         print(f"  ORB computed for {len(state['today_orb'])} tickers")
 
-    force = (phase == "force_close")
+        force = (phase == "force_close")
 
-    # Process exits
-    if state["open_positions"]:
-        exits = check_exits(state, data, force=force)
-        log_entry["exits"] = exits
+        if state["open_positions"]:
+            exits = check_exits(state, data, force=force)
+            log_entry["exits"] = exits
 
-    # Scan entries (not during force_close or orb_window)
-    if phase == "trading" and not force:
-        entries = scan_entries(state, data)
-        log_entry["entries"] = entries
+        if phase == "trading":
+            entries = scan_entries(state, data)
+            log_entry["entries"] = entries
 
-    # Mark to market
+    # Mark to market and save
     portfolio_value = mark_to_market(state, data)
     state["nav_history"][today_str] = round(portfolio_value, 2)
 
@@ -401,12 +447,43 @@ def run_intraday():
     print(f"\n  Portfolio: ${portfolio_value:,.0f}  ({total_ret:+,.0f} / {total_ret/STARTING_CAPITAL:+.2%})")
     print(f"  Cash: ${state['capital']:,.0f}  |  Open: {n_open}  |  Today PnL: ${pnl_today:+,.0f}")
 
-    build_intraday_dashboard(state, data)
+    diag = scan_diagnostics(state, data)
+    build_intraday_dashboard(state, data, diag)
 
 
 # ── Dashboard ─────────────────────────────────────────────────────────────────
 
-def build_intraday_dashboard(state: dict, data: dict[str, dict]):
+def _diag_rows(diag: list[dict]) -> str:
+    status_color = {
+        "LONG signal":        "#1b5e20",
+        "SHORT signal":       "#880e4f",
+        "in position":        "#0d47a1",
+        "breakout — low vol": "#e65100",
+        "breakdown — low vol":"#e65100",
+        "inside range":       "#555",
+        "orb not ready":      "#999",
+        "orb too tight":      "#999",
+        "no data":            "#bbb",
+        "empty bars":         "#bbb",
+    }
+    rows = ""
+    for r in diag:
+        sc = status_color.get(r["status"], "#555")
+        bold = "font-weight:bold;" if "signal" in r["status"] else ""
+        rows += (
+            f'<tr><td style="font-weight:bold">{r["ticker"]}</td>'
+            f'<td style="color:{sc};{bold}">{r["status"]}</td>'
+            f'<td style="text-align:right">{("$"+str(r["close"])) if r["close"] else "—"}</td>'
+            f'<td style="text-align:right">{("$"+str(r.get("orb_hi",""))) if r.get("orb_hi") else "—"}</td>'
+            f'<td style="text-align:right">{("$"+str(r.get("orb_lo",""))) if r.get("orb_lo") else "—"}</td>'
+            f'<td style="text-align:right">{("$"+str(r.get("orb_w",""))) if r.get("orb_w") else "—"}</td>'
+            f'<td style="text-align:right">{(str(r["vol_ratio"])+"×") if r["vol_ratio"] else "—"}</td>'
+            f'</tr>'
+        )
+    return rows or '<tr><td colspan="7" style="color:#999;text-align:center;padding:12px">No data yet</td></tr>'
+
+
+def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict] | None = None):
     today_str = date.today().isoformat()
     open_pos  = state["open_positions"]
     closed_td = state["closed_today"]
@@ -629,6 +706,23 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict]):
           </p>
         </div>
       </div>
+    </details>
+  </div>
+
+  <!-- Scan diagnostics -->
+  <div class="section">
+    <details>
+      <summary>Scan Diagnostics — {len(diag or [])} tickers checked</summary>
+      <p style="color:#666;font-size:12px;margin:8px 0 6px">
+        Shows what the scanner saw for each ticker this run. Entries only fire when status = "LONG signal" or "SHORT signal".
+      </p>
+      <table style="margin-top:4px">
+        <thead><tr>
+          <th>Ticker</th><th>Status</th><th>Close</th>
+          <th>ORB High</th><th>ORB Low</th><th>ORB Width</th><th>Vol Ratio</th>
+        </tr></thead>
+        <tbody>{_diag_rows(diag or [])}</tbody>
+      </table>
     </details>
   </div>
 

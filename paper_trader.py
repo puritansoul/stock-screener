@@ -259,32 +259,42 @@ def run_paper_trader():
     open_tickers    = {p["ticker"] for p in open_pos}
     entries_today   = []
 
+    # Always scan to build diagnostic — even if slots_available == 0
+    all_scan = []
+    candidates = []
+    for tk in universe[:300]:
+        if tk in open_tickers:
+            continue
+        sig = compute_signals(prices, tk)
+        if sig is None:
+            continue
+        close, sma200, rsi2, atr_val = sig["close"], sig["sma200"], sig["rsi2"], sig["atr"]
+        if close < MIN_PRICE:
+            continue
+        long_signal  = close > sma200 and rsi2 < RSI_LONG_ENTRY
+        short_signal = close < sma200 and rsi2 > RSI_SHORT_ENTRY
+        trend = "above SMA200" if close > sma200 else "below SMA200"
+        status = ("LONG signal" if long_signal else
+                  "SHORT signal" if short_signal else
+                  f"{trend}")
+        all_scan.append({"ticker": tk, "rsi2": round(rsi2, 1), "close": round(close, 2),
+                          "sma200": round(sma200, 2), "status": status})
+        if long_signal:
+            candidates.append({"ticker": tk, "side": "long",  "rsi2": rsi2, "close": close, "atr": atr_val})
+        elif short_signal:
+            candidates.append({"ticker": tk, "side": "short", "rsi2": rsi2, "close": close, "atr": atr_val})
+
+    # Save top 40 closest-to-signal tickers for dashboard
+    all_scan_sorted = sorted(all_scan, key=lambda x: min(x["rsi2"], 100 - x["rsi2"]))
+    state["last_scan"] = all_scan_sorted[:40]
+
     if slots_available > 0:
-        candidates = []
-        for tk in universe[:300]:
-            if tk in open_tickers:
-                continue
-            sig = compute_signals(prices, tk)
-            if sig is None:
-                continue
-            close, sma200, rsi2, atr_val = sig["close"], sig["sma200"], sig["rsi2"], sig["atr"]
-
-            # Skip cheap / illiquid stocks
-            if close < MIN_PRICE:
-                continue
-
-            long_signal  = close > sma200 and rsi2 < RSI_LONG_ENTRY
-            short_signal = close < sma200 and rsi2 > RSI_SHORT_ENTRY
-
-            if long_signal:
-                candidates.append({"ticker": tk, "side": "long",  "rsi2": rsi2, "close": close, "atr": atr_val})
-            elif short_signal:
-                candidates.append({"ticker": tk, "side": "short", "rsi2": rsi2, "close": close, "atr": atr_val})
 
         # Sort: best long = lowest RSI2, best short = highest RSI2
         long_cands  = sorted([c for c in candidates if c["side"] == "long"],  key=lambda x: x["rsi2"])
         short_cands = sorted([c for c in candidates if c["side"] == "short"], key=lambda x: -x["rsi2"])
         ordered     = (long_cands + short_cands)[:slots_available]
+        state["last_scan"] = candidates  # save for dashboard
 
         for cand in ordered:
             tk    = cand["ticker"]
@@ -364,6 +374,27 @@ def run_paper_trader():
 
 
 # ── HTML Dashboard ────────────────────────────────────────────────────────────
+
+def _scan_rows(scan: list[dict]) -> str:
+    if not scan:
+        return '<tr><td colspan="5" style="color:#999;text-align:center;padding:12px">No scan data yet — run once during market hours</td></tr>'
+    rows = ""
+    for r in scan:
+        is_signal = "signal" in r["status"]
+        sc = "#1b5e20" if r["status"] == "LONG signal" else ("#880e4f" if r["status"] == "SHORT signal" else "#555")
+        bold = "font-weight:bold;" if is_signal else ""
+        rsi_color = "#1b5e20" if r["rsi2"] < 15 else ("#880e4f" if r["rsi2"] > 85 else "#333")
+        rows += (
+            f'<tr>'
+            f'<td style="font-weight:bold">{r["ticker"]}</td>'
+            f'<td style="color:{sc};{bold}">{r["status"]}</td>'
+            f'<td style="text-align:right;color:{rsi_color};font-weight:bold">{r["rsi2"]}</td>'
+            f'<td style="text-align:right">${r["close"]}</td>'
+            f'<td style="text-align:right">${r["sma200"]}</td>'
+            f'</tr>'
+        )
+    return rows
+
 
 def build_paper_dashboard(state: dict, prices: pd.DataFrame):
     open_pos  = state["open_positions"]
@@ -605,6 +636,23 @@ def build_paper_dashboard(state: dict, prices: pd.DataFrame):
           <th>P&amp;L</th><th>Entry Date</th><th>Exit Date</th><th>Reason</th>
         </tr></thead>
         <tbody>{closed_rows}</tbody>
+      </table>
+    </details>
+  </div>
+
+  <!-- Scan diagnostics -->
+  <div class="section">
+    <details>
+      <summary>Last Scan — RSI(2) Closest to Signal (top 40 of universe)</summary>
+      <p style="color:#666;font-size:12px;margin:8px 0 6px">
+        Entry fires when RSI(2) &lt; {RSI_LONG_ENTRY} (long, above SMA200) or &gt; {RSI_SHORT_ENTRY} (short, below SMA200).
+        Sorted by how close to threshold. Green = signal fired today.
+      </p>
+      <table style="margin-top:4px">
+        <thead><tr>
+          <th>Ticker</th><th>Status</th><th>RSI(2)</th><th>Close</th><th>SMA(200)</th>
+        </tr></thead>
+        <tbody>{_scan_rows(state.get("last_scan", []))}</tbody>
       </table>
     </details>
   </div>
