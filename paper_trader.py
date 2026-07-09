@@ -47,10 +47,7 @@ MIN_AVG_VOLUME    = 500_000    # skip illiquid names
 BASE_DIR    = Path(__file__).parent
 TRADES_FILE = BASE_DIR / "paper_trades.json"
 
-WIKI_URL = (
-    "https://en.wikipedia.org/w/index.php"
-    "?action=raw&section=0&title=List_of_S%26P_500_companies"
-)
+WIKI_URL = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
 
 # ── State ─────────────────────────────────────────────────────────────────────
 
@@ -73,15 +70,14 @@ def save_trades(state: dict) -> None:
 
 def get_sp500_tickers() -> list[str]:
     try:
+        from io import StringIO
         resp = requests.get(WIKI_URL, headers={"User-Agent": "Mozilla/5.0"}, timeout=20)
-        tickers = []
-        for line in resp.text.splitlines():
-            if "||" in line:
-                parts = line.split("||")
-                if len(parts) > 1:
-                    tk = parts[0].replace("|", "").strip()
-                    if tk and 1 <= len(tk) <= 5 and tk.isupper() and tk.isalpha():
-                        tickers.append(tk.replace(".", "-"))
+        resp.raise_for_status()
+        tickers = (
+            pd.read_html(StringIO(resp.text))[0]["Symbol"]
+            .str.replace(".", "-", regex=False)
+            .tolist()
+        )
         if len(tickers) > 400:
             return tickers
     except Exception:

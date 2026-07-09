@@ -33,7 +33,8 @@ $PYTHON paper_trader.py >> "$LOG" 2>&1
 $PYTHON build_hub.py >> "$LOG" 2>&1
 $PYTHON build_consolidated.py >> "$LOG" 2>&1
 
-git add paper_trades.json paper_index.html trading_hub.html consolidated.html
+# Push only HTML dashboards — JSON state files are owned by GitHub Actions to avoid conflicts
+git add paper_index.html trading_hub.html consolidated.html
 find reports -name 'paper_*.html' 2>/dev/null | xargs -r git add -f
 git diff --cached --quiet && exit 0
 git commit -m "paper: $(TZ='America/New_York' date '+%Y-%m-%d %H:%M') ET local [skip ci]" >> "$LOG" 2>&1

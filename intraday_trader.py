@@ -43,17 +43,47 @@ MARKET_OPEN_TIME  = dt_time(9, 30)    # 9:30am ET
 
 ET = ZoneInfo("America/New_York")
 
-INTRADAY_UNIVERSE = [
-    "AAPL", "MSFT", "AMZN", "NVDA", "GOOGL", "META", "TSLA",
-    "JPM", "V", "UNH", "XOM", "LLY", "JNJ", "MA", "HD", "PG",
-    "ABBV", "CVX", "AVGO", "PEP", "KO", "ADBE", "CRM", "TMO", "COST",
-    "WMT", "BAC", "ORCL", "NFLX", "AMD", "QCOM", "TXN", "GS", "BLK",
-    "SPGI", "MCD", "AMGN", "GILD", "ISRG", "NOW", "PANW", "MELI",
-    "UBER", "SNOW", "COIN",
-]
+# Universe loaded dynamically from S&P 500 at startup (cached daily in sp500_cache.json)
+INTRADAY_UNIVERSE: list[str] = []
 
-BASE_DIR    = Path(__file__).parent
-TRADES_FILE = BASE_DIR / "intraday_trades.json"
+BASE_DIR      = Path(__file__).parent
+TRADES_FILE   = BASE_DIR / "intraday_trades.json"
+SP500_CACHE   = BASE_DIR / "sp500_cache.json"
+
+WIKI_URL = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
+
+def get_sp500_tickers() -> list[str]:
+    """Fetch S&P 500 tickers via HTML table, cached for the day."""
+    today = date.today().isoformat()
+    if SP500_CACHE.exists():
+        try:
+            cached = json.loads(SP500_CACHE.read_text())
+            if cached.get("date") == today and len(cached.get("tickers", [])) > 400:
+                return cached["tickers"]
+        except Exception:
+            pass
+    try:
+        import requests
+        from io import StringIO
+        resp = requests.get(WIKI_URL, headers={"User-Agent": "Mozilla/5.0"}, timeout=20)
+        resp.raise_for_status()
+        tickers = (
+            pd.read_html(StringIO(resp.text))[0]["Symbol"]
+            .str.replace(".", "-", regex=False)
+            .tolist()
+        )
+        if len(tickers) > 400:
+            SP500_CACHE.write_text(json.dumps({"date": today, "tickers": tickers}))
+            print(f"  S&P 500 universe: {len(tickers)} tickers (refreshed)")
+            return tickers
+    except Exception as e:
+        print(f"  S&P 500 fetch error: {e}")
+    if SP500_CACHE.exists():
+        try:
+            return json.loads(SP500_CACHE.read_text()).get("tickers", [])
+        except Exception:
+            pass
+    return []
 
 # ── State ─────────────────────────────────────────────────────────────────────
 
@@ -524,12 +554,19 @@ def scan_diagnostics(state: dict, data: dict[str, dict]) -> list[dict]:
 
 
 def run_intraday():
+    global INTRADAY_UNIVERSE
     today_str = date.today().isoformat()
     now_str   = datetime.now(ET).strftime("%H:%M ET")
     phase     = get_market_phase()
     state     = load_state()
 
-    print(f"Intraday Trader — {today_str} {now_str}  phase={phase}")
+    if not INTRADAY_UNIVERSE:
+        INTRADAY_UNIVERSE = get_sp500_tickers()
+        if not INTRADAY_UNIVERSE:
+            print("  Could not load S&P 500 universe — aborting")
+            return
+
+    print(f"Intraday Trader — {today_str} {now_str}  phase={phase}  universe={len(INTRADAY_UNIVERSE)}")
 
     # Always reset state for new day
     if state.get("today") != today_str:

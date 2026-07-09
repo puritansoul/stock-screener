@@ -26,8 +26,8 @@ echo "$(TZ='America/New_York' date '+%Y-%m-%d %H:%M:%S ET') — running intraday
 cd "$SCRIPT_DIR"
 $PYTHON intraday_trader.py >> "$LOG" 2>&1
 
-# Push updated state + dashboard to GitHub
-git add intraday_trades.json intraday_index.html trading_hub.html consolidated.html
+# Push only HTML dashboards — JSON state files are owned by GitHub Actions to avoid conflicts
+git add intraday_index.html trading_hub.html consolidated.html
 find reports -name 'intraday_*.html' 2>/dev/null | xargs -r git add -f
 git diff --cached --quiet && exit 0
 git commit -m "intraday: $(TZ='America/New_York' date '+%Y-%m-%d %H:%M') ET local [skip ci]" >> "$LOG" 2>&1
