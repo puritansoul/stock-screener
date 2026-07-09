@@ -294,7 +294,6 @@ def run_paper_trader():
         long_cands  = sorted([c for c in candidates if c["side"] == "long"],  key=lambda x: x["rsi2"])
         short_cands = sorted([c for c in candidates if c["side"] == "short"], key=lambda x: -x["rsi2"])
         ordered     = (long_cands + short_cands)[:slots_available]
-        state["last_scan"] = candidates  # save for dashboard
 
         for cand in ordered:
             tk    = cand["ticker"]
