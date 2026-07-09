@@ -529,11 +529,11 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
               if side == "long" else
               '<span style="background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">SHORT</span>')
         open_rows += f"""
-        <tr>
+        <tr data-ticker="{tk}" data-qty="{shares}" data-buypx="{entry:.2f}" data-side="{side}">
           <td style="font-weight:bold">{tk}</td><td>{sb}</td>
-          <td>${entry:,.2f}</td><td>${cur_px:,.2f}</td>
+          <td>${entry:,.2f}</td><td class="live-price">${cur_px:,.2f}</td>
           <td style="text-align:right">{shares:,}</td>
-          <td style="text-align:right;color:{uc};font-weight:bold">${unreal:+,.0f} ({unreal_pct:+.2f}%)</td>
+          <td class="live-unreal" style="text-align:right;color:{uc};font-weight:bold">${unreal:+,.0f} ({unreal_pct:+.2f}%)</td>
           <td>${target:,.2f}</td><td>${stop:,.2f}</td>
           <td style="color:#666;font-size:12px">{pos.get('entry_time','—')}</td>
         </tr>"""
@@ -592,7 +592,6 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Intraday Trader — {today_str}</title>
-  <meta http-equiv="refresh" content="300">
   <style>
     *, *::before, *::after {{ box-sizing: border-box; }}
     body {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -626,7 +625,7 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
     <span class="badge" style="background:#e8f5e9;color:{phase_badge[1]}">{phase_badge[0]}</span>&nbsp;
     <span class="badge">ORB {ORB_MINUTES}-min</span>&nbsp;
     <span class="badge">{len(open_pos)} open</span>&nbsp;
-    <span class="badge">Auto-refresh 5 min</span>
+    <span class="badge" id="live-badge">Live prices every 30s</span>
   </p>
 
   <div class="section">
@@ -634,16 +633,16 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
     <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px">
       <div class="card">
         <div class="card-label">Portfolio Value</div>
-        <div class="card-value" style="color:#1a237e">${portfolio_value:,.0f}</div>
+        <div class="card-value" id="port-value" style="color:#1a237e">${portfolio_value:,.0f}</div>
       </div>
       <div class="card">
         <div class="card-label">Total Return</div>
-        <div class="card-value" style="color:{gain_color}">{gain_sign}${abs(total_ret):,.0f}<br>
-          <span style="font-size:14px">{gain_sign}{abs(total_pct):.2f}%</span></div>
+        <div class="card-value" id="port-total" style="color:{gain_color}">{gain_sign}${abs(total_ret):,.0f}<br>
+          <span style="font-size:14px" id="port-total-pct">{gain_sign}{abs(total_pct):.2f}%</span></div>
       </div>
       <div class="card">
         <div class="card-label">Day P&amp;L</div>
-        <div class="card-value" style="color:{pnl_color}">${pnl_today:+,.0f}</div>
+        <div class="card-value" id="port-today" style="color:{pnl_color}">${pnl_today:+,.0f}</div>
       </div>
       <div class="card">
         <div class="card-label">Cash</div>
@@ -726,11 +725,121 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
     </details>
   </div>
 
-  <p style="color:#bbb;font-size:11px;margin-top:16px">
+  <p style="color:#bbb;font-size:11px;margin-top:16px" id="live-status">
     intraday_trader.py &nbsp;|&nbsp; Simulated only — not real money &nbsp;|&nbsp; Not financial advice.
   </p>
 
 <script>
+// ── Finnhub live prices ───────────────────────────────────────────────────────
+(function() {{
+  const TOKEN = 'd93d6v1r01qgqnua64j0d93d6v1r01qgqnua64jg';
+  const STARTING = {STARTING_CAPITAL};
+  const delay = ms => new Promise(r => setTimeout(r, ms));
+
+  function isMarketHours() {{
+    const now = new Date();
+    const et = new Date(now.toLocaleString('en-US', {{timeZone: 'America/New_York'}}));
+    const day = et.getDay();
+    if (day === 0 || day === 6) return false;
+    const h = et.getHours(), m = et.getMinutes();
+    const mins = h * 60 + m;
+    return mins >= 570 && mins < 960; // 9:30–4:00
+  }}
+
+  async function fetchPrices() {{
+    const rows = document.querySelectorAll('tr[data-ticker]');
+    if (!rows.length) return;
+    const quotes = {{}};
+    for (const row of rows) {{
+      const tk = row.dataset.ticker;
+      try {{
+        const q = await fetch(`https://finnhub.io/api/v1/quote?symbol=${{tk}}&token=${{TOKEN}}`).then(r => r.json());
+        if (q && q.c) quotes[tk] = {{ price: q.c, prevClose: q.pc }};
+      }} catch(e) {{}}
+      await delay(1100);
+    }}
+    applyPrices(rows, quotes);
+    updatePortfolio(rows, quotes);
+    const t = new Date().toLocaleTimeString('en-US', {{timeZone:'America/New_York'}});
+    const badge = document.getElementById('live-badge');
+    const status = document.getElementById('live-status');
+    if (badge) badge.textContent = `Updated ${{t}} ET`;
+    if (status) {{
+      status.innerHTML = `Live prices as of ${{t}} ET &nbsp;|&nbsp; Simulated only — not real money.`;
+      status.style.color = '#388e3c';
+    }}
+  }}
+
+  function applyPrices(rows, quotes) {{
+    for (const row of rows) {{
+      const tk   = row.dataset.ticker;
+      const qty  = parseFloat(row.dataset.qty);
+      const buy  = parseFloat(row.dataset.buypx);
+      const side = row.dataset.side;
+      const q    = quotes[tk];
+      if (!q) continue;
+      const price = q.price;
+
+      const priceCell  = row.querySelector('.live-price');
+      const unrealCell = row.querySelector('.live-unreal');
+      if (priceCell) priceCell.textContent = '$' + price.toLocaleString('en-US', {{minimumFractionDigits:2, maximumFractionDigits:2}});
+
+      if (unrealCell) {{
+        const unreal = side === 'long' ? (price - buy) * qty : (buy - price) * qty;
+        const cost   = buy * qty;
+        const pct    = cost > 0 ? unreal / cost * 100 : 0;
+        const sign   = unreal >= 0 ? '+' : '';
+        unrealCell.textContent = `${{sign}}$${{Math.abs(unreal).toLocaleString('en-US', {{maximumFractionDigits:0}})}} (${{pct >= 0 ? '+' : ''}}${{pct.toFixed(2)}}%)`;
+        unrealCell.style.color = unreal >= 0 ? '#2e7d32' : '#c62828';
+      }}
+    }}
+  }}
+
+  function updatePortfolio(rows, quotes) {{
+    let openValue = 0;
+    for (const row of rows) {{
+      const tk   = row.dataset.ticker;
+      const qty  = parseFloat(row.dataset.qty);
+      const buy  = parseFloat(row.dataset.buypx);
+      const side = row.dataset.side;
+      const q    = quotes[tk];
+      if (!q) {{ openValue += buy * qty; continue; }}
+      const price = q.price;
+      openValue += side === 'long' ? price * qty : buy * qty + (buy - price) * qty;
+    }}
+    const cashVal = (function() {{
+      const cards = document.querySelectorAll('.card');
+      for (const c of cards) {{
+        const lbl = c.querySelector('.card-label');
+        if (lbl && lbl.textContent.trim() === 'Cash') {{
+          const val = c.querySelector('.card-value');
+          if (val) return parseFloat(val.textContent.replace(/[$,]/g, '')) || 0;
+        }}
+      }}
+      return 0;
+    }})();
+    const portVal = cashVal + openValue;
+    const ret     = portVal - STARTING;
+    const retPct  = ret / STARTING * 100;
+    const sign    = ret >= 0 ? '+' : '';
+    const color   = ret >= 0 ? '#2e7d32' : '#c62828';
+
+    const portEl  = document.getElementById('port-value');
+    const totalEl = document.getElementById('port-total');
+    if (portEl) portEl.textContent = '$' + portVal.toLocaleString('en-US', {{maximumFractionDigits:0}});
+    if (totalEl) {{
+      totalEl.innerHTML = `${{sign}}$${{Math.abs(ret).toLocaleString('en-US',{{maximumFractionDigits:0}})}}<br><span style="font-size:14px">${{sign}}${{Math.abs(retPct).toFixed(2)}}%</span>`;
+      totalEl.style.color = color;
+    }}
+  }}
+
+  if (isMarketHours()) {{
+    fetchPrices();
+    setInterval(fetchPrices, 30000);  // every 30s for intraday
+  }}
+}})();
+
+// NAV chart
 (function() {{
   const data = {nav_js};
   if (!data.dates.length) return;
