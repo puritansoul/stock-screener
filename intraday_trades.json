@@ -1,5 +1,5 @@
 {
-  "capital": 80095.75,
+  "capital": 64188.55,
   "open_positions": [
     {
       "ticker": "SNOW",
@@ -13,6 +13,19 @@
       "orb_width": 11.32,
       "cost": 19904.25,
       "vol_ratio": 1.42
+    },
+    {
+      "ticker": "ABBV",
+      "side": "short",
+      "entry_date": "2026-07-09",
+      "entry_time": "15:02 ET",
+      "entry_price": 248.55,
+      "shares": 64,
+      "target": 245.51,
+      "stop": 250.07,
+      "orb_width": 3.04,
+      "cost": 15907.2,
+      "vol_ratio": 2.08
     }
   ],
   "closed_today": [],
@@ -246,7 +259,7 @@
     }
   },
   "nav_history": {
-    "2026-07-09": 100029.25
+    "2026-07-09": 100078.75
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -348,6 +361,24 @@
       "exits": [],
       "portfolio_value": 100029.25,
       "note": "$100,029 | cash=$80,096 | open=1 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "15:02 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "ABBV",
+          "side": "short",
+          "price": 248.55,
+          "shares": 64,
+          "target": 245.51,
+          "stop": 250.07
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 100078.75,
+      "note": "$100,079 | cash=$64,189 | open=2 | closed today=0 | day PnL=$+0"
     }
   ]
 }
