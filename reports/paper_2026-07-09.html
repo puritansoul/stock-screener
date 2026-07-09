@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paper Trader — 2026-07-09</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            margin: 0; padding: 16px 20px; color: #222; background: #f0f2f5; }
+    h1   { color: #1a237e; margin-bottom: 4px; font-size: 22px; }
+    h2   { color: #1a237e; font-size: 16px; margin: 0 0 10px 0; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    th    { background: #1a237e; color: white; padding: 8px 10px; text-align: left; white-space: nowrap; }
+    td    { padding: 6px 10px; border-bottom: 1px solid #eee; white-space: nowrap; }
+    tr:hover td { background: #f5f5f5; }
+    .section { background: white; border: 1px solid #e0e0e0; border-radius: 8px;
+                padding: 18px 20px; margin: 12px 0; overflow-x: auto; }
+    .badge { background: #e3f2fd; color: #0d47a1; padding: 3px 10px;
+              border-radius: 12px; font-size: 12px; font-weight: bold; }
+    .card  { background: #f0f4ff; border: 1px solid #c5cae9; border-radius: 10px;
+              padding: 16px 24px; min-width: 160px; }
+    .card-label { font-size: 11px; color: #6c757d; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+    .card-value { font-size: 28px; font-weight: bold; color: #1a237e; line-height: 1; }
+    details summary { cursor: pointer; font-size: 16px; font-weight: bold; color: #1a237e;
+                       padding: 4px 0; user-select: none; list-style: none; }
+    details summary::before { content: "▶ "; font-size: 12px; }
+    details[open] summary::before { content: "▼ "; font-size: 12px; }
+    details summary::-webkit-details-marker { display: none; }
+    canvas { max-width: 100%; }
+  </style>
+</head>
+<body>
+  <h1>📈 Paper Trading Bot — RSI(2) Strategy</h1>
+  <p style="margin: 6px 0 12px">
+    <span class="badge">2026-07-09</span>&nbsp;
+    <span class="badge">RSI(2) Mean Reversion</span>&nbsp;
+    <span class="badge">10 open positions</span>&nbsp;
+    <span class="badge">$100k starting capital</span>
+  </p>
+
+  <!-- Summary cards -->
+  <div class="section">
+    <h2>Portfolio Summary</h2>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px">
+      <div class="card">
+        <div class="card-label">Portfolio Value</div>
+        <div class="card-value" style="color:#1a237e">$100,000</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Total Return</div>
+        <div class="card-value" style="color:#2e7d32">+$0<br>
+          <span style="font-size:14px">+0.00%</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label">Cash</div>
+        <div class="card-value">$13,638</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Open Positions</div>
+        <div class="card-value">10 / 10</div>
+      </div>
+    </div>
+    <canvas id="nav-chart" height="100"></canvas>
+  </div>
+
+  <!-- Open positions -->
+  <div class="section">
+    <h2>Open Positions</h2>
+    <table>
+      <thead><tr>
+        <th>Ticker</th><th>Side</th><th>Entry</th><th>Current</th>
+        <th>Shares</th><th>$ Invested</th><th>Unrealized P&amp;L</th>
+        <th>Stop</th><th>RSI(2) at entry</th><th>Entry Date</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td style="font-weight:bold">SW</td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$42.08</td>
+          <td>$42.08</td>
+          <td style="text-align:right">475</td>
+          <td style="text-align:right">$19,988</td>
+          <td style="text-align:right;color:#2e7d32;font-weight:bold">+$0 (+0.00%)</td>
+          <td>$38.57</td>
+          <td style="color:#666;font-size:12px">0.3</td>
+          <td style="color:#666;font-size:12px">2026-07-09</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">RL</td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$380.36</td>
+          <td>$380.36</td>
+          <td style="text-align:right">42</td>
+          <td style="text-align:right">$15,975</td>
+          <td style="text-align:right;color:#c62828;font-weight:bold">$0 (-0.00%)</td>
+          <td>$358.06</td>
+          <td style="color:#666;font-size:12px">1.07</td>
+          <td style="color:#666;font-size:12px">2026-07-09</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">DAL</td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$87.29</td>
+          <td>$87.29</td>
+          <td style="text-align:right">136</td>
+          <td style="text-align:right">$11,871</td>
+          <td style="text-align:right;color:#2e7d32;font-weight:bold">+$0 (+0.00%)</td>
+          <td>$77.91</td>
+          <td style="color:#666;font-size:12px">1.35</td>
+          <td style="color:#666;font-size:12px">2026-07-09</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">UAL</td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$126.22</td>
+          <td>$126.22</td>
+          <td style="text-align:right">57</td>
+          <td style="text-align:right">$7,195</td>
+          <td style="text-align:right;color:#2e7d32;font-weight:bold">+$0 (+0.00%)</td>
+          <td>$107.92</td>
+          <td style="color:#666;font-size:12px">1.56</td>
+          <td style="color:#666;font-size:12px">2026-07-09</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">FCX</td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$57.50</td>
+          <td>$57.50</td>
+          <td style="text-align:right">99</td>
+          <td style="text-align:right">$5,692</td>
+          <td style="text-align:right;color:#2e7d32;font-weight:bold">+$0 (+0.00%)</td>
+          <td>$48.43</td>
+          <td style="color:#666;font-size:12px">3.61</td>
+          <td style="color:#666;font-size:12px">2026-07-09</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">MAS</td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$75.75</td>
+          <td>$75.75</td>
+          <td style="text-align:right">89</td>
+          <td style="text-align:right">$6,742</td>
+          <td style="text-align:right;color:#2e7d32;font-weight:bold">+$0 (+0.00%)</td>
+          <td>$66.96</td>
+          <td style="color:#666;font-size:12px">4.17</td>
+          <td style="color:#666;font-size:12px">2026-07-09</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">SOLV</td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$75.18</td>
+          <td>$75.18</td>
+          <td style="text-align:right">86</td>
+          <td style="text-align:right">$6,465</td>
+          <td style="text-align:right;color:#2e7d32;font-weight:bold">+$0 (+0.00%)</td>
+          <td>$70.49</td>
+          <td style="color:#666;font-size:12px">4.61</td>
+          <td style="color:#666;font-size:12px">2026-07-09</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">KDP</td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$30.97</td>
+          <td>$30.97</td>
+          <td style="text-align:right">168</td>
+          <td style="text-align:right">$5,203</td>
+          <td style="text-align:right;color:#c62828;font-weight:bold">$0 (-0.00%)</td>
+          <td>$28.04</td>
+          <td style="color:#666;font-size:12px">4.94</td>
+          <td style="color:#666;font-size:12px">2026-07-09</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">GE</td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$356.03</td>
+          <td>$356.03</td>
+          <td style="text-align:right">11</td>
+          <td style="text-align:right">$3,916</td>
+          <td style="text-align:right;color:#c62828;font-weight:bold">$0 (-0.00%)</td>
+          <td>$334.29</td>
+          <td style="color:#666;font-size:12px">5.2</td>
+          <td style="color:#666;font-size:12px">2026-07-09</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">PPG</td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$114.28</td>
+          <td>$114.28</td>
+          <td style="text-align:right">29</td>
+          <td style="text-align:right">$3,314</td>
+          <td style="text-align:right;color:#c62828;font-weight:bold">$0 (-0.00%)</td>
+          <td>$106.75</td>
+          <td style="color:#666;font-size:12px">5.24</td>
+          <td style="color:#666;font-size:12px">2026-07-09</td>
+        </tr></tbody>
+    </table>
+  </div>
+
+  <!-- Statistics -->
+  <div class="section">
+    <details open>
+      <summary>Strategy Statistics</summary>
+      <div style="display:flex;gap:30px;flex-wrap:wrap;margin-top:12px">
+        <table style="width:auto;min-width:260px">
+          <tbody>
+    <tr><td>Starting Capital</td><td style="text-align:right;font-weight:bold">$100,000</td></tr>
+    <tr><td>Current Value</td><td style="text-align:right;font-weight:bold;color:#2e7d32">$100,000</td></tr>
+    <tr><td>Total Return</td><td style="text-align:right;font-weight:bold;color:#2e7d32">+$0 (+0.00%)</td></tr>
+    <tr><td>Cash Available</td><td style="text-align:right">$13,638</td></tr>
+    <tr><td>Open Positions</td><td style="text-align:right">10</td></tr>
+    <tr><td>Closed Trades</td><td style="text-align:right">0</td></tr>
+    <tr><td>Win Rate</td><td style="text-align:right">0.0%</td></tr>
+    <tr><td>Avg Win</td><td style="text-align:right;color:#2e7d32">$+0</td></tr>
+    <tr><td>Avg Loss</td><td style="text-align:right;color:#c62828">$+0</td></tr>
+    <tr><td>Profit Factor</td><td style="text-align:right">infx</td></tr>
+    <tr><td>Inception</td><td style="text-align:right;color:#666">2026-07-09</td></tr>
+    </tbody>
+        </table>
+        <div style="flex:1;min-width:260px">
+          <p style="color:#666;font-size:12px;line-height:1.7;margin:0">
+            <strong>Strategy:</strong> RSI(2) Mean Reversion (Larry Connors)<br>
+            <strong>Entry long:</strong> Close &gt; SMA(200) AND RSI(2) &lt; 10<br>
+            <strong>Entry short:</strong> Close &lt; SMA(200) AND RSI(2) &gt; 90<br>
+            <strong>Exit:</strong> Price crosses 5-day SMA (or hits stop)<br>
+            <strong>Stop:</strong> Entry ± 2.0× ATR(14)<br>
+            <strong>Risk:</strong> 2% of portfolio per trade<br>
+            <strong>Max positions:</strong> 10<br>
+            <strong>Universe:</strong> S&amp;P 500
+          </p>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- Closed trades -->
+  <div class="section">
+    <details>
+      <summary>Closed Trades (0 total, showing last 50)</summary>
+      <table style="margin-top:12px">
+        <thead><tr>
+          <th>Ticker</th><th>Side</th><th>Entry</th><th>Exit</th>
+          <th>P&amp;L</th><th>Entry Date</th><th>Exit Date</th><th>Reason</th>
+        </tr></thead>
+        <tbody><tr><td colspan="8" style="text-align:center;color:#999;padding:20px">No closed trades yet</td></tr></tbody>
+      </table>
+    </details>
+  </div>
+
+  <p style="color:#bbb;font-size:11px;margin-top:16px">
+    paper_trader.py &nbsp;|&nbsp; Simulated trades only — not real money. &nbsp;|&nbsp;
+    Data: Yahoo Finance &nbsp;|&nbsp; Not financial advice.
+  </p>
+
+<script>
+// NAV equity curve
+(function() {
+  const data = {"dates": ["2026-07-09"], "values": [100000.0]};
+  if (!data.dates.length) return;
+  const canvas = document.getElementById('nav-chart');
+  const ctx    = canvas.getContext('2d');
+  const W = canvas.offsetWidth || 800;
+  const H = 120;
+  canvas.width  = W;
+  canvas.height = H;
+
+  const vals  = data.values;
+  const N     = vals.length;
+  const minV  = Math.min(...vals);
+  const maxV  = Math.max(...vals);
+  const range = maxV - minV || 1;
+  const pad   = 10;
+
+  ctx.clearRect(0, 0, W, H);
+  ctx.strokeStyle = '#1a237e';
+  ctx.lineWidth   = 2;
+  ctx.beginPath();
+  vals.forEach((v, i) => {
+    const x = pad + (i / (N - 1 || 1)) * (W - 2 * pad);
+    const y = H - pad - ((v - minV) / range) * (H - 2 * pad);
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+
+  // Fill gradient
+  ctx.lineTo(pad + (W - 2 * pad), H - pad);
+  ctx.lineTo(pad, H - pad);
+  ctx.closePath();
+  const grad = ctx.createLinearGradient(0, 0, 0, H);
+  grad.addColorStop(0, 'rgba(26,35,126,0.15)');
+  grad.addColorStop(1, 'rgba(26,35,126,0)');
+  ctx.fillStyle = grad;
+  ctx.fill();
+
+  // Start / end labels
+  ctx.fillStyle = '#666';
+  ctx.font = '11px sans-serif';
+  if (data.dates.length) {
+    ctx.fillText(data.dates[0], pad, H - 1);
+    const last = data.dates[N-1];
+    ctx.fillText(last, W - pad - ctx.measureText(last).width, H - 1);
+  }
+  const lastVal = '$' + vals[N-1].toLocaleString('en-US', {maximumFractionDigits:0});
+  ctx.fillStyle = vals[N-1] >= 100000.0 ? '#2e7d32' : '#c62828';
+  ctx.font = 'bold 13px sans-serif';
+  ctx.fillText(lastVal, W - pad - ctx.measureText(lastVal).width, 20);
+})();
+</script>
+
+</body>
+</html>

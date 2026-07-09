@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trading Hub — 2026-07-09</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            margin: 0; padding: 20px 24px; background: #f0f2f5; color: #222; }
+    h1   { color: #1a237e; margin: 0 0 4px; font-size: 24px; }
+    .subtitle { color: #666; font-size: 13px; margin: 0 0 20px; }
+    .bots { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 720px) { .bots { grid-template-columns: 1fr; } }
+    .bot-card { background: white; border-radius: 12px; padding: 20px 22px;
+                 border: 1px solid #e0e0e0; display: flex; flex-direction: column; }
+    .bot-title { font-size: 18px; font-weight: bold; color: #1a237e; margin-bottom: 14px; }
+    .stat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 4px; }
+    .stat { background: #f8f9ff; border-radius: 8px; padding: 10px 12px; }
+    .stat-label { font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: .4px; margin-bottom: 4px; }
+    .stat-val { font-size: 20px; font-weight: bold; line-height: 1.2; }
+    .btn { display: inline-block; padding: 10px 20px; border-radius: 8px; color: white;
+            text-decoration: none; font-weight: bold; font-size: 14px; text-align: center;
+            margin-top: auto; transition: opacity .15s; }
+    .btn:hover { opacity: .85; }
+    .screener-link { background: white; border: 1px solid #e0e0e0; border-top: 4px solid #388e3c;
+                      border-radius: 12px; padding: 16px 22px; margin-top: 20px;
+                      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .badge { background: #e3f2fd; color: #0d47a1; padding: 3px 10px;
+              border-radius: 12px; font-size: 12px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>🏦 Trading Hub</h1>
+  <p class="subtitle">Two paper-trading bots, $100k each &nbsp;|&nbsp; 2026-07-09 &nbsp;|&nbsp; Not real money</p>
+
+  <div class="bots">
+    
+        <div class="bot-card" style="border-top:4px solid #1a237e">
+          <div class="bot-title">📈 Swing Trader (RSI-2)</div>
+          <div class="stat-grid">
+            <div class="stat">
+              <div class="stat-label">Portfolio Value</div>
+              <div class="stat-val" style="color:#1a237e">$100,000</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Total Return</div>
+              <div class="stat-val" style="color:#2e7d32">+$0<br>
+                <span style="font-size:13px">+0.00%</span>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Day P&amp;L</div>
+              <div class="stat-val" style="color:#2e7d32">$+0</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Open Positions</div>
+              <div class="stat-val">10</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Win Rate</div>
+              <div class="stat-val">0.0%</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Closed Trades</div>
+              <div class="stat-val">0</div>
+            </div>
+          </div>
+          <canvas id="swing-chart" style="width:100%;margin:12px 0"></canvas>
+          <div style="font-size:11px;color:#999;margin-bottom:12px">
+            Inception: 2026-07-09 &nbsp;|&nbsp; Last run: 2026-07-09
+          </div>
+          <a href="reports/paper_2026-07-09.html" class="btn" style="background:#1a237e">Open Dashboard →</a>
+        </div>
+    
+        <div class="bot-card" style="border-top:4px solid #e65100">
+          <div class="bot-title">⚡ Intraday Trader (ORB)</div>
+          <div style="color:#999;font-size:13px;padding:20px 0">Not started yet</div>
+          <a href="intraday_index.html" class="btn" style="background:#e65100">Open Dashboard →</a>
+        </div>
+  </div>
+
+  <!-- Factor Screener link -->
+  <div class="screener-link">
+    <div>
+      <div style="font-size:16px;font-weight:bold;color:#1b5e20">📊 Multi-Factor Screener</div>
+      <div style="font-size:12px;color:#666;margin-top:4px">S&amp;P 500 live portfolio · Momentum + ROIC + FCF + Piotroski</div>
+    </div>
+    <a href="reports/2026-07-09.html" class="btn" style="background:#388e3c">Open Screener →</a>
+  </div>
+
+  <p style="color:#ccc;font-size:11px;margin-top:16px">
+    Rebuilt each time either bot runs &nbsp;|&nbsp; Not financial advice.
+  </p>
+
+<script>
+
+(function() {
+  const dates = ["2026-07-09"];
+  const vals  = [100000.0];
+  const N = vals.length;
+  if (N < 2) return;
+  const canvas = document.getElementById('swing-chart');
+  const ctx = canvas.getContext('2d');
+  const W = canvas.offsetWidth || 460, H = 90;
+  canvas.width = W; canvas.height = H;
+  const minV = Math.min(...vals), maxV = Math.max(...vals);
+  const range = maxV - minV || 1, pad = 10;
+  ctx.strokeStyle = '#1a237e'; ctx.lineWidth = 2;
+  ctx.beginPath();
+  vals.forEach((v, i) => {
+    const x = pad + (i / (N-1)) * (W - 2*pad);
+    const y = H - pad - ((v - minV) / range) * (H - 2*pad);
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+  ctx.lineTo(pad + (W-2*pad), H-pad); ctx.lineTo(pad, H-pad); ctx.closePath();
+  const g = ctx.createLinearGradient(0,0,0,H);
+  g.addColorStop(0, '#1a237e28'); g.addColorStop(1, '#1a237e00');
+  ctx.fillStyle = g; ctx.fill();
+  const lastVal = '$' + vals[N-1].toLocaleString('en-US', {maximumFractionDigits:0});
+  ctx.fillStyle = vals[N-1] >= 100000.0 ? '#2e7d32' : '#c62828';
+  ctx.font = 'bold 12px sans-serif';
+  ctx.fillText(lastVal, W - pad - ctx.measureText(lastVal).width, 16);
+  if (dates.length) {
+    ctx.fillStyle = '#999'; ctx.font = '10px sans-serif';
+    ctx.fillText(dates[0], pad, H-2);
+    ctx.fillText(dates[N-1], W-pad-ctx.measureText(dates[N-1]).width, H-2);
+  }
+})();
+
+(function() {
+  const dates = [];
+  const vals  = [];
+  const N = vals.length;
+  if (N < 2) return;
+  const canvas = document.getElementById('intraday-chart');
+  const ctx = canvas.getContext('2d');
+  const W = canvas.offsetWidth || 460, H = 90;
+  canvas.width = W; canvas.height = H;
+  const minV = Math.min(...vals), maxV = Math.max(...vals);
+  const range = maxV - minV || 1, pad = 10;
+  ctx.strokeStyle = '#e65100'; ctx.lineWidth = 2;
+  ctx.beginPath();
+  vals.forEach((v, i) => {
+    const x = pad + (i / (N-1)) * (W - 2*pad);
+    const y = H - pad - ((v - minV) / range) * (H - 2*pad);
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+  ctx.lineTo(pad + (W-2*pad), H-pad); ctx.lineTo(pad, H-pad); ctx.closePath();
+  const g = ctx.createLinearGradient(0,0,0,H);
+  g.addColorStop(0, '#e6510028'); g.addColorStop(1, '#e6510000');
+  ctx.fillStyle = g; ctx.fill();
+  const lastVal = '$' + vals[N-1].toLocaleString('en-US', {maximumFractionDigits:0});
+  ctx.fillStyle = vals[N-1] >= 100000.0 ? '#2e7d32' : '#c62828';
+  ctx.font = 'bold 12px sans-serif';
+  ctx.fillText(lastVal, W - pad - ctx.measureText(lastVal).width, 16);
+  if (dates.length) {
+    ctx.fillStyle = '#999'; ctx.font = '10px sans-serif';
+    ctx.fillText(dates[0], pad, H-2);
+    ctx.fillText(dates[N-1], W-pad-ctx.measureText(dates[N-1]).width, H-2);
+  }
+})();
+</script>
+</body>
+</html>
