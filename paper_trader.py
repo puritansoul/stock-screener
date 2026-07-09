@@ -169,6 +169,125 @@ def fetch_prices(tickers: list[str], lookback_days: int = PRICE_LOOKBACK) -> pd.
         print(f"  Price fetch error: {e}")
         return pd.DataFrame()
 
+# ── Index returns for journal ─────────────────────────────────────────────────
+
+INDEX_TICKERS = {"^GSPC": "S&P 500", "^IXIC": "Nasdaq", "^DJI": "DOW", "^RUT": "Russell 2K"}
+
+def fetch_index_returns(nav_history: dict) -> dict:
+    """Return {date_str: {index_name: pct}} for all dates in nav_history."""
+    if not nav_history:
+        return {}
+    dates = sorted(nav_history.keys())
+    start = (date.fromisoformat(dates[0]) - timedelta(days=5)).isoformat()
+    end   = (date.fromisoformat(dates[-1]) + timedelta(days=2)).isoformat()
+    try:
+        raw = yf.download(list(INDEX_TICKERS.keys()), start=start, end=end,
+                          auto_adjust=True, progress=False)
+        if raw.empty:
+            return {}
+        close = raw["Close"] if isinstance(raw.columns, pd.MultiIndex) else raw
+        pct   = (close.pct_change() * 100).rename(columns=INDEX_TICKERS)
+        result = {}
+        for ts, row in pct.iterrows():
+            d = str(ts.date()) if hasattr(ts, "date") else str(ts)[:10]
+            result[d] = {col: round(float(v), 3) for col, v in row.items() if not pd.isna(v)}
+        return result
+    except Exception:
+        return {}
+
+
+def build_journal_section(nav_history: dict, idx_returns: dict) -> str:
+    """Build an HTML journal table of daily P&L vs index returns."""
+    if not nav_history:
+        return ""
+
+    dates = sorted(nav_history.keys(), reverse=True)
+
+    def _pc(v, bold=False):
+        if v is None:
+            return '<td style="color:#bbb;text-align:right">—</td>'
+        c = "#1b5e20" if v > 0 else ("#c62828" if v < 0 else "#555")
+        w = "font-weight:bold;" if bold else ""
+        return f'<td style="color:{c};text-align:right;{w}">{"+" if v>0 else ""}{v:.2f}%</td>'
+
+    def _dc(v):
+        if v is None:
+            return '<td style="color:#bbb;text-align:right">—</td>'
+        c = "#1b5e20" if v > 0 else ("#c62828" if v < 0 else "#555")
+        return f'<td style="color:{c};text-align:right;font-weight:bold">{"+" if v>0 else ""}${abs(v):,.0f}</td>'
+
+    def _vs(bot_pct, spx_pct):
+        if bot_pct is None or spx_pct is None:
+            return '<td style="color:#bbb;text-align:right">—</td>'
+        d = bot_pct - spx_pct
+        c = "#1b5e20" if d > 0 else "#c62828"
+        a = "▲" if d > 0 else "▼"
+        return f'<td style="color:{c};text-align:right;font-size:12px">{a} {"+" if d>0 else ""}{d:.2f}%</td>'
+
+    rows = ""
+    for i, d in enumerate(dates):
+        nav_now  = nav_history[d]
+        prev_key = dates[i + 1] if i + 1 < len(dates) else None
+        nav_prev = nav_history[prev_key] if prev_key else STARTING_CAPITAL
+
+        pnl      = round(nav_now - nav_prev, 2)
+        day_pct  = round(pnl / nav_prev * 100, 3) if nav_prev else None
+        cum_pct  = round((nav_now / STARTING_CAPITAL - 1) * 100, 3)
+
+        idx = idx_returns.get(d, {})
+        spx = idx.get("S&P 500")
+        qqq = idx.get("Nasdaq")
+        dow = idx.get("DOW")
+        rut = idx.get("Russell 2K")
+
+        day_label = date.fromisoformat(d).strftime("%a, %b %d %Y") if d else d
+        rows += f"<tr><td style='white-space:nowrap;font-weight:bold;color:#1a237e'>{day_label}</td>"
+        rows += _dc(pnl)
+        rows += _pc(day_pct, bold=True)
+        rows += _pc(cum_pct)
+        rows += _pc(spx)
+        rows += _pc(qqq)
+        rows += _pc(dow)
+        rows += _pc(rut)
+        rows += _vs(day_pct, spx)
+        rows += "</tr>\n"
+
+    if not rows:
+        rows = '<tr><td colspan="9" style="color:#999;text-align:center;padding:12px">No daily data yet</td></tr>'
+
+    return f"""
+  <!-- Daily P&L Journal -->
+  <div class="section">
+    <details open>
+      <summary>Daily P&amp;L Journal — vs Market Indices</summary>
+      <p style="color:#888;font-size:12px;margin:8px 0 8px">
+        Day % = mark-to-market NAV change that day.&nbsp;
+        Cum % = total return since inception.&nbsp;
+        vs S&P = your day % minus S&P 500 day % (green = beat the market).
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th rowspan="2" style="vertical-align:bottom">Date</th>
+            <th colspan="3" style="background:#283593;text-align:center;font-size:11px">Your Portfolio</th>
+            <th colspan="4" style="background:#283593;text-align:center;font-size:11px">Index Returns</th>
+            <th rowspan="2" style="vertical-align:bottom;text-align:right">vs S&amp;P</th>
+          </tr>
+          <tr>
+            <th style="text-align:right">Day P&amp;L $</th>
+            <th style="text-align:right">Day %</th>
+            <th style="text-align:right">Cum %</th>
+            <th style="text-align:right">S&amp;P 500</th>
+            <th style="text-align:right">Nasdaq</th>
+            <th style="text-align:right">DOW</th>
+            <th style="text-align:right">Russell 2K</th>
+          </tr>
+        </thead>
+        <tbody>{rows}</tbody>
+      </table>
+    </details>
+  </div>"""
+
 # ── Position sizing ───────────────────────────────────────────────────────────
 
 def position_size(capital: float, entry: float, stop: float) -> int:
@@ -498,6 +617,9 @@ def build_paper_dashboard(state: dict, prices: pd.DataFrame):
     nav_values = [nav[d] for d in nav_dates]
     nav_js     = json.dumps({"dates": nav_dates, "values": nav_values})
 
+    # Index returns for journal
+    idx_returns = fetch_index_returns(nav)
+
     # Stats
     wins  = [p for p in closed if p.get("pnl", 0) > 0]
     losses= [p for p in closed if p.get("pnl", 0) <= 0]
@@ -655,6 +777,8 @@ def build_paper_dashboard(state: dict, prices: pd.DataFrame):
       </table>
     </details>
   </div>
+
+  {build_journal_section(nav, idx_returns)}
 
   <p style="color:#bbb;font-size:11px;margin-top:16px" id="live-status">
     paper_trader.py &nbsp;|&nbsp; Simulated trades only — not real money. &nbsp;|&nbsp;
