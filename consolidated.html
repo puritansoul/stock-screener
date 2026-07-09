@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trading Dashboard — 2026-07-09</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            margin: 0; padding: 16px 20px; background: #f0f2f5; color: #222; }
+    h1   { color: #1a237e; margin: 0 0 2px; font-size: 22px; }
+    .subtitle { color: #888; font-size: 12px; margin: 0 0 16px; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+    @media (min-width: 901px) and (max-width: 1200px) { .grid { grid-template-columns: 1fr 1fr; } }
+    .tracker-card { background: white; border-radius: 10px; border: 1px solid #e0e0e0;
+                     padding: 16px 18px; display: flex; flex-direction: column; gap: 6px; }
+    .tracker-title { font-size: 15px; font-weight: bold; color: #1a237e; margin-bottom: 6px; }
+    .kpi-row { display: flex; gap: 8px; }
+    .kpi { background: #f8f9ff; border-radius: 6px; padding: 8px 10px; flex: 1; }
+    .kpi-label { font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: .4px; }
+    .kpi-val { font-size: 18px; font-weight: bold; line-height: 1.2; margin-top: 2px; }
+    .mini-table { border-collapse: collapse; width: 100%; font-size: 12px; margin-top: 4px; }
+    .mini-table th { background: #f0f4ff; color: #555; padding: 5px 7px; text-align: left;
+                      font-size: 10px; text-transform: uppercase; letter-spacing: .3px; }
+    .mini-table td { padding: 4px 7px; border-bottom: 1px solid #f5f5f5; white-space: nowrap; }
+    .mini-table tr:hover td { background: #fafafa; }
+    .meta-row { font-size: 11px; color: #aaa; display: flex; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
+    .dash-link { display: block; padding: 8px 14px; border-radius: 6px; color: white;
+                  text-decoration: none; font-weight: bold; font-size: 13px; text-align: center;
+                  margin-top: auto; transition: opacity .15s; }
+    .dash-link:hover { opacity: .85; }
+    .no-data { color: #bbb; font-size: 13px; padding: 16px 0; }
+  </style>
+</head>
+<body>
+  <h1>🏦 Trading Dashboard</h1>
+  <p class="subtitle" id="last-updated">2026-07-09 &nbsp;·&nbsp; $100k starting capital each &nbsp;·&nbsp; Not real money</p>
+
+  <div class="grid">
+    
+    <div class="tracker-card" id="screener-card" style="border-top:4px solid #388e3c">
+      <div class="tracker-title">📊 Factor Screener</div>
+      <div class="kpi-row">
+        <div class="kpi">
+          <div class="kpi-label">Portfolio Value</div>
+          <div class="kpi-val" id="screener-port-value" style="color:#1a237e">$100,000</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Total Return</div>
+          <div class="kpi-val" id="screener-port-total" style="color:#2e7d32">+$0<br>
+            <span style="font-size:12px">+0.00%</span></div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Holdings</div>
+          <div class="kpi-val">21</div>
+        </div>
+      </div>
+      <canvas id="screener-spark" style="width:100%;margin:8px 0 4px" height="70"></canvas>
+      <table class="mini-table">
+        <thead><tr><th>Ticker</th><th>Price</th><th>Shares</th><th>Value</th><th>Score</th></tr></thead>
+        <tbody><tr data-ticker="APA" data-qty="130" data-buypx="31.87" data-side="long">
+          <td style="font-weight:bold">APA</td>
+          <td style="text-align:right" class="live-price">$31.87</td>
+          <td style="text-align:right">130</td>
+          <td style="text-align:right" class="live-invested">$4,143</td>
+          <td style="text-align:right;color:#1a237e;font-weight:bold">0.880</td>
+        </tr><tr data-ticker="NEM" data-qty="42" data-buypx="93.30" data-side="long">
+          <td style="font-weight:bold">NEM</td>
+          <td style="text-align:right" class="live-price">$93.30</td>
+          <td style="text-align:right">42</td>
+          <td style="text-align:right" class="live-invested">$3,919</td>
+          <td style="text-align:right;color:#1a237e;font-weight:bold">0.846</td>
+        </tr><tr data-ticker="EXPE" data-qty="15" data-buypx="264.54" data-side="long">
+          <td style="font-weight:bold">EXPE</td>
+          <td style="text-align:right" class="live-price">$264.54</td>
+          <td style="text-align:right">15</td>
+          <td style="text-align:right" class="live-invested">$3,968</td>
+          <td style="text-align:right;color:#1a237e;font-weight:bold">0.829</td>
+        </tr><tr data-ticker="COHR" data-qty="5" data-buypx="368.65" data-side="long">
+          <td style="font-weight:bold">COHR</td>
+          <td style="text-align:right" class="live-price">$368.65</td>
+          <td style="text-align:right">5</td>
+          <td style="text-align:right" class="live-invested">$1,843</td>
+          <td style="text-align:right;color:#1a237e;font-weight:bold">0.824</td>
+        </tr><tr data-ticker="UAL" data-qty="25" data-buypx="135.13" data-side="long">
+          <td style="font-weight:bold">UAL</td>
+          <td style="text-align:right" class="live-price">$135.13</td>
+          <td style="text-align:right">25</td>
+          <td style="text-align:right" class="live-invested">$3,378</td>
+          <td style="text-align:right;color:#1a237e;font-weight:bold">0.811</td>
+        </tr><tr data-ticker="JBHT" data-qty="19" data-buypx="290.07" data-side="long">
+          <td style="font-weight:bold">JBHT</td>
+          <td style="text-align:right" class="live-price">$290.07</td>
+          <td style="text-align:right">19</td>
+          <td style="text-align:right" class="live-invested">$5,511</td>
+          <td style="text-align:right;color:#1a237e;font-weight:bold">0.809</td>
+        </tr><tr data-ticker="NTAP" data-qty="19" data-buypx="156.38" data-side="long">
+          <td style="font-weight:bold">NTAP</td>
+          <td style="text-align:right" class="live-price">$156.38</td>
+          <td style="text-align:right">19</td>
+          <td style="text-align:right" class="live-invested">$2,971</td>
+          <td style="text-align:right;color:#1a237e;font-weight:bold">0.807</td>
+        </tr><tr data-ticker="LVS" data-qty="131" data-buypx="46.25" data-side="long">
+          <td style="font-weight:bold">LVS</td>
+          <td style="text-align:right" class="live-price">$46.25</td>
+          <td style="text-align:right">131</td>
+          <td style="text-align:right" class="live-invested">$6,059</td>
+          <td style="text-align:right;color:#1a237e;font-weight:bold">0.794</td>
+        </tr><tr><td colspan="5" style="text-align:center;color:#999;font-size:11px">+ 13 more holdings</td></tr></tbody>
+      </table>
+      
+      <div class="meta-row">
+        <span>Last run: 2026-07-08</span>
+        <span>Last rebalance: 2026-07-02</span>
+        <span>Since: 2026-07-01</span>
+      </div>
+      <a href="index.html" class="dash-link" style="background:#388e3c">Full Screener →</a>
+    </div>
+    
+    <div class="tracker-card" id="swing-card" style="border-top:4px solid #1a237e">
+      <div class="tracker-title">📈 Swing Trader <span style="font-size:12px;color:#888;font-weight:normal">RSI(2)</span></div>
+      <div class="kpi-row">
+        <div class="kpi">
+          <div class="kpi-label">Portfolio Value</div>
+          <div class="kpi-val" id="swing-port-value" style="color:#1a237e">$100,000</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Total Return</div>
+          <div class="kpi-val" id="swing-port-total" style="color:#2e7d32">+$0<br>
+            <span style="font-size:12px">+0.00%</span></div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Win Rate</div>
+          <div class="kpi-val">0%</div>
+        </div>
+      </div>
+      <canvas id="swing-spark" style="width:100%;margin:8px 0 4px" height="70"></canvas>
+      <table class="mini-table">
+        <thead><tr><th>Ticker</th><th>Side</th><th>Entry</th><th>Current</th><th>P&amp;L</th></tr></thead>
+        <tbody><tr data-ticker="SW" data-qty="475" data-buypx="42.08" data-side="long">
+          <td style="font-weight:bold">SW</td>
+          <td style="font-size:11px;color:#1b5e20">LONG</td>
+          <td style="text-align:right">$42.08</td>
+          <td style="text-align:right" class="live-price">$42.08</td>
+          <td style="text-align:right" class="live-unreal" style="color:#2e7d32">$+0</td>
+        </tr><tr data-ticker="RL" data-qty="42" data-buypx="380.36" data-side="long">
+          <td style="font-weight:bold">RL</td>
+          <td style="font-size:11px;color:#1b5e20">LONG</td>
+          <td style="text-align:right">$380.36</td>
+          <td style="text-align:right" class="live-price">$380.36</td>
+          <td style="text-align:right" class="live-unreal" style="color:#2e7d32">$+0</td>
+        </tr><tr data-ticker="DAL" data-qty="136" data-buypx="87.29" data-side="long">
+          <td style="font-weight:bold">DAL</td>
+          <td style="font-size:11px;color:#1b5e20">LONG</td>
+          <td style="text-align:right">$87.29</td>
+          <td style="text-align:right" class="live-price">$87.29</td>
+          <td style="text-align:right" class="live-unreal" style="color:#2e7d32">$+0</td>
+        </tr><tr data-ticker="UAL" data-qty="57" data-buypx="126.22" data-side="long">
+          <td style="font-weight:bold">UAL</td>
+          <td style="font-size:11px;color:#1b5e20">LONG</td>
+          <td style="text-align:right">$126.22</td>
+          <td style="text-align:right" class="live-price">$126.22</td>
+          <td style="text-align:right" class="live-unreal" style="color:#2e7d32">$+0</td>
+        </tr><tr data-ticker="FCX" data-qty="99" data-buypx="57.50" data-side="long">
+          <td style="font-weight:bold">FCX</td>
+          <td style="font-size:11px;color:#1b5e20">LONG</td>
+          <td style="text-align:right">$57.50</td>
+          <td style="text-align:right" class="live-price">$57.50</td>
+          <td style="text-align:right" class="live-unreal" style="color:#2e7d32">$+0</td>
+        </tr><tr data-ticker="MAS" data-qty="89" data-buypx="75.75" data-side="long">
+          <td style="font-weight:bold">MAS</td>
+          <td style="font-size:11px;color:#1b5e20">LONG</td>
+          <td style="text-align:right">$75.75</td>
+          <td style="text-align:right" class="live-price">$75.75</td>
+          <td style="text-align:right" class="live-unreal" style="color:#2e7d32">$+0</td>
+        </tr><tr data-ticker="SOLV" data-qty="86" data-buypx="75.18" data-side="long">
+          <td style="font-weight:bold">SOLV</td>
+          <td style="font-size:11px;color:#1b5e20">LONG</td>
+          <td style="text-align:right">$75.18</td>
+          <td style="text-align:right" class="live-price">$75.18</td>
+          <td style="text-align:right" class="live-unreal" style="color:#2e7d32">$+0</td>
+        </tr><tr data-ticker="KDP" data-qty="168" data-buypx="30.97" data-side="long">
+          <td style="font-weight:bold">KDP</td>
+          <td style="font-size:11px;color:#1b5e20">LONG</td>
+          <td style="text-align:right">$30.97</td>
+          <td style="text-align:right" class="live-price">$30.97</td>
+          <td style="text-align:right" class="live-unreal" style="color:#2e7d32">$+0</td>
+        </tr><tr><td colspan="5" style="text-align:center;color:#999;font-size:11px">+ 2 more</td></tr></tbody>
+      </table>
+      <div class="meta-row">
+        <span>Cash: $13,638</span>
+        <span>10 open / 0 closed</span>
+        <span>Since: 2026-07-09</span>
+      </div>
+      <a href="paper_index.html" class="dash-link" style="background:#1a237e">Full Dashboard →</a>
+    </div>
+    
+    <div class="tracker-card" id="intraday-card" style="border-top:4px solid #e65100">
+      <div class="tracker-title">⚡ Intraday Trader <span style="font-size:12px;color:#888;font-weight:normal">ORB</span></div>
+      <div class="kpi-row">
+        <div class="kpi">
+          <div class="kpi-label">Portfolio Value</div>
+          <div class="kpi-val" id="intraday-port-value" style="color:#1a237e">$100,000</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Day P&amp;L</div>
+          <div class="kpi-val" id="intraday-port-today" style="color:#2e7d32">$+0</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Win Rate</div>
+          <div class="kpi-val">0%<br><span style="font-size:11px;color:#888">0 trades</span></div>
+        </div>
+      </div>
+      <canvas id="intraday-spark" style="width:100%;margin:8px 0 4px" height="70"></canvas>
+      <table class="mini-table">
+          <thead><tr><th>Ticker</th><th>Side</th><th>Entry</th><th>Current</th><th>P&amp;L</th></tr></thead>
+          <tbody><tr><td colspan="5" style="text-align:center;color:#999;padding:10px">No trades today</td></tr></tbody></table>
+      <div class="meta-row">
+        <span>Cash: $100,000</span>
+        <span>0 open today</span>
+        <span>Since: 2026-07-09</span>
+      </div>
+      <a href="intraday_index.html" class="dash-link" style="background:#e65100">Full Dashboard →</a>
+    </div>
+  </div>
+
+<script>
+
+(function() {
+  const vals = [100000.0, 101015.40463977335, 100000.0, 100000.0, 99330.61134993461, 102406.49912901736, 101550.26140657057];
+  const N = vals.length;
+  if (N < 2) return;
+  const canvas = document.getElementById('screener-spark');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const W = canvas.offsetWidth || 340, H = 70;
+  canvas.width = W; canvas.height = H;
+  const minV = Math.min(...vals), maxV = Math.max(...vals);
+  const range = maxV - minV || 1, pad = 6;
+  ctx.strokeStyle = '#388e3c'; ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  vals.forEach((v, i) => {
+    const x = pad + (i / (N-1)) * (W - 2*pad);
+    const y = H - pad - ((v - minV) / range) * (H - 2*pad);
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+  ctx.lineTo(pad + (W-2*pad), H-pad); ctx.lineTo(pad, H-pad); ctx.closePath();
+  const g = ctx.createLinearGradient(0, 0, 0, H);
+  g.addColorStop(0, '#388e3c22'); g.addColorStop(1, '#388e3c00');
+  ctx.fillStyle = g; ctx.fill();
+})();
+
+(function() {
+  const vals = [100000.0];
+  const N = vals.length;
+  if (N < 2) return;
+  const canvas = document.getElementById('swing-spark');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const W = canvas.offsetWidth || 340, H = 70;
+  canvas.width = W; canvas.height = H;
+  const minV = Math.min(...vals), maxV = Math.max(...vals);
+  const range = maxV - minV || 1, pad = 6;
+  ctx.strokeStyle = '#1a237e'; ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  vals.forEach((v, i) => {
+    const x = pad + (i / (N-1)) * (W - 2*pad);
+    const y = H - pad - ((v - minV) / range) * (H - 2*pad);
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+  ctx.lineTo(pad + (W-2*pad), H-pad); ctx.lineTo(pad, H-pad); ctx.closePath();
+  const g = ctx.createLinearGradient(0, 0, 0, H);
+  g.addColorStop(0, '#1a237e22'); g.addColorStop(1, '#1a237e00');
+  ctx.fillStyle = g; ctx.fill();
+})();
+
+(function() {
+  const vals = [100000.0];
+  const N = vals.length;
+  if (N < 2) return;
+  const canvas = document.getElementById('intraday-spark');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const W = canvas.offsetWidth || 340, H = 70;
+  canvas.width = W; canvas.height = H;
+  const minV = Math.min(...vals), maxV = Math.max(...vals);
+  const range = maxV - minV || 1, pad = 6;
+  ctx.strokeStyle = '#e65100'; ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  vals.forEach((v, i) => {
+    const x = pad + (i / (N-1)) * (W - 2*pad);
+    const y = H - pad - ((v - minV) / range) * (H - 2*pad);
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+  ctx.lineTo(pad + (W-2*pad), H-pad); ctx.lineTo(pad, H-pad); ctx.closePath();
+  const g = ctx.createLinearGradient(0, 0, 0, H);
+  g.addColorStop(0, '#e6510022'); g.addColorStop(1, '#e6510000');
+  ctx.fillStyle = g; ctx.fill();
+})();
+
+(function() {
+  const TOKEN = 'd93d6v1r01qgqnua64j0d93d6v1r01qgqnua64jg';
+  const STARTING = 100000.0;
+  const delay = ms => new Promise(r => setTimeout(r, ms));
+
+  function isMarketHours() {
+    const now = new Date();
+    const et = new Date(now.toLocaleString('en-US', {timeZone: 'America/New_York'}));
+    const day = et.getDay();
+    if (day === 0 || day === 6) return false;
+    const h = et.getHours(), m = et.getMinutes();
+    return h * 60 + m >= 570 && h * 60 + m < 960;
+  }
+
+  async function fetchAll() {
+    const rows = document.querySelectorAll('tr[data-ticker]');
+    if (!rows.length) return;
+    // deduplicate tickers
+    const tkMap = {};
+    rows.forEach(r => { tkMap[r.dataset.ticker] = true; });
+    const tickers = Object.keys(tkMap);
+    const quotes = {};
+    for (const tk of tickers) {
+      try {
+        const q = await fetch(`https://finnhub.io/api/v1/quote?symbol=${tk}&token=${TOKEN}`).then(r => r.json());
+        if (q && q.c) quotes[tk] = q.c;
+      } catch(e) {}
+      await delay(1100);
+    }
+    // update every row
+    rows.forEach(row => {
+      const tk   = row.dataset.ticker;
+      const qty  = parseFloat(row.dataset.qty);
+      const buy  = parseFloat(row.dataset.buypx);
+      const side = row.dataset.side;
+      const px   = quotes[tk];
+      if (!px) return;
+      const priceCell  = row.querySelector('.live-price');
+      const unrealCell = row.querySelector('.live-unreal');
+      const investCell = row.querySelector('.live-invested');
+      if (priceCell)  priceCell.textContent  = '$' + px.toLocaleString('en-US', {minimumFractionDigits:2,maximumFractionDigits:2});
+      if (investCell) investCell.textContent = '$' + (px * qty).toLocaleString('en-US', {maximumFractionDigits:0});
+      if (unrealCell) {
+        const unreal = side === 'long' ? (px - buy) * qty : (buy - px) * qty;
+        const pct = buy > 0 ? unreal / (buy * qty) * 100 : 0;
+        unrealCell.textContent = '$' + (unreal >= 0 ? '+' : '') + Math.round(unreal).toLocaleString('en-US') + ' (' + (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%)';
+        unrealCell.style.color = unreal >= 0 ? '#2e7d32' : '#c62828';
+      }
+    });
+
+    // update screener portfolio value
+    updateCardPortfolio('screener', 'screener-port-value', 'screener-port-total');
+    updateCardPortfolio('swing',    'swing-port-value',    'swing-port-total');
+    updateCardPortfolio('intraday', 'intraday-port-value', null);
+
+    const t = new Date().toLocaleTimeString('en-US', {timeZone:'America/New_York'});
+    const el = document.getElementById('last-updated');
+    if (el) el.textContent = 'Prices updated ' + t + ' ET';
+  }
+
+  function updateCardPortfolio(cardPrefix, portId, totalId) {
+    const card = document.getElementById(cardPrefix + '-card');
+    if (!card) return;
+    const rows = card.querySelectorAll('tr[data-ticker]');
+    let openVal = 0, hasAny = false;
+    rows.forEach(row => {
+      const priceEl = row.querySelector('.live-price');
+      if (!priceEl) return;
+      const px  = parseFloat(priceEl.textContent.replace(/[$,]/g, ''));
+      const qty = parseFloat(row.dataset.qty);
+      if (!isNaN(px) && !isNaN(qty)) { openVal += px * qty; hasAny = true; }
+    });
+    if (!hasAny) return;
+    const cashCard = Array.from(card.querySelectorAll('.meta-row span')).find(s => s.textContent.includes('Cash:'));
+    const cashVal = cashCard ? parseFloat(cashCard.textContent.replace(/[^0-9.]/g, '')) || 0 : 0;
+    const portVal = cashVal + openVal;
+    const ret = portVal - STARTING;
+    const retPct = ret / STARTING * 100;
+    const sign = ret >= 0 ? '+' : '';
+    const color = ret >= 0 ? '#2e7d32' : '#c62828';
+    const portEl = document.getElementById(portId);
+    if (portEl) portEl.textContent = '$' + portVal.toLocaleString('en-US', {maximumFractionDigits:0});
+    if (totalId) {
+      const totalEl = document.getElementById(totalId);
+      if (totalEl) {
+        totalEl.innerHTML = sign + '$' + Math.abs(ret).toLocaleString('en-US', {maximumFractionDigits:0}) + '<br><span style="font-size:12px">' + sign + Math.abs(retPct).toFixed(2) + '%</span>';
+        totalEl.style.color = color;
+      }
+    }
+  }
+
+  if (isMarketHours()) {
+    fetchAll();
+    setInterval(fetchAll, 60000);
+  }
+})();
+</script>
+</body>
+</html>
