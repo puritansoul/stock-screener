@@ -35,6 +35,9 @@ jobs:
       - name: Build trading hub
         run: python build_hub.py
 
+      - name: Build consolidated dashboard
+        run: python build_consolidated.py
+
       - name: Update intraday index
         run: |
           python - <<'PYEOF'
@@ -60,7 +63,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          for f in intraday_trades.json intraday_index.html trading_hub.html; do
+          for f in intraday_trades.json intraday_index.html trading_hub.html consolidated.html; do
             [ -f "$f" ] && git add -f "$f"
           done
           find reports -name 'intraday_*.html' 2>/dev/null | xargs -r git add -f
