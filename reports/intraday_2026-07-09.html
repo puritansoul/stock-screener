@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Intraday Trader — 2026-07-09</title>
+  <meta http-equiv="refresh" content="300">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            margin: 0; padding: 16px 20px; color: #222; background: #f0f2f5; }
+    h1   { color: #1a237e; margin-bottom: 4px; font-size: 22px; }
+    h2   { color: #1a237e; font-size: 16px; margin: 0 0 10px 0; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    th    { background: #1a237e; color: white; padding: 8px 10px; text-align: left; white-space: nowrap; }
+    td    { padding: 6px 10px; border-bottom: 1px solid #eee; white-space: nowrap; }
+    tr:hover td { background: #f5f5f5; }
+    .section { background: white; border: 1px solid #e0e0e0; border-radius: 8px;
+                padding: 18px 20px; margin: 12px 0; overflow-x: auto; }
+    .badge { background: #e3f2fd; color: #0d47a1; padding: 3px 10px;
+              border-radius: 12px; font-size: 12px; font-weight: bold; }
+    .card  { background: #f0f4ff; border: 1px solid #c5cae9; border-radius: 10px;
+              padding: 16px 24px; min-width: 150px; }
+    .card-label { font-size: 11px; color: #6c757d; text-transform: uppercase;
+                   letter-spacing: .5px; margin-bottom: 4px; }
+    .card-value { font-size: 26px; font-weight: bold; line-height: 1; }
+    details summary { cursor: pointer; font-size: 16px; font-weight: bold; color: #1a237e;
+                       padding: 4px 0; user-select: none; list-style: none; }
+    details summary::before { content: "▶ "; font-size: 12px; }
+    details[open] summary::before { content: "▼ "; font-size: 12px; }
+    details summary::-webkit-details-marker { display: none; }
+  </style>
+</head>
+<body>
+  <h1>⚡ Intraday Paper Trader — ORB Strategy</h1>
+  <p style="margin: 6px 0 12px">
+    <span class="badge">2026-07-09</span>&nbsp;
+    <span class="badge" style="background:#e8f5e9;color:#e65100">ORB Window</span>&nbsp;
+    <span class="badge">ORB 30-min</span>&nbsp;
+    <span class="badge">0 open</span>&nbsp;
+    <span class="badge">Auto-refresh 5 min</span>
+  </p>
+
+  <div class="section">
+    <h2>Today's Summary</h2>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px">
+      <div class="card">
+        <div class="card-label">Portfolio Value</div>
+        <div class="card-value" style="color:#1a237e">$100,000</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Total Return</div>
+        <div class="card-value" style="color:#2e7d32">+$0<br>
+          <span style="font-size:14px">+0.00%</span></div>
+      </div>
+      <div class="card">
+        <div class="card-label">Day P&amp;L</div>
+        <div class="card-value" style="color:#2e7d32">$+0</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Cash</div>
+        <div class="card-value">$100,000</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Win Rate (all-time)</div>
+        <div class="card-value">0.0%<br>
+          <span style="font-size:12px;color:#666">PF: infx</span></div>
+      </div>
+    </div>
+    <canvas id="nav-chart" height="80"></canvas>
+  </div>
+
+  <div class="section">
+    <h2>Open Positions</h2>
+    <table>
+      <thead><tr>
+        <th>Ticker</th><th>Side</th><th>Entry</th><th>Current</th>
+        <th>Shares</th><th>Unrealized P&amp;L</th><th>Target</th><th>Stop</th><th>Entry Time</th>
+      </tr></thead>
+      <tbody><tr><td colspan="9" style="text-align:center;color:#999;padding:20px">No open positions today</td></tr></tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Today's Closed Trades</h2>
+    <table>
+      <thead><tr>
+        <th>Ticker</th><th>Side</th><th>Entry</th><th>Exit</th>
+        <th>P&amp;L</th><th>Entry Time</th><th>Exit Time</th><th>Reason</th>
+      </tr></thead>
+      <tbody><tr><td colspan="8" style="text-align:center;color:#999;padding:20px">No trades closed today</td></tr></tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <details>
+      <summary>Strategy Info &amp; All-Time Stats</summary>
+      <div style="display:flex;gap:30px;flex-wrap:wrap;margin-top:12px">
+        <table style="width:auto;min-width:240px">
+          <tr><td>Starting Capital</td><td style="text-align:right;font-weight:bold">$100,000</td></tr>
+          <tr><td>Total Closed Trades</td><td style="text-align:right">0</td></tr>
+          <tr><td>Win Rate</td><td style="text-align:right">0.0%</td></tr>
+          <tr><td>Avg Win</td><td style="text-align:right;color:#2e7d32">$+0</td></tr>
+          <tr><td>Avg Loss</td><td style="text-align:right;color:#c62828">$+0</td></tr>
+          <tr><td>Profit Factor</td><td style="text-align:right">infx</td></tr>
+          <tr><td>Inception</td><td style="text-align:right;color:#666">2026-07-09</td></tr>
+        </table>
+        <div style="flex:1;min-width:240px">
+          <p style="color:#666;font-size:12px;line-height:1.8;margin:0">
+            <strong>Strategy:</strong> Opening Range Breakout (ORB)<br>
+            <strong>ORB window:</strong> 9:30–10:00 AM ET (first 30 min)<br>
+            <strong>Entry:</strong> 15-min close breaks ORB high/low + volume ≥ 1.2× avg<br>
+            <strong>Target:</strong> Entry ± 1× ORB width (1:2 R/R)<br>
+            <strong>Stop:</strong> Entry ∓ 0.5× ORB width<br>
+            <strong>Force close:</strong> 3:45 PM ET<br>
+            <strong>Risk:</strong> 1% per trade, max 5 positions<br>
+            <strong>Universe:</strong> 45 most liquid S&amp;P 500 names
+          </p>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <p style="color:#bbb;font-size:11px;margin-top:16px">
+    intraday_trader.py &nbsp;|&nbsp; Simulated only — not real money &nbsp;|&nbsp; Not financial advice.
+  </p>
+
+<script>
+(function() {
+  const data = {"dates": ["2026-07-09"], "values": [100000.0]};
+  if (!data.dates.length) return;
+  const canvas = document.getElementById('nav-chart');
+  const ctx = canvas.getContext('2d');
+  const W = canvas.offsetWidth || 800, H = 80;
+  canvas.width = W; canvas.height = H;
+  const vals = data.values, N = vals.length;
+  if (N < 2) return;
+  const minV = Math.min(...vals), maxV = Math.max(...vals);
+  const range = maxV - minV || 1;
+  const pad = 10;
+  ctx.strokeStyle = '#e65100'; ctx.lineWidth = 2;
+  ctx.beginPath();
+  vals.forEach((v, i) => {
+    const x = pad + (i / (N-1)) * (W - 2*pad);
+    const y = H - pad - ((v - minV) / range) * (H - 2*pad);
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+  const lastVal = '$' + vals[N-1].toLocaleString('en-US', {maximumFractionDigits:0});
+  ctx.fillStyle = vals[N-1] >= 100000.0 ? '#2e7d32' : '#c62828';
+  ctx.font = 'bold 13px sans-serif';
+  ctx.fillText(lastVal, W - pad - ctx.measureText(lastVal).width, 18);
+})();
+</script>
+</body>
+</html>
