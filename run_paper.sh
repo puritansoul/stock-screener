@@ -11,6 +11,22 @@ if [ "$DOW" -ge 6 ]; then
     exit 0
 fi
 
+# Only run between 10:10–10:20 AM ET — handles both EDT (UTC-4) and EST (UTC-5)
+# launchd fires this at 14:15 and 15:15 UTC; exactly one will land in this window
+HOUR=$(TZ="America/New_York" date +%H)
+MIN=$(TZ="America/New_York" date +%M)
+MINS=$(( HOUR * 60 + MIN ))
+if [ "$MINS" -lt 610 ] || [ "$MINS" -gt 620 ]; then
+    exit 0
+fi
+
+# Guard against double-run on DST transition day
+LOCKFILE="$SCRIPT_DIR/.paper_ran_$(TZ='America/New_York' date +%Y-%m-%d)"
+[ -f "$LOCKFILE" ] && exit 0
+touch "$LOCKFILE"
+# Clean up yesterday's lockfile
+find "$SCRIPT_DIR" -name ".paper_ran_*" -not -name "$(basename $LOCKFILE)" -delete
+
 echo "$(TZ='America/New_York' date '+%Y-%m-%d %H:%M:%S ET') — running paper_trader.py" >> "$LOG"
 cd "$SCRIPT_DIR"
 $PYTHON paper_trader.py >> "$LOG" 2>&1
