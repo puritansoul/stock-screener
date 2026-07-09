@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Intraday Trader — 2026-07-09</title>
-  <meta http-equiv="refresh" content="300">
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -35,10 +34,10 @@
   <h1>⚡ Intraday Paper Trader — ORB Strategy</h1>
   <p style="margin: 6px 0 12px">
     <span class="badge">2026-07-09</span>&nbsp;
-    <span class="badge" style="background:#e8f5e9;color:#e65100">ORB Window</span>&nbsp;
+    <span class="badge" style="background:#e8f5e9;color:#1b5e20">Trading</span>&nbsp;
     <span class="badge">ORB 30-min</span>&nbsp;
     <span class="badge">0 open</span>&nbsp;
-    <span class="badge">Auto-refresh 5 min</span>
+    <span class="badge" id="live-badge">Live prices every 30s</span>
   </p>
 
   <div class="section">
@@ -46,16 +45,16 @@
     <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px">
       <div class="card">
         <div class="card-label">Portfolio Value</div>
-        <div class="card-value" style="color:#1a237e">$100,000</div>
+        <div class="card-value" id="port-value" style="color:#1a237e">$100,000</div>
       </div>
       <div class="card">
         <div class="card-label">Total Return</div>
-        <div class="card-value" style="color:#2e7d32">+$0<br>
-          <span style="font-size:14px">+0.00%</span></div>
+        <div class="card-value" id="port-total" style="color:#2e7d32">+$0<br>
+          <span style="font-size:14px" id="port-total-pct">+0.00%</span></div>
       </div>
       <div class="card">
         <div class="card-label">Day P&amp;L</div>
-        <div class="card-value" style="color:#2e7d32">$+0</div>
+        <div class="card-value" id="port-today" style="color:#2e7d32">$+0</div>
       </div>
       <div class="card">
         <div class="card-label">Cash</div>
@@ -121,11 +120,138 @@
     </details>
   </div>
 
-  <p style="color:#bbb;font-size:11px;margin-top:16px">
+  <!-- Scan diagnostics -->
+  <div class="section">
+    <details>
+      <summary>Scan Diagnostics — 45 tickers checked</summary>
+      <p style="color:#666;font-size:12px;margin:8px 0 6px">
+        Shows what the scanner saw for each ticker this run. Entries only fire when status = "LONG signal" or "SHORT signal".
+      </p>
+      <table style="margin-top:4px">
+        <thead><tr>
+          <th>Ticker</th><th>Status</th><th>Close</th>
+          <th>ORB High</th><th>ORB Low</th><th>ORB Width</th><th>Vol Ratio</th>
+        </tr></thead>
+        <tbody><tr><td style="font-weight:bold">AAPL</td><td style="color:#e65100;">breakout — low vol</td><td style="text-align:right">$314.86</td><td style="text-align:right">$312.07</td><td style="text-align:right">$308.16</td><td style="text-align:right">$3.91</td><td style="text-align:right">0.15×</td></tr><tr><td style="font-weight:bold">MSFT</td><td style="color:#e65100;">breakout — low vol</td><td style="text-align:right">$380.52</td><td style="text-align:right">$379.32</td><td style="text-align:right">$373.35</td><td style="text-align:right">$5.97</td><td style="text-align:right">0.11×</td></tr><tr><td style="font-weight:bold">AMZN</td><td style="color:#555;">inside range</td><td style="text-align:right">$241.51</td><td style="text-align:right">$243.22</td><td style="text-align:right">$238.25</td><td style="text-align:right">$4.97</td><td style="text-align:right">0.09×</td></tr><tr><td style="font-weight:bold">NVDA</td><td style="color:#555;">inside range</td><td style="text-align:right">$201.52</td><td style="text-align:right">$204.46</td><td style="text-align:right">$201.32</td><td style="text-align:right">$3.14</td><td style="text-align:right">0.16×</td></tr><tr><td style="font-weight:bold">GOOGL</td><td style="color:#e65100;">breakdown — low vol</td><td style="text-align:right">$352.95</td><td style="text-align:right">$359.65</td><td style="text-align:right">$354.14</td><td style="text-align:right">$5.51</td><td style="text-align:right">0.19×</td></tr><tr><td style="font-weight:bold">META</td><td style="color:#e65100;">breakout — low vol</td><td style="text-align:right">$606.19</td><td style="text-align:right">$592.2</td><td style="text-align:right">$577.07</td><td style="text-align:right">$15.13</td><td style="text-align:right">0.34×</td></tr><tr><td style="font-weight:bold">TSLA</td><td style="color:#e65100;">breakout — low vol</td><td style="text-align:right">$397.56</td><td style="text-align:right">$396.25</td><td style="text-align:right">$390.86</td><td style="text-align:right">$5.39</td><td style="text-align:right">0.17×</td></tr><tr><td style="font-weight:bold">JPM</td><td style="color:#e65100;">breakout — low vol</td><td style="text-align:right">$334.99</td><td style="text-align:right">$333.75</td><td style="text-align:right">$330.81</td><td style="text-align:right">$2.94</td><td style="text-align:right">0.05×</td></tr><tr><td style="font-weight:bold">V</td><td style="color:#555;">inside range</td><td style="text-align:right">$347.82</td><td style="text-align:right">$348.5</td><td style="text-align:right">$344.42</td><td style="text-align:right">$4.08</td><td style="text-align:right">0.15×</td></tr><tr><td style="font-weight:bold">UNH</td><td style="color:#555;">inside range</td><td style="text-align:right">$430.8</td><td style="text-align:right">$433.01</td><td style="text-align:right">$423.52</td><td style="text-align:right">$9.49</td><td style="text-align:right">0.07×</td></tr><tr><td style="font-weight:bold">XOM</td><td style="color:#e65100;">breakdown — low vol</td><td style="text-align:right">$137.84</td><td style="text-align:right">$140.05</td><td style="text-align:right">$137.93</td><td style="text-align:right">$2.12</td><td style="text-align:right">0.16×</td></tr><tr><td style="font-weight:bold">LLY</td><td style="color:#e65100;">breakdown — low vol</td><td style="text-align:right">$1209.33</td><td style="text-align:right">$1230.0</td><td style="text-align:right">$1210.11</td><td style="text-align:right">$19.89</td><td style="text-align:right">0.12×</td></tr><tr><td style="font-weight:bold">JNJ</td><td style="color:#e65100;">breakdown — low vol</td><td style="text-align:right">$259.6</td><td style="text-align:right">$263.45</td><td style="text-align:right">$260.24</td><td style="text-align:right">$3.21</td><td style="text-align:right">0.07×</td></tr><tr><td style="font-weight:bold">MA</td><td style="color:#e65100;">breakout — low vol</td><td style="text-align:right">$521.71</td><td style="text-align:right">$521.4</td><td style="text-align:right">$515.11</td><td style="text-align:right">$6.29</td><td style="text-align:right">0.08×</td></tr><tr><td style="font-weight:bold">HD</td><td style="color:#e65100;">breakout — low vol</td><td style="text-align:right">$340.24</td><td style="text-align:right">$339.17</td><td style="text-align:right">$335.61</td><td style="text-align:right">$3.56</td><td style="text-align:right">0.06×</td></tr><tr><td style="font-weight:bold">PG</td><td style="color:#555;">inside range</td><td style="text-align:right">$146.79</td><td style="text-align:right">$147.49</td><td style="text-align:right">$145.6</td><td style="text-align:right">$1.89</td><td style="text-align:right">0.12×</td></tr><tr><td style="font-weight:bold">ABBV</td><td style="color:#555;">inside range</td><td style="text-align:right">$250.99</td><td style="text-align:right">$253.59</td><td style="text-align:right">$250.55</td><td style="text-align:right">$3.04</td><td style="text-align:right">0.2×</td></tr><tr><td style="font-weight:bold">CVX</td><td style="color:#555;">inside range</td><td style="text-align:right">$174.25</td><td style="text-align:right">$175.59</td><td style="text-align:right">$174.07</td><td style="text-align:right">$1.52</td><td style="text-align:right">0.12×</td></tr><tr><td style="font-weight:bold">AVGO</td><td style="color:#555;">inside range</td><td style="text-align:right">$400.55</td><td style="text-align:right">$403.73</td><td style="text-align:right">$393.33</td><td style="text-align:right">$10.4</td><td style="text-align:right">0.4×</td></tr><tr><td style="font-weight:bold">PEP</td><td style="color:#e65100;">breakout — low vol</td><td style="text-align:right">$137.63</td><td style="text-align:right">$137.15</td><td style="text-align:right">$134.69</td><td style="text-align:right">$2.46</td><td style="text-align:right">0.35×</td></tr><tr><td style="font-weight:bold">KO</td><td style="color:#555;">inside range</td><td style="text-align:right">$82.44</td><td style="text-align:right">$82.8</td><td style="text-align:right">$81.71</td><td style="text-align:right">$1.09</td><td style="text-align:right">0.09×</td></tr><tr><td style="font-weight:bold">ADBE</td><td style="color:#e65100;">breakout — low vol</td><td style="text-align:right">$221.44</td><td style="text-align:right">$220.75</td><td style="text-align:right">$213.09</td><td style="text-align:right">$7.66</td><td style="text-align:right">0.11×</td></tr><tr><td style="font-weight:bold">CRM</td><td style="color:#e65100;">breakout — low vol</td><td style="text-align:right">$163.59</td><td style="text-align:right">$163.18</td><td style="text-align:right">$156.48</td><td style="text-align:right">$6.7</td><td style="text-align:right">0.09×</td></tr><tr><td style="font-weight:bold">TMO</td><td style="color:#e65100;">breakout — low vol</td><td style="text-align:right">$519.59</td><td style="text-align:right">$515.49</td><td style="text-align:right">$506.98</td><td style="text-align:right">$8.51</td><td style="text-align:right">0.11×</td></tr><tr><td style="font-weight:bold">COST</td><td style="color:#e65100;">breakdown — low vol</td><td style="text-align:right">$911.51</td><td style="text-align:right">$935.0</td><td style="text-align:right">$914.8</td><td style="text-align:right">$20.2</td><td style="text-align:right">0.49×</td></tr><tr><td style="font-weight:bold">WMT</td><td style="color:#e65100;">breakout — low vol</td><td style="text-align:right">$112.39</td><td style="text-align:right">$112.19</td><td style="text-align:right">$111.04</td><td style="text-align:right">$1.15</td><td style="text-align:right">0.16×</td></tr><tr><td style="font-weight:bold">BAC</td><td style="color:#e65100;">breakout — low vol</td><td style="text-align:right">$59.15</td><td style="text-align:right">$58.8</td><td style="text-align:right">$58.41</td><td style="text-align:right">$0.39</td><td style="text-align:right">0.09×</td></tr><tr><td style="font-weight:bold">ORCL</td><td style="color:#555;">inside range</td><td style="text-align:right">$146.52</td><td style="text-align:right">$148.82</td><td style="text-align:right">$140.94</td><td style="text-align:right">$7.88</td><td style="text-align:right">0.24×</td></tr><tr><td style="font-weight:bold">NFLX</td><td style="color:#555;">inside range</td><td style="text-align:right">$74.64</td><td style="text-align:right">$75.43</td><td style="text-align:right">$74.02</td><td style="text-align:right">$1.41</td><td style="text-align:right">0.22×</td></tr><tr><td style="font-weight:bold">AMD</td><td style="color:#555;">inside range</td><td style="text-align:right">$553.23</td><td style="text-align:right">$558.0</td><td style="text-align:right">$535.2</td><td style="text-align:right">$22.8</td><td style="text-align:right">0.17×</td></tr><tr><td style="font-weight:bold">QCOM</td><td style="color:#e65100;">breakout — low vol</td><td style="text-align:right">$194.38</td><td style="text-align:right">$193.19</td><td style="text-align:right">$189.01</td><td style="text-align:right">$4.18</td><td style="text-align:right">0.1×</td></tr><tr><td style="font-weight:bold">TXN</td><td style="color:#555;">inside range</td><td style="text-align:right">$312.23</td><td style="text-align:right">$312.48</td><td style="text-align:right">$308.59</td><td style="text-align:right">$3.89</td><td style="text-align:right">0.13×</td></tr><tr><td style="font-weight:bold">GS</td><td style="color:#e65100;">breakout — low vol</td><td style="text-align:right">$1060.51</td><td style="text-align:right">$1055.0</td><td style="text-align:right">$1042.61</td><td style="text-align:right">$12.39</td><td style="text-align:right">0.09×</td></tr><tr><td style="font-weight:bold">BLK</td><td style="color:#e65100;">breakout — low vol</td><td style="text-align:right">$1018.12</td><td style="text-align:right">$1005.87</td><td style="text-align:right">$991.24</td><td style="text-align:right">$14.62</td><td style="text-align:right">0.37×</td></tr><tr><td style="font-weight:bold">SPGI</td><td style="color:#555;">inside range</td><td style="text-align:right">$427.11</td><td style="text-align:right">$430.77</td><td style="text-align:right">$422.7</td><td style="text-align:right">$8.06</td><td style="text-align:right">0.06×</td></tr><tr><td style="font-weight:bold">MCD</td><td style="color:#e65100;">breakout — low vol</td><td style="text-align:right">$276.42</td><td style="text-align:right">$276.38</td><td style="text-align:right">$272.92</td><td style="text-align:right">$3.46</td><td style="text-align:right">0.18×</td></tr><tr><td style="font-weight:bold">AMGN</td><td style="color:#e65100;">breakdown — low vol</td><td style="text-align:right">$362.91</td><td style="text-align:right">$368.73</td><td style="text-align:right">$363.64</td><td style="text-align:right">$5.09</td><td style="text-align:right">0.15×</td></tr><tr><td style="font-weight:bold">GILD</td><td style="color:#e65100;">breakdown — low vol</td><td style="text-align:right">$133.8</td><td style="text-align:right">$136.06</td><td style="text-align:right">$134.61</td><td style="text-align:right">$1.45</td><td style="text-align:right">0.14×</td></tr><tr><td style="font-weight:bold">ISRG</td><td style="color:#555;">inside range</td><td style="text-align:right">$412.71</td><td style="text-align:right">$416.25</td><td style="text-align:right">$409.0</td><td style="text-align:right">$7.25</td><td style="text-align:right">0.23×</td></tr><tr><td style="font-weight:bold">NOW</td><td style="color:#555;">inside range</td><td style="text-align:right">$107.73</td><td style="text-align:right">$107.81</td><td style="text-align:right">$101.51</td><td style="text-align:right">$6.29</td><td style="text-align:right">0.11×</td></tr><tr><td style="font-weight:bold">PANW</td><td style="color:#e65100;">breakout — low vol</td><td style="text-align:right">$331.02</td><td style="text-align:right">$330.06</td><td style="text-align:right">$318.9</td><td style="text-align:right">$11.16</td><td style="text-align:right">0.43×</td></tr><tr><td style="font-weight:bold">MELI</td><td style="color:#e65100;">breakout — low vol</td><td style="text-align:right">$1805.85</td><td style="text-align:right">$1800.0</td><td style="text-align:right">$1760.9</td><td style="text-align:right">$39.1</td><td style="text-align:right">0.09×</td></tr><tr><td style="font-weight:bold">UBER</td><td style="color:#e65100;">breakout — low vol</td><td style="text-align:right">$74.0</td><td style="text-align:right">$73.73</td><td style="text-align:right">$72.31</td><td style="text-align:right">$1.42</td><td style="text-align:right">0.08×</td></tr><tr><td style="font-weight:bold">SNOW</td><td style="color:#555;">inside range</td><td style="text-align:right">$263.58</td><td style="text-align:right">$264.32</td><td style="text-align:right">$253.0</td><td style="text-align:right">$11.32</td><td style="text-align:right">0.09×</td></tr><tr><td style="font-weight:bold">COIN</td><td style="color:#e65100;">breakout — low vol</td><td style="text-align:right">$159.62</td><td style="text-align:right">$159.59</td><td style="text-align:right">$154.78</td><td style="text-align:right">$4.81</td><td style="text-align:right">0.17×</td></tr></tbody>
+      </table>
+    </details>
+  </div>
+
+  <p style="color:#bbb;font-size:11px;margin-top:16px" id="live-status">
     intraday_trader.py &nbsp;|&nbsp; Simulated only — not real money &nbsp;|&nbsp; Not financial advice.
   </p>
 
 <script>
+// ── Finnhub live prices ───────────────────────────────────────────────────────
+(function() {
+  const TOKEN = 'd93d6v1r01qgqnua64j0d93d6v1r01qgqnua64jg';
+  const STARTING = 100000.0;
+  const delay = ms => new Promise(r => setTimeout(r, ms));
+
+  function isMarketHours() {
+    const now = new Date();
+    const et = new Date(now.toLocaleString('en-US', {timeZone: 'America/New_York'}));
+    const day = et.getDay();
+    if (day === 0 || day === 6) return false;
+    const h = et.getHours(), m = et.getMinutes();
+    const mins = h * 60 + m;
+    return mins >= 570 && mins < 960; // 9:30–4:00
+  }
+
+  async function fetchPrices() {
+    const rows = document.querySelectorAll('tr[data-ticker]');
+    if (!rows.length) return;
+    const quotes = {};
+    for (const row of rows) {
+      const tk = row.dataset.ticker;
+      try {
+        const q = await fetch(`https://finnhub.io/api/v1/quote?symbol=${tk}&token=${TOKEN}`).then(r => r.json());
+        if (q && q.c) quotes[tk] = { price: q.c, prevClose: q.pc };
+      } catch(e) {}
+      await delay(1100);
+    }
+    applyPrices(rows, quotes);
+    updatePortfolio(rows, quotes);
+    const t = new Date().toLocaleTimeString('en-US', {timeZone:'America/New_York'});
+    const badge = document.getElementById('live-badge');
+    const status = document.getElementById('live-status');
+    if (badge) badge.textContent = `Updated ${t} ET`;
+    if (status) {
+      status.innerHTML = `Live prices as of ${t} ET &nbsp;|&nbsp; Simulated only — not real money.`;
+      status.style.color = '#388e3c';
+    }
+  }
+
+  function applyPrices(rows, quotes) {
+    for (const row of rows) {
+      const tk   = row.dataset.ticker;
+      const qty  = parseFloat(row.dataset.qty);
+      const buy  = parseFloat(row.dataset.buypx);
+      const side = row.dataset.side;
+      const q    = quotes[tk];
+      if (!q) continue;
+      const price = q.price;
+
+      const priceCell  = row.querySelector('.live-price');
+      const unrealCell = row.querySelector('.live-unreal');
+      if (priceCell) priceCell.textContent = '$' + price.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+
+      if (unrealCell) {
+        const unreal = side === 'long' ? (price - buy) * qty : (buy - price) * qty;
+        const cost   = buy * qty;
+        const pct    = cost > 0 ? unreal / cost * 100 : 0;
+        const sign   = unreal >= 0 ? '+' : '';
+        unrealCell.textContent = `${sign}$${Math.abs(unreal).toLocaleString('en-US', {maximumFractionDigits:0})} (${pct >= 0 ? '+' : ''}${pct.toFixed(2)}%)`;
+        unrealCell.style.color = unreal >= 0 ? '#2e7d32' : '#c62828';
+      }
+    }
+  }
+
+  function updatePortfolio(rows, quotes) {
+    let openValue = 0;
+    for (const row of rows) {
+      const tk   = row.dataset.ticker;
+      const qty  = parseFloat(row.dataset.qty);
+      const buy  = parseFloat(row.dataset.buypx);
+      const side = row.dataset.side;
+      const q    = quotes[tk];
+      if (!q) { openValue += buy * qty; continue; }
+      const price = q.price;
+      openValue += side === 'long' ? price * qty : buy * qty + (buy - price) * qty;
+    }
+    const cashVal = (function() {
+      const cards = document.querySelectorAll('.card');
+      for (const c of cards) {
+        const lbl = c.querySelector('.card-label');
+        if (lbl && lbl.textContent.trim() === 'Cash') {
+          const val = c.querySelector('.card-value');
+          if (val) return parseFloat(val.textContent.replace(/[$,]/g, '')) || 0;
+        }
+      }
+      return 0;
+    })();
+    const portVal = cashVal + openValue;
+    const ret     = portVal - STARTING;
+    const retPct  = ret / STARTING * 100;
+    const sign    = ret >= 0 ? '+' : '';
+    const color   = ret >= 0 ? '#2e7d32' : '#c62828';
+
+    const portEl  = document.getElementById('port-value');
+    const totalEl = document.getElementById('port-total');
+    if (portEl) portEl.textContent = '$' + portVal.toLocaleString('en-US', {maximumFractionDigits:0});
+    if (totalEl) {
+      totalEl.innerHTML = `${sign}$${Math.abs(ret).toLocaleString('en-US',{maximumFractionDigits:0})}<br><span style="font-size:14px">${sign}${Math.abs(retPct).toFixed(2)}%</span>`;
+      totalEl.style.color = color;
+    }
+  }
+
+  if (isMarketHours()) {
+    fetchPrices();
+    setInterval(fetchPrices, 30000);  // every 30s for intraday
+  }
+})();
+
+// NAV chart
 (function() {
   const data = {"dates": ["2026-07-09"], "values": [100000.0]};
   if (!data.dates.length) return;
