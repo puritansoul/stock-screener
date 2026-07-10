@@ -192,12 +192,41 @@ def fetch_index_returns(nav_history: dict) -> dict:
         return {}
 
 
-def build_journal_section(nav_history: dict, idx_returns: dict) -> str:
+def fetch_spy_cumulative(nav_history: dict) -> dict:
+    """Return {date_str: cum_pct} for SPY anchored to the first date in nav_history."""
+    if not nav_history:
+        return {}
+    dates = sorted(nav_history.keys())
+    start = (date.fromisoformat(dates[0]) - timedelta(days=5)).isoformat()
+    end   = (date.fromisoformat(dates[-1]) + timedelta(days=2)).isoformat()
+    try:
+        raw = yf.download("^GSPC", start=start, end=end, auto_adjust=True, progress=False)
+        if raw.empty:
+            return {}
+        close = raw["Close"] if "Close" in raw.columns else raw.iloc[:, 0]
+        close = close.dropna().sort_index()
+        # Find the SPY price on or just before inception
+        inception_dt = pd.Timestamp(dates[0])
+        prior = close[close.index <= inception_dt]
+        if prior.empty:
+            return {}
+        base = float(prior.iloc[-1])
+        result = {}
+        for ts, val in close.items():
+            d = str(ts.date()) if hasattr(ts, "date") else str(ts)[:10]
+            result[d] = round((float(val) / base - 1) * 100, 3)
+        return result
+    except Exception:
+        return {}
+
+
+def build_journal_section(nav_history: dict, idx_returns: dict, spy_cum: dict | None = None) -> str:
     """Build an HTML journal table of daily P&L vs index returns."""
     if not nav_history:
         return ""
 
     dates = sorted(nav_history.keys(), reverse=True)
+    spy_cum = spy_cum or {}
 
     def _pc(v, bold=False):
         if v is None:
@@ -220,6 +249,14 @@ def build_journal_section(nav_history: dict, idx_returns: dict) -> str:
         a = "▲" if d > 0 else "▼"
         return f'<td style="color:{c};text-align:right;font-size:12px">{a} {"+" if d>0 else ""}{d:.2f}%</td>'
 
+    def _cum_vs(bot_cum, spy_c):
+        if bot_cum is None or spy_c is None:
+            return '<td style="color:#bbb;text-align:right">—</td>'
+        d = bot_cum - spy_c
+        c = "#1b5e20" if d > 0 else "#c62828"
+        a = "▲" if d > 0 else "▼"
+        return f'<td style="color:{c};text-align:right;font-weight:bold;font-size:12px">{a} {"+" if d>0 else ""}{d:.2f}%</td>'
+
     rows = ""
     for i, d in enumerate(dates):
         nav_now  = nav_history[d]
@@ -229,6 +266,7 @@ def build_journal_section(nav_history: dict, idx_returns: dict) -> str:
         pnl      = round(nav_now - nav_prev, 2)
         day_pct  = round(pnl / nav_prev * 100, 3) if nav_prev else None
         cum_pct  = round((nav_now / STARTING_CAPITAL - 1) * 100, 3)
+        spy_c    = spy_cum.get(d)
 
         idx = idx_returns.get(d, {})
         spx = idx.get("S&P 500")
@@ -241,6 +279,8 @@ def build_journal_section(nav_history: dict, idx_returns: dict) -> str:
         rows += _dc(pnl)
         rows += _pc(day_pct, bold=True)
         rows += _pc(cum_pct)
+        rows += _pc(spy_c)
+        rows += _cum_vs(cum_pct, spy_c)
         rows += _pc(spx)
         rows += _pc(qqq)
         rows += _pc(dow)
@@ -249,7 +289,7 @@ def build_journal_section(nav_history: dict, idx_returns: dict) -> str:
         rows += "</tr>\n"
 
     if not rows:
-        rows = '<tr><td colspan="9" style="color:#999;text-align:center;padding:12px">No daily data yet</td></tr>'
+        rows = '<tr><td colspan="11" style="color:#999;text-align:center;padding:12px">No daily data yet</td></tr>'
 
     return f"""
   <!-- Daily P&L Journal -->
@@ -259,21 +299,23 @@ def build_journal_section(nav_history: dict, idx_returns: dict) -> str:
       <p style="color:#888;font-size:12px;margin:8px 0 8px">
         Day % = mark-to-market NAV change that day.&nbsp;
         Cum % = total return since inception.&nbsp;
-        vs S&P = your day % minus S&P 500 day % (green = beat the market).
+        SPY Cum % = buy-and-hold SPY return over the same period.&nbsp;
+        vs S&P = your day % minus S&amp;P 500 day % (green = beat the market).
       </p>
       <table>
         <thead>
           <tr>
             <th rowspan="2" style="vertical-align:bottom">Date</th>
-            <th colspan="3" style="background:#283593;text-align:center;font-size:11px">Your Portfolio</th>
-            <th colspan="4" style="background:#283593;text-align:center;font-size:11px">Index Returns</th>
-            <th rowspan="2" style="vertical-align:bottom;text-align:right">vs S&amp;P</th>
+            <th colspan="4" style="background:#283593;text-align:center;font-size:11px">Your Portfolio</th>
+            <th colspan="5" style="background:#283593;text-align:center;font-size:11px">Benchmark</th>
           </tr>
           <tr>
             <th style="text-align:right">Day P&amp;L $</th>
             <th style="text-align:right">Day %</th>
             <th style="text-align:right">Cum %</th>
-            <th style="text-align:right">S&amp;P 500</th>
+            <th style="text-align:right">vs SPY (cum)</th>
+            <th style="text-align:right">SPY Cum %</th>
+            <th style="text-align:right">S&amp;P 500 Day</th>
             <th style="text-align:right">Nasdaq</th>
             <th style="text-align:right">DOW</th>
             <th style="text-align:right">Russell 2K</th>
@@ -611,7 +653,10 @@ def build_paper_dashboard(state: dict, prices: pd.DataFrame):
     # NAV chart data for sparkline
     nav_dates  = sorted(nav.keys())
     nav_values = [nav[d] for d in nav_dates]
-    nav_js     = json.dumps({"dates": nav_dates, "values": nav_values})
+    spy_cum    = fetch_spy_cumulative(nav)
+    # SPY equity curve: convert cum % back to dollar values anchored at STARTING_CAPITAL
+    spy_values = [round(STARTING_CAPITAL * (1 + spy_cum.get(d, 0) / 100), 2) for d in nav_dates]
+    nav_js     = json.dumps({"dates": nav_dates, "values": nav_values, "spy": spy_values})
 
     # Index returns for journal
     idx_returns = fetch_index_returns(nav)
@@ -774,7 +819,7 @@ def build_paper_dashboard(state: dict, prices: pd.DataFrame):
     </details>
   </div>
 
-  {build_journal_section(nav, idx_returns)}
+  {build_journal_section(nav, idx_returns, spy_cum)}
 
   <p style="color:#bbb;font-size:11px;margin-top:16px" id="live-status">
     paper_trader.py &nbsp;|&nbsp; Simulated trades only — not real money. &nbsp;|&nbsp;
@@ -889,57 +934,88 @@ def build_paper_dashboard(state: dict, prices: pd.DataFrame):
   }}
 }})();
 
-// NAV equity curve
+// NAV equity curve with SPY benchmark
 (function() {{
   const data = {nav_js};
   if (!data.dates.length) return;
   const canvas = document.getElementById('nav-chart');
   const ctx    = canvas.getContext('2d');
   const W = canvas.offsetWidth || 800;
-  const H = 120;
+  const H = 140;
   canvas.width  = W;
   canvas.height = H;
 
-  const vals  = data.values;
-  const N     = vals.length;
-  const minV  = Math.min(...vals);
-  const maxV  = Math.max(...vals);
+  const vals = data.values;
+  const spy  = data.spy || [];
+  const N    = vals.length;
+  const pad  = 20;
+
+  const allVals = [...vals, ...spy].filter(v => v != null);
+  const minV  = Math.min(...allVals);
+  const maxV  = Math.max(...allVals);
   const range = maxV - minV || 1;
-  const pad   = 10;
+
+  const toX = i => pad + (i / (N - 1 || 1)) * (W - 2 * pad);
+  const toY = v => H - pad - ((v - minV) / range) * (H - 2 * pad);
 
   ctx.clearRect(0, 0, W, H);
+
+  // SPY line (grey dashed)
+  if (spy.length) {{
+    ctx.strokeStyle = '#e65100';
+    ctx.lineWidth   = 1.5;
+    ctx.setLineDash([4, 4]);
+    ctx.beginPath();
+    spy.forEach((v, i) => {{ if (v != null) {{ i === 0 ? ctx.moveTo(toX(i), toY(v)) : ctx.lineTo(toX(i), toY(v)); }} }});
+    ctx.stroke();
+    ctx.setLineDash([]);
+  }}
+
+  // Portfolio line (solid blue)
   ctx.strokeStyle = '#1a237e';
   ctx.lineWidth   = 2;
   ctx.beginPath();
-  vals.forEach((v, i) => {{
-    const x = pad + (i / (N - 1 || 1)) * (W - 2 * pad);
-    const y = H - pad - ((v - minV) / range) * (H - 2 * pad);
-    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-  }});
+  vals.forEach((v, i) => {{ i === 0 ? ctx.moveTo(toX(i), toY(v)) : ctx.lineTo(toX(i), toY(v)); }});
   ctx.stroke();
 
-  // Fill gradient
-  ctx.lineTo(pad + (W - 2 * pad), H - pad);
-  ctx.lineTo(pad, H - pad);
+  // Fill under portfolio line
+  ctx.lineTo(toX(N - 1), H - pad);
+  ctx.lineTo(toX(0), H - pad);
   ctx.closePath();
   const grad = ctx.createLinearGradient(0, 0, 0, H);
-  grad.addColorStop(0, 'rgba(26,35,126,0.15)');
+  grad.addColorStop(0, 'rgba(26,35,126,0.12)');
   grad.addColorStop(1, 'rgba(26,35,126,0)');
   ctx.fillStyle = grad;
   ctx.fill();
 
-  // Start / end labels
-  ctx.fillStyle = '#666';
+  // Labels
   ctx.font = '11px sans-serif';
+  ctx.fillStyle = '#666';
   if (data.dates.length) {{
-    ctx.fillText(data.dates[0], pad, H - 1);
+    ctx.fillText(data.dates[0], pad, H - 4);
     const last = data.dates[N-1];
-    ctx.fillText(last, W - pad - ctx.measureText(last).width, H - 1);
+    ctx.fillText(last, W - pad - ctx.measureText(last).width, H - 4);
   }}
+  // Portfolio end label
   const lastVal = '$' + vals[N-1].toLocaleString('en-US', {{maximumFractionDigits:0}});
   ctx.fillStyle = vals[N-1] >= {STARTING_CAPITAL} ? '#2e7d32' : '#c62828';
-  ctx.font = 'bold 13px sans-serif';
-  ctx.fillText(lastVal, W - pad - ctx.measureText(lastVal).width, 20);
+  ctx.font = 'bold 12px sans-serif';
+  ctx.fillText(lastVal, toX(N-1) - ctx.measureText(lastVal).width - 4, toY(vals[N-1]) - 4);
+  // SPY end label
+  if (spy.length) {{
+    const spyLast = 'SPY $' + spy[N-1].toLocaleString('en-US', {{maximumFractionDigits:0}});
+    ctx.fillStyle = '#e65100';
+    ctx.font = '11px sans-serif';
+    ctx.fillText(spyLast, toX(N-1) - ctx.measureText(spyLast).width - 4, toY(spy[N-1]) + 14);
+  }}
+  // Legend
+  ctx.font = '11px sans-serif';
+  ctx.fillStyle = '#1a237e'; ctx.fillRect(pad, 6, 18, 3);
+  ctx.fillStyle = '#333'; ctx.fillText('Portfolio', pad + 22, 12);
+  ctx.strokeStyle = '#e65100'; ctx.setLineDash([4,4]); ctx.lineWidth = 1.5;
+  ctx.beginPath(); ctx.moveTo(pad + 90, 8); ctx.lineTo(pad + 108, 8); ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle = '#333'; ctx.fillText('SPY (buy & hold)', pad + 112, 12);
 }})();
 </script>
 
