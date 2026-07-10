@@ -1,6 +1,8 @@
 {
-  "capital": 51505.6,
-  "open_positions": [
+  "capital": 99940.86,
+  "open_positions": [],
+  "closed_today": [],
+  "all_closed": [
     {
       "ticker": "SNOW",
       "side": "long",
@@ -12,7 +14,12 @@
       "stop": 259.73,
       "orb_width": 11.32,
       "cost": 19904.25,
-      "vol_ratio": 1.42
+      "vol_ratio": 1.42,
+      "exit_date": "2026-07-09",
+      "exit_price": 265.39,
+      "pnl": 0.0,
+      "exit_reason": "force close 3:45pm",
+      "exit_time": "15:45 ET"
     },
     {
       "ticker": "ABBV",
@@ -25,7 +32,12 @@
       "stop": 250.07,
       "orb_width": 3.04,
       "cost": 15907.2,
-      "vol_ratio": 2.08
+      "vol_ratio": 2.08,
+      "exit_date": "2026-07-09",
+      "exit_price": 249.35,
+      "pnl": -51.2,
+      "exit_reason": "force close 3:45pm",
+      "exit_time": "15:45 ET"
     },
     {
       "ticker": "AMGN",
@@ -38,241 +50,55 @@
       "stop": 364.9149,
       "orb_width": 5.0899,
       "cost": 12682.95,
-      "vol_ratio": 1.54
+      "vol_ratio": 1.54,
+      "exit_date": "2026-07-09",
+      "exit_price": 363.34,
+      "pnl": -33.95,
+      "exit_reason": "force close 3:45pm",
+      "exit_time": "15:45 ET"
+    },
+    {
+      "ticker": "DRI",
+      "side": "long",
+      "entry_date": "2026-07-09",
+      "entry_time": "15:11 ET",
+      "entry_price": 203.33,
+      "shares": 50,
+      "target": 205.285,
+      "stop": 202.3525,
+      "orb_width": 1.955,
+      "cost": 10166.5,
+      "vol_ratio": 1.86,
+      "exit_date": "2026-07-09",
+      "exit_price": 202.835,
+      "pnl": -24.75,
+      "exit_reason": "force close 3:45pm",
+      "exit_time": "15:45 ET"
+    },
+    {
+      "ticker": "CINF",
+      "side": "short",
+      "entry_date": "2026-07-09",
+      "entry_time": "15:11 ET",
+      "entry_price": 175.81,
+      "shares": 47,
+      "target": 173.92,
+      "stop": 176.755,
+      "orb_width": 1.89,
+      "cost": 8263.07,
+      "vol_ratio": 1.37,
+      "exit_date": "2026-07-09",
+      "exit_price": 174.73,
+      "pnl": 50.76,
+      "exit_reason": "force close 3:45pm",
+      "exit_time": "15:45 ET"
     }
   ],
-  "closed_today": [],
-  "all_closed": [],
-  "today": "2026-07-09",
-  "today_orb": {
-    "AAPL": {
-      "high": 312.07,
-      "low": 308.16,
-      "width": 3.91
-    },
-    "MSFT": {
-      "high": 379.32,
-      "low": 373.35,
-      "width": 5.97
-    },
-    "AMZN": {
-      "high": 243.2199,
-      "low": 238.25,
-      "width": 4.9699
-    },
-    "NVDA": {
-      "high": 204.46,
-      "low": 201.32,
-      "width": 3.14
-    },
-    "GOOGL": {
-      "high": 359.65,
-      "low": 354.14,
-      "width": 5.51
-    },
-    "META": {
-      "high": 592.2,
-      "low": 577.07,
-      "width": 15.13
-    },
-    "TSLA": {
-      "high": 396.25,
-      "low": 390.8631,
-      "width": 5.3869
-    },
-    "JPM": {
-      "high": 333.75,
-      "low": 330.8053,
-      "width": 2.9447
-    },
-    "V": {
-      "high": 348.5,
-      "low": 344.42,
-      "width": 4.08
-    },
-    "UNH": {
-      "high": 433.01,
-      "low": 423.516,
-      "width": 9.494
-    },
-    "XOM": {
-      "high": 140.05,
-      "low": 137.93,
-      "width": 2.12
-    },
-    "LLY": {
-      "high": 1230.0,
-      "low": 1210.11,
-      "width": 19.89
-    },
-    "JNJ": {
-      "high": 263.45,
-      "low": 260.24,
-      "width": 3.21
-    },
-    "MA": {
-      "high": 521.405,
-      "low": 515.11,
-      "width": 6.295
-    },
-    "HD": {
-      "high": 339.165,
-      "low": 335.61,
-      "width": 3.555
-    },
-    "PG": {
-      "high": 147.49,
-      "low": 145.6,
-      "width": 1.89
-    },
-    "ABBV": {
-      "high": 253.59,
-      "low": 250.55,
-      "width": 3.04
-    },
-    "CVX": {
-      "high": 175.59,
-      "low": 174.07,
-      "width": 1.52
-    },
-    "AVGO": {
-      "high": 403.73,
-      "low": 393.3302,
-      "width": 10.3998
-    },
-    "PEP": {
-      "high": 137.15,
-      "low": 134.69,
-      "width": 2.46
-    },
-    "KO": {
-      "high": 82.8,
-      "low": 81.71,
-      "width": 1.09
-    },
-    "ADBE": {
-      "high": 220.75,
-      "low": 213.09,
-      "width": 7.66
-    },
-    "CRM": {
-      "high": 163.18,
-      "low": 156.48,
-      "width": 6.7
-    },
-    "TMO": {
-      "high": 515.49,
-      "low": 506.98,
-      "width": 8.51
-    },
-    "COST": {
-      "high": 935.0,
-      "low": 914.8,
-      "width": 20.2
-    },
-    "WMT": {
-      "high": 112.19,
-      "low": 111.04,
-      "width": 1.15
-    },
-    "BAC": {
-      "high": 58.795,
-      "low": 58.41,
-      "width": 0.385
-    },
-    "ORCL": {
-      "high": 148.825,
-      "low": 140.94,
-      "width": 7.885
-    },
-    "NFLX": {
-      "high": 75.43,
-      "low": 74.02,
-      "width": 1.41
-    },
-    "AMD": {
-      "high": 557.9999,
-      "low": 535.2,
-      "width": 22.7999
-    },
-    "QCOM": {
-      "high": 193.195,
-      "low": 189.01,
-      "width": 4.185
-    },
-    "TXN": {
-      "high": 312.48,
-      "low": 308.59,
-      "width": 3.89
-    },
-    "GS": {
-      "high": 1055.0,
-      "low": 1042.61,
-      "width": 12.39
-    },
-    "BLK": {
-      "high": 1005.865,
-      "low": 991.24,
-      "width": 14.625
-    },
-    "SPGI": {
-      "high": 430.77,
-      "low": 422.705,
-      "width": 8.065
-    },
-    "MCD": {
-      "high": 276.375,
-      "low": 272.92,
-      "width": 3.455
-    },
-    "AMGN": {
-      "high": 368.73,
-      "low": 363.6401,
-      "width": 5.0899
-    },
-    "GILD": {
-      "high": 136.0599,
-      "low": 134.61,
-      "width": 1.4499
-    },
-    "ISRG": {
-      "high": 416.25,
-      "low": 409.0,
-      "width": 7.25
-    },
-    "NOW": {
-      "high": 107.805,
-      "low": 101.51,
-      "width": 6.295
-    },
-    "PANW": {
-      "high": 330.06,
-      "low": 318.9,
-      "width": 11.16
-    },
-    "MELI": {
-      "high": 1800.0,
-      "low": 1760.9,
-      "width": 39.1
-    },
-    "UBER": {
-      "high": 73.73,
-      "low": 72.31,
-      "width": 1.42
-    },
-    "SNOW": {
-      "high": 264.32,
-      "low": 253.0,
-      "width": 11.32
-    },
-    "COIN": {
-      "high": 159.59,
-      "low": 154.78,
-      "width": 4.81
-    }
-  },
+  "today": "2026-07-10",
+  "today_orb": {},
   "nav_history": {
-    "2026-07-09": 99874.21
+    "2026-07-09": 99940.86,
+    "2026-07-10": 99940.86
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -422,21 +248,308 @@
     },
     {
       "date": "2026-07-09",
-      "time": "19:49 ET",
-      "phase": "after_hours",
-      "entries": [],
+      "time": "15:11 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "DRI",
+          "side": "long",
+          "price": 203.33,
+          "shares": 50,
+          "target": 205.29,
+          "stop": 202.35
+        },
+        {
+          "ticker": "CINF",
+          "side": "short",
+          "price": 175.81,
+          "shares": 47,
+          "target": 173.92,
+          "stop": 176.75
+        }
+      ],
       "exits": [],
-      "portfolio_value": 99874.21,
-      "note": "$99,874 | cash=$51,506 | open=3 | closed today=0 | day PnL=$+0"
+      "portfolio_value": 100049.22,
+      "note": "$100,049 | cash=$33,076 | open=5 | closed today=0 | day PnL=$+0"
     },
     {
       "date": "2026-07-09",
-      "time": "19:54 ET",
+      "time": "15:13 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 100060.47,
+      "note": "$100,060 | cash=$33,076 | open=5 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "15:15 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 100075.2,
+      "note": "$100,075 | cash=$33,076 | open=5 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "15:18 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 100119.2,
+      "note": "$100,119 | cash=$33,076 | open=5 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "15:20 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 100084.64,
+      "note": "$100,085 | cash=$33,076 | open=5 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "15:23 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 100051.04,
+      "note": "$100,051 | cash=$33,076 | open=5 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "15:25 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 100010.0,
+      "note": "$100,010 | cash=$33,076 | open=5 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "15:28 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 100003.43,
+      "note": "$100,003 | cash=$33,076 | open=5 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "15:30 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 99980.58,
+      "note": "$99,981 | cash=$33,076 | open=5 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "15:32 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 100000.22,
+      "note": "$100,000 | cash=$33,076 | open=5 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "15:35 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 99963.81,
+      "note": "$99,964 | cash=$33,076 | open=5 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "15:37 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 99954.92,
+      "note": "$99,955 | cash=$33,076 | open=5 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "15:40 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 99971.99,
+      "note": "$99,972 | cash=$33,076 | open=5 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "15:42 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 99967.38,
+      "note": "$99,967 | cash=$33,076 | open=5 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "15:45 ET",
+      "phase": "force_close",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "SNOW",
+          "side": "long",
+          "exit_price": 265.39,
+          "pnl": 0.0,
+          "reason": "force close 3:45pm"
+        },
+        {
+          "ticker": "ABBV",
+          "side": "short",
+          "exit_price": 249.35,
+          "pnl": -51.2,
+          "reason": "force close 3:45pm"
+        },
+        {
+          "ticker": "AMGN",
+          "side": "short",
+          "exit_price": 363.34,
+          "pnl": -33.95,
+          "reason": "force close 3:45pm"
+        },
+        {
+          "ticker": "DRI",
+          "side": "long",
+          "exit_price": 202.84,
+          "pnl": -24.75,
+          "reason": "force close 3:45pm"
+        },
+        {
+          "ticker": "CINF",
+          "side": "short",
+          "exit_price": 174.73,
+          "pnl": 50.76,
+          "reason": "force close 3:45pm"
+        }
+      ],
+      "portfolio_value": 99940.86,
+      "note": "$99,941 | cash=$99,941 | open=0 | closed today=5 | day PnL=$-59"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "15:47 ET",
+      "phase": "force_close",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 99940.86,
+      "note": "$99,941 | cash=$99,941 | open=0 | closed today=5 | day PnL=$-59"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "15:50 ET",
+      "phase": "force_close",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 99940.86,
+      "note": "$99,941 | cash=$99,941 | open=0 | closed today=5 | day PnL=$-59"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "15:52 ET",
+      "phase": "force_close",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 99940.86,
+      "note": "$99,941 | cash=$99,941 | open=0 | closed today=5 | day PnL=$-59"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "15:54 ET",
+      "phase": "force_close",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 99940.86,
+      "note": "$99,941 | cash=$99,941 | open=0 | closed today=5 | day PnL=$-59"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "15:57 ET",
+      "phase": "force_close",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 99940.86,
+      "note": "$99,941 | cash=$99,941 | open=0 | closed today=5 | day PnL=$-59"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "15:59 ET",
+      "phase": "force_close",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 99940.86,
+      "note": "$99,941 | cash=$99,941 | open=0 | closed today=5 | day PnL=$-59"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "16:02 ET",
       "phase": "after_hours",
       "entries": [],
       "exits": [],
-      "portfolio_value": 99874.21,
-      "note": "$99,874 | cash=$51,506 | open=3 | closed today=0 | day PnL=$+0"
+      "portfolio_value": 99940.86,
+      "note": "$99,941 | cash=$99,941 | open=0 | closed today=5 | day PnL=$-59"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "16:04 ET",
+      "phase": "after_hours",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 99940.86,
+      "note": "$99,941 | cash=$99,941 | open=0 | closed today=5 | day PnL=$-59"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "16:09 ET",
+      "phase": "after_hours",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 99940.86,
+      "note": "$99,941 | cash=$99,941 | open=0 | closed today=5 | day PnL=$-59"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "17:09 ET",
+      "phase": "after_hours",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 99940.86,
+      "note": "$99,941 | cash=$99,941 | open=0 | closed today=5 | day PnL=$-59"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "18:08 ET",
+      "phase": "after_hours",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 99940.86,
+      "note": "$99,941 | cash=$99,941 | open=0 | closed today=5 | day PnL=$-59"
+    },
+    {
+      "date": "2026-07-09",
+      "time": "19:08 ET",
+      "phase": "after_hours",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 99940.86,
+      "note": "$99,941 | cash=$99,941 | open=0 | closed today=5 | day PnL=$-59"
+    },
+    {
+      "date": "2026-07-10",
+      "time": "09:20 ET",
+      "phase": "pre_market",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 99940.86,
+      "note": "$99,941 | cash=$99,941 | open=0 | closed today=0 | day PnL=$+0"
     }
   ]
 }

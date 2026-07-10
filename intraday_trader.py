@@ -287,10 +287,14 @@ def scan_entries(state: dict, data: dict[str, dict]) -> list[dict]:
         return []
 
     candidates = []
-    for tk, orb_data in orb.items():
+    # Iterate over all tickers that have data — same universe as diagnostics
+    for tk in INTRADAY_UNIVERSE:
         if tk in open_tks:
             continue
         if tk not in data:
+            continue
+        orb_data = orb.get(tk)
+        if orb_data is None:
             continue
 
         bars    = data[tk]["bars"]
@@ -524,20 +528,23 @@ def mark_to_market(state: dict, data: dict[str, dict]) -> float:
 
 def scan_diagnostics(state: dict, data: dict[str, dict]) -> list[dict]:
     """Return per-ticker scan results for the dashboard diagnostic table."""
-    orb   = state.get("today_orb", {})
-    rows  = []
+    orb      = state.get("today_orb", {})
+    rows     = []
     open_tks = {p["ticker"] for p in state["open_positions"]}
+    slots    = MAX_POSITIONS - len(open_tks)
+    phase    = get_market_phase()
+
     for tk in INTRADAY_UNIVERSE:
         orb_data = orb.get(tk)
         if tk not in data:
             rows.append({"ticker": tk, "status": "no data", "close": None,
-                         "orb_hi": None, "orb_lo": None, "rsi": None, "vol_ratio": None})
+                         "orb_hi": None, "orb_lo": None, "vol_ratio": None, "note": ""})
             continue
         bars    = data[tk]["bars"]
         avg_vol = data[tk]["avg_bar_vol"]
         if bars.empty:
             rows.append({"ticker": tk, "status": "empty bars", "close": None,
-                         "orb_hi": None, "orb_lo": None, "rsi": None, "vol_ratio": None})
+                         "orb_hi": None, "orb_lo": None, "vol_ratio": None, "note": ""})
             continue
         close_px = float(bars["Close"].iloc[-1])
         bar_vol  = float(bars["Volume"].iloc[-1]) if "Volume" in bars.columns else 0
@@ -545,7 +552,7 @@ def scan_diagnostics(state: dict, data: dict[str, dict]) -> list[dict]:
 
         if orb_data is None:
             rows.append({"ticker": tk, "status": "orb not ready", "close": round(close_px, 2),
-                         "orb_hi": None, "orb_lo": None, "rsi": None, "vol_ratio": vol_ratio})
+                         "orb_hi": None, "orb_lo": None, "vol_ratio": vol_ratio, "note": "need ≥3 bars 9:30–9:59"})
             continue
 
         orb_hi = orb_data["high"]
@@ -553,24 +560,47 @@ def scan_diagnostics(state: dict, data: dict[str, dict]) -> list[dict]:
         orb_w  = orb_data["width"]
         vol_ok = (avg_vol == 0) or (bar_vol >= VOLUME_FILTER * avg_vol)
 
+        post_orb = bars[bars.index.time >= ORB_END_TIME]
+
         if tk in open_tks:
             status = "in position"
+            note   = ""
         elif orb_w < 0.01:
             status = "orb too tight"
+            note   = f"width=${orb_w:.4f}"
         elif close_px > orb_hi and vol_ok:
-            status = "LONG signal"
+            if phase != "trading":
+                status = "LONG signal"
+                note   = f"⚠ not traded — phase={phase}"
+            elif slots <= 0:
+                status = "LONG signal"
+                note   = "⚠ not traded — positions full (max 5)"
+            else:
+                status = "LONG signal"
+                note   = "✓ eligible for entry"
         elif close_px < orb_lo and vol_ok:
-            status = "SHORT signal"
+            if phase != "trading":
+                status = "SHORT signal"
+                note   = f"⚠ not traded — phase={phase}"
+            elif slots <= 0:
+                status = "SHORT signal"
+                note   = "⚠ not traded — positions full (max 5)"
+            else:
+                status = "SHORT signal"
+                note   = "✓ eligible for entry"
         elif close_px > orb_hi:
             status = "breakout — low vol"
+            note   = f"vol={vol_ratio}× (need {VOLUME_FILTER}×)"
         elif close_px < orb_lo:
             status = "breakdown — low vol"
+            note   = f"vol={vol_ratio}× (need {VOLUME_FILTER}×)"
         else:
             status = "inside range"
+            note   = ""
 
         rows.append({"ticker": tk, "status": status, "close": round(close_px, 2),
                      "orb_hi": round(orb_hi, 2), "orb_lo": round(orb_lo, 2),
-                     "orb_w": round(orb_w, 2), "vol_ratio": vol_ratio})
+                     "orb_w": round(orb_w, 2), "vol_ratio": vol_ratio, "note": note})
     return rows
 
 
@@ -655,8 +685,10 @@ def _diag_rows(diag: list[dict]) -> str:
     }
     rows = ""
     for r in diag:
-        sc = status_color.get(r["status"], "#555")
+        sc   = status_color.get(r["status"], "#555")
         bold = "font-weight:bold;" if "signal" in r["status"] else ""
+        note = r.get("note", "")
+        note_color = "#c62828" if "⚠" in note else ("#2e7d32" if "✓" in note else "#888")
         rows += (
             f'<tr><td style="font-weight:bold">{r["ticker"]}</td>'
             f'<td style="color:{sc};{bold}">{r["status"]}</td>'
@@ -665,9 +697,10 @@ def _diag_rows(diag: list[dict]) -> str:
             f'<td style="text-align:right">{("$"+str(r.get("orb_lo",""))) if r.get("orb_lo") else "—"}</td>'
             f'<td style="text-align:right">{("$"+str(r.get("orb_w",""))) if r.get("orb_w") else "—"}</td>'
             f'<td style="text-align:right">{(str(r["vol_ratio"])+"×") if r["vol_ratio"] else "—"}</td>'
+            f'<td style="color:{note_color};font-size:12px">{note}</td>'
             f'</tr>'
         )
-    return rows or '<tr><td colspan="7" style="color:#999;text-align:center;padding:12px">No data yet</td></tr>'
+    return rows or '<tr><td colspan="8" style="color:#999;text-align:center;padding:12px">No data yet</td></tr>'
 
 
 def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict] | None = None):
@@ -906,7 +939,7 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
       <table style="margin-top:4px">
         <thead><tr>
           <th>Ticker</th><th>Status</th><th>Close</th>
-          <th>ORB High</th><th>ORB Low</th><th>ORB Width</th><th>Vol Ratio</th>
+          <th>ORB High</th><th>ORB Low</th><th>ORB Width</th><th>Vol Ratio</th><th>Note</th>
         </tr></thead>
         <tbody>{_diag_rows(diag or [])}</tbody>
       </table>
