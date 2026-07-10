@@ -377,7 +377,7 @@ def scan_entries(state: dict, data: dict[str, dict]) -> list[dict]:
         state["open_positions"].append(pos)
         open_tks.add(tk)
         entries.append({"ticker": tk, "side": side, "price": round(entry, 2), "shares": shares,
-                         "target": round(target, 2), "stop": round(stop, 2)})
+                         "stop": round(stop, 2), "trail_dist": round(trail_dist, 4)})
         print(f"  ENTER {side} {tk} @ ${entry:.2f}  x{shares}  target=${target:.2f}  stop=${stop:.2f}")
 
     state["capital"] = round(capital, 2)
