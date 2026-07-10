@@ -32,7 +32,7 @@ warnings.filterwarnings("ignore")
 # ── Config ────────────────────────────────────────────────────────────────────
 STARTING_CAPITAL  = 100_000.0
 RISK_PER_TRADE    = 0.02       # 2% of portfolio at risk per trade
-MAX_POSITIONS     = 10         # concurrent long + short positions
+MAX_POSITIONS     = 9999       # no cap — limited only by available cash
 ATR_PERIOD        = 14
 ATR_STOP_MULT     = 2.0        # stop = entry ± 2 × ATR(14)
 RSI_PERIOD        = 2
@@ -700,7 +700,7 @@ def build_paper_dashboard(state: dict, prices: pd.DataFrame):
       </div>
       <div class="card">
         <div class="card-label">Open Positions</div>
-        <div class="card-value">{len(open_pos)} / {MAX_POSITIONS}</div>
+        <div class="card-value">{len(open_pos)}</div>
       </div>
     </div>
     <canvas id="nav-chart" height="100"></canvas>
@@ -735,7 +735,7 @@ def build_paper_dashboard(state: dict, prices: pd.DataFrame):
             <strong>Exit:</strong> Price crosses 5-day SMA (or hits stop)<br>
             <strong>Stop:</strong> Entry ± {ATR_STOP_MULT}× ATR(14)<br>
             <strong>Risk:</strong> {RISK_PER_TRADE:.0%} of portfolio per trade<br>
-            <strong>Max positions:</strong> {MAX_POSITIONS}<br>
+            <strong>Max positions:</strong> no cap (cash-limited)<br>
             <strong>Universe:</strong> S&amp;P 500
           </p>
         </div>
