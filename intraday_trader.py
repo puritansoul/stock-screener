@@ -32,7 +32,7 @@ warnings.filterwarnings("ignore")
 # ── Config ────────────────────────────────────────────────────────────────────
 STARTING_CAPITAL  = 100_000.0
 RISK_PER_TRADE    = 0.01       # 1% of portfolio at risk per trade
-MAX_POSITIONS     = 5
+MAX_POSITIONS     = 9999  # no cap — limited only by available cash
 ORB_MINUTES       = 30         # opening range window
 ORB_STOP_MULT     = 0.5        # trail distance = 0.5× ORB width
 VOLUME_FILTER     = 1.2        # require 1.2× avg bar volume on breakout bar
@@ -572,9 +572,6 @@ def scan_diagnostics(state: dict, data: dict[str, dict]) -> list[dict]:
             if phase != "trading":
                 status = "LONG signal"
                 note   = f"⚠ not traded — phase={phase}"
-            elif slots <= 0:
-                status = "LONG signal"
-                note   = "⚠ not traded — positions full (max 5)"
             else:
                 status = "LONG signal"
                 note   = "✓ eligible for entry"
@@ -582,9 +579,6 @@ def scan_diagnostics(state: dict, data: dict[str, dict]) -> list[dict]:
             if phase != "trading":
                 status = "SHORT signal"
                 note   = f"⚠ not traded — phase={phase}"
-            elif slots <= 0:
-                status = "SHORT signal"
-                note   = "⚠ not traded — positions full (max 5)"
             else:
                 status = "SHORT signal"
                 note   = "✓ eligible for entry"
@@ -921,7 +915,7 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
             <strong>Exit:</strong> Trailing stop — rides winners, distance = 0.5× ORB width<br>
             <strong>Initial stop:</strong> Entry ∓ 0.5× ORB width<br>
             <strong>Force close:</strong> 3:45 PM ET<br>
-            <strong>Risk:</strong> {RISK_PER_TRADE:.0%} per trade, max {MAX_POSITIONS} positions<br>
+            <strong>Risk:</strong> {RISK_PER_TRADE:.0%} per trade, no position cap (cash-limited)<br>
             <strong>Universe:</strong> 45 most liquid S&amp;P 500 names
           </p>
         </div>
