@@ -5,8 +5,8 @@ Rules:
   Opening Range = high/low of first 30 min (9:30–10:00 AM ET)
   ENTRY long  : 15-min close > ORB high  AND  volume > 1.2× 20-day avg bar volume
   ENTRY short : 15-min close < ORB low   AND  volume > 1.2× 20-day avg bar volume
-  TARGET      : entry ± 1.0× ORB width  (1:2 risk/reward)
-  STOP        : entry ∓ 0.5× ORB width
+  EXIT        : trailing stop (distance = 0.5× ORB width) — no fixed target, rides winners
+  INIT STOP   : entry ∓ 0.5× ORB width
   FORCE CLOSE : all positions closed at 3:45 PM ET regardless
 
 Capital : $100,000, 1% risk per trade, max 5 concurrent positions
@@ -34,8 +34,7 @@ STARTING_CAPITAL  = 100_000.0
 RISK_PER_TRADE    = 0.01       # 1% of portfolio at risk per trade
 MAX_POSITIONS     = 5
 ORB_MINUTES       = 30         # opening range window
-ORB_TARGET_MULT   = 1.0        # target = entry ± 1× ORB width
-ORB_STOP_MULT     = 0.5        # stop   = entry ∓ 0.5× ORB width (1:2 R/R)
+ORB_STOP_MULT     = 0.5        # trail distance = 0.5× ORB width
 VOLUME_FILTER     = 1.2        # require 1.2× avg bar volume on breakout bar
 FORCE_CLOSE_TIME  = dt_time(15, 45)   # 3:45pm ET
 ORB_END_TIME      = dt_time(10, 0)    # 10:00am ET — ORB window ends
@@ -107,6 +106,16 @@ def _fresh_state() -> dict:
 
 def save_state(state: dict) -> None:
     TRADES_FILE.write_text(json.dumps(state, indent=2, default=str))
+
+def migrate_positions(state: dict) -> None:
+    """Migrate old fixed-target positions to trailing stop format."""
+    for pos in state.get("open_positions", []):
+        if "trail_dist" not in pos:
+            orb_w = pos.get("orb_width", 0.5)
+            pos["trail_dist"] = round(ORB_STOP_MULT * orb_w, 4)
+            pos.pop("target", None)
+        if "peak" not in pos:
+            pos["peak"] = pos["entry_price"]
 
 def reset_for_new_day(state: dict, today_str: str) -> None:
     """Move closed_today to all_closed and reset daily fields."""
@@ -205,37 +214,49 @@ def check_exits(state: dict, data: dict[str, dict], force: bool = False) -> list
     capital = state["capital"]
 
     for pos in state["open_positions"]:
-        tk    = pos["ticker"]
-        side  = pos["side"]
-        entry = pos["entry_price"]
-        shares= pos["shares"]
-        target= pos["target"]
-        stop  = pos["stop"]
-        cost  = pos["cost"]
+        tk     = pos["ticker"]
+        side   = pos["side"]
+        entry  = pos["entry_price"]
+        shares = pos["shares"]
+        stop   = pos["stop"]        # current trailing stop level
+        cost   = pos["cost"]
+        trail_dist = pos["trail_dist"]  # fixed trail distance in $
 
-        # Get current price
+        # Get current price and bar high/low to catch intrabar touches
         cur_px = entry
+        bar_hi = entry
+        bar_lo = entry
         if tk in data:
             bars = data[tk]["bars"]
             if not bars.empty:
                 cur_px = float(bars["Close"].iloc[-1])
+                bar_hi = float(bars["High"].iloc[-1])
+                bar_lo = float(bars["Low"].iloc[-1])
 
         if force:
-            reason = "force close 3:45pm"
+            reason  = "force close 3:45pm"
             exit_px = cur_px
         elif side == "long":
-            if cur_px >= target:
-                reason, exit_px = "target hit", target
-            elif cur_px <= stop:
-                reason, exit_px = "stop loss", stop
+            # Advance trail stop to highest point seen
+            new_stop = round(bar_hi - trail_dist, 4)
+            if new_stop > stop:
+                pos["stop"] = new_stop
+                pos["peak"] = round(bar_hi, 4)
+                stop = new_stop
+            if bar_lo <= stop:
+                reason, exit_px = "trailing stop", stop
             else:
                 still_open.append(pos)
                 continue
         else:
-            if cur_px <= target:
-                reason, exit_px = "target hit", target
-            elif cur_px >= stop:
-                reason, exit_px = "stop loss", stop
+            # Short: trail stop downward as price falls
+            new_stop = round(bar_lo + trail_dist, 4)
+            if new_stop < stop:
+                pos["stop"] = new_stop
+                pos["peak"] = round(bar_lo, 4)
+                stop = new_stop
+            if bar_hi >= stop:
+                reason, exit_px = "trailing stop", stop
             else:
                 still_open.append(pos)
                 continue
@@ -315,14 +336,13 @@ def scan_entries(state: dict, data: dict[str, dict]) -> list[dict]:
         entry = c["close"]
         orb_w = c["orb_w"]
 
+        trail_dist = round(ORB_STOP_MULT * orb_w, 4)
         if side == "long":
-            target = entry + ORB_TARGET_MULT * orb_w
-            stop   = entry - ORB_STOP_MULT  * orb_w
+            stop = entry - trail_dist
         else:
-            target = entry - ORB_TARGET_MULT * orb_w
-            stop   = entry + ORB_STOP_MULT  * orb_w
+            stop = entry + trail_dist
 
-        per_share_risk = abs(entry - stop)
+        per_share_risk = trail_dist
         if per_share_risk < 0.01:
             continue
         shares = int((capital * RISK_PER_TRADE) / per_share_risk)
@@ -343,8 +363,9 @@ def scan_entries(state: dict, data: dict[str, dict]) -> list[dict]:
             "entry_time":  entry_time,
             "entry_price": round(entry, 4),
             "shares":      shares,
-            "target":      round(target, 4),
             "stop":        round(stop, 4),
+            "trail_dist":  trail_dist,
+            "peak":        round(entry, 4),
             "orb_width":   round(orb_w, 4),
             "cost":        round(cost, 2),
             "vol_ratio":   round(c["vol_ratio"], 2),
@@ -566,6 +587,7 @@ def run_intraday():
             print("  Could not load S&P 500 universe — aborting")
             return
 
+    migrate_positions(state)
     print(f"Intraday Trader — {today_str} {now_str}  phase={phase}  universe={len(INTRADAY_UNIVERSE)}")
 
     # Always reset state for new day
@@ -675,8 +697,8 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
         side  = pos["side"]
         entry = pos["entry_price"]
         shares= pos["shares"]
-        target= pos["target"]
         stop  = pos["stop"]
+        peak  = pos.get("peak", entry)
         orb_w = pos.get("orb_width", 0)
 
         cur_px = entry
@@ -700,7 +722,7 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
           <td>${entry:,.2f}</td><td class="live-price">${cur_px:,.2f}</td>
           <td style="text-align:right">{shares:,}</td>
           <td class="live-unreal" style="text-align:right;color:{uc};font-weight:bold">${unreal:+,.0f} ({unreal_pct:+.2f}%)</td>
-          <td>${target:,.2f}</td><td>${stop:,.2f}</td>
+          <td style="color:#1b5e20">${peak:,.2f}</td><td style="color:#c62828">${stop:,.2f}</td>
           <td style="color:#666;font-size:12px">{pos.get('entry_time','—')}</td>
         </tr>"""
     if not open_rows:
@@ -828,7 +850,7 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
     <table>
       <thead><tr>
         <th>Ticker</th><th>Side</th><th>Entry</th><th>Current</th>
-        <th>Shares</th><th>Unrealized P&amp;L</th><th>Target</th><th>Stop</th><th>Entry Time</th>
+        <th>Shares</th><th>Unrealized P&amp;L</th><th>Peak</th><th>Trail Stop</th><th>Entry Time</th>
       </tr></thead>
       <tbody>{open_rows}</tbody>
     </table>
@@ -863,8 +885,8 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
             <strong>Strategy:</strong> Opening Range Breakout (ORB)<br>
             <strong>ORB window:</strong> 9:30–10:00 AM ET (first 30 min)<br>
             <strong>Entry:</strong> 15-min close breaks ORB high/low + volume ≥ 1.2× avg<br>
-            <strong>Target:</strong> Entry ± 1× ORB width (1:2 R/R)<br>
-            <strong>Stop:</strong> Entry ∓ 0.5× ORB width<br>
+            <strong>Exit:</strong> Trailing stop — rides winners, distance = 0.5× ORB width<br>
+            <strong>Initial stop:</strong> Entry ∓ 0.5× ORB width<br>
             <strong>Force close:</strong> 3:45 PM ET<br>
             <strong>Risk:</strong> {RISK_PER_TRADE:.0%} per trade, max {MAX_POSITIONS} positions<br>
             <strong>Universe:</strong> 45 most liquid S&amp;P 500 names
