@@ -378,7 +378,7 @@ def scan_entries(state: dict, data: dict[str, dict]) -> list[dict]:
         open_tks.add(tk)
         entries.append({"ticker": tk, "side": side, "price": round(entry, 2), "shares": shares,
                          "stop": round(stop, 2), "trail_dist": round(trail_dist, 4)})
-        print(f"  ENTER {side} {tk} @ ${entry:.2f}  x{shares}  target=${target:.2f}  stop=${stop:.2f}")
+        print(f"  ENTER {side} {tk} @ ${entry:.2f}  x{shares}  stop=${stop:.2f}  trail=${trail_dist:.2f}")
 
     state["capital"] = round(capital, 2)
     return entries
@@ -1174,5 +1174,75 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
     print(f"  Dashboard → {out}")
 
 
+def _smoke_test():
+    """Run all code paths with synthetic data to catch runtime errors before deploy."""
+    import sys
+    print("=== Smoke test ===")
+
+    # Synthetic state
+    state = _fresh_state()
+    state["today"] = date.today().isoformat()
+    state["inception_date"] = date.today().isoformat()
+    state["nav_history"] = {date.today().isoformat(): STARTING_CAPITAL}
+
+    # Synthetic price data for 3 tickers
+    import numpy as np
+    idx = pd.date_range("09:30", "15:55", freq="5min", tz=ET)
+    def _bars(base):
+        n = len(idx)
+        closes = base + np.cumsum(np.random.randn(n) * 0.2)
+        return pd.DataFrame({
+            "Open": closes - 0.1, "High": closes + 0.3,
+            "Low": closes - 0.3, "Close": closes, "Volume": np.random.randint(50000, 200000, n)
+        }, index=idx)
+
+    data = {
+        "AAPL": {"bars": _bars(170), "avg_bar_vol": 80000},
+        "MSFT": {"bars": _bars(380), "avg_bar_vol": 60000},
+        "NVDA": {"bars": _bars(120), "avg_bar_vol": 100000},
+    }
+
+    # Force ORB values so breakout signals are guaranteed
+    state["today_orb"] = {
+        "AAPL": {"high": 169.5, "low": 168.5, "width": 1.0},
+        "MSFT": {"high": 379.5, "low": 378.5, "width": 1.0},
+        "NVDA": {"high": 119.5, "low": 118.5, "width": 1.0},
+    }
+
+    global INTRADAY_UNIVERSE
+    INTRADAY_UNIVERSE = ["AAPL", "MSFT", "NVDA"]
+
+    # Test scan_entries
+    entries = scan_entries(state, data)
+    print(f"  scan_entries: {len(entries)} entries — OK")
+
+    # Test check_exits with open positions
+    for pos in state["open_positions"]:
+        pos["peak"] = pos["entry_price"]
+    exits = check_exits(state, data, force=True)
+    print(f"  check_exits:  {len(exits)} exits — OK")
+
+    # Test scan_diagnostics
+    diag = scan_diagnostics(state, data)
+    print(f"  scan_diagnostics: {len(diag)} rows — OK")
+
+    # Test dashboard build (no file write)
+    idx_returns = {}
+    spy_cum = {}
+    nav = state["nav_history"]
+    nav_dates = sorted(nav.keys())
+    nav_values = [nav[d] for d in nav_dates]
+    spy_values = [STARTING_CAPITAL] * len(nav_dates)
+    nav_js = json.dumps({"dates": nav_dates, "values": nav_values, "spy": spy_values})
+    journal_html = build_journal_section(nav, idx_returns, spy_cum)
+    print(f"  build_journal_section: {len(journal_html)} chars — OK")
+
+    print("=== All checks passed ===")
+
+
 if __name__ == "__main__":
-    run_intraday()
+    import sys
+    if "--test" in sys.argv:
+        _smoke_test()
+    else:
+        run_intraday()
