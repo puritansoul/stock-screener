@@ -1049,5 +1049,60 @@ def build_paper_dashboard(state: dict, prices: pd.DataFrame):
 
 # ── Entry ─────────────────────────────────────────────────────────────────────
 
+def _smoke_test():
+    """Run all code paths with synthetic data to catch runtime errors before deploy."""
+    print("=== Smoke test ===")
+
+    today = date.today().isoformat()
+    yesterday = (date.today() - timedelta(days=1)).isoformat()
+
+    # Synthetic state
+    state = {
+        "capital": 95_000.0,
+        "open_positions": [
+            {"ticker": "AAPL", "side": "long", "entry_price": 170.0, "shares": 50,
+             "stop": 166.0, "cost": 8500.0, "entry_date": yesterday, "rsi2_entry": 8.5},
+        ],
+        "closed_positions": [
+            {"ticker": "MSFT", "side": "long", "entry_price": 380.0, "exit_price": 388.0,
+             "shares": 20, "pnl": 160.0, "cost": 7600.0, "entry_date": yesterday,
+             "exit_date": today, "exit_reason": "SMA5 cross above"},
+        ],
+        "nav_history": {yesterday: 99_800.0, today: 100_200.0},
+        "inception_date": yesterday,
+        "scan_results": [],
+        "log": [],
+    }
+
+    # Synthetic prices DataFrame (tickers as columns)
+    import numpy as np
+    dates = pd.date_range(end=today, periods=220, freq="B")
+    prices = pd.DataFrame(
+        {tk: 170 + np.cumsum(np.random.randn(220) * 0.5)
+         for tk in ["AAPL", "MSFT", "NVDA"]},
+        index=dates,
+    )
+
+    # Test build_journal_section
+    idx_returns = {}
+    spy_cum = {}
+    journal = build_journal_section(state["nav_history"], idx_returns, spy_cum)
+    print(f"  build_journal_section: {len(journal)} chars — OK")
+
+    # Test build_paper_dashboard (writes HTML to disk — check it doesn't crash)
+    try:
+        build_paper_dashboard(state, prices)
+        print(f"  build_paper_dashboard — OK")
+    except Exception as e:
+        print(f"  build_paper_dashboard — FAILED: {e}")
+        raise
+
+    print("=== All checks passed ===")
+
+
 if __name__ == "__main__":
-    run_paper_trader()
+    import sys
+    if "--test" in sys.argv:
+        _smoke_test()
+    else:
+        run_paper_trader()
