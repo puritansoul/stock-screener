@@ -78,29 +78,29 @@
           <div class="stat-grid">
             <div class="stat">
               <div class="stat-label">Portfolio Value</div>
-              <div class="stat-val" style="color:#1a237e">$99,718</div>
+              <div class="stat-val" style="color:#1a237e">$99,809</div>
             </div>
             <div class="stat">
               <div class="stat-label">Total Return</div>
-              <div class="stat-val" style="color:#c62828">$282<br>
-                <span style="font-size:13px">0.28%</span>
+              <div class="stat-val" style="color:#c62828">$191<br>
+                <span style="font-size:13px">0.19%</span>
               </div>
             </div>
             <div class="stat">
               <div class="stat-label">Day P&amp;L</div>
-              <div class="stat-val" style="color:#c62828">$-223</div>
+              <div class="stat-val" style="color:#c62828">$-213</div>
             </div>
             <div class="stat">
               <div class="stat-label">Open Positions</div>
-              <div class="stat-val">0</div>
+              <div class="stat-val">84</div>
             </div>
             <div class="stat">
               <div class="stat-label">Win Rate</div>
-              <div class="stat-val">42.5%</div>
+              <div class="stat-val">9.1%</div>
             </div>
             <div class="stat">
               <div class="stat-label">Closed Trades</div>
-              <div class="stat-val">106</div>
+              <div class="stat-val">22</div>
             </div>
           </div>
           <canvas id="intraday-chart" style="width:100%;margin:12px 0"></canvas>
@@ -162,7 +162,7 @@
 
 (function() {
   const dates = ["2026-07-09", "2026-07-10", "2026-07-13"];
-  const vals  = [99940.86, 99940.86, 99718.02];
+  const vals  = [99940.86, 99940.86, 99809.43];
   const N = vals.length;
   if (N < 2) return;
   const canvas = document.getElementById('intraday-chart');
