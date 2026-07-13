@@ -22,6 +22,15 @@ if [ "$MINS" -lt 568 ] || [ "$MINS" -gt 965 ]; then
     exit 0
 fi
 
+# Prevent overlapping runs — if previous run is still going, skip this one
+LOCKFILE="$SCRIPT_DIR/.intraday_running"
+if [ -f "$LOCKFILE" ]; then
+    echo "$(TZ='America/New_York' date '+%Y-%m-%d %H:%M:%S ET') — skipped (previous run still active)" >> "$LOG"
+    exit 0
+fi
+touch "$LOCKFILE"
+trap "rm -f '$LOCKFILE'" EXIT
+
 echo "$(TZ='America/New_York' date '+%Y-%m-%d %H:%M:%S ET') — running intraday_trader.py" >> "$LOG"
 cd "$SCRIPT_DIR"
 $PYTHON intraday_trader.py >> "$LOG" 2>&1
