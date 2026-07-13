@@ -31,7 +31,8 @@ def build_consolidated():
     # screener reports match [0-9]*.html — avoid accidentally picking paper_/intraday_
     screener_reports = sorted(
         (r for r in (BASE_DIR / "reports").glob("*.html")
-         if not r.name.startswith("swing_") and not r.name.startswith("intraday_")),
+         if not r.name.startswith("swing_") and not r.name.startswith("intraday_")
+         and not r.name.startswith("paper_")),
         reverse=True
     )
     screener_url = f"reports/{screener_reports[0].name}" if screener_reports else "index.html"
