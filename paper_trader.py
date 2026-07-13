@@ -566,6 +566,18 @@ def build_paper_dashboard(state: dict, prices: pd.DataFrame):
     gain_color = "#2e7d32" if total_ret >= 0 else "#c62828"
     gain_sign  = "+" if total_ret >= 0 else ""
 
+    # Day P&L — compare today's NAV to previous trading day's NAV
+    nav_dates   = sorted(nav.keys())
+    prev_nav    = STARTING_CAPITAL
+    if len(nav_dates) >= 2 and nav_dates[-1] == today_str:
+        prev_nav = nav[nav_dates[-2]]
+    elif nav_dates and nav_dates[-1] != today_str:
+        prev_nav = nav[nav_dates[-1]]
+    day_pnl      = round(portfolio_value - prev_nav, 2)
+    day_pct      = round(day_pnl / prev_nav * 100, 2) if prev_nav else 0
+    day_pnl_color = "#2e7d32" if day_pnl >= 0 else "#c62828"
+    day_pnl_sign  = "+" if day_pnl >= 0 else ""
+
     # Open positions rows
     open_rows = ""
     open_value = portfolio_value - capital
@@ -737,6 +749,12 @@ def build_paper_dashboard(state: dict, prices: pd.DataFrame):
         <div class="card-label">Total Return</div>
         <div class="card-value" id="port-total" style="color:{gain_color}">{gain_sign}${abs(total_ret):,.0f}<br>
           <span style="font-size:14px" id="port-total-pct">{gain_sign}{abs(total_pct):.2f}%</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label">Day P&amp;L</div>
+        <div class="card-value" style="color:{day_pnl_color}">{day_pnl_sign}${abs(day_pnl):,.0f}<br>
+          <span style="font-size:14px">{day_pnl_sign}{abs(day_pct):.2f}%</span>
         </div>
       </div>
       <div class="card">
