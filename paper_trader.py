@@ -560,6 +560,30 @@ def build_paper_dashboard(state: dict, prices: pd.DataFrame):
     inception = state["inception_date"] or date.today().isoformat()
 
     today_str = date.today().isoformat()
+
+    # Fetch a fresh intraday snapshot for open positions so the dashboard
+    # shows live prices rather than the stale close from the morning run.
+    open_tks = [p["ticker"] for p in open_pos]
+    if open_tks:
+        try:
+            snap = yf.download(open_tks, period="1d", interval="1m",
+                               auto_adjust=True, progress=False)
+            if not snap.empty:
+                if isinstance(snap.columns, pd.MultiIndex):
+                    snap_close = snap["Close"]
+                else:
+                    snap_close = snap[["Close"]].rename(columns={"Close": open_tks[0]})
+                for tk in open_tks:
+                    if tk in snap_close.columns:
+                        s = snap_close[tk].dropna()
+                        if len(s):
+                            # Override the daily close with the freshest 1-min bar
+                            if tk not in prices.columns:
+                                prices[tk] = float(s.iloc[-1])
+                            else:
+                                prices.loc[prices.index[-1], tk] = float(s.iloc[-1])
+        except Exception:
+            pass  # fall back to the daily prices already in the DataFrame
     portfolio_value = nav.get(today_str, STARTING_CAPITAL)
     total_ret = portfolio_value - STARTING_CAPITAL
     total_pct = total_ret / STARTING_CAPITAL * 100
