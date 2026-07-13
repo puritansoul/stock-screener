@@ -1,6 +1,6 @@
 """
 Build trading_hub.html — landing page comparing swing bot vs intraday bot.
-Called by both paper_trading.yml and intraday_trading.yml after each run.
+Called by both swing_trading.yml and intraday_trading.yml after each run.
 """
 
 from __future__ import annotations
@@ -10,7 +10,7 @@ from datetime import date
 from pathlib import Path
 
 BASE_DIR        = Path(__file__).parent
-SWING_FILE      = BASE_DIR / "paper_trades.json"
+SWING_FILE      = BASE_DIR / "swing_trades.json"
 INTRADAY_FILE   = BASE_DIR / "intraday_trades.json"
 STARTING_CAPITAL = 100_000.0
 
@@ -144,13 +144,13 @@ def build_hub():
 
     # Find latest report files
     reports = BASE_DIR / "reports"
-    swing_reports    = sorted(reports.glob("paper_*.html"),    reverse=True) if reports.exists() else []
+    swing_reports    = sorted(reports.glob("swing_*.html"),    reverse=True) if reports.exists() else []
     intraday_reports = sorted(reports.glob("intraday_*.html"), reverse=True) if reports.exists() else []
 
-    swing_link    = f"reports/{swing_reports[0].name}"    if swing_reports    else "paper_index.html"
+    swing_link    = f"reports/{swing_reports[0].name}"    if swing_reports    else "swing_index.html"
     intraday_link = f"reports/{intraday_reports[0].name}" if intraday_reports else "intraday_index.html"
 
-    swing_card    = _bot_card("Swing Trader (RSI-2)",   "📈", "#1a237e", "swing-chart",    swing,    swing_link,    "paper_index.html")
+    swing_card    = _bot_card("Swing Trader (RSI-2)",   "📈", "#1a237e", "swing-chart",    swing,    swing_link,    "swing_index.html")
     intraday_card = _bot_card("Intraday Trader (ORB)",  "⚡", "#e65100", "intraday-chart", intraday, intraday_link, "intraday_index.html")
 
     swing_js    = _nav_chart_js("swing-chart",    swing.get("nav_history",    {}) if swing    else {}, "#1a237e")

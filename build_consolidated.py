@@ -16,7 +16,7 @@ def latest(pattern: str) -> str:
     # fallback to index redirects
     fallbacks = {
         "*.html":          "index.html",
-        "paper_*.html":    "paper_index.html",
+        "swing_*.html":    "swing_index.html",
         "intraday_*.html": "intraday_index.html",
     }
     return fallbacks.get(pattern, "index.html")
@@ -24,14 +24,14 @@ def latest(pattern: str) -> str:
 
 def build_consolidated():
     today_str     = date.today().isoformat()
-    screener_url  = latest("*.html").replace("reports/", "reports/") if not latest("*.html").startswith("reports/paper") and not latest("*.html").startswith("reports/intraday") else "index.html"
-    swing_url     = latest("paper_*.html")
+    screener_url  = latest("*.html").replace("reports/", "reports/") if not latest("*.html").startswith("reports/swing") and not latest("*.html").startswith("reports/intraday") else "index.html"
+    swing_url     = latest("swing_*.html")
     intraday_url  = latest("intraday_*.html")
 
     # screener reports match [0-9]*.html — avoid accidentally picking paper_/intraday_
     screener_reports = sorted(
         (r for r in (BASE_DIR / "reports").glob("*.html")
-         if not r.name.startswith("paper_") and not r.name.startswith("intraday_")),
+         if not r.name.startswith("swing_") and not r.name.startswith("intraday_")),
         reverse=True
     )
     screener_url = f"reports/{screener_reports[0].name}" if screener_reports else "index.html"
