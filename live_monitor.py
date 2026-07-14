@@ -945,8 +945,10 @@ def save_html_report(
             tot_ret_str = "—"
 
         # ── Compact holdings row ────────────────────────────────────────────
+        _stale_val  = round(qty * cur_px_val, 2) if qty and cur_px_val else 0
+        _stale_cost = round(qty * buy_px, 2)     if qty and buy_px     else 0
         holdings_rows += f"""
-        <tr style="{row_style}" data-ticker="{tk}" data-qty="{qty}" data-buypx="{buy_px or 0}" data-prevpx="{prev_prices.get(tk, 0)}">
+        <tr style="{row_style}" data-ticker="{tk}" data-qty="{qty}" data-buypx="{buy_px or 0}" data-prevpx="{prev_prices.get(tk, 0)}" data-stale-val="{_stale_val}" data-stale-cost="{_stale_cost}">
           <td style="text-align:center;font-size:12px;color:#666">{rank}</td>
           <td style="font-weight:bold;white-space:nowrap">{tk} {badge}</td>
           <td class="live-price" style="text-align:right">{_fmt_price(row.get('price'))}</td>
@@ -1121,98 +1123,107 @@ def save_html_report(
   const quotes = {{}};
 
   const delay = ms => new Promise(res => setTimeout(res, ms));
+  const fmt2 = n => '$' + Math.abs(n).toLocaleString('en-US', {{minimumFractionDigits:2, maximumFractionDigits:2}});
+  const fmtI = n => Math.abs(n).toLocaleString('en-US', {{maximumFractionDigits:0}});
+  const col  = n => n >= 0 ? '#2e7d32' : '#c62828';
+  const sgn  = n => n >= 0 ? '+' : '−';
+
+  // Seed totals from server-rendered stale values so portfolio cards always
+  // show correct numbers — even before Finnhub responds.
+  // As each live price arrives we replace that ticker's contribution.
+  const staleVal  = {{}};   // tk -> last server-rendered market value
+  const staleCost = {{}};   // tk -> cost basis
+  heldRows.forEach(r => {{
+    staleVal[r.dataset.ticker]  = parseFloat(r.dataset.staleVal)  || 0;
+    staleCost[r.dataset.ticker] = parseFloat(r.dataset.staleCost) || 0;
+  }});
+
+  // liveVal tracks the best known value per ticker (starts at stale, updates live)
+  const liveVal     = {{...staleVal}};
+  const livePrevVal = {{}};  // tk -> qty * prevClose, populated as quotes arrive
+
+  function updateSummaryCards() {{
+    const totalValue  = Object.values(liveVal).reduce((s,v) => s+v, 0);
+    const totalCost   = Object.values(staleCost).reduce((s,v) => s+v, 0);
+    const totalDayChg = Object.values(livePrevVal).reduce((s,v) => s+v, 0);
+
+    const totalRet  = totalValue - totalCost;
+    const totalRetP = totalCost > 0 ? totalRet / totalCost : 0;
+    const prevTotal = totalValue - totalDayChg;
+    const dayPct    = prevTotal > 0 ? totalDayChg / prevTotal : 0;
+
+    document.getElementById('port-value').textContent =
+      '$' + totalValue.toLocaleString('en-US', {{maximumFractionDigits:0}});
+    document.getElementById('port-today').innerHTML =
+      `<span style="color:${{col(totalDayChg)}}">${{sgn(totalDayChg)}}$${{fmtI(totalDayChg)}} (${{sgn(dayPct)}}${{Math.abs(dayPct*100).toFixed(2)}}%)</span>`;
+    document.getElementById('port-total').innerHTML =
+      `<span style="color:${{col(totalRet)}}">${{sgn(totalRet)}}$${{fmtI(totalRet)}} (${{sgn(totalRetP)}}${{Math.abs(totalRetP*100).toFixed(2)}}%)</span>`;
+
+    // Period tiles
+    const tileCol = n => n >= 0 ? '#2ca02c' : '#d62728';
+    const tileSgn = n => n >= 0 ? '+' : '';
+    const fmtTile = pct => `<span style="color:${{tileCol(pct)}};font-weight:bold">${{tileSgn(pct)}}${{(pct*100).toFixed(2)}}%</span>`;
+    const setTile = (id, pct) => {{ const el = document.getElementById(id); if (el) el.innerHTML = fmtTile(pct); }};
+
+    const prevTotalForDay = totalValue - totalDayChg;
+    setTile('tile-today', prevTotalForDay > 0 ? totalDayChg / prevTotalForDay : 0);
+    setTile('tile-inception', PORTFOLIO_BASE > 0 ? (totalValue - PORTFOLIO_BASE) / PORTFOLIO_BASE : 0);
+
+    const navDates  = Object.keys(NAV_HISTORY).sort();
+    const currentNav = totalValue / PORTFOLIO_BASE;
+    [['tile-1m',30],['tile-3m',91],['tile-6m',182],['tile-1y',365],['tile-3y',1095],['tile-5y',1825]].forEach(([id,days]) => {{
+      const target = new Date(); target.setDate(target.getDate() - days);
+      const tStr   = target.toISOString().slice(0,10);
+      const past   = navDates.filter(d => d <= tStr);
+      if (past.length) setTile(id, (currentNav / NAV_HISTORY[past[past.length-1]]) - 1);
+    }});
+  }}
+
+  // Run once immediately with stale data so cards are never blank/wrong
+  updateSummaryCards();
+
   const fetchAll = async () => {{
     for (const tk of tickers) {{
       try {{
         const q = await fetch(`https://finnhub.io/api/v1/quote?symbol=${{tk}}&token=${{FINNHUB_TOKEN}}`).then(r => r.json());
-        if (q.c) quotes[tk] = {{ price: q.c, prevClose: q.pc }};
+        if (!q.c) {{ await delay(1100); continue; }}
+        quotes[tk] = {{ price: q.c, prevClose: q.pc }};
+
+        // Update this ticker's row
+        const row   = heldRows.find(r => r.dataset.ticker === tk);
+        const qty   = parseFloat(row.dataset.qty)   || 0;
+        const buyPx = parseFloat(row.dataset.buypx) || 0;
+        const price     = q.c;
+        const prevClose = q.pc;
+        const curVal    = qty * price;
+        const dayChgD   = (price - prevClose) * qty;
+        const dayChgP   = prevClose > 0 ? (price - prevClose) / prevClose : 0;
+        const totRetD   = (price - buyPx) * qty;
+        const totRetP   = buyPx > 0 ? (price - buyPx) / buyPx : 0;
+
+        row.querySelector('.live-price').textContent    = fmt2(price);
+        row.querySelector('.live-invested').textContent = '$' + fmtI(curVal);
+        row.querySelector('.live-day-d').innerHTML      =
+          `<span style="color:${{col(dayChgD)}};font-weight:bold">${{sgn(dayChgD)}}$${{fmtI(dayChgD)}}</span>`;
+        row.querySelector('.live-day-pct').innerHTML    =
+          `<span style="color:${{col(dayChgP)}};font-weight:bold">${{sgn(dayChgP)}}${{Math.abs(dayChgP*100).toFixed(2)}}%</span>`;
+        row.querySelector('.live-total-ret').innerHTML  =
+          `<span style="color:${{col(totRetD)}};font-weight:bold">${{sgn(totRetD)}}$${{fmtI(totRetD)}} (${{sgn(totRetP)}}${{Math.abs(totRetP*100).toFixed(2)}}%)</span>`;
+
+        // Update running totals with live data and refresh cards incrementally
+        liveVal[tk]     = curVal;
+        livePrevVal[tk] = dayChgD;
+        updateSummaryCards();
+
       }} catch(e) {{}}
       await delay(1100);
     }}
   }};
 
   fetchAll().then(() => {{
-
-      let totalValue  = 0;
-      let totalCost   = 0;
-      let totalDayChg = 0;
-
-      heldRows.forEach(row => {{
-        const tk    = row.dataset.ticker;
-        const qty   = parseFloat(row.dataset.qty)   || 0;
-        const buyPx = parseFloat(row.dataset.buypx) || 0;
-        const q     = quotes[tk];
-        if (!q) return;
-
-        const price     = q.price;
-        const prevClose = q.prevClose;
-        const curVal    = qty * price;
-        const cost      = qty * buyPx;
-        const dayChgD   = (price - prevClose) * qty;
-        const dayChgP   = prevClose > 0 ? (price - prevClose) / prevClose : 0;
-        const totRetD   = (price - buyPx) * qty;
-        const totRetP   = buyPx > 0 ? (price - buyPx) / buyPx : 0;
-
-        totalValue  += curVal;
-        totalCost   += cost;
-        totalDayChg += dayChgD;
-
-        const fmt2 = n => '$' + Math.abs(n).toLocaleString('en-US', {{minimumFractionDigits:2, maximumFractionDigits:2}});
-        const fmtI = n => Math.abs(n).toLocaleString('en-US', {{maximumFractionDigits:0}});
-        const col  = n => n >= 0 ? '#2e7d32' : '#c62828';
-        const sgn  = n => n >= 0 ? '+' : '−';
-
-        row.querySelector('.live-price').textContent     = fmt2(price);
-        row.querySelector('.live-invested').textContent  = '$' + fmtI(curVal);
-        row.querySelector('.live-day-d').innerHTML       =
-          `<span style="color:${{col(dayChgD)}};font-weight:bold">${{sgn(dayChgD)}}$${{fmtI(dayChgD)}}</span>`;
-        row.querySelector('.live-day-pct').innerHTML     =
-          `<span style="color:${{col(dayChgP)}};font-weight:bold">${{sgn(dayChgP)}}${{Math.abs(dayChgP*100).toFixed(2)}}%</span>`;
-        row.querySelector('.live-total-ret').innerHTML   =
-          `<span style="color:${{col(totRetD)}};font-weight:bold">${{sgn(totRetD)}}$${{fmtI(totRetD)}} (${{sgn(totRetP)}}${{Math.abs(totRetP*100).toFixed(2)}}%)</span>`;
-      }});
-
-      // Update portfolio summary cards — use actual cost basis, not $100k target
-      const totalRet  = totalValue - totalCost;
-      const totalRetP = totalCost > 0 ? totalRet / totalCost : 0;
-      const dayPct    = totalValue > 0 ? totalDayChg / (totalValue - totalDayChg) : 0;
-      const col  = n => n >= 0 ? '#2e7d32' : '#c62828';
-      const sgn  = n => n >= 0 ? '+' : '−';
-      const fmtI = n => Math.abs(n).toLocaleString('en-US', {{maximumFractionDigits:0}});
-
-      document.getElementById('port-value').textContent =
-        '$' + totalValue.toLocaleString('en-US', {{maximumFractionDigits:0}});
-      document.getElementById('port-today').innerHTML =
-        `<span style="color:${{col(totalDayChg)}}">${{sgn(totalDayChg)}}$${{fmtI(totalDayChg)}} (${{sgn(dayPct)}}${{Math.abs(dayPct*100).toFixed(2)}}%)</span>`;
-      document.getElementById('port-total').innerHTML =
-        `<span style="color:${{col(totalRet)}}">${{sgn(totalRet)}}$${{fmtI(totalRet)}} (${{sgn(totalRetP)}}${{Math.abs(totalRetP*100).toFixed(2)}}%)</span>`;
-
-      const now = new Date();
-      document.getElementById('live-status').innerHTML =
-        `✅ Live prices as of ${{now.toLocaleTimeString('en-US', {{hour:'2-digit',minute:'2-digit'}})}}`;
-
-      // Update period tiles
-      const tileCol  = n => n >= 0 ? '#2ca02c' : '#d62728';
-      const tileSgn  = n => n >= 0 ? '+' : '';
-      const fmtTile  = pct => `<span style="color:${{tileCol(pct)}};font-weight:bold">${{tileSgn(pct)}}${{(pct*100).toFixed(2)}}%</span>`;
-      const setTile  = (id, pct) => {{ const el = document.getElementById(id); if (el) el.innerHTML = fmtTile(pct); }};
-
-      // Today: current value vs yesterday's close (already have totalDayChg)
-      const dayPctVal = totalValue > 0 ? totalDayChg / (totalValue - totalDayChg) : 0;
-      setTile('tile-today', dayPctVal);
-
-      // Since Inception: current value vs cost basis ($97,490)
-      setTile('tile-inception', PORTFOLIO_BASE > 0 ? (totalValue - PORTFOLIO_BASE) / PORTFOLIO_BASE : 0);
-
-      // 1M, 3M, 6M, 1Y, 3Y, 5Y: use NAV history where available
-      const navDates = Object.keys(NAV_HISTORY).sort();
-      const currentNav = totalValue / PORTFOLIO_BASE;
-      [['tile-1m',30],['tile-3m',91],['tile-6m',182],['tile-1y',365],['tile-3y',1095],['tile-5y',1825]].forEach(([id,days]) => {{
-        const target = new Date(); target.setDate(target.getDate() - days);
-        const tStr   = target.toISOString().slice(0,10);
-        const past   = navDates.filter(d => d <= tStr);
-        if (past.length) setTile(id, (currentNav / NAV_HISTORY[past[past.length-1]]) - 1);
-      }});
+    const now = new Date();
+    document.getElementById('live-status').innerHTML =
+      `✅ Live prices as of ${{now.toLocaleTimeString('en-US', {{hour:'2-digit',minute:'2-digit'}})}}`;
   }})
   .catch(() => {{
     document.getElementById('live-status').textContent = '⚠️ Live price fetch failed — showing last run data';
