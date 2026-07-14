@@ -31,7 +31,7 @@ warnings.filterwarnings("ignore")
 
 # ── Config ────────────────────────────────────────────────────────────────────
 STARTING_CAPITAL  = 100_000.0
-RISK_PER_TRADE    = 0.01       # 1% of portfolio at risk per trade
+RISK_PER_TRADE    = 0.02       # 2% of portfolio at risk per trade
 MAX_POSITIONS     = 9999  # no cap — limited only by available cash
 ORB_MINUTES       = 30         # opening range window
 ORB_STOP_MULT     = 0.5        # trail distance = 0.5× ORB width
@@ -350,7 +350,7 @@ def scan_entries(state: dict, data: dict[str, dict]) -> list[dict]:
         if per_share_risk < 0.01:
             continue
         shares = int((capital * RISK_PER_TRADE) / per_share_risk)
-        shares = min(shares, int(capital * 0.20 / entry))
+        shares = min(shares, int(capital * 0.30 / entry))
         if shares <= 0:
             continue
 
@@ -790,10 +790,11 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
           <td style="text-align:right">{shares:,}</td>
           <td class="live-unreal" style="text-align:right;color:{uc};font-weight:bold">${unreal:+,.0f} ({unreal_pct:+.2f}%)</td>
           <td style="color:#1b5e20">${peak:,.2f}</td><td style="color:#c62828">${stop:,.2f}</td>
+          <td style="color:#666;font-size:12px">{pos.get('entry_date','—')}</td>
           <td style="color:#666;font-size:12px">{pos.get('entry_time','—')}</td>
         </tr>"""
     if not open_rows:
-        open_rows = '<tr><td colspan="9" style="text-align:center;color:#999;padding:20px">No open positions today</td></tr>'
+        open_rows = '<tr><td colspan="10" style="text-align:center;color:#999;padding:20px">No open positions today</td></tr>'
 
     # Today's closed trades
     today_rows = ""
@@ -813,12 +814,13 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
           <td style="font-weight:bold">{tk}</td><td>{sb}</td>
           <td>${entry:,.2f}</td><td>${exit_p:,.2f}</td>
           <td style="text-align:right;color:{pnl_c};font-weight:bold">${pnl:+,.0f}</td>
+          <td style="color:#666;font-size:12px">{pos.get('entry_date','—')}</td>
           <td style="color:#666;font-size:12px">{pos.get('entry_time','—')}</td>
           <td style="color:#666;font-size:12px">{pos.get('exit_time','—')}</td>
           <td style="color:#666;font-size:12px">{reason}</td>
         </tr>"""
     if not today_rows:
-        today_rows = '<tr><td colspan="8" style="text-align:center;color:#999;padding:20px">No trades closed today</td></tr>'
+        today_rows = '<tr><td colspan="9" style="text-align:center;color:#999;padding:20px">No trades closed today</td></tr>'
 
     # All-time stats
     all_c = all_closed + closed_td
@@ -919,7 +921,7 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
     <table>
       <thead><tr>
         <th>Ticker</th><th>Side</th><th>Entry</th><th>Current</th>
-        <th>Shares</th><th>Unrealized P&amp;L</th><th>Peak</th><th>Trail Stop</th><th>Entry Time</th>
+        <th>Shares</th><th>Unrealized P&amp;L</th><th>Peak</th><th>Trail Stop</th><th>Entry Date</th><th>Entry Time</th>
       </tr></thead>
       <tbody>{open_rows}</tbody>
     </table>
@@ -930,7 +932,7 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
     <table>
       <thead><tr>
         <th>Ticker</th><th>Side</th><th>Entry</th><th>Exit</th>
-        <th>P&amp;L</th><th>Entry Time</th><th>Exit Time</th><th>Reason</th>
+        <th>P&amp;L</th><th>Entry Date</th><th>Entry Time</th><th>Exit Time</th><th>Reason</th>
       </tr></thead>
       <tbody>{today_rows}</tbody>
     </table>
@@ -957,7 +959,7 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
             <strong>Exit:</strong> Trailing stop — rides winners, distance = 0.5× ORB width<br>
             <strong>Initial stop:</strong> Entry ∓ 0.5× ORB width<br>
             <strong>Force close:</strong> 3:45 PM ET<br>
-            <strong>Risk:</strong> {RISK_PER_TRADE:.0%} per trade, no position cap (cash-limited)<br>
+            <strong>Risk:</strong> {RISK_PER_TRADE:.0%} per trade, max 30% per position (cash-limited)<br>
             <strong>Universe:</strong> 45 most liquid S&amp;P 500 names
           </p>
         </div>
