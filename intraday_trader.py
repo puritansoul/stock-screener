@@ -117,12 +117,64 @@ def migrate_positions(state: dict) -> None:
         if "peak" not in pos:
             pos["peak"] = pos["entry_price"]
 
+def close_stale_positions(state: dict, prev_date: str) -> None:
+    """Close any positions left open from a previous day using that day's closing prices."""
+    stale = state.get("open_positions", [])
+    if not stale:
+        return
+    tickers = [p["ticker"] for p in stale]
+    print(f"  Missed force-close detected — closing {len(stale)} stale positions from {prev_date} at prior close")
+    try:
+        raw = yf.download(tickers, period="5d", interval="1d", auto_adjust=True, progress=False)
+        if not raw.empty:
+            if isinstance(raw.columns, pd.MultiIndex):
+                close_df = raw["Close"]
+            else:
+                close_df = raw
+        else:
+            close_df = pd.DataFrame()
+    except Exception:
+        close_df = pd.DataFrame()
+
+    capital = state["capital"]
+    for pos in stale:
+        tk    = pos["ticker"]
+        side  = pos["side"]
+        entry = pos["entry_price"]
+        shares= pos["shares"]
+        cost  = pos["cost"]
+
+        # Get the prior day's closing price
+        exit_px = entry  # fallback: close at cost (zero P&L)
+        if tk in close_df.columns:
+            series = close_df[tk].dropna()
+            # Find the row closest to prev_date
+            prev_ts = pd.Timestamp(prev_date)
+            prior = series[series.index.normalize() <= prev_ts]
+            if not prior.empty:
+                exit_px = float(prior.iloc[-1])
+
+        pnl = (exit_px - entry) * shares if side == "long" else (entry - exit_px) * shares
+        capital += cost + pnl
+
+        closed = {**pos,
+                  "exit_date":   prev_date,
+                  "exit_price":  round(exit_px, 4),
+                  "pnl":         round(pnl, 2),
+                  "exit_reason": "missed force-close — closed at prior day EOD",
+                  "exit_time":   "EOD"}
+        state["all_closed"].append(closed)
+        print(f"    {side} {tk} entry=${entry:.2f} exit=${exit_px:.2f} pnl=${pnl:+,.0f}")
+
+    state["capital"] = round(capital, 2)
+    state["open_positions"] = []
+
+
 def reset_for_new_day(state: dict, today_str: str) -> None:
     """Move closed_today to all_closed and reset daily fields."""
-    # Refund cost of any positions that weren't force-closed yesterday
-    # (happens when the 3:45pm run didn't execute)
-    for pos in state.get("open_positions", []):
-        state["capital"] = round(state["capital"] + pos["cost"], 2)
+    prev_date = state.get("today")
+    if prev_date and prev_date != today_str and state.get("open_positions"):
+        close_stale_positions(state, prev_date)
     state["all_closed"].extend(state.get("closed_today", []))
     state["closed_today"]   = []
     state["open_positions"] = []

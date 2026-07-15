@@ -12,10 +12,10 @@ if [ "$DOW" -ge 6 ]; then
     exit 0
 fi
 
-# Hour and minute in ET
+# Hour and minute in ET — force base-10 to avoid octal parse errors on 08/09
 HOUR=$(TZ="America/New_York" date +%H)
 MIN=$(TZ="America/New_York" date +%M)
-MINS=$(( HOUR * 60 + MIN ))
+MINS=$(( 10#$HOUR * 60 + 10#$MIN ))
 
 # 9:28 AM = 568 min, 4:05 PM = 965 min
 if [ "$MINS" -lt 568 ] || [ "$MINS" -gt 965 ]; then

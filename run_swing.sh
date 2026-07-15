@@ -15,7 +15,7 @@ fi
 # launchd fires this at 14:15 and 15:15 UTC; exactly one will land in this window
 HOUR=$(TZ="America/New_York" date +%H)
 MIN=$(TZ="America/New_York" date +%M)
-MINS=$(( HOUR * 60 + MIN ))
+MINS=$(( 10#$HOUR * 60 + 10#$MIN ))
 if [ "$MINS" -lt 610 ] || [ "$MINS" -gt 620 ]; then
     exit 0
 fi
