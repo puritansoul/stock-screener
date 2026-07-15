@@ -18,27 +18,49 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 10
+
+      - name: Check if local runner is active
+        id: check_local
+        run: |
+          # Skip if local Mac pushed intraday_trades.json within the last 20 minutes
+          LAST_TIME=$(git log --format="%ct" -- intraday_trades.json | head -1)
+          NOW=$(date +%s)
+          AGE=$(( NOW - ${LAST_TIME:-0} ))
+          echo "Last intraday_trades.json commit: ${AGE}s ago"
+          if [ "${LAST_TIME:-0}" -gt 0 ] && [ "$AGE" -lt 1200 ]; then
+            echo "Local runner active (${AGE}s ago) — skipping"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Local runner inactive (${AGE}s ago) — running as fallback"
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Set up Python 3.11
+        if: steps.check_local.outputs.skip == 'false'
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: 'pip'
 
       - name: Install dependencies
+        if: steps.check_local.outputs.skip == 'false'
         run: pip install -r requirements.txt
 
       - name: Run intraday trader
+        if: steps.check_local.outputs.skip == 'false'
         run: python intraday_trader.py
 
       - name: Build trading hub
+        if: steps.check_local.outputs.skip == 'false'
         run: python build_hub.py
 
       - name: Build consolidated dashboard
+        if: steps.check_local.outputs.skip == 'false'
         run: python build_consolidated.py
 
       - name: Update intraday index
+        if: steps.check_local.outputs.skip == 'false'
         run: |
           python - <<'PYEOF'
           from pathlib import Path
@@ -60,6 +82,7 @@ jobs:
           PYEOF
 
       - name: Commit and push
+        if: steps.check_local.outputs.skip == 'false'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -68,6 +91,6 @@ jobs:
           done
           find reports -name 'intraday_*.html' 2>/dev/null | xargs -r git add -f
           git diff --cached --quiet && echo "No changes" || \
-            git commit -m "intraday: $(date -u '+%Y-%m-%d %H:%M') [skip ci]"
+            git commit -m "intraday: $(date -u '+%Y-%m-%d %H:%M') [skip ci] [fallback]"
           git pull --rebase -X theirs origin main
           git push

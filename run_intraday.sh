@@ -1,28 +1,26 @@
 #!/bin/bash
-# Runs intraday_trader.py only during market hours (9:28–16:05 ET, Mon–Fri)
-# Called every 2 min by launchd. Skips weekends and outside-hours runs silently.
+# Local primary runner — owns intraday_trades.json
+# Runs every 2 min via launchd. GH Actions is fallback only.
 
 SCRIPT_DIR="/Users/vishalgupta/claude"
-LOG="$SCRIPT_DIR/intraday_local.log"
+LOG="$SCRIPT_DIR/intraday_launchd.log"
 PYTHON="/usr/bin/python3"
 
-# Day of week in ET (1=Mon ... 7=Sun)
+# Weekend check
 DOW=$(TZ="America/New_York" date +%u)
 if [ "$DOW" -ge 6 ]; then
     exit 0
 fi
 
-# Hour and minute in ET — force base-10 to avoid octal parse errors on 08/09
+# Market hours check: 9:28 AM – 4:05 PM ET
 HOUR=$(TZ="America/New_York" date +%H)
 MIN=$(TZ="America/New_York" date +%M)
 MINS=$(( 10#$HOUR * 60 + 10#$MIN ))
-
-# 9:28 AM = 568 min, 4:05 PM = 965 min
 if [ "$MINS" -lt 568 ] || [ "$MINS" -gt 965 ]; then
     exit 0
 fi
 
-# Prevent overlapping runs — if previous run is still going, skip this one
+# Prevent overlapping runs
 LOCKFILE="$SCRIPT_DIR/.intraday_running"
 if [ -f "$LOCKFILE" ]; then
     echo "$(TZ='America/New_York' date '+%Y-%m-%d %H:%M:%S ET') — skipped (previous run still active)" >> "$LOG"
@@ -31,12 +29,19 @@ fi
 touch "$LOCKFILE"
 trap "rm -f '$LOCKFILE'" EXIT
 
-echo "$(TZ='America/New_York' date '+%Y-%m-%d %H:%M:%S ET') — running intraday_trader.py" >> "$LOG"
 cd "$SCRIPT_DIR"
-$PYTHON intraday_trader.py >> "$LOG" 2>&1
+echo "$(TZ='America/New_York' date '+%Y-%m-%d %H:%M:%S ET') — running" >> "$LOG"
 
-# Push only HTML dashboards — JSON state files are owned by GitHub Actions to avoid conflicts
-git add intraday_index.html trading_hub.html consolidated.html
+# Pull latest state from remote before running — GH Actions fallback may have committed
+git pull --rebase -X theirs origin main >> "$LOG" 2>&1
+
+# Run the bot
+$PYTHON intraday_trader.py >> "$LOG" 2>&1
+$PYTHON build_hub.py >> "$LOG" 2>&1
+$PYTHON build_consolidated.py >> "$LOG" 2>&1
+
+# Commit and push everything — JSON state + HTML dashboards
+git add intraday_trades.json intraday_index.html trading_hub.html consolidated.html
 find reports -name 'intraday_*.html' 2>/dev/null | xargs -r git add -f
 git diff --cached --quiet && exit 0
 git commit -m "intraday: $(TZ='America/New_York' date '+%Y-%m-%d %H:%M') ET local [skip ci]" >> "$LOG" 2>&1
