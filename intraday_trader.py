@@ -119,6 +119,10 @@ def migrate_positions(state: dict) -> None:
 
 def reset_for_new_day(state: dict, today_str: str) -> None:
     """Move closed_today to all_closed and reset daily fields."""
+    # Refund cost of any positions that weren't force-closed yesterday
+    # (happens when the 3:45pm run didn't execute)
+    for pos in state.get("open_positions", []):
+        state["capital"] = round(state["capital"] + pos["cost"], 2)
     state["all_closed"].extend(state.get("closed_today", []))
     state["closed_today"]   = []
     state["open_positions"] = []
