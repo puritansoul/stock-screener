@@ -1013,14 +1013,21 @@ def save_html_report(
   </style>
 </head>
 <body>
-  <h1>📊 Multi-Factor S&amp;P 500 Screener</h1>
-  <p style="margin:6px 0 12px">
-    <span class="badge">{today.isoformat()}</span>&nbsp;
-    <span class="badge">BS Q{yq[1]}/{yq[0]} | Flows {ann_year}</span>&nbsp;
-    <span class="badge">{len(holdings)} holdings</span>&nbsp;
-    <span class="badge">Next rebalance: {next_rb}</span>&nbsp;
-    <span class="badge">NAV: {nav_str}</span>
-  </p>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px">
+    <div>
+      <h1 style="margin-bottom:4px">📊 Multi-Factor S&amp;P 500 Screener</h1>
+      <p style="margin:6px 0 12px">
+        <span class="badge">{today.isoformat()}</span>&nbsp;
+        <span class="badge">BS Q{yq[1]}/{yq[0]} | Flows {ann_year}</span>&nbsp;
+        <span class="badge">{len(holdings)} holdings</span>&nbsp;
+        <span class="badge">Next rebalance: {next_rb}</span>&nbsp;
+        <span class="badge">NAV: {nav_str}</span>
+      </p>
+    </div>
+    <div id="price-status" style="font-size:12px;padding:6px 14px;border-radius:20px;background:#fff;border:1px solid #e0e0e0;color:#888;white-space:nowrap;align-self:center">
+      ⏸ Prices as of last run
+    </div>
+  </div>
 
   <!-- Performance -->
   <div class="section">
@@ -1182,7 +1189,13 @@ def save_html_report(
   // Run once immediately with stale data so cards are never blank/wrong
   updateSummaryCards();
 
+  function setStatus(text, color) {{
+    const el = document.getElementById('price-status');
+    if (el) {{ el.textContent = text; el.style.color = color; el.style.borderColor = color === '#388e3c' ? '#a5d6a7' : '#e0e0e0'; }}
+  }}
+
   const fetchAll = async () => {{
+    setStatus('⏳ Fetching prices…', '#f57c00');
     for (const tk of tickers) {{
       try {{
         const q = await fetch(`https://finnhub.io/api/v1/quote?symbol=${{tk}}&token=${{FINNHUB_TOKEN}}`).then(r => r.json());
@@ -1221,11 +1234,12 @@ def save_html_report(
   }};
 
   fetchAll().then(() => {{
-    const now = new Date();
-    document.getElementById('live-status').innerHTML =
-      `✅ Live prices as of ${{now.toLocaleTimeString('en-US', {{hour:'2-digit',minute:'2-digit'}})}}`;
+    const t = new Date().toLocaleTimeString('en-US', {{timeZone:'America/New_York', hour:'2-digit', minute:'2-digit'}});
+    setStatus(`✅ Updated ${{t}} ET`, '#388e3c');
+    document.getElementById('live-status').textContent = `✅ Live prices as of ${{t}} ET`;
   }})
   .catch(() => {{
+    setStatus('⚠️ Fetch failed', '#c62828');
     document.getElementById('live-status').textContent = '⚠️ Live price fetch failed — showing last run data';
   }});
 

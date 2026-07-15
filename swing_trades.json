@@ -406,7 +406,7 @@
     "2026-07-09": 100000.0,
     "2026-07-10": 101615.45,
     "2026-07-13": 102667.93,
-    "2026-07-15": 101257.12
+    "2026-07-15": 98011.16
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -849,6 +849,15 @@
       "notes": [
         "Portfolio: $101,257  |  Cash: $5,863  |  Open: 25  |  Exits: 6  |  Entries: 6"
       ]
+    },
+    {
+      "date": "2026-07-15",
+      "run_at": "2026-07-15 17:59 UTC",
+      "entries": [],
+      "exits": [],
+      "notes": [
+        "Portfolio: $98,011  |  Cash: $5,863  |  Open: 23  |  Exits: 0  |  Entries: 0"
+      ]
     }
   ],
   "last_scan": [
@@ -895,13 +904,6 @@
       "status": "above SMA200"
     },
     {
-      "ticker": "AMGN",
-      "rsi2": 2.1,
-      "close": 355.25,
-      "sma200": 334.74,
-      "status": "LONG signal"
-    },
-    {
       "ticker": "CSX",
       "rsi2": 97.8,
       "close": 49.92,
@@ -942,13 +944,6 @@
       "close": 58.55,
       "sma200": 56.35,
       "status": "above SMA200"
-    },
-    {
-      "ticker": "LLY",
-      "rsi2": 3.5,
-      "close": 1152.54,
-      "sma200": 998.21,
-      "status": "LONG signal"
     },
     {
       "ticker": "CBRE",
@@ -1000,20 +995,6 @@
       "status": "below SMA200"
     },
     {
-      "ticker": "MO",
-      "rsi2": 6.6,
-      "close": 70.16,
-      "sma200": 63.31,
-      "status": "LONG signal"
-    },
-    {
-      "ticker": "GD",
-      "rsi2": 7.2,
-      "close": 369.5,
-      "sma200": 343.75,
-      "status": "LONG signal"
-    },
-    {
       "ticker": "EIX",
       "rsi2": 92.6,
       "close": 76.58,
@@ -1035,13 +1016,6 @@
       "status": "LONG signal"
     },
     {
-      "ticker": "C",
-      "rsi2": 7.6,
-      "close": 133.27,
-      "sma200": 115.94,
-      "status": "LONG signal"
-    },
-    {
       "ticker": "GEHC",
       "rsi2": 8.0,
       "close": 61.66,
@@ -1049,25 +1023,11 @@
       "status": "below SMA200"
     },
     {
-      "ticker": "CNC",
-      "rsi2": 91.5,
-      "close": 68.72,
-      "sma200": 44.8,
-      "status": "above SMA200"
-    },
-    {
       "ticker": "ERIE",
       "rsi2": 8.8,
       "close": 238.47,
       "sma200": 262.93,
       "status": "below SMA200"
-    },
-    {
-      "ticker": "EBAY",
-      "rsi2": 8.9,
-      "close": 112.54,
-      "sma200": 94.72,
-      "status": "LONG signal"
     },
     {
       "ticker": "IDXX",
@@ -1131,6 +1091,55 @@
       "close": 173.11,
       "sma200": 173.35,
       "status": "below SMA200"
+    },
+    {
+      "ticker": "BKR",
+      "rsi2": 88.6,
+      "close": 57.78,
+      "sma200": 55.65,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "XOM",
+      "rsi2": 88.6,
+      "close": 145.09,
+      "sma200": 135.33,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "JKHY",
+      "rsi2": 11.5,
+      "close": 145.37,
+      "sma200": 158.08,
+      "status": "below SMA200"
+    },
+    {
+      "ticker": "CRWD",
+      "rsi2": 88.4,
+      "close": 210.73,
+      "sma200": 128.3,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "KVUE",
+      "rsi2": 11.9,
+      "close": 18.76,
+      "sma200": 17.04,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "BAC",
+      "rsi2": 88.1,
+      "close": 60.62,
+      "sma200": 52.39,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "LII",
+      "rsi2": 88.1,
+      "close": 562.77,
+      "sma200": 508.09,
+      "status": "above SMA200"
     }
   ]
 }

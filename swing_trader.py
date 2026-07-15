@@ -822,8 +822,8 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
       </div>
       <div class="card">
         <div class="card-label">Day P&amp;L</div>
-        <div class="card-value" style="color:{day_pnl_color}">{day_pnl_sign}${abs(day_pnl):,.0f}<br>
-          <span style="font-size:14px">{day_pnl_sign}{abs(day_pct):.2f}%</span>
+        <div class="card-value" id="day-pnl" style="color:{day_pnl_color}">{day_pnl_sign}${abs(day_pnl):,.0f}<br>
+          <span style="font-size:14px" id="day-pnl-pct">{day_pnl_sign}{abs(day_pct):.2f}%</span>
         </div>
       </div>
       <div class="card">
@@ -920,6 +920,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
 (function() {{
   const TOKEN = 'd93d6v1r01qgqnua64j0d93d6v1r01qgqnua64jg';
   const STARTING = {STARTING_CAPITAL};
+  const PREV_NAV = {prev_nav};
   const delay = ms => new Promise(r => setTimeout(r, ms));
 
   function isMarketHours() {{
@@ -1062,6 +1063,17 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
     if (totalEl) {{
       totalEl.innerHTML = `${{sign}}$${{Math.abs(ret).toLocaleString('en-US',{{maximumFractionDigits:0}})}}<br><span style="font-size:14px" id="port-total-pct">${{sign}}${{Math.abs(retPct).toFixed(2)}}%</span>`;
       totalEl.style.color = color;
+    }}
+    const dayEl    = document.getElementById('day-pnl');
+    const dayPctEl = document.getElementById('day-pnl-pct');
+    if (dayEl && PREV_NAV > 0) {{
+      const dayPnl  = portVal - PREV_NAV;
+      const dayPct  = dayPnl / PREV_NAV * 100;
+      const dsign   = dayPnl >= 0 ? '+' : '';
+      const dcolor  = dayPnl >= 0 ? '#2e7d32' : '#c62828';
+      dayEl.firstChild.textContent = `${{dsign}}$${{Math.abs(dayPnl).toLocaleString('en-US',{{maximumFractionDigits:0}})}}`;
+      dayEl.style.color = dcolor;
+      if (dayPctEl) {{ dayPctEl.textContent = `${{dsign}}${{Math.abs(dayPct).toFixed(2)}}%`; }}
     }}
   }}
 

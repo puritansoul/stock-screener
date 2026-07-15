@@ -878,14 +878,21 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
   </style>
 </head>
 <body>
-  <h1>⚡ Intraday Paper Trader — ORB Strategy</h1>
-  <p style="margin: 6px 0 12px">
-    <span class="badge">{today_str}</span>&nbsp;
-    <span class="badge" style="background:#e8f5e9;color:{phase_badge[1]}">{phase_badge[0]}</span>&nbsp;
-    <span class="badge">ORB {ORB_MINUTES}-min</span>&nbsp;
-    <span class="badge">{len(open_pos)} open</span>&nbsp;
-    <span class="badge" id="live-badge">Live prices every 30s</span>
-  </p>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px">
+    <div>
+      <h1 style="margin-bottom:4px">⚡ Intraday Paper Trader — ORB Strategy</h1>
+      <p style="margin: 6px 0 12px">
+        <span class="badge">{today_str}</span>&nbsp;
+        <span class="badge" style="background:#e8f5e9;color:{phase_badge[1]}">{phase_badge[0]}</span>&nbsp;
+        <span class="badge">ORB {ORB_MINUTES}-min</span>&nbsp;
+        <span class="badge">{len(open_pos)} open</span>&nbsp;
+        <span class="badge" id="live-badge">Live prices every 30s</span>
+      </p>
+    </div>
+    <div id="price-status" style="font-size:12px;padding:6px 14px;border-radius:20px;background:#fff;border:1px solid #e0e0e0;color:#888;white-space:nowrap;align-self:center">
+      ⏸ Prices as of last run
+    </div>
+  </div>
 
   <div class="section">
     <h2>Today's Summary</h2>
@@ -1007,9 +1014,15 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
     return mins >= 570 && mins < 960; // 9:30–4:00
   }}
 
+  function setStatus(text, color) {{
+    const el = document.getElementById('price-status');
+    if (el) {{ el.textContent = text; el.style.color = color; el.style.borderColor = color === '#388e3c' ? '#a5d6a7' : '#e0e0e0'; }}
+  }}
+
   async function fetchPrices() {{
     const rows = document.querySelectorAll('tr[data-ticker]');
     if (!rows.length) return;
+    setStatus('⏳ Fetching prices…', '#f57c00');
     const quotes = {{}};
     for (const row of rows) {{
       const tk = row.dataset.ticker;
@@ -1021,7 +1034,8 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
     }}
     applyPrices(rows, quotes);
     updatePortfolio(rows, quotes);
-    const t = new Date().toLocaleTimeString('en-US', {{timeZone:'America/New_York'}});
+    const t = new Date().toLocaleTimeString('en-US', {{timeZone:'America/New_York', hour:'2-digit', minute:'2-digit'}});
+    setStatus(`✅ Updated ${{t}} ET`, '#388e3c');
     const badge = document.getElementById('live-badge');
     const status = document.getElementById('live-status');
     if (badge) badge.textContent = `Updated ${{t}} ET`;

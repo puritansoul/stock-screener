@@ -305,3 +305,95 @@ Done.
 
 Done.
 
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+5 Failed downloads:
+['RF', 'PSKY', 'GDDY', 'SYK', 'AXP']: TypeError("'NoneType' object is not subscriptable")
+
+============================================================
+  Factor Screener — 2026-07-14
+  Daily screen
+============================================================
+
+[1] S&P 500 tickers …
+[2] CIK map …
+[3] Prices (14-month lookback) …
+[4] SEC EDGAR balance sheet Q1/2026, annual flows 2025 + year-ago + 3yr-ago …
+[5] Scoring (ROIC, FCF/EV, Piotroski, hard filters) …
+[6b] Computing score × inverse-vol weights …
+[6] Updating portfolio NAV …
+[7] Saving HTML report …
+
+  NAV: $104,553  (daily: +0.21%)
+  Holdings: 21  |  High-conviction alerts: 0
+
+  Top 15:
+    #  Ticker     Score   Alloc     Price  Status
+  --------------------------------------------------------
+    1  APA        0.881    4.3%    $34.04  HELD   
+    2  NEM        0.839    3.8%    $96.47  HELD   
+    3  COHR       0.823    2.2%   $309.67  HELD   
+    4  EXPE       0.810    4.3%   $269.28  HELD   
+    5  JBHT       0.807    5.5%   $280.54  HELD   
+    6  UAL        0.807    3.5%   $120.74  HELD   
+    7  NTAP       0.789    3.0%   $174.69  HELD   
+    8  LVS        0.785    6.0%    $45.19  HELD   
+    9  MO         0.778    6.6%    $71.13  HELD   
+   10  RL         0.768    4.1%   $374.30  HELD   
+   11  STT        0.764    7.5%   $182.87  HELD   
+   12  LMT        0.757    6.2%   $520.80  HELD   
+   13  AIZ        0.747    8.9%   $280.05  HELD   
+   14  BBY        0.746    3.8%    $81.82  HELD   
+   15  FCX        0.746    3.1%    $62.04  HELD   
+
+  Report: /Users/vishalgupta/claude/reports/2026-07-14.html
+
+Done.
+
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+1 Failed download:
+['GLW']: TypeError("'NoneType' object is not subscriptable")
+
+============================================================
+  Factor Screener — 2026-07-15
+  Daily screen
+============================================================
+
+[1] S&P 500 tickers …
+[2] CIK map …
+[3] Prices (14-month lookback) …
+[4] SEC EDGAR balance sheet Q1/2026, annual flows 2025 + year-ago + 3yr-ago …
+[5] Scoring (ROIC, FCF/EV, Piotroski, hard filters) …
+[6b] Computing score × inverse-vol weights …
+[6] Updating portfolio NAV …
+[7] Saving HTML report …
+
+  NAV: $104,247  (daily: -0.29%)
+  Holdings: 21  |  High-conviction alerts: 0
+
+  Top 15:
+    #  Ticker     Score   Alloc     Price  Status
+  --------------------------------------------------------
+    1  APA        0.881    4.4%    $33.77  HELD   
+    2  NEM        0.854    4.0%    $95.00  HELD   
+    3  EXPE       0.829    4.4%   $268.71  HELD   
+    4  COHR       0.824    2.2%   $297.60  HELD   
+    5  UAL        0.817    3.5%   $122.51  HELD   
+    6  JBHT       0.809    5.5%   $276.82  HELD   
+    7  NTAP       0.802    3.1%   $161.73  HELD   
+    8  LVS        0.778    5.9%    $44.53  HELD   
+    9  STT        0.773    7.3%   $185.74  HELD   
+   10  RL         0.771    4.1%   $380.07  HELD   
+   11  MO         0.768    6.6%    $71.25  HELD   
+   12  FCX        0.757    3.2%    $61.09  HELD   
+   13  AIZ        0.755    8.8%   $274.61  HELD   
+   14  LMT        0.746    6.1%   $519.35  HELD   
+   15  BBY        0.744    3.7%    $85.70  HELD   
+
+  Report: /Users/vishalgupta/claude/reports/2026-07-15.html
+
+Done.
+
