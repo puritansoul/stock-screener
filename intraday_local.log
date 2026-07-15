@@ -19225,3 +19225,70 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 1 Failed download:
 ['ORCL']: TypeError("'NoneType' object is not subscriptable")
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	portfolio_state.json
+U	reports/2026-07-14.html
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+Everything up-to-date
+2026-07-15 13:56:19 ET — running intraday_trader.py
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+8 Failed downloads:
+['FDX', 'DOW', 'WELL', 'HUBB', 'CDNS', 'MCD', 'GPC', 'ROL']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-07-15 13:56 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 495 tickers
+  ORB computed for 495 tickers
+  ENTER short PNW @ $107.60  x2  stop=$107.87  trail=$0.28
+  ENTER short ATO @ $176.30  x1  stop=$177.11  trail=$0.81
+
+  Portfolio: $48,889  (-51,111 / -51.11%)
+  Cash: $563  |  Open: 14  |  Today PnL: $+0
+  Dashboard → /Users/vishalgupta/claude/reports/intraday_2026-07-15.html
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	portfolio_state.json
+U	reports/2026-07-14.html
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+Everything up-to-date
+2026-07-15 13:58:46 ET — running intraday_trader.py
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+6 Failed downloads:
+['WMT']: TypeError("'Response' object is not subscriptable")
+['ERIE', 'CDW', 'SYY', 'KDP', 'TDY']: TypeError("'NoneType' object is not subscriptable")
+
+3 Failed downloads:
+['PNC', 'CMI', 'LLY']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-07-15 13:58 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 497 tickers
+  ORB computed for 497 tickers
+
+  Portfolio: $48,900  (-51,100 / -51.10%)
+  Cash: $563  |  Open: 14  |  Today PnL: $+0
+  Dashboard → /Users/vishalgupta/claude/reports/intraday_2026-07-15.html
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	portfolio_state.json
+U	reports/2026-07-14.html
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+Everything up-to-date
