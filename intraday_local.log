@@ -8684,3 +8684,385 @@ Intraday Trader — 2026-07-14 08:47 ET  phase=pre_market  universe=503
 From https://github.com/puritansoul/stock-screener
  * branch            main       -> FETCH_HEAD
    606b4d1..c8c1b03  main       -> origin/main
+To https://github.com/puritansoul/stock-screener.git
+   c8c1b03..d6dd1ce  main -> main
+2026-07-14 09:32:10 ET — running intraday_trader.py
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Traceback (most recent call last):
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 1248, in <module>
+    run_intraday()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 646, in run_intraday
+    state     = load_state()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 91, in load_state
+    return json.loads(TRADES_FILE.read_text())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 2021 column 1 (char 49864)
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	intraday_trades.json
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+Everything up-to-date
+2026-07-14 09:34:11 ET — running intraday_trader.py
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Traceback (most recent call last):
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 1248, in <module>
+    run_intraday()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 646, in run_intraday
+    state     = load_state()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 91, in load_state
+    return json.loads(TRADES_FILE.read_text())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 2021 column 1 (char 49864)
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	intraday_trades.json
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+Everything up-to-date
+2026-07-14 09:36:13 ET — running intraday_trader.py
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Traceback (most recent call last):
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 1248, in <module>
+    run_intraday()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 646, in run_intraday
+    state     = load_state()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 91, in load_state
+    return json.loads(TRADES_FILE.read_text())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 2021 column 1 (char 49864)
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	intraday_trades.json
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+Everything up-to-date
+2026-07-14 09:38:14 ET — running intraday_trader.py
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Traceback (most recent call last):
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 1248, in <module>
+    run_intraday()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 646, in run_intraday
+    state     = load_state()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 91, in load_state
+    return json.loads(TRADES_FILE.read_text())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 2021 column 1 (char 49864)
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	intraday_trades.json
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+Everything up-to-date
+2026-07-14 09:40:16 ET — running intraday_trader.py
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Traceback (most recent call last):
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 1248, in <module>
+    run_intraday()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 646, in run_intraday
+    state     = load_state()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 91, in load_state
+    return json.loads(TRADES_FILE.read_text())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 2021 column 1 (char 49864)
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	intraday_trades.json
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+Everything up-to-date
+2026-07-14 09:42:17 ET — running intraday_trader.py
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Traceback (most recent call last):
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 1248, in <module>
+    run_intraday()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 646, in run_intraday
+    state     = load_state()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 91, in load_state
+    return json.loads(TRADES_FILE.read_text())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 2021 column 1 (char 49864)
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	intraday_trades.json
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+Everything up-to-date
+2026-07-14 09:44:19 ET — running intraday_trader.py
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Traceback (most recent call last):
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 1248, in <module>
+    run_intraday()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 646, in run_intraday
+    state     = load_state()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 91, in load_state
+    return json.loads(TRADES_FILE.read_text())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 2021 column 1 (char 49864)
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	intraday_trades.json
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+Everything up-to-date
+2026-07-14 09:46:21 ET — running intraday_trader.py
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Traceback (most recent call last):
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 1248, in <module>
+    run_intraday()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 646, in run_intraday
+    state     = load_state()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 91, in load_state
+    return json.loads(TRADES_FILE.read_text())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 2021 column 1 (char 49864)
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	intraday_trades.json
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+Everything up-to-date
+2026-07-14 09:48:22 ET — running intraday_trader.py
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Traceback (most recent call last):
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 1248, in <module>
+    run_intraday()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 646, in run_intraday
+    state     = load_state()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 91, in load_state
+    return json.loads(TRADES_FILE.read_text())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 2021 column 1 (char 49864)
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	intraday_trades.json
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+Everything up-to-date
+2026-07-14 09:50:24 ET — running intraday_trader.py
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Traceback (most recent call last):
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 1248, in <module>
+    run_intraday()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 646, in run_intraday
+    state     = load_state()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 91, in load_state
+    return json.loads(TRADES_FILE.read_text())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 2021 column 1 (char 49864)
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	intraday_trades.json
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+Everything up-to-date
+2026-07-14 09:52:25 ET — running intraday_trader.py
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+1 Failed download:
+['FOX']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['BEN']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-07-14 09:52 ET  phase=orb_window  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 502 tickers
+  ORB computed for 502 tickers
+
+  Portfolio: $99,718  (-282 / -0.28%)
+  Cash: $99,718  |  Open: 0  |  Today PnL: $+0
+  Dashboard → /Users/vishalgupta/claude/reports/intraday_2026-07-14.html
+[main 27d4ee1] intraday: 2026-07-14 09:52 ET local [skip ci]
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   8784121..27d4ee1  main -> main
+2026-07-14 09:54:52 ET — running intraday_trader.py
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+1 Failed download:
+['ESS']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-07-14 09:54 ET  phase=orb_window  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+
+  Portfolio: $99,718  (-282 / -0.28%)
+  Cash: $99,718  |  Open: 0  |  Today PnL: $+0
+  Dashboard → /Users/vishalgupta/claude/reports/intraday_2026-07-14.html
+[main f854933] intraday: 2026-07-14 09:55 ET local [skip ci]
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   27d4ee1..f854933  main -> main
+2026-07-14 09:57:21 ET — running intraday_trader.py
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+2 Failed downloads:
+['SNDK', 'XYZ']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['BMY']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-07-14 09:57 ET  phase=orb_window  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 501 tickers
+  ORB computed for 501 tickers
+
+  Portfolio: $99,718  (-282 / -0.28%)
+  Cash: $99,718  |  Open: 0  |  Today PnL: $+0
+  Dashboard → /Users/vishalgupta/claude/reports/intraday_2026-07-14.html
+[main 910fc64] intraday: 2026-07-14 09:57 ET local [skip ci]
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   f854933..910fc64  main -> main
+2026-07-14 09:59:46 ET — running intraday_trader.py
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+2 Failed downloads:
+['PCAR', 'EW']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-07-14 09:59 ET  phase=orb_window  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 501 tickers
+  ORB computed for 501 tickers
+
+  Portfolio: $99,718  (-282 / -0.28%)
+  Cash: $99,718  |  Open: 0  |  Today PnL: $+0
+  Dashboard → /Users/vishalgupta/claude/reports/intraday_2026-07-14.html
+[main 4e41e7a] intraday: 2026-07-14 10:00 ET local [skip ci]
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   c9c1fe0..4e41e7a  main -> main
+2026-07-14 10:02:12 ET — running intraday_trader.py
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+2 Failed downloads:
+['ETN', 'ULTA']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['AZO']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-07-14 10:02 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 501 tickers
+  ORB computed for 501 tickers
+  ENTER long GL @ $180.15  x166  stop=$178.94  trail=$1.20
+  ENTER short PNR @ $76.91  x272  stop=$77.30  trail=$0.39
+
+  Portfolio: $99,718  (-282 / -0.28%)
+  Cash: $48,894  |  Open: 2  |  Today PnL: $+0
+  Dashboard → /Users/vishalgupta/claude/reports/intraday_2026-07-14.html
+[main 978fdbb] intraday: 2026-07-14 10:02 ET local [skip ci]
+ 1 file changed, 23 insertions(+), 5 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+   4e41e7a..b2608c4  main       -> origin/main

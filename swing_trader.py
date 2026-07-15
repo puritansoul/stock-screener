@@ -649,6 +649,34 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
           <td style="color:#666;font-size:12px">{edate}</td>
         </tr>"""
 
+    total_invested = sum(p["cost"] for p in open_pos)
+    total_unreal   = sum(
+        (float(prices[p["ticker"]].dropna().iloc[-1]) - p["entry_price"]) * p["shares"]
+        if p["ticker"] in prices.columns and len(prices[p["ticker"]].dropna())
+        else ((prices[p["ticker"]].dropna().iloc[-1] if p["ticker"] in prices.columns and len(prices[p["ticker"]].dropna()) else p["entry_price"]) - p["entry_price"]) * p["shares"]
+        for p in open_pos
+    ) if open_pos else 0
+    # simpler recalc
+    total_unreal = 0.0
+    for p in open_pos:
+        tk = p["ticker"]
+        ep = p["entry_price"]
+        sh = p["shares"]
+        cp = ep
+        if tk in prices.columns:
+            s = prices[tk].dropna()
+            if len(s): cp = float(s.iloc[-1])
+        total_unreal += (cp - ep) * sh if p["side"] == "long" else (ep - cp) * sh
+    tu_color = "#2e7d32" if total_unreal >= 0 else "#c62828"
+    tu_sign  = "+" if total_unreal >= 0 else ""
+    open_totals_row = f"""
+        <tr style="background:#e8eaf6;font-weight:bold;border-top:2px solid #9fa8da">
+          <td colspan="5" style="text-align:right;color:#555">Totals</td>
+          <td id="total-invested" style="text-align:right">${total_invested:,.0f}</td>
+          <td id="total-unreal" style="text-align:right;color:{tu_color}">{tu_sign}${abs(total_unreal):,.0f}</td>
+          <td colspan="3"></td>
+        </tr>""" if open_pos else ""
+
     if not open_rows:
         open_rows = '<tr><td colspan="10" style="text-align:center;color:#999;padding:20px">No open positions</td></tr>'
 
@@ -682,6 +710,16 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
           <td style="color:#666;font-size:12px">{xdate}</td>
           <td style="color:#666;font-size:12px">{reason}</td>
         </tr>"""
+
+    closed_total_pnl = sum(p.get("pnl", 0) for p in closed[-50:])
+    ctp_color = "#2e7d32" if closed_total_pnl >= 0 else "#c62828"
+    ctp_sign  = "+" if closed_total_pnl >= 0 else ""
+    closed_totals_row = f"""
+        <tr style="background:#e8f5e9;font-weight:bold;border-top:2px solid #a5d6a7">
+          <td colspan="4" style="text-align:right;color:#555">Total P&amp;L (shown)</td>
+          <td style="text-align:right;color:{ctp_color}">{ctp_sign}${closed_total_pnl:,.0f}</td>
+          <td colspan="3"></td>
+        </tr>""" if closed else ""
 
     if not closed_rows:
         closed_rows = '<tr><td colspan="8" style="text-align:center;color:#999;padding:20px">No closed trades yet</td></tr>'
@@ -753,13 +791,20 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
   </style>
 </head>
 <body>
-  <h1>📈 Swing Trading Bot — RSI(2) Strategy</h1>
-  <p style="margin: 6px 0 12px">
-    <span class="badge">{today_str}</span>&nbsp;
-    <span class="badge">RSI(2) Mean Reversion</span>&nbsp;
-    <span class="badge">{len(open_pos)} open positions</span>&nbsp;
-    <span class="badge">$100k starting capital</span>
-  </p>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px">
+    <div>
+      <h1 style="margin-bottom:4px">📈 Swing Trading Bot — RSI(2) Strategy</h1>
+      <p style="margin: 6px 0 12px">
+        <span class="badge">{today_str}</span>&nbsp;
+        <span class="badge">RSI(2) Mean Reversion</span>&nbsp;
+        <span class="badge">{len(open_pos)} open positions</span>&nbsp;
+        <span class="badge">$100k starting capital</span>
+      </p>
+    </div>
+    <div id="price-status" style="font-size:12px;padding:6px 14px;border-radius:20px;background:#fff;border:1px solid #e0e0e0;color:#888;white-space:nowrap;align-self:center">
+      ⏸ Prices as of last run
+    </div>
+  </div>
 
   <!-- Summary cards -->
   <div class="section">
@@ -803,6 +848,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
         <th>Stop</th><th>RSI(2) at entry</th><th>Entry Date</th>
       </tr></thead>
       <tbody>{open_rows}</tbody>
+      {open_totals_row}
     </table>
   </div>
 
@@ -840,6 +886,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
           <th>P&amp;L</th><th>Entry Date</th><th>Exit Date</th><th>Reason</th>
         </tr></thead>
         <tbody>{closed_rows}</tbody>
+        {closed_totals_row}
       </table>
     </details>
   </div>
@@ -885,50 +932,98 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
     return mins >= 570 && mins < 960; // 9:30–4:00
   }}
 
+  // live P&L per ticker, seeded from server-rendered totals row
+  const liveUnreal = {{}};
+
+  function setStatus(html, color) {{
+    const el = document.getElementById('price-status');
+    if (el) {{ el.innerHTML = html; el.style.color = color; el.style.borderColor = color === '#388e3c' ? '#a5d6a7' : '#e0e0e0'; }}
+  }}
+
+  function refreshTotalUnreal() {{
+    const tuEl = document.getElementById('total-unreal');
+    if (!tuEl) return;
+    let sum = 0;
+    document.querySelectorAll('tr[data-ticker]').forEach(r => {{
+      const tk = r.dataset.ticker;
+      sum += liveUnreal[tk] !== undefined ? liveUnreal[tk] : 0;
+    }});
+    const sign  = sum >= 0 ? '+' : '';
+    tuEl.textContent = `${{sign}}$${{Math.abs(sum).toLocaleString('en-US', {{maximumFractionDigits:0}})}}`;
+    tuEl.style.color = sum >= 0 ? '#2e7d32' : '#c62828';
+  }}
+
+  // seed liveUnreal from server-rendered per-row data so total shows something immediately
+  document.addEventListener('DOMContentLoaded', () => {{
+    document.querySelectorAll('tr[data-ticker]').forEach(r => {{
+      const tk   = r.dataset.ticker;
+      const qty  = parseFloat(r.dataset.qty)  || 0;
+      const buy  = parseFloat(r.dataset.buypx) || 0;
+      const side = r.dataset.side;
+      // use whatever price is already in the live-price cell
+      const priceCell = r.querySelector('.live-price');
+      let price = buy;
+      if (priceCell) {{
+        const m = priceCell.textContent.replace(/[$,]/g, '');
+        if (!isNaN(parseFloat(m))) price = parseFloat(m);
+      }}
+      liveUnreal[tk] = side === 'long' ? (price - buy) * qty : (buy - price) * qty;
+    }});
+    refreshTotalUnreal();
+  }});
+
   async function fetchPrices() {{
     const rows = document.querySelectorAll('tr[data-ticker]');
     if (!rows.length) return;
+    setStatus('⏳ Fetching prices…', '#f57c00');
     const quotes = {{}};
     for (const row of rows) {{
       const tk = row.dataset.ticker;
       try {{
         const q = await fetch(`https://finnhub.io/api/v1/quote?symbol=${{tk}}&token=${{TOKEN}}`).then(r => r.json());
-        if (q && q.c) quotes[tk] = {{ price: q.c, prevClose: q.pc }};
+        if (q && q.c) {{
+          quotes[tk] = {{ price: q.c, prevClose: q.pc }};
+          applyOneRow(row, q.c);       // update row + running total immediately
+          updatePortfolio(rows, quotes);
+        }}
       }} catch(e) {{}}
       await delay(1100);
     }}
-    applyPrices(rows, quotes);
-    updatePortfolio(rows, quotes);
+    const t = new Date().toLocaleTimeString('en-US', {{timeZone:'America/New_York', hour:'2-digit', minute:'2-digit'}});
+    setStatus(`✅ Updated ${{t}} ET`, '#388e3c');
     const el = document.getElementById('live-status');
     if (el) {{
-      const t = new Date().toLocaleTimeString('en-US', {{timeZone:'America/New_York'}});
       el.innerHTML = `Live prices as of ${{t}} ET &nbsp;|&nbsp; Simulated trades only — not real money.`;
       el.style.color = '#388e3c';
     }}
   }}
 
+  function applyOneRow(row, price) {{
+    const tk   = row.dataset.ticker;
+    const qty  = parseFloat(row.dataset.qty);
+    const buy  = parseFloat(row.dataset.buypx);
+    const side = row.dataset.side;
+    const priceCell  = row.querySelector('.live-price');
+    const unrealCell = row.querySelector('.live-unreal');
+    if (priceCell) priceCell.textContent = '$' + price.toLocaleString('en-US', {{minimumFractionDigits:2, maximumFractionDigits:2}});
+    if (unrealCell) {{
+      const unreal = side === 'long' ? (price - buy) * qty : (buy - price) * qty;
+      const cost   = buy * qty;
+      const pct    = cost > 0 ? unreal / cost * 100 : 0;
+      const sign   = unreal >= 0 ? '+' : '';
+      unrealCell.textContent = `${{sign}}$${{Math.abs(unreal).toLocaleString('en-US', {{maximumFractionDigits:0}})}} (${{pct >= 0 ? '+' : ''}}${{pct.toFixed(2)}}%)`;
+      unrealCell.style.color = unreal >= 0 ? '#2e7d32' : '#c62828';
+      liveUnreal[tk] = unreal;
+      refreshTotalUnreal();
+    }}
+  }}
+
   function applyPrices(rows, quotes) {{
     for (const row of rows) {{
-      const tk   = row.dataset.ticker;
-      const qty  = parseFloat(row.dataset.qty);
-      const buy  = parseFloat(row.dataset.buypx);
-      const side = row.dataset.side;
-      const q    = quotes[tk];
+      const tk = row.dataset.ticker;
+      const q  = quotes[tk];
       if (!q) continue;
-      const price = q.price;
-
-      const priceCell  = row.querySelector('.live-price');
-      const unrealCell = row.querySelector('.live-unreal');
-      if (priceCell) priceCell.textContent = '$' + price.toLocaleString('en-US', {{minimumFractionDigits:2, maximumFractionDigits:2}});
-
-      if (unrealCell) {{
-        const unreal = side === 'long' ? (price - buy) * qty : (buy - price) * qty;
-        const cost   = buy * qty;
-        const pct    = cost > 0 ? unreal / cost * 100 : 0;
-        const sign   = unreal >= 0 ? '+' : '';
-        unrealCell.textContent = `${{sign}}$${{Math.abs(unreal).toLocaleString('en-US', {{maximumFractionDigits:0}})}} (${{pct >= 0 ? '+' : ''}}${{pct.toFixed(2)}}%)`;
-        unrealCell.style.color = unreal >= 0 ? '#2e7d32' : '#c62828';
-      }}
+      applyOneRow(row, q.price);
     }}
   }}
 
