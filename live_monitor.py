@@ -32,33 +32,48 @@ import yfinance as yf
 
 warnings.filterwarnings("ignore")
 
-COMPANY_NAMES = {
-    "AAPL":"Apple","MSFT":"Microsoft","NVDA":"Nvidia","AMZN":"Amazon","GOOGL":"Alphabet",
-    "META":"Meta","TSLA":"Tesla","BRK-B":"Berkshire","JPM":"JPMorgan","V":"Visa",
-    "UNH":"UnitedHealth","XOM":"ExxonMobil","JNJ":"J&J","WMT":"Walmart","MA":"Mastercard",
-    "PG":"P&G","HD":"Home Depot","CVX":"Chevron","MRK":"Merck","LLY":"Eli Lilly",
-    "ABBV":"AbbVie","PEP":"PepsiCo","KO":"Coca-Cola","COST":"Costco","AVGO":"Broadcom",
-    "TMO":"Thermo Fisher","ACN":"Accenture","MCD":"McDonald's","ABT":"Abbott","DHR":"Danaher",
-    "NKE":"Nike","LIN":"Linde","TXN":"Texas Instruments","NEE":"NextEra","UPS":"UPS",
-    "QCOM":"Qualcomm","CRM":"Salesforce","SPGI":"S&P Global","HON":"Honeywell","AMGN":"Amgen",
-    "RTX":"Raytheon","LOW":"Lowe's","CAT":"Caterpillar","INTU":"Intuit","GS":"Goldman Sachs",
-    "BLK":"BlackRock","AXP":"Amex","SYK":"Stryker","ELV":"Elevance","GILD":"Gilead",
-    "MDLZ":"Mondelez","ADP":"ADP","BKNG":"Booking","REGN":"Regeneron","PLD":"Prologis",
-    "MMC":"Marsh McLennan","TJX":"TJX","VRTX":"Vertex","CB":"Chubb","AON":"Aon",
-    "ITW":"Illinois Tool","PNC":"PNC","USB":"US Bancorp","GE":"GE","CME":"CME Group",
-    "EQIX":"Equinix","KLAC":"KLA","LRCX":"Lam Research","MCHP":"Microchip","MU":"Micron",
-    "ADI":"Analog Devices","AMAT":"Applied Materials","SNPS":"Synopsys","CDNS":"Cadence",
-    "NXPI":"NXP Semi","TGT":"Target","WBA":"Walgreens","CVS":"CVS","CI":"Cigna",
-    "HUM":"Humana","CNC":"Centene","HCA":"HCA Healthcare","BAC":"Bank of America",
-    "WFC":"Wells Fargo","C":"Citigroup","MS":"Morgan Stanley","F":"Ford","GM":"General Motors",
-    "AOS":"A.O. Smith","ACGL":"Arch Capital","TPL":"Texas Pacific Land","FFIV":"F5 Networks",
-    "DOV":"Dover","REG":"Regency Centers","HPQ":"HP","HAS":"Hasbro","CPT":"Camden Property",
-    "GL":"Globe Life","JBL":"Jabil","CMI":"Cummins","PH":"Parker Hannifin",
-    "MMM":"3M","BA":"Boeing","LMT":"Lockheed Martin","NOC":"Northrop Grumman",
-    "DE":"Deere","EMR":"Emerson","ETN":"Eaton","FDX":"FedEx","GD":"General Dynamics",
-    "IBM":"IBM","INTC":"Intel","NOW":"ServiceNow","ORCL":"Oracle","PANW":"Palo Alto",
-    "PYPL":"PayPal","SBUX":"Starbucks","SO":"Southern Co","T":"AT&T","VZ":"Verizon",
-}
+# ── Company name cache ────────────────────────────────────────────────────────
+_NAMES_FILE = Path(__file__).parent / "ticker_names.json"
+_name_cache: dict[str, str] = {}
+
+def _load_name_cache() -> None:
+    global _name_cache
+    if _NAMES_FILE.exists():
+        try:
+            _name_cache = json.loads(_NAMES_FILE.read_text())
+        except Exception:
+            _name_cache = {}
+
+def get_company_names(tickers: list[str]) -> dict[str, str]:
+    """Return {ticker: short_name} for all tickers, fetching misses from yfinance."""
+    if not _name_cache:
+        _load_name_cache()
+    missing = [t for t in tickers if t not in _name_cache]
+    if missing:
+        try:
+            info = yf.Tickers(" ".join(missing))
+            for tk in missing:
+                try:
+                    name = (info.tickers[tk].fast_info.get("displayName")
+                            or info.tickers[tk].info.get("shortName")
+                            or info.tickers[tk].info.get("longName")
+                            or "")
+                    for suffix in [", Inc.", " Inc.", ", Corp.", " Corp.", ", LLC",
+                                   " Ltd.", " Limited", " Holdings", " Co.", " Company"]:
+                        name = name.replace(suffix, "")
+                    _name_cache[tk] = name.strip()
+                except Exception:
+                    _name_cache[tk] = ""
+        except Exception:
+            for tk in missing:
+                _name_cache[tk] = ""
+        try:
+            _NAMES_FILE.write_text(json.dumps(_name_cache, indent=2))
+        except Exception:
+            pass
+    return {t: _name_cache.get(t, "") for t in tickers}
+
+_names: dict[str, str] = {}
 
 # ── User config ───────────────────────────────────────────────────────────────
 PORTFOLIO_VALUE       = 100_000     # your portfolio size in $
@@ -741,12 +756,17 @@ def save_html_report(
     prev_prices: dict | None = None,
     prices_df: pd.DataFrame | None = None,
 ) -> str:
+    global _names
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
     path      = REPORT_DIR / f"{today.isoformat()}.html"
     next_rb   = _next_rebalance_date(today)
     today_nav = nav_history.get(today.isoformat(), 1.0)
     holdings_set = set(holdings)
     alert_set    = set(alert_tickers)
+
+    # Prefetch company names for every ticker visible in the report
+    _all_tks = list(set(scores.index.tolist()) | set(alert_tickers) | set(holdings))
+    _names = get_company_names(_all_tks)
     positions    = positions or {}
     prev_prices  = prev_prices or {}
     cost_basis      = sum(v.get("shares", 0) * v.get("price", 0) for v in positions.values()) or PORTFOLIO_VALUE
@@ -872,7 +892,7 @@ def save_html_report(
             comp = row["composite"]
             alert_rows += f"""
             <tr style="background:#fffde7">
-              <td style="font-weight:bold;color:#f57f17;white-space:nowrap">⭐ {tk}<span style="color:#888;font-size:11px;display:block;line-height:1.1;font-weight:normal">{COMPANY_NAMES.get(tk,"")}</span></td>
+              <td style="font-weight:bold;color:#f57f17;white-space:nowrap">⭐ {tk}<span style="color:#888;font-size:11px;display:block;line-height:1.1;font-weight:normal">{_names.get(tk,"")}</span></td>
               <td>{_fmt_price(row.get('price'))}</td>
               <td>{_fmt(row.get('market_cap_bn'), '.1f')}B</td>
               <td>{_score_bar(row.get('r_momentum'))} {_fmt(row.get('r_momentum'))}</td>
@@ -978,7 +998,7 @@ def save_html_report(
         holdings_rows += f"""
         <tr style="{row_style}" data-ticker="{tk}" data-qty="{qty}" data-buypx="{buy_px or 0}" data-prevpx="{prev_prices.get(tk, 0)}" data-stale-val="{_stale_val}" data-stale-cost="{_stale_cost}">
           <td style="text-align:center;font-size:12px;color:#666">{rank}</td>
-          <td style="font-weight:bold;white-space:nowrap">{tk} {badge}<span style="color:#888;font-size:11px;display:block;line-height:1.1;font-weight:normal">{COMPANY_NAMES.get(tk,"")}</span></td>
+          <td style="font-weight:bold;white-space:nowrap">{tk} {badge}<span style="color:#888;font-size:11px;display:block;line-height:1.1;font-weight:normal">{_names.get(tk,"")}</span></td>
           <td class="live-price" style="text-align:right">{_fmt_price(row.get('price'))}</td>
           <td style="text-align:right;color:#1a237e;font-weight:bold">{alloc_str}</td>
           <td style="text-align:right">{qty_str}</td>
@@ -995,7 +1015,7 @@ def save_html_report(
         factor_rows += f"""
         <tr style="{row_style}">
           <td style="text-align:center;font-size:12px;color:#666">{rank}</td>
-          <td style="font-weight:bold;white-space:nowrap">{tk} {badge}<span style="color:#888;font-size:11px;display:block;line-height:1.1;font-weight:normal">{COMPANY_NAMES.get(tk,"")}</span></td>
+          <td style="font-weight:bold;white-space:nowrap">{tk} {badge}<span style="color:#888;font-size:11px;display:block;line-height:1.1;font-weight:normal">{_names.get(tk,"")}</span></td>
           <td>{_score_bar(row.get('r_momentum'))} {_fmt(row.get('r_momentum'))}</td>
           <td>{_score_bar(row.get('r_roic'))} {_fmt(row.get('roic'), '.1%')}</td>
           <td>{_score_bar(row.get('r_fcf_ev'))} {_fmt(row.get('fcf_ev'), '.1%')}</td>

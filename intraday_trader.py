@@ -29,29 +29,48 @@ import yfinance as yf
 
 warnings.filterwarnings("ignore")
 
-COMPANY_NAMES = {
-    "AAPL":"Apple","MSFT":"Microsoft","NVDA":"Nvidia","AMZN":"Amazon","GOOGL":"Alphabet",
-    "META":"Meta","TSLA":"Tesla","BRK-B":"Berkshire","JPM":"JPMorgan","V":"Visa",
-    "UNH":"UnitedHealth","XOM":"ExxonMobil","JNJ":"J&J","WMT":"Walmart","MA":"Mastercard",
-    "PG":"P&G","HD":"Home Depot","CVX":"Chevron","MRK":"Merck","LLY":"Eli Lilly",
-    "ABBV":"AbbVie","PEP":"PepsiCo","KO":"Coca-Cola","COST":"Costco","AVGO":"Broadcom",
-    "TMO":"Thermo Fisher","ACN":"Accenture","MCD":"McDonald's","ABT":"Abbott","DHR":"Danaher",
-    "NKE":"Nike","LIN":"Linde","TXN":"Texas Instruments","NEE":"NextEra","UPS":"UPS",
-    "QCOM":"Qualcomm","CRM":"Salesforce","SPGI":"S&P Global","HON":"Honeywell","AMGN":"Amgen",
-    "RTX":"Raytheon","LOW":"Lowe's","CAT":"Caterpillar","INTU":"Intuit","GS":"Goldman Sachs",
-    "BLK":"BlackRock","AXP":"Amex","SYK":"Stryker","ELV":"Elevance","GILD":"Gilead",
-    "MDLZ":"Mondelez","ADP":"ADP","BKNG":"Booking","REGN":"Regeneron","PLD":"Prologis",
-    "MMC":"Marsh McLennan","TJX":"TJX","VRTX":"Vertex","CB":"Chubb","AON":"Aon",
-    "ITW":"Illinois Tool","PNC":"PNC","USB":"US Bancorp","GE":"GE","CME":"CME Group",
-    "EQIX":"Equinix","KLAC":"KLA","LRCX":"Lam Research","MCHP":"Microchip","MU":"Micron",
-    "ADI":"Analog Devices","AMAT":"Applied Materials","SNPS":"Synopsys","CDNS":"Cadence",
-    "NXPI":"NXP Semi","TGT":"Target","WBA":"Walgreens","CVS":"CVS","CI":"Cigna",
-    "HUM":"Humana","CNC":"Centene","HCA":"HCA Healthcare","BAC":"Bank of America",
-    "WFC":"Wells Fargo","C":"Citigroup","MS":"Morgan Stanley",
-    "AOS":"A.O. Smith","ACGL":"Arch Capital","TPL":"Texas Pacific Land","FFIV":"F5 Networks",
-    "DOV":"Dover","REG":"Regency Centers","HPQ":"HP","HAS":"Hasbro","CPT":"Camden Property",
-    "GL":"Globe Life","JBL":"Jabil","CMI":"Cummins","PH":"Parker Hannifin",
-}
+# ── Company name cache ────────────────────────────────────────────────────────
+_NAMES_FILE = Path(__file__).parent / "ticker_names.json"
+_name_cache: dict[str, str] = {}
+
+def _load_name_cache() -> None:
+    global _name_cache
+    if _NAMES_FILE.exists():
+        try:
+            _name_cache = json.loads(_NAMES_FILE.read_text())
+        except Exception:
+            _name_cache = {}
+
+def get_company_names(tickers: list[str]) -> dict[str, str]:
+    """Return {ticker: short_name} for all tickers, fetching misses from yfinance."""
+    if not _name_cache:
+        _load_name_cache()
+    missing = [t for t in tickers if t not in _name_cache]
+    if missing:
+        try:
+            info = yf.Tickers(" ".join(missing))
+            for tk in missing:
+                try:
+                    name = (info.tickers[tk].fast_info.get("displayName")
+                            or info.tickers[tk].info.get("shortName")
+                            or info.tickers[tk].info.get("longName")
+                            or "")
+                    for suffix in [", Inc.", " Inc.", ", Corp.", " Corp.", ", LLC",
+                                   " Ltd.", " Limited", " Holdings", " Co.", " Company"]:
+                        name = name.replace(suffix, "")
+                    _name_cache[tk] = name.strip()
+                except Exception:
+                    _name_cache[tk] = ""
+        except Exception:
+            for tk in missing:
+                _name_cache[tk] = ""
+        try:
+            _NAMES_FILE.write_text(json.dumps(_name_cache, indent=2))
+        except Exception:
+            pass
+    return {t: _name_cache.get(t, "") for t in tickers}
+
+_names: dict[str, str] = {}
 
 # ── Config ────────────────────────────────────────────────────────────────────
 STARTING_CAPITAL  = 100_000.0
@@ -803,7 +822,7 @@ def _diag_rows(diag: list[dict]) -> str:
         bold = "font-weight:bold;" if "signal" in r["status"] else ""
         note = r.get("note", "")
         note_color = "#c62828" if "⚠" in note else ("#2e7d32" if "✓" in note else "#888")
-        _dname = COMPANY_NAMES.get(r["ticker"], "")
+        _dname = _names.get(r["ticker"], "")
         _dname_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_dname}</span>' if _dname else ''
         _dborder = "border-left:3px solid #1b5e20;" if r["status"] == "LONG signal" else ("border-left:3px solid #c62828;" if r["status"] == "SHORT signal" else "border-left:3px solid #ccc;")
         rows += (
@@ -821,11 +840,19 @@ def _diag_rows(diag: list[dict]) -> str:
 
 
 def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict] | None = None):
+    global _names
     today_str = date.today().isoformat()
     open_pos  = state["open_positions"]
     closed_td = state["closed_today"]
     idx_returns = fetch_index_returns(state.get("nav_history", {}))
     all_closed= state["all_closed"]
+
+    # Prefetch company names for every ticker in the dashboard
+    _all_tks = list({p["ticker"] for p in open_pos}
+                  | {r["ticker"] for r in closed_td}
+                  | {r["ticker"] for r in all_closed[-50:]}
+                  | {r["ticker"] for r in (diag or [])})
+    _names = get_company_names(_all_tks)
     nav       = state["nav_history"]
     capital   = state["capital"]
     inception = state["inception_date"] or today_str
@@ -866,7 +893,7 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
         sb = ('<span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span>'
               if side == "long" else
               '<span style="background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">SHORT</span>')
-        _oname = COMPANY_NAMES.get(tk, "")
+        _oname = _names.get(tk, "")
         _oname_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_oname}</span>' if _oname else ''
         open_rows += f"""
         <tr data-ticker="{tk}" data-qty="{shares}" data-buypx="{entry:.2f}" data-side="{side}">
@@ -894,7 +921,7 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
         sb = ('<span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span>'
               if side == "long" else
               '<span style="background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:4px;font-size:11px">SHORT</span>')
-        _tname = COMPANY_NAMES.get(tk, "")
+        _tname = _names.get(tk, "")
         _tname_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_tname}</span>' if _tname else ''
         today_rows += f"""
         <tr>

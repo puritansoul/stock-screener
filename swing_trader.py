@@ -29,29 +29,49 @@ import yfinance as yf
 
 warnings.filterwarnings("ignore")
 
-COMPANY_NAMES = {
-    "AAPL":"Apple","MSFT":"Microsoft","NVDA":"Nvidia","AMZN":"Amazon","GOOGL":"Alphabet",
-    "META":"Meta","TSLA":"Tesla","BRK-B":"Berkshire","JPM":"JPMorgan","V":"Visa",
-    "UNH":"UnitedHealth","XOM":"ExxonMobil","JNJ":"J&J","WMT":"Walmart","MA":"Mastercard",
-    "PG":"P&G","HD":"Home Depot","CVX":"Chevron","MRK":"Merck","LLY":"Eli Lilly",
-    "ABBV":"AbbVie","PEP":"PepsiCo","KO":"Coca-Cola","COST":"Costco","AVGO":"Broadcom",
-    "TMO":"Thermo Fisher","ACN":"Accenture","MCD":"McDonald's","ABT":"Abbott","DHR":"Danaher",
-    "NKE":"Nike","LIN":"Linde","TXN":"Texas Instruments","NEE":"NextEra","UPS":"UPS",
-    "QCOM":"Qualcomm","CRM":"Salesforce","SPGI":"S&P Global","HON":"Honeywell","AMGN":"Amgen",
-    "RTX":"Raytheon","LOW":"Lowe's","CAT":"Caterpillar","INTU":"Intuit","GS":"Goldman Sachs",
-    "BLK":"BlackRock","AXP":"Amex","SYK":"Stryker","ELV":"Elevance","GILD":"Gilead",
-    "MDLZ":"Mondelez","ADP":"ADP","BKNG":"Booking","REGN":"Regeneron","PLD":"Prologis",
-    "MMC":"Marsh McLennan","TJX":"TJX","VRTX":"Vertex","CB":"Chubb","AON":"Aon",
-    "ITW":"Illinois Tool","PNC":"PNC","USB":"US Bancorp","GE":"GE","CME":"CME Group",
-    "EQIX":"Equinix","KLAC":"KLA","LRCX":"Lam Research","MCHP":"Microchip","MU":"Micron",
-    "ADI":"Analog Devices","AMAT":"Applied Materials","SNPS":"Synopsys","CDNS":"Cadence",
-    "NXPI":"NXP Semi","TGT":"Target","WBA":"Walgreens","CVS":"CVS","CI":"Cigna",
-    "HUM":"Humana","CNC":"Centene","HCA":"HCA Healthcare","BAC":"Bank of America",
-    "WFC":"Wells Fargo","C":"Citigroup","MS":"Morgan Stanley",
-    "AOS":"A.O. Smith","ACGL":"Arch Capital","TPL":"Texas Pacific Land","FFIV":"F5 Networks",
-    "DOV":"Dover","REG":"Regency Centers","HPQ":"HP","HAS":"Hasbro","CPT":"Camden Property",
-    "GL":"Globe Life","JBL":"Jabil","CMI":"Cummins","PH":"Parker Hannifin",
-}
+# ── Company name cache ────────────────────────────────────────────────────────
+_NAMES_FILE = Path(__file__).parent / "ticker_names.json"
+_name_cache: dict[str, str] = {}
+
+def _load_name_cache() -> None:
+    global _name_cache
+    if _NAMES_FILE.exists():
+        try:
+            _name_cache = json.loads(_NAMES_FILE.read_text())
+        except Exception:
+            _name_cache = {}
+
+def get_company_names(tickers: list[str]) -> dict[str, str]:
+    """Return {ticker: short_name} for all tickers, fetching misses from yfinance."""
+    if not _name_cache:
+        _load_name_cache()
+    missing = [t for t in tickers if t not in _name_cache]
+    if missing:
+        try:
+            info = yf.Tickers(" ".join(missing))
+            for tk in missing:
+                try:
+                    name = (info.tickers[tk].fast_info.get("displayName")
+                            or info.tickers[tk].info.get("shortName")
+                            or info.tickers[tk].info.get("longName")
+                            or "")
+                    # Strip common suffixes to keep it short
+                    for suffix in [", Inc.", " Inc.", ", Corp.", " Corp.", ", LLC",
+                                   " Ltd.", " Limited", " Holdings", " Co.", " Company"]:
+                        name = name.replace(suffix, "")
+                    _name_cache[tk] = name.strip()
+                except Exception:
+                    _name_cache[tk] = ""
+        except Exception:
+            for tk in missing:
+                _name_cache[tk] = ""
+        try:
+            _NAMES_FILE.write_text(json.dumps(_name_cache, indent=2))
+        except Exception:
+            pass
+    return {t: _name_cache.get(t, "") for t in tickers}
+
+_names: dict[str, str] = {}
 
 # ── Config ────────────────────────────────────────────────────────────────────
 STARTING_CAPITAL  = 100_000.0
@@ -566,7 +586,7 @@ def _scan_rows(scan: list[dict]) -> str:
         bold = "font-weight:bold;" if is_signal else ""
         rsi_color = "#1b5e20" if r["rsi2"] < 15 else ("#880e4f" if r["rsi2"] > 85 else "#333")
         border = "border-left:3px solid #1b5e20;" if r["status"] == "LONG signal" else ("border-left:3px solid #c62828;" if r["status"] == "SHORT signal" else "border-left:3px solid #ccc;")
-        name = COMPANY_NAMES.get(tk, "")
+        name = _names.get(tk, "")
         name_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{name}</span>' if name else ''
         rows += (
             f'<tr>'
@@ -581,6 +601,7 @@ def _scan_rows(scan: list[dict]) -> str:
 
 
 def build_swing_dashboard(state: dict, prices: pd.DataFrame):
+    global _names
     open_pos  = state["open_positions"]
     closed    = state["closed_positions"]
     nav       = state["nav_history"]
@@ -588,6 +609,12 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
     inception = state["inception_date"] or date.today().isoformat()
 
     today_str = date.today().isoformat()
+
+    # Collect every ticker visible in the dashboard and prefetch names
+    _all_tks = list({p["ticker"] for p in open_pos}
+                  | {p["ticker"] for p in closed[-50:]}
+                  | {r["ticker"] for r in state.get("last_scan", [])})
+    _names = get_company_names(_all_tks)
 
     # Fetch a fresh intraday snapshot for open positions so the dashboard
     # shows live prices rather than the stale close from the morning run.
@@ -663,7 +690,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
             if side == "long" else
             '<span style="background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">SHORT</span>'
         )
-        _name = COMPANY_NAMES.get(tk, "")
+        _name = _names.get(tk, "")
         _name_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_name}</span>' if _name else ''
         open_rows += f"""
         <tr data-ticker="{tk}" data-qty="{shares}" data-buypx="{entry:.2f}" data-side="{side}">
@@ -729,7 +756,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
             if side == "long" else
             '<span style="background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:4px;font-size:11px">SHORT</span>'
         )
-        _cname = COMPANY_NAMES.get(tk, "")
+        _cname = _names.get(tk, "")
         _cname_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_cname}</span>' if _cname else ''
         closed_rows += f"""
         <tr>
