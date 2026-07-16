@@ -1,5 +1,5 @@
 {
-  "capital": 557.72,
+  "capital": 2111.65,
   "open_positions": [
     {
       "ticker": "CPAY",
@@ -50,9 +50,9 @@
       "entry_time": "10:04 ET",
       "entry_price": 200.84,
       "shares": 51,
-      "stop": 200.2643,
+      "stop": 200.9932,
       "trail_dist": 1.5857,
-      "peak": 201.85,
+      "peak": 202.5789,
       "orb_width": 3.1715,
       "cost": 10242.84,
       "vol_ratio": 1.45
@@ -78,9 +78,9 @@
       "entry_time": "10:09 ET",
       "entry_price": 228.41,
       "shares": 14,
-      "stop": 226.5225,
+      "stop": 226.5525,
       "trail_dist": 1.8875,
-      "peak": 228.41,
+      "peak": 228.44,
       "orb_width": 3.775,
       "cost": 3197.74,
       "vol_ratio": 3.7
@@ -92,26 +92,12 @@
       "entry_time": "10:09 ET",
       "entry_price": 25.59,
       "shares": 91,
-      "stop": 25.435,
+      "stop": 25.445,
       "trail_dist": 0.24,
-      "peak": 25.675,
+      "peak": 25.685,
       "orb_width": 0.48,
       "cost": 2328.69,
       "vol_ratio": 3.31
-    },
-    {
-      "ticker": "NOC",
-      "side": "short",
-      "entry_date": "2026-07-16",
-      "entry_time": "10:09 ET",
-      "entry_price": 519.54,
-      "shares": 3,
-      "stop": 521.1049,
-      "trail_dist": 3.0699,
-      "peak": 518.035,
-      "orb_width": 6.1399,
-      "cost": 1558.62,
-      "vol_ratio": 2.02
     },
     {
       "ticker": "PCAR",
@@ -134,9 +120,9 @@
       "entry_time": "10:09 ET",
       "entry_price": 259.99,
       "shares": 3,
-      "stop": 257.755,
+      "stop": 257.795,
       "trail_dist": 2.365,
-      "peak": 260.12,
+      "peak": 260.16,
       "orb_width": 4.73,
       "cost": 779.97,
       "vol_ratio": 1.74
@@ -260,9 +246,9 @@
       "entry_time": "10:14 ET",
       "entry_price": 148.195,
       "shares": 3,
-      "stop": 146.87,
+      "stop": 146.98,
       "trail_dist": 1.5,
-      "peak": 148.37,
+      "peak": 148.48,
       "orb_width": 3.0,
       "cost": 444.59,
       "vol_ratio": 1.22
@@ -274,9 +260,9 @@
       "entry_time": "10:19 ET",
       "entry_price": 59.02,
       "shares": 6,
-      "stop": 58.5775,
+      "stop": 58.6775,
       "trail_dist": 0.4425,
-      "peak": 59.02,
+      "peak": 59.12,
       "orb_width": 0.885,
       "cost": 354.12,
       "vol_ratio": 2.61
@@ -316,9 +302,9 @@
       "entry_time": "10:19 ET",
       "entry_price": 124.91,
       "shares": 1,
-      "stop": 123.195,
+      "stop": 123.395,
       "trail_dist": 1.715,
-      "peak": 124.91,
+      "peak": 125.11,
       "orb_width": 3.43,
       "cost": 124.91,
       "vol_ratio": 1.25
@@ -400,6 +386,25 @@
       "pnl": 44.53,
       "exit_reason": "trailing stop",
       "exit_time": "10:14 ET"
+    },
+    {
+      "ticker": "NOC",
+      "side": "short",
+      "entry_date": "2026-07-16",
+      "entry_time": "10:09 ET",
+      "entry_price": 519.54,
+      "shares": 3,
+      "stop": 521.1049,
+      "trail_dist": 3.0699,
+      "peak": 518.035,
+      "orb_width": 6.1399,
+      "cost": 1558.62,
+      "vol_ratio": 2.02,
+      "exit_date": "2026-07-16",
+      "exit_price": 521.1049,
+      "pnl": -4.69,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:21 ET"
     }
   ],
   "all_closed": [
@@ -6115,7 +6120,7 @@
     "2026-07-13": 99718.02,
     "2026-07-14": 99519.7,
     "2026-07-15": 99469.14,
-    "2026-07-16": 99511.36
+    "2026-07-16": 99612.99
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -10059,6 +10064,23 @@
       "exits": [],
       "portfolio_value": 99511.36,
       "note": "$99,511 | cash=$558 | open=23 | closed today=4 | day PnL=$-49"
+    },
+    {
+      "date": "2026-07-16",
+      "time": "10:21 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "NOC",
+          "side": "short",
+          "exit_price": 521.1,
+          "pnl": -4.69,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 99612.99,
+      "note": "$99,613 | cash=$2,112 | open=22 | closed today=5 | day PnL=$-53"
     }
   ]
 }
