@@ -695,7 +695,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
         _name = _names.get(tk, "")
         _name_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_name}</span>' if _name else ''
         open_rows += f"""
-        <tr data-ticker="{tk}" data-qty="{shares}" data-buypx="{entry:.2f}" data-side="{side}">
+        <tr data-ticker="{tk}" data-qty="{shares}" data-buypx="{entry:.2f}" data-side="{side}" data-server-unreal="{unreal:.2f}">
           <td style="font-weight:bold">{tk}{_name_html}</td>
           <td>{side_badge}</td>
           <td>${entry:,.2f}</td>
@@ -1139,34 +1139,24 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
   }}
 
   function refreshTotalUnreal() {{
-    const tuEl = document.getElementById('total-unreal');
-    if (!tuEl) return;
     let sum = 0;
     document.querySelectorAll('tr[data-ticker]').forEach(r => {{
       const tk = r.dataset.ticker;
-      sum += liveUnreal[tk] !== undefined ? liveUnreal[tk] : 0;
+      sum += liveUnreal[tk] !== undefined ? liveUnreal[tk]
+           : (parseFloat(r.dataset.serverUnreal) || 0);
     }});
     const sign  = sum >= 0 ? '+' : '';
-    tuEl.textContent = `${{sign}}$${{Math.abs(sum).toLocaleString('en-US', {{maximumFractionDigits:0}})}}`;
-    tuEl.style.color = sum >= 0 ? '#2e7d32' : '#c62828';
+    const fmt   = `${{sign}}$${{Math.abs(sum).toLocaleString('en-US', {{maximumFractionDigits:0}})}}`;
+    const color = sum >= 0 ? '#2e7d32' : '#c62828';
+    // keep totals row and capital breakdown card in sync
+    const tuEl  = document.getElementById('total-unreal');
+    const bkEl  = document.getElementById('bk-unreal');
+    if (tuEl) {{ tuEl.textContent = fmt; tuEl.style.color = color; }}
+    if (bkEl) {{ bkEl.textContent = fmt; bkEl.style.color = color; }}
   }}
 
-  // seed liveUnreal from server-rendered per-row data so total shows something immediately
   document.addEventListener('DOMContentLoaded', () => {{
-    document.querySelectorAll('tr[data-ticker]').forEach(r => {{
-      const tk   = r.dataset.ticker;
-      const qty  = parseFloat(r.dataset.qty)  || 0;
-      const buy  = parseFloat(r.dataset.buypx) || 0;
-      const side = r.dataset.side;
-      // use whatever price is already in the live-price cell
-      const priceCell = r.querySelector('.live-price');
-      let price = buy;
-      if (priceCell) {{
-        const m = priceCell.textContent.replace(/[$,]/g, '');
-        if (!isNaN(parseFloat(m))) price = parseFloat(m);
-      }}
-      liveUnreal[tk] = side === 'long' ? (price - buy) * qty : (buy - price) * qty;
-    }});
+    // seed from data-server-unreal (per-position value from Python); live prices replace these one by one
     refreshTotalUnreal();
   }});
 
