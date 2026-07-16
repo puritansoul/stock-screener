@@ -1,5 +1,5 @@
 {
-  "capital": 417.14,
+  "capital": 383.48,
   "open_positions": [
     {
       "ticker": "IEX",
@@ -554,9 +554,9 @@
       "entry_time": "11:33 ET",
       "entry_price": 398.505,
       "shares": 1,
-      "stop": 405.0159,
+      "stop": 404.9459,
       "trail_dist": 11.4359,
-      "peak": 393.58,
+      "peak": 393.51,
       "orb_width": 22.8718,
       "cost": 398.51,
       "vol_ratio": 1.88
@@ -800,20 +800,6 @@
       "vol_ratio": 3.37
     },
     {
-      "ticker": "SCHW",
-      "side": "short",
-      "entry_date": "2026-07-16",
-      "entry_time": "13:35 ET",
-      "entry_price": 102.46,
-      "shares": 1,
-      "stop": 102.575,
-      "trail_dist": 0.63,
-      "peak": 101.945,
-      "orb_width": 1.26,
-      "cost": 102.46,
-      "vol_ratio": 1.36
-    },
-    {
       "ticker": "AWK",
       "side": "long",
       "entry_date": "2026-07-16",
@@ -834,9 +820,9 @@
       "entry_time": "13:39 ET",
       "entry_price": 113.74,
       "shares": 3,
-      "stop": 113.7125,
+      "stop": 113.7175,
       "trail_dist": 0.7025,
-      "peak": 114.415,
+      "peak": 114.42,
       "orb_width": 1.405,
       "cost": 341.22,
       "vol_ratio": 1.38
@@ -1044,9 +1030,9 @@
       "entry_time": "14:13 ET",
       "entry_price": 82.02,
       "shares": 1,
-      "stop": 81.1525,
+      "stop": 81.1625,
       "trail_dist": 0.9375,
-      "peak": 82.09,
+      "peak": 82.1,
       "orb_width": 1.875,
       "cost": 82.02,
       "vol_ratio": 1.53
@@ -1184,9 +1170,9 @@
       "entry_time": "14:33 ET",
       "entry_price": 307.27,
       "shares": 1,
-      "stop": 310.05,
+      "stop": 309.79,
       "trail_dist": 3.59,
-      "peak": 306.46,
+      "peak": 306.2,
       "orb_width": 7.18,
       "cost": 307.27,
       "vol_ratio": 1.57
@@ -1366,9 +1352,9 @@
       "entry_time": "14:48 ET",
       "entry_price": 185.45,
       "shares": 1,
-      "stop": 186.1872,
+      "stop": 186.1572,
       "trail_dist": 1.0472,
-      "peak": 185.14,
+      "peak": 185.11,
       "orb_width": 2.0943,
       "cost": 185.45,
       "vol_ratio": 1.31
@@ -1436,9 +1422,9 @@
       "entry_time": "14:57 ET",
       "entry_price": 52.73,
       "shares": 4,
-      "stop": 52.1125,
+      "stop": 52.1275,
       "trail_dist": 0.6175,
-      "peak": 52.73,
+      "peak": 52.745,
       "orb_width": 1.235,
       "cost": 210.92,
       "vol_ratio": 1.83
@@ -1450,12 +1436,26 @@
       "entry_time": "14:57 ET",
       "entry_price": 56.47,
       "shares": 2,
-      "stop": 56.695,
+      "stop": 56.665,
       "trail_dist": 0.225,
-      "peak": 56.47,
+      "peak": 56.44,
       "orb_width": 0.45,
       "cost": 112.94,
       "vol_ratio": 1.8
+    },
+    {
+      "ticker": "STZ",
+      "side": "long",
+      "entry_date": "2026-07-16",
+      "entry_time": "15:00 ET",
+      "entry_price": 136.005,
+      "shares": 1,
+      "stop": 134.3,
+      "trail_dist": 1.705,
+      "peak": 136.005,
+      "orb_width": 3.41,
+      "cost": 136.01,
+      "vol_ratio": 2.56
     }
   ],
   "closed_today": [
@@ -3016,6 +3016,25 @@
       "pnl": 0.17,
       "exit_reason": "trailing stop",
       "exit_time": "14:57 ET"
+    },
+    {
+      "ticker": "SCHW",
+      "side": "short",
+      "entry_date": "2026-07-16",
+      "entry_time": "13:35 ET",
+      "entry_price": 102.46,
+      "shares": 1,
+      "stop": 102.575,
+      "trail_dist": 0.63,
+      "peak": 101.945,
+      "orb_width": 1.26,
+      "cost": 102.46,
+      "vol_ratio": 1.36,
+      "exit_date": "2026-07-16",
+      "exit_price": 102.575,
+      "pnl": -0.12,
+      "exit_reason": "trailing stop",
+      "exit_time": "15:00 ET"
     }
   ],
   "all_closed": [
@@ -8731,7 +8750,7 @@
     "2026-07-13": 99718.02,
     "2026-07-14": 99519.7,
     "2026-07-15": 99469.14,
-    "2026-07-16": 99319.09
+    "2026-07-16": 99294.03
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -15313,6 +15332,32 @@
       ],
       "portfolio_value": 99319.09,
       "note": "$99,319 | cash=$417 | open=104 | closed today=82 | day PnL=$-531"
+    },
+    {
+      "date": "2026-07-16",
+      "time": "15:00 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "STZ",
+          "side": "long",
+          "price": 136.01,
+          "shares": 1,
+          "stop": 134.3,
+          "trail_dist": 1.705
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "SCHW",
+          "side": "short",
+          "exit_price": 102.58,
+          "pnl": -0.12,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 99294.03,
+      "note": "$99,294 | cash=$383 | open=104 | closed today=83 | day PnL=$-531"
     }
   ]
 }
