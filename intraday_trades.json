@@ -1,5 +1,5 @@
 {
-  "capital": 219.31,
+  "capital": 758.23,
   "open_positions": [
     {
       "ticker": "IEX",
@@ -204,9 +204,9 @@
       "entry_time": "10:44 ET",
       "entry_price": 64.93,
       "shares": 6,
-      "stop": 65.23,
+      "stop": 65.31,
       "trail_dist": 0.94,
-      "peak": 66.17,
+      "peak": 66.25,
       "orb_width": 1.88,
       "cost": 389.58,
       "vol_ratio": 2.64
@@ -554,9 +554,9 @@
       "entry_time": "11:33 ET",
       "entry_price": 398.505,
       "shares": 1,
-      "stop": 403.2159,
+      "stop": 402.7564,
       "trail_dist": 11.4359,
-      "peak": 391.78,
+      "peak": 391.3205,
       "orb_width": 22.8718,
       "cost": 398.51,
       "vol_ratio": 1.88
@@ -624,9 +624,9 @@
       "entry_time": "11:53 ET",
       "entry_price": 411.55,
       "shares": 11,
-      "stop": 408.66,
+      "stop": 408.8,
       "trail_dist": 4.35,
-      "peak": 413.01,
+      "peak": 413.15,
       "orb_width": 8.7,
       "cost": 4527.05,
       "vol_ratio": 1.34
@@ -694,9 +694,9 @@
       "entry_time": "12:05 ET",
       "entry_price": 206.67,
       "shares": 4,
-      "stop": 205.7725,
+      "stop": 205.8025,
       "trail_dist": 2.1275,
-      "peak": 207.9,
+      "peak": 207.93,
       "orb_width": 4.255,
       "cost": 826.68,
       "vol_ratio": 1.31
@@ -792,9 +792,9 @@
       "entry_time": "13:35 ET",
       "entry_price": 132.97,
       "shares": 1,
-      "stop": 132.225,
+      "stop": 132.265,
       "trail_dist": 1.355,
-      "peak": 133.58,
+      "peak": 133.62,
       "orb_width": 2.71,
       "cost": 132.97,
       "vol_ratio": 1.33
@@ -1030,9 +1030,9 @@
       "entry_time": "14:23 ET",
       "entry_price": 23.675,
       "shares": 18,
-      "stop": 23.8225,
+      "stop": 23.8125,
       "trail_dist": 0.1575,
-      "peak": 23.665,
+      "peak": 23.655,
       "orb_width": 0.315,
       "cost": 426.15,
       "vol_ratio": 2.58
@@ -1234,20 +1234,6 @@
       "vol_ratio": 1.26
     },
     {
-      "ticker": "FDS",
-      "side": "long",
-      "entry_date": "2026-07-16",
-      "entry_time": "14:48 ET",
-      "entry_price": 261.26,
-      "shares": 5,
-      "stop": 261.805,
-      "trail_dist": 1.685,
-      "peak": 263.49,
-      "orb_width": 3.37,
-      "cost": 1306.3,
-      "vol_ratio": 1.93
-    },
-    {
       "ticker": "ACN",
       "side": "long",
       "entry_date": "2026-07-16",
@@ -1408,9 +1394,9 @@
       "entry_time": "15:00 ET",
       "entry_price": 136.005,
       "shares": 1,
-      "stop": 134.4556,
+      "stop": 134.515,
       "trail_dist": 1.705,
-      "peak": 136.1606,
+      "peak": 136.22,
       "orb_width": 3.41,
       "cost": 136.01,
       "vol_ratio": 2.56
@@ -1492,9 +1478,9 @@
       "entry_time": "15:10 ET",
       "entry_price": 27.08,
       "shares": 4,
-      "stop": 27.12,
+      "stop": 27.11,
       "trail_dist": 0.04,
-      "peak": 27.08,
+      "peak": 27.07,
       "orb_width": 0.08,
       "cost": 108.32,
       "vol_ratio": 1.37
@@ -1512,6 +1498,34 @@
       "orb_width": 1.55,
       "cost": 90.4,
       "vol_ratio": 1.36
+    },
+    {
+      "ticker": "CRL",
+      "side": "short",
+      "entry_date": "2026-07-16",
+      "entry_time": "15:12 ET",
+      "entry_price": 226.99,
+      "shares": 2,
+      "stop": 228.4325,
+      "trail_dist": 1.4425,
+      "peak": 226.99,
+      "orb_width": 2.885,
+      "cost": 453.98,
+      "vol_ratio": 3.71
+    },
+    {
+      "ticker": "HAL",
+      "side": "short",
+      "entry_date": "2026-07-16",
+      "entry_time": "15:12 ET",
+      "entry_price": 35.125,
+      "shares": 9,
+      "stop": 35.3225,
+      "trail_dist": 0.1975,
+      "peak": 35.125,
+      "orb_width": 0.395,
+      "cost": 316.12,
+      "vol_ratio": 1.75
     }
   ],
   "closed_today": [
@@ -3148,6 +3162,25 @@
       "pnl": -0.28,
       "exit_reason": "trailing stop",
       "exit_time": "15:07 ET"
+    },
+    {
+      "ticker": "FDS",
+      "side": "long",
+      "entry_date": "2026-07-16",
+      "entry_time": "14:48 ET",
+      "entry_price": 261.26,
+      "shares": 5,
+      "stop": 261.805,
+      "trail_dist": 1.685,
+      "peak": 263.49,
+      "orb_width": 3.37,
+      "cost": 1306.3,
+      "vol_ratio": 1.93,
+      "exit_date": "2026-07-16",
+      "exit_price": 261.805,
+      "pnl": 2.73,
+      "exit_reason": "trailing stop",
+      "exit_time": "15:12 ET"
     }
   ],
   "all_closed": [
@@ -8863,7 +8896,7 @@
     "2026-07-13": 99718.02,
     "2026-07-14": 99519.7,
     "2026-07-15": 99469.14,
-    "2026-07-16": 99285.5
+    "2026-07-16": 99290.97
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -15589,6 +15622,40 @@
       "exits": [],
       "portfolio_value": 99285.5,
       "note": "$99,285 | cash=$219 | open=108 | closed today=86 | day PnL=$-531"
+    },
+    {
+      "date": "2026-07-16",
+      "time": "15:12 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "CRL",
+          "side": "short",
+          "price": 226.99,
+          "shares": 2,
+          "stop": 228.43,
+          "trail_dist": 1.4425
+        },
+        {
+          "ticker": "HAL",
+          "side": "short",
+          "price": 35.12,
+          "shares": 9,
+          "stop": 35.32,
+          "trail_dist": 0.1975
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "FDS",
+          "side": "long",
+          "exit_price": 261.81,
+          "pnl": 2.73,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 99290.97,
+      "note": "$99,291 | cash=$758 | open=109 | closed today=87 | day PnL=$-528"
     }
   ]
 }
