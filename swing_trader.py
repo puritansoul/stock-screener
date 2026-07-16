@@ -702,6 +702,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
           <td class="live-price">${cur_px:,.2f}</td>
           <td style="text-align:right">{shares:,}</td>
           <td style="text-align:right">${cost:,.0f}</td>
+          <td class="live-curval" style="text-align:right">${cur_val:,.0f}</td>
           <td class="live-unreal" style="text-align:right;color:{unreal_color};font-weight:bold">{gain_sign if unreal >= 0 else ''}${abs(unreal):,.0f} ({unreal_pct:+.2f}%)</td>
           <td>${stop:,.2f}</td>
           <td style="color:#666;font-size:12px">{rsi_e}</td>
@@ -715,10 +716,12 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
     total_unreal = portfolio_value - capital - total_invested
     tu_color = "#2e7d32" if total_unreal >= 0 else "#c62828"
     tu_sign  = "+" if total_unreal >= 0 else ""
+    total_curval = total_invested + total_unreal
     open_totals_row = f"""
         <tr style="background:#e8eaf6;font-weight:bold;border-top:2px solid #9fa8da">
           <td colspan="5" style="text-align:right;color:#555">Totals</td>
           <td id="total-invested" style="text-align:right">${total_invested:,.0f}</td>
+          <td id="total-curval" style="text-align:right">${total_curval:,.0f}</td>
           <td id="total-unreal" data-server-total="{total_unreal:.2f}" style="text-align:right;color:{tu_color}">{tu_sign}${abs(total_unreal):,.0f}</td>
           <td colspan="3"></td>
         </tr>""" if open_pos else ""
@@ -1036,8 +1039,8 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
     <table id="open-pos-table" data-toggles="col-toggles-open" style="white-space:nowrap">
       <thead><tr>
         <th data-col="0">Ticker</th><th data-col="1">Side</th><th data-col="2">Entry</th><th data-col="3">Current</th>
-        <th data-col="4">Shares</th><th data-col="5">$ Invested</th><th data-col="6">Unrealized P&amp;L</th>
-        <th data-col="7">Stop</th><th data-col="8">RSI(2) at entry</th><th data-col="9">Entry Date</th>
+        <th data-col="4">Shares</th><th data-col="5">$ Invested</th><th data-col="6">Current Value</th><th data-col="7">Unrealized P&amp;L</th>
+        <th data-col="8">Stop</th><th data-col="9">RSI(2) at entry</th><th data-col="10">Entry Date</th>
       </tr></thead>
       <tbody>{open_rows}</tbody>
       {open_totals_row}
@@ -1186,11 +1189,16 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
     const qty  = parseFloat(row.dataset.qty);
     const buy  = parseFloat(row.dataset.buypx);
     const side = row.dataset.side;
-    const priceCell  = row.querySelector('.live-price');
-    const unrealCell = row.querySelector('.live-unreal');
+    const priceCell   = row.querySelector('.live-price');
+    const unrealCell  = row.querySelector('.live-unreal');
+    const curvalCell  = row.querySelector('.live-curval');
     if (priceCell) priceCell.textContent = '$' + price.toLocaleString('en-US', {{minimumFractionDigits:2, maximumFractionDigits:2}});
+    const liveUnreal = side === 'long' ? (price - buy) * qty : (buy - price) * qty;
+    const curVal     = buy * qty + liveUnreal;
+    if (curvalCell) {{
+      curvalCell.textContent = '$' + curVal.toLocaleString('en-US', {{maximumFractionDigits:0}});
+    }}
     if (unrealCell) {{
-      const liveUnreal = side === 'long' ? (price - buy) * qty : (buy - price) * qty;
       const serverUnreal = parseFloat(row.dataset.serverUnreal) || 0;
       const cost = buy * qty;
       const pct  = cost > 0 ? liveUnreal / cost * 100 : 0;
@@ -1202,6 +1210,14 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
       liveAdj += (liveUnreal - serverUnreal) - prevAdj;
       row.dataset.liveAdj = (liveUnreal - serverUnreal).toString();
       refreshTotalUnreal();
+      // sync total-curval
+      const tcEl = document.getElementById('total-curval');
+      if (tcEl) {{
+        const tuEl = document.getElementById('total-unreal');
+        const serverTotal = parseFloat(tuEl ? tuEl.dataset.serverTotal : 0) || 0;
+        const inv = parseFloat((document.getElementById('total-invested') || {{}}).textContent?.replace(/[$,]/g,'')) || 0;
+        tcEl.textContent = '$' + (inv + serverTotal + liveAdj).toLocaleString('en-US', {{maximumFractionDigits:0}});
+      }}
     }}
   }}
 
