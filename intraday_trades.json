@@ -1,5 +1,5 @@
 {
-  "capital": 804.0,
+  "capital": 759.84,
   "open_positions": [
     {
       "ticker": "CHTR",
@@ -64,9 +64,9 @@
       "entry_time": "10:09 ET",
       "entry_price": 228.41,
       "shares": 14,
-      "stop": 226.6225,
+      "stop": 226.6625,
       "trail_dist": 1.8875,
-      "peak": 228.51,
+      "peak": 228.55,
       "orb_width": 3.775,
       "cost": 3197.74,
       "vol_ratio": 3.7
@@ -92,9 +92,9 @@
       "entry_time": "10:09 ET",
       "entry_price": 126.22,
       "shares": 9,
-      "stop": 125.025,
+      "stop": 125.055,
       "trail_dist": 1.285,
-      "peak": 126.31,
+      "peak": 126.34,
       "orb_width": 2.57,
       "cost": 1135.98,
       "vol_ratio": 1.75
@@ -176,9 +176,9 @@
       "entry_time": "10:14 ET",
       "entry_price": 72.44,
       "shares": 13,
-      "stop": 71.7325,
+      "stop": 71.7899,
       "trail_dist": 0.88,
-      "peak": 72.6125,
+      "peak": 72.6699,
       "orb_width": 1.76,
       "cost": 941.72,
       "vol_ratio": 1.56
@@ -218,9 +218,9 @@
       "entry_time": "10:19 ET",
       "entry_price": 59.02,
       "shares": 6,
-      "stop": 58.6875,
+      "stop": 58.8075,
       "trail_dist": 0.4425,
-      "peak": 59.13,
+      "peak": 59.25,
       "orb_width": 0.885,
       "cost": 354.12,
       "vol_ratio": 2.61
@@ -386,9 +386,9 @@
       "entry_time": "10:29 ET",
       "entry_price": 84.53,
       "shares": 9,
-      "stop": 83.065,
+      "stop": 83.255,
       "trail_dist": 1.465,
-      "peak": 84.53,
+      "peak": 84.72,
       "orb_width": 2.93,
       "cost": 760.77,
       "vol_ratio": 2.77
@@ -422,18 +422,18 @@
       "vol_ratio": 1.45
     },
     {
-      "ticker": "VRSK",
+      "ticker": "APO",
       "side": "long",
       "entry_date": "2026-07-16",
-      "entry_time": "10:29 ET",
-      "entry_price": 197.99,
-      "shares": 1,
-      "stop": 197.1,
-      "trail_dist": 0.89,
-      "peak": 197.99,
-      "orb_width": 1.78,
-      "cost": 197.99,
-      "vol_ratio": 1.25
+      "entry_time": "10:31 ET",
+      "entry_price": 120.63,
+      "shares": 2,
+      "stop": 119.765,
+      "trail_dist": 0.865,
+      "peak": 120.63,
+      "orb_width": 1.73,
+      "cost": 241.26,
+      "vol_ratio": 1.68
     }
   ],
   "closed_today": [
@@ -607,6 +607,25 @@
       "pnl": -13.54,
       "exit_reason": "trailing stop",
       "exit_time": "10:26 ET"
+    },
+    {
+      "ticker": "VRSK",
+      "side": "long",
+      "entry_date": "2026-07-16",
+      "entry_time": "10:29 ET",
+      "entry_price": 197.99,
+      "shares": 1,
+      "stop": 197.1,
+      "trail_dist": 0.89,
+      "peak": 197.99,
+      "orb_width": 1.78,
+      "cost": 197.99,
+      "vol_ratio": 1.25,
+      "exit_date": "2026-07-16",
+      "exit_price": 197.1,
+      "pnl": -0.89,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:31 ET"
     }
   ],
   "all_closed": [
@@ -4230,6 +4249,11 @@
       "low": 26.41,
       "width": 0.355
     },
+    "CARR": {
+      "high": 68.5,
+      "low": 67.56,
+      "width": 0.94
+    },
     "CVNA": {
       "high": 70.76,
       "low": 69.0,
@@ -4992,8 +5016,8 @@
     },
     "HWM": {
       "high": 279.2,
-      "low": 271.01,
-      "width": 8.19
+      "low": 271.1,
+      "width": 8.1
     },
     "HPQ": {
       "high": 24.1,
@@ -5154,6 +5178,11 @@
       "high": 31.37,
       "low": 30.4,
       "width": 0.97
+    },
+    "KEY": {
+      "high": 23.87,
+      "low": 23.53,
+      "width": 0.34
     },
     "KEYS": {
       "high": 317.465,
@@ -6312,7 +6341,7 @@
     "2026-07-13": 99718.02,
     "2026-07-14": 99519.7,
     "2026-07-15": 99469.14,
-    "2026-07-16": 99662.18
+    "2026-07-16": 99645.85
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -10437,6 +10466,32 @@
       "exits": [],
       "portfolio_value": 99662.18,
       "note": "$99,662 | cash=$804 | open=31 | closed today=9 | day PnL=$-123"
+    },
+    {
+      "date": "2026-07-16",
+      "time": "10:31 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "APO",
+          "side": "long",
+          "price": 120.63,
+          "shares": 2,
+          "stop": 119.76,
+          "trail_dist": 0.865
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "VRSK",
+          "side": "long",
+          "exit_price": 197.1,
+          "pnl": -0.89,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 99645.85,
+      "note": "$99,646 | cash=$760 | open=31 | closed today=10 | day PnL=$-124"
     }
   ]
 }
