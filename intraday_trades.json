@@ -1,5 +1,5 @@
 {
-  "capital": 1656.4,
+  "capital": 1321.2,
   "open_positions": [
     {
       "ticker": "CHTR",
@@ -8,9 +8,9 @@
       "entry_time": "10:04 ET",
       "entry_price": 132.73,
       "shares": 157,
-      "stop": 132.985,
+      "stop": 132.945,
       "trail_dist": 1.495,
-      "peak": 131.49,
+      "peak": 131.45,
       "orb_width": 2.99,
       "cost": 20838.61,
       "vol_ratio": 2.87
@@ -134,9 +134,9 @@
       "entry_time": "10:14 ET",
       "entry_price": 22.091,
       "shares": 63,
-      "stop": 21.99,
+      "stop": 22.0,
       "trail_dist": 0.155,
-      "peak": 22.145,
+      "peak": 22.155,
       "orb_width": 0.31,
       "cost": 1391.73,
       "vol_ratio": 1.68
@@ -232,9 +232,9 @@
       "entry_time": "10:24 ET",
       "entry_price": 78.89,
       "shares": 85,
-      "stop": 79.03,
+      "stop": 78.9,
       "trail_dist": 0.55,
-      "peak": 78.48,
+      "peak": 78.35,
       "orb_width": 1.1,
       "cost": 6705.65,
       "vol_ratio": 2.06
@@ -330,9 +330,9 @@
       "entry_time": "10:29 ET",
       "entry_price": 184.73,
       "shares": 6,
-      "stop": 185.1272,
+      "stop": 184.9822,
       "trail_dist": 1.0472,
-      "peak": 184.08,
+      "peak": 183.935,
       "orb_width": 2.0943,
       "cost": 1108.38,
       "vol_ratio": 3.76
@@ -470,9 +470,9 @@
       "entry_time": "10:39 ET",
       "entry_price": 94.3,
       "shares": 10,
-      "stop": 93.455,
+      "stop": 93.57,
       "trail_dist": 0.845,
-      "peak": 94.3,
+      "peak": 94.415,
       "orb_width": 1.69,
       "cost": 943.0,
       "vol_ratio": 1.46
@@ -484,12 +484,26 @@
       "entry_time": "10:39 ET",
       "entry_price": 69.695,
       "shares": 9,
-      "stop": 69.095,
+      "stop": 69.18,
       "trail_dist": 0.6,
-      "peak": 69.695,
+      "peak": 69.78,
       "orb_width": 1.2,
       "cost": 627.25,
       "vol_ratio": 1.44
+    },
+    {
+      "ticker": "AMT",
+      "side": "short",
+      "entry_date": "2026-07-16",
+      "entry_time": "10:41 ET",
+      "entry_price": 167.6,
+      "shares": 2,
+      "stop": 168.39,
+      "trail_dist": 0.79,
+      "peak": 167.6,
+      "orb_width": 1.58,
+      "cost": 335.2,
+      "vol_ratio": 1.24
     }
   ],
   "closed_today": [
@@ -6454,7 +6468,7 @@
     "2026-07-13": 99718.02,
     "2026-07-14": 99519.7,
     "2026-07-15": 99469.14,
-    "2026-07-16": 99585.68
+    "2026-07-16": 99595.22
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -10712,6 +10726,24 @@
       ],
       "portfolio_value": 99585.68,
       "note": "$99,586 | cash=$1,656 | open=35 | closed today=13 | day PnL=$-197"
+    },
+    {
+      "date": "2026-07-16",
+      "time": "10:41 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "AMT",
+          "side": "short",
+          "price": 167.6,
+          "shares": 2,
+          "stop": 168.39,
+          "trail_dist": 0.79
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 99595.22,
+      "note": "$99,595 | cash=$1,321 | open=36 | closed today=13 | day PnL=$-197"
     }
   ]
 }
