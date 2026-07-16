@@ -1050,6 +1050,7 @@ def save_html_report(
     .badge {{ background:#e3f2fd; color:#0d47a1; padding:3px 10px;
               border-radius:12px; font-size:12px; font-weight:bold; }}
     .card-row {{ display:flex; flex-wrap:wrap; gap:10px; margin:12px 0 18px 0; }}
+    .card-value {{ font-size:28px; font-weight:bold; line-height:1; }}
     .section  {{ background:white; border:1px solid #e0e0e0; border-radius:8px;
                  padding:18px 20px; margin:12px 0; overflow-x:auto; }}
     details summary {{
@@ -1087,15 +1088,15 @@ def save_html_report(
     <div style="display:flex;align-items:stretch;gap:16px;margin-bottom:20px;flex-wrap:wrap">
       <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px;box-shadow:0 2px 4px rgba(0,0,0,0.08)">
         <div style="font-size:11px;color:#6c757d;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Current Value</div>
-        <div id="port-value" style="font-size:32px;font-weight:bold;color:#1a237e;line-height:1">{nav_str}</div>
+        <div id="port-value" class="card-value" style="color:#1a237e">{nav_str}</div>
       </div>
       <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px;box-shadow:0 2px 4px rgba(0,0,0,0.08)">
         <div style="font-size:11px;color:#6c757d;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Today</div>
-        <div id="port-today" style="font-size:24px;font-weight:bold;color:{port_day_color};line-height:1">{port_day_str}</div>
+        <div id="port-today" class="card-value" style="color:{port_day_color}">{port_day_str}</div>
       </div>
       <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px;box-shadow:0 2px 4px rgba(0,0,0,0.08)">
         <div style="font-size:11px;color:#6c757d;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Total Return</div>
-        <div id="port-total" style="font-size:24px;font-weight:bold;color:{gain_color};line-height:1">
+        <div id="port-total" class="card-value" style="color:{gain_color}">
           {gain_sign}${abs(gain_loss):,.0f} <span style="font-size:16px">({gain_sign}{gain_loss_pct:.2f}%)</span>
         </div>
       </div>
@@ -1283,7 +1284,7 @@ def save_html_report(
     }}
   }};
 
-  fetchAll().then(() => {{
+  const runFetch = () => fetchAll().then(() => {{
     const t = new Date().toLocaleTimeString('en-US', {{timeZone:'America/New_York', hour:'2-digit', minute:'2-digit'}});
     setStatus(`✅ Updated ${{t}} ET`, '#388e3c');
     document.getElementById('live-status').textContent = `✅ Live prices as of ${{t}} ET`;
@@ -1292,6 +1293,8 @@ def save_html_report(
     setStatus('⚠️ Fetch failed', '#c62828');
     document.getElementById('live-status').textContent = '⚠️ Live price fetch failed — showing last run data';
   }});
+
+  runFetch();
 
   // ── Column sort ──────────────────────────────────────────────────────────────
   (function() {{
@@ -1432,7 +1435,7 @@ def save_html_report(
     }});
   }})();
 
-  // Auto-refresh every 60 seconds during market hours (9:30am–4pm ET Mon–Fri)
+  // Silent price refresh every 60 seconds during market hours — no page reload
   const isMarketHours = () => {{
     const now = new Date();
     const et = new Date(now.toLocaleString('en-US', {{timeZone:'America/New_York'}}));
@@ -1443,7 +1446,7 @@ def save_html_report(
     return day >= 1 && day <= 5 && mins >= 570 && mins < 960; // 9:30–4:00
   }};
   if (isMarketHours()) {{
-    setTimeout(() => location.reload(), 60000);
+    setInterval(runFetch, 60000);
   }}
 }})();
 

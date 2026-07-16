@@ -1128,7 +1128,7 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
               padding: 16px 24px; min-width: 150px; box-shadow: 0 2px 4px rgba(0,0,0,0.08); }}
     .card-label {{ font-size: 11px; color: #6c757d; text-transform: uppercase;
                    letter-spacing: .5px; margin-bottom: 4px; }}
-    .card-value {{ font-size: 26px; font-weight: bold; line-height: 1; }}
+    .card-value {{ font-size: 28px; font-weight: bold; line-height: 1; }}
     details summary {{ cursor: pointer; font-size: 16px; font-weight: bold; color: #1a237e;
                        padding: 4px 0; user-select: none; list-style: none; }}
     details summary::before {{ content: "▶ "; font-size: 12px; }}
