@@ -92,5 +92,8 @@ jobs:
           find reports -name 'intraday_*.html' 2>/dev/null | xargs -r git add -f
           git diff --cached --quiet && echo "No changes" || \
             git commit -m "intraday: $(date -u '+%Y-%m-%d %H:%M') [skip ci] [fallback]"
-          git pull --rebase -X theirs origin main
-          git push
+          for i in 1 2 3; do
+            git pull --rebase -X theirs origin main && git push && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
