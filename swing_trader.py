@@ -248,6 +248,8 @@ def fetch_spy_cumulative(nav_history: dict) -> dict:
         if raw.empty:
             return {}
         close = raw["Close"] if "Close" in raw.columns else raw.iloc[:, 0]
+        if isinstance(close, pd.DataFrame):
+            close = close.iloc[:, 0]  # MultiIndex: ('Close', '^GSPC') → Series
         close = close.dropna().sort_index()
         # Find the SPY price on or just before inception
         inception_dt = pd.Timestamp(dates[0])
@@ -257,7 +259,7 @@ def fetch_spy_cumulative(nav_history: dict) -> dict:
         base = float(prior.iloc[-1])
         result = {}
         for ts, val in close.items():
-            d = str(ts.date()) if hasattr(ts, "date") else str(ts)[:10]
+            d = ts.date().isoformat() if hasattr(ts, "date") else str(ts)[:10]
             result[d] = round((float(val) / base - 1) * 100, 3)
         return result
     except Exception:
