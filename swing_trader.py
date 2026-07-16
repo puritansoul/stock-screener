@@ -1012,7 +1012,8 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
   <!-- Open positions -->
   <div class="section">
     <h2>Open Positions</h2>
-    <table id="open-pos-table">
+    <div style="overflow-x:auto">
+    <table id="open-pos-table" style="white-space:nowrap">
       <thead><tr>
         <th>Ticker</th><th>Side</th><th>Entry</th><th>Current</th>
         <th>Shares</th><th>$ Invested</th><th>Unrealized P&amp;L</th>
@@ -1021,6 +1022,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
       <tbody>{open_rows}</tbody>
       {open_totals_row}
     </table>
+    </div>
   </div>
 
   {today_activity_html}
@@ -1053,7 +1055,8 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
   <div class="section">
     <details>
       <summary>Closed Trades ({len(closed)} total, showing last 50)</summary>
-      <table id="closed-trades-table" style="margin-top:12px">
+      <div style="overflow-x:auto">
+      <table id="closed-trades-table" style="margin-top:12px;white-space:nowrap">
         <thead><tr>
           <th>Ticker</th><th>Side</th><th>Entry</th><th>Exit</th>
           <th>P&amp;L</th><th>Entry Date</th><th>Exit Date</th><th>Reason</th>
@@ -1061,6 +1064,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
         <tbody>{closed_rows}</tbody>
         {closed_totals_row}
       </table>
+      </div>
     </details>
   </div>
 
