@@ -719,7 +719,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
         <tr style="background:#e8eaf6;font-weight:bold;border-top:2px solid #9fa8da">
           <td colspan="5" style="text-align:right;color:#555">Totals</td>
           <td id="total-invested" style="text-align:right">${total_invested:,.0f}</td>
-          <td id="total-unreal" style="text-align:right;color:{tu_color}">{tu_sign}${abs(total_unreal):,.0f}</td>
+          <td id="total-unreal" data-server-total="{total_unreal:.2f}" style="text-align:right;color:{tu_color}">{tu_sign}${abs(total_unreal):,.0f}</td>
           <td colspan="3"></td>
         </tr>""" if open_pos else ""
 
@@ -1130,35 +1130,30 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
     return mins >= 570 && mins < 960; // 9:30–4:00
   }}
 
-  // live P&L per ticker, seeded from server-rendered totals row
-  const liveUnreal = {{}};
-
   function setStatus(html, color) {{
     const el = document.getElementById('price-status');
     if (el) {{ el.innerHTML = html; el.style.color = color; el.style.borderColor = color === '#388e3c' ? '#a5d6a7' : '#e0e0e0'; }}
   }}
 
+  // serverTotal = NAV-derived unrealized baked into the DOM by Python (always correct)
+  // liveAdj     = running sum of (liveUnreal[tk] - serverUnreal[tk]) for every ticker
+  //               that has received a Finnhub price; starts at 0, grows as prices arrive
+  let liveAdj = 0;
+
   function refreshTotalUnreal() {{
-    let sum = 0;
-    document.querySelectorAll('tr[data-ticker]').forEach(r => {{
-      const tk = r.dataset.ticker;
-      sum += liveUnreal[tk] !== undefined ? liveUnreal[tk]
-           : (parseFloat(r.dataset.serverUnreal) || 0);
-    }});
+    const tuEl = document.getElementById('total-unreal');
+    const bkEl = document.getElementById('bk-unreal');
+    if (!tuEl) return;
+    const serverTotal = parseFloat(tuEl.dataset.serverTotal) || 0;
+    const sum   = serverTotal + liveAdj;
     const sign  = sum >= 0 ? '+' : '';
     const fmt   = `${{sign}}$${{Math.abs(sum).toLocaleString('en-US', {{maximumFractionDigits:0}})}}`;
     const color = sum >= 0 ? '#2e7d32' : '#c62828';
-    // keep totals row and capital breakdown card in sync
-    const tuEl  = document.getElementById('total-unreal');
-    const bkEl  = document.getElementById('bk-unreal');
-    if (tuEl) {{ tuEl.textContent = fmt; tuEl.style.color = color; }}
+    tuEl.textContent = fmt; tuEl.style.color = color;
     if (bkEl) {{ bkEl.textContent = fmt; bkEl.style.color = color; }}
   }}
 
-  document.addEventListener('DOMContentLoaded', () => {{
-    // seed from data-server-unreal (per-position value from Python); live prices replace these one by one
-    refreshTotalUnreal();
-  }});
+  document.addEventListener('DOMContentLoaded', refreshTotalUnreal);
 
   async function fetchPrices() {{
     const rows = document.querySelectorAll('tr[data-ticker]');
@@ -1195,13 +1190,17 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
     const unrealCell = row.querySelector('.live-unreal');
     if (priceCell) priceCell.textContent = '$' + price.toLocaleString('en-US', {{minimumFractionDigits:2, maximumFractionDigits:2}});
     if (unrealCell) {{
-      const unreal = side === 'long' ? (price - buy) * qty : (buy - price) * qty;
-      const cost   = buy * qty;
-      const pct    = cost > 0 ? unreal / cost * 100 : 0;
-      const sign   = unreal >= 0 ? '+' : '';
-      unrealCell.textContent = `${{sign}}$${{Math.abs(unreal).toLocaleString('en-US', {{maximumFractionDigits:0}})}} (${{pct >= 0 ? '+' : ''}}${{pct.toFixed(2)}}%)`;
-      unrealCell.style.color = unreal >= 0 ? '#2e7d32' : '#c62828';
-      liveUnreal[tk] = unreal;
+      const liveUnreal = side === 'long' ? (price - buy) * qty : (buy - price) * qty;
+      const serverUnreal = parseFloat(row.dataset.serverUnreal) || 0;
+      const cost = buy * qty;
+      const pct  = cost > 0 ? liveUnreal / cost * 100 : 0;
+      const sign = liveUnreal >= 0 ? '+' : '';
+      unrealCell.textContent = `${{sign}}$${{Math.abs(liveUnreal).toLocaleString('en-US', {{maximumFractionDigits:0}})}} (${{pct >= 0 ? '+' : ''}}${{pct.toFixed(2)}}%)`;
+      unrealCell.style.color = liveUnreal >= 0 ? '#2e7d32' : '#c62828';
+      // update liveAdj: remove old contribution, add new
+      const prevAdj = parseFloat(row.dataset.liveAdj) || 0;
+      liveAdj += (liveUnreal - serverUnreal) - prevAdj;
+      row.dataset.liveAdj = (liveUnreal - serverUnreal).toString();
       refreshTotalUnreal();
     }}
   }}
