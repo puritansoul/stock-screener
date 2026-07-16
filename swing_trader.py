@@ -835,7 +835,59 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
         <div class="card-value">{len(open_pos)}</div>
       </div>
     </div>
-    <canvas id="nav-chart" height="100"></canvas>
+    <!-- Capital breakdown -->
+    <div style="display:flex;gap:24px;flex-wrap:wrap;margin-top:16px;margin-bottom:4px;align-items:flex-start">
+      <div style="flex:1;min-width:260px">
+        <div style="font-size:12px;font-weight:bold;color:#555;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Capital Breakdown</div>
+        <table style="width:100%;font-size:13px;border-collapse:collapse">
+          <tr>
+            <td style="padding:4px 0;color:#555">Starting Capital</td>
+            <td style="text-align:right;font-weight:bold;padding:4px 0">${STARTING_CAPITAL:,.0f}</td>
+            <td style="text-align:right;color:#999;font-size:11px;padding:4px 0 4px 12px">100.00%</td>
+          </tr>
+          <tr style="border-top:1px solid #eee">
+            <td style="padding:4px 0;color:#1a237e">&#9632; Cash (idle)</td>
+            <td style="text-align:right;font-weight:bold;padding:4px 0;color:#1a237e">${capital:,.0f}</td>
+            <td style="text-align:right;color:#1a237e;font-size:11px;padding:4px 0 4px 12px">{capital/STARTING_CAPITAL*100:.1f}%</td>
+          </tr>
+          <tr>
+            <td style="padding:4px 0;color:#7986cb">&#9632; Invested (cost basis)</td>
+            <td id="bk-invested" style="text-align:right;font-weight:bold;padding:4px 0;color:#7986cb">${total_invested:,.0f}</td>
+            <td style="text-align:right;color:#7986cb;font-size:11px;padding:4px 0 4px 12px">{total_invested/STARTING_CAPITAL*100:.1f}%</td>
+          </tr>
+          <tr>
+            <td style="padding:4px 0;color:{tu_color}">&#9632; Unrealized P&amp;L</td>
+            <td id="bk-unreal" style="text-align:right;font-weight:bold;padding:4px 0;color:{tu_color}">{tu_sign}${abs(total_unreal):,.0f}</td>
+            <td style="text-align:right;color:{tu_color};font-size:11px;padding:4px 0 4px 12px">{tu_sign}{abs(total_unreal)/STARTING_CAPITAL*100:.2f}%</td>
+          </tr>
+          <tr style="border-top:2px solid #c5cae9">
+            <td style="padding:5px 0;font-weight:bold">Portfolio Value</td>
+            <td style="text-align:right;font-weight:bold;padding:5px 0;color:{gain_color}">${portfolio_value:,.0f}</td>
+            <td style="text-align:right;color:{gain_color};font-size:11px;padding:5px 0 4px 12px">{gain_sign}{abs(total_pct):.2f}%</td>
+          </tr>
+          <tr>
+            <td style="padding:4px 0;color:#555;font-size:12px">Realized P&amp;L (closed)</td>
+            <td style="text-align:right;padding:4px 0;font-size:12px;color:{'#2e7d32' if total_pnl_closed>=0 else '#c62828'}">{'+' if total_pnl_closed>=0 else ''}${total_pnl_closed:,.0f}</td>
+            <td style="text-align:right;color:#999;font-size:11px;padding:4px 0 4px 12px">{'+' if total_pnl_closed>=0 else ''}{total_pnl_closed/STARTING_CAPITAL*100:.2f}%</td>
+          </tr>
+        </table>
+      </div>
+      <div style="flex:2;min-width:300px">
+        <!-- stacked bar -->
+        <div style="font-size:12px;font-weight:bold;color:#555;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Allocation</div>
+        <div style="height:32px;border-radius:6px;overflow:hidden;display:flex;background:#eee">
+          <div style="width:{capital/STARTING_CAPITAL*100:.1f}%;background:#1a237e;height:100%;transition:width .3s" title="Cash ${capital:,.0f}"></div>
+          <div style="width:{total_invested/STARTING_CAPITAL*100:.1f}%;background:#7986cb;height:100%;transition:width .3s" title="Invested ${total_invested:,.0f}"></div>
+          <div style="width:{abs(total_unreal)/STARTING_CAPITAL*100:.2f}%;background:{'#2e7d32' if total_unreal>=0 else '#c62828'};height:100%;transition:width .3s" title="Unrealized {'gain' if total_unreal>=0 else 'loss'} ${abs(total_unreal):,.0f}"></div>
+        </div>
+        <div style="display:flex;gap:16px;margin-top:6px;font-size:11px;color:#666;flex-wrap:wrap">
+          <span><span style="color:#1a237e;font-weight:bold">&#9632;</span> Cash {capital/STARTING_CAPITAL*100:.1f}%</span>
+          <span><span style="color:#7986cb;font-weight:bold">&#9632;</span> Invested {total_invested/STARTING_CAPITAL*100:.1f}%</span>
+          <span><span style="color:{'#2e7d32' if total_unreal>=0 else '#c62828'};font-weight:bold">&#9632;</span> Unrealized P&amp;L {tu_sign}{abs(total_unreal)/STARTING_CAPITAL*100:.2f}%</span>
+        </div>
+        <canvas id="nav-chart" height="100" style="margin-top:16px"></canvas>
+      </div>
+    </div>
   </div>
 
   <!-- Open positions -->
