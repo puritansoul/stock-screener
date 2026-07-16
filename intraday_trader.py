@@ -29,6 +29,30 @@ import yfinance as yf
 
 warnings.filterwarnings("ignore")
 
+COMPANY_NAMES = {
+    "AAPL":"Apple","MSFT":"Microsoft","NVDA":"Nvidia","AMZN":"Amazon","GOOGL":"Alphabet",
+    "META":"Meta","TSLA":"Tesla","BRK-B":"Berkshire","JPM":"JPMorgan","V":"Visa",
+    "UNH":"UnitedHealth","XOM":"ExxonMobil","JNJ":"J&J","WMT":"Walmart","MA":"Mastercard",
+    "PG":"P&G","HD":"Home Depot","CVX":"Chevron","MRK":"Merck","LLY":"Eli Lilly",
+    "ABBV":"AbbVie","PEP":"PepsiCo","KO":"Coca-Cola","COST":"Costco","AVGO":"Broadcom",
+    "TMO":"Thermo Fisher","ACN":"Accenture","MCD":"McDonald's","ABT":"Abbott","DHR":"Danaher",
+    "NKE":"Nike","LIN":"Linde","TXN":"Texas Instruments","NEE":"NextEra","UPS":"UPS",
+    "QCOM":"Qualcomm","CRM":"Salesforce","SPGI":"S&P Global","HON":"Honeywell","AMGN":"Amgen",
+    "RTX":"Raytheon","LOW":"Lowe's","CAT":"Caterpillar","INTU":"Intuit","GS":"Goldman Sachs",
+    "BLK":"BlackRock","AXP":"Amex","SYK":"Stryker","ELV":"Elevance","GILD":"Gilead",
+    "MDLZ":"Mondelez","ADP":"ADP","BKNG":"Booking","REGN":"Regeneron","PLD":"Prologis",
+    "MMC":"Marsh McLennan","TJX":"TJX","VRTX":"Vertex","CB":"Chubb","AON":"Aon",
+    "ITW":"Illinois Tool","PNC":"PNC","USB":"US Bancorp","GE":"GE","CME":"CME Group",
+    "EQIX":"Equinix","KLAC":"KLA","LRCX":"Lam Research","MCHP":"Microchip","MU":"Micron",
+    "ADI":"Analog Devices","AMAT":"Applied Materials","SNPS":"Synopsys","CDNS":"Cadence",
+    "NXPI":"NXP Semi","TGT":"Target","WBA":"Walgreens","CVS":"CVS","CI":"Cigna",
+    "HUM":"Humana","CNC":"Centene","HCA":"HCA Healthcare","BAC":"Bank of America",
+    "WFC":"Wells Fargo","C":"Citigroup","MS":"Morgan Stanley",
+    "AOS":"A.O. Smith","ACGL":"Arch Capital","TPL":"Texas Pacific Land","FFIV":"F5 Networks",
+    "DOV":"Dover","REG":"Regency Centers","HPQ":"HP","HAS":"Hasbro","CPT":"Camden Property",
+    "GL":"Globe Life","JBL":"Jabil","CMI":"Cummins","PH":"Parker Hannifin",
+}
+
 # ── Config ────────────────────────────────────────────────────────────────────
 STARTING_CAPITAL  = 100_000.0
 RISK_PER_TRADE    = 0.02       # 2% of portfolio at risk per trade
@@ -575,7 +599,7 @@ def build_journal_section(nav_history: dict, idx_returns: dict, spy_cum: dict | 
         SPY Cum % = buy-and-hold SPY return over the same period.&nbsp;
         vs S&P = your day % minus S&P 500 day % (green = beat the market).
       </p>
-      <table>
+      <table id="journal-table">
         <thead>
           <tr>
             <th rowspan="2" style="vertical-align:bottom">Date</th>
@@ -779,9 +803,12 @@ def _diag_rows(diag: list[dict]) -> str:
         bold = "font-weight:bold;" if "signal" in r["status"] else ""
         note = r.get("note", "")
         note_color = "#c62828" if "⚠" in note else ("#2e7d32" if "✓" in note else "#888")
+        _dname = COMPANY_NAMES.get(r["ticker"], "")
+        _dname_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_dname}</span>' if _dname else ''
+        _dborder = "border-left:3px solid #1b5e20;" if r["status"] == "LONG signal" else ("border-left:3px solid #c62828;" if r["status"] == "SHORT signal" else "border-left:3px solid #ccc;")
         rows += (
-            f'<tr><td style="font-weight:bold">{r["ticker"]}</td>'
-            f'<td style="color:{sc};{bold}">{r["status"]}</td>'
+            f'<tr><td style="font-weight:bold">{r["ticker"]}{_dname_html}</td>'
+            f'<td style="color:{sc};{bold}{_dborder}">{r["status"]}</td>'
             f'<td style="text-align:right">{("$"+str(r["close"])) if r["close"] else "—"}</td>'
             f'<td style="text-align:right">{("$"+str(r.get("orb_hi",""))) if r.get("orb_hi") else "—"}</td>'
             f'<td style="text-align:right">{("$"+str(r.get("orb_lo",""))) if r.get("orb_lo") else "—"}</td>'
@@ -839,9 +866,11 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
         sb = ('<span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span>'
               if side == "long" else
               '<span style="background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">SHORT</span>')
+        _oname = COMPANY_NAMES.get(tk, "")
+        _oname_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_oname}</span>' if _oname else ''
         open_rows += f"""
         <tr data-ticker="{tk}" data-qty="{shares}" data-buypx="{entry:.2f}" data-side="{side}">
-          <td style="font-weight:bold">{tk}</td><td>{sb}</td>
+          <td style="font-weight:bold">{tk}{_oname_html}</td><td>{sb}</td>
           <td>${entry:,.2f}</td><td class="live-price">${cur_px:,.2f}</td>
           <td style="text-align:right">{shares:,}</td>
           <td class="live-unreal" style="text-align:right;color:{uc};font-weight:bold">${unreal:+,.0f} ({unreal_pct:+.2f}%)</td>
@@ -865,9 +894,11 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
         sb = ('<span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span>'
               if side == "long" else
               '<span style="background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:4px;font-size:11px">SHORT</span>')
+        _tname = COMPANY_NAMES.get(tk, "")
+        _tname_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_tname}</span>' if _tname else ''
         today_rows += f"""
         <tr>
-          <td style="font-weight:bold">{tk}</td><td>{sb}</td>
+          <td style="font-weight:bold">{tk}{_tname_html}</td><td>{sb}</td>
           <td>${entry:,.2f}</td><td>${exit_p:,.2f}</td>
           <td style="text-align:right;color:{pnl_c};font-weight:bold">${pnl:+,.0f}</td>
           <td style="color:#666;font-size:12px">{pos.get('entry_date','—')}</td>
@@ -901,6 +932,64 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
         "after_hours": ("After Hours", "#666"),
     }.get(phase, ("—", "#666"))
 
+    # ── Today's Activity section ──────────────────────────────────────────────
+    log = state.get("log", [])
+    _today_entries_act = []
+    _today_exits_act = []
+    if log:
+        for le in reversed(log):
+            if le.get("date") == today_str:
+                _today_entries_act = le.get("entries", [])
+                _today_exits_act = le.get("exits", [])
+                break
+    # Also include open positions entered today
+    _open_entries_today = [p for p in open_pos if p.get("entry_date") == today_str]
+    _has_activity = bool(_today_entries_act or _today_exits_act or _open_entries_today)
+    _open_act = "open" if _has_activity else ""
+
+    # Entries subsection
+    if _open_entries_today:
+        _etr = ""
+        for _op in _open_entries_today:
+            _etk = _op["ticker"]
+            _en = COMPANY_NAMES.get(_etk, "")
+            _en_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_en}</span>' if _en else ''
+            _esb = ('<span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span>'
+                    if _op.get("side") == "long" else
+                    '<span style="background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:4px;font-size:11px">SHORT</span>')
+            _etr += f'<tr><td style="font-weight:bold">{_etk}{_en_html}</td><td>{_esb}</td><td>${_op.get("entry_price",0):,.2f}</td><td style="text-align:right">{_op.get("shares",0):,}</td><td style="color:#666;font-size:12px">{_op.get("entry_time","—")}</td></tr>'
+        _entries_section = f'<div style="margin-bottom:16px"><div style="font-weight:bold;color:#1a237e;margin-bottom:6px;font-size:14px">Entries ({len(_open_entries_today)})</div><table id="today-act-entries-table"><thead><tr><th>Ticker</th><th>Side</th><th>Entry Price</th><th>Shares</th><th>Entry Time</th></tr></thead><tbody>{_etr}</tbody></table></div>'
+    else:
+        _entries_section = '<p style="color:#999;font-size:13px;margin:4px 0 12px">No entries today</p>'
+
+    # Exits subsection
+    if closed_td:
+        _xtr = ""
+        for _xp in reversed(closed_td):
+            _xtk = _xp["ticker"]
+            _xn = COMPANY_NAMES.get(_xtk, "")
+            _xn_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_xn}</span>' if _xn else ''
+            _xsb = ('<span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span>'
+                    if _xp.get("side") == "long" else
+                    '<span style="background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:4px;font-size:11px">SHORT</span>')
+            _xpnl = _xp.get("pnl", 0)
+            _xpc = "#2e7d32" if _xpnl >= 0 else "#c62828"
+            _xtr += f'<tr><td style="font-weight:bold">{_xtk}{_xn_html}</td><td>{_xsb}</td><td>${_xp.get("entry_price",0):,.2f}</td><td>${_xp.get("exit_price",0):,.2f}</td><td style="text-align:right;color:{_xpc};font-weight:bold">${_xpnl:+,.0f}</td><td style="color:#666;font-size:12px">{_xp.get("exit_time","—")}</td><td style="color:#666;font-size:12px">{_xp.get("exit_reason","—")}</td></tr>'
+        _exits_section = f'<div><div style="font-weight:bold;color:#1a237e;margin-bottom:6px;font-size:14px">Exits ({len(closed_td)})</div><table id="today-act-exits-table"><thead><tr><th>Ticker</th><th>Side</th><th>Entry</th><th>Exit</th><th>P&amp;L</th><th>Exit Time</th><th>Reason</th></tr></thead><tbody>{_xtr}</tbody></table></div>'
+    else:
+        _exits_section = '<p style="color:#999;font-size:13px;margin:4px 0">No exits today</p>'
+
+    _today_activity_html = f"""
+  <div class="section">
+    <details {_open_act}>
+      <summary>Today's Activity</summary>
+      <div style="margin-top:12px">
+        {_entries_section}
+        {_exits_section}
+      </div>
+    </details>
+  </div>"""
+
     html = f"""<!DOCTYPE html>
 <html>
 <head>
@@ -916,13 +1005,14 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
     table {{ border-collapse: collapse; width: 100%; font-size: 13px; }}
     th    {{ background: #1a237e; color: white; padding: 8px 10px; text-align: left; white-space: nowrap; }}
     td    {{ padding: 6px 10px; border-bottom: 1px solid #eee; white-space: nowrap; }}
-    tr:hover td {{ background: #f5f5f5; }}
+    thead {{ position: sticky; top: 0; z-index: 10; }}
+    tr:hover td {{ background: #f5f5f5; transition: background 0.15s; }}
     .section {{ background: white; border: 1px solid #e0e0e0; border-radius: 8px;
                 padding: 18px 20px; margin: 12px 0; overflow-x: auto; }}
     .badge {{ background: #e3f2fd; color: #0d47a1; padding: 3px 10px;
               border-radius: 12px; font-size: 12px; font-weight: bold; }}
     .card  {{ background: #f0f4ff; border: 1px solid #c5cae9; border-radius: 10px;
-              padding: 16px 24px; min-width: 150px; }}
+              padding: 16px 24px; min-width: 150px; box-shadow: 0 2px 4px rgba(0,0,0,0.08); }}
     .card-label {{ font-size: 11px; color: #6c757d; text-transform: uppercase;
                    letter-spacing: .5px; margin-bottom: 4px; }}
     .card-value {{ font-size: 26px; font-weight: bold; line-height: 1; }}
@@ -981,7 +1071,7 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
 
   <div class="section">
     <h2>Open Positions</h2>
-    <table>
+    <table id="open-pos-table">
       <thead><tr>
         <th>Ticker</th><th>Side</th><th>Entry</th><th>Current</th>
         <th>Shares</th><th>Unrealized P&amp;L</th><th>Peak</th><th>Trail Stop</th><th>Entry Date</th><th>Entry Time</th>
@@ -990,22 +1080,13 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
     </table>
   </div>
 
-  <div class="section">
-    <h2>Today's Closed Trades</h2>
-    <table>
-      <thead><tr>
-        <th>Ticker</th><th>Side</th><th>Entry</th><th>Exit</th>
-        <th>P&amp;L</th><th>Entry Date</th><th>Entry Time</th><th>Exit Time</th><th>Reason</th>
-      </tr></thead>
-      <tbody>{today_rows}</tbody>
-    </table>
-  </div>
+  {_today_activity_html}
 
   <div class="section">
     <details>
       <summary>Strategy Info &amp; All-Time Stats</summary>
       <div style="display:flex;gap:30px;flex-wrap:wrap;margin-top:12px">
-        <table style="width:auto;min-width:240px">
+        <table id="stats-table" style="width:auto;min-width:240px">
           <tr><td>Starting Capital</td><td style="text-align:right;font-weight:bold">${STARTING_CAPITAL:,.0f}</td></tr>
           <tr><td>Total Closed Trades</td><td style="text-align:right">{len(all_c)}</td></tr>
           <tr><td>Win Rate</td><td style="text-align:right">{win_rate:.1f}%</td></tr>
@@ -1037,7 +1118,7 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
       <p style="color:#666;font-size:12px;margin:8px 0 6px">
         Shows what the scanner saw for each ticker this run. Entries only fire when status = "LONG signal" or "SHORT signal".
       </p>
-      <table style="margin-top:4px">
+      <table id="scan-diag-table" style="margin-top:4px">
         <thead><tr>
           <th>Ticker</th><th>Status</th><th>Close</th>
           <th>ORB High</th><th>ORB Low</th><th>ORB Width</th><th>Vol Ratio</th><th>Note</th>
@@ -1234,6 +1315,67 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
   ctx.beginPath(); ctx.moveTo(pad + 90, 8); ctx.lineTo(pad + 108, 8); ctx.stroke();
   ctx.setLineDash([]);
   ctx.fillStyle = '#333'; ctx.fillText('SPY (buy & hold)', pad + 112, 12);
+}})();
+
+// ── Resizable columns ─────────────────────────────────────────────────────────
+(function() {{
+  document.querySelectorAll('table[id]').forEach(function(tbl) {{
+    var id = tbl.id;
+    var headerRow = tbl.querySelector('thead tr:first-child');
+    if (!headerRow) return;
+    var ths = Array.from(headerRow.querySelectorAll('th'));
+    if (!ths.length) return;
+    var cg = tbl.querySelector('colgroup');
+    if (!cg) {{
+      cg = document.createElement('colgroup');
+      tbl.insertBefore(cg, tbl.firstChild);
+      ths.forEach(function() {{ cg.appendChild(document.createElement('col')); }});
+    }}
+    var cols = Array.from(cg.querySelectorAll('col'));
+    ths.forEach(function(th, i) {{
+      var saved = localStorage.getItem('colw:' + id + ':' + i);
+      if (saved && cols[i]) {{ cols[i].style.width = saved; }}
+    }});
+    ths.forEach(function(th, i) {{
+      th.style.position = 'relative';
+      if (th.querySelector('.col-resizer')) return;
+      var rz = document.createElement('div');
+      rz.className = 'col-resizer';
+      rz.style.cssText = 'position:absolute;right:0;top:0;width:5px;height:100%;cursor:col-resize;user-select:none;background:transparent;z-index:1';
+      th.appendChild(rz);
+      rz.addEventListener('mousedown', function(e) {{
+        e.preventDefault();
+        var startX = e.pageX;
+        var startW = th.offsetWidth;
+        var onMove = function(e) {{
+          var w = Math.max(30, startW + e.pageX - startX);
+          if (cols[i]) cols[i].style.width = w + 'px';
+        }};
+        var onUp = function(e) {{
+          var w = Math.max(30, startW + e.pageX - startX);
+          localStorage.setItem('colw:' + id + ':' + i, w + 'px');
+          document.removeEventListener('mousemove', onMove);
+          document.removeEventListener('mouseup', onUp);
+        }};
+        document.addEventListener('mousemove', onMove);
+        document.addEventListener('mouseup', onUp);
+      }});
+    }});
+  }});
+}})();
+
+// ── Details state persistence ─────────────────────────────────────────────────
+(function() {{
+  document.querySelectorAll('details').forEach(function(el) {{
+    var sumEl = el.querySelector('summary');
+    if (!sumEl) return;
+    var key = 'details:' + sumEl.textContent.trim().slice(0, 60);
+    var saved = localStorage.getItem(key);
+    if (saved !== null) {{ el.open = (saved === 'open'); }}
+    el.addEventListener('toggle', function() {{
+      localStorage.setItem(key, el.open ? 'open' : 'closed');
+    }});
+  }});
 }})();
 </script>
 </body>

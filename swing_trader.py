@@ -29,6 +29,30 @@ import yfinance as yf
 
 warnings.filterwarnings("ignore")
 
+COMPANY_NAMES = {
+    "AAPL":"Apple","MSFT":"Microsoft","NVDA":"Nvidia","AMZN":"Amazon","GOOGL":"Alphabet",
+    "META":"Meta","TSLA":"Tesla","BRK-B":"Berkshire","JPM":"JPMorgan","V":"Visa",
+    "UNH":"UnitedHealth","XOM":"ExxonMobil","JNJ":"J&J","WMT":"Walmart","MA":"Mastercard",
+    "PG":"P&G","HD":"Home Depot","CVX":"Chevron","MRK":"Merck","LLY":"Eli Lilly",
+    "ABBV":"AbbVie","PEP":"PepsiCo","KO":"Coca-Cola","COST":"Costco","AVGO":"Broadcom",
+    "TMO":"Thermo Fisher","ACN":"Accenture","MCD":"McDonald's","ABT":"Abbott","DHR":"Danaher",
+    "NKE":"Nike","LIN":"Linde","TXN":"Texas Instruments","NEE":"NextEra","UPS":"UPS",
+    "QCOM":"Qualcomm","CRM":"Salesforce","SPGI":"S&P Global","HON":"Honeywell","AMGN":"Amgen",
+    "RTX":"Raytheon","LOW":"Lowe's","CAT":"Caterpillar","INTU":"Intuit","GS":"Goldman Sachs",
+    "BLK":"BlackRock","AXP":"Amex","SYK":"Stryker","ELV":"Elevance","GILD":"Gilead",
+    "MDLZ":"Mondelez","ADP":"ADP","BKNG":"Booking","REGN":"Regeneron","PLD":"Prologis",
+    "MMC":"Marsh McLennan","TJX":"TJX","VRTX":"Vertex","CB":"Chubb","AON":"Aon",
+    "ITW":"Illinois Tool","PNC":"PNC","USB":"US Bancorp","GE":"GE","CME":"CME Group",
+    "EQIX":"Equinix","KLAC":"KLA","LRCX":"Lam Research","MCHP":"Microchip","MU":"Micron",
+    "ADI":"Analog Devices","AMAT":"Applied Materials","SNPS":"Synopsys","CDNS":"Cadence",
+    "NXPI":"NXP Semi","TGT":"Target","WBA":"Walgreens","CVS":"CVS","CI":"Cigna",
+    "HUM":"Humana","CNC":"Centene","HCA":"HCA Healthcare","BAC":"Bank of America",
+    "WFC":"Wells Fargo","C":"Citigroup","MS":"Morgan Stanley",
+    "AOS":"A.O. Smith","ACGL":"Arch Capital","TPL":"Texas Pacific Land","FFIV":"F5 Networks",
+    "DOV":"Dover","REG":"Regency Centers","HPQ":"HP","HAS":"Hasbro","CPT":"Camden Property",
+    "GL":"Globe Life","JBL":"Jabil","CMI":"Cummins","PH":"Parker Hannifin",
+}
+
 # ── Config ────────────────────────────────────────────────────────────────────
 STARTING_CAPITAL  = 100_000.0
 RISK_PER_TRADE    = 0.02       # 2% of portfolio at risk per trade
@@ -302,7 +326,7 @@ def build_journal_section(nav_history: dict, idx_returns: dict, spy_cum: dict | 
         SPY Cum % = buy-and-hold SPY return over the same period.&nbsp;
         vs S&P = your day % minus S&amp;P 500 day % (green = beat the market).
       </p>
-      <table>
+      <table id="journal-table">
         <thead>
           <tr>
             <th rowspan="2" style="vertical-align:bottom">Date</th>
@@ -536,14 +560,18 @@ def _scan_rows(scan: list[dict]) -> str:
         return '<tr><td colspan="5" style="color:#999;text-align:center;padding:12px">No scan data yet — run once during market hours</td></tr>'
     rows = ""
     for r in scan:
+        tk = r["ticker"]
         is_signal = "signal" in r["status"]
         sc = "#1b5e20" if r["status"] == "LONG signal" else ("#880e4f" if r["status"] == "SHORT signal" else "#555")
         bold = "font-weight:bold;" if is_signal else ""
         rsi_color = "#1b5e20" if r["rsi2"] < 15 else ("#880e4f" if r["rsi2"] > 85 else "#333")
+        border = "border-left:3px solid #1b5e20;" if r["status"] == "LONG signal" else ("border-left:3px solid #c62828;" if r["status"] == "SHORT signal" else "border-left:3px solid #ccc;")
+        name = COMPANY_NAMES.get(tk, "")
+        name_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{name}</span>' if name else ''
         rows += (
             f'<tr>'
-            f'<td style="font-weight:bold">{r["ticker"]}</td>'
-            f'<td style="color:{sc};{bold}">{r["status"]}</td>'
+            f'<td style="font-weight:bold">{tk}{name_html}</td>'
+            f'<td style="color:{sc};{bold}{border}">{r["status"]}</td>'
             f'<td style="text-align:right;color:{rsi_color};font-weight:bold">{r["rsi2"]}</td>'
             f'<td style="text-align:right">${r["close"]}</td>'
             f'<td style="text-align:right">${r["sma200"]}</td>'
@@ -635,9 +663,11 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
             if side == "long" else
             '<span style="background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">SHORT</span>'
         )
+        _name = COMPANY_NAMES.get(tk, "")
+        _name_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_name}</span>' if _name else ''
         open_rows += f"""
         <tr data-ticker="{tk}" data-qty="{shares}" data-buypx="{entry:.2f}" data-side="{side}">
-          <td style="font-weight:bold">{tk}</td>
+          <td style="font-weight:bold">{tk}{_name_html}</td>
           <td>{side_badge}</td>
           <td>${entry:,.2f}</td>
           <td class="live-price">${cur_px:,.2f}</td>
@@ -699,9 +729,11 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
             if side == "long" else
             '<span style="background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:4px;font-size:11px">SHORT</span>'
         )
+        _cname = COMPANY_NAMES.get(tk, "")
+        _cname_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_cname}</span>' if _cname else ''
         closed_rows += f"""
         <tr>
-          <td style="font-weight:bold">{tk}</td>
+          <td style="font-weight:bold">{tk}{_cname_html}</td>
           <td>{side_badge}</td>
           <td>${entry:,.2f}</td>
           <td>${exit_p:,.2f}</td>
@@ -758,6 +790,65 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
     <tr><td>Inception</td><td style="text-align:right;color:#666">{inception}</td></tr>
     """
 
+    # Today's Activity section
+    log = state.get("log", [])
+    today_activity_html = ""
+    if log and log[-1].get("date") == today_str:
+        last_log = log[-1]
+        entries_today = last_log.get("entries", [])
+        exits_today_log = last_log.get("exits", [])
+        has_activity = bool(entries_today or exits_today_log)
+        open_attr = "open" if has_activity else ""
+
+        # Build entries HTML
+        if entries_today:
+            entry_rows_html = ""
+            for e in entries_today:
+                _etk = e["ticker"]
+                _en = COMPANY_NAMES.get(_etk, "")
+                _en_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_en}</span>' if _en else ''
+                _esb = ('<span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span>'
+                        if e.get("side") == "long" else
+                        '<span style="background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:4px;font-size:11px">SHORT</span>')
+                entry_rows_html += f'<tr><td style="font-weight:bold">{_etk}{_en_html}</td><td>{_esb}</td><td>${e.get("price", 0):,.2f}</td><td style="text-align:right">{e.get("shares", 0):,}</td><td>${e.get("stop", 0):,.2f}</td></tr>'
+            entries_section = f'''<div style="margin-bottom:16px">
+          <div style="font-weight:bold;color:#1a237e;margin-bottom:6px;font-size:14px">Entries ({len(entries_today)})</div>
+          <table id="today-entries-table"><thead><tr><th>Ticker</th><th>Side</th><th>Price</th><th>Shares</th><th>Stop</th></tr></thead><tbody>{entry_rows_html}</tbody></table>
+        </div>'''
+        else:
+            entries_section = '<p style="color:#999;font-size:13px;margin:4px 0">No entries today</p>'
+
+        # Build exits HTML
+        if exits_today_log:
+            exit_rows_html = ""
+            for e in exits_today_log:
+                _etk = e["ticker"]
+                _en = COMPANY_NAMES.get(_etk, "")
+                _en_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_en}</span>' if _en else ''
+                _esb = ('<span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span>'
+                        if e.get("side") == "long" else
+                        '<span style="background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:4px;font-size:11px">SHORT</span>')
+                _epnl = e.get("pnl", 0)
+                _epc = "#2e7d32" if _epnl >= 0 else "#c62828"
+                exit_rows_html += f'<tr><td style="font-weight:bold">{_etk}{_en_html}</td><td>{_esb}</td><td>${e.get("exit_price", 0):,.2f}</td><td style="text-align:right;color:{_epc};font-weight:bold">${_epnl:+,.0f}</td><td style="color:#666;font-size:12px">{e.get("reason", "—")}</td></tr>'
+            exits_section = f'''<div>
+          <div style="font-weight:bold;color:#1a237e;margin-bottom:6px;font-size:14px">Exits ({len(exits_today_log)})</div>
+          <table id="today-exits-table"><thead><tr><th>Ticker</th><th>Side</th><th>Exit Price</th><th>P&amp;L</th><th>Reason</th></tr></thead><tbody>{exit_rows_html}</tbody></table>
+        </div>'''
+        else:
+            exits_section = '<p style="color:#999;font-size:13px;margin:4px 0">No exits today</p>'
+
+        today_activity_html = f"""
+  <div class="section">
+    <details {open_attr}>
+      <summary>Today's Activity</summary>
+      <div style="margin-top:12px">
+        {entries_section}
+        {exits_section}
+      </div>
+    </details>
+  </div>"""
+
     html = f"""<!DOCTYPE html>
 <html>
 <head>
@@ -773,13 +864,14 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
     table {{ border-collapse: collapse; width: 100%; font-size: 13px; }}
     th    {{ background: #1a237e; color: white; padding: 8px 10px; text-align: left; white-space: nowrap; }}
     td    {{ padding: 6px 10px; border-bottom: 1px solid #eee; white-space: nowrap; }}
-    tr:hover td {{ background: #f5f5f5; }}
+    thead {{ position: sticky; top: 0; z-index: 10; }}
+    tr:hover td {{ background: #f5f5f5; transition: background 0.15s; }}
     .section {{ background: white; border: 1px solid #e0e0e0; border-radius: 8px;
                 padding: 18px 20px; margin: 12px 0; overflow-x: auto; }}
     .badge {{ background: #e3f2fd; color: #0d47a1; padding: 3px 10px;
               border-radius: 12px; font-size: 12px; font-weight: bold; }}
     .card  {{ background: #f0f4ff; border: 1px solid #c5cae9; border-radius: 10px;
-              padding: 16px 24px; min-width: 160px; }}
+              padding: 16px 24px; min-width: 160px; box-shadow: 0 2px 4px rgba(0,0,0,0.08); }}
     .card-label {{ font-size: 11px; color: #6c757d; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }}
     .card-value {{ font-size: 28px; font-weight: bold; color: #1a237e; line-height: 1; }}
     details summary {{ cursor: pointer; font-size: 16px; font-weight: bold; color: #1a237e;
@@ -893,7 +985,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
   <!-- Open positions -->
   <div class="section">
     <h2>Open Positions</h2>
-    <table>
+    <table id="open-pos-table">
       <thead><tr>
         <th>Ticker</th><th>Side</th><th>Entry</th><th>Current</th>
         <th>Shares</th><th>$ Invested</th><th>Unrealized P&amp;L</th>
@@ -904,12 +996,14 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
     </table>
   </div>
 
+  {today_activity_html}
+
   <!-- Statistics -->
   <div class="section">
     <details open>
       <summary>Strategy Statistics</summary>
       <div style="display:flex;gap:30px;flex-wrap:wrap;margin-top:12px">
-        <table style="width:auto;min-width:260px">
+        <table id="stats-table" style="width:auto;min-width:260px">
           <tbody>{stats_rows}</tbody>
         </table>
         <div style="flex:1;min-width:260px">
@@ -932,7 +1026,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
   <div class="section">
     <details>
       <summary>Closed Trades ({len(closed)} total, showing last 50)</summary>
-      <table style="margin-top:12px">
+      <table id="closed-trades-table" style="margin-top:12px">
         <thead><tr>
           <th>Ticker</th><th>Side</th><th>Entry</th><th>Exit</th>
           <th>P&amp;L</th><th>Entry Date</th><th>Exit Date</th><th>Reason</th>
@@ -951,7 +1045,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
         Entry fires when RSI(2) &lt; {RSI_LONG_ENTRY} (long, above SMA200) or &gt; {RSI_SHORT_ENTRY} (short, below SMA200).
         Sorted by how close to threshold. Green = signal fired today.
       </p>
-      <table style="margin-top:4px">
+      <table id="scan-table" style="margin-top:4px">
         <thead><tr>
           <th>Ticker</th><th>Status</th><th>RSI(2)</th><th>Close</th><th>SMA(200)</th>
         </tr></thead>
@@ -1217,6 +1311,67 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
   ctx.beginPath(); ctx.moveTo(pad + 90, 8); ctx.lineTo(pad + 108, 8); ctx.stroke();
   ctx.setLineDash([]);
   ctx.fillStyle = '#333'; ctx.fillText('SPY (buy & hold)', pad + 112, 12);
+}})();
+
+// ── Resizable columns ─────────────────────────────────────────────────────────
+(function() {{
+  document.querySelectorAll('table[id]').forEach(function(tbl) {{
+    var id = tbl.id;
+    var headerRow = tbl.querySelector('thead tr:first-child');
+    if (!headerRow) return;
+    var ths = Array.from(headerRow.querySelectorAll('th'));
+    if (!ths.length) return;
+    var cg = tbl.querySelector('colgroup');
+    if (!cg) {{
+      cg = document.createElement('colgroup');
+      tbl.insertBefore(cg, tbl.firstChild);
+      ths.forEach(function() {{ cg.appendChild(document.createElement('col')); }});
+    }}
+    var cols = Array.from(cg.querySelectorAll('col'));
+    ths.forEach(function(th, i) {{
+      var saved = localStorage.getItem('colw:' + id + ':' + i);
+      if (saved && cols[i]) {{ cols[i].style.width = saved; }}
+    }});
+    ths.forEach(function(th, i) {{
+      th.style.position = 'relative';
+      if (th.querySelector('.col-resizer')) return;
+      var rz = document.createElement('div');
+      rz.className = 'col-resizer';
+      rz.style.cssText = 'position:absolute;right:0;top:0;width:5px;height:100%;cursor:col-resize;user-select:none;background:transparent;z-index:1';
+      th.appendChild(rz);
+      rz.addEventListener('mousedown', function(e) {{
+        e.preventDefault();
+        var startX = e.pageX;
+        var startW = th.offsetWidth;
+        var onMove = function(e) {{
+          var w = Math.max(30, startW + e.pageX - startX);
+          if (cols[i]) cols[i].style.width = w + 'px';
+        }};
+        var onUp = function(e) {{
+          var w = Math.max(30, startW + e.pageX - startX);
+          localStorage.setItem('colw:' + id + ':' + i, w + 'px');
+          document.removeEventListener('mousemove', onMove);
+          document.removeEventListener('mouseup', onUp);
+        }};
+        document.addEventListener('mousemove', onMove);
+        document.addEventListener('mouseup', onUp);
+      }});
+    }});
+  }});
+}})();
+
+// ── Details state persistence ─────────────────────────────────────────────────
+(function() {{
+  document.querySelectorAll('details').forEach(function(el) {{
+    var sumEl = el.querySelector('summary');
+    if (!sumEl) return;
+    var key = 'details:' + sumEl.textContent.trim().slice(0, 60);
+    var saved = localStorage.getItem(key);
+    if (saved !== null) {{ el.open = (saved === 'open'); }}
+    el.addEventListener('toggle', function() {{
+      localStorage.setItem(key, el.open ? 'open' : 'closed');
+    }});
+  }});
 }})();
 </script>
 

@@ -997,7 +997,8 @@ def save_html_report(
     th.sort-asc::after  {{ content: " ▲"; font-size:10px; }}
     th.sort-desc::after {{ content: " ▼"; font-size:10px; }}
     td     {{ padding: 6px 10px; border-bottom: 1px solid #eee; white-space: nowrap; }}
-    tr:hover td {{ filter: brightness(0.97); }}
+    thead  {{ position: sticky; top: 0; z-index: 10; }}
+    tr:hover td {{ filter: brightness(0.97); transition: background 0.15s; }}
     .badge {{ background:#e3f2fd; color:#0d47a1; padding:3px 10px;
               border-radius:12px; font-size:12px; font-weight:bold; }}
     .card-row {{ display:flex; flex-wrap:wrap; gap:10px; margin:12px 0 18px 0; }}
@@ -1036,15 +1037,15 @@ def save_html_report(
       Inception: {inception_date or today.isoformat()} &nbsp;|&nbsp; Starting value: ${cost_basis:,.0f}
     </p>
     <div style="display:flex;align-items:stretch;gap:16px;margin-bottom:20px;flex-wrap:wrap">
-      <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px">
+      <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px;box-shadow:0 2px 4px rgba(0,0,0,0.08)">
         <div style="font-size:11px;color:#6c757d;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Current Value</div>
         <div id="port-value" style="font-size:32px;font-weight:bold;color:#1a237e;line-height:1">{nav_str}</div>
       </div>
-      <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px">
+      <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px;box-shadow:0 2px 4px rgba(0,0,0,0.08)">
         <div style="font-size:11px;color:#6c757d;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Today</div>
         <div id="port-today" style="font-size:24px;font-weight:bold;color:{port_day_color};line-height:1">{port_day_str}</div>
       </div>
-      <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px">
+      <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px;box-shadow:0 2px 4px rgba(0,0,0,0.08)">
         <div style="font-size:11px;color:#6c757d;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Total Return</div>
         <div id="port-total" style="font-size:24px;font-weight:bold;color:{gain_color};line-height:1">
           {gain_sign}${abs(gain_loss):,.0f} <span style="font-size:16px">({gain_sign}{gain_loss_pct:.2f}%)</span>
@@ -1388,6 +1389,67 @@ def save_html_report(
   if (isMarketHours()) {{
     setTimeout(() => location.reload(), 60000);
   }}
+}})();
+
+// ── Resizable columns ─────────────────────────────────────────────────────────
+(function() {{
+  document.querySelectorAll('table[id]').forEach(function(tbl) {{
+    var id = tbl.id;
+    var headerRow = tbl.querySelector('thead tr:first-child');
+    if (!headerRow) return;
+    var ths = Array.from(headerRow.querySelectorAll('th'));
+    if (!ths.length) return;
+    var cg = tbl.querySelector('colgroup');
+    if (!cg) {{
+      cg = document.createElement('colgroup');
+      tbl.insertBefore(cg, tbl.firstChild);
+      ths.forEach(function() {{ cg.appendChild(document.createElement('col')); }});
+    }}
+    var cols = Array.from(cg.querySelectorAll('col'));
+    ths.forEach(function(th, i) {{
+      var saved = localStorage.getItem('colw:' + id + ':' + i);
+      if (saved && cols[i]) {{ cols[i].style.width = saved; }}
+    }});
+    ths.forEach(function(th, i) {{
+      th.style.position = 'relative';
+      if (th.querySelector('.col-resizer')) return;
+      var rz = document.createElement('div');
+      rz.className = 'col-resizer';
+      rz.style.cssText = 'position:absolute;right:0;top:0;width:5px;height:100%;cursor:col-resize;user-select:none;background:transparent;z-index:1';
+      th.appendChild(rz);
+      rz.addEventListener('mousedown', function(e) {{
+        e.preventDefault();
+        var startX = e.pageX;
+        var startW = th.offsetWidth;
+        var onMove = function(e) {{
+          var w = Math.max(30, startW + e.pageX - startX);
+          if (cols[i]) cols[i].style.width = w + 'px';
+        }};
+        var onUp = function(e) {{
+          var w = Math.max(30, startW + e.pageX - startX);
+          localStorage.setItem('colw:' + id + ':' + i, w + 'px');
+          document.removeEventListener('mousemove', onMove);
+          document.removeEventListener('mouseup', onUp);
+        }};
+        document.addEventListener('mousemove', onMove);
+        document.addEventListener('mouseup', onUp);
+      }});
+    }});
+  }});
+}})();
+
+// ── Details state persistence ─────────────────────────────────────────────────
+(function() {{
+  document.querySelectorAll('details').forEach(function(el) {{
+    var sumEl = el.querySelector('summary');
+    if (!sumEl) return;
+    var key = 'details:' + sumEl.textContent.trim().slice(0, 60);
+    var saved = localStorage.getItem(key);
+    if (saved !== null) {{ el.open = (saved === 'open'); }}
+    el.addEventListener('toggle', function() {{
+      localStorage.setItem(key, el.open ? 'open' : 'closed');
+    }});
+  }});
 }})();
 </script>
 </body>
