@@ -70,7 +70,7 @@
           <div style="font-size:11px;color:#999;margin-bottom:12px">
             Inception: 2026-07-09 &nbsp;|&nbsp; Last run: 2026-07-15
           </div>
-          <a href="reports/swing_2026-07-15.html" class="btn" style="background:#1a237e">Open Dashboard →</a>
+          <a href="reports/swing_2026-07-16.html" class="btn" style="background:#1a237e">Open Dashboard →</a>
         </div>
     
         <div class="bot-card" style="border-top:4px solid #e65100">
@@ -78,29 +78,29 @@
           <div class="stat-grid">
             <div class="stat">
               <div class="stat-label">Portfolio Value</div>
-              <div class="stat-val" style="color:#1a237e">$99,469</div>
+              <div class="stat-val" style="color:#1a237e">$99,448</div>
             </div>
             <div class="stat">
               <div class="stat-label">Total Return</div>
-              <div class="stat-val" style="color:#c62828">$531<br>
-                <span style="font-size:13px">0.53%</span>
+              <div class="stat-val" style="color:#c62828">$552<br>
+                <span style="font-size:13px">0.55%</span>
               </div>
             </div>
             <div class="stat">
               <div class="stat-label">Day P&amp;L</div>
-              <div class="stat-val" style="color:#2e7d32">$+0</div>
+              <div class="stat-val" style="color:#c62828">$-21</div>
             </div>
             <div class="stat">
               <div class="stat-label">Open Positions</div>
-              <div class="stat-val">1</div>
+              <div class="stat-val">6</div>
             </div>
             <div class="stat">
               <div class="stat-label">Win Rate</div>
-              <div class="stat-val">45.8%</div>
+              <div class="stat-val">45.6%</div>
             </div>
             <div class="stat">
               <div class="stat-label">Closed Trades</div>
-              <div class="stat-val">168</div>
+              <div class="stat-val">169</div>
             </div>
           </div>
           <canvas id="intraday-chart" style="width:100%;margin:12px 0"></canvas>
@@ -162,7 +162,7 @@
 
 (function() {
   const dates = ["2026-07-09", "2026-07-10", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16"];
-  const vals  = [99940.86, 99940.86, 99718.02, 99519.7, 99469.14, 99469.14];
+  const vals  = [99940.86, 99940.86, 99718.02, 99519.7, 99469.14, 99447.68];
   const N = vals.length;
   if (N < 2) return;
   const canvas = document.getElementById('intraday-chart');

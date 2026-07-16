@@ -1,6 +1,92 @@
 {
-  "capital": 69653.85,
+  "capital": 12278.46,
   "open_positions": [
+    {
+      "ticker": "CPAY",
+      "side": "long",
+      "entry_date": "2026-07-16",
+      "entry_time": "10:04 ET",
+      "entry_price": 369.645,
+      "shares": 80,
+      "stop": 367.685,
+      "trail_dist": 1.96,
+      "peak": 369.645,
+      "orb_width": 3.92,
+      "cost": 29571.6,
+      "vol_ratio": 3.31
+    },
+    {
+      "ticker": "CHTR",
+      "side": "short",
+      "entry_date": "2026-07-16",
+      "entry_time": "10:04 ET",
+      "entry_price": 132.73,
+      "shares": 157,
+      "stop": 134.225,
+      "trail_dist": 1.495,
+      "peak": 132.73,
+      "orb_width": 2.99,
+      "cost": 20838.61,
+      "vol_ratio": 2.87
+    },
+    {
+      "ticker": "PH",
+      "side": "long",
+      "entry_date": "2026-07-16",
+      "entry_time": "10:04 ET",
+      "entry_price": 966.585,
+      "shares": 15,
+      "stop": 958.9575,
+      "trail_dist": 7.6275,
+      "peak": 966.585,
+      "orb_width": 15.255,
+      "cost": 14498.78,
+      "vol_ratio": 1.77
+    },
+    {
+      "ticker": "PSX",
+      "side": "long",
+      "entry_date": "2026-07-16",
+      "entry_time": "10:04 ET",
+      "entry_price": 200.84,
+      "shares": 51,
+      "stop": 199.2543,
+      "trail_dist": 1.5857,
+      "peak": 200.84,
+      "orb_width": 3.1715,
+      "cost": 10242.84,
+      "vol_ratio": 1.45
+    },
+    {
+      "ticker": "BRK-B",
+      "side": "short",
+      "entry_date": "2026-07-16",
+      "entry_time": "10:04 ET",
+      "entry_price": 487.65,
+      "shares": 14,
+      "stop": 489.17,
+      "trail_dist": 1.52,
+      "peak": 487.65,
+      "orb_width": 3.04,
+      "cost": 6827.1,
+      "vol_ratio": 1.33
+    },
+    {
+      "ticker": "CVNA",
+      "side": "long",
+      "entry_date": "2026-07-16",
+      "entry_time": "10:04 ET",
+      "entry_price": 71.1,
+      "shares": 73,
+      "stop": 70.22,
+      "trail_dist": 0.88,
+      "peak": 71.1,
+      "orb_width": 1.76,
+      "cost": 5190.3,
+      "vol_ratio": 1.22
+    }
+  ],
+  "closed_today": [
     {
       "ticker": "CPAY",
       "side": "long",
@@ -8,15 +94,19 @@
       "entry_time": "10:01 ET",
       "entry_price": 368.09,
       "shares": 81,
-      "stop": 366.13,
+      "stop": 367.825,
       "trail_dist": 1.96,
-      "peak": 368.09,
+      "peak": 369.785,
       "orb_width": 3.92,
       "cost": 29815.29,
-      "vol_ratio": 2.55
+      "vol_ratio": 2.55,
+      "exit_date": "2026-07-16",
+      "exit_price": 367.825,
+      "pnl": -21.46,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:04 ET"
     }
   ],
-  "closed_today": [],
   "all_closed": [
     {
       "ticker": "SNOW",
@@ -3314,9 +3404,9 @@
       "width": 5.98
     },
     "MO": {
-      "high": 72.461,
+      "high": 72.49,
       "low": 70.9353,
-      "width": 1.5257
+      "width": 1.5547
     },
     "AMZN": {
       "high": 258.0825,
@@ -3569,9 +3659,9 @@
       "width": 1.69
     },
     "BMY": {
-      "high": 59.67,
+      "high": 59.68,
       "low": 58.57,
-      "width": 1.1
+      "width": 1.11
     },
     "AVGO": {
       "high": 386.325,
@@ -3630,8 +3720,8 @@
     },
     "CAH": {
       "high": 227.5,
-      "low": 223.88,
-      "width": 3.62
+      "low": 223.85,
+      "width": 3.65
     },
     "CCL": {
       "high": 26.76,
@@ -3709,9 +3799,9 @@
       "width": 2.99
     },
     "CVX": {
-      "high": 184.09,
-      "low": 181.6,
-      "width": 2.49
+      "high": 184.1,
+      "low": 181.95,
+      "width": 2.15
     },
     "CMG": {
       "high": 34.92,
@@ -3889,9 +3979,9 @@
       "width": 1.165
     },
     "CMI": {
-      "high": 669.098,
+      "high": 669.0976,
       "low": 647.892,
-      "width": 21.206
+      "width": 21.2056
     },
     "CVS": {
       "high": 108.67,
@@ -3904,9 +3994,9 @@
       "width": 3.404
     },
     "DRI": {
-      "high": 200.795,
+      "high": 200.92,
       "low": 197.015,
-      "width": 3.78
+      "width": 3.905
     },
     "DDOG": {
       "high": 266.91,
@@ -3985,8 +4075,8 @@
     },
     "DOV": {
       "high": 215.492,
-      "low": 211.94,
-      "width": 3.552
+      "low": 211.9402,
+      "width": 3.5518
     },
     "DOW": {
       "high": 29.98,
@@ -4454,9 +4544,9 @@
       "width": 9.005
     },
     "INCY": {
-      "high": 116.95,
-      "low": 114.1301,
-      "width": 2.8199
+      "high": 114.18,
+      "low": 110.56,
+      "width": 3.62
     },
     "IR": {
       "high": 83.93,
@@ -5099,9 +5189,9 @@
       "width": 1.42
     },
     "PEG": {
-      "high": 80.6,
+      "high": 80.62,
       "low": 79.8,
-      "width": 0.8
+      "width": 0.82
     },
     "PTC": {
       "high": 125.61,
@@ -5510,8 +5600,8 @@
     },
     "UPS": {
       "high": 116.33,
-      "low": 112.94,
-      "width": 3.39
+      "low": 113.25,
+      "width": 3.08
     },
     "URI": {
       "high": 1067.58,
@@ -5730,7 +5820,7 @@
     "2026-07-13": 99718.02,
     "2026-07-14": 99519.7,
     "2026-07-15": 99469.14,
-    "2026-07-16": 99469.14
+    "2026-07-16": 99447.68
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -9365,6 +9455,72 @@
       "exits": [],
       "portfolio_value": 99469.14,
       "note": "$99,469 | cash=$69,654 | open=1 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-16",
+      "time": "10:04 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "CPAY",
+          "side": "long",
+          "price": 369.64,
+          "shares": 80,
+          "stop": 367.68,
+          "trail_dist": 1.96
+        },
+        {
+          "ticker": "CHTR",
+          "side": "short",
+          "price": 132.73,
+          "shares": 157,
+          "stop": 134.22,
+          "trail_dist": 1.495
+        },
+        {
+          "ticker": "PH",
+          "side": "long",
+          "price": 966.59,
+          "shares": 15,
+          "stop": 958.96,
+          "trail_dist": 7.6275
+        },
+        {
+          "ticker": "PSX",
+          "side": "long",
+          "price": 200.84,
+          "shares": 51,
+          "stop": 199.25,
+          "trail_dist": 1.5857
+        },
+        {
+          "ticker": "BRK-B",
+          "side": "short",
+          "price": 487.65,
+          "shares": 14,
+          "stop": 489.17,
+          "trail_dist": 1.52
+        },
+        {
+          "ticker": "CVNA",
+          "side": "long",
+          "price": 71.1,
+          "shares": 73,
+          "stop": 70.22,
+          "trail_dist": 0.88
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "CPAY",
+          "side": "long",
+          "exit_price": 367.82,
+          "pnl": -21.46,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 99447.68,
+      "note": "$99,448 | cash=$12,278 | open=6 | closed today=1 | day PnL=$-21"
     }
   ]
 }
