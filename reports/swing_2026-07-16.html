@@ -144,8 +144,8 @@
     <table id="open-pos-table" data-toggles="col-toggles-open" style="white-space:nowrap">
       <thead><tr>
         <th data-col="0">Ticker</th><th data-col="1">Side</th><th data-col="2">Entry</th><th data-col="3">Current</th>
-        <th data-col="4">Shares</th><th data-col="5">$ Invested</th><th data-col="6">Unrealized P&amp;L</th>
-        <th data-col="7">Stop</th><th data-col="8">RSI(2) at entry</th><th data-col="9">Entry Date</th>
+        <th data-col="4">Shares</th><th data-col="5">$ Invested</th><th data-col="6">Current Value</th><th data-col="7">Unrealized P&amp;L</th>
+        <th data-col="8">Stop</th><th data-col="9">RSI(2) at entry</th><th data-col="10">Entry Date</th>
       </tr></thead>
       <tbody>
         <tr data-ticker="DAL" data-qty="136" data-buypx="87.29" data-side="long" data-server-unreal="-80.24">
@@ -155,6 +155,7 @@
           <td class="live-price">$86.70</td>
           <td style="text-align:right">136</td>
           <td style="text-align:right">$11,871</td>
+          <td class="live-curval" style="text-align:right">$11,791</td>
           <td class="live-unreal" style="text-align:right;color:#c62828;font-weight:bold">$80 (-0.68%)</td>
           <td>$77.91</td>
           <td style="color:#666;font-size:12px">1.35</td>
@@ -167,6 +168,7 @@
           <td class="live-price">$118.82</td>
           <td style="text-align:right">57</td>
           <td style="text-align:right">$7,195</td>
+          <td class="live-curval" style="text-align:right">$6,773</td>
           <td class="live-unreal" style="text-align:right;color:#c62828;font-weight:bold">$422 (-5.86%)</td>
           <td>$107.92</td>
           <td style="color:#666;font-size:12px">1.56</td>
@@ -179,6 +181,7 @@
           <td class="live-price">$275.64</td>
           <td style="text-align:right">9</td>
           <td style="text-align:right">$2,457</td>
+          <td class="live-curval" style="text-align:right">$2,481</td>
           <td class="live-unreal" style="text-align:right;color:#2e7d32;font-weight:bold">$23 (+0.96%)</td>
           <td>$259.06</td>
           <td style="color:#666;font-size:12px">6.23</td>
@@ -191,6 +194,7 @@
           <td class="live-price">$87.85</td>
           <td style="text-align:right">11</td>
           <td style="text-align:right">$1,005</td>
+          <td class="live-curval" style="text-align:right">$966</td>
           <td class="live-unreal" style="text-align:right;color:#c62828;font-weight:bold">$38 (-3.82%)</td>
           <td>$84.02</td>
           <td style="color:#666;font-size:12px">9.32</td>
@@ -203,6 +207,7 @@
           <td class="live-price">$277.26</td>
           <td style="text-align:right">1</td>
           <td style="text-align:right">$268</td>
+          <td class="live-curval" style="text-align:right">$258</td>
           <td class="live-unreal" style="text-align:right;color:#c62828;font-weight:bold">$9 (-3.51%)</td>
           <td>$292.05</td>
           <td style="color:#666;font-size:12px">94.24</td>
@@ -215,6 +220,7 @@
           <td class="live-price">$77.61</td>
           <td style="text-align:right">143</td>
           <td style="text-align:right">$11,087</td>
+          <td class="live-curval" style="text-align:right">$11,098</td>
           <td class="live-unreal" style="text-align:right;color:#2e7d32;font-weight:bold">$11 (+0.10%)</td>
           <td>$70.10</td>
           <td style="color:#666;font-size:12px">6.17</td>
@@ -227,6 +233,7 @@
           <td class="live-price">$281.99</td>
           <td style="text-align:right">25</td>
           <td style="text-align:right">$6,920</td>
+          <td class="live-curval" style="text-align:right">$7,050</td>
           <td class="live-unreal" style="text-align:right;color:#2e7d32;font-weight:bold">$129 (+1.87%)</td>
           <td>$251.54</td>
           <td style="color:#666;font-size:12px">7.31</td>
@@ -239,6 +246,7 @@
           <td class="live-price">$254.37</td>
           <td style="text-align:right">23</td>
           <td style="text-align:right">$5,706</td>
+          <td class="live-curval" style="text-align:right">$5,851</td>
           <td class="live-unreal" style="text-align:right;color:#2e7d32;font-weight:bold">$145 (+2.54%)</td>
           <td>$225.38</td>
           <td style="color:#666;font-size:12px">7.71</td>
@@ -251,6 +259,7 @@
           <td class="live-price">$114.59</td>
           <td style="text-align:right">40</td>
           <td style="text-align:right">$4,518</td>
+          <td class="live-curval" style="text-align:right">$4,584</td>
           <td class="live-unreal" style="text-align:right;color:#2e7d32;font-weight:bold">$65 (+1.44%)</td>
           <td>$105.59</td>
           <td style="color:#666;font-size:12px">8.9</td>
@@ -263,6 +272,7 @@
           <td class="live-price">$215.38</td>
           <td style="text-align:right">6</td>
           <td style="text-align:right">$1,404</td>
+          <td class="live-curval" style="text-align:right">$1,292</td>
           <td class="live-unreal" style="text-align:right;color:#c62828;font-weight:bold">$111 (-7.93%)</td>
           <td>$174.72</td>
           <td style="color:#666;font-size:12px">9.57</td>
@@ -275,6 +285,7 @@
           <td class="live-price">$127.15</td>
           <td style="text-align:right">28</td>
           <td style="text-align:right">$3,330</td>
+          <td class="live-curval" style="text-align:right">$3,099</td>
           <td class="live-unreal" style="text-align:right;color:#c62828;font-weight:bold">$230 (-6.92%)</td>
           <td>$124.05</td>
           <td style="color:#666;font-size:12px">91.81</td>
@@ -287,6 +298,7 @@
           <td class="live-price">$168.92</td>
           <td style="text-align:right">16</td>
           <td style="text-align:right">$2,697</td>
+          <td class="live-curval" style="text-align:right">$2,692</td>
           <td class="live-unreal" style="text-align:right;color:#c62828;font-weight:bold">$5 (-0.20%)</td>
           <td>$182.04</td>
           <td style="color:#666;font-size:12px">91.1</td>
@@ -299,6 +311,7 @@
           <td class="live-price">$78.72</td>
           <td style="text-align:right">24</td>
           <td style="text-align:right">$1,912</td>
+          <td class="live-curval" style="text-align:right">$1,934</td>
           <td class="live-unreal" style="text-align:right;color:#2e7d32;font-weight:bold">$23 (+1.18%)</td>
           <td>$87.29</td>
           <td style="color:#666;font-size:12px">90.7</td>
@@ -311,6 +324,7 @@
           <td class="live-price">$371.51</td>
           <td style="text-align:right">11</td>
           <td style="text-align:right">$3,908</td>
+          <td class="live-curval" style="text-align:right">$4,087</td>
           <td class="live-unreal" style="text-align:right;color:#2e7d32;font-weight:bold">$179 (+4.58%)</td>
           <td>$339.67</td>
           <td style="color:#666;font-size:12px">2.13</td>
@@ -323,6 +337,7 @@
           <td class="live-price">$1,169.70</td>
           <td style="text-align:right">3</td>
           <td style="text-align:right">$3,458</td>
+          <td class="live-curval" style="text-align:right">$3,509</td>
           <td class="live-unreal" style="text-align:right;color:#2e7d32;font-weight:bold">$51 (+1.49%)</td>
           <td>$1,062.74</td>
           <td style="color:#666;font-size:12px">3.47</td>
@@ -335,6 +350,7 @@
           <td class="live-price">$73.03</td>
           <td style="text-align:right">39</td>
           <td style="text-align:right">$2,736</td>
+          <td class="live-curval" style="text-align:right">$2,848</td>
           <td class="live-unreal" style="text-align:right;color:#2e7d32;font-weight:bold">$112 (+4.09%)</td>
           <td>$67.62</td>
           <td style="color:#666;font-size:12px">6.61</td>
@@ -347,6 +363,7 @@
           <td class="live-price">$368.79</td>
           <td style="text-align:right">6</td>
           <td style="text-align:right">$2,217</td>
+          <td class="live-curval" style="text-align:right">$2,213</td>
           <td class="live-unreal" style="text-align:right;color:#c62828;font-weight:bold">$4 (-0.19%)</td>
           <td>$334.95</td>
           <td style="color:#666;font-size:12px">7.15</td>
@@ -359,6 +376,7 @@
           <td class="live-price">$131.71</td>
           <td style="text-align:right">13</td>
           <td style="text-align:right">$1,733</td>
+          <td class="live-curval" style="text-align:right">$1,712</td>
           <td class="live-unreal" style="text-align:right;color:#c62828;font-weight:bold">$20 (-1.17%)</td>
           <td>$126.00</td>
           <td style="color:#666;font-size:12px">7.59</td>
@@ -371,6 +389,7 @@
           <td class="live-price">$110.92</td>
           <td style="text-align:right">12</td>
           <td style="text-align:right">$1,350</td>
+          <td class="live-curval" style="text-align:right">$1,331</td>
           <td class="live-unreal" style="text-align:right;color:#c62828;font-weight:bold">$19 (-1.44%)</td>
           <td>$104.77</td>
           <td style="color:#666;font-size:12px">8.94</td>
@@ -383,6 +402,7 @@
           <td class="live-price">$228.84</td>
           <td style="text-align:right">21</td>
           <td style="text-align:right">$4,724</td>
+          <td class="live-curval" style="text-align:right">$4,806</td>
           <td class="live-unreal" style="text-align:right;color:#2e7d32;font-weight:bold">$82 (+1.73%)</td>
           <td>$215.25</td>
           <td style="color:#666;font-size:12px">3.67</td>
@@ -395,6 +415,7 @@
           <td class="live-price">$249.59</td>
           <td style="text-align:right">15</td>
           <td style="text-align:right">$3,705</td>
+          <td class="live-curval" style="text-align:right">$3,744</td>
           <td class="live-unreal" style="text-align:right;color:#2e7d32;font-weight:bold">$38 (+1.04%)</td>
           <td>$231.93</td>
           <td style="color:#666;font-size:12px">3.68</td>
@@ -407,6 +428,7 @@
           <td class="live-price">$542.08</td>
           <td style="text-align:right">2</td>
           <td style="text-align:right">$1,082</td>
+          <td class="live-curval" style="text-align:right">$1,084</td>
           <td class="live-unreal" style="text-align:right;color:#2e7d32;font-weight:bold">$2 (+0.18%)</td>
           <td>$401.71</td>
           <td style="color:#666;font-size:12px">4.7</td>
@@ -419,6 +441,7 @@
           <td class="live-price">$520.64</td>
           <td style="text-align:right">5</td>
           <td style="text-align:right">$2,571</td>
+          <td class="live-curval" style="text-align:right">$2,603</td>
           <td class="live-unreal" style="text-align:right;color:#2e7d32;font-weight:bold">$32 (+1.26%)</td>
           <td>$488.80</td>
           <td style="color:#666;font-size:12px">5.25</td>
@@ -431,6 +454,7 @@
           <td class="live-price">$275.43</td>
           <td style="text-align:right">8</td>
           <td style="text-align:right">$2,191</td>
+          <td class="live-curval" style="text-align:right">$2,203</td>
           <td class="live-unreal" style="text-align:right;color:#2e7d32;font-weight:bold">$12 (+0.55%)</td>
           <td>$257.86</td>
           <td style="color:#666;font-size:12px">7.4</td>
@@ -443,6 +467,7 @@
           <td class="live-price">$75.74</td>
           <td style="text-align:right">25</td>
           <td style="text-align:right">$1,864</td>
+          <td class="live-curval" style="text-align:right">$1,893</td>
           <td class="live-unreal" style="text-align:right;color:#2e7d32;font-weight:bold">$30 (+1.60%)</td>
           <td>$72.37</td>
           <td style="color:#666;font-size:12px">7.82</td>
@@ -455,6 +480,7 @@
           <td class="live-price">$148.89</td>
           <td style="text-align:right">10</td>
           <td style="text-align:right">$1,470</td>
+          <td class="live-curval" style="text-align:right">$1,489</td>
           <td class="live-unreal" style="text-align:right;color:#2e7d32;font-weight:bold">$19 (+1.32%)</td>
           <td>$141.40</td>
           <td style="color:#666;font-size:12px">7.94</td>
@@ -467,6 +493,7 @@
           <td class="live-price">$388.68</td>
           <td style="text-align:right">1</td>
           <td style="text-align:right">$418</td>
+          <td class="live-curval" style="text-align:right">$389</td>
           <td class="live-unreal" style="text-align:right;color:#c62828;font-weight:bold">$30 (-7.12%)</td>
           <td>$356.76</td>
           <td style="color:#666;font-size:12px">8.02</td>
@@ -479,6 +506,7 @@
           <td class="live-price">$125.63</td>
           <td style="text-align:right">8</td>
           <td style="text-align:right">$968</td>
+          <td class="live-curval" style="text-align:right">$1,005</td>
           <td class="live-unreal" style="text-align:right;color:#2e7d32;font-weight:bold">$37 (+3.83%)</td>
           <td>$107.04</td>
           <td style="color:#666;font-size:12px">8.31</td>
@@ -491,6 +519,7 @@
           <td class="live-price">$372.78</td>
           <td style="text-align:right">2</td>
           <td style="text-align:right">$781</td>
+          <td class="live-curval" style="text-align:right">$746</td>
           <td class="live-unreal" style="text-align:right;color:#c62828;font-weight:bold">$35 (-4.50%)</td>
           <td>$352.53</td>
           <td style="color:#666;font-size:12px">8.72</td>
@@ -503,6 +532,7 @@
           <td class="live-price">$133.14</td>
           <td style="text-align:right">5</td>
           <td style="text-align:right">$662</td>
+          <td class="live-curval" style="text-align:right">$666</td>
           <td class="live-unreal" style="text-align:right;color:#2e7d32;font-weight:bold">$3 (+0.48%)</td>
           <td>$128.08</td>
           <td style="color:#666;font-size:12px">8.74</td>
@@ -515,6 +545,7 @@
           <td class="live-price">$74.40</td>
           <td style="text-align:right">8</td>
           <td style="text-align:right">$592</td>
+          <td class="live-curval" style="text-align:right">$595</td>
           <td class="live-unreal" style="text-align:right;color:#2e7d32;font-weight:bold">$3 (+0.51%)</td>
           <td>$70.78</td>
           <td style="color:#666;font-size:12px">9.4</td>
@@ -527,6 +558,7 @@
           <td class="live-price">$46.79</td>
           <td style="text-align:right">11</td>
           <td style="text-align:right">$503</td>
+          <td class="live-curval" style="text-align:right">$515</td>
           <td class="live-unreal" style="text-align:right;color:#2e7d32;font-weight:bold">$12 (+2.30%)</td>
           <td>$44.34</td>
           <td style="color:#666;font-size:12px">9.45</td>
@@ -539,6 +571,7 @@
           <td class="live-price">$109.67</td>
           <td style="text-align:right">3</td>
           <td style="text-align:right">$335</td>
+          <td class="live-curval" style="text-align:right">$329</td>
           <td class="live-unreal" style="text-align:right;color:#c62828;font-weight:bold">$6 (-1.88%)</td>
           <td>$104.18</td>
           <td style="color:#666;font-size:12px">9.53</td>
@@ -551,6 +584,7 @@
           <td class="live-price">$102.71</td>
           <td style="text-align:right">3</td>
           <td style="text-align:right">$303</td>
+          <td class="live-curval" style="text-align:right">$298</td>
           <td class="live-unreal" style="text-align:right;color:#c62828;font-weight:bold">$5 (-1.74%)</td>
           <td>$108.94</td>
           <td style="color:#666;font-size:12px">98.14</td>
@@ -563,6 +597,7 @@
           <td class="live-price">$141.70</td>
           <td style="text-align:right">1</td>
           <td style="text-align:right">$140</td>
+          <td class="live-curval" style="text-align:right">$138</td>
           <td class="live-unreal" style="text-align:right;color:#c62828;font-weight:bold">$2 (-1.33%)</td>
           <td>$155.55</td>
           <td style="color:#666;font-size:12px">94.84</td>
@@ -575,6 +610,7 @@
           <td class="live-price">$160.53</td>
           <td style="text-align:right">1</td>
           <td style="text-align:right">$167</td>
+          <td class="live-curval" style="text-align:right">$174</td>
           <td class="live-unreal" style="text-align:right;color:#2e7d32;font-weight:bold">$7 (+3.99%)</td>
           <td>$186.89</td>
           <td style="color:#666;font-size:12px">91.86</td>
@@ -587,6 +623,7 @@
           <td class="live-price">$128.97</td>
           <td style="text-align:right">1</td>
           <td style="text-align:right">$127</td>
+          <td class="live-curval" style="text-align:right">$125</td>
           <td class="live-unreal" style="text-align:right;color:#c62828;font-weight:bold">$2 (-1.51%)</td>
           <td>$136.73</td>
           <td style="color:#666;font-size:12px">91.67</td>
@@ -599,6 +636,7 @@
           <td class="live-price">$96.24</td>
           <td style="text-align:right">2</td>
           <td style="text-align:right">$183</td>
+          <td class="live-curval" style="text-align:right">$173</td>
           <td class="live-unreal" style="text-align:right;color:#c62828;font-weight:bold">$10 (-5.45%)</td>
           <td>$99.34</td>
           <td style="color:#666;font-size:12px">91.27</td>
@@ -611,6 +649,7 @@
           <td class="live-price">$125.41</td>
           <td style="text-align:right">1</td>
           <td style="text-align:right">$125</td>
+          <td class="live-curval" style="text-align:right">$124</td>
           <td class="live-unreal" style="text-align:right;color:#c62828;font-weight:bold">$1 (-0.50%)</td>
           <td>$138.31</td>
           <td style="color:#666;font-size:12px">90.23</td>
@@ -620,6 +659,7 @@
         <tr style="background:#e8eaf6;font-weight:bold;border-top:2px solid #9fa8da">
           <td colspan="5" style="text-align:right;color:#555">Totals</td>
           <td id="total-invested" style="text-align:right">$98,682</td>
+          <td id="total-curval" style="text-align:right">$97,505</td>
           <td id="total-unreal" data-server-total="-1177.70" style="text-align:right;color:#c62828">$1,178</td>
           <td colspan="3"></td>
         </tr>
@@ -992,11 +1032,16 @@
     const qty  = parseFloat(row.dataset.qty);
     const buy  = parseFloat(row.dataset.buypx);
     const side = row.dataset.side;
-    const priceCell  = row.querySelector('.live-price');
-    const unrealCell = row.querySelector('.live-unreal');
+    const priceCell   = row.querySelector('.live-price');
+    const unrealCell  = row.querySelector('.live-unreal');
+    const curvalCell  = row.querySelector('.live-curval');
     if (priceCell) priceCell.textContent = '$' + price.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+    const liveUnreal = side === 'long' ? (price - buy) * qty : (buy - price) * qty;
+    const curVal     = buy * qty + liveUnreal;
+    if (curvalCell) {
+      curvalCell.textContent = '$' + curVal.toLocaleString('en-US', {maximumFractionDigits:0});
+    }
     if (unrealCell) {
-      const liveUnreal = side === 'long' ? (price - buy) * qty : (buy - price) * qty;
       const serverUnreal = parseFloat(row.dataset.serverUnreal) || 0;
       const cost = buy * qty;
       const pct  = cost > 0 ? liveUnreal / cost * 100 : 0;
@@ -1008,6 +1053,14 @@
       liveAdj += (liveUnreal - serverUnreal) - prevAdj;
       row.dataset.liveAdj = (liveUnreal - serverUnreal).toString();
       refreshTotalUnreal();
+      // sync total-curval
+      const tcEl = document.getElementById('total-curval');
+      if (tcEl) {
+        const tuEl = document.getElementById('total-unreal');
+        const serverTotal = parseFloat(tuEl ? tuEl.dataset.serverTotal : 0) || 0;
+        const inv = parseFloat((document.getElementById('total-invested') || {}).textContent?.replace(/[$,]/g,'')) || 0;
+        tcEl.textContent = '$' + (inv + serverTotal + liveAdj).toLocaleString('en-US', {maximumFractionDigits:0});
+      }
     }
   }
 
