@@ -902,6 +902,7 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
           <td style="font-weight:bold">{tk}{_oname_html}</td><td>{sb}</td>
           <td>${entry:,.2f}</td><td class="live-price">${cur_px:,.2f}</td>
           <td style="text-align:right">{shares:,}</td>
+          <td class="live-curval" style="text-align:right">${pos["cost"] + unreal:,.0f}</td>
           <td class="live-unreal" style="text-align:right;color:{uc};font-weight:bold">${unreal:+,.0f} ({unreal_pct:+.2f}%)</td>
           <td style="color:#1b5e20">${peak:,.2f}</td><td style="color:#c62828">${stop:,.2f}</td>
           <td style="color:#666;font-size:12px">{pos.get('entry_date','—')}</td>
@@ -911,11 +912,13 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
     total_unreal = portfolio_value - capital - total_cost_basis
     tu_color = "#2e7d32" if total_unreal >= 0 else "#c62828"
     tu_sign  = "+" if total_unreal >= 0 else ""
+    total_curval = total_cost_basis + total_unreal
     open_totals_row = f"""
         <tr style="background:#e8eaf6;font-weight:bold;border-top:2px solid #9fa8da">
           <td colspan="4" style="text-align:right;color:#555">Totals</td>
           <td style="text-align:right">{sum(p['shares'] for p in open_pos):,}</td>
-          <td id="total-unreal" style="text-align:right;color:{tu_color}">{tu_sign}${abs(total_unreal):,.0f}</td>
+          <td id="total-curval" style="text-align:right">${total_curval:,.0f}</td>
+          <td id="total-unreal" data-server-total="{total_unreal:.2f}" style="text-align:right;color:{tu_color}">{tu_sign}${abs(total_unreal):,.0f}</td>
           <td colspan="4"></td>
         </tr>""" if open_pos else ""
 
@@ -1186,7 +1189,7 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
     <table id="open-pos-table" data-toggles="col-toggles-open" style="white-space:nowrap">
       <thead><tr>
         <th data-col="0">Ticker</th><th data-col="1">Side</th><th data-col="2">Entry</th><th data-col="3">Current</th>
-        <th data-col="4">Shares</th><th data-col="5">Unrealized P&amp;L</th><th data-col="6">Peak</th><th data-col="7">Trail Stop</th><th data-col="8">Entry Date</th><th data-col="9">Entry Time</th>
+        <th data-col="4">Shares</th><th data-col="5">Current Value</th><th data-col="6">Unrealized P&amp;L</th><th data-col="7">Peak</th><th data-col="8">Trail Stop</th><th data-col="9">Entry Date</th><th data-col="10">Entry Time</th>
       </tr></thead>
       <tbody>{open_rows}</tbody>
       {open_totals_row}
@@ -1323,15 +1326,19 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
       if (!q) continue;
       const price = q.price;
 
-      const priceCell  = row.querySelector('.live-price');
-      const unrealCell = row.querySelector('.live-unreal');
+      const priceCell   = row.querySelector('.live-price');
+      const unrealCell  = row.querySelector('.live-unreal');
+      const curvalCell  = row.querySelector('.live-curval');
       if (priceCell) priceCell.textContent = '$' + price.toLocaleString('en-US', {{minimumFractionDigits:2, maximumFractionDigits:2}});
 
+      const unreal = side === 'long' ? (price - buy) * qty : (buy - price) * qty;
+      const curVal = buy * qty + unreal;
+      if (curvalCell) curvalCell.textContent = '$' + curVal.toLocaleString('en-US', {{maximumFractionDigits:0}});
+
       if (unrealCell) {{
-        const unreal = side === 'long' ? (price - buy) * qty : (buy - price) * qty;
-        const cost   = buy * qty;
-        const pct    = cost > 0 ? unreal / cost * 100 : 0;
-        const sign   = unreal >= 0 ? '+' : '';
+        const cost = buy * qty;
+        const pct  = cost > 0 ? unreal / cost * 100 : 0;
+        const sign = unreal >= 0 ? '+' : '';
         unrealCell.textContent = `${{sign}}$${{Math.abs(unreal).toLocaleString('en-US', {{maximumFractionDigits:0}})}} (${{pct >= 0 ? '+' : ''}}${{pct.toFixed(2)}}%)`;
         unrealCell.style.color = unreal >= 0 ? '#2e7d32' : '#c62828';
       }}
@@ -1391,12 +1398,16 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
       dayEl.style.color = dcol;
     }}
 
-    // Totals row unrealized
+    // Totals row unrealized + current value
     const totalUnrealEl = document.getElementById('total-unreal');
     if (totalUnrealEl) {{
       const tsign = totalUnreal >= 0 ? '+' : '-';
       totalUnrealEl.textContent = `${{tsign}}$${{Math.abs(totalUnreal).toLocaleString('en-US', {{maximumFractionDigits:0}})}}`;
       totalUnrealEl.style.color = totalUnreal >= 0 ? '#2e7d32' : '#c62828';
+    }}
+    const totalCurvalEl = document.getElementById('total-curval');
+    if (totalCurvalEl) {{
+      totalCurvalEl.textContent = '$' + openValue.toLocaleString('en-US', {{maximumFractionDigits:0}});
     }}
   }}
 
