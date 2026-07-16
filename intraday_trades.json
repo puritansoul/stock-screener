@@ -1,5 +1,5 @@
 {
-  "capital": 3906.69,
+  "capital": 3827.48,
   "open_positions": [
     {
       "ticker": "CHTR",
@@ -142,20 +142,6 @@
       "vol_ratio": 1.57
     },
     {
-      "ticker": "ALGN",
-      "side": "short",
-      "entry_date": "2026-07-16",
-      "entry_time": "10:14 ET",
-      "entry_price": 179.0,
-      "shares": 15,
-      "stop": 179.9025,
-      "trail_dist": 1.3825,
-      "peak": 178.52,
-      "orb_width": 2.765,
-      "cost": 2685.0,
-      "vol_ratio": 2.09
-    },
-    {
       "ticker": "BMY",
       "side": "long",
       "entry_date": "2026-07-16",
@@ -246,9 +232,9 @@
       "entry_time": "10:19 ET",
       "entry_price": 123.95,
       "shares": 1,
-      "stop": 123.1225,
+      "stop": 123.2025,
       "trail_dist": 0.8275,
-      "peak": 123.95,
+      "peak": 124.03,
       "orb_width": 1.655,
       "cost": 123.95,
       "vol_ratio": 1.35
@@ -260,9 +246,9 @@
       "entry_time": "10:19 ET",
       "entry_price": 124.91,
       "shares": 1,
-      "stop": 123.595,
+      "stop": 123.755,
       "trail_dist": 1.715,
-      "peak": 125.31,
+      "peak": 125.47,
       "orb_width": 3.43,
       "cost": 124.91,
       "vol_ratio": 1.25
@@ -288,9 +274,9 @@
       "entry_time": "10:24 ET",
       "entry_price": 78.89,
       "shares": 85,
-      "stop": 79.44,
+      "stop": 79.23,
       "trail_dist": 0.55,
-      "peak": 78.89,
+      "peak": 78.68,
       "orb_width": 1.1,
       "cost": 6705.65,
       "vol_ratio": 2.06
@@ -302,9 +288,9 @@
       "entry_time": "10:24 ET",
       "entry_price": 62.32,
       "shares": 76,
-      "stop": 61.735,
+      "stop": 61.755,
       "trail_dist": 0.585,
-      "peak": 62.32,
+      "peak": 62.34,
       "orb_width": 1.17,
       "cost": 4736.32,
       "vol_ratio": 1.54
@@ -316,9 +302,9 @@
       "entry_time": "10:24 ET",
       "entry_price": 26.86,
       "shares": 123,
-      "stop": 26.71,
+      "stop": 26.7325,
       "trail_dist": 0.15,
-      "peak": 26.86,
+      "peak": 26.8825,
       "orb_width": 0.3,
       "cost": 3303.78,
       "vol_ratio": 1.51
@@ -330,9 +316,9 @@
       "entry_time": "10:24 ET",
       "entry_price": 221.97,
       "shares": 10,
-      "stop": 220.285,
+      "stop": 220.955,
       "trail_dist": 1.685,
-      "peak": 221.97,
+      "peak": 222.64,
       "orb_width": 3.37,
       "cost": 2219.7,
       "vol_ratio": 1.3
@@ -344,12 +330,40 @@
       "entry_time": "10:24 ET",
       "entry_price": 822.69,
       "shares": 2,
-      "stop": 815.7125,
+      "stop": 816.9275,
       "trail_dist": 6.9775,
-      "peak": 822.69,
+      "peak": 823.905,
       "orb_width": 13.955,
       "cost": 1645.38,
       "vol_ratio": 1.25
+    },
+    {
+      "ticker": "TDG",
+      "side": "long",
+      "entry_date": "2026-07-16",
+      "entry_time": "10:26 ET",
+      "entry_price": 1234.03,
+      "shares": 1,
+      "stop": 1226.2375,
+      "trail_dist": 7.7925,
+      "peak": 1234.03,
+      "orb_width": 15.585,
+      "cost": 1234.03,
+      "vol_ratio": 1.31
+    },
+    {
+      "ticker": "WAT",
+      "side": "long",
+      "entry_date": "2026-07-16",
+      "entry_time": "10:26 ET",
+      "entry_price": 379.16,
+      "shares": 4,
+      "stop": 375.87,
+      "trail_dist": 3.29,
+      "peak": 379.16,
+      "orb_width": 6.58,
+      "cost": 1516.64,
+      "vol_ratio": 1.2
     }
   ],
   "closed_today": [
@@ -504,6 +518,25 @@
       "pnl": -0.79,
       "exit_reason": "trailing stop",
       "exit_time": "10:24 ET"
+    },
+    {
+      "ticker": "ALGN",
+      "side": "short",
+      "entry_date": "2026-07-16",
+      "entry_time": "10:14 ET",
+      "entry_price": 179.0,
+      "shares": 15,
+      "stop": 179.9025,
+      "trail_dist": 1.3825,
+      "peak": 178.52,
+      "orb_width": 2.765,
+      "cost": 2685.0,
+      "vol_ratio": 2.09,
+      "exit_date": "2026-07-16",
+      "exit_price": 179.9025,
+      "pnl": -13.54,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:26 ET"
     }
   ],
   "all_closed": [
@@ -4273,9 +4306,9 @@
       "width": 1.46
     },
     "CTSH": {
-      "high": 44.55,
-      "low": 43.5958,
-      "width": 0.9542
+      "high": 44.335,
+      "low": 43.45,
+      "width": 0.885
     },
     "COHR": {
       "high": 289.0,
@@ -4943,9 +4976,9 @@
       "width": 9.005
     },
     "INCY": {
-      "high": 116.95,
-      "low": 114.1301,
-      "width": 2.8199
+      "high": 114.18,
+      "low": 110.56,
+      "width": 3.62
     },
     "IR": {
       "high": 83.93,
@@ -6219,7 +6252,7 @@
     "2026-07-13": 99718.02,
     "2026-07-14": 99519.7,
     "2026-07-15": 99469.14,
-    "2026-07-16": 99540.85
+    "2026-07-16": 99591.49
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -10260,6 +10293,40 @@
       ],
       "portfolio_value": 99540.85,
       "note": "$99,541 | cash=$3,907 | open=25 | closed today=8 | day PnL=$-110"
+    },
+    {
+      "date": "2026-07-16",
+      "time": "10:26 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "TDG",
+          "side": "long",
+          "price": 1234.03,
+          "shares": 1,
+          "stop": 1226.24,
+          "trail_dist": 7.7925
+        },
+        {
+          "ticker": "WAT",
+          "side": "long",
+          "price": 379.16,
+          "shares": 4,
+          "stop": 375.87,
+          "trail_dist": 3.29
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "ALGN",
+          "side": "short",
+          "exit_price": 179.9,
+          "pnl": -13.54,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 99591.49,
+      "note": "$99,591 | cash=$3,827 | open=26 | closed today=9 | day PnL=$-123"
     }
   ]
 }
