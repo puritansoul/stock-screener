@@ -2737,3 +2737,1205 @@ hint: Fix them up in the work tree, and then use 'git add/rm <file>'
 hint: as appropriate to mark resolution and make a commit.
 fatal: Exiting because of an unresolved conflict.
 Everything up-to-date
+2026-07-16 13:50:58 ET — running
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-07-16 13:50 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+
+  Portfolio: $99,199  (-801 / -0.80%)
+  Cash: $2,106  |  Open: 82  |  Today PnL: $-482
+Traceback (most recent call last):
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 1489, in <module>
+    run_intraday()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 801, in run_intraday
+    build_intraday_dashboard(state, data, diag)
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 982, in build_intraday_dashboard
+    _en = COMPANY_NAMES.get(_etk, "")
+NameError: name 'COMPANY_NAMES' is not defined
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	portfolio_nav.json
+U	reports/2026-07-16.html
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+Everything up-to-date
+2026-07-16 13:56:04 ET — running
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+3 Failed downloads:
+['JNJ', 'CARR', 'ON']: TypeError("'NoneType' object is not subscriptable")
+
+6 Failed downloads:
+['NRG', 'T', 'BEN', 'PRU', 'CHTR', 'L']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-07-16 13:56 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 500 tickers
+  ORB computed for 500 tickers
+
+  Portfolio: $99,209  (-791 / -0.79%)
+  Cash: $2,106  |  Open: 82  |  Today PnL: $-482
+Traceback (most recent call last):
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 1489, in <module>
+    run_intraday()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 801, in run_intraday
+    build_intraday_dashboard(state, data, diag)
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 982, in build_intraday_dashboard
+    _en = COMPANY_NAMES.get(_etk, "")
+NameError: name 'COMPANY_NAMES' is not defined
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	portfolio_nav.json
+U	reports/2026-07-16.html
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+Everything up-to-date
+2026-07-16 13:58:33 ET — running
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+5 Failed downloads:
+['XYZ', 'GWW', 'PODD', 'ARE', 'LYV']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-07-16 13:58 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 498 tickers
+  ORB computed for 498 tickers
+  ENTER short HONA @ $207.90  x3  stop=$211.06  trail=$3.17
+  ENTER long APO @ $121.67  x3  stop=$120.80  trail=$0.86
+  ENTER short DVN @ $42.96  x7  stop=$43.23  trail=$0.28
+  ENTER long IT @ $141.42  x1  stop=$140.44  trail=$0.97
+  ENTER short SYF @ $73.59  x2  stop=$73.94  trail=$0.35
+
+  Portfolio: $99,214  (-786 / -0.79%)
+  Cash: $528  |  Open: 87  |  Today PnL: $-482
+Traceback (most recent call last):
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 1489, in <module>
+    run_intraday()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 801, in run_intraday
+    build_intraday_dashboard(state, data, diag)
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 982, in build_intraday_dashboard
+    _en = COMPANY_NAMES.get(_etk, "")
+NameError: name 'COMPANY_NAMES' is not defined
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	portfolio_nav.json
+U	reports/2026-07-16.html
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+To https://github.com/puritansoul/stock-screener.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/puritansoul/stock-screener.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2026-07-16 14:01:01 ET — running
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+1 Failed download:
+['ADBE']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-07-16 14:01 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 502 tickers
+  ORB computed for 502 tickers
+  EXIT long DLTR @ $129.73  PnL: $+3  (trailing stop)
+
+  Portfolio: $99,220  (-780 / -0.78%)
+  Cash: $1,306  |  Open: 86  |  Today PnL: $-479
+Traceback (most recent call last):
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 1489, in <module>
+    run_intraday()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 801, in run_intraday
+    build_intraday_dashboard(state, data, diag)
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 982, in build_intraday_dashboard
+    _en = COMPANY_NAMES.get(_etk, "")
+NameError: name 'COMPANY_NAMES' is not defined
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	portfolio_nav.json
+U	reports/2026-07-16.html
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+To https://github.com/puritansoul/stock-screener.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/puritansoul/stock-screener.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2026-07-16 14:03:28 ET — running
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+1 Failed download:
+['ES']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-07-16 14:03 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+  EXIT short EW @ $87.69  PnL: $-1  (trailing stop)
+  EXIT long STLD @ $235.90  PnL: $-1  (trailing stop)
+  ENTER short GNRC @ $217.03  x2  stop=$218.71  trail=$1.69
+  ENTER long CARR @ $69.29  x6  stop=$68.82  trail=$0.47
+  ENTER short MCHP @ $81.67  x4  stop=$82.50  trail=$0.83
+  ENTER long ICE @ $141.68  x1  stop=$140.76  trail=$0.92
+
+  Portfolio: $99,208  (-792 / -0.79%)
+  Cash: $633  |  Open: 88  |  Today PnL: $-482
+Traceback (most recent call last):
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 1489, in <module>
+    run_intraday()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 801, in run_intraday
+    build_intraday_dashboard(state, data, diag)
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 982, in build_intraday_dashboard
+    _en = COMPANY_NAMES.get(_etk, "")
+NameError: name 'COMPANY_NAMES' is not defined
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	portfolio_nav.json
+U	reports/2026-07-16.html
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+To https://github.com/puritansoul/stock-screener.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/puritansoul/stock-screener.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2026-07-16 14:06:01 ET — running
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-07-16 14:06 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+  EXIT long DE @ $593.70  PnL: $-5  (trailing stop)
+  ENTER long TXT @ $89.68  x4  stop=$89.18  trail=$0.50
+
+  Portfolio: $99,191  (-809 / -0.81%)
+  Cash: $868  |  Open: 88  |  Today PnL: $-487
+Traceback (most recent call last):
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 1489, in <module>
+    run_intraday()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 801, in run_intraday
+    build_intraday_dashboard(state, data, diag)
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 982, in build_intraday_dashboard
+    _en = COMPANY_NAMES.get(_etk, "")
+NameError: name 'COMPANY_NAMES' is not defined
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	portfolio_nav.json
+U	reports/2026-07-16.html
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+To https://github.com/puritansoul/stock-screener.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/puritansoul/stock-screener.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2026-07-16 14:08:27 ET — running
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-07-16 14:08 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+  ENTER short SBAC @ $184.86  x1  stop=$185.91  trail=$1.05
+  ENTER long WDAY @ $147.24  x1  stop=$145.95  trail=$1.29
+
+  Portfolio: $99,221  (-779 / -0.78%)
+  Cash: $536  |  Open: 90  |  Today PnL: $-487
+Traceback (most recent call last):
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 1489, in <module>
+    run_intraday()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 801, in run_intraday
+    build_intraday_dashboard(state, data, diag)
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 982, in build_intraday_dashboard
+    _en = COMPANY_NAMES.get(_etk, "")
+NameError: name 'COMPANY_NAMES' is not defined
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	portfolio_nav.json
+U	reports/2026-07-16.html
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+To https://github.com/puritansoul/stock-screener.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/puritansoul/stock-screener.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2026-07-16 14:10:54 ET — running
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+1 Failed download:
+['CL']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['CAT']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-07-16 14:10 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 502 tickers
+  ORB computed for 502 tickers
+
+  Portfolio: $99,282  (-718 / -0.72%)
+  Cash: $536  |  Open: 90  |  Today PnL: $-487
+Traceback (most recent call last):
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 1489, in <module>
+    run_intraday()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 801, in run_intraday
+    build_intraday_dashboard(state, data, diag)
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 982, in build_intraday_dashboard
+    _en = COMPANY_NAMES.get(_etk, "")
+NameError: name 'COMPANY_NAMES' is not defined
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	portfolio_nav.json
+U	reports/2026-07-16.html
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+To https://github.com/puritansoul/stock-screener.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/puritansoul/stock-screener.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2026-07-16 14:13:21 ET — running
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-07-16 14:13 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+  ENTER long BF-B @ $25.91  x6  stop=$25.59  trail=$0.32
+  ENTER long REG @ $82.02  x1  stop=$81.08  trail=$0.94
+
+  Portfolio: $99,297  (-703 / -0.70%)
+  Cash: $298  |  Open: 92  |  Today PnL: $-487
+Traceback (most recent call last):
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 1489, in <module>
+    run_intraday()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 801, in run_intraday
+    build_intraday_dashboard(state, data, diag)
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 982, in build_intraday_dashboard
+    _en = COMPANY_NAMES.get(_etk, "")
+NameError: name 'COMPANY_NAMES' is not defined
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	portfolio_nav.json
+U	reports/2026-07-16.html
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+To https://github.com/puritansoul/stock-screener.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/puritansoul/stock-screener.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2026-07-16 14:15:46 ET — running
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-07-16 14:15 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+
+  Portfolio: $99,321  (-679 / -0.68%)
+  Cash: $298  |  Open: 92  |  Today PnL: $-487
+Traceback (most recent call last):
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 1489, in <module>
+    run_intraday()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 801, in run_intraday
+    build_intraday_dashboard(state, data, diag)
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 982, in build_intraday_dashboard
+    _en = COMPANY_NAMES.get(_etk, "")
+NameError: name 'COMPANY_NAMES' is not defined
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	portfolio_nav.json
+U	reports/2026-07-16.html
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+To https://github.com/puritansoul/stock-screener.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/puritansoul/stock-screener.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2026-07-16 14:18:11 ET — running
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-07-16 14:18 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+  EXIT short KEYS @ $312.43  PnL: $-0  (trailing stop)
+  EXIT short BKR @ $56.65  PnL: $-1  (trailing stop)
+  ENTER long EXC @ $46.69  x5  stop=$46.30  trail=$0.39
+
+  Portfolio: $99,288  (-712 / -0.71%)
+  Cash: $601  |  Open: 91  |  Today PnL: $-488
+Traceback (most recent call last):
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 1489, in <module>
+    run_intraday()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 801, in run_intraday
+    build_intraday_dashboard(state, data, diag)
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 982, in build_intraday_dashboard
+    _en = COMPANY_NAMES.get(_etk, "")
+NameError: name 'COMPANY_NAMES' is not defined
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	portfolio_nav.json
+U	reports/2026-07-16.html
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+To https://github.com/puritansoul/stock-screener.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/puritansoul/stock-screener.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2026-07-16 14:20:36 ET — running
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+2 Failed downloads:
+['RL', 'SBUX']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-07-16 14:20 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 501 tickers
+  ORB computed for 501 tickers
+  EXIT short SLB @ $47.13  PnL: $-2  (trailing stop)
+  EXIT short MCHP @ $82.29  PnL: $-2  (trailing stop)
+
+  Portfolio: $99,280  (-720 / -0.72%)
+  Cash: $1,488  |  Open: 89  |  Today PnL: $-492
+Traceback (most recent call last):
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 1489, in <module>
+    run_intraday()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 801, in run_intraday
+    build_intraday_dashboard(state, data, diag)
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 982, in build_intraday_dashboard
+    _en = COMPANY_NAMES.get(_etk, "")
+NameError: name 'COMPANY_NAMES' is not defined
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	portfolio_nav.json
+U	reports/2026-07-16.html
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+To https://github.com/puritansoul/stock-screener.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/puritansoul/stock-screener.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2026-07-16 14:23:01 ET — running
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-07-16 14:23 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+  ENTER short HST @ $23.67  x18  stop=$23.83  trail=$0.16
+  ENTER long GRMN @ $249.84  x1  stop=$245.57  trail=$4.26
+  ENTER short NVDA @ $207.06  x1  stop=$209.01  trail=$1.95
+
+  Portfolio: $99,298  (-702 / -0.70%)
+  Cash: $604  |  Open: 92  |  Today PnL: $-492
+Traceback (most recent call last):
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 1489, in <module>
+    run_intraday()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 801, in run_intraday
+    build_intraday_dashboard(state, data, diag)
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 982, in build_intraday_dashboard
+    _en = COMPANY_NAMES.get(_etk, "")
+NameError: name 'COMPANY_NAMES' is not defined
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	portfolio_nav.json
+U	reports/2026-07-16.html
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+To https://github.com/puritansoul/stock-screener.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/puritansoul/stock-screener.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2026-07-16 14:25:26 ET — running
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-07-16 14:25 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+
+  Portfolio: $99,281  (-719 / -0.72%)
+  Cash: $604  |  Open: 92  |  Today PnL: $-492
+Traceback (most recent call last):
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 1489, in <module>
+    run_intraday()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 801, in run_intraday
+    build_intraday_dashboard(state, data, diag)
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 982, in build_intraday_dashboard
+    _en = COMPANY_NAMES.get(_etk, "")
+NameError: name 'COMPANY_NAMES' is not defined
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	portfolio_nav.json
+U	reports/2026-07-16.html
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+To https://github.com/puritansoul/stock-screener.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/puritansoul/stock-screener.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2026-07-16 14:27:52 ET — running
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+6 Failed downloads:
+['EME', 'CBRE', 'LH', 'PFG', 'FSLR', 'PPL']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-07-16 14:27 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 497 tickers
+  ORB computed for 497 tickers
+  EXIT short HPE @ $45.52  PnL: $-13  (trailing stop)
+  EXIT short DVN @ $43.23  PnL: $-2  (trailing stop)
+  EXIT long WDAY @ $147.12  PnL: $-0  (trailing stop)
+  ENTER long TYL @ $320.31  x1  stop=$317.64  trail=$2.67
+  ENTER long GIS @ $39.06  x12  stop=$38.39  trail=$0.68
+  ENTER long OKE @ $93.65  x3  stop=$92.53  trail=$1.12
+
+  Portfolio: $99,308  (-692 / -0.69%)
+  Cash: $864  |  Open: 92  |  Today PnL: $-507
+Traceback (most recent call last):
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 1489, in <module>
+    run_intraday()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 801, in run_intraday
+    build_intraday_dashboard(state, data, diag)
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 982, in build_intraday_dashboard
+    _en = COMPANY_NAMES.get(_etk, "")
+NameError: name 'COMPANY_NAMES' is not defined
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	portfolio_nav.json
+U	reports/2026-07-16.html
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+To https://github.com/puritansoul/stock-screener.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/puritansoul/stock-screener.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2026-07-16 14:30:19 ET — running
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+2 Failed downloads:
+['COO', 'UNH']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-07-16 14:30 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+  EXIT long IR @ $83.61  PnL: $-8  (trailing stop)
+  ENTER long HSY @ $175.37  x2  stop=$173.79  trail=$1.58
+
+  Portfolio: $99,274  (-726 / -0.73%)
+  Cash: $1,266  |  Open: 92  |  Today PnL: $-516
+Traceback (most recent call last):
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 1489, in <module>
+    run_intraday()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 801, in run_intraday
+    build_intraday_dashboard(state, data, diag)
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 982, in build_intraday_dashboard
+    _en = COMPANY_NAMES.get(_etk, "")
+NameError: name 'COMPANY_NAMES' is not defined
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	portfolio_nav.json
+U	reports/2026-07-16.html
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+To https://github.com/puritansoul/stock-screener.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/puritansoul/stock-screener.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2026-07-16 14:32:46 ET — running
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-07-16 14:32 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+  EXIT long FDS @ $262.11  PnL: $-0  (trailing stop)
+  ENTER long PLD @ $148.24  x3  stop=$146.74  trail=$1.50
+  ENTER short JBL @ $307.27  x1  stop=$310.86  trail=$3.59
+
+  Portfolio: $99,275  (-725 / -0.73%)
+  Cash: $776  |  Open: 93  |  Today PnL: $-516
+Traceback (most recent call last):
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 1489, in <module>
+    run_intraday()
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 801, in run_intraday
+    build_intraday_dashboard(state, data, diag)
+  File "/Users/vishalgupta/claude/intraday_trader.py", line 982, in build_intraday_dashboard
+    _en = COMPANY_NAMES.get(_etk, "")
+NameError: name 'COMPANY_NAMES' is not defined
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	portfolio_nav.json
+U	reports/2026-07-16.html
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+To https://github.com/puritansoul/stock-screener.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/puritansoul/stock-screener.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2026-07-16 14:35:14 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+1 Failed download:
+['NSC']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-07-16 14:35 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+  ENTER long ADSK @ $218.19  x1  stop=$216.71  trail=$1.48
+
+  Portfolio: $99,279  (-721 / -0.72%)
+  Cash: $558  |  Open: 94  |  Today PnL: $-516
+  Dashboard → /Users/vishalgupta/claude/reports/intraday_2026-07-16.html
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+[main 76bb985] intraday: 2026-07-16 14:35 ET local [skip ci]
+ 3 files changed, 533 insertions(+), 393 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   1dbc3e7..76bb985  main -> main
+2026-07-16 14:37:43 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+4 Failed downloads:
+['FE', 'WAB', 'FANG', 'CI']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['DAL']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-07-16 14:37 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 499 tickers
+  ORB computed for 499 tickers
+  EXIT long CBOE @ $280.44  PnL: $-8  (trailing stop)
+  ENTER long IDXX @ $578.70  x1  stop=$570.33  trail=$8.37
+
+  Portfolio: $99,279  (-721 / -0.72%)
+  Cash: $1,382  |  Open: 94  |  Today PnL: $-524
+  Dashboard → /Users/vishalgupta/claude/reports/intraday_2026-07-16.html
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+[main f9b0839] intraday: 2026-07-16 14:38 ET local [skip ci]
+ 3 files changed, 286 insertions(+), 261 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   76bb985..f9b0839  main -> main
+2026-07-16 14:40:11 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+1 Failed download:
+['IBM']: TypeError("'NoneType' object is not subscriptable")
+
+2 Failed downloads:
+['CMCSA', 'AAPL']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-07-16 14:40 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 502 tickers
+  ORB computed for 502 tickers
+
+  Portfolio: $99,293  (-707 / -0.71%)
+  Cash: $1,382  |  Open: 94  |  Today PnL: $-524
+  Dashboard → /Users/vishalgupta/claude/reports/intraday_2026-07-16.html
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+[main 7e98547] intraday: 2026-07-16 14:40 ET local [skip ci]
+ 3 files changed, 254 insertions(+), 230 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   3e8e237..7e98547  main -> main
+2026-07-16 14:42:39 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+2 Failed downloads:
+['CDW', 'CDNS']: TypeError("'NoneType' object is not subscriptable")
+
+2 Failed downloads:
+['TRV', 'LEN']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-07-16 14:42 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 501 tickers
+  ORB computed for 501 tickers
+  EXIT long CDW @ $135.34  PnL: $+4  (trailing stop)
+  ENTER long DPZ @ $328.23  x1  stop=$321.01  trail=$7.22
+  ENTER long CAH @ $228.93  x2  stop=$227.10  trail=$1.82
+
+  Portfolio: $99,255  (-745 / -0.75%)
+  Cash: $1,137  |  Open: 95  |  Today PnL: $-520
+  Dashboard → /Users/vishalgupta/claude/reports/intraday_2026-07-16.html
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+[main ada2a88] intraday: 2026-07-16 14:43 ET local [skip ci]
+ 3 files changed, 345 insertions(+), 274 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   7e98547..ada2a88  main -> main
+2026-07-16 14:45:07 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+1 Failed download:
+['SHW']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['LEN']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['^GSPC']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-07-16 14:45 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 502 tickers
+  ORB computed for 502 tickers
+  EXIT long WY @ $24.37  PnL: $-1  (trailing stop)
+  EXIT long CPAY @ $371.93  PnL: $+2  (trailing stop)
+  ENTER long CPAY @ $371.90  x1  stop=$369.94  trail=$1.96
+  ENTER long CBOE @ $280.21  x1  stop=$277.79  trail=$2.42
+  ENTER long NDSN @ $292.74  x1  stop=$289.58  trail=$3.17
+
+  Portfolio: $99,241  (-759 / -0.76%)
+  Cash: $1,058  |  Open: 96  |  Today PnL: $-519
+  Dashboard → /Users/vishalgupta/claude/reports/intraday_2026-07-16.html
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+[main deeca12] intraday: 2026-07-16 14:45 ET local [skip ci]
+ 3 files changed, 393 insertions(+), 278 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   f02aefa..deeca12  main -> main
+2026-07-16 14:47:36 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+[main 11bb302] intraday: 2026-07-16 14:48 ET local [skip ci]
+ 3 files changed, 523 insertions(+), 305 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   a1cb3c2..11bb302  main -> main
+2026-07-16 14:50:03 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-07-16 14:50 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+  ENTER long BR @ $153.01  x1  stop=$151.40  trail=$1.60
+
+  Portfolio: $99,287  (-713 / -0.71%)
+  Cash: $674  |  Open: 101  |  Today PnL: $-531
+  Dashboard → /Users/vishalgupta/claude/reports/intraday_2026-07-16.html
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+[main 08325dd] intraday: 2026-07-16 14:50 ET local [skip ci]
+ 3 files changed, 274 insertions(+), 233 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   11bb302..08325dd  main -> main
+2026-07-16 14:52:32 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-07-16 14:52 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+  ENTER long CDW @ $135.82  x1  stop=$134.31  trail=$1.51
+  ENTER long KMB @ $109.17  x1  stop=$108.18  trail=$0.99
+
+  Portfolio: $99,295  (-705 / -0.71%)
+  Cash: $429  |  Open: 103  |  Today PnL: $-531
+  Dashboard → /Users/vishalgupta/claude/reports/intraday_2026-07-16.html
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+[main 25af07b] intraday: 2026-07-16 14:52 ET local [skip ci]
+ 3 files changed, 313 insertions(+), 241 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   08325dd..25af07b  main -> main
+2026-07-16 14:55:00 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-07-16 14:55 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+  ENTER long CTVA @ $86.26  x1  stop=$85.54  trail=$0.72
+
+  Portfolio: $99,314  (-686 / -0.69%)
+  Cash: $343  |  Open: 104  |  Today PnL: $-531
+  Dashboard → /Users/vishalgupta/claude/reports/intraday_2026-07-16.html
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+[main 8c97fad] intraday: 2026-07-16 14:55 ET local [skip ci]
+ 3 files changed, 277 insertions(+), 236 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   25af07b..8c97fad  main -> main
+2026-07-16 14:57:32 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-07-16 14:57 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+  EXIT long ADP @ $256.29  PnL: $-0  (trailing stop)
+  EXIT long IT @ $141.59  PnL: $+0  (trailing stop)
+  ENTER long MKC @ $52.73  x4  stop=$52.11  trail=$0.62
+  ENTER short BKR @ $56.47  x2  stop=$56.70  trail=$0.23
+
+  Portfolio: $99,319  (-681 / -0.68%)
+  Cash: $417  |  Open: 104  |  Today PnL: $-531
+  Dashboard → /Users/vishalgupta/claude/reports/intraday_2026-07-16.html
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+[main c6e123b] intraday: 2026-07-16 14:57 ET local [skip ci]
+ 3 files changed, 763 insertions(+), 282 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   8c97fad..c6e123b  main -> main
+2026-07-16 15:00:00 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-07-16 15:00 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+  EXIT short SCHW @ $102.58  PnL: $-0  (trailing stop)
+  ENTER long STZ @ $136.01  x1  stop=$134.30  trail=$1.71
+
+  Portfolio: $99,294  (-706 / -0.71%)
+  Cash: $383  |  Open: 104  |  Today PnL: $-531
+  Dashboard → /Users/vishalgupta/claude/reports/intraday_2026-07-16.html
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+[main 51955be] intraday: 2026-07-16 15:00 ET local [skip ci]
+ 3 files changed, 344 insertions(+), 269 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   c6e123b..51955be  main -> main
+2026-07-16 15:02:28 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-07-16 15:02 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+  ENTER short CVS @ $106.06  x1  stop=$107.11  trail=$1.05
+
+  Portfolio: $99,275  (-725 / -0.72%)
+  Cash: $277  |  Open: 105  |  Today PnL: $-531
+  Dashboard → /Users/vishalgupta/claude/reports/intraday_2026-07-16.html
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+[main 72bf703] intraday: 2026-07-16 15:02 ET local [skip ci]
+ 3 files changed, 332 insertions(+), 255 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   51955be..72bf703  main -> main
+2026-07-16 15:04:57 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+[main f137d9f] intraday: 2026-07-16 15:05 ET local [skip ci]
+ 3 files changed, 405 insertions(+), 298 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   3f6e186..f137d9f  main -> main
+2026-07-16 15:07:24 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+1 Failed download:
+['IVZ']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-07-16 15:07 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+  EXIT long VRSK @ $202.14  PnL: $+2  (trailing stop)
+  EXIT short SYF @ $73.73  PnL: $-0  (trailing stop)
+
+  Portfolio: $99,302  (-698 / -0.70%)
+  Cash: $576  |  Open: 105  |  Today PnL: $-531
+  Dashboard → /Users/vishalgupta/claude/reports/intraday_2026-07-16.html
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+[main 9ed1509] intraday: 2026-07-16 15:07 ET local [skip ci]
+ 3 files changed, 343 insertions(+), 327 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   f137d9f..9ed1509  main -> main
+2026-07-16 15:09:52 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-07-16 15:09 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+  ENTER short PEG @ $78.99  x2  stop=$79.40  trail=$0.41
+  ENTER short WBD @ $27.08  x4  stop=$27.12  trail=$0.04
+  ENTER short HPE @ $45.20  x2  stop=$45.98  trail=$0.78
+
+  Portfolio: $99,285  (-715 / -0.71%)
+  Cash: $219  |  Open: 108  |  Today PnL: $-531
+  Dashboard → /Users/vishalgupta/claude/reports/intraday_2026-07-16.html
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+[main b7f4daf] intraday: 2026-07-16 15:10 ET local [skip ci]
+ 3 files changed, 339 insertions(+), 236 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   9ed1509..b7f4daf  main -> main
+2026-07-16 15:12:20 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+2 Failed downloads:
+['GOOGL', 'FSLR']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-07-16 15:12 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+  EXIT long FDS @ $261.81  PnL: $+3  (trailing stop)
+  ENTER short CRL @ $226.99  x2  stop=$228.43  trail=$1.44
+  ENTER short HAL @ $35.12  x9  stop=$35.32  trail=$0.20
+
+  Portfolio: $99,291  (-709 / -0.71%)
+  Cash: $758  |  Open: 109  |  Today PnL: $-528
+  Dashboard → /Users/vishalgupta/claude/reports/intraday_2026-07-16.html
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+[main 074c160] intraday: 2026-07-16 15:12 ET local [skip ci]
+ 3 files changed, 358 insertions(+), 282 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   aaa069c..074c160  main -> main
+2026-07-16 15:14:47 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-07-16 15:14 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+  EXIT short WBD @ $27.11  PnL: $-0  (trailing stop)
+  ENTER short WBD @ $27.10  x9  stop=$27.14  trail=$0.04
+  ENTER long KMI @ $32.78  x5  stop=$32.55  trail=$0.23
+  ENTER short MCHP @ $81.60  x1  stop=$82.43  trail=$0.83
+  ENTER long KDP @ $31.50  x3  stop=$31.02  trail=$0.48
+  ENTER short GM @ $77.00  x1  stop=$77.43  trail=$0.43
+
+  Portfolio: $99,330  (-670 / -0.67%)
+  Cash: $206  |  Open: 113  |  Today PnL: $-528
+  Dashboard → /Users/vishalgupta/claude/reports/intraday_2026-07-16.html
+Hub → /Users/vishalgupta/claude/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/consolidated.html
+[main 23cc7d9] intraday: 2026-07-16 15:15 ET local [skip ci]
+ 3 files changed, 461 insertions(+), 292 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   074c160..23cc7d9  main -> main
+2026-07-16 15:17:15 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+   23cc7d9..232855a  main       -> origin/main
+Updating 23cc7d9..232855a
