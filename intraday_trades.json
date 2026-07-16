@@ -1,5 +1,5 @@
 {
-  "capital": 4103.21,
+  "capital": 1329.17,
   "open_positions": [
     {
       "ticker": "CPAY",
@@ -58,20 +58,6 @@
       "vol_ratio": 1.45
     },
     {
-      "ticker": "CVNA",
-      "side": "long",
-      "entry_date": "2026-07-16",
-      "entry_time": "10:04 ET",
-      "entry_price": 71.1,
-      "shares": 73,
-      "stop": 71.2326,
-      "trail_dist": 0.88,
-      "peak": 72.1126,
-      "orb_width": 1.76,
-      "cost": 5190.3,
-      "vol_ratio": 1.22
-    },
-    {
       "ticker": "ZBH",
       "side": "long",
       "entry_date": "2026-07-16",
@@ -106,9 +92,9 @@
       "entry_time": "10:09 ET",
       "entry_price": 25.59,
       "shares": 91,
-      "stop": 25.415,
+      "stop": 25.425,
       "trail_dist": 0.24,
-      "peak": 25.655,
+      "peak": 25.665,
       "orb_width": 0.48,
       "cost": 2328.69,
       "vol_ratio": 3.31
@@ -120,9 +106,9 @@
       "entry_time": "10:09 ET",
       "entry_price": 519.54,
       "shares": 3,
-      "stop": 521.1669,
+      "stop": 521.1049,
       "trail_dist": 3.0699,
-      "peak": 518.097,
+      "peak": 518.035,
       "orb_width": 6.1399,
       "cost": 1558.62,
       "vol_ratio": 2.02
@@ -148,9 +134,9 @@
       "entry_time": "10:09 ET",
       "entry_price": 259.99,
       "shares": 3,
-      "stop": 257.625,
+      "stop": 257.755,
       "trail_dist": 2.365,
-      "peak": 259.99,
+      "peak": 260.12,
       "orb_width": 4.73,
       "cost": 779.97,
       "vol_ratio": 1.74
@@ -176,9 +162,9 @@
       "entry_time": "10:09 ET",
       "entry_price": 305.45,
       "shares": 1,
-      "stop": 307.0144,
+      "stop": 306.4894,
       "trail_dist": 2.6744,
-      "peak": 304.34,
+      "peak": 303.815,
       "orb_width": 5.3488,
       "cost": 305.45,
       "vol_ratio": 1.26
@@ -190,12 +176,96 @@
       "entry_time": "10:11 ET",
       "entry_price": 365.755,
       "shares": 4,
-      "stop": 361.85,
+      "stop": 362.395,
       "trail_dist": 3.905,
-      "peak": 365.755,
+      "peak": 366.3,
       "orb_width": 7.81,
       "cost": 1463.02,
       "vol_ratio": 1.57
+    },
+    {
+      "ticker": "ALGN",
+      "side": "short",
+      "entry_date": "2026-07-16",
+      "entry_time": "10:14 ET",
+      "entry_price": 179.0,
+      "shares": 15,
+      "stop": 180.3825,
+      "trail_dist": 1.3825,
+      "peak": 179.0,
+      "orb_width": 2.765,
+      "cost": 2685.0,
+      "vol_ratio": 2.09
+    },
+    {
+      "ticker": "BMY",
+      "side": "long",
+      "entry_date": "2026-07-16",
+      "entry_time": "10:14 ET",
+      "entry_price": 60.08,
+      "shares": 33,
+      "stop": 59.525,
+      "trail_dist": 0.555,
+      "peak": 60.08,
+      "orb_width": 1.11,
+      "cost": 1982.64,
+      "vol_ratio": 1.96
+    },
+    {
+      "ticker": "DOC",
+      "side": "long",
+      "entry_date": "2026-07-16",
+      "entry_time": "10:14 ET",
+      "entry_price": 22.091,
+      "shares": 63,
+      "stop": 21.936,
+      "trail_dist": 0.155,
+      "peak": 22.091,
+      "orb_width": 0.31,
+      "cost": 1391.73,
+      "vol_ratio": 1.68
+    },
+    {
+      "ticker": "CVNA",
+      "side": "long",
+      "entry_date": "2026-07-16",
+      "entry_time": "10:14 ET",
+      "entry_price": 72.44,
+      "shares": 13,
+      "stop": 71.56,
+      "trail_dist": 0.88,
+      "peak": 72.44,
+      "orb_width": 1.76,
+      "cost": 941.72,
+      "vol_ratio": 1.56
+    },
+    {
+      "ticker": "PM",
+      "side": "long",
+      "entry_date": "2026-07-16",
+      "entry_time": "10:14 ET",
+      "entry_price": 187.73,
+      "shares": 3,
+      "stop": 184.765,
+      "trail_dist": 2.965,
+      "peak": 187.73,
+      "orb_width": 5.93,
+      "cost": 563.19,
+      "vol_ratio": 1.32
+    },
+    {
+      "ticker": "PLD",
+      "side": "long",
+      "entry_date": "2026-07-16",
+      "entry_time": "10:14 ET",
+      "entry_price": 148.195,
+      "shares": 3,
+      "stop": 146.695,
+      "trail_dist": 1.5,
+      "peak": 148.195,
+      "orb_width": 3.0,
+      "cost": 444.59,
+      "vol_ratio": 1.22
     }
   ],
   "closed_today": [
@@ -255,6 +325,25 @@
       "pnl": -68.94,
       "exit_reason": "trailing stop",
       "exit_time": "10:11 ET"
+    },
+    {
+      "ticker": "CVNA",
+      "side": "long",
+      "entry_date": "2026-07-16",
+      "entry_time": "10:04 ET",
+      "entry_price": 71.1,
+      "shares": 73,
+      "stop": 71.71,
+      "trail_dist": 0.88,
+      "peak": 72.59,
+      "orb_width": 1.76,
+      "cost": 5190.3,
+      "vol_ratio": 1.22,
+      "exit_date": "2026-07-16",
+      "exit_price": 71.71,
+      "pnl": 44.53,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:14 ET"
     }
   ],
   "all_closed": [
@@ -3449,9 +3538,9 @@
   "today": "2026-07-16",
   "today_orb": {
     "MMM": {
-      "high": 162.24,
+      "high": 162.25,
       "low": 159.12,
-      "width": 3.12
+      "width": 3.13
     },
     "AOS": {
       "high": 61.7,
@@ -3470,8 +3559,8 @@
     },
     "ACN": {
       "high": 139.935,
-      "low": 137.39,
-      "width": 2.545
+      "low": 137.35,
+      "width": 2.585
     },
     "ADBE": {
       "high": 229.35,
@@ -3964,9 +4053,9 @@
       "width": 5.555
     },
     "CHD": {
-      "high": 98.93,
+      "high": 98.97,
       "low": 97.64,
-      "width": 1.29
+      "width": 1.33
     },
     "CIEN": {
       "high": 410.31,
@@ -4224,9 +4313,9 @@
       "width": 4.74
     },
     "DOV": {
-      "high": 215.492,
+      "high": 215.625,
       "low": 211.9402,
-      "width": 3.5518
+      "width": 3.6848
     },
     "DOW": {
       "high": 29.98,
@@ -4290,8 +4379,8 @@
     },
     "ELV": {
       "high": 396.05,
-      "low": 372.815,
-      "width": 23.235
+      "low": 372.51,
+      "width": 23.54
     },
     "EME": {
       "high": 759.54,
@@ -4469,9 +4558,9 @@
       "width": 4.615
     },
     "FTV": {
-      "high": 61.69,
+      "high": 61.7,
       "low": 60.53,
-      "width": 1.16
+      "width": 1.17
     },
     "FOXA": {
       "high": 56.96,
@@ -4505,8 +4594,8 @@
     },
     "GE": {
       "high": 354.27,
-      "low": 342.725,
-      "width": 11.545
+      "low": 342.69,
+      "width": 11.58
     },
     "GEHC": {
       "high": 64.8,
@@ -4530,8 +4619,8 @@
     },
     "GD": {
       "high": 368.9832,
-      "low": 364.06,
-      "width": 4.9232
+      "low": 364.0,
+      "width": 4.9832
     },
     "GIS": {
       "high": 38.74,
@@ -4645,8 +4734,8 @@
     },
     "HWM": {
       "high": 279.2,
-      "low": 271.1,
-      "width": 8.1
+      "low": 271.01,
+      "width": 8.19
     },
     "HPQ": {
       "high": 24.1,
@@ -4694,9 +4783,9 @@
       "width": 9.005
     },
     "INCY": {
-      "high": 116.95,
-      "low": 114.1301,
-      "width": 2.8199
+      "high": 114.27,
+      "low": 112.81,
+      "width": 1.46
     },
     "IR": {
       "high": 83.93,
@@ -4779,9 +4868,9 @@
       "width": 2.375
     },
     "J": {
-      "high": 130.71,
+      "high": 130.74,
       "low": 129.45,
-      "width": 1.26
+      "width": 1.29
     },
     "JNJ": {
       "high": 253.23,
@@ -5474,9 +5563,9 @@
       "width": 95.6294
     },
     "SBAC": {
-      "high": 188.2943,
-      "low": 186.2,
-      "width": 2.0943
+      "high": 189.585,
+      "low": 186.15,
+      "width": 3.435
     },
     "SLB": {
       "high": 47.74,
@@ -5519,9 +5608,9 @@
       "width": 1.42
     },
     "SW": {
-      "high": 44.645,
+      "high": 44.65,
       "low": 43.52,
-      "width": 1.125
+      "width": 1.13
     },
     "SNA": {
       "high": 410.98,
@@ -5894,9 +5983,9 @@
       "width": 3.865
     },
     "WST": {
-      "high": 365.56,
+      "high": 365.6925,
       "low": 357.75,
-      "width": 7.81
+      "width": 7.9425
     },
     "WDC": {
       "high": 498.72,
@@ -5970,7 +6059,7 @@
     "2026-07-13": 99718.02,
     "2026-07-14": 99519.7,
     "2026-07-15": 99469.14,
-    "2026-07-16": 99733.58
+    "2026-07-16": 99589.97
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -9797,6 +9886,72 @@
       ],
       "portfolio_value": 99733.58,
       "note": "$99,734 | cash=$4,103 | open=14 | closed today=3 | day PnL=$-93"
+    },
+    {
+      "date": "2026-07-16",
+      "time": "10:13 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "ALGN",
+          "side": "short",
+          "price": 179.0,
+          "shares": 15,
+          "stop": 180.38,
+          "trail_dist": 1.3825
+        },
+        {
+          "ticker": "BMY",
+          "side": "long",
+          "price": 60.08,
+          "shares": 33,
+          "stop": 59.53,
+          "trail_dist": 0.555
+        },
+        {
+          "ticker": "DOC",
+          "side": "long",
+          "price": 22.09,
+          "shares": 63,
+          "stop": 21.94,
+          "trail_dist": 0.155
+        },
+        {
+          "ticker": "CVNA",
+          "side": "long",
+          "price": 72.44,
+          "shares": 13,
+          "stop": 71.56,
+          "trail_dist": 0.88
+        },
+        {
+          "ticker": "PM",
+          "side": "long",
+          "price": 187.73,
+          "shares": 3,
+          "stop": 184.76,
+          "trail_dist": 2.965
+        },
+        {
+          "ticker": "PLD",
+          "side": "long",
+          "price": 148.2,
+          "shares": 3,
+          "stop": 146.7,
+          "trail_dist": 1.5
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "CVNA",
+          "side": "long",
+          "exit_price": 71.71,
+          "pnl": 44.53,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 99589.97,
+      "note": "$99,590 | cash=$1,329 | open=19 | closed today=4 | day PnL=$-49"
     }
   ]
 }
