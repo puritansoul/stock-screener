@@ -832,7 +832,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
             entry_rows_html = ""
             for e in entries_today:
                 _etk = e["ticker"]
-                _en = COMPANY_NAMES.get(_etk, "")
+                _en = _names.get(_etk, "")
                 _en_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_en}</span>' if _en else ''
                 _esb = ('<span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span>'
                         if e.get("side") == "long" else
@@ -850,7 +850,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
             exit_rows_html = ""
             for e in exits_today_log:
                 _etk = e["ticker"]
-                _en = COMPANY_NAMES.get(_etk, "")
+                _en = _names.get(_etk, "")
                 _en_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_en}</span>' if _en else ''
                 _esb = ('<span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span>'
                         if e.get("side") == "long" else

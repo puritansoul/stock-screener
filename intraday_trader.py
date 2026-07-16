@@ -979,7 +979,7 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
         _etr = ""
         for _op in _open_entries_today:
             _etk = _op["ticker"]
-            _en = COMPANY_NAMES.get(_etk, "")
+            _en = _names.get(_etk, "")
             _en_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_en}</span>' if _en else ''
             _esb = ('<span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span>'
                     if _op.get("side") == "long" else
@@ -994,7 +994,7 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
         _xtr = ""
         for _xp in reversed(closed_td):
             _xtk = _xp["ticker"]
-            _xn = COMPANY_NAMES.get(_xtk, "")
+            _xn = _names.get(_xtk, "")
             _xn_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_xn}</span>' if _xn else ''
             _xsb = ('<span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span>'
                     if _xp.get("side") == "long" else
