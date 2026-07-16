@@ -1,5 +1,5 @@
 {
-  "capital": 277.42,
+  "capital": 226.98,
   "open_positions": [
     {
       "ticker": "IEX",
@@ -36,9 +36,9 @@
       "entry_time": "10:09 ET",
       "entry_price": 259.99,
       "shares": 3,
-      "stop": 261.725,
+      "stop": 262.305,
       "trail_dist": 2.365,
-      "peak": 264.09,
+      "peak": 264.67,
       "orb_width": 4.73,
       "cost": 779.97,
       "vol_ratio": 1.74
@@ -904,9 +904,9 @@
       "entry_time": "13:48 ET",
       "entry_price": 24.065,
       "shares": 53,
-      "stop": 24.0787,
+      "stop": 24.0869,
       "trail_dist": 0.1913,
-      "peak": 24.27,
+      "peak": 24.2782,
       "orb_width": 0.3825,
       "cost": 1275.45,
       "vol_ratio": 2.76
@@ -1002,9 +1002,9 @@
       "entry_time": "14:06 ET",
       "entry_price": 89.675,
       "shares": 4,
-      "stop": 89.59,
+      "stop": 89.645,
       "trail_dist": 0.5,
-      "peak": 90.09,
+      "peak": 90.145,
       "orb_width": 1.0,
       "cost": 358.7,
       "vol_ratio": 1.27
@@ -1170,9 +1170,9 @@
       "entry_time": "14:33 ET",
       "entry_price": 307.27,
       "shares": 1,
-      "stop": 309.79,
+      "stop": 309.75,
       "trail_dist": 3.59,
-      "peak": 306.2,
+      "peak": 306.16,
       "orb_width": 7.18,
       "cost": 307.27,
       "vol_ratio": 1.57
@@ -1212,9 +1212,9 @@
       "entry_time": "14:43 ET",
       "entry_price": 328.23,
       "shares": 1,
-      "stop": 321.765,
+      "stop": 321.89,
       "trail_dist": 7.225,
-      "peak": 328.99,
+      "peak": 329.115,
       "orb_width": 14.45,
       "cost": 328.23,
       "vol_ratio": 1.3
@@ -1248,29 +1248,15 @@
       "vol_ratio": 2.23
     },
     {
-      "ticker": "CBOE",
-      "side": "long",
-      "entry_date": "2026-07-16",
-      "entry_time": "14:45 ET",
-      "entry_price": 280.21,
-      "shares": 1,
-      "stop": 278.0005,
-      "trail_dist": 2.4195,
-      "peak": 280.42,
-      "orb_width": 4.839,
-      "cost": 280.21,
-      "vol_ratio": 1.31
-    },
-    {
       "ticker": "NDSN",
       "side": "long",
       "entry_date": "2026-07-16",
       "entry_time": "14:45 ET",
       "entry_price": 292.745,
       "shares": 1,
-      "stop": 289.805,
+      "stop": 289.895,
       "trail_dist": 3.165,
-      "peak": 292.97,
+      "peak": 293.06,
       "orb_width": 6.33,
       "cost": 292.74,
       "vol_ratio": 1.26
@@ -1310,9 +1296,9 @@
       "entry_time": "14:48 ET",
       "entry_price": 261.41,
       "shares": 2,
-      "stop": 259.905,
+      "stop": 259.98,
       "trail_dist": 1.57,
-      "peak": 261.475,
+      "peak": 261.55,
       "orb_width": 3.14,
       "cost": 522.82,
       "vol_ratio": 1.72
@@ -1352,9 +1338,9 @@
       "entry_time": "14:48 ET",
       "entry_price": 185.45,
       "shares": 1,
-      "stop": 186.0722,
+      "stop": 185.9472,
       "trail_dist": 1.0472,
-      "peak": 185.025,
+      "peak": 184.9,
       "orb_width": 2.0943,
       "cost": 185.45,
       "vol_ratio": 1.31
@@ -1380,9 +1366,9 @@
       "entry_time": "14:52 ET",
       "entry_price": 135.82,
       "shares": 1,
-      "stop": 134.4875,
+      "stop": 134.6975,
       "trail_dist": 1.5125,
-      "peak": 136.0,
+      "peak": 136.21,
       "orb_width": 3.025,
       "cost": 135.82,
       "vol_ratio": 3.53
@@ -1450,9 +1436,9 @@
       "entry_time": "15:00 ET",
       "entry_price": 136.005,
       "shares": 1,
-      "stop": 134.41,
+      "stop": 134.4556,
       "trail_dist": 1.705,
-      "peak": 136.115,
+      "peak": 136.1606,
       "orb_width": 3.41,
       "cost": 136.01,
       "vol_ratio": 2.56
@@ -1470,6 +1456,48 @@
       "orb_width": 2.11,
       "cost": 106.06,
       "vol_ratio": 1.87
+    },
+    {
+      "ticker": "AES",
+      "side": "short",
+      "entry_date": "2026-07-16",
+      "entry_time": "15:05 ET",
+      "entry_price": 14.795,
+      "shares": 11,
+      "stop": 14.805,
+      "trail_dist": 0.01,
+      "peak": 14.795,
+      "orb_width": 0.02,
+      "cost": 162.75,
+      "vol_ratio": 8.08
+    },
+    {
+      "ticker": "BG",
+      "side": "short",
+      "entry_date": "2026-07-16",
+      "entry_time": "15:05 ET",
+      "entry_price": 116.13,
+      "shares": 1,
+      "stop": 116.805,
+      "trail_dist": 0.675,
+      "peak": 116.13,
+      "orb_width": 1.35,
+      "cost": 116.13,
+      "vol_ratio": 1.4
+    },
+    {
+      "ticker": "LUV",
+      "side": "long",
+      "entry_date": "2026-07-16",
+      "entry_time": "15:05 ET",
+      "entry_price": 49.565,
+      "shares": 1,
+      "stop": 49.26,
+      "trail_dist": 0.305,
+      "peak": 49.565,
+      "orb_width": 0.61,
+      "cost": 49.56,
+      "vol_ratio": 1.34
     }
   ],
   "closed_today": [
@@ -3049,6 +3077,25 @@
       "pnl": -0.12,
       "exit_reason": "trailing stop",
       "exit_time": "15:00 ET"
+    },
+    {
+      "ticker": "CBOE",
+      "side": "long",
+      "entry_date": "2026-07-16",
+      "entry_time": "14:45 ET",
+      "entry_price": 280.21,
+      "shares": 1,
+      "stop": 278.0005,
+      "trail_dist": 2.4195,
+      "peak": 280.42,
+      "orb_width": 4.839,
+      "cost": 280.21,
+      "vol_ratio": 1.31,
+      "exit_date": "2026-07-16",
+      "exit_price": 278.0005,
+      "pnl": -2.21,
+      "exit_reason": "trailing stop",
+      "exit_time": "15:05 ET"
     }
   ],
   "all_closed": [
@@ -8764,7 +8811,7 @@
     "2026-07-13": 99718.02,
     "2026-07-14": 99519.7,
     "2026-07-15": 99469.14,
-    "2026-07-16": 99275.46
+    "2026-07-16": 99272.52
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -15390,6 +15437,48 @@
       "exits": [],
       "portfolio_value": 99275.46,
       "note": "$99,275 | cash=$277 | open=105 | closed today=83 | day PnL=$-531"
+    },
+    {
+      "date": "2026-07-16",
+      "time": "15:04 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "AES",
+          "side": "short",
+          "price": 14.8,
+          "shares": 11,
+          "stop": 14.81,
+          "trail_dist": 0.01
+        },
+        {
+          "ticker": "BG",
+          "side": "short",
+          "price": 116.13,
+          "shares": 1,
+          "stop": 116.8,
+          "trail_dist": 0.675
+        },
+        {
+          "ticker": "LUV",
+          "side": "long",
+          "price": 49.56,
+          "shares": 1,
+          "stop": 49.26,
+          "trail_dist": 0.305
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "CBOE",
+          "side": "long",
+          "exit_price": 278.0,
+          "pnl": -2.21,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 99272.52,
+      "note": "$99,273 | cash=$227 | open=107 | closed today=84 | day PnL=$-533"
     }
   ]
 }
