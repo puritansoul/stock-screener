@@ -1,5 +1,5 @@
 {
-  "capital": 759.84,
+  "capital": 344.1,
   "open_positions": [
     {
       "ticker": "CHTR",
@@ -92,9 +92,9 @@
       "entry_time": "10:09 ET",
       "entry_price": 126.22,
       "shares": 9,
-      "stop": 125.055,
+      "stop": 125.075,
       "trail_dist": 1.285,
-      "peak": 126.34,
+      "peak": 126.36,
       "orb_width": 2.57,
       "cost": 1135.98,
       "vol_ratio": 1.75
@@ -106,9 +106,9 @@
       "entry_time": "10:09 ET",
       "entry_price": 259.99,
       "shares": 3,
-      "stop": 258.805,
+      "stop": 258.9,
       "trail_dist": 2.365,
-      "peak": 261.17,
+      "peak": 261.265,
       "orb_width": 4.73,
       "cost": 779.97,
       "vol_ratio": 1.74
@@ -176,9 +176,9 @@
       "entry_time": "10:14 ET",
       "entry_price": 72.44,
       "shares": 13,
-      "stop": 71.7899,
+      "stop": 71.79,
       "trail_dist": 0.88,
-      "peak": 72.6699,
+      "peak": 72.67,
       "orb_width": 1.76,
       "cost": 941.72,
       "vol_ratio": 1.56
@@ -218,9 +218,9 @@
       "entry_time": "10:19 ET",
       "entry_price": 59.02,
       "shares": 6,
-      "stop": 58.8075,
+      "stop": 58.8975,
       "trail_dist": 0.4425,
-      "peak": 59.25,
+      "peak": 59.34,
       "orb_width": 0.885,
       "cost": 354.12,
       "vol_ratio": 2.61
@@ -302,9 +302,9 @@
       "entry_time": "10:24 ET",
       "entry_price": 26.86,
       "shares": 123,
-      "stop": 26.7325,
+      "stop": 26.745,
       "trail_dist": 0.15,
-      "peak": 26.8825,
+      "peak": 26.895,
       "orb_width": 0.3,
       "cost": 3303.78,
       "vol_ratio": 1.51
@@ -400,9 +400,9 @@
       "entry_time": "10:29 ET",
       "entry_price": 90.465,
       "shares": 6,
-      "stop": 89.2113,
+      "stop": 89.3163,
       "trail_dist": 1.2537,
-      "peak": 90.465,
+      "peak": 90.57,
       "orb_width": 2.5075,
       "cost": 542.79,
       "vol_ratio": 2.14
@@ -414,9 +414,9 @@
       "entry_time": "10:29 ET",
       "entry_price": 22.975,
       "shares": 18,
-      "stop": 22.6425,
+      "stop": 22.6525,
       "trail_dist": 0.3325,
-      "peak": 22.975,
+      "peak": 22.985,
       "orb_width": 0.665,
       "cost": 413.55,
       "vol_ratio": 1.45
@@ -428,12 +428,54 @@
       "entry_time": "10:31 ET",
       "entry_price": 120.63,
       "shares": 2,
-      "stop": 119.765,
+      "stop": 119.975,
       "trail_dist": 0.865,
-      "peak": 120.63,
+      "peak": 120.84,
       "orb_width": 1.73,
       "cost": 241.26,
       "vol_ratio": 1.68
+    },
+    {
+      "ticker": "PEG",
+      "side": "short",
+      "entry_date": "2026-07-16",
+      "entry_time": "10:34 ET",
+      "entry_price": 79.33,
+      "shares": 2,
+      "stop": 79.74,
+      "trail_dist": 0.41,
+      "peak": 79.33,
+      "orb_width": 0.82,
+      "cost": 158.66,
+      "vol_ratio": 1.52
+    },
+    {
+      "ticker": "APH",
+      "side": "long",
+      "entry_date": "2026-07-16",
+      "entry_time": "10:34 ET",
+      "entry_price": 155.4601,
+      "shares": 1,
+      "stop": 154.0276,
+      "trail_dist": 1.4325,
+      "peak": 155.4601,
+      "orb_width": 2.865,
+      "cost": 155.46,
+      "vol_ratio": 1.45
+    },
+    {
+      "ticker": "KKR",
+      "side": "long",
+      "entry_date": "2026-07-16",
+      "entry_time": "10:34 ET",
+      "entry_price": 101.62,
+      "shares": 1,
+      "stop": 101.01,
+      "trail_dist": 0.61,
+      "peak": 101.62,
+      "orb_width": 1.22,
+      "cost": 101.62,
+      "vol_ratio": 1.43
     }
   ],
   "closed_today": [
@@ -5016,8 +5058,8 @@
     },
     "HWM": {
       "high": 279.2,
-      "low": 271.1,
-      "width": 8.1
+      "low": 271.01,
+      "width": 8.19
     },
     "HPQ": {
       "high": 24.1,
@@ -6341,7 +6383,7 @@
     "2026-07-13": 99718.02,
     "2026-07-14": 99519.7,
     "2026-07-15": 99469.14,
-    "2026-07-16": 99645.85
+    "2026-07-16": 99624.74
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -10492,6 +10534,40 @@
       ],
       "portfolio_value": 99645.85,
       "note": "$99,646 | cash=$760 | open=31 | closed today=10 | day PnL=$-124"
+    },
+    {
+      "date": "2026-07-16",
+      "time": "10:33 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "PEG",
+          "side": "short",
+          "price": 79.33,
+          "shares": 2,
+          "stop": 79.74,
+          "trail_dist": 0.41
+        },
+        {
+          "ticker": "APH",
+          "side": "long",
+          "price": 155.46,
+          "shares": 1,
+          "stop": 154.03,
+          "trail_dist": 1.4325
+        },
+        {
+          "ticker": "KKR",
+          "side": "long",
+          "price": 101.62,
+          "shares": 1,
+          "stop": 101.01,
+          "trail_dist": 0.61
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 99624.74,
+      "note": "$99,625 | cash=$344 | open=34 | closed today=10 | day PnL=$-124"
     }
   ]
 }
