@@ -709,23 +709,10 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
         </tr>"""
 
     total_invested = sum(p["cost"] for p in open_pos)
-    total_unreal   = sum(
-        (float(prices[p["ticker"]].dropna().iloc[-1]) - p["entry_price"]) * p["shares"]
-        if p["ticker"] in prices.columns and len(prices[p["ticker"]].dropna())
-        else ((prices[p["ticker"]].dropna().iloc[-1] if p["ticker"] in prices.columns and len(prices[p["ticker"]].dropna()) else p["entry_price"]) - p["entry_price"]) * p["shares"]
-        for p in open_pos
-    ) if open_pos else 0
-    # simpler recalc
-    total_unreal = 0.0
-    for p in open_pos:
-        tk = p["ticker"]
-        ep = p["entry_price"]
-        sh = p["shares"]
-        cp = ep
-        if tk in prices.columns:
-            s = prices[tk].dropna()
-            if len(s): cp = float(s.iloc[-1])
-        total_unreal += (cp - ep) * sh if p["side"] == "long" else (ep - cp) * sh
+    # Unrealized P&L = portfolio value - cash - cost basis.
+    # This is always accurate since portfolio_value is recorded by the trading loop
+    # with real prices; summing per-position deltas fails when prices aren't available.
+    total_unreal = portfolio_value - capital - total_invested
     tu_color = "#2e7d32" if total_unreal >= 0 else "#c62828"
     tu_sign  = "+" if total_unreal >= 0 else ""
     open_totals_row = f"""

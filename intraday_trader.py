@@ -907,14 +907,8 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
           <td style="color:#666;font-size:12px">{pos.get('entry_date','—')}</td>
           <td style="color:#666;font-size:12px">{pos.get('entry_time','—')}</td>
         </tr>"""
-    total_unreal = sum(
-        (float(data[p["ticker"]]["bars"]["Close"].iloc[-1]) - p["entry_price"]) * p["shares"]
-        if p["ticker"] in data and not data[p["ticker"]]["bars"].empty and p["side"] == "long"
-        else (p["entry_price"] - float(data[p["ticker"]]["bars"]["Close"].iloc[-1])) * p["shares"]
-        if p["ticker"] in data and not data[p["ticker"]]["bars"].empty
-        else 0
-        for p in open_pos
-    ) if open_pos else 0
+    total_cost_basis = sum(p["cost"] for p in open_pos)
+    total_unreal = portfolio_value - capital - total_cost_basis
     tu_color = "#2e7d32" if total_unreal >= 0 else "#c62828"
     tu_sign  = "+" if total_unreal >= 0 else ""
     open_totals_row = f"""
