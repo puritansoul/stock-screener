@@ -6,9 +6,21 @@ py_compile misses. Run before every push: python3 test_smoke.py
 import sys
 import traceback
 import importlib
+import tempfile
 from datetime import date, timedelta
 from pathlib import Path
 import pandas as pd
+
+# Redirect all HTML output to a temp dir so smoke test never overwrites real dashboards
+_SMOKE_DIR = Path(tempfile.mkdtemp(prefix="smoke_"))
+_real_write = Path.write_text
+def _safe_write(self, data, *args, **kwargs):
+    if str(self).endswith(".html") and "reports" in str(self):
+        target = _SMOKE_DIR / self.name
+        _real_write(target, data, *args, **kwargs)
+    else:
+        _real_write(self, data, *args, **kwargs)
+Path.write_text = _safe_write
 
 PASS = []
 FAIL = []
