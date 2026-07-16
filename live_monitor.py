@@ -1114,6 +1114,7 @@ def save_html_report(
       <div style="font-size:12px;color:#666;font-weight:bold;margin:6px 0 4px" id="bench-label"></div>
       <div class="card-row" id="bench-cards"></div>
     </div>
+    <canvas id="nav-chart" height="80" style="margin-top:12px"></canvas>
   </div>
 
   {trade_html}
@@ -1393,32 +1394,39 @@ def save_html_report(
     const toggles = document.getElementById('col-toggles');
     if (!table || !toggles) return;
     const ths = Array.from(table.querySelectorAll('thead th'));
-    const hidden = new Set();
+    const LS_KEY = 'colhide:holdings-table';
+    const hidden = new Set(JSON.parse(localStorage.getItem(LS_KEY) || '[]'));
 
     const setCol = (col, show) => {{
-      table.querySelectorAll(`tr`).forEach(row => {{
+      table.querySelectorAll('tr').forEach(row => {{
         if (row.cells[col]) row.cells[col].style.display = show ? '' : 'none';
       }});
     }};
 
+    const saveHidden = () => localStorage.setItem(LS_KEY, JSON.stringify([...hidden]));
+
     ths.forEach((th, i) => {{
       const btn = document.createElement('button');
       btn.textContent = th.textContent.replace(/[▲▼]/g,'').trim();
-      btn.style.cssText = 'padding:2px 8px;border-radius:10px;border:1px solid #aaa;background:#e3f2fd;color:#0d47a1;cursor:pointer;font-size:11px';
+      const isHidden = hidden.has(i);
+      btn.style.cssText = `padding:2px 8px;border-radius:10px;border:1px solid #aaa;cursor:pointer;font-size:11px;background:${{isHidden ? '#eee' : '#e3f2fd'}};color:${{isHidden ? '#999' : '#0d47a1'}};text-decoration:${{isHidden ? 'line-through' : ''}}`;
       btn.title = 'Click to hide/show column';
+      if (isHidden) setCol(i, false);
       btn.addEventListener('click', () => {{
         if (hidden.has(i)) {{
           hidden.delete(i);
           setCol(i, true);
           btn.style.background = '#e3f2fd';
+          btn.style.color = '#0d47a1';
           btn.style.textDecoration = '';
         }} else {{
           hidden.add(i);
           setCol(i, false);
           btn.style.background = '#eee';
-          btn.style.textDecoration = 'line-through';
           btn.style.color = '#999';
+          btn.style.textDecoration = 'line-through';
         }}
+        saveHidden();
       }});
       toggles.appendChild(btn);
     }});
@@ -1436,6 +1444,100 @@ def save_html_report(
   }};
   if (isMarketHours()) {{
     setTimeout(() => location.reload(), 60000);
+  }}
+}})();
+
+// ── NAV equity curve ──────────────────────────────────────────────────────────
+(function() {{
+  const PV = {PORTFOLIO_VALUE};
+  const navHistory = {nav_json};
+  const benchData  = {bench_json};
+  const dates = Object.keys(navHistory).sort();
+  if (dates.length < 2) return;
+  const canvas = document.getElementById('nav-chart');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const W = canvas.offsetWidth || 800;
+  const H = 140;
+  canvas.width  = W;
+  canvas.height = H;
+
+  const vals = dates.map(d => navHistory[d] * PV);
+
+  // Align SPY to first NAV date, produce same-length dollar series anchored at PV
+  let spyVals = [];
+  const spyRaw = (benchData['SPY'] || {{}});
+  const spyDates = Object.keys(spyRaw).sort();
+  if (spyDates.length) {{
+    const firstDate = dates[0];
+    const anchor = spyDates.reduce((best, d) => d <= firstDate ? d : best, spyDates[0]);
+    const anchorPx = spyRaw[anchor] || 1;
+    spyVals = dates.map(d => {{
+      const closest = spyDates.reduce((best, sd) => sd <= d ? sd : best, spyDates[0]);
+      return PV * (spyRaw[closest] / anchorPx);
+    }});
+  }}
+
+  const allV = [...vals, ...spyVals].filter(v => v != null);
+  const minV = Math.min(...allV), maxV = Math.max(...allV);
+  const range = maxV - minV || 1;
+  const pad = 20;
+  const N = vals.length;
+  const toX = i => pad + (i / (N - 1 || 1)) * (W - 2 * pad);
+  const toY = v => H - pad - ((v - minV) / range) * (H - 2 * pad);
+
+  ctx.clearRect(0, 0, W, H);
+
+  // SPY line (grey dashed)
+  if (spyVals.length) {{
+    ctx.strokeStyle = '#9e9e9e';
+    ctx.lineWidth = 1.5;
+    ctx.setLineDash([4, 4]);
+    ctx.beginPath();
+    spyVals.forEach((v, i) => i === 0 ? ctx.moveTo(toX(i), toY(v)) : ctx.lineTo(toX(i), toY(v)));
+    ctx.stroke();
+    ctx.setLineDash([]);
+  }}
+
+  // Portfolio line
+  ctx.strokeStyle = '#1a237e';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  vals.forEach((v, i) => i === 0 ? ctx.moveTo(toX(i), toY(v)) : ctx.lineTo(toX(i), toY(v)));
+  ctx.stroke();
+
+  // Fill
+  ctx.lineTo(toX(N - 1), H - pad); ctx.lineTo(toX(0), H - pad); ctx.closePath();
+  const grad = ctx.createLinearGradient(0, 0, 0, H);
+  grad.addColorStop(0, 'rgba(26,35,126,0.12)'); grad.addColorStop(1, 'rgba(26,35,126,0)');
+  ctx.fillStyle = grad; ctx.fill();
+
+  // Date labels
+  ctx.font = '11px sans-serif'; ctx.fillStyle = '#666';
+  if (dates.length) {{
+    ctx.fillText(dates[0], pad, H - 4);
+    const last = dates[N - 1];
+    ctx.fillText(last, W - pad - ctx.measureText(last).width, H - 4);
+  }}
+  // End value labels
+  const lastVal = '$' + vals[N-1].toLocaleString('en-US', {{maximumFractionDigits:0}});
+  ctx.fillStyle = vals[N-1] >= PV ? '#2e7d32' : '#c62828';
+  ctx.font = 'bold 12px sans-serif';
+  ctx.fillText(lastVal, toX(N-1) - ctx.measureText(lastVal).width - 4, toY(vals[N-1]) - 4);
+  if (spyVals.length) {{
+    const spyLast = 'SPY $' + spyVals[N-1].toLocaleString('en-US', {{maximumFractionDigits:0}});
+    ctx.fillStyle = '#757575'; ctx.font = '11px sans-serif';
+    ctx.fillText(spyLast, toX(N-1) - ctx.measureText(spyLast).width - 4, toY(spyVals[N-1]) + 14);
+  }}
+  // Legend
+  ctx.font = '11px sans-serif';
+  ctx.fillStyle = '#1a237e'; ctx.fillRect(pad, 6, 18, 3);
+  ctx.fillStyle = '#333'; ctx.fillText('Portfolio', pad + 22, 12);
+  if (spyVals.length) {{
+    ctx.strokeStyle = '#9e9e9e'; ctx.setLineDash([4,4]); ctx.lineWidth=1.5;
+    ctx.beginPath(); ctx.moveTo(pad+90,8); ctx.lineTo(pad+108,8); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = '#333'; ctx.fillText('SPY (buy & hold)', pad+112, 12);
   }}
 }})();
 

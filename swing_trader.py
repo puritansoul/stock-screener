@@ -878,6 +878,29 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
     </details>
   </div>"""
 
+    # Period return tiles
+    def _period_pct(days):
+        cutoff = (date.today() - timedelta(days=days)).isoformat()
+        past = {d: v for d, v in nav.items() if d <= cutoff}
+        if not past: return None
+        base = past[max(past)]
+        return (portfolio_value - base) / base * 100 if base else None
+
+    def _tile(label, pct):
+        if pct is None:
+            return f'<div style="background:#f5f5f5;border-radius:8px;padding:8px 14px;text-align:center;min-width:80px"><div style="font-size:10px;color:#999;text-transform:uppercase">{label}</div><div style="font-size:15px;color:#bbb">—</div></div>'
+        c = "#2e7d32" if pct >= 0 else "#c62828"
+        return f'<div style="background:#f5f5f5;border-radius:8px;padding:8px 14px;text-align:center;min-width:80px"><div style="font-size:10px;color:#999;text-transform:uppercase">{label}</div><div style="font-size:15px;font-weight:bold;color:{c}">{pct:+.1f}%</div></div>'
+
+    _swing_period_tiles = "".join([
+        _tile("1 Mo",  _period_pct(30)),
+        _tile("3 Mo",  _period_pct(91)),
+        _tile("6 Mo",  _period_pct(182)),
+        _tile("1 Yr",  _period_pct(365)),
+        _tile("3 Yr",  _period_pct(365*3)),
+        _tile("All",   total_pct if nav else None),
+    ])
+
     html = f"""<!DOCTYPE html>
 <html>
 <head>
@@ -891,7 +914,10 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
     h1   {{ color: #1a237e; margin-bottom: 4px; font-size: 22px; }}
     h2   {{ color: #1a237e; font-size: 16px; margin: 0 0 10px 0; }}
     table {{ border-collapse: collapse; width: 100%; font-size: 13px; }}
-    th    {{ background: #1a237e; color: white; padding: 8px 10px; text-align: left; white-space: nowrap; }}
+    th    {{ background: #1a237e; color: white; padding: 8px 10px; text-align: left; white-space: nowrap; cursor:pointer; user-select:none; }}
+    th:hover {{ background: #283593; }}
+    th.sort-asc::after  {{ content: " ▲"; font-size:10px; }}
+    th.sort-desc::after {{ content: " ▼"; font-size:10px; }}
     td    {{ padding: 6px 10px; border-bottom: 1px solid #eee; white-space: nowrap; }}
     thead {{ position: sticky; top: 0; z-index: 10; }}
     tr:hover td {{ background: #f5f5f5; transition: background 0.15s; }}
@@ -956,6 +982,8 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
         <div class="card-value">{len(open_pos)}</div>
       </div>
     </div>
+    <!-- Period return tiles -->
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">{_swing_period_tiles}</div>
     <!-- Capital breakdown -->
     <div style="display:flex;gap:24px;flex-wrap:wrap;margin-top:16px;margin-bottom:4px;align-items:flex-start">
       <div style="flex:1;min-width:260px">
@@ -1014,12 +1042,13 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
   <!-- Open positions -->
   <div class="section">
     <h2>Open Positions</h2>
+    <div id="col-toggles-open" style="margin-bottom:8px;display:flex;flex-wrap:wrap;gap:6px;font-size:12px"></div>
     <div style="overflow-x:auto">
-    <table id="open-pos-table" style="white-space:nowrap">
+    <table id="open-pos-table" data-toggles="col-toggles-open" style="white-space:nowrap">
       <thead><tr>
-        <th>Ticker</th><th>Side</th><th>Entry</th><th>Current</th>
-        <th>Shares</th><th>$ Invested</th><th>Unrealized P&amp;L</th>
-        <th>Stop</th><th>RSI(2) at entry</th><th>Entry Date</th>
+        <th data-col="0">Ticker</th><th data-col="1">Side</th><th data-col="2">Entry</th><th data-col="3">Current</th>
+        <th data-col="4">Shares</th><th data-col="5">$ Invested</th><th data-col="6">Unrealized P&amp;L</th>
+        <th data-col="7">Stop</th><th data-col="8">RSI(2) at entry</th><th data-col="9">Entry Date</th>
       </tr></thead>
       <tbody>{open_rows}</tbody>
       {open_totals_row}
@@ -1060,8 +1089,8 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
       <div style="overflow-x:auto">
       <table id="closed-trades-table" style="margin-top:12px;white-space:nowrap">
         <thead><tr>
-          <th>Ticker</th><th>Side</th><th>Entry</th><th>Exit</th>
-          <th>P&amp;L</th><th>Entry Date</th><th>Exit Date</th><th>Reason</th>
+          <th data-col="0">Ticker</th><th data-col="1">Side</th><th data-col="2">Entry</th><th data-col="3">Exit</th>
+          <th data-col="4">P&amp;L</th><th data-col="5">Entry Date</th><th data-col="6">Exit Date</th><th data-col="7">Reason</th>
         </tr></thead>
         <tbody>{closed_rows}</tbody>
         {closed_totals_row}
@@ -1290,7 +1319,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
 
   // SPY line (grey dashed)
   if (spy.length) {{
-    ctx.strokeStyle = '#e65100';
+    ctx.strokeStyle = '#9e9e9e';
     ctx.lineWidth   = 1.5;
     ctx.setLineDash([4, 4]);
     ctx.beginPath();
@@ -1332,7 +1361,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
   // SPY end label
   if (spy.length) {{
     const spyLast = 'SPY $' + spy[N-1].toLocaleString('en-US', {{maximumFractionDigits:0}});
-    ctx.fillStyle = '#e65100';
+    ctx.fillStyle = '#757575';
     ctx.font = '11px sans-serif';
     ctx.fillText(spyLast, toX(N-1) - ctx.measureText(spyLast).width - 4, toY(spy[N-1]) + 14);
   }}
@@ -1340,10 +1369,73 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
   ctx.font = '11px sans-serif';
   ctx.fillStyle = '#1a237e'; ctx.fillRect(pad, 6, 18, 3);
   ctx.fillStyle = '#333'; ctx.fillText('Portfolio', pad + 22, 12);
-  ctx.strokeStyle = '#e65100'; ctx.setLineDash([4,4]); ctx.lineWidth = 1.5;
+  ctx.strokeStyle = '#9e9e9e'; ctx.setLineDash([4,4]); ctx.lineWidth = 1.5;
   ctx.beginPath(); ctx.moveTo(pad + 90, 8); ctx.lineTo(pad + 108, 8); ctx.stroke();
   ctx.setLineDash([]);
   ctx.fillStyle = '#333'; ctx.fillText('SPY (buy & hold)', pad + 112, 12);
+}})();
+
+// ── Sortable + hide/show columns ─────────────────────────────────────────────
+(function() {{
+  document.querySelectorAll('table[id]').forEach(function(table) {{
+    var id = table.id;
+    var sortCol = -1, sortAsc = true;
+    var LS_HIDE = 'colhide:' + id;
+    var hidden = new Set(JSON.parse(localStorage.getItem(LS_HIDE) || '[]'));
+
+    var setCol = function(col, show) {{
+      table.querySelectorAll('tr').forEach(function(row) {{
+        if (row.cells[col]) row.cells[col].style.display = show ? '' : 'none';
+      }});
+    }};
+    hidden.forEach(function(i) {{ setCol(i, false); }});
+
+    // Sort on header click
+    table.querySelectorAll('thead th[data-col]').forEach(function(th) {{
+      th.addEventListener('click', function() {{
+        var col = parseInt(th.dataset.col);
+        sortAsc = (sortCol === col) ? !sortAsc : true;
+        sortCol = col;
+        table.querySelectorAll('thead th').forEach(function(t) {{ t.classList.remove('sort-asc','sort-desc'); }});
+        th.classList.add(sortAsc ? 'sort-asc' : 'sort-desc');
+        var tbody = table.querySelector('tbody');
+        var rows = Array.from(tbody.querySelectorAll('tr'));
+        rows.sort(function(a, b) {{
+          var aT = (a.cells[col] ? a.cells[col].textContent : '').trim();
+          var bT = (b.cells[col] ? b.cells[col].textContent : '').trim();
+          var aN = parseFloat(aT.replace(/[^0-9.\-]/g, ''));
+          var bN = parseFloat(bT.replace(/[^0-9.\-]/g, ''));
+          var cmp = isNaN(aN) || isNaN(bN) ? aT.localeCompare(bT) : aN - bN;
+          return sortAsc ? cmp : -cmp;
+        }});
+        rows.forEach(function(r) {{ tbody.appendChild(r); }});
+      }});
+    }});
+
+    // Col hide/show toggles
+    var togglesId = table.dataset.toggles;
+    var togglesDiv = togglesId ? document.getElementById(togglesId) : null;
+    if (!togglesDiv) return;
+    var ths = Array.from(table.querySelectorAll('thead th'));
+    ths.forEach(function(th, i) {{
+      var btn = document.createElement('button');
+      btn.textContent = th.textContent.replace(/[▲▼]/g,'').trim();
+      var isHid = hidden.has(i);
+      btn.style.cssText = 'padding:2px 8px;border-radius:10px;border:1px solid #aaa;cursor:pointer;font-size:11px;background:' + (isHid ? '#eee' : '#e3f2fd') + ';color:' + (isHid ? '#999' : '#0d47a1') + ';text-decoration:' + (isHid ? 'line-through' : '');
+      btn.title = 'Click to hide/show column';
+      btn.addEventListener('click', function() {{
+        if (hidden.has(i)) {{
+          hidden.delete(i); setCol(i, true);
+          btn.style.background='#e3f2fd'; btn.style.color='#0d47a1'; btn.style.textDecoration='';
+        }} else {{
+          hidden.add(i); setCol(i, false);
+          btn.style.background='#eee'; btn.style.color='#999'; btn.style.textDecoration='line-through';
+        }}
+        localStorage.setItem(LS_HIDE, JSON.stringify([...hidden]));
+      }});
+      togglesDiv.appendChild(btn);
+    }});
+  }});
 }})();
 
 // ── Resizable columns ─────────────────────────────────────────────────────────

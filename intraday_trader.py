@@ -905,8 +905,27 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
           <td style="color:#666;font-size:12px">{pos.get('entry_date','—')}</td>
           <td style="color:#666;font-size:12px">{pos.get('entry_time','—')}</td>
         </tr>"""
+    total_unreal = sum(
+        (float(data[p["ticker"]]["bars"]["Close"].iloc[-1]) - p["entry_price"]) * p["shares"]
+        if p["ticker"] in data and not data[p["ticker"]]["bars"].empty and p["side"] == "long"
+        else (p["entry_price"] - float(data[p["ticker"]]["bars"]["Close"].iloc[-1])) * p["shares"]
+        if p["ticker"] in data and not data[p["ticker"]]["bars"].empty
+        else 0
+        for p in open_pos
+    ) if open_pos else 0
+    tu_color = "#2e7d32" if total_unreal >= 0 else "#c62828"
+    tu_sign  = "+" if total_unreal >= 0 else ""
+    open_totals_row = f"""
+        <tr style="background:#e8eaf6;font-weight:bold;border-top:2px solid #9fa8da">
+          <td colspan="4" style="text-align:right;color:#555">Totals</td>
+          <td style="text-align:right">{sum(p['shares'] for p in open_pos):,}</td>
+          <td id="total-unreal" style="text-align:right;color:{tu_color}">{tu_sign}${abs(total_unreal):,.0f}</td>
+          <td colspan="4"></td>
+        </tr>""" if open_pos else ""
+
     if not open_rows:
         open_rows = '<tr><td colspan="10" style="text-align:center;color:#999;padding:20px">No open positions today</td></tr>'
+        open_totals_row = ""
 
     # Today's closed trades
     today_rows = ""
@@ -935,6 +954,39 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
         </tr>"""
     if not today_rows:
         today_rows = '<tr><td colspan="9" style="text-align:center;color:#999;padding:20px">No trades closed today</td></tr>'
+
+    # All-time closed trades rows (most recent first, last 50)
+    all_history = all_closed + closed_td
+    hist_rows = ""
+    for pos in reversed(all_history[-50:]):
+        tk     = pos["ticker"]
+        side   = pos["side"]
+        entry  = pos["entry_price"]
+        exit_p = pos.get("exit_price", entry)
+        pnl    = pos.get("pnl", 0)
+        pnl_c  = "#2e7d32" if pnl >= 0 else "#c62828"
+        sb = ('<span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span>'
+              if side == "long" else
+              '<span style="background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:4px;font-size:11px">SHORT</span>')
+        _hn = _names.get(tk, "")
+        _hn_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_hn}</span>' if _hn else ''
+        hist_rows += f"""<tr>
+          <td style="font-weight:bold">{tk}{_hn_html}</td><td>{sb}</td>
+          <td>${entry:,.2f}</td><td>${exit_p:,.2f}</td>
+          <td style="text-align:right;color:{pnl_c};font-weight:bold">${pnl:+,.0f}</td>
+          <td style="color:#666;font-size:12px">{pos.get('entry_date','—')}</td>
+          <td style="color:#666;font-size:12px">{pos.get('exit_time','—')}</td>
+          <td style="color:#666;font-size:12px">{pos.get('exit_reason','—')}</td>
+        </tr>"""
+    if not hist_rows:
+        hist_rows = '<tr><td colspan="8" style="text-align:center;color:#999;padding:20px">No closed trades yet</td></tr>'
+    hist_total_pnl = sum(p.get("pnl", 0) for p in all_history[-50:])
+    hist_tc = "#2e7d32" if hist_total_pnl >= 0 else "#c62828"
+    hist_totals_row = f"""<tr style="background:#e8f5e9;font-weight:bold;border-top:2px solid #a5d6a7">
+      <td colspan="4" style="text-align:right;color:#555">Total P&L (shown)</td>
+      <td style="text-align:right;color:{hist_tc}">${hist_total_pnl:+,.0f}</td>
+      <td colspan="3"></td>
+    </tr>""" if all_history else ""
 
     # All-time stats
     all_c = all_closed + closed_td
@@ -1025,6 +1077,29 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
     </details>
   </div>"""
 
+    # Period return tiles
+    def _period_pct(days):
+        cutoff = (date.today() - timedelta(days=days)).isoformat()
+        past = {d: v for d, v in nav.items() if d <= cutoff}
+        if not past: return None
+        base = past[max(past)]
+        return (portfolio_value - base) / base * 100 if base else None
+
+    def _tile(label, pct):
+        if pct is None:
+            return f'<div style="background:#f5f5f5;border-radius:8px;padding:8px 14px;text-align:center;min-width:80px"><div style="font-size:10px;color:#999;text-transform:uppercase">{label}</div><div style="font-size:15px;color:#bbb">—</div></div>'
+        c = "#2e7d32" if pct >= 0 else "#c62828"
+        return f'<div style="background:#f5f5f5;border-radius:8px;padding:8px 14px;text-align:center;min-width:80px"><div style="font-size:10px;color:#999;text-transform:uppercase">{label}</div><div style="font-size:15px;font-weight:bold;color:{c}">{pct:+.1f}%</div></div>'
+
+    _intraday_period_tiles = "".join([
+        _tile("1 Mo",  _period_pct(30)),
+        _tile("3 Mo",  _period_pct(91)),
+        _tile("6 Mo",  _period_pct(182)),
+        _tile("1 Yr",  _period_pct(365)),
+        _tile("3 Yr",  _period_pct(365*3)),
+        _tile("All",   total_pct if nav else None),
+    ])
+
     html = f"""<!DOCTYPE html>
 <html>
 <head>
@@ -1038,7 +1113,10 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
     h1   {{ color: #1a237e; margin-bottom: 4px; font-size: 22px; }}
     h2   {{ color: #1a237e; font-size: 16px; margin: 0 0 10px 0; }}
     table {{ border-collapse: collapse; width: 100%; font-size: 13px; }}
-    th    {{ background: #1a237e; color: white; padding: 8px 10px; text-align: left; white-space: nowrap; }}
+    th    {{ background: #1a237e; color: white; padding: 8px 10px; text-align: left; white-space: nowrap; cursor:pointer; user-select:none; }}
+    th:hover {{ background: #283593; }}
+    th.sort-asc::after  {{ content: " ▲"; font-size:10px; }}
+    th.sort-desc::after {{ content: " ▼"; font-size:10px; }}
     td    {{ padding: 6px 10px; border-bottom: 1px solid #eee; white-space: nowrap; }}
     thead {{ position: sticky; top: 0; z-index: 10; }}
     tr:hover td {{ background: #f5f5f5; transition: background 0.15s; }}
@@ -1088,8 +1166,8 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
           <span style="font-size:14px" id="port-total-pct">{gain_sign}{abs(total_pct):.2f}%</span></div>
       </div>
       <div class="card">
-        <div class="card-label">Day P&amp;L</div>
-        <div class="card-value" id="port-today" style="color:{pnl_color}">${pnl_today:+,.0f}</div>
+        <div class="card-label">Day P&amp;L (realized + open)</div>
+        <div class="card-value" id="port-today" data-realized="{pnl_today:.2f}" style="color:{pnl_color}">${pnl_today:+,.0f}</div>
       </div>
       <div class="card">
         <div class="card-label">Cash</div>
@@ -1101,18 +1179,21 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
           <span style="font-size:12px;color:#666">PF: {pf:.2f}x</span></div>
       </div>
     </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">{_intraday_period_tiles}</div>
     <canvas id="nav-chart" height="80"></canvas>
   </div>
 
   <div class="section">
     <h2>Open Positions</h2>
+    <div id="col-toggles-open" style="margin-bottom:8px;display:flex;flex-wrap:wrap;gap:6px;font-size:12px"></div>
     <div style="overflow-x:auto">
-    <table id="open-pos-table" style="white-space:nowrap">
+    <table id="open-pos-table" data-toggles="col-toggles-open" style="white-space:nowrap">
       <thead><tr>
-        <th>Ticker</th><th>Side</th><th>Entry</th><th>Current</th>
-        <th>Shares</th><th>Unrealized P&amp;L</th><th>Peak</th><th>Trail Stop</th><th>Entry Date</th><th>Entry Time</th>
+        <th data-col="0">Ticker</th><th data-col="1">Side</th><th data-col="2">Entry</th><th data-col="3">Current</th>
+        <th data-col="4">Shares</th><th data-col="5">Unrealized P&amp;L</th><th data-col="6">Peak</th><th data-col="7">Trail Stop</th><th data-col="8">Entry Date</th><th data-col="9">Entry Time</th>
       </tr></thead>
       <tbody>{open_rows}</tbody>
+      {open_totals_row}
     </table>
     </div>
   </div>
@@ -1144,6 +1225,23 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
             <strong>Universe:</strong> 45 most liquid S&amp;P 500 names
           </p>
         </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- All-time closed trades -->
+  <div class="section">
+    <details>
+      <summary>Closed Trades ({len(all_history)} total, showing last 50)</summary>
+      <div style="overflow-x:auto;margin-top:12px">
+      <table id="closed-trades-table" style="white-space:nowrap">
+        <thead><tr>
+          <th data-col="0">Ticker</th><th data-col="1">Side</th><th data-col="2">Entry</th><th data-col="3">Exit</th>
+          <th data-col="4">P&amp;L</th><th data-col="5">Entry Date</th><th data-col="6">Exit Time</th><th data-col="7">Reason</th>
+        </tr></thead>
+        <tbody>{hist_rows}</tbody>
+        {hist_totals_row}
+      </table>
       </div>
     </details>
   </div>
@@ -1246,6 +1344,7 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
 
   function updatePortfolio(rows, quotes) {{
     let openValue = 0;
+    let totalUnreal = 0;
     for (const row of rows) {{
       const tk   = row.dataset.ticker;
       const qty  = parseFloat(row.dataset.qty);
@@ -1254,7 +1353,10 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
       const q    = quotes[tk];
       if (!q) {{ openValue += buy * qty; continue; }}
       const price = q.price;
-      openValue += side === 'long' ? price * qty : buy * qty + (buy - price) * qty;
+      const val   = side === 'long' ? price * qty : buy * qty + (buy - price) * qty;
+      const unreal = side === 'long' ? (price - buy) * qty : (buy - price) * qty;
+      openValue  += val;
+      totalUnreal += unreal;
     }}
     const cashVal = (function() {{
       const cards = document.querySelectorAll('.card');
@@ -1279,6 +1381,26 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
     if (totalEl) {{
       totalEl.innerHTML = `${{sign}}$${{Math.abs(ret).toLocaleString('en-US',{{maximumFractionDigits:0}})}}<br><span style="font-size:14px">${{sign}}${{Math.abs(retPct).toFixed(2)}}%</span>`;
       totalEl.style.color = color;
+    }}
+
+    // Day P&L = realized (server-rendered) + live unrealized
+    const dayEl = document.getElementById('port-today');
+    if (dayEl) {{
+      const realized = parseFloat(dayEl.dataset.realized) || 0;
+      const dayPnl   = realized + totalUnreal;
+      const dsign    = dayPnl >= 0 ? '+' : '';
+      const dcol     = dayPnl >= 0 ? '#2e7d32' : '#c62828';
+      dayEl.textContent = `$${{dsign.replace('+','')}}${{(dayPnl >= 0 ? '+' : '')}}${{Math.abs(dayPnl).toLocaleString('en-US', {{maximumFractionDigits:0}})}}`;
+      dayEl.textContent = `${{dayPnl >= 0 ? '+' : '-'}}$${{Math.abs(dayPnl).toLocaleString('en-US', {{maximumFractionDigits:0}})}}`;
+      dayEl.style.color = dcol;
+    }}
+
+    // Totals row unrealized
+    const totalUnrealEl = document.getElementById('total-unreal');
+    if (totalUnrealEl) {{
+      const tsign = totalUnreal >= 0 ? '+' : '-';
+      totalUnrealEl.textContent = `${{tsign}}$${{Math.abs(totalUnreal).toLocaleString('en-US', {{maximumFractionDigits:0}})}}`;
+      totalUnrealEl.style.color = totalUnreal >= 0 ? '#2e7d32' : '#c62828';
     }}
   }}
 
@@ -1308,16 +1430,16 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
   const toX = i => pad + (i / (N - 1 || 1)) * (W - 2 * pad);
   const toY = v => H - pad - ((v - minV) / range) * (H - 2 * pad);
 
-  // SPY line (orange dashed)
+  // SPY line (grey dashed)
   if (spy.length) {{
-    ctx.strokeStyle = '#ff8f00'; ctx.lineWidth = 1.5; ctx.setLineDash([4, 4]);
+    ctx.strokeStyle = '#9e9e9e'; ctx.lineWidth = 1.5; ctx.setLineDash([4, 4]);
     ctx.beginPath();
     spy.forEach((v, i) => {{ if (v != null) i === 0 ? ctx.moveTo(toX(i), toY(v)) : ctx.lineTo(toX(i), toY(v)); }});
     ctx.stroke(); ctx.setLineDash([]);
   }}
 
-  // Portfolio line (solid orange-red)
-  ctx.strokeStyle = '#e65100'; ctx.lineWidth = 2;
+  // Portfolio line (solid dark blue — consistent with swing/factor)
+  ctx.strokeStyle = '#1a237e'; ctx.lineWidth = 2;
   ctx.beginPath();
   vals.forEach((v, i) => i === 0 ? ctx.moveTo(toX(i), toY(v)) : ctx.lineTo(toX(i), toY(v)));
   ctx.stroke();
@@ -1325,7 +1447,7 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
   // Fill
   ctx.lineTo(toX(N-1), H - pad); ctx.lineTo(toX(0), H - pad); ctx.closePath();
   const grad = ctx.createLinearGradient(0, 0, 0, H);
-  grad.addColorStop(0, 'rgba(230,81,0,0.12)'); grad.addColorStop(1, 'rgba(230,81,0,0)');
+  grad.addColorStop(0, 'rgba(26,35,126,0.12)'); grad.addColorStop(1, 'rgba(26,35,126,0)');
   ctx.fillStyle = grad; ctx.fill();
 
   // Labels
@@ -1341,17 +1463,78 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
   ctx.fillText(lastVal, toX(N-1) - ctx.measureText(lastVal).width - 4, toY(vals[N-1]) - 4);
   if (spy.length) {{
     const spyLast = 'SPY $' + spy[N-1].toLocaleString('en-US', {{maximumFractionDigits:0}});
-    ctx.fillStyle = '#ff8f00'; ctx.font = '11px sans-serif';
+    ctx.fillStyle = '#757575'; ctx.font = '11px sans-serif';
     ctx.fillText(spyLast, toX(N-1) - ctx.measureText(spyLast).width - 4, toY(spy[N-1]) + 14);
   }}
   // Legend
   ctx.font = '11px sans-serif';
-  ctx.fillStyle = '#e65100'; ctx.fillRect(pad, 6, 18, 3);
+  ctx.fillStyle = '#1a237e'; ctx.fillRect(pad, 6, 18, 3);
   ctx.fillStyle = '#333'; ctx.fillText('Portfolio', pad + 22, 12);
-  ctx.strokeStyle = '#ff8f00'; ctx.setLineDash([4,4]); ctx.lineWidth = 1.5;
+  ctx.strokeStyle = '#9e9e9e'; ctx.setLineDash([4,4]); ctx.lineWidth = 1.5;
   ctx.beginPath(); ctx.moveTo(pad + 90, 8); ctx.lineTo(pad + 108, 8); ctx.stroke();
   ctx.setLineDash([]);
   ctx.fillStyle = '#333'; ctx.fillText('SPY (buy & hold)', pad + 112, 12);
+}})();
+
+// ── Sortable + hide/show columns ─────────────────────────────────────────────
+(function() {{
+  document.querySelectorAll('table[id]').forEach(function(table) {{
+    var id = table.id;
+    var sortCol = -1, sortAsc = true;
+    var LS_HIDE = 'colhide:' + id;
+    var hidden = new Set(JSON.parse(localStorage.getItem(LS_HIDE) || '[]'));
+
+    var setCol = function(col, show) {{
+      table.querySelectorAll('tr').forEach(function(row) {{
+        if (row.cells[col]) row.cells[col].style.display = show ? '' : 'none';
+      }});
+    }};
+    hidden.forEach(function(i) {{ setCol(i, false); }});
+
+    table.querySelectorAll('thead th[data-col]').forEach(function(th) {{
+      th.addEventListener('click', function() {{
+        var col = parseInt(th.dataset.col);
+        sortAsc = (sortCol === col) ? !sortAsc : true;
+        sortCol = col;
+        table.querySelectorAll('thead th').forEach(function(t) {{ t.classList.remove('sort-asc','sort-desc'); }});
+        th.classList.add(sortAsc ? 'sort-asc' : 'sort-desc');
+        var tbody = table.querySelector('tbody');
+        var rows = Array.from(tbody.querySelectorAll('tr'));
+        rows.sort(function(a, b) {{
+          var aT = (a.cells[col] ? a.cells[col].textContent : '').trim();
+          var bT = (b.cells[col] ? b.cells[col].textContent : '').trim();
+          var aN = parseFloat(aT.replace(/[^0-9.\-]/g, ''));
+          var bN = parseFloat(bT.replace(/[^0-9.\-]/g, ''));
+          var cmp = isNaN(aN) || isNaN(bN) ? aT.localeCompare(bT) : aN - bN;
+          return sortAsc ? cmp : -cmp;
+        }});
+        rows.forEach(function(r) {{ tbody.appendChild(r); }});
+      }});
+    }});
+
+    var togglesId = table.dataset.toggles;
+    var togglesDiv = togglesId ? document.getElementById(togglesId) : null;
+    if (!togglesDiv) return;
+    var ths = Array.from(table.querySelectorAll('thead th'));
+    ths.forEach(function(th, i) {{
+      var btn = document.createElement('button');
+      btn.textContent = th.textContent.replace(/[▲▼]/g,'').trim();
+      var isHid = hidden.has(i);
+      btn.style.cssText = 'padding:2px 8px;border-radius:10px;border:1px solid #aaa;cursor:pointer;font-size:11px;background:' + (isHid ? '#eee' : '#e3f2fd') + ';color:' + (isHid ? '#999' : '#0d47a1') + ';text-decoration:' + (isHid ? 'line-through' : '');
+      btn.title = 'Click to hide/show column';
+      btn.addEventListener('click', function() {{
+        if (hidden.has(i)) {{
+          hidden.delete(i); setCol(i, true);
+          btn.style.background='#e3f2fd'; btn.style.color='#0d47a1'; btn.style.textDecoration='';
+        }} else {{
+          hidden.add(i); setCol(i, false);
+          btn.style.background='#eee'; btn.style.color='#999'; btn.style.textDecoration='line-through';
+        }}
+        localStorage.setItem(LS_HIDE, JSON.stringify([...hidden]));
+      }});
+      togglesDiv.appendChild(btn);
+    }});
+  }});
 }})();
 
 // ── Resizable columns ─────────────────────────────────────────────────────────
