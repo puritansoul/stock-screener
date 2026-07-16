@@ -838,12 +838,13 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
                         if e.get("side") == "long" else
                         '<span style="background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:4px;font-size:11px">SHORT</span>')
                 entry_rows_html += f'<tr><td style="font-weight:bold">{_etk}{_en_html}</td><td>{_esb}</td><td>${e.get("price", 0):,.2f}</td><td style="text-align:right">{e.get("shares", 0):,}</td><td>${e.get("stop", 0):,.2f}</td></tr>'
-            entries_section = f'''<div style="margin-bottom:16px">
-          <div style="font-weight:bold;color:#1a237e;margin-bottom:6px;font-size:14px">Entries ({len(entries_today)})</div>
-          <table id="today-entries-table"><thead><tr><th>Ticker</th><th>Side</th><th>Price</th><th>Shares</th><th>Stop</th></tr></thead><tbody>{entry_rows_html}</tbody></table>
-        </div>'''
+            entries_section = f'''<details open style="margin-bottom:12px">
+          <summary style="font-size:14px;color:#1a237e">Entries ({len(entries_today)})</summary>
+          <div style="overflow-x:auto;margin-top:8px">
+          <table id="today-entries-table" style="white-space:nowrap"><thead><tr><th>Ticker</th><th>Side</th><th>Price</th><th>Shares</th><th>Stop</th></tr></thead><tbody>{entry_rows_html}</tbody></table>
+          </div></details>'''
         else:
-            entries_section = '<p style="color:#999;font-size:13px;margin:4px 0">No entries today</p>'
+            entries_section = '<p style="color:#999;font-size:13px;margin:4px 0 12px">No entries today</p>'
 
         # Build exits HTML
         if exits_today_log:
@@ -858,10 +859,11 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
                 _epnl = e.get("pnl", 0)
                 _epc = "#2e7d32" if _epnl >= 0 else "#c62828"
                 exit_rows_html += f'<tr><td style="font-weight:bold">{_etk}{_en_html}</td><td>{_esb}</td><td>${e.get("exit_price", 0):,.2f}</td><td style="text-align:right;color:{_epc};font-weight:bold">${_epnl:+,.0f}</td><td style="color:#666;font-size:12px">{e.get("reason", "—")}</td></tr>'
-            exits_section = f'''<div>
-          <div style="font-weight:bold;color:#1a237e;margin-bottom:6px;font-size:14px">Exits ({len(exits_today_log)})</div>
-          <table id="today-exits-table"><thead><tr><th>Ticker</th><th>Side</th><th>Exit Price</th><th>P&amp;L</th><th>Reason</th></tr></thead><tbody>{exit_rows_html}</tbody></table>
-        </div>'''
+            exits_section = f'''<details open>
+          <summary style="font-size:14px;color:#1a237e">Exits ({len(exits_today_log)})</summary>
+          <div style="overflow-x:auto;margin-top:8px">
+          <table id="today-exits-table" style="white-space:nowrap"><thead><tr><th>Ticker</th><th>Side</th><th>Exit Price</th><th>P&amp;L</th><th>Reason</th></tr></thead><tbody>{exit_rows_html}</tbody></table>
+          </div></details>'''
         else:
             exits_section = '<p style="color:#999;font-size:13px;margin:4px 0">No exits today</p>'
 

@@ -985,7 +985,11 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
                     if _op.get("side") == "long" else
                     '<span style="background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:4px;font-size:11px">SHORT</span>')
             _etr += f'<tr><td style="font-weight:bold">{_etk}{_en_html}</td><td>{_esb}</td><td>${_op.get("entry_price",0):,.2f}</td><td style="text-align:right">{_op.get("shares",0):,}</td><td style="color:#666;font-size:12px">{_op.get("entry_time","—")}</td></tr>'
-        _entries_section = f'<div style="margin-bottom:16px"><div style="font-weight:bold;color:#1a237e;margin-bottom:6px;font-size:14px">Entries ({len(_open_entries_today)})</div><table id="today-act-entries-table"><thead><tr><th>Ticker</th><th>Side</th><th>Entry Price</th><th>Shares</th><th>Entry Time</th></tr></thead><tbody>{_etr}</tbody></table></div>'
+        _entries_section = f'''<details open style="margin-bottom:12px">
+          <summary style="font-size:14px;color:#1a237e">Entries ({len(_open_entries_today)})</summary>
+          <div style="overflow-x:auto;margin-top:8px">
+          <table id="today-act-entries-table" style="white-space:nowrap"><thead><tr><th>Ticker</th><th>Side</th><th>Entry Price</th><th>Shares</th><th>Entry Time</th></tr></thead><tbody>{_etr}</tbody></table>
+          </div></details>'''
     else:
         _entries_section = '<p style="color:#999;font-size:13px;margin:4px 0 12px">No entries today</p>'
 
@@ -1002,7 +1006,11 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
             _xpnl = _xp.get("pnl", 0)
             _xpc = "#2e7d32" if _xpnl >= 0 else "#c62828"
             _xtr += f'<tr><td style="font-weight:bold">{_xtk}{_xn_html}</td><td>{_xsb}</td><td>${_xp.get("entry_price",0):,.2f}</td><td>${_xp.get("exit_price",0):,.2f}</td><td style="text-align:right;color:{_xpc};font-weight:bold">${_xpnl:+,.0f}</td><td style="color:#666;font-size:12px">{_xp.get("exit_time","—")}</td><td style="color:#666;font-size:12px">{_xp.get("exit_reason","—")}</td></tr>'
-        _exits_section = f'<div><div style="font-weight:bold;color:#1a237e;margin-bottom:6px;font-size:14px">Exits ({len(closed_td)})</div><table id="today-act-exits-table"><thead><tr><th>Ticker</th><th>Side</th><th>Entry</th><th>Exit</th><th>P&amp;L</th><th>Exit Time</th><th>Reason</th></tr></thead><tbody>{_xtr}</tbody></table></div>'
+        _exits_section = f'''<details open>
+          <summary style="font-size:14px;color:#1a237e">Exits ({len(closed_td)})</summary>
+          <div style="overflow-x:auto;margin-top:8px">
+          <table id="today-act-exits-table" style="white-space:nowrap"><thead><tr><th>Ticker</th><th>Side</th><th>Entry</th><th>Exit</th><th>P&amp;L</th><th>Exit Time</th><th>Reason</th></tr></thead><tbody>{_xtr}</tbody></table>
+          </div></details>'''
     else:
         _exits_section = '<p style="color:#999;font-size:13px;margin:4px 0">No exits today</p>'
 
@@ -1098,13 +1106,15 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
 
   <div class="section">
     <h2>Open Positions</h2>
-    <table id="open-pos-table">
+    <div style="overflow-x:auto">
+    <table id="open-pos-table" style="white-space:nowrap">
       <thead><tr>
         <th>Ticker</th><th>Side</th><th>Entry</th><th>Current</th>
         <th>Shares</th><th>Unrealized P&amp;L</th><th>Peak</th><th>Trail Stop</th><th>Entry Date</th><th>Entry Time</th>
       </tr></thead>
       <tbody>{open_rows}</tbody>
     </table>
+    </div>
   </div>
 
   {_today_activity_html}
