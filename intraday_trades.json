@@ -1,5 +1,5 @@
 {
-  "capital": 1329.17,
+  "capital": 557.72,
   "open_positions": [
     {
       "ticker": "CPAY",
@@ -218,9 +218,9 @@
       "entry_time": "10:14 ET",
       "entry_price": 22.091,
       "shares": 63,
-      "stop": 21.96,
+      "stop": 21.99,
       "trail_dist": 0.155,
-      "peak": 22.115,
+      "peak": 22.145,
       "orb_width": 0.31,
       "cost": 1391.73,
       "vol_ratio": 1.68
@@ -260,12 +260,68 @@
       "entry_time": "10:14 ET",
       "entry_price": 148.195,
       "shares": 3,
-      "stop": 146.765,
+      "stop": 146.87,
       "trail_dist": 1.5,
-      "peak": 148.265,
+      "peak": 148.37,
       "orb_width": 3.0,
       "cost": 444.59,
       "vol_ratio": 1.22
+    },
+    {
+      "ticker": "FITB",
+      "side": "long",
+      "entry_date": "2026-07-16",
+      "entry_time": "10:19 ET",
+      "entry_price": 59.02,
+      "shares": 6,
+      "stop": 58.5775,
+      "trail_dist": 0.4425,
+      "peak": 59.02,
+      "orb_width": 0.885,
+      "cost": 354.12,
+      "vol_ratio": 2.61
+    },
+    {
+      "ticker": "AMT",
+      "side": "short",
+      "entry_date": "2026-07-16",
+      "entry_time": "10:19 ET",
+      "entry_price": 168.47,
+      "shares": 1,
+      "stop": 169.26,
+      "trail_dist": 0.79,
+      "peak": 168.47,
+      "orb_width": 1.58,
+      "cost": 168.47,
+      "vol_ratio": 2.18
+    },
+    {
+      "ticker": "IRM",
+      "side": "long",
+      "entry_date": "2026-07-16",
+      "entry_time": "10:19 ET",
+      "entry_price": 123.95,
+      "shares": 1,
+      "stop": 123.1225,
+      "trail_dist": 0.8275,
+      "peak": 123.95,
+      "orb_width": 1.655,
+      "cost": 123.95,
+      "vol_ratio": 1.35
+    },
+    {
+      "ticker": "GPC",
+      "side": "long",
+      "entry_date": "2026-07-16",
+      "entry_time": "10:19 ET",
+      "entry_price": 124.91,
+      "shares": 1,
+      "stop": 123.195,
+      "trail_dist": 1.715,
+      "peak": 124.91,
+      "orb_width": 3.43,
+      "cost": 124.91,
+      "vol_ratio": 1.25
     }
   ],
   "closed_today": [
@@ -6059,7 +6115,7 @@
     "2026-07-13": 99718.02,
     "2026-07-14": 99519.7,
     "2026-07-15": 99469.14,
-    "2026-07-16": 99473.23
+    "2026-07-16": 99511.36
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -9961,6 +10017,48 @@
       "exits": [],
       "portfolio_value": 99473.23,
       "note": "$99,473 | cash=$1,329 | open=19 | closed today=4 | day PnL=$-49"
+    },
+    {
+      "date": "2026-07-16",
+      "time": "10:18 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "FITB",
+          "side": "long",
+          "price": 59.02,
+          "shares": 6,
+          "stop": 58.58,
+          "trail_dist": 0.4425
+        },
+        {
+          "ticker": "AMT",
+          "side": "short",
+          "price": 168.47,
+          "shares": 1,
+          "stop": 169.26,
+          "trail_dist": 0.79
+        },
+        {
+          "ticker": "IRM",
+          "side": "long",
+          "price": 123.95,
+          "shares": 1,
+          "stop": 123.12,
+          "trail_dist": 0.8275
+        },
+        {
+          "ticker": "GPC",
+          "side": "long",
+          "price": 124.91,
+          "shares": 1,
+          "stop": 123.2,
+          "trail_dist": 1.715
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 99511.36,
+      "note": "$99,511 | cash=$558 | open=23 | closed today=4 | day PnL=$-49"
     }
   ]
 }
