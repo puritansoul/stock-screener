@@ -1,5 +1,5 @@
 {
-  "capital": 424.61,
+  "capital": 1194.71,
   "open_positions": [
     {
       "ticker": "AME",
@@ -50,9 +50,9 @@
       "entry_time": "10:14 ET",
       "entry_price": 322.04,
       "shares": 36,
-      "stop": 323.3975,
+      "stop": 323.3875,
       "trail_dist": 2.9575,
-      "peak": 320.44,
+      "peak": 320.43,
       "orb_width": 5.915,
       "cost": 11593.44,
       "vol_ratio": 1.82
@@ -134,9 +134,9 @@
       "entry_time": "10:19 ET",
       "entry_price": 44.235,
       "shares": 16,
-      "stop": 43.965,
+      "stop": 43.955,
       "trail_dist": 0.295,
-      "peak": 43.67,
+      "peak": 43.66,
       "orb_width": 0.59,
       "cost": 707.76,
       "vol_ratio": 1.83
@@ -204,9 +204,9 @@
       "entry_time": "10:34 ET",
       "entry_price": 99.0275,
       "shares": 17,
-      "stop": 97.8947,
+      "stop": 97.8347,
       "trail_dist": 0.6047,
-      "peak": 97.29,
+      "peak": 97.23,
       "orb_width": 1.2094,
       "cost": 1683.47,
       "vol_ratio": 1.42
@@ -448,20 +448,6 @@
       "orb_width": 1.78,
       "cost": 1693.34,
       "vol_ratio": 3.34
-    },
-    {
-      "ticker": "XOM",
-      "side": "short",
-      "entry_date": "2026-07-17",
-      "entry_time": "11:09 ET",
-      "entry_price": 147.59,
-      "shares": 8,
-      "stop": 148.595,
-      "trail_dist": 1.005,
-      "peak": 147.59,
-      "orb_width": 2.01,
-      "cost": 1180.72,
-      "vol_ratio": 2.04
     },
     {
       "ticker": "LOW",
@@ -910,6 +896,20 @@
       "orb_width": 0.81,
       "cost": 125.75,
       "vol_ratio": 1.7
+    },
+    {
+      "ticker": "ETN",
+      "side": "long",
+      "entry_date": "2026-07-17",
+      "entry_time": "12:26 ET",
+      "entry_price": 402.58,
+      "shares": 1,
+      "stop": 396.07,
+      "trail_dist": 6.51,
+      "peak": 402.58,
+      "orb_width": 13.02,
+      "cost": 402.58,
+      "vol_ratio": 1.72
     }
   ],
   "closed_today": [
@@ -1387,6 +1387,25 @@
       "pnl": -0.53,
       "exit_reason": "trailing stop",
       "exit_time": "12:21 ET"
+    },
+    {
+      "ticker": "XOM",
+      "side": "short",
+      "entry_date": "2026-07-17",
+      "entry_time": "11:09 ET",
+      "entry_price": 147.59,
+      "shares": 8,
+      "stop": 148.595,
+      "trail_dist": 1.005,
+      "peak": 147.59,
+      "orb_width": 2.01,
+      "cost": 1180.72,
+      "vol_ratio": 2.04,
+      "exit_date": "2026-07-17",
+      "exit_price": 148.595,
+      "pnl": -8.04,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:26 ET"
     }
   ],
   "all_closed": [
@@ -9574,11 +9593,6 @@
       "low": 134.6651,
       "width": 0.9849
     },
-    "AXP": {
-      "high": 358.8,
-      "low": 351.82,
-      "width": 6.98
-    },
     "AIG": {
       "high": 80.17,
       "low": 78.39,
@@ -9939,6 +9953,11 @@
       "low": 100.8142,
       "width": 1.6958
     },
+    "CHTR": {
+      "high": 136.94,
+      "low": 133.315,
+      "width": 3.625
+    },
     "CVX": {
       "high": 188.15,
       "low": 186.445,
@@ -10168,6 +10187,11 @@
       "high": 85.985,
       "low": 83.56,
       "width": 2.425
+    },
+    "DVN": {
+      "high": 44.22,
+      "low": 43.665,
+      "width": 0.555
     },
     "DXCM": {
       "high": 78.01,
@@ -10883,11 +10907,6 @@
       "high": 527.455,
       "low": 520.36,
       "width": 7.095
-    },
-    "LYV": {
-      "high": 181.23,
-      "low": 177.79,
-      "width": 3.44
     },
     "LMT": {
       "high": 527.33,
@@ -11789,11 +11808,6 @@
       "low": 44.46,
       "width": 0.56
     },
-    "VRTX": {
-      "high": 496.69,
-      "low": 481.975,
-      "width": 14.715
-    },
     "VRT": {
       "high": 282.55,
       "low": 272.93,
@@ -11957,7 +11971,7 @@
     "2026-07-14": 99519.7,
     "2026-07-15": 99469.14,
     "2026-07-16": 99371.82,
-    "2026-07-17": 99147.73
+    "2026-07-17": 99146.81
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -22173,6 +22187,32 @@
       "exits": [],
       "portfolio_value": 99147.73,
       "note": "$99,148 | cash=$425 | open=65 | closed today=25 | day PnL=$-546"
+    },
+    {
+      "date": "2026-07-17",
+      "time": "12:26 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "ETN",
+          "side": "long",
+          "price": 402.58,
+          "shares": 1,
+          "stop": 396.07,
+          "trail_dist": 6.51
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "XOM",
+          "side": "short",
+          "exit_price": 148.59,
+          "pnl": -8.04,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 99146.81,
+      "note": "$99,147 | cash=$1,195 | open=65 | closed today=26 | day PnL=$-554"
     }
   ]
 }
