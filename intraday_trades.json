@@ -1,5 +1,5 @@
 {
-  "capital": 3818.97,
+  "capital": 1575.02,
   "open_positions": [
     {
       "ticker": "AME",
@@ -212,20 +212,6 @@
       "vol_ratio": 1.29
     },
     {
-      "ticker": "GNRC",
-      "side": "long",
-      "entry_date": "2026-07-17",
-      "entry_time": "10:29 ET",
-      "entry_price": 215.91,
-      "shares": 7,
-      "stop": 213.65,
-      "trail_dist": 2.85,
-      "peak": 216.5,
-      "orb_width": 5.7,
-      "cost": 1511.37,
-      "vol_ratio": 1.3
-    },
-    {
       "ticker": "PODD",
       "side": "long",
       "entry_date": "2026-07-17",
@@ -330,9 +316,9 @@
       "entry_time": "10:39 ET",
       "entry_price": 79.775,
       "shares": 3,
-      "stop": 80.33,
+      "stop": 80.285,
       "trail_dist": 1.065,
-      "peak": 79.265,
+      "peak": 79.22,
       "orb_width": 2.13,
       "cost": 239.33,
       "vol_ratio": 1.38
@@ -526,9 +512,9 @@
       "entry_time": "10:59 ET",
       "entry_price": 63.7,
       "shares": 5,
-      "stop": 64.5573,
+      "stop": 64.5323,
       "trail_dist": 1.0223,
-      "peak": 63.535,
+      "peak": 63.51,
       "orb_width": 2.0445,
       "cost": 318.5,
       "vol_ratio": 1.37
@@ -540,26 +526,12 @@
       "entry_time": "10:59 ET",
       "entry_price": 75.475,
       "shares": 3,
-      "stop": 75.69,
+      "stop": 75.685,
       "trail_dist": 0.285,
-      "peak": 75.405,
+      "peak": 75.4,
       "orb_width": 0.57,
       "cost": 226.42,
       "vol_ratio": 1.32
-    },
-    {
-      "ticker": "ALB",
-      "side": "long",
-      "entry_date": "2026-07-17",
-      "entry_time": "11:01 ET",
-      "entry_price": 119.235,
-      "shares": 5,
-      "stop": 118.3775,
-      "trail_dist": 1.1525,
-      "peak": 119.53,
-      "orb_width": 2.305,
-      "cost": 596.18,
-      "vol_ratio": 1.28
     },
     {
       "ticker": "MOS",
@@ -588,6 +560,62 @@
       "orb_width": 5.915,
       "cost": 368.78,
       "vol_ratio": 1.47
+    },
+    {
+      "ticker": "AIG",
+      "side": "long",
+      "entry_date": "2026-07-17",
+      "entry_time": "11:09 ET",
+      "entry_price": 80.635,
+      "shares": 21,
+      "stop": 79.745,
+      "trail_dist": 0.89,
+      "peak": 80.635,
+      "orb_width": 1.78,
+      "cost": 1693.34,
+      "vol_ratio": 3.34
+    },
+    {
+      "ticker": "XOM",
+      "side": "short",
+      "entry_date": "2026-07-17",
+      "entry_time": "11:09 ET",
+      "entry_price": 147.59,
+      "shares": 8,
+      "stop": 148.595,
+      "trail_dist": 1.005,
+      "peak": 147.59,
+      "orb_width": 2.01,
+      "cost": 1180.72,
+      "vol_ratio": 2.04
+    },
+    {
+      "ticker": "LOW",
+      "side": "short",
+      "entry_date": "2026-07-17",
+      "entry_time": "11:09 ET",
+      "entry_price": 214.465,
+      "shares": 4,
+      "stop": 216.46,
+      "trail_dist": 1.995,
+      "peak": 214.465,
+      "orb_width": 3.99,
+      "cost": 857.86,
+      "vol_ratio": 1.47
+    },
+    {
+      "ticker": "CMS",
+      "side": "short",
+      "entry_date": "2026-07-17",
+      "entry_time": "11:09 ET",
+      "entry_price": 74.935,
+      "shares": 8,
+      "stop": 75.385,
+      "trail_dist": 0.45,
+      "peak": 74.935,
+      "orb_width": 0.9,
+      "cost": 599.48,
+      "vol_ratio": 1.3
     }
   ],
   "closed_today": [
@@ -818,6 +846,44 @@
       "pnl": -17.7,
       "exit_reason": "trailing stop",
       "exit_time": "11:06 ET"
+    },
+    {
+      "ticker": "GNRC",
+      "side": "long",
+      "entry_date": "2026-07-17",
+      "entry_time": "10:29 ET",
+      "entry_price": 215.91,
+      "shares": 7,
+      "stop": 213.65,
+      "trail_dist": 2.85,
+      "peak": 216.5,
+      "orb_width": 5.7,
+      "cost": 1511.37,
+      "vol_ratio": 1.3,
+      "exit_date": "2026-07-17",
+      "exit_price": 213.65,
+      "pnl": -15.82,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:09 ET"
+    },
+    {
+      "ticker": "ALB",
+      "side": "long",
+      "entry_date": "2026-07-17",
+      "entry_time": "11:01 ET",
+      "entry_price": 119.235,
+      "shares": 5,
+      "stop": 118.3775,
+      "trail_dist": 1.1525,
+      "peak": 119.53,
+      "orb_width": 2.305,
+      "cost": 596.18,
+      "vol_ratio": 1.28,
+      "exit_date": "2026-07-17",
+      "exit_price": 118.3775,
+      "pnl": -4.29,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:09 ET"
     }
   ],
   "all_closed": [
@@ -10966,9 +11032,9 @@
       "width": 1.42
     },
     "LUV": {
-      "high": 48.75,
+      "high": 48.955,
       "low": 47.56,
-      "width": 1.19
+      "width": 1.395
     },
     "SWK": {
       "high": 92.5,
@@ -11398,7 +11464,7 @@
     "2026-07-14": 99519.7,
     "2026-07-15": 99469.14,
     "2026-07-16": 99371.82,
-    "2026-07-17": 99007.43
+    "2026-07-17": 99039.97
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -20930,6 +20996,63 @@
       ],
       "portfolio_value": 99007.43,
       "note": "$99,007 | cash=$3,819 | open=42 | closed today=12 | day PnL=$-415"
+    },
+    {
+      "date": "2026-07-17",
+      "time": "11:08 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "AIG",
+          "side": "long",
+          "price": 80.64,
+          "shares": 21,
+          "stop": 79.75,
+          "trail_dist": 0.89
+        },
+        {
+          "ticker": "XOM",
+          "side": "short",
+          "price": 147.59,
+          "shares": 8,
+          "stop": 148.59,
+          "trail_dist": 1.005
+        },
+        {
+          "ticker": "LOW",
+          "side": "short",
+          "price": 214.46,
+          "shares": 4,
+          "stop": 216.46,
+          "trail_dist": 1.995
+        },
+        {
+          "ticker": "CMS",
+          "side": "short",
+          "price": 74.93,
+          "shares": 8,
+          "stop": 75.38,
+          "trail_dist": 0.45
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "GNRC",
+          "side": "long",
+          "exit_price": 213.65,
+          "pnl": -15.82,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "ALB",
+          "side": "long",
+          "exit_price": 118.38,
+          "pnl": -4.29,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 99039.97,
+      "note": "$99,040 | cash=$1,575 | open=44 | closed today=14 | day PnL=$-435"
     }
   ]
 }
