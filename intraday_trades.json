@@ -1,5 +1,5 @@
 {
-  "capital": 937.0,
+  "capital": 515.89,
   "open_positions": [
     {
       "ticker": "AME",
@@ -218,9 +218,9 @@
       "entry_time": "10:24 ET",
       "entry_price": 276.135,
       "shares": 8,
-      "stop": 278.2625,
+      "stop": 278.1525,
       "trail_dist": 2.4225,
-      "peak": 275.84,
+      "peak": 275.73,
       "orb_width": 4.845,
       "cost": 2209.08,
       "vol_ratio": 1.29
@@ -274,9 +274,9 @@
       "entry_time": "10:34 ET",
       "entry_price": 99.0275,
       "shares": 17,
-      "stop": 99.2998,
+      "stop": 99.1047,
       "trail_dist": 0.6047,
-      "peak": 98.6951,
+      "peak": 98.5,
       "orb_width": 1.2094,
       "cost": 1683.47,
       "vol_ratio": 1.42
@@ -330,9 +330,9 @@
       "entry_time": "10:39 ET",
       "entry_price": 88.0,
       "shares": 5,
-      "stop": 87.325,
+      "stop": 87.335,
       "trail_dist": 0.7,
-      "peak": 88.025,
+      "peak": 88.035,
       "orb_width": 1.4,
       "cost": 440.0,
       "vol_ratio": 1.54
@@ -358,9 +358,9 @@
       "entry_time": "10:39 ET",
       "entry_price": 79.775,
       "shares": 3,
-      "stop": 80.54,
+      "stop": 80.485,
       "trail_dist": 1.065,
-      "peak": 79.475,
+      "peak": 79.42,
       "orb_width": 2.13,
       "cost": 239.33,
       "vol_ratio": 1.38
@@ -400,9 +400,9 @@
       "entry_time": "10:44 ET",
       "entry_price": 216.49,
       "shares": 6,
-      "stop": 212.729,
+      "stop": 213.169,
       "trail_dist": 3.761,
-      "peak": 216.49,
+      "peak": 216.93,
       "orb_width": 7.522,
       "cost": 1298.94,
       "vol_ratio": 3.0
@@ -428,9 +428,9 @@
       "entry_time": "10:44 ET",
       "entry_price": 72.05,
       "shares": 10,
-      "stop": 72.68,
+      "stop": 72.6001,
       "trail_dist": 0.63,
-      "peak": 72.05,
+      "peak": 71.9701,
       "orb_width": 1.26,
       "cost": 720.5,
       "vol_ratio": 2.12
@@ -462,6 +462,34 @@
       "orb_width": 1.295,
       "cost": 387.09,
       "vol_ratio": 1.22
+    },
+    {
+      "ticker": "VICI",
+      "side": "short",
+      "entry_date": "2026-07-17",
+      "entry_time": "10:49 ET",
+      "entry_price": 26.925,
+      "shares": 10,
+      "stop": 27.065,
+      "trail_dist": 0.14,
+      "peak": 26.925,
+      "orb_width": 0.28,
+      "cost": 269.25,
+      "vol_ratio": 2.26
+    },
+    {
+      "ticker": "FISV",
+      "side": "short",
+      "entry_date": "2026-07-17",
+      "entry_time": "10:49 ET",
+      "entry_price": 50.62,
+      "shares": 3,
+      "stop": 51.015,
+      "trail_dist": 0.395,
+      "peak": 50.62,
+      "orb_width": 0.79,
+      "cost": 151.86,
+      "vol_ratio": 1.33
     }
   ],
   "closed_today": [
@@ -11139,7 +11167,7 @@
     "2026-07-14": 99519.7,
     "2026-07-15": 99469.14,
     "2026-07-16": 99371.82,
-    "2026-07-17": 99203.03
+    "2026-07-17": 99197.16
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -20410,6 +20438,32 @@
       "exits": [],
       "portfolio_value": 99203.03,
       "note": "$99,203 | cash=$937 | open=33 | closed today=5 | day PnL=$-327"
+    },
+    {
+      "date": "2026-07-17",
+      "time": "10:48 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "VICI",
+          "side": "short",
+          "price": 26.92,
+          "shares": 10,
+          "stop": 27.06,
+          "trail_dist": 0.14
+        },
+        {
+          "ticker": "FISV",
+          "side": "short",
+          "price": 50.62,
+          "shares": 3,
+          "stop": 51.01,
+          "trail_dist": 0.395
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 99197.16,
+      "note": "$99,197 | cash=$516 | open=35 | closed today=5 | day PnL=$-327"
     }
   ]
 }
