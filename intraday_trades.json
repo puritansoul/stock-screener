@@ -1,5 +1,5 @@
 {
-  "capital": 544.97,
+  "capital": 1660.51,
   "open_positions": [
     {
       "ticker": "AME",
@@ -106,9 +106,9 @@
       "entry_time": "10:14 ET",
       "entry_price": 97.0,
       "shares": 29,
-      "stop": 96.5,
+      "stop": 96.58,
       "trail_dist": 0.51,
-      "peak": 97.01,
+      "peak": 97.09,
       "orb_width": 1.02,
       "cost": 2813.0,
       "vol_ratio": 1.33
@@ -190,9 +190,9 @@
       "entry_time": "10:24 ET",
       "entry_price": 151.525,
       "shares": 31,
-      "stop": 152.15,
+      "stop": 152.145,
       "trail_dist": 1.435,
-      "peak": 150.715,
+      "peak": 150.71,
       "orb_width": 2.87,
       "cost": 4697.27,
       "vol_ratio": 1.84
@@ -266,20 +266,6 @@
       "orb_width": 1.2094,
       "cost": 1683.47,
       "vol_ratio": 1.42
-    },
-    {
-      "ticker": "AEP",
-      "side": "short",
-      "entry_date": "2026-07-17",
-      "entry_time": "10:34 ET",
-      "entry_price": 134.63,
-      "shares": 9,
-      "stop": 134.7324,
-      "trail_dist": 0.4924,
-      "peak": 134.24,
-      "orb_width": 0.9849,
-      "cost": 1211.67,
-      "vol_ratio": 1.24
     },
     {
       "ticker": "WST",
@@ -414,9 +400,9 @@
       "entry_time": "10:44 ET",
       "entry_price": 183.56,
       "shares": 3,
-      "stop": 185.3525,
+      "stop": 184.8775,
       "trail_dist": 2.5575,
-      "peak": 182.795,
+      "peak": 182.32,
       "orb_width": 5.115,
       "cost": 550.68,
       "vol_ratio": 1.35
@@ -434,20 +420,6 @@
       "orb_width": 1.295,
       "cost": 387.09,
       "vol_ratio": 1.22
-    },
-    {
-      "ticker": "VICI",
-      "side": "short",
-      "entry_date": "2026-07-17",
-      "entry_time": "10:49 ET",
-      "entry_price": 26.925,
-      "shares": 10,
-      "stop": 27.065,
-      "trail_dist": 0.14,
-      "peak": 26.925,
-      "orb_width": 0.28,
-      "cost": 269.25,
-      "vol_ratio": 2.26
     },
     {
       "ticker": "FISV",
@@ -520,20 +492,6 @@
       "vol_ratio": 1.81
     },
     {
-      "ticker": "ADBE",
-      "side": "short",
-      "entry_date": "2026-07-17",
-      "entry_time": "10:54 ET",
-      "entry_price": 233.9675,
-      "shares": 1,
-      "stop": 234.82,
-      "trail_dist": 1.52,
-      "peak": 233.3,
-      "orb_width": 3.04,
-      "cost": 233.97,
-      "vol_ratio": 1.78
-    },
-    {
       "ticker": "STE",
       "side": "short",
       "entry_date": "2026-07-17",
@@ -582,9 +540,9 @@
       "entry_time": "10:59 ET",
       "entry_price": 259.1,
       "shares": 1,
-      "stop": 263.975,
+      "stop": 263.635,
       "trail_dist": 4.875,
-      "peak": 259.1,
+      "peak": 258.76,
       "orb_width": 9.75,
       "cost": 259.1,
       "vol_ratio": 3.53
@@ -596,9 +554,9 @@
       "entry_time": "10:59 ET",
       "entry_price": 63.7,
       "shares": 5,
-      "stop": 64.7223,
+      "stop": 64.6923,
       "trail_dist": 1.0223,
-      "peak": 63.7,
+      "peak": 63.67,
       "orb_width": 2.0445,
       "cost": 318.5,
       "vol_ratio": 1.37
@@ -616,6 +574,20 @@
       "orb_width": 0.57,
       "cost": 226.42,
       "vol_ratio": 1.32
+    },
+    {
+      "ticker": "ALB",
+      "side": "long",
+      "entry_date": "2026-07-17",
+      "entry_time": "11:01 ET",
+      "entry_price": 119.235,
+      "shares": 5,
+      "stop": 118.0825,
+      "trail_dist": 1.1525,
+      "peak": 119.235,
+      "orb_width": 2.305,
+      "cost": 596.18,
+      "vol_ratio": 1.28
     }
   ],
   "closed_today": [
@@ -751,6 +723,63 @@
       "pnl": -11.74,
       "exit_reason": "trailing stop",
       "exit_time": "10:56 ET"
+    },
+    {
+      "ticker": "AEP",
+      "side": "short",
+      "entry_date": "2026-07-17",
+      "entry_time": "10:34 ET",
+      "entry_price": 134.63,
+      "shares": 9,
+      "stop": 134.7324,
+      "trail_dist": 0.4924,
+      "peak": 134.24,
+      "orb_width": 0.9849,
+      "cost": 1211.67,
+      "vol_ratio": 1.24,
+      "exit_date": "2026-07-17",
+      "exit_price": 134.7324,
+      "pnl": -0.92,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:01 ET"
+    },
+    {
+      "ticker": "VICI",
+      "side": "short",
+      "entry_date": "2026-07-17",
+      "entry_time": "10:49 ET",
+      "entry_price": 26.925,
+      "shares": 10,
+      "stop": 27.065,
+      "trail_dist": 0.14,
+      "peak": 26.925,
+      "orb_width": 0.28,
+      "cost": 269.25,
+      "vol_ratio": 2.26,
+      "exit_date": "2026-07-17",
+      "exit_price": 27.065,
+      "pnl": -1.4,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:01 ET"
+    },
+    {
+      "ticker": "ADBE",
+      "side": "short",
+      "entry_date": "2026-07-17",
+      "entry_time": "10:54 ET",
+      "entry_price": 233.9675,
+      "shares": 1,
+      "stop": 234.82,
+      "trail_dist": 1.52,
+      "peak": 233.3,
+      "orb_width": 3.04,
+      "cost": 233.97,
+      "vol_ratio": 1.78,
+      "exit_date": "2026-07-17",
+      "exit_price": 234.82,
+      "pnl": -0.85,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:01 ET"
     }
   ],
   "all_closed": [
@@ -8848,6 +8877,11 @@
       "low": 14.79,
       "width": 0.025
     },
+    "AFL": {
+      "high": 125.93,
+      "low": 123.955,
+      "width": 1.975
+    },
     "A": {
       "high": 135.795,
       "low": 133.58,
@@ -9122,6 +9156,11 @@
       "high": 71.935,
       "low": 71.5,
       "width": 0.435
+    },
+    "BIIB": {
+      "high": 215.67,
+      "low": 208.09,
+      "width": 7.58
     },
     "BLK": {
       "high": 1099.41,
@@ -10853,6 +10892,11 @@
       "low": 335.63,
       "width": 8.06
     },
+    "SPG": {
+      "high": 231.02,
+      "low": 228.36,
+      "width": 2.66
+    },
     "SWKS": {
       "high": 58.04,
       "low": 56.71,
@@ -11316,7 +11360,7 @@
     "2026-07-14": 99519.7,
     "2026-07-15": 99469.14,
     "2026-07-16": 99371.82,
-    "2026-07-17": 99067.02
+    "2026-07-17": 99035.7
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -20757,6 +20801,46 @@
       "exits": [],
       "portfolio_value": 99067.02,
       "note": "$99,067 | cash=$545 | open=44 | closed today=7 | day PnL=$-391"
+    },
+    {
+      "date": "2026-07-17",
+      "time": "11:01 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "ALB",
+          "side": "long",
+          "price": 119.24,
+          "shares": 5,
+          "stop": 118.08,
+          "trail_dist": 1.1525
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "AEP",
+          "side": "short",
+          "exit_price": 134.73,
+          "pnl": -0.92,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "VICI",
+          "side": "short",
+          "exit_price": 27.07,
+          "pnl": -1.4,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "ADBE",
+          "side": "short",
+          "exit_price": 234.82,
+          "pnl": -0.85,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 99035.7,
+      "note": "$99,036 | cash=$1,661 | open=42 | closed today=10 | day PnL=$-394"
     }
   ]
 }
