@@ -1,5 +1,5 @@
 {
-  "capital": 2540.34,
+  "capital": 2841.1,
   "open_positions": [
     {
       "ticker": "AME",
@@ -64,9 +64,9 @@
       "entry_time": "10:14 ET",
       "entry_price": 409.66,
       "shares": 10,
-      "stop": 404.95,
+      "stop": 405.43,
       "trail_dist": 6.865,
-      "peak": 411.815,
+      "peak": 412.295,
       "orb_width": 13.73,
       "cost": 4096.6,
       "vol_ratio": 1.37
@@ -344,9 +344,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 22.3,
       "shares": 30,
-      "stop": 22.445,
+      "stop": 22.435,
       "trail_dist": 0.255,
-      "peak": 22.19,
+      "peak": 22.18,
       "orb_width": 0.51,
       "cost": 669.0,
       "vol_ratio": 1.86
@@ -406,20 +406,6 @@
       "orb_width": 0.72,
       "cost": 574.01,
       "vol_ratio": 2.93
-    },
-    {
-      "ticker": "JKHY",
-      "side": "short",
-      "entry_date": "2026-07-17",
-      "entry_time": "11:14 ET",
-      "entry_price": 150.63,
-      "shares": 2,
-      "stop": 150.88,
-      "trail_dist": 1.28,
-      "peak": 149.6,
-      "orb_width": 2.56,
-      "cost": 301.26,
-      "vol_ratio": 2.79
     },
     {
       "ticker": "COP",
@@ -1002,9 +988,9 @@
       "entry_time": "13:23 ET",
       "entry_price": 26.88,
       "shares": 55,
-      "stop": 26.9575,
+      "stop": 26.9525,
       "trail_dist": 0.0775,
-      "peak": 26.88,
+      "peak": 26.875,
       "orb_width": 0.155,
       "cost": 1478.4,
       "vol_ratio": 2.64
@@ -1860,6 +1846,25 @@
       "pnl": 1.68,
       "exit_reason": "trailing stop",
       "exit_time": "13:23 ET"
+    },
+    {
+      "ticker": "JKHY",
+      "side": "short",
+      "entry_date": "2026-07-17",
+      "entry_time": "11:14 ET",
+      "entry_price": 150.63,
+      "shares": 2,
+      "stop": 150.88,
+      "trail_dist": 1.28,
+      "peak": 149.6,
+      "orb_width": 2.56,
+      "cost": 301.26,
+      "vol_ratio": 2.79,
+      "exit_date": "2026-07-17",
+      "exit_price": 150.88,
+      "pnl": -0.5,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:25 ET"
     }
   ],
   "all_closed": [
@@ -10292,6 +10297,11 @@
       "low": 152.26,
       "width": 2.87
     },
+    "BRO": {
+      "high": 71.37,
+      "low": 70.1,
+      "width": 1.27
+    },
     "BF-B": {
       "high": 26.35,
       "low": 26.06,
@@ -11101,6 +11111,11 @@
       "high": 26.21,
       "low": 25.81,
       "width": 0.4
+    },
+    "HST": {
+      "high": 23.755,
+      "low": 23.42,
+      "width": 0.335
     },
     "HWM": {
       "high": 274.1729,
@@ -12332,6 +12347,11 @@
       "low": 244.6,
       "width": 2.545
     },
+    "WAT": {
+      "high": 378.9,
+      "low": 373.321,
+      "width": 5.579
+    },
     "WEC": {
       "high": 116.66,
       "low": 115.5,
@@ -12425,7 +12445,7 @@
     "2026-07-14": 99519.7,
     "2026-07-15": 99469.14,
     "2026-07-16": 99371.82,
-    "2026-07-17": 99415.76
+    "2026-07-17": 99394.21
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -23235,6 +23255,23 @@
       ],
       "portfolio_value": 99415.76,
       "note": "$99,416 | cash=$2,540 | open=73 | closed today=44 | day PnL=$-568"
+    },
+    {
+      "date": "2026-07-17",
+      "time": "13:25 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "JKHY",
+          "side": "short",
+          "exit_price": 150.88,
+          "pnl": -0.5,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 99394.21,
+      "note": "$99,394 | cash=$2,841 | open=72 | closed today=45 | day PnL=$-568"
     }
   ]
 }
