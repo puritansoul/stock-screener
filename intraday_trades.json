@@ -1,6 +1,63 @@
 {
-  "capital": 99371.82,
-  "open_positions": [],
+  "capital": 24044.05,
+  "open_positions": [
+    {
+      "ticker": "NRG",
+      "side": "long",
+      "entry_date": "2026-07-17",
+      "entry_time": "10:04 ET",
+      "entry_price": 131.36,
+      "shares": 226,
+      "stop": 130.0865,
+      "trail_dist": 1.2735,
+      "peak": 131.36,
+      "orb_width": 2.5471,
+      "cost": 29687.36,
+      "vol_ratio": 2.83
+    },
+    {
+      "ticker": "AME",
+      "side": "long",
+      "entry_date": "2026-07-17",
+      "entry_time": "10:04 ET",
+      "entry_price": 236.68,
+      "shares": 88,
+      "stop": 233.7513,
+      "trail_dist": 2.9287,
+      "peak": 236.68,
+      "orb_width": 5.8575,
+      "cost": 20827.84,
+      "vol_ratio": 1.55
+    },
+    {
+      "ticker": "FDXF",
+      "side": "long",
+      "entry_date": "2026-07-17",
+      "entry_time": "10:04 ET",
+      "entry_price": 157.5,
+      "shares": 93,
+      "stop": 154.545,
+      "trail_dist": 2.955,
+      "peak": 157.5,
+      "orb_width": 5.91,
+      "cost": 14647.5,
+      "vol_ratio": 1.44
+    },
+    {
+      "ticker": "IT",
+      "side": "short",
+      "entry_date": "2026-07-17",
+      "entry_time": "10:04 ET",
+      "entry_price": 143.17,
+      "shares": 71,
+      "stop": 143.9825,
+      "trail_dist": 0.8125,
+      "peak": 143.17,
+      "orb_width": 1.625,
+      "cost": 10165.07,
+      "vol_ratio": 1.4
+    }
+  ],
   "closed_today": [],
   "all_closed": [
     {
@@ -8288,9 +8345,9 @@
       "width": 6.55
     },
     "AJG": {
-      "high": 261.59,
+      "high": 261.92,
       "low": 257.21,
-      "width": 4.38
+      "width": 4.71
     },
     "AIZ": {
       "high": 281.605,
@@ -8343,9 +8400,9 @@
       "width": 0.665
     },
     "BALL": {
-      "high": 64.11,
+      "high": 64.12,
       "low": 63.255,
-      "width": 0.855
+      "width": 0.865
     },
     "BAC": {
       "high": 61.785,
@@ -8368,9 +8425,9 @@
       "width": 7.48
     },
     "BBY": {
-      "high": 87.075,
+      "high": 87.1,
       "low": 85.43,
-      "width": 1.645
+      "width": 1.67
     },
     "TECH": {
       "high": 71.935,
@@ -8493,9 +8550,9 @@
       "width": 2.115
     },
     "CVNA": {
-      "high": 69.98,
+      "high": 69.99,
       "low": 68.11,
-      "width": 1.87
+      "width": 1.88
     },
     "CASY": {
       "high": 859.5,
@@ -8568,9 +8625,9 @@
       "width": 0.935
     },
     "CB": {
-      "high": 354.205,
+      "high": 354.36,
       "low": 347.45,
-      "width": 6.755
+      "width": 6.91
     },
     "CHD": {
       "high": 100.92,
@@ -8608,9 +8665,9 @@
       "width": 3.3199
     },
     "CFG": {
-      "high": 74.13,
+      "high": 74.16,
       "low": 72.79,
-      "width": 1.34
+      "width": 1.37
     },
     "CLX": {
       "high": 100.4594,
@@ -8788,9 +8845,9 @@
       "width": 2.425
     },
     "DVN": {
-      "high": 44.2,
+      "high": 44.22,
       "low": 43.665,
-      "width": 0.535
+      "width": 0.555
     },
     "DXCM": {
       "high": 78.01,
@@ -8878,9 +8935,9 @@
       "width": 2.44
     },
     "ECL": {
-      "high": 281.185,
+      "high": 281.195,
       "low": 276.35,
-      "width": 4.835
+      "width": 4.845
     },
     "EIX": {
       "high": 79.88,
@@ -9023,14 +9080,14 @@
       "width": 0.91
     },
     "FRT": {
-      "high": 126.77,
+      "high": 126.8,
       "low": 125.505,
-      "width": 1.265
+      "width": 1.295
     },
     "FDX": {
-      "high": 318.5,
+      "high": 318.66,
       "low": 313.13,
-      "width": 5.37
+      "width": 5.53
     },
     "FDXF": {
       "high": 156.37,
@@ -9043,9 +9100,9 @@
       "width": 0.81
     },
     "FITB": {
-      "high": 58.97,
-      "low": 58.085,
-      "width": 0.885
+      "high": 58.93,
+      "low": 55.0,
+      "width": 3.93
     },
     "FSLR": {
       "high": 210.0,
@@ -9188,9 +9245,9 @@
       "width": 0.55
     },
     "HIG": {
-      "high": 141.985,
+      "high": 141.99,
       "low": 137.54,
-      "width": 4.445
+      "width": 4.45
     },
     "HAS": {
       "high": 81.92,
@@ -9203,9 +9260,9 @@
       "width": 7.265
     },
     "DOC": {
-      "high": 22.611,
+      "high": 22.62,
       "low": 22.35,
-      "width": 0.261
+      "width": 0.27
     },
     "HSIC": {
       "high": 88.935,
@@ -9308,9 +9365,9 @@
       "width": 3.22
     },
     "IR": {
-      "high": 85.0075,
+      "high": 85.0475,
       "low": 82.555,
-      "width": 2.4525
+      "width": 2.4925
     },
     "PODD": {
       "high": 163.525,
@@ -9613,9 +9670,9 @@
       "width": 12.68
     },
     "MET": {
-      "high": 94.84,
+      "high": 94.86,
       "low": 93.12,
-      "width": 1.72
+      "width": 1.74
     },
     "MTD": {
       "high": 1339.58,
@@ -9762,6 +9819,11 @@
       "low": 523.58,
       "width": 15.38
     },
+    "NCLH": {
+      "high": 19.7,
+      "low": 19.05,
+      "width": 0.65
+    },
     "NRG": {
       "high": 131.07,
       "low": 128.5229,
@@ -9811,6 +9873,11 @@
       "high": 86.39,
       "low": 83.3501,
       "width": 3.0399
+    },
+    "OKE": {
+      "high": 94.0,
+      "low": 93.1,
+      "width": 0.9
     },
     "ORCL": {
       "high": 125.3699,
@@ -9968,9 +10035,9 @@
       "width": 3.23
     },
     "DGX": {
-      "high": 214.39,
+      "high": 214.4,
       "low": 209.96,
-      "width": 4.43
+      "width": 4.44
     },
     "Q": {
       "high": 133.66,
@@ -10103,9 +10170,9 @@
       "width": 8.06
     },
     "SPG": {
-      "high": 230.99,
+      "high": 231.02,
       "low": 228.36,
-      "width": 2.63
+      "width": 2.66
     },
     "SWKS": {
       "high": 58.04,
@@ -10318,9 +10385,9 @@
       "width": 0.775
     },
     "USB": {
-      "high": 64.83,
+      "high": 64.84,
       "low": 63.35,
-      "width": 1.48
+      "width": 1.49
     },
     "UBER": {
       "high": 73.46,
@@ -10328,9 +10395,9 @@
       "width": 1.26
     },
     "UDR": {
-      "high": 40.8,
+      "high": 40.82,
       "low": 40.475,
-      "width": 0.325
+      "width": 0.345
     },
     "ULTA": {
       "high": 492.94,
@@ -10439,8 +10506,8 @@
     },
     "WRB": {
       "high": 72.41,
-      "low": 69.9,
-      "width": 2.51
+      "low": 71.01,
+      "width": 1.4
     },
     "GWW": {
       "high": 1419.675,
@@ -10503,9 +10570,9 @@
       "width": 23.0285
     },
     "WY": {
-      "high": 25.13,
+      "high": 25.14,
       "low": 24.6,
-      "width": 0.53
+      "width": 0.54
     },
     "WSM": {
       "high": 233.705,
@@ -10546,11 +10613,6 @@
       "high": 156.13,
       "low": 148.64,
       "width": 7.49
-    },
-    "ZBRA": {
-      "high": 265.355,
-      "low": 259.305,
-      "width": 6.05
     },
     "ZBH": {
       "high": 93.71,
@@ -19322,6 +19384,48 @@
       "exits": [],
       "portfolio_value": 99371.82,
       "note": "$99,372 | cash=$99,372 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-17",
+      "time": "10:04 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "NRG",
+          "side": "long",
+          "price": 131.36,
+          "shares": 226,
+          "stop": 130.09,
+          "trail_dist": 1.2735
+        },
+        {
+          "ticker": "AME",
+          "side": "long",
+          "price": 236.68,
+          "shares": 88,
+          "stop": 233.75,
+          "trail_dist": 2.9287
+        },
+        {
+          "ticker": "FDXF",
+          "side": "long",
+          "price": 157.5,
+          "shares": 93,
+          "stop": 154.54,
+          "trail_dist": 2.955
+        },
+        {
+          "ticker": "IT",
+          "side": "short",
+          "price": 143.17,
+          "shares": 71,
+          "stop": 143.98,
+          "trail_dist": 0.8125
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 99371.82,
+      "note": "$99,372 | cash=$24,044 | open=4 | closed today=0 | day PnL=$+0"
     }
   ]
 }
