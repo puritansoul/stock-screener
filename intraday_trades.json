@@ -1,5 +1,5 @@
 {
-  "capital": 1259.71,
+  "capital": 5511.42,
   "open_positions": [
     {
       "ticker": "AME",
@@ -14,20 +14,6 @@
       "orb_width": 5.8575,
       "cost": 20827.84,
       "vol_ratio": 1.55
-    },
-    {
-      "ticker": "FDXF",
-      "side": "long",
-      "entry_date": "2026-07-17",
-      "entry_time": "10:04 ET",
-      "entry_price": 157.5,
-      "shares": 93,
-      "stop": 155.31,
-      "trail_dist": 2.955,
-      "peak": 158.265,
-      "orb_width": 5.91,
-      "cost": 14647.5,
-      "vol_ratio": 1.44
     },
     {
       "ticker": "MKC",
@@ -78,9 +64,9 @@
       "entry_time": "10:12 ET",
       "entry_price": 109.86,
       "shares": 36,
-      "stop": 110.0832,
+      "stop": 109.9782,
       "trail_dist": 0.5482,
-      "peak": 109.535,
+      "peak": 109.43,
       "orb_width": 1.0964,
       "cost": 3954.96,
       "vol_ratio": 2.02
@@ -120,9 +106,9 @@
       "entry_time": "10:14 ET",
       "entry_price": 511.43,
       "shares": 11,
-      "stop": 514.7241,
+      "stop": 514.7191,
       "trail_dist": 3.9041,
-      "peak": 510.82,
+      "peak": 510.815,
       "orb_width": 7.8082,
       "cost": 5625.73,
       "vol_ratio": 1.55
@@ -134,9 +120,9 @@
       "entry_time": "10:14 ET",
       "entry_price": 409.66,
       "shares": 10,
-      "stop": 404.085,
+      "stop": 404.0851,
       "trail_dist": 6.865,
-      "peak": 410.95,
+      "peak": 410.9501,
       "orb_width": 13.73,
       "cost": 4096.6,
       "vol_ratio": 1.37
@@ -176,9 +162,9 @@
       "entry_time": "10:14 ET",
       "entry_price": 83.2443,
       "shares": 17,
-      "stop": 83.6037,
+      "stop": 83.5237,
       "trail_dist": 0.7037,
-      "peak": 82.9,
+      "peak": 82.82,
       "orb_width": 1.4074,
       "cost": 1415.15,
       "vol_ratio": 1.21
@@ -204,9 +190,9 @@
       "entry_time": "10:19 ET",
       "entry_price": 44.235,
       "shares": 16,
-      "stop": 44.345,
+      "stop": 44.315,
       "trail_dist": 0.295,
-      "peak": 44.05,
+      "peak": 44.02,
       "orb_width": 0.59,
       "cost": 707.76,
       "vol_ratio": 1.83
@@ -218,12 +204,54 @@
       "entry_time": "10:19 ET",
       "entry_price": 202.96,
       "shares": 2,
-      "stop": 204.5175,
+      "stop": 204.4075,
       "trail_dist": 1.7975,
-      "peak": 202.72,
+      "peak": 202.61,
       "orb_width": 3.595,
       "cost": 405.92,
       "vol_ratio": 1.21
+    },
+    {
+      "ticker": "BR",
+      "side": "short",
+      "entry_date": "2026-07-17",
+      "entry_time": "10:24 ET",
+      "entry_price": 151.525,
+      "shares": 31,
+      "stop": 152.96,
+      "trail_dist": 1.435,
+      "peak": 151.525,
+      "orb_width": 2.87,
+      "cost": 4697.27,
+      "vol_ratio": 1.84
+    },
+    {
+      "ticker": "FDXF",
+      "side": "long",
+      "entry_date": "2026-07-17",
+      "entry_time": "10:24 ET",
+      "entry_price": 156.465,
+      "shares": 21,
+      "stop": 153.51,
+      "trail_dist": 2.955,
+      "peak": 156.465,
+      "orb_width": 5.91,
+      "cost": 3285.76,
+      "vol_ratio": 1.82
+    },
+    {
+      "ticker": "ECL",
+      "side": "short",
+      "entry_date": "2026-07-17",
+      "entry_time": "10:24 ET",
+      "entry_price": 276.135,
+      "shares": 8,
+      "stop": 278.5575,
+      "trail_dist": 2.4225,
+      "peak": 276.135,
+      "orb_width": 4.845,
+      "cost": 2209.08,
+      "vol_ratio": 1.29
     }
   ],
   "closed_today": [
@@ -264,6 +292,25 @@
       "pnl": -75.37,
       "exit_reason": "trailing stop",
       "exit_time": "10:14 ET"
+    },
+    {
+      "ticker": "FDXF",
+      "side": "long",
+      "entry_date": "2026-07-17",
+      "entry_time": "10:04 ET",
+      "entry_price": 157.5,
+      "shares": 93,
+      "stop": 155.31,
+      "trail_dist": 2.955,
+      "peak": 158.265,
+      "orb_width": 5.91,
+      "cost": 14647.5,
+      "vol_ratio": 1.44,
+      "exit_date": "2026-07-17",
+      "exit_price": 155.31,
+      "pnl": -203.67,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:24 ET"
     }
   ],
   "all_closed": [
@@ -10844,7 +10891,7 @@
     "2026-07-14": 99519.7,
     "2026-07-15": 99469.14,
     "2026-07-16": 99371.82,
-    "2026-07-17": 99305.61
+    "2026-07-17": 99260.89
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -19835,6 +19882,48 @@
       "exits": [],
       "portfolio_value": 99305.61,
       "note": "$99,306 | cash=$1,260 | open=16 | closed today=2 | day PnL=$-65"
+    },
+    {
+      "date": "2026-07-17",
+      "time": "10:24 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "BR",
+          "side": "short",
+          "price": 151.52,
+          "shares": 31,
+          "stop": 152.96,
+          "trail_dist": 1.435
+        },
+        {
+          "ticker": "FDXF",
+          "side": "long",
+          "price": 156.46,
+          "shares": 21,
+          "stop": 153.51,
+          "trail_dist": 2.955
+        },
+        {
+          "ticker": "ECL",
+          "side": "short",
+          "price": 276.14,
+          "shares": 8,
+          "stop": 278.56,
+          "trail_dist": 2.4225
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "FDXF",
+          "side": "long",
+          "exit_price": 155.31,
+          "pnl": -203.67,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 99260.89,
+      "note": "$99,261 | cash=$5,511 | open=18 | closed today=3 | day PnL=$-269"
     }
   ]
 }
