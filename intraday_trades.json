@@ -1,5 +1,5 @@
 {
-  "capital": 2841.1,
+  "capital": 4316.34,
   "open_positions": [
     {
       "ticker": "AME",
@@ -64,9 +64,9 @@
       "entry_time": "10:14 ET",
       "entry_price": 409.66,
       "shares": 10,
-      "stop": 405.43,
+      "stop": 405.745,
       "trail_dist": 6.865,
-      "peak": 412.295,
+      "peak": 412.61,
       "orb_width": 13.73,
       "cost": 4096.6,
       "vol_ratio": 1.37
@@ -582,9 +582,9 @@
       "entry_time": "11:53 ET",
       "entry_price": 26.035,
       "shares": 10,
-      "stop": 25.89,
+      "stop": 25.835,
       "trail_dist": 0.145,
-      "peak": 25.745,
+      "peak": 25.69,
       "orb_width": 0.29,
       "cost": 260.35,
       "vol_ratio": 2.23
@@ -764,9 +764,9 @@
       "entry_time": "12:43 ET",
       "entry_price": 285.08,
       "shares": 3,
-      "stop": 285.75,
+      "stop": 285.7,
       "trail_dist": 2.1,
-      "peak": 283.65,
+      "peak": 283.6,
       "orb_width": 4.2,
       "cost": 855.24,
       "vol_ratio": 1.49
@@ -834,9 +834,9 @@
       "entry_time": "13:00 ET",
       "entry_price": 75.46,
       "shares": 7,
-      "stop": 76.6549,
+      "stop": 76.5049,
       "trail_dist": 1.4449,
-      "peak": 75.21,
+      "peak": 75.06,
       "orb_width": 2.8899,
       "cost": 528.22,
       "vol_ratio": 1.23
@@ -946,9 +946,9 @@
       "entry_time": "13:13 ET",
       "entry_price": 244.205,
       "shares": 1,
-      "stop": 245.3,
+      "stop": 245.165,
       "trail_dist": 1.095,
-      "peak": 244.205,
+      "peak": 244.07,
       "orb_width": 2.1899,
       "cost": 244.21,
       "vol_ratio": 2.29
@@ -960,9 +960,9 @@
       "entry_time": "13:18 ET",
       "entry_price": 124.65,
       "shares": 1,
-      "stop": 125.995,
+      "stop": 125.945,
       "trail_dist": 1.345,
-      "peak": 124.65,
+      "peak": 124.6,
       "orb_width": 2.69,
       "cost": 124.65,
       "vol_ratio": 1.49
@@ -980,20 +980,6 @@
       "orb_width": 2.205,
       "cost": 2103.26,
       "vol_ratio": 3.2
-    },
-    {
-      "ticker": "WBD",
-      "side": "short",
-      "entry_date": "2026-07-17",
-      "entry_time": "13:23 ET",
-      "entry_price": 26.88,
-      "shares": 55,
-      "stop": 26.9525,
-      "trail_dist": 0.0775,
-      "peak": 26.875,
-      "orb_width": 0.155,
-      "cost": 1478.4,
-      "vol_ratio": 2.64
     },
     {
       "ticker": "REG",
@@ -1865,6 +1851,25 @@
       "pnl": -0.5,
       "exit_reason": "trailing stop",
       "exit_time": "13:25 ET"
+    },
+    {
+      "ticker": "WBD",
+      "side": "short",
+      "entry_date": "2026-07-17",
+      "entry_time": "13:23 ET",
+      "entry_price": 26.88,
+      "shares": 55,
+      "stop": 26.9375,
+      "trail_dist": 0.0775,
+      "peak": 26.86,
+      "orb_width": 0.155,
+      "cost": 1478.4,
+      "vol_ratio": 2.64,
+      "exit_date": "2026-07-17",
+      "exit_price": 26.9375,
+      "pnl": -3.16,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:28 ET"
     }
   ],
   "all_closed": [
@@ -12445,7 +12450,7 @@
     "2026-07-14": 99519.7,
     "2026-07-15": 99469.14,
     "2026-07-16": 99371.82,
-    "2026-07-17": 99394.21
+    "2026-07-17": 99426.64
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -23272,6 +23277,23 @@
       ],
       "portfolio_value": 99394.21,
       "note": "$99,394 | cash=$2,841 | open=72 | closed today=45 | day PnL=$-568"
+    },
+    {
+      "date": "2026-07-17",
+      "time": "13:27 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "WBD",
+          "side": "short",
+          "exit_price": 26.94,
+          "pnl": -3.16,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 99426.64,
+      "note": "$99,427 | cash=$4,316 | open=71 | closed today=46 | day PnL=$-571"
     }
   ]
 }
