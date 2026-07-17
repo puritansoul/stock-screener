@@ -1,5 +1,5 @@
 {
-  "capital": 336.99,
+  "capital": 684.2,
   "open_positions": [
     {
       "ticker": "AME",
@@ -50,9 +50,9 @@
       "entry_time": "10:14 ET",
       "entry_price": 322.04,
       "shares": 36,
-      "stop": 322.1675,
+      "stop": 321.9075,
       "trail_dist": 2.9575,
-      "peak": 319.21,
+      "peak": 318.95,
       "orb_width": 5.915,
       "cost": 11593.44,
       "vol_ratio": 1.82
@@ -134,9 +134,9 @@
       "entry_time": "10:19 ET",
       "entry_price": 44.235,
       "shares": 16,
-      "stop": 43.88,
+      "stop": 43.855,
       "trail_dist": 0.295,
-      "peak": 43.585,
+      "peak": 43.56,
       "orb_width": 0.59,
       "cost": 707.76,
       "vol_ratio": 1.83
@@ -148,9 +148,9 @@
       "entry_time": "10:19 ET",
       "entry_price": 202.96,
       "shares": 2,
-      "stop": 204.3625,
+      "stop": 204.1475,
       "trail_dist": 1.7975,
-      "peak": 202.565,
+      "peak": 202.35,
       "orb_width": 3.595,
       "cost": 405.92,
       "vol_ratio": 1.21
@@ -344,9 +344,9 @@
       "entry_time": "10:54 ET",
       "entry_price": 219.245,
       "shares": 1,
-      "stop": 219.39,
+      "stop": 219.37,
       "trail_dist": 1.585,
-      "peak": 217.805,
+      "peak": 217.785,
       "orb_width": 3.17,
       "cost": 219.24,
       "vol_ratio": 1.74
@@ -652,9 +652,9 @@
       "entry_time": "11:34 ET",
       "entry_price": 63.09,
       "shares": 7,
-      "stop": 63.11,
+      "stop": 63.07,
       "trail_dist": 0.45,
-      "peak": 62.66,
+      "peak": 62.62,
       "orb_width": 0.9,
       "cost": 441.63,
       "vol_ratio": 1.68
@@ -680,9 +680,9 @@
       "entry_time": "11:39 ET",
       "entry_price": 194.885,
       "shares": 2,
-      "stop": 194.4675,
+      "stop": 194.3425,
       "trail_dist": 1.1025,
-      "peak": 193.365,
+      "peak": 193.24,
       "orb_width": 2.205,
       "cost": 389.77,
       "vol_ratio": 12.9
@@ -722,9 +722,9 @@
       "entry_time": "11:49 ET",
       "entry_price": 24.46,
       "shares": 36,
-      "stop": 24.725,
+      "stop": 24.715,
       "trail_dist": 0.27,
-      "peak": 24.455,
+      "peak": 24.445,
       "orb_width": 0.54,
       "cost": 880.56,
       "vol_ratio": 1.76
@@ -736,26 +736,12 @@
       "entry_time": "11:49 ET",
       "entry_price": 84.775,
       "shares": 7,
-      "stop": 85.35,
+      "stop": 85.3,
       "trail_dist": 0.935,
-      "peak": 84.415,
+      "peak": 84.365,
       "orb_width": 1.87,
       "cost": 593.43,
       "vol_ratio": 1.5
-    },
-    {
-      "ticker": "DLR",
-      "side": "long",
-      "entry_date": "2026-07-17",
-      "entry_time": "11:49 ET",
-      "entry_price": 174.245,
-      "shares": 2,
-      "stop": 173.605,
-      "trail_dist": 1.15,
-      "peak": 174.755,
-      "orb_width": 2.3,
-      "cost": 348.49,
-      "vol_ratio": 1.42
     },
     {
       "ticker": "CME",
@@ -778,9 +764,9 @@
       "entry_time": "11:53 ET",
       "entry_price": 26.035,
       "shares": 10,
-      "stop": 26.09,
+      "stop": 26.035,
       "trail_dist": 0.145,
-      "peak": 25.945,
+      "peak": 25.89,
       "orb_width": 0.29,
       "cost": 260.35,
       "vol_ratio": 2.23
@@ -806,9 +792,9 @@
       "entry_time": "12:04 ET",
       "entry_price": 323.49,
       "shares": 1,
-      "stop": 324.76,
+      "stop": 324.7423,
       "trail_dist": 3.56,
-      "peak": 321.2,
+      "peak": 321.1823,
       "orb_width": 7.12,
       "cost": 323.49,
       "vol_ratio": 5.78
@@ -904,9 +890,9 @@
       "entry_time": "12:33 ET",
       "entry_price": 125.29,
       "shares": 3,
-      "stop": 125.7625,
+      "stop": 125.7525,
       "trail_dist": 0.6725,
-      "peak": 125.09,
+      "peak": 125.08,
       "orb_width": 1.345,
       "cost": 375.87,
       "vol_ratio": 8.6
@@ -932,9 +918,9 @@
       "entry_time": "12:33 ET",
       "entry_price": 125.08,
       "shares": 2,
-      "stop": 125.685,
+      "stop": 125.635,
       "trail_dist": 0.645,
-      "peak": 125.04,
+      "peak": 124.99,
       "orb_width": 1.29,
       "cost": 250.16,
       "vol_ratio": 1.66
@@ -1481,6 +1467,25 @@
       "pnl": -0.54,
       "exit_reason": "trailing stop",
       "exit_time": "12:31 ET"
+    },
+    {
+      "ticker": "DLR",
+      "side": "long",
+      "entry_date": "2026-07-17",
+      "entry_time": "11:49 ET",
+      "entry_price": 174.245,
+      "shares": 2,
+      "stop": 173.605,
+      "trail_dist": 1.15,
+      "peak": 174.755,
+      "orb_width": 2.3,
+      "cost": 348.49,
+      "vol_ratio": 1.42,
+      "exit_date": "2026-07-17",
+      "exit_price": 173.605,
+      "pnl": -1.28,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:41 ET"
     }
   ],
   "all_closed": [
@@ -12061,7 +12066,7 @@
     "2026-07-14": 99519.7,
     "2026-07-15": 99469.14,
     "2026-07-16": 99371.82,
-    "2026-07-17": 99230.92
+    "2026-07-17": 99264.88
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -22398,6 +22403,23 @@
       "exits": [],
       "portfolio_value": 99230.92,
       "note": "$99,231 | cash=$337 | open=69 | closed today=27 | day PnL=$-555"
+    },
+    {
+      "date": "2026-07-17",
+      "time": "12:40 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "DLR",
+          "side": "long",
+          "exit_price": 173.6,
+          "pnl": -1.28,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 99264.88,
+      "note": "$99,265 | cash=$684 | open=68 | closed today=28 | day PnL=$-556"
     }
   ]
 }
