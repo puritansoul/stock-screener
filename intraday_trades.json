@@ -1,5 +1,5 @@
 {
-  "capital": 715.66,
+  "capital": 937.0,
   "open_positions": [
     {
       "ticker": "AME",
@@ -36,9 +36,9 @@
       "entry_time": "10:09 ET",
       "entry_price": 178.56,
       "shares": 32,
-      "stop": 178.1125,
+      "stop": 177.905,
       "trail_dist": 1.415,
-      "peak": 176.6975,
+      "peak": 176.49,
       "orb_width": 2.83,
       "cost": 5713.92,
       "vol_ratio": 1.21
@@ -72,29 +72,15 @@
       "vol_ratio": 1.82
     },
     {
-      "ticker": "MNST",
-      "side": "short",
-      "entry_date": "2026-07-17",
-      "entry_time": "10:14 ET",
-      "entry_price": 97.66,
-      "shares": 84,
-      "stop": 98.475,
-      "trail_dist": 0.965,
-      "peak": 97.51,
-      "orb_width": 1.93,
-      "cost": 8203.44,
-      "vol_ratio": 1.65
-    },
-    {
       "ticker": "MCO",
       "side": "short",
       "entry_date": "2026-07-17",
       "entry_time": "10:14 ET",
       "entry_price": 511.43,
       "shares": 11,
-      "stop": 512.3541,
+      "stop": 511.9341,
       "trail_dist": 3.9041,
-      "peak": 508.45,
+      "peak": 508.03,
       "orb_width": 7.8082,
       "cost": 5625.73,
       "vol_ratio": 1.55
@@ -204,9 +190,9 @@
       "entry_time": "10:24 ET",
       "entry_price": 151.525,
       "shares": 31,
-      "stop": 152.545,
+      "stop": 152.245,
       "trail_dist": 1.435,
-      "peak": 151.11,
+      "peak": 150.81,
       "orb_width": 2.87,
       "cost": 4697.27,
       "vol_ratio": 1.84
@@ -246,9 +232,9 @@
       "entry_time": "10:29 ET",
       "entry_price": 215.91,
       "shares": 7,
-      "stop": 213.4776,
+      "stop": 213.54,
       "trail_dist": 2.85,
-      "peak": 216.3276,
+      "peak": 216.39,
       "orb_width": 5.7,
       "cost": 1511.37,
       "vol_ratio": 1.3
@@ -316,9 +302,9 @@
       "entry_time": "10:37 ET",
       "entry_price": 364.8,
       "shares": 2,
-      "stop": 363.0213,
+      "stop": 363.2713,
       "trail_dist": 1.8087,
-      "peak": 364.83,
+      "peak": 365.08,
       "orb_width": 3.6173,
       "cost": 729.6,
       "vol_ratio": 1.2
@@ -378,6 +364,104 @@
       "orb_width": 2.13,
       "cost": 239.33,
       "vol_ratio": 1.38
+    },
+    {
+      "ticker": "EW",
+      "side": "short",
+      "entry_date": "2026-07-17",
+      "entry_time": "10:44 ET",
+      "entry_price": 85.81,
+      "shares": 30,
+      "stop": 86.41,
+      "trail_dist": 0.6,
+      "peak": 85.81,
+      "orb_width": 1.2,
+      "cost": 2574.3,
+      "vol_ratio": 4.94
+    },
+    {
+      "ticker": "DVA",
+      "side": "long",
+      "entry_date": "2026-07-17",
+      "entry_time": "10:44 ET",
+      "entry_price": 238.47,
+      "shares": 7,
+      "stop": 236.7925,
+      "trail_dist": 1.6775,
+      "peak": 238.47,
+      "orb_width": 3.355,
+      "cost": 1669.29,
+      "vol_ratio": 3.91
+    },
+    {
+      "ticker": "MS",
+      "side": "long",
+      "entry_date": "2026-07-17",
+      "entry_time": "10:44 ET",
+      "entry_price": 216.49,
+      "shares": 6,
+      "stop": 212.729,
+      "trail_dist": 3.761,
+      "peak": 216.49,
+      "orb_width": 7.522,
+      "cost": 1298.94,
+      "vol_ratio": 3.0
+    },
+    {
+      "ticker": "GE",
+      "side": "long",
+      "entry_date": "2026-07-17",
+      "entry_time": "10:44 ET",
+      "entry_price": 356.42,
+      "shares": 2,
+      "stop": 350.11,
+      "trail_dist": 6.31,
+      "peak": 356.42,
+      "orb_width": 12.62,
+      "cost": 712.84,
+      "vol_ratio": 2.7
+    },
+    {
+      "ticker": "UBER",
+      "side": "short",
+      "entry_date": "2026-07-17",
+      "entry_time": "10:44 ET",
+      "entry_price": 72.05,
+      "shares": 10,
+      "stop": 72.68,
+      "trail_dist": 0.63,
+      "peak": 72.05,
+      "orb_width": 1.26,
+      "cost": 720.5,
+      "vol_ratio": 2.12
+    },
+    {
+      "ticker": "DASH",
+      "side": "short",
+      "entry_date": "2026-07-17",
+      "entry_time": "10:44 ET",
+      "entry_price": 183.56,
+      "shares": 3,
+      "stop": 186.1175,
+      "trail_dist": 2.5575,
+      "peak": 183.56,
+      "orb_width": 5.115,
+      "cost": 550.68,
+      "vol_ratio": 1.35
+    },
+    {
+      "ticker": "PNR",
+      "side": "short",
+      "entry_date": "2026-07-17",
+      "entry_time": "10:44 ET",
+      "entry_price": 64.515,
+      "shares": 6,
+      "stop": 65.1625,
+      "trail_dist": 0.6475,
+      "peak": 64.515,
+      "orb_width": 1.295,
+      "cost": 387.09,
+      "vol_ratio": 1.22
     }
   ],
   "closed_today": [
@@ -456,6 +540,25 @@
       "pnl": 10.2,
       "exit_reason": "trailing stop",
       "exit_time": "10:34 ET"
+    },
+    {
+      "ticker": "MNST",
+      "side": "short",
+      "entry_date": "2026-07-17",
+      "entry_time": "10:14 ET",
+      "entry_price": 97.66,
+      "shares": 84,
+      "stop": 98.475,
+      "trail_dist": 0.965,
+      "peak": 97.51,
+      "orb_width": 1.93,
+      "cost": 8203.44,
+      "vol_ratio": 1.65,
+      "exit_date": "2026-07-17",
+      "exit_price": 98.475,
+      "pnl": -68.46,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:44 ET"
     }
   ],
   "all_closed": [
@@ -8944,9 +9047,9 @@
       "width": 0.63
     },
     "CARR": {
-      "high": 68.5,
-      "low": 67.56,
-      "width": 0.94
+      "high": 69.595,
+      "low": 67.48,
+      "width": 2.115
     },
     "CVNA": {
       "high": 69.99,
@@ -9833,11 +9936,6 @@
       "low": 292.23,
       "width": 5.63
     },
-    "JBL": {
-      "high": 299.93,
-      "low": 290.4301,
-      "width": 9.4999
-    },
     "JKHY": {
       "high": 155.77,
       "low": 153.21,
@@ -10503,11 +10601,6 @@
       "low": 451.54,
       "width": 12.495
     },
-    "ROL": {
-      "high": 46.36,
-      "low": 45.91,
-      "width": 0.45
-    },
     "ROP": {
       "high": 369.07,
       "low": 363.2547,
@@ -11036,7 +11129,7 @@
     "2026-07-14": 99519.7,
     "2026-07-15": 99469.14,
     "2026-07-16": 99371.82,
-    "2026-07-17": 99314.75
+    "2026-07-17": 99251.63
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -20224,6 +20317,80 @@
       "exits": [],
       "portfolio_value": 99314.75,
       "note": "$99,315 | cash=$716 | open=27 | closed today=4 | day PnL=$-259"
+    },
+    {
+      "date": "2026-07-17",
+      "time": "10:44 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "EW",
+          "side": "short",
+          "price": 85.81,
+          "shares": 30,
+          "stop": 86.41,
+          "trail_dist": 0.6
+        },
+        {
+          "ticker": "DVA",
+          "side": "long",
+          "price": 238.47,
+          "shares": 7,
+          "stop": 236.79,
+          "trail_dist": 1.6775
+        },
+        {
+          "ticker": "MS",
+          "side": "long",
+          "price": 216.49,
+          "shares": 6,
+          "stop": 212.73,
+          "trail_dist": 3.761
+        },
+        {
+          "ticker": "GE",
+          "side": "long",
+          "price": 356.42,
+          "shares": 2,
+          "stop": 350.11,
+          "trail_dist": 6.31
+        },
+        {
+          "ticker": "UBER",
+          "side": "short",
+          "price": 72.05,
+          "shares": 10,
+          "stop": 72.68,
+          "trail_dist": 0.63
+        },
+        {
+          "ticker": "DASH",
+          "side": "short",
+          "price": 183.56,
+          "shares": 3,
+          "stop": 186.12,
+          "trail_dist": 2.5575
+        },
+        {
+          "ticker": "PNR",
+          "side": "short",
+          "price": 64.51,
+          "shares": 6,
+          "stop": 65.16,
+          "trail_dist": 0.6475
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "MNST",
+          "side": "short",
+          "exit_price": 98.47,
+          "pnl": -68.46,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 99251.63,
+      "note": "$99,252 | cash=$937 | open=33 | closed today=5 | day PnL=$-327"
     }
   ]
 }
