@@ -1,5 +1,5 @@
 {
-  "capital": 13426.7,
+  "capital": 9471.74,
   "open_positions": [
     {
       "ticker": "NRG",
@@ -22,9 +22,9 @@
       "entry_time": "10:04 ET",
       "entry_price": 236.68,
       "shares": 88,
-      "stop": 234.9113,
+      "stop": 235.0013,
       "trail_dist": 2.9287,
-      "peak": 237.84,
+      "peak": 237.93,
       "orb_width": 5.8575,
       "cost": 20827.84,
       "vol_ratio": 1.55
@@ -50,9 +50,9 @@
       "entry_time": "10:07 ET",
       "entry_price": 52.835,
       "shares": 136,
-      "stop": 53.07,
+      "stop": 52.76,
       "trail_dist": 0.43,
-      "peak": 52.64,
+      "peak": 52.33,
       "orb_width": 0.86,
       "cost": 7185.56,
       "vol_ratio": 1.74
@@ -78,12 +78,26 @@
       "entry_time": "10:09 ET",
       "entry_price": 178.56,
       "shares": 32,
-      "stop": 179.975,
+      "stop": 178.875,
       "trail_dist": 1.415,
-      "peak": 178.56,
+      "peak": 177.46,
       "orb_width": 2.83,
       "cost": 5713.92,
       "vol_ratio": 1.21
+    },
+    {
+      "ticker": "PNW",
+      "side": "short",
+      "entry_date": "2026-07-17",
+      "entry_time": "10:12 ET",
+      "entry_price": 109.86,
+      "shares": 36,
+      "stop": 110.4082,
+      "trail_dist": 0.5482,
+      "peak": 109.86,
+      "orb_width": 1.0964,
+      "cost": 3954.96,
+      "vol_ratio": 2.02
     }
   ],
   "closed_today": [
@@ -9758,9 +9772,9 @@
       "width": 2.0494
     },
     "TAP": {
-      "high": 43.05,
+      "high": 43.06,
       "low": 42.22,
-      "width": 0.83
+      "width": 0.84
     },
     "MDLZ": {
       "high": 63.04,
@@ -10685,7 +10699,7 @@
     "2026-07-14": 99519.7,
     "2026-07-15": 99469.14,
     "2026-07-16": 99371.82,
-    "2026-07-17": 99501.29
+    "2026-07-17": 99450.23
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -19531,6 +19545,24 @@
       ],
       "portfolio_value": 99501.29,
       "note": "$99,501 | cash=$13,427 | open=6 | closed today=1 | day PnL=$+10"
+    },
+    {
+      "date": "2026-07-17",
+      "time": "10:11 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "PNW",
+          "side": "short",
+          "price": 109.86,
+          "shares": 36,
+          "stop": 110.41,
+          "trail_dist": 0.5482
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 99450.23,
+      "note": "$99,450 | cash=$9,472 | open=7 | closed today=1 | day PnL=$+10"
     }
   ]
 }
