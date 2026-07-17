@@ -1,5 +1,5 @@
 {
-  "capital": 16858.49,
+  "capital": 13426.7,
   "open_positions": [
     {
       "ticker": "NRG",
@@ -22,9 +22,9 @@
       "entry_time": "10:04 ET",
       "entry_price": 236.68,
       "shares": 88,
-      "stop": 234.8113,
+      "stop": 234.9113,
       "trail_dist": 2.9287,
-      "peak": 237.74,
+      "peak": 237.84,
       "orb_width": 5.8575,
       "cost": 20827.84,
       "vol_ratio": 1.55
@@ -36,26 +36,12 @@
       "entry_time": "10:04 ET",
       "entry_price": 157.5,
       "shares": 93,
-      "stop": 155.01,
+      "stop": 155.31,
       "trail_dist": 2.955,
-      "peak": 157.965,
+      "peak": 158.265,
       "orb_width": 5.91,
       "cost": 14647.5,
       "vol_ratio": 1.44
-    },
-    {
-      "ticker": "IT",
-      "side": "short",
-      "entry_date": "2026-07-17",
-      "entry_time": "10:04 ET",
-      "entry_price": 143.17,
-      "shares": 71,
-      "stop": 143.3225,
-      "trail_dist": 0.8125,
-      "peak": 142.51,
-      "orb_width": 1.625,
-      "cost": 10165.07,
-      "vol_ratio": 1.4
     },
     {
       "ticker": "MKC",
@@ -64,15 +50,63 @@
       "entry_time": "10:07 ET",
       "entry_price": 52.835,
       "shares": 136,
-      "stop": 53.265,
+      "stop": 53.07,
       "trail_dist": 0.43,
-      "peak": 52.835,
+      "peak": 52.64,
       "orb_width": 0.86,
       "cost": 7185.56,
       "vol_ratio": 1.74
+    },
+    {
+      "ticker": "SNPS",
+      "side": "short",
+      "entry_date": "2026-07-17",
+      "entry_time": "10:09 ET",
+      "entry_price": 375.86,
+      "shares": 21,
+      "stop": 388.855,
+      "trail_dist": 12.995,
+      "peak": 375.86,
+      "orb_width": 25.99,
+      "cost": 7893.06,
+      "vol_ratio": 1.34
+    },
+    {
+      "ticker": "EFX",
+      "side": "short",
+      "entry_date": "2026-07-17",
+      "entry_time": "10:09 ET",
+      "entry_price": 178.56,
+      "shares": 32,
+      "stop": 179.975,
+      "trail_dist": 1.415,
+      "peak": 178.56,
+      "orb_width": 2.83,
+      "cost": 5713.92,
+      "vol_ratio": 1.21
     }
   ],
-  "closed_today": [],
+  "closed_today": [
+    {
+      "ticker": "IT",
+      "side": "short",
+      "entry_date": "2026-07-17",
+      "entry_time": "10:04 ET",
+      "entry_price": 143.17,
+      "shares": 71,
+      "stop": 143.0275,
+      "trail_dist": 0.8125,
+      "peak": 142.215,
+      "orb_width": 1.625,
+      "cost": 10165.07,
+      "vol_ratio": 1.4,
+      "exit_date": "2026-07-17",
+      "exit_price": 143.0275,
+      "pnl": 10.12,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:09 ET"
+    }
+  ],
   "all_closed": [
     {
       "ticker": "SNOW",
@@ -8259,9 +8293,9 @@
       "width": 0.9849
     },
     "AXP": {
-      "high": 358.755,
+      "high": 358.8,
       "low": 351.82,
-      "width": 6.935
+      "width": 6.98
     },
     "AIG": {
       "high": 80.17,
@@ -8284,9 +8318,9 @@
       "width": 15.245
     },
     "AME": {
-      "high": 235.7475,
+      "high": 235.98,
       "low": 229.89,
-      "width": 5.8575
+      "width": 6.09
     },
     "AMGN": {
       "high": 378.54,
@@ -8359,9 +8393,9 @@
       "width": 6.55
     },
     "AJG": {
-      "high": 254.94,
-      "low": 250.0,
-      "width": 4.94
+      "high": 261.92,
+      "low": 257.21,
+      "width": 4.71
     },
     "AIZ": {
       "high": 281.605,
@@ -9079,9 +9113,9 @@
       "width": 13.73
     },
     "FDS": {
-      "high": 257.68,
-      "low": 254.31,
-      "width": 3.37
+      "high": 269.79,
+      "low": 260.04,
+      "width": 9.75
     },
     "FICO": {
       "high": 1252.12,
@@ -9474,9 +9508,9 @@
       "width": 3.6699
     },
     "JPM": {
-      "high": 343.3,
+      "high": 343.31,
       "low": 335.05,
-      "width": 8.25
+      "width": 8.26
     },
     "KVUE": {
       "high": 19.36,
@@ -9674,9 +9708,9 @@
       "width": 1.6599
     },
     "MRK": {
-      "high": 131.59,
+      "high": 131.6,
       "low": 128.18,
-      "width": 3.41
+      "width": 3.42
     },
     "META": {
       "high": 649.22,
@@ -9749,9 +9783,9 @@
       "width": 7.8082
     },
     "MS": {
-      "high": 214.89,
+      "high": 214.92,
       "low": 207.398,
-      "width": 7.492
+      "width": 7.522
     },
     "MOS": {
       "high": 22.9,
@@ -10064,9 +10098,9 @@
       "width": 7.15
     },
     "RJF": {
-      "high": 170.68,
+      "high": 170.69,
       "low": 166.2,
-      "width": 4.48
+      "width": 4.49
     },
     "RTX": {
       "high": 198.44,
@@ -10298,6 +10332,11 @@
       "low": 282.13,
       "width": 2.86
     },
+    "TGT": {
+      "high": 144.4,
+      "low": 140.75,
+      "width": 3.65
+    },
     "TEL": {
       "high": 201.32,
       "low": 196.865,
@@ -10329,9 +10368,9 @@
       "width": 8.5025
     },
     "TXT": {
-      "high": 93.0,
+      "high": 93.085,
       "low": 90.33,
-      "width": 2.67
+      "width": 2.755
     },
     "TMO": {
       "high": 542.02,
@@ -10584,9 +10623,9 @@
       "width": 0.54
     },
     "WSM": {
-      "high": 233.705,
+      "high": 233.74,
       "low": 224.95,
-      "width": 8.755
+      "width": 8.79
     },
     "WMB": {
       "high": 75.72,
@@ -10646,7 +10685,7 @@
     "2026-07-14": 99519.7,
     "2026-07-15": 99469.14,
     "2026-07-16": 99371.82,
-    "2026-07-17": 99767.65
+    "2026-07-17": 99501.29
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -19458,6 +19497,40 @@
       "exits": [],
       "portfolio_value": 99767.65,
       "note": "$99,768 | cash=$16,858 | open=5 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-17",
+      "time": "10:09 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "SNPS",
+          "side": "short",
+          "price": 375.86,
+          "shares": 21,
+          "stop": 388.85,
+          "trail_dist": 12.995
+        },
+        {
+          "ticker": "EFX",
+          "side": "short",
+          "price": 178.56,
+          "shares": 32,
+          "stop": 179.97,
+          "trail_dist": 1.415
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "IT",
+          "side": "short",
+          "exit_price": 143.03,
+          "pnl": 10.12,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 99501.29,
+      "note": "$99,501 | cash=$13,427 | open=6 | closed today=1 | day PnL=$+10"
     }
   ]
 }
