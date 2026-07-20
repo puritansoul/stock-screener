@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Trading Hub — 2026-07-17</title>
+  <title>Trading Hub — 2026-07-20</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -32,12 +32,49 @@
 </head>
 <body>
   <h1>🏦 Trading Hub</h1>
-  <p class="subtitle">Two paper-trading bots, $100k each &nbsp;|&nbsp; 2026-07-17 &nbsp;|&nbsp; Not real money</p>
+  <p class="subtitle">Two paper-trading bots, $100k each &nbsp;|&nbsp; 2026-07-20 &nbsp;|&nbsp; Not real money</p>
 
   <div class="bots">
     
         <div class="bot-card" style="border-top:4px solid #1a237e">
           <div class="bot-title">📈 Swing Trader (RSI-2)</div>
+          <div class="stat-grid">
+            <div class="stat">
+              <div class="stat-label">Portfolio Value</div>
+              <div class="stat-val" style="color:#1a237e">$98,779</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Total Return</div>
+              <div class="stat-val" style="color:#c62828">$1,221<br>
+                <span style="font-size:13px">1.22%</span>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Day P&amp;L</div>
+              <div class="stat-val" style="color:#2e7d32">$+0</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Open Positions</div>
+              <div class="stat-val">44</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Win Rate</div>
+              <div class="stat-val">90.0%</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Closed Trades</div>
+              <div class="stat-val">30</div>
+            </div>
+          </div>
+          <canvas id="swing-chart" style="width:100%;margin:12px 0"></canvas>
+          <div style="font-size:11px;color:#999;margin-bottom:12px">
+            Inception: 2026-07-09 &nbsp;|&nbsp; Last run: 2026-07-20
+          </div>
+          <a href="reports/swing_2026-07-20.html" class="btn" style="background:#1a237e">Open Dashboard →</a>
+        </div>
+    
+        <div class="bot-card" style="border-top:4px solid #e65100">
+          <div class="bot-title">⚡ Intraday Trader (ORB)</div>
           <div class="stat-grid">
             <div class="stat">
               <div class="stat-label">Portfolio Value</div>
@@ -47,43 +84,6 @@
               <div class="stat-label">Total Return</div>
               <div class="stat-val" style="color:#2e7d32">+$0<br>
                 <span style="font-size:13px">+0.00%</span>
-              </div>
-            </div>
-            <div class="stat">
-              <div class="stat-label">Day P&amp;L</div>
-              <div class="stat-val" style="color:#2e7d32">$+0</div>
-            </div>
-            <div class="stat">
-              <div class="stat-label">Open Positions</div>
-              <div class="stat-val">39</div>
-            </div>
-            <div class="stat">
-              <div class="stat-label">Win Rate</div>
-              <div class="stat-val">100.0%</div>
-            </div>
-            <div class="stat">
-              <div class="stat-label">Closed Trades</div>
-              <div class="stat-val">16</div>
-            </div>
-          </div>
-          <canvas id="swing-chart" style="width:100%;margin:12px 0"></canvas>
-          <div style="font-size:11px;color:#999;margin-bottom:12px">
-            Inception: 2026-07-09 &nbsp;|&nbsp; Last run: 2026-07-16
-          </div>
-          <a href="reports/swing_2026-07-16.html" class="btn" style="background:#1a237e">Open Dashboard →</a>
-        </div>
-    
-        <div class="bot-card" style="border-top:4px solid #e65100">
-          <div class="bot-title">⚡ Intraday Trader (ORB)</div>
-          <div class="stat-grid">
-            <div class="stat">
-              <div class="stat-label">Portfolio Value</div>
-              <div class="stat-val" style="color:#1a237e">$99,436</div>
-            </div>
-            <div class="stat">
-              <div class="stat-label">Total Return</div>
-              <div class="stat-val" style="color:#c62828">$564<br>
-                <span style="font-size:13px">0.56%</span>
               </div>
             </div>
             <div class="stat">
@@ -117,7 +117,7 @@
       <div style="font-size:16px;font-weight:bold;color:#1b5e20">📊 Multi-Factor Screener</div>
       <div style="font-size:12px;color:#666;margin-top:4px">S&amp;P 500 live portfolio · Momentum + ROIC + FCF + Piotroski</div>
     </div>
-    <a href="reports/2026-07-17.html" class="btn" style="background:#388e3c">Open Screener →</a>
+    <a href="reports/2026-07-20.html" class="btn" style="background:#388e3c">Open Screener →</a>
   </div>
 
   <p style="color:#ccc;font-size:11px;margin-top:16px">
@@ -127,8 +127,8 @@
 <script>
 
 (function() {
-  const dates = ["2026-07-09", "2026-07-10", "2026-07-13", "2026-07-15", "2026-07-16"];
-  const vals  = [100000.0, 101615.45, 102667.93, 98011.16, 98225.18];
+  const dates = ["2026-07-09", "2026-07-10", "2026-07-13", "2026-07-15", "2026-07-16", "2026-07-20"];
+  const vals  = [100000.0, 101615.45, 102667.93, 98011.16, 98225.18, 98779.23];
   const N = vals.length;
   if (N < 2) return;
   const canvas = document.getElementById('swing-chart');
