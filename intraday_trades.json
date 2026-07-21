@@ -1,5 +1,5 @@
 {
-  "capital": 2224.18,
+  "capital": 3187.56,
   "open_positions": [
     {
       "ticker": "TXT",
@@ -442,9 +442,9 @@
       "entry_time": "12:13 ET",
       "entry_price": 209.765,
       "shares": 27,
-      "stop": 209.635,
+      "stop": 209.675,
       "trail_dist": 2.155,
-      "peak": 211.79,
+      "peak": 211.83,
       "orb_width": 4.31,
       "cost": 5663.65,
       "vol_ratio": 1.7
@@ -540,9 +540,9 @@
       "entry_time": "12:30 ET",
       "entry_price": 198.96,
       "shares": 9,
-      "stop": 198.065,
+      "stop": 198.235,
       "trail_dist": 1.1,
-      "peak": 199.165,
+      "peak": 199.335,
       "orb_width": 2.2,
       "cost": 1790.64,
       "vol_ratio": 1.35
@@ -666,9 +666,9 @@
       "entry_time": "12:58 ET",
       "entry_price": 56.275,
       "shares": 9,
-      "stop": 55.845,
+      "stop": 55.89,
       "trail_dist": 0.665,
-      "peak": 56.51,
+      "peak": 56.555,
       "orb_width": 1.33,
       "cost": 506.48,
       "vol_ratio": 1.27
@@ -680,9 +680,9 @@
       "entry_time": "13:03 ET",
       "entry_price": 77.77,
       "shares": 19,
-      "stop": 77.54,
+      "stop": 77.545,
       "trail_dist": 0.53,
-      "peak": 78.07,
+      "peak": 78.075,
       "orb_width": 1.06,
       "cost": 1477.63,
       "vol_ratio": 6.05
@@ -722,9 +722,9 @@
       "entry_time": "13:10 ET",
       "entry_price": 654.23,
       "shares": 2,
-      "stop": 654.215,
+      "stop": 654.405,
       "trail_dist": 6.775,
-      "peak": 660.99,
+      "peak": 661.18,
       "orb_width": 13.55,
       "cost": 1308.46,
       "vol_ratio": 1.53
@@ -1030,26 +1030,12 @@
       "entry_time": "13:55 ET",
       "entry_price": 410.25,
       "shares": 1,
-      "stop": 413.12,
+      "stop": 412.89,
       "trail_dist": 2.87,
-      "peak": 410.25,
+      "peak": 410.02,
       "orb_width": 5.74,
       "cost": 410.25,
       "vol_ratio": 1.28
-    },
-    {
-      "ticker": "BEN",
-      "side": "short",
-      "entry_date": "2026-07-21",
-      "entry_time": "13:57 ET",
-      "entry_price": 32.07,
-      "shares": 71,
-      "stop": 32.24,
-      "trail_dist": 0.17,
-      "peak": 32.07,
-      "orb_width": 0.34,
-      "cost": 2276.97,
-      "vol_ratio": 2.52
     },
     {
       "ticker": "GRMN",
@@ -1058,9 +1044,9 @@
       "entry_time": "13:57 ET",
       "entry_price": 238.61,
       "shares": 6,
-      "stop": 241.005,
+      "stop": 240.865,
       "trail_dist": 2.395,
-      "peak": 238.61,
+      "peak": 238.47,
       "orb_width": 4.79,
       "cost": 1431.66,
       "vol_ratio": 2.4
@@ -1086,12 +1072,26 @@
       "entry_time": "13:57 ET",
       "entry_price": 327.68,
       "shares": 2,
-      "stop": 323.995,
+      "stop": 324.345,
       "trail_dist": 3.685,
-      "peak": 327.68,
+      "peak": 328.03,
       "orb_width": 7.37,
       "cost": 655.36,
       "vol_ratio": 1.23
+    },
+    {
+      "ticker": "AOS",
+      "side": "long",
+      "entry_date": "2026-07-21",
+      "entry_time": "14:00 ET",
+      "entry_price": 59.16,
+      "shares": 22,
+      "stop": 58.6575,
+      "trail_dist": 0.5025,
+      "peak": 59.16,
+      "orb_width": 1.005,
+      "cost": 1301.52,
+      "vol_ratio": 1.53
     }
   ],
   "closed_today": [
@@ -2652,6 +2652,25 @@
       "pnl": 0.54,
       "exit_reason": "trailing stop",
       "exit_time": "13:57 ET"
+    },
+    {
+      "ticker": "BEN",
+      "side": "short",
+      "entry_date": "2026-07-21",
+      "entry_time": "13:57 ET",
+      "entry_price": 32.07,
+      "shares": 71,
+      "stop": 32.24,
+      "trail_dist": 0.17,
+      "peak": 32.07,
+      "orb_width": 0.34,
+      "cost": 2276.97,
+      "vol_ratio": 2.52,
+      "exit_date": "2026-07-21",
+      "exit_price": 32.24,
+      "pnl": -12.07,
+      "exit_reason": "trailing stop",
+      "exit_time": "14:00 ET"
     }
   ],
   "all_closed": [
@@ -15580,6 +15599,11 @@
       "low": 135.52,
       "width": 2.105
     },
+    "ETN": {
+      "high": 412.21,
+      "low": 403.53,
+      "width": 8.68
+    },
     "EBAY": {
       "high": 115.015,
       "low": 113.31,
@@ -16154,6 +16178,11 @@
       "high": 32.92,
       "low": 32.22,
       "width": 0.7
+    },
+    "KKR": {
+      "high": 98.07,
+      "low": 96.5,
+      "width": 1.57
     },
     "KLAC": {
       "high": 220.89,
@@ -17290,7 +17319,7 @@
     "2026-07-16": 99371.82,
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
-    "2026-07-21": 98727.86
+    "2026-07-21": 98712.39
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -33608,6 +33637,32 @@
       ],
       "portfolio_value": 98727.86,
       "note": "$98,728 | cash=$2,224 | open=78 | closed today=82 | day PnL=$-689"
+    },
+    {
+      "date": "2026-07-21",
+      "time": "14:00 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "AOS",
+          "side": "long",
+          "price": 59.16,
+          "shares": 22,
+          "stop": 58.66,
+          "trail_dist": 0.5025
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "BEN",
+          "side": "short",
+          "exit_price": 32.24,
+          "pnl": -12.07,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98712.39,
+      "note": "$98,712 | cash=$3,188 | open=78 | closed today=83 | day PnL=$-701"
     }
   ]
 }
