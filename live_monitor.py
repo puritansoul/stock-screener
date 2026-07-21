@@ -784,6 +784,56 @@ def save_html_report(
         bench_json = json.dumps(_bench_dict)
     except Exception:
         pass
+
+    # ── Equity curve: actual shares × prices, normalized to $100k at inception ──
+    # This replaces NAV-multiplier chart which drifts due to using target weights not actual shares
+    equity_curve_json = "{}"
+    spy_curve_json    = "{}"
+    try:
+        if prices_df is not None and not prices_df.empty and positions and inception_date:
+            _inc = date.fromisoformat(inception_date)
+            _price_rows = prices_df[prices_df.index.normalize() >= pd.Timestamp(_inc)]
+            if not _price_rows.empty:
+                _port_series = {}
+                for _dt, _row in _price_rows.iterrows():
+                    _d = str(_dt.date())
+                    _val = sum(
+                        positions[t]["shares"] * float(_row[t])
+                        for t in positions
+                        if t in _row.index and pd.notna(_row[t])
+                    )
+                    if _val > 0:
+                        _port_series[_d] = _val
+                if _port_series:
+                    _first_d = sorted(_port_series.keys())[0]
+                    _anchor = _port_series[_first_d]
+                    equity_curve_json = json.dumps(
+                        {d: round(100_000 * v / _anchor, 2) for d, v in _port_series.items()}
+                    )
+                # SPY curve normalized to same $100k at inception
+                _bench_dict_local = {}
+                try:
+                    _bench_dict_local = json.loads(bench_json)
+                except Exception:
+                    pass
+                _spy_raw = _bench_dict_local.get("SPY", {})
+                if _spy_raw and _port_series:
+                    _spy_dates = sorted(_spy_raw.keys())
+                    _spy_anchor_d = _spy_dates[0]
+                    for _sd in _spy_dates:
+                        if _sd <= _first_d:
+                            _spy_anchor_d = _sd
+                    _spy_anchor_px = _spy_raw[_spy_anchor_d]
+                    _spy_curve = {}
+                    for _d in sorted(_port_series.keys()):
+                        _best = _spy_dates[0]
+                        for _sd in _spy_dates:
+                            if _sd <= _d:
+                                _best = _sd
+                        _spy_curve[_d] = round(100_000 * _spy_raw[_best] / _spy_anchor_px, 2)
+                    spy_curve_json = json.dumps(_spy_curve)
+    except Exception:
+        pass
     # Always use yesterday's closing price for Day Delta
     if prices_df is not None and len(prices_df) >= 2:
         # Find the last row whose date is strictly before today
@@ -1450,12 +1500,11 @@ def save_html_report(
   }}
 }})();
 
-// ── NAV equity curve ──────────────────────────────────────────────────────────
+// ── Equity curve: $100k invested at inception, actual shares × prices ─────────
 (function() {{
-  const PV = {PORTFOLIO_VALUE};
-  const navHistory = {nav_json};
-  const benchData  = {bench_json};
-  const dates = Object.keys(navHistory).sort();
+  const portCurve = {equity_curve_json};
+  const spyCurve  = {spy_curve_json};
+  const dates = Object.keys(portCurve).sort();
   if (dates.length < 2) return;
   const canvas = document.getElementById('nav-chart');
   if (!canvas) return;
@@ -1465,23 +1514,11 @@ def save_html_report(
   canvas.width  = W;
   canvas.height = H;
 
-  const vals = dates.map(d => navHistory[d] * PV);
+  const vals    = dates.map(d => portCurve[d]);
+  const spyVals = dates.map(d => spyCurve[d] || null);
+  const hasSpy  = spyVals.some(v => v != null);
 
-  // Align SPY to first NAV date, produce same-length dollar series anchored at PV
-  let spyVals = [];
-  const spyRaw = (benchData['SPY'] || {{}});
-  const spyDates = Object.keys(spyRaw).sort();
-  if (spyDates.length) {{
-    const firstDate = dates[0];
-    const anchor = spyDates.reduce((best, d) => d <= firstDate ? d : best, spyDates[0]);
-    const anchorPx = spyRaw[anchor] || 1;
-    spyVals = dates.map(d => {{
-      const closest = spyDates.reduce((best, sd) => sd <= d ? sd : best, spyDates[0]);
-      return PV * (spyRaw[closest] / anchorPx);
-    }});
-  }}
-
-  const allV = [...vals, ...spyVals].filter(v => v != null);
+  const allV = [...vals, ...(hasSpy ? spyVals.filter(v => v != null) : [])];
   const minV = Math.min(...allV), maxV = Math.max(...allV);
   const range = maxV - minV || 1;
   const pad = 20;
@@ -1492,12 +1529,17 @@ def save_html_report(
   ctx.clearRect(0, 0, W, H);
 
   // SPY line (grey dashed)
-  if (spyVals.length) {{
+  if (hasSpy) {{
     ctx.strokeStyle = '#9e9e9e';
     ctx.lineWidth = 1.5;
     ctx.setLineDash([4, 4]);
     ctx.beginPath();
-    spyVals.forEach((v, i) => i === 0 ? ctx.moveTo(toX(i), toY(v)) : ctx.lineTo(toX(i), toY(v)));
+    let moved = false;
+    spyVals.forEach((v, i) => {{
+      if (v == null) return;
+      if (!moved) {{ ctx.moveTo(toX(i), toY(v)); moved = true; }}
+      else ctx.lineTo(toX(i), toY(v));
+    }});
     ctx.stroke();
     ctx.setLineDash([]);
   }}
@@ -1509,7 +1551,7 @@ def save_html_report(
   vals.forEach((v, i) => i === 0 ? ctx.moveTo(toX(i), toY(v)) : ctx.lineTo(toX(i), toY(v)));
   ctx.stroke();
 
-  // Fill
+  // Fill under portfolio
   ctx.lineTo(toX(N - 1), H - pad); ctx.lineTo(toX(0), H - pad); ctx.closePath();
   const grad = ctx.createLinearGradient(0, 0, 0, H);
   grad.addColorStop(0, 'rgba(26,35,126,0.12)'); grad.addColorStop(1, 'rgba(26,35,126,0)');
@@ -1517,30 +1559,32 @@ def save_html_report(
 
   // Date labels
   ctx.font = '11px sans-serif'; ctx.fillStyle = '#666';
-  if (dates.length) {{
-    ctx.fillText(dates[0], pad, H - 4);
-    const last = dates[N - 1];
-    ctx.fillText(last, W - pad - ctx.measureText(last).width, H - 4);
-  }}
+  ctx.fillText(dates[0], pad, H - 4);
+  const last = dates[N - 1];
+  ctx.fillText(last, W - pad - ctx.measureText(last).width, H - 4);
+
   // End value labels
-  const lastVal = '$' + vals[N-1].toLocaleString('en-US', {{maximumFractionDigits:0}});
-  ctx.fillStyle = vals[N-1] >= PV ? '#2e7d32' : '#c62828';
+  const lastPort = vals[N-1];
+  const lastPortStr = '$' + lastPort.toLocaleString('en-US', {{maximumFractionDigits:0}});
+  ctx.fillStyle = lastPort >= 100000 ? '#2e7d32' : '#c62828';
   ctx.font = 'bold 12px sans-serif';
-  ctx.fillText(lastVal, toX(N-1) - ctx.measureText(lastVal).width - 4, toY(vals[N-1]) - 4);
-  if (spyVals.length) {{
-    const spyLast = 'SPY $' + spyVals[N-1].toLocaleString('en-US', {{maximumFractionDigits:0}});
+  ctx.fillText(lastPortStr, toX(N-1) - ctx.measureText(lastPortStr).width - 4, toY(lastPort) - 4);
+  if (hasSpy) {{
+    const lastSpy = spyVals.filter(v => v != null).slice(-1)[0];
+    const spyStr = 'SPY $' + lastSpy.toLocaleString('en-US', {{maximumFractionDigits:0}});
     ctx.fillStyle = '#757575'; ctx.font = '11px sans-serif';
-    ctx.fillText(spyLast, toX(N-1) - ctx.measureText(spyLast).width - 4, toY(spyVals[N-1]) + 14);
+    ctx.fillText(spyStr, toX(N-1) - ctx.measureText(spyStr).width - 4, toY(lastSpy) + 14);
   }}
+
   // Legend
   ctx.font = '11px sans-serif';
   ctx.fillStyle = '#1a237e'; ctx.fillRect(pad, 6, 18, 3);
-  ctx.fillStyle = '#333'; ctx.fillText('Portfolio', pad + 22, 12);
-  if (spyVals.length) {{
+  ctx.fillStyle = '#333'; ctx.fillText('Portfolio ($100k basis)', pad + 22, 12);
+  if (hasSpy) {{
     ctx.strokeStyle = '#9e9e9e'; ctx.setLineDash([4,4]); ctx.lineWidth=1.5;
-    ctx.beginPath(); ctx.moveTo(pad+90,8); ctx.lineTo(pad+108,8); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(pad+148,8); ctx.lineTo(pad+166,8); ctx.stroke();
     ctx.setLineDash([]);
-    ctx.fillStyle = '#333'; ctx.fillText('SPY (buy & hold)', pad+112, 12);
+    ctx.fillStyle = '#333'; ctx.fillText('SPY (buy & hold)', pad+170, 12);
   }}
 }})();
 
