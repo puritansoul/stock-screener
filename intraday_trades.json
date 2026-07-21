@@ -1,5 +1,5 @@
 {
-  "capital": 2988.7,
+  "capital": 1566.22,
   "open_positions": [
     {
       "ticker": "TXT",
@@ -204,9 +204,9 @@
       "entry_time": "10:59 ET",
       "entry_price": 73.12,
       "shares": 3,
-      "stop": 73.2474,
+      "stop": 73.1626,
       "trail_dist": 0.4375,
-      "peak": 72.8099,
+      "peak": 72.7251,
       "orb_width": 0.875,
       "cost": 219.36,
       "vol_ratio": 1.33
@@ -456,9 +456,9 @@
       "entry_time": "11:24 ET",
       "entry_price": 87.275,
       "shares": 1,
-      "stop": 87.53,
+      "stop": 87.58,
       "trail_dist": 0.57,
-      "peak": 88.1,
+      "peak": 88.15,
       "orb_width": 1.14,
       "cost": 87.28,
       "vol_ratio": 1.35
@@ -638,9 +638,9 @@
       "entry_time": "12:23 ET",
       "entry_price": 77.09,
       "shares": 12,
-      "stop": 77.4025,
+      "stop": 77.3475,
       "trail_dist": 0.3325,
-      "peak": 77.07,
+      "peak": 77.015,
       "orb_width": 0.665,
       "cost": 925.08,
       "vol_ratio": 1.44
@@ -750,9 +750,9 @@
       "entry_time": "12:40 ET",
       "entry_price": 236.76,
       "shares": 3,
-      "stop": 236.5175,
+      "stop": 236.7575,
       "trail_dist": 0.9725,
-      "peak": 237.49,
+      "peak": 237.73,
       "orb_width": 1.945,
       "cost": 710.28,
       "vol_ratio": 1.24
@@ -834,9 +834,9 @@
       "entry_time": "12:58 ET",
       "entry_price": 487.97,
       "shares": 1,
-      "stop": 490.2437,
+      "stop": 489.8387,
       "trail_dist": 4.7387,
-      "peak": 485.505,
+      "peak": 485.1,
       "orb_width": 9.4775,
       "cost": 487.97,
       "vol_ratio": 1.6
@@ -904,9 +904,9 @@
       "entry_time": "13:10 ET",
       "entry_price": 654.23,
       "shares": 2,
-      "stop": 651.665,
+      "stop": 651.695,
       "trail_dist": 6.775,
-      "peak": 658.44,
+      "peak": 658.47,
       "orb_width": 13.55,
       "cost": 1308.46,
       "vol_ratio": 1.53
@@ -932,9 +932,9 @@
       "entry_time": "13:18 ET",
       "entry_price": 253.38,
       "shares": 10,
-      "stop": 256.4998,
+      "stop": 255.9698,
       "trail_dist": 3.6798,
-      "peak": 252.82,
+      "peak": 252.29,
       "orb_width": 7.3596,
       "cost": 2533.8,
       "vol_ratio": 1.83
@@ -946,9 +946,9 @@
       "entry_time": "13:20 ET",
       "entry_price": 267.64,
       "shares": 8,
-      "stop": 271.055,
+      "stop": 270.73,
       "trail_dist": 3.415,
-      "peak": 267.64,
+      "peak": 267.315,
       "orb_width": 6.83,
       "cost": 2141.12,
       "vol_ratio": 2.98
@@ -960,9 +960,9 @@
       "entry_time": "13:20 ET",
       "entry_price": 514.14,
       "shares": 2,
-      "stop": 519.785,
+      "stop": 519.78,
       "trail_dist": 5.645,
-      "peak": 514.14,
+      "peak": 514.135,
       "orb_width": 11.29,
       "cost": 1028.28,
       "vol_ratio": 2.3
@@ -980,6 +980,34 @@
       "orb_width": 1.08,
       "cost": 1106.8,
       "vol_ratio": 1.7
+    },
+    {
+      "ticker": "WAB",
+      "side": "long",
+      "entry_date": "2026-07-21",
+      "entry_time": "13:23 ET",
+      "entry_price": 261.21,
+      "shares": 3,
+      "stop": 258.5088,
+      "trail_dist": 2.7012,
+      "peak": 261.21,
+      "orb_width": 5.4025,
+      "cost": 783.63,
+      "vol_ratio": 2.08
+    },
+    {
+      "ticker": "CNP",
+      "side": "short",
+      "entry_date": "2026-07-21",
+      "entry_time": "13:23 ET",
+      "entry_price": 42.59,
+      "shares": 15,
+      "stop": 42.735,
+      "trail_dist": 0.145,
+      "peak": 42.59,
+      "orb_width": 0.29,
+      "cost": 638.85,
+      "vol_ratio": 1.25
     }
   ],
   "closed_today": [
@@ -16903,7 +16931,7 @@
     "2026-07-16": 99371.82,
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
-    "2026-07-21": 98741.21
+    "2026-07-21": 98734.16
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -32775,6 +32803,32 @@
       ],
       "portfolio_value": 98741.21,
       "note": "$98,741 | cash=$2,989 | open=70 | closed today=67 | day PnL=$-668"
+    },
+    {
+      "date": "2026-07-21",
+      "time": "13:22 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "WAB",
+          "side": "long",
+          "price": 261.21,
+          "shares": 3,
+          "stop": 258.51,
+          "trail_dist": 2.7012
+        },
+        {
+          "ticker": "CNP",
+          "side": "short",
+          "price": 42.59,
+          "shares": 15,
+          "stop": 42.74,
+          "trail_dist": 0.145
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 98734.16,
+      "note": "$98,734 | cash=$1,566 | open=72 | closed today=67 | day PnL=$-668"
     }
   ]
 }
