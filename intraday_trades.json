@@ -1,5 +1,5 @@
 {
-  "capital": 832.15,
+  "capital": 584.89,
   "open_positions": [
     {
       "ticker": "TXT",
@@ -456,9 +456,9 @@
       "entry_time": "11:24 ET",
       "entry_price": 87.275,
       "shares": 1,
-      "stop": 87.61,
+      "stop": 87.63,
       "trail_dist": 0.57,
-      "peak": 88.18,
+      "peak": 88.2,
       "orb_width": 1.14,
       "cost": 87.28,
       "vol_ratio": 1.35
@@ -526,9 +526,9 @@
       "entry_time": "11:53 ET",
       "entry_price": 341.08,
       "shares": 3,
-      "stop": 340.635,
+      "stop": 340.98,
       "trail_dist": 4.285,
-      "peak": 344.92,
+      "peak": 345.265,
       "orb_width": 8.57,
       "cost": 1023.24,
       "vol_ratio": 1.23
@@ -946,9 +946,9 @@
       "entry_time": "13:20 ET",
       "entry_price": 267.64,
       "shares": 8,
-      "stop": 270.325,
+      "stop": 270.275,
       "trail_dist": 3.415,
-      "peak": 266.91,
+      "peak": 266.86,
       "orb_width": 6.83,
       "cost": 2141.12,
       "vol_ratio": 2.98
@@ -1016,9 +1016,9 @@
       "entry_time": "13:25 ET",
       "entry_price": 226.425,
       "shares": 2,
-      "stop": 227.84,
+      "stop": 227.745,
       "trail_dist": 1.415,
-      "peak": 226.425,
+      "peak": 226.33,
       "orb_width": 2.83,
       "cost": 452.85,
       "vol_ratio": 1.3
@@ -1030,12 +1030,26 @@
       "entry_time": "13:25 ET",
       "entry_price": 140.61,
       "shares": 2,
-      "stop": 140.1725,
+      "stop": 140.2525,
       "trail_dist": 0.4375,
-      "peak": 140.61,
+      "peak": 140.69,
       "orb_width": 0.875,
       "cost": 281.22,
       "vol_ratio": 1.29
+    },
+    {
+      "ticker": "PHM",
+      "side": "long",
+      "entry_date": "2026-07-21",
+      "entry_time": "13:28 ET",
+      "entry_price": 123.63,
+      "shares": 2,
+      "stop": 122.875,
+      "trail_dist": 0.755,
+      "peak": 123.63,
+      "orb_width": 1.51,
+      "cost": 247.26,
+      "vol_ratio": 1.79
     }
   ],
   "closed_today": [
@@ -16959,7 +16973,7 @@
     "2026-07-16": 99371.82,
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
-    "2026-07-21": 98716.7
+    "2026-07-21": 98716.66
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -32883,6 +32897,24 @@
       "exits": [],
       "portfolio_value": 98716.7,
       "note": "$98,717 | cash=$832 | open=74 | closed today=67 | day PnL=$-668"
+    },
+    {
+      "date": "2026-07-21",
+      "time": "13:27 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "PHM",
+          "side": "long",
+          "price": 123.63,
+          "shares": 2,
+          "stop": 122.87,
+          "trail_dist": 0.755
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 98716.66,
+      "note": "$98,717 | cash=$585 | open=75 | closed today=67 | day PnL=$-668"
     }
   ]
 }
