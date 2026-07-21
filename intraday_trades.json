@@ -1,5 +1,5 @@
 {
-  "capital": 4085.29,
+  "capital": 4750.74,
   "open_positions": [
     {
       "ticker": "TXT",
@@ -50,9 +50,9 @@
       "entry_time": "10:18 ET",
       "entry_price": 108.98,
       "shares": 12,
-      "stop": 108.73,
+      "stop": 108.735,
       "trail_dist": 0.815,
-      "peak": 109.545,
+      "peak": 109.55,
       "orb_width": 1.63,
       "cost": 1307.76,
       "vol_ratio": 1.59
@@ -98,20 +98,6 @@
       "orb_width": 0.915,
       "cost": 222.62,
       "vol_ratio": 1.56
-    },
-    {
-      "ticker": "ATO",
-      "side": "short",
-      "entry_date": "2026-07-21",
-      "entry_time": "10:37 ET",
-      "entry_price": 175.355,
-      "shares": 14,
-      "stop": 175.275,
-      "trail_dist": 0.565,
-      "peak": 174.71,
-      "orb_width": 1.13,
-      "cost": 2454.97,
-      "vol_ratio": 6.44
     },
     {
       "ticker": "DD",
@@ -218,9 +204,9 @@
       "entry_time": "10:45 ET",
       "entry_price": 230.05,
       "shares": 1,
-      "stop": 230.1375,
+      "stop": 230.1925,
       "trail_dist": 1.9625,
-      "peak": 232.1,
+      "peak": 232.155,
       "orb_width": 3.925,
       "cost": 230.05,
       "vol_ratio": 1.4
@@ -330,9 +316,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 158.095,
       "shares": 3,
-      "stop": 158.08,
+      "stop": 158.1,
       "trail_dist": 0.67,
-      "peak": 158.75,
+      "peak": 158.77,
       "orb_width": 1.34,
       "cost": 474.29,
       "vol_ratio": 1.75
@@ -428,9 +414,9 @@
       "entry_time": "11:14 ET",
       "entry_price": 8.46,
       "shares": 18,
-      "stop": 8.53,
+      "stop": 8.525,
       "trail_dist": 0.075,
-      "peak": 8.455,
+      "peak": 8.45,
       "orb_width": 0.15,
       "cost": 152.28,
       "vol_ratio": 1.96
@@ -442,9 +428,9 @@
       "entry_time": "11:17 ET",
       "entry_price": 32.64,
       "shares": 15,
-      "stop": 32.61,
+      "stop": 32.62,
       "trail_dist": 0.17,
-      "peak": 32.78,
+      "peak": 32.79,
       "orb_width": 0.34,
       "cost": 489.6,
       "vol_ratio": 4.41
@@ -526,9 +512,9 @@
       "entry_time": "11:24 ET",
       "entry_price": 198.185,
       "shares": 1,
-      "stop": 197.72,
+      "stop": 197.335,
       "trail_dist": 1.705,
-      "peak": 196.015,
+      "peak": 195.63,
       "orb_width": 3.41,
       "cost": 198.18,
       "vol_ratio": 2.08
@@ -624,9 +610,9 @@
       "entry_time": "11:34 ET",
       "entry_price": 638.485,
       "shares": 4,
-      "stop": 649.895,
+      "stop": 652.055,
       "trail_dist": 6.775,
-      "peak": 656.67,
+      "peak": 658.83,
       "orb_width": 13.55,
       "cost": 2553.94,
       "vol_ratio": 1.55
@@ -764,9 +750,9 @@
       "entry_time": "12:13 ET",
       "entry_price": 209.765,
       "shares": 27,
-      "stop": 208.43,
+      "stop": 208.595,
       "trail_dist": 2.155,
-      "peak": 210.585,
+      "peak": 210.75,
       "orb_width": 4.31,
       "cost": 5663.65,
       "vol_ratio": 1.7
@@ -876,12 +862,26 @@
       "entry_time": "12:28 ET",
       "entry_price": 416.295,
       "shares": 4,
-      "stop": 414.065,
+      "stop": 414.28,
       "trail_dist": 2.23,
-      "peak": 416.295,
+      "peak": 416.51,
       "orb_width": 4.46,
       "cost": 1665.18,
       "vol_ratio": 1.73
+    },
+    {
+      "ticker": "FANG",
+      "side": "long",
+      "entry_date": "2026-07-21",
+      "entry_time": "12:30 ET",
+      "entry_price": 198.96,
+      "shares": 9,
+      "stop": 197.86,
+      "trail_dist": 1.1,
+      "peak": 198.96,
+      "orb_width": 2.2,
+      "cost": 1790.64,
+      "vol_ratio": 1.35
     }
   ],
   "closed_today": [
@@ -1853,6 +1853,25 @@
       "pnl": -14.43,
       "exit_reason": "trailing stop",
       "exit_time": "12:28 ET"
+    },
+    {
+      "ticker": "ATO",
+      "side": "short",
+      "entry_date": "2026-07-21",
+      "entry_time": "10:37 ET",
+      "entry_price": 175.355,
+      "shares": 14,
+      "stop": 175.275,
+      "trail_dist": 0.565,
+      "peak": 174.71,
+      "orb_width": 1.13,
+      "cost": 2454.97,
+      "vol_ratio": 6.44,
+      "exit_date": "2026-07-21",
+      "exit_price": 175.275,
+      "pnl": 1.12,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:30 ET"
     }
   ],
   "all_closed": [
@@ -16501,7 +16520,7 @@
     "2026-07-16": 99371.82,
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
-    "2026-07-21": 98715.39
+    "2026-07-21": 98718.81
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -31862,6 +31881,32 @@
       ],
       "portfolio_value": 98715.39,
       "note": "$98,715 | cash=$4,085 | open=63 | closed today=51 | day PnL=$-701"
+    },
+    {
+      "date": "2026-07-21",
+      "time": "12:30 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "FANG",
+          "side": "long",
+          "price": 198.96,
+          "shares": 9,
+          "stop": 197.86,
+          "trail_dist": 1.1
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "ATO",
+          "side": "short",
+          "exit_price": 175.28,
+          "pnl": 1.12,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98718.81,
+      "note": "$98,719 | cash=$4,751 | open=63 | closed today=52 | day PnL=$-700"
     }
   ]
 }
