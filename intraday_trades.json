@@ -1,5 +1,5 @@
 {
-  "capital": 1233.72,
+  "capital": 1927.51,
   "open_positions": [
     {
       "ticker": "WMB",
@@ -114,20 +114,6 @@
       "vol_ratio": 1.45
     },
     {
-      "ticker": "PEG",
-      "side": "short",
-      "entry_date": "2026-07-21",
-      "entry_time": "10:33 ET",
-      "entry_price": 77.105,
-      "shares": 9,
-      "stop": 77.1225,
-      "trail_dist": 0.3325,
-      "peak": 76.79,
-      "orb_width": 0.665,
-      "cost": 693.95,
-      "vol_ratio": 1.31
-    },
-    {
       "ticker": "STZ",
       "side": "short",
       "entry_date": "2026-07-21",
@@ -176,9 +162,9 @@
       "entry_time": "10:37 ET",
       "entry_price": 138.445,
       "shares": 12,
-      "stop": 137.5475,
+      "stop": 137.6475,
       "trail_dist": 1.0525,
-      "peak": 138.6,
+      "peak": 138.7,
       "orb_width": 2.105,
       "cost": 1661.34,
       "vol_ratio": 1.77
@@ -218,9 +204,9 @@
       "entry_time": "10:40 ET",
       "entry_price": 198.39,
       "shares": 1,
-      "stop": 198.71,
+      "stop": 198.75,
       "trail_dist": 1.1,
-      "peak": 199.81,
+      "peak": 199.85,
       "orb_width": 2.2,
       "cost": 198.39,
       "vol_ratio": 1.45
@@ -302,9 +288,9 @@
       "entry_time": "10:45 ET",
       "entry_price": 230.05,
       "shares": 1,
-      "stop": 229.1375,
+      "stop": 229.2064,
       "trail_dist": 1.9625,
-      "peak": 231.1,
+      "peak": 231.1689,
       "orb_width": 3.925,
       "cost": 230.05,
       "vol_ratio": 1.4
@@ -498,9 +484,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 80.67,
       "shares": 3,
-      "stop": 80.7,
+      "stop": 80.755,
       "trail_dist": 0.37,
-      "peak": 81.07,
+      "peak": 81.125,
       "orb_width": 0.74,
       "cost": 242.01,
       "vol_ratio": 1.43
@@ -526,9 +512,9 @@
       "entry_time": "11:09 ET",
       "entry_price": 57.56,
       "shares": 4,
-      "stop": 57.65,
+      "stop": 57.615,
       "trail_dist": 0.24,
-      "peak": 57.41,
+      "peak": 57.375,
       "orb_width": 0.48,
       "cost": 230.24,
       "vol_ratio": 1.96
@@ -596,9 +582,9 @@
       "entry_time": "11:17 ET",
       "entry_price": 32.64,
       "shares": 15,
-      "stop": 32.54,
+      "stop": 32.555,
       "trail_dist": 0.17,
-      "peak": 32.71,
+      "peak": 32.725,
       "orb_width": 0.34,
       "cost": 489.6,
       "vol_ratio": 4.41
@@ -638,9 +624,9 @@
       "entry_time": "11:19 ET",
       "entry_price": 17.475,
       "shares": 13,
-      "stop": 17.4575,
+      "stop": 17.4625,
       "trail_dist": 0.0975,
-      "peak": 17.555,
+      "peak": 17.56,
       "orb_width": 0.195,
       "cost": 227.18,
       "vol_ratio": 1.5
@@ -666,9 +652,9 @@
       "entry_time": "11:24 ET",
       "entry_price": 60.975,
       "shares": 7,
-      "stop": 60.6475,
+      "stop": 60.6675,
       "trail_dist": 0.4175,
-      "peak": 61.065,
+      "peak": 61.085,
       "orb_width": 0.835,
       "cost": 426.82,
       "vol_ratio": 2.51
@@ -736,9 +722,9 @@
       "entry_time": "11:24 ET",
       "entry_price": 87.275,
       "shares": 1,
-      "stop": 86.725,
+      "stop": 86.77,
       "trail_dist": 0.57,
-      "peak": 87.295,
+      "peak": 87.34,
       "orb_width": 1.14,
       "cost": 87.28,
       "vol_ratio": 1.35
@@ -1530,6 +1516,25 @@
       "pnl": -0.14,
       "exit_reason": "trailing stop",
       "exit_time": "11:39 ET"
+    },
+    {
+      "ticker": "PEG",
+      "side": "short",
+      "entry_date": "2026-07-21",
+      "entry_time": "10:33 ET",
+      "entry_price": 77.105,
+      "shares": 9,
+      "stop": 77.1225,
+      "trail_dist": 0.3325,
+      "peak": 76.79,
+      "orb_width": 0.665,
+      "cost": 693.95,
+      "vol_ratio": 1.31,
+      "exit_date": "2026-07-21",
+      "exit_price": 77.1225,
+      "pnl": -0.16,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:43 ET"
     }
   ],
   "all_closed": [
@@ -16178,7 +16183,7 @@
     "2026-07-16": 99371.82,
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
-    "2026-07-21": 98777.27
+    "2026-07-21": 98778.3
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -31094,6 +31099,23 @@
       "exits": [],
       "portfolio_value": 98777.27,
       "note": "$98,777 | cash=$1,234 | open=63 | closed today=34 | day PnL=$-530"
+    },
+    {
+      "date": "2026-07-21",
+      "time": "11:43 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "PEG",
+          "side": "short",
+          "exit_price": 77.12,
+          "pnl": -0.16,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98778.3,
+      "note": "$98,778 | cash=$1,928 | open=62 | closed today=35 | day PnL=$-530"
     }
   ]
 }
