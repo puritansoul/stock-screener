@@ -1,5 +1,5 @@
 {
-  "capital": 1099.29,
+  "capital": 2141.43,
   "open_positions": [
     {
       "ticker": "TXT",
@@ -646,20 +646,6 @@
       "vol_ratio": 1.31
     },
     {
-      "ticker": "CDW",
-      "side": "short",
-      "entry_date": "2026-07-21",
-      "entry_time": "12:40 ET",
-      "entry_price": 129.53,
-      "shares": 8,
-      "stop": 128.8977,
-      "trail_dist": 0.7527,
-      "peak": 128.145,
-      "orb_width": 1.5054,
-      "cost": 1036.24,
-      "vol_ratio": 1.24
-    },
-    {
       "ticker": "DVA",
       "side": "long",
       "entry_date": "2026-07-21",
@@ -946,9 +932,9 @@
       "entry_time": "13:28 ET",
       "entry_price": 123.63,
       "shares": 2,
-      "stop": 122.995,
+      "stop": 123.265,
       "trail_dist": 0.755,
-      "peak": 123.75,
+      "peak": 124.02,
       "orb_width": 1.51,
       "cost": 247.26,
       "vol_ratio": 1.79
@@ -960,9 +946,9 @@
       "entry_time": "13:30 ET",
       "entry_price": 210.225,
       "shares": 2,
-      "stop": 208.325,
+      "stop": 208.335,
       "trail_dist": 1.9,
-      "peak": 210.225,
+      "peak": 210.235,
       "orb_width": 3.8,
       "cost": 420.45,
       "vol_ratio": 1.62
@@ -1058,9 +1044,9 @@
       "entry_time": "13:43 ET",
       "entry_price": 319.37,
       "shares": 1,
-      "stop": 316.43,
+      "stop": 316.58,
       "trail_dist": 2.94,
-      "peak": 319.37,
+      "peak": 319.52,
       "orb_width": 5.88,
       "cost": 319.37,
       "vol_ratio": 1.45
@@ -1072,9 +1058,9 @@
       "entry_time": "13:43 ET",
       "entry_price": 95.12,
       "shares": 4,
-      "stop": 94.365,
+      "stop": 94.415,
       "trail_dist": 0.755,
-      "peak": 95.12,
+      "peak": 95.17,
       "orb_width": 1.51,
       "cost": 380.48,
       "vol_ratio": 1.23
@@ -2486,6 +2472,25 @@
       "pnl": -2.02,
       "exit_reason": "trailing stop",
       "exit_time": "13:43 ET"
+    },
+    {
+      "ticker": "CDW",
+      "side": "short",
+      "entry_date": "2026-07-21",
+      "entry_time": "12:40 ET",
+      "entry_price": 129.53,
+      "shares": 8,
+      "stop": 128.7927,
+      "trail_dist": 0.7527,
+      "peak": 128.04,
+      "orb_width": 1.5054,
+      "cost": 1036.24,
+      "vol_ratio": 1.24,
+      "exit_date": "2026-07-21",
+      "exit_price": 128.7927,
+      "pnl": 5.9,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:45 ET"
     }
   ],
   "all_closed": [
@@ -17134,7 +17139,7 @@
     "2026-07-16": 99371.82,
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
-    "2026-07-21": 98753.8
+    "2026-07-21": 98759.6
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -33261,6 +33266,23 @@
       ],
       "portfolio_value": 98753.8,
       "note": "$98,754 | cash=$1,099 | open=77 | closed today=74 | day PnL=$-672"
+    },
+    {
+      "date": "2026-07-21",
+      "time": "13:45 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "CDW",
+          "side": "short",
+          "exit_price": 128.79,
+          "pnl": 5.9,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98759.6,
+      "note": "$98,760 | cash=$2,141 | open=76 | closed today=75 | day PnL=$-667"
     }
   ]
 }
