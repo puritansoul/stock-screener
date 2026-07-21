@@ -1,5 +1,5 @@
 {
-  "capital": 1898.31,
+  "capital": 6364.72,
   "open_positions": [
     {
       "ticker": "WMB",
@@ -274,9 +274,9 @@
       "entry_time": "10:45 ET",
       "entry_price": 230.05,
       "shares": 1,
-      "stop": 229.9075,
+      "stop": 229.9375,
       "trail_dist": 1.9625,
-      "peak": 231.87,
+      "peak": 231.9,
       "orb_width": 3.925,
       "cost": 230.05,
       "vol_ratio": 1.4
@@ -414,9 +414,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 80.67,
       "shares": 3,
-      "stop": 81.3,
+      "stop": 81.37,
       "trail_dist": 0.37,
-      "peak": 81.67,
+      "peak": 81.74,
       "orb_width": 0.74,
       "cost": 242.01,
       "vol_ratio": 1.43
@@ -498,9 +498,9 @@
       "entry_time": "11:17 ET",
       "entry_price": 32.64,
       "shares": 15,
-      "stop": 32.56,
+      "stop": 32.565,
       "trail_dist": 0.17,
-      "peak": 32.73,
+      "peak": 32.735,
       "orb_width": 0.34,
       "cost": 489.6,
       "vol_ratio": 4.41
@@ -540,9 +540,9 @@
       "entry_time": "11:19 ET",
       "entry_price": 17.475,
       "shares": 13,
-      "stop": 17.4625,
+      "stop": 17.4775,
       "trail_dist": 0.0975,
-      "peak": 17.56,
+      "peak": 17.575,
       "orb_width": 0.195,
       "cost": 227.18,
       "vol_ratio": 1.5
@@ -638,9 +638,9 @@
       "entry_time": "11:24 ET",
       "entry_price": 87.275,
       "shares": 1,
-      "stop": 86.88,
+      "stop": 86.9,
       "trail_dist": 0.57,
-      "peak": 87.45,
+      "peak": 87.47,
       "orb_width": 1.14,
       "cost": 87.28,
       "vol_ratio": 1.35
@@ -652,9 +652,9 @@
       "entry_time": "11:26 ET",
       "entry_price": 90.395,
       "shares": 98,
-      "stop": 90.5,
+      "stop": 90.235,
       "trail_dist": 0.465,
-      "peak": 90.035,
+      "peak": 89.77,
       "orb_width": 0.93,
       "cost": 8858.71,
       "vol_ratio": 1.36
@@ -672,20 +672,6 @@
       "orb_width": 10.92,
       "cost": 6240.08,
       "vol_ratio": 2.75
-    },
-    {
-      "ticker": "AWK",
-      "side": "short",
-      "entry_date": "2026-07-21",
-      "entry_time": "11:29 ET",
-      "entry_price": 131.465,
-      "shares": 34,
-      "stop": 131.565,
-      "trail_dist": 0.605,
-      "peak": 130.96,
-      "orb_width": 1.21,
-      "cost": 4469.81,
-      "vol_ratio": 1.85
     },
     {
       "ticker": "EA",
@@ -722,9 +708,9 @@
       "entry_time": "11:34 ET",
       "entry_price": 405.19,
       "shares": 4,
-      "stop": 406.315,
+      "stop": 406.105,
       "trail_dist": 2.695,
-      "peak": 403.62,
+      "peak": 403.41,
       "orb_width": 5.39,
       "cost": 1620.76,
       "vol_ratio": 1.32
@@ -834,9 +820,9 @@
       "entry_time": "11:58 ET",
       "entry_price": 505.54,
       "shares": 1,
-      "stop": 508.13,
+      "stop": 507.185,
       "trail_dist": 2.705,
-      "peak": 505.425,
+      "peak": 504.48,
       "orb_width": 5.41,
       "cost": 505.54,
       "vol_ratio": 1.9
@@ -848,9 +834,9 @@
       "entry_time": "11:58 ET",
       "entry_price": 195.185,
       "shares": 3,
-      "stop": 196.0775,
+      "stop": 195.6275,
       "trail_dist": 1.5575,
-      "peak": 194.52,
+      "peak": 194.07,
       "orb_width": 3.115,
       "cost": 585.55,
       "vol_ratio": 1.83
@@ -1654,6 +1640,25 @@
       "pnl": 0.2,
       "exit_reason": "trailing stop",
       "exit_time": "11:58 ET"
+    },
+    {
+      "ticker": "AWK",
+      "side": "short",
+      "entry_date": "2026-07-21",
+      "entry_time": "11:29 ET",
+      "entry_price": 131.465,
+      "shares": 34,
+      "stop": 131.565,
+      "trail_dist": 0.605,
+      "peak": 130.96,
+      "orb_width": 1.21,
+      "cost": 4469.81,
+      "vol_ratio": 1.85,
+      "exit_date": "2026-07-21",
+      "exit_price": 131.565,
+      "pnl": -3.4,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:03 ET"
     }
   ],
   "all_closed": [
@@ -14657,6 +14662,11 @@
       "low": 1018.84,
       "width": 8.785
     },
+    "EQR": {
+      "high": 68.86,
+      "low": 68.33,
+      "width": 0.53
+    },
     "ERIE": {
       "high": 224.11,
       "low": 220.33,
@@ -16297,7 +16307,7 @@
     "2026-07-16": 99371.82,
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
-    "2026-07-21": 98710.22
+    "2026-07-21": 98682.93
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -31397,6 +31407,23 @@
       "exits": [],
       "portfolio_value": 98710.22,
       "note": "$98,710 | cash=$1,898 | open=61 | closed today=42 | day PnL=$-533"
+    },
+    {
+      "date": "2026-07-21",
+      "time": "12:03 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "AWK",
+          "side": "short",
+          "exit_price": 131.56,
+          "pnl": -3.4,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98682.93,
+      "note": "$98,683 | cash=$6,365 | open=60 | closed today=43 | day PnL=$-537"
     }
   ]
 }
