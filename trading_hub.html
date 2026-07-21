@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Trading Hub — 2026-07-20</title>
+  <title>Trading Hub — 2026-07-21</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -32,7 +32,7 @@
 </head>
 <body>
   <h1>🏦 Trading Hub</h1>
-  <p class="subtitle">Two paper-trading bots, $100k each &nbsp;|&nbsp; 2026-07-20 &nbsp;|&nbsp; Not real money</p>
+  <p class="subtitle">Two paper-trading bots, $100k each &nbsp;|&nbsp; 2026-07-21 &nbsp;|&nbsp; Not real money</p>
 
   <div class="bots">
     
@@ -88,26 +88,63 @@
             </div>
             <div class="stat">
               <div class="stat-label">Day P&amp;L</div>
-              <div class="stat-val" style="color:#c62828">$-575</div>
+              <div class="stat-val" style="color:#2e7d32">$+0</div>
             </div>
             <div class="stat">
               <div class="stat-label">Open Positions</div>
-              <div class="stat-val">71</div>
+              <div class="stat-val">39</div>
             </div>
             <div class="stat">
               <div class="stat-label">Win Rate</div>
-              <div class="stat-val">44.0%</div>
+              <div class="stat-val">100.0%</div>
             </div>
             <div class="stat">
               <div class="stat-label">Closed Trades</div>
-              <div class="stat-val">473</div>
+              <div class="stat-val">16</div>
+            </div>
+          </div>
+          <canvas id="swing-chart" style="width:100%;margin:12px 0"></canvas>
+          <div style="font-size:11px;color:#999;margin-bottom:12px">
+            Inception: 2026-07-09 &nbsp;|&nbsp; Last run: 2026-07-16
+          </div>
+          <a href="reports/swing_2026-07-16.html" class="btn" style="background:#1a237e">Open Dashboard →</a>
+        </div>
+    
+        <div class="bot-card" style="border-top:4px solid #e65100">
+          <div class="bot-title">⚡ Intraday Trader (ORB)</div>
+          <div class="stat-grid">
+            <div class="stat">
+              <div class="stat-label">Portfolio Value</div>
+              <div class="stat-val" style="color:#1a237e">$98,777</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Total Return</div>
+              <div class="stat-val" style="color:#c62828">$1,223<br>
+                <span style="font-size:13px">1.22%</span>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Day P&amp;L</div>
+              <div class="stat-val" style="color:#c62828">$-530</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Open Positions</div>
+              <div class="stat-val">63</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Win Rate</div>
+              <div class="stat-val">46.0%</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Closed Trades</div>
+              <div class="stat-val">672</div>
             </div>
           </div>
           <canvas id="intraday-chart" style="width:100%;margin:12px 0"></canvas>
           <div style="font-size:11px;color:#999;margin-bottom:12px">
-            Inception: 2026-07-09 &nbsp;|&nbsp; Last run: 2026-07-17
+            Inception: 2026-07-09 &nbsp;|&nbsp; Last run: 2026-07-21
           </div>
-          <a href="reports/intraday_2026-07-17.html" class="btn" style="background:#e65100">Open Dashboard →</a>
+          <a href="reports/intraday_2026-07-21.html" class="btn" style="background:#e65100">Open Dashboard →</a>
         </div>
   </div>
 
@@ -161,8 +198,8 @@
 })();
 
 (function() {
-  const dates = ["2026-07-09", "2026-07-10", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17"];
-  const vals  = [99940.86, 99940.86, 99718.02, 99519.7, 99469.14, 99371.82, 99436.27];
+  const dates = ["2026-07-09", "2026-07-10", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-20", "2026-07-21"];
+  const vals  = [99940.86, 99940.86, 99718.02, 99519.7, 99469.14, 99371.82, 99204.19, 99285.85, 98777.27];
   const N = vals.length;
   if (N < 2) return;
   const canvas = document.getElementById('intraday-chart');

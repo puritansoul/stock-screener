@@ -2,10 +2,10 @@
 Swing Trading Bot — RSI(2) Mean Reversion Strategy
 
 Rules (Larry Connors):
-  ENTRY long : close > 200-day SMA  AND  RSI(2) < 10
-  EXIT long  : close > 5-day SMA
-  ENTRY short: close < 200-day SMA  AND  RSI(2) > 90
-  EXIT short : close < 5-day SMA
+  ENTRY long : close > 200-day SMA  AND  RSI(2) < 5
+  EXIT long  : RSI(2) > 65  (or stop)
+  ENTRY short: close < 200-day SMA  AND  RSI(2) > 95  AND  SPY < SPY SMA200
+  EXIT short : RSI(2) < 35  (or stop)
   VWAP filter: only long if current price is below VWAP (approximated from daily data)
 
 Universe : S&P 500 (same tickers as live_monitor.py)
@@ -80,8 +80,10 @@ MAX_POSITIONS     = 9999       # no cap — limited only by available cash
 ATR_PERIOD        = 14
 ATR_STOP_MULT     = 2.0        # stop = entry ± 2 × ATR(14)
 RSI_PERIOD        = 2
-RSI_LONG_ENTRY    = 10         # RSI(2) < 10 → long signal
-RSI_SHORT_ENTRY   = 90         # RSI(2) > 90 → short signal
+RSI_LONG_ENTRY    = 5          # RSI(2) < 5  → long signal (tighter = stronger edge)
+RSI_SHORT_ENTRY   = 95         # RSI(2) > 95 → short signal
+RSI_LONG_EXIT     = 65         # exit long when RSI(2) reverts above 65
+RSI_SHORT_EXIT    = 35         # exit short when RSI(2) reverts below 35
 SMA200_PERIOD     = 200
 SMA5_PERIOD       = 5
 PRICE_LOOKBACK    = 210        # trading days of history to fetch
@@ -425,18 +427,18 @@ def run_swing_trader():
             continue
 
         cur_price = sig["close"]
-        sma5      = sig["sma5"]
+        rsi2_now  = sig["rsi2"]
         stop      = pos["stop"]
 
         exit_reason = None
         if side == "long":
-            if cur_price > sma5:
-                exit_reason = "SMA5 cross above"
+            if rsi2_now > RSI_LONG_EXIT:
+                exit_reason = f"RSI(2) reverted ({rsi2_now:.1f})"
             elif cur_price <= stop:
                 exit_reason = "stop loss"
         else:  # short
-            if cur_price < sma5:
-                exit_reason = "SMA5 cross below"
+            if rsi2_now < RSI_SHORT_EXIT:
+                exit_reason = f"RSI(2) reverted ({rsi2_now:.1f})"
             elif cur_price >= stop:
                 exit_reason = "stop loss"
 
@@ -462,6 +464,13 @@ def run_swing_trader():
     open_tickers    = {p["ticker"] for p in open_pos}
     entries_today   = []
 
+    # Market regime: only allow shorts when SPY is in a downtrend (below its own SMA200)
+    spy_sig = compute_signals(prices, "SPY")
+    shorts_allowed = spy_sig is not None and spy_sig["close"] < spy_sig["sma200"]
+    log_entry["notes"].append(
+        f"SPY regime: {'BEAR (shorts allowed)' if shorts_allowed else 'BULL (longs only)'}"
+    )
+
     # Always scan to build diagnostic — even if slots_available == 0
     all_scan = []
     candidates = []
@@ -475,7 +484,7 @@ def run_swing_trader():
         if close < MIN_PRICE:
             continue
         long_signal  = close > sma200 and rsi2 < RSI_LONG_ENTRY
-        short_signal = close < sma200 and rsi2 > RSI_SHORT_ENTRY
+        short_signal = shorts_allowed and close < sma200 and rsi2 > RSI_SHORT_ENTRY
         trend = "above SMA200" if close > sma200 else "below SMA200"
         status = ("LONG signal" if long_signal else
                   "SHORT signal" if short_signal else
@@ -1062,8 +1071,9 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
           <p style="color:#666;font-size:12px;line-height:1.7;margin:0">
             <strong>Strategy:</strong> RSI(2) Mean Reversion (Larry Connors)<br>
             <strong>Entry long:</strong> Close &gt; SMA(200) AND RSI(2) &lt; {RSI_LONG_ENTRY}<br>
-            <strong>Entry short:</strong> Close &lt; SMA(200) AND RSI(2) &gt; {RSI_SHORT_ENTRY}<br>
-            <strong>Exit:</strong> Price crosses 5-day SMA (or hits stop)<br>
+            <strong>Entry short:</strong> Close &lt; SMA(200) AND RSI(2) &gt; {RSI_SHORT_ENTRY} AND SPY &lt; SPY SMA(200)<br>
+            <strong>Exit long:</strong> RSI(2) &gt; {RSI_LONG_EXIT} (or stop)<br>
+            <strong>Exit short:</strong> RSI(2) &lt; {RSI_SHORT_EXIT} (or stop)<br>
             <strong>Stop:</strong> Entry ± {ATR_STOP_MULT}× ATR(14)<br>
             <strong>Risk:</strong> {RISK_PER_TRADE:.0%} of portfolio per trade<br>
             <strong>Max positions:</strong> no cap (cash-limited)<br>
