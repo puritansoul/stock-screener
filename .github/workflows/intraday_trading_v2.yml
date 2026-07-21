@@ -1,0 +1,72 @@
+name: Intraday Trader v2
+
+on:
+  schedule:
+    - cron: '35,50 13 * * 1-5'
+    - cron: '5,20,35,50 14,15,16,17,18,19 * * 1-5'
+    - cron: '5 20 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  intraday-trade-v2:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run intraday_trader_v2.py
+        run: python intraday_trader_v2.py
+
+      - name: Build consolidated dashboard
+        run: python build_consolidated.py
+
+      - name: Update intraday v2 index
+        run: |
+          python - <<'PYEOF'
+          from pathlib import Path
+          reports = sorted(Path("reports").glob("intraday_v2_*.html"), reverse=True)
+          if not reports:
+              exit(0)
+          latest = reports[0].name
+          links = "".join(
+              f'<li><a href="reports/{r.name}">{r.stem.replace("intraday_v2_","")}</a></li>\n'
+              for r in reports[:30]
+          )
+          Path("intraday_v2_index.html").write_text(
+              '<!DOCTYPE html><html><head><meta charset="UTF-8">'
+              f'<meta http-equiv="refresh" content="0; url=reports/{latest}">'
+              '<title>Intraday Trader v2</title></head><body>'
+              f'<p>Redirecting to <a href="reports/{latest}">{latest}</a>...</p>'
+              f'<ul>{links}</ul></body></html>'
+          )
+          PYEOF
+
+      - name: Commit and push
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for f in intraday_trades_v2.json intraday_v2_index.html consolidated.html; do
+            [ -f "$f" ] && git add -f "$f"
+          done
+          find reports -name 'intraday_v2_*.html' 2>/dev/null | xargs -r git add -f
+          git diff --cached --quiet && echo "No changes" || \
+            git commit -m "intraday-v2: $(date -u '+%Y-%m-%d %H:%M') [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase -X theirs origin main && git push && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done

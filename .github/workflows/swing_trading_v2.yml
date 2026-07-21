@@ -1,0 +1,70 @@
+name: Swing Trader v2
+
+on:
+  schedule:
+    - cron: '20 14 * * 1-5'   # 10:20 AM ET (14:20 UTC)
+  workflow_dispatch:
+
+jobs:
+  swing-trade-v2:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run swing_trader_v2.py
+        run: python swing_trader_v2.py
+
+      - name: Build consolidated dashboard
+        run: python build_consolidated.py
+
+      - name: Update swing v2 index
+        run: |
+          python - <<'PYEOF'
+          from pathlib import Path
+          reports = sorted(Path("reports").glob("swing_v2_*.html"), reverse=True)
+          if not reports:
+              exit(0)
+          latest = reports[0].name
+          links = "".join(
+              f'<li><a href="reports/{r.name}">{r.stem.replace("swing_v2_","")}</a></li>\n'
+              for r in reports[:30]
+          )
+          Path("swing_v2_index.html").write_text(
+              '<!DOCTYPE html><html><head><meta charset="UTF-8">'
+              f'<meta http-equiv="refresh" content="0; url=reports/{latest}">'
+              '<title>Swing Trader v2</title></head><body>'
+              f'<p>Redirecting to <a href="reports/{latest}">{latest}</a>...</p>'
+              f'<ul>{links}</ul></body></html>'
+          )
+          PYEOF
+
+      - name: Commit and push
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for f in swing_trades_v2.json swing_v2_index.html consolidated.html; do
+            [ -f "$f" ] && git add -f "$f"
+          done
+          find reports -name 'swing_v2_*.html' 2>/dev/null | xargs -r git add -f
+          git diff --cached --quiet && echo "No changes" || \
+            git commit -m "swing-v2: $(date -u '+%Y-%m-%d %H:%M') [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase -X theirs origin main && git push && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done

@@ -1,0 +1,79 @@
+name: Factor Screener v2
+
+on:
+  schedule:
+    - cron: '15 14 * * 1-5'   # 10:15 AM ET (14:15 UTC)
+    - cron: '15 21 * * 1-5'   # 5:15 PM ET  (21:15 UTC)
+  workflow_dispatch:
+
+jobs:
+  run-screener-v2:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Restore EDGAR cache
+        uses: actions/cache@v4
+        with:
+          path: edgar_cache/
+          key: edgar-cache-${{ runner.os }}-v1
+          restore-keys: edgar-cache-${{ runner.os }}-
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run live_monitor_v2.py
+        run: python live_monitor_v2.py
+
+      - name: Build consolidated dashboard
+        run: python build_consolidated.py
+
+      - name: Update v2 index
+        run: |
+          python - <<'PYEOF'
+          from pathlib import Path
+          from datetime import date
+          reports = sorted(Path("reports").glob("v2_*.html"), reverse=True)
+          if not reports:
+              exit(0)
+          latest = reports[0].name
+          links = "".join(
+              f'<li><a href="reports/{r.name}">{r.stem.replace("v2_","")}</a></li>\n'
+              for r in reports[:30]
+          )
+          Path("screener_v2_index.html").write_text(
+              '<!DOCTYPE html><html><head><meta charset="UTF-8">'
+              f'<meta http-equiv="refresh" content="0; url=reports/{latest}">'
+              '<title>Factor Screener v2</title></head><body>'
+              f'<p>Redirecting to <a href="reports/{latest}">{latest}</a>...</p>'
+              f'<ul>{links}</ul></body></html>'
+          )
+          PYEOF
+
+      - name: Commit and push results
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          [ -f consolidated.html ] && git add -f consolidated.html
+          [ -f screener_v2_index.html ] && git add -f screener_v2_index.html
+          git add -f portfolio_state_v2.json portfolio_nav_v2.json 2>/dev/null || true
+          find reports -name 'v2_*.html' 2>/dev/null | xargs -r git add -f
+          git diff --cached --quiet && echo "Nothing to commit" || \
+            git commit -m "screener-v2: $(date -u '+%Y-%m-%d %H:%M') [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase -X theirs origin main && git push && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done

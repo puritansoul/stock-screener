@@ -1,0 +1,1823 @@
+"""
+Intraday Paper Trader v2.0 — Opening Range Breakout + Enhanced Filters
+
+Rules:
+  Opening Range = high/low of first 30 min (9:30–10:00 AM ET)
+  ENTRY long  : 15-min close > ORB high  AND  volume > 1.2× avg  AND  pre-market gap >= 0.5%
+                AND  price > 5-day VWAP  AND  Tue/Wed/Thu only
+  ENTRY short : 15-min close < ORB low   AND  volume > 1.2× avg  AND  pre-market gap <= -0.5%
+                AND  price < 5-day VWAP  AND  Tue/Wed/Thu only
+  EXIT        : trailing stop (distance = 0.5x ORB width) — no fixed target, rides winners
+  INIT STOP   : entry -/+ 0.5x ORB width
+  FORCE CLOSE : all positions closed at 3:45 PM ET regardless
+
+v2 improvements over v1:
+  - Tue/Wed/Thu only (skip Mon/Fri gap-fade noise)
+  - Pre-market gap filter: require >= 0.5% gap in breakout direction
+  - Relative-volume position sizing tiers (3x/5x average -> 1.25x/1.5x size)
+  - Universe narrowed to top 50 by recent volume each day
+  - 5-day VWAP trend filter (skip long below VWAP, skip short above VWAP)
+
+Capital : $100,000, 2% risk per trade, max positions cash-limited
+Universe: Top 50 of S&P 500 by intraday volume
+Runs    : every 15 min 9:35am-4:05pm ET via GitHub Actions (intraday_trading_v2.yml)
+State   : intraday_trades_v2.json
+"""
+
+from __future__ import annotations
+
+import json
+import warnings
+from datetime import date, datetime, time as dt_time, timedelta
+from pathlib import Path
+from zoneinfo import ZoneInfo
+
+import numpy as np
+import pandas as pd
+import yfinance as yf
+
+warnings.filterwarnings("ignore")
+
+# ── Company name cache ────────────────────────────────────────────────────────
+_NAMES_FILE = Path(__file__).parent / "ticker_names.json"
+_name_cache: dict[str, str] = {}
+
+def _load_name_cache() -> None:
+    global _name_cache
+    if _NAMES_FILE.exists():
+        try:
+            _name_cache = json.loads(_NAMES_FILE.read_text())
+        except Exception:
+            _name_cache = {}
+
+def get_company_names(tickers: list[str]) -> dict[str, str]:
+    """Return {ticker: short_name} for all tickers, fetching misses from yfinance."""
+    if not _name_cache:
+        _load_name_cache()
+    missing = [t for t in tickers if t not in _name_cache]
+    if missing:
+        try:
+            info = yf.Tickers(" ".join(missing))
+            for tk in missing:
+                try:
+                    name = (info.tickers[tk].fast_info.get("displayName")
+                            or info.tickers[tk].info.get("shortName")
+                            or info.tickers[tk].info.get("longName")
+                            or "")
+                    for suffix in [", Inc.", " Inc.", ", Corp.", " Corp.", ", LLC",
+                                   " Ltd.", " Limited", " Holdings", " Co.", " Company"]:
+                        name = name.replace(suffix, "")
+                    _name_cache[tk] = name.strip()
+                except Exception:
+                    _name_cache[tk] = ""
+        except Exception:
+            for tk in missing:
+                _name_cache[tk] = ""
+        try:
+            _NAMES_FILE.write_text(json.dumps(_name_cache, indent=2))
+        except Exception:
+            pass
+    return {t: _name_cache.get(t, "") for t in tickers}
+
+_names: dict[str, str] = {}
+
+# ── Config ────────────────────────────────────────────────────────────────────
+STARTING_CAPITAL  = 100_000.0
+RISK_PER_TRADE    = 0.02       # 2% of portfolio at risk per trade
+MAX_POSITIONS     = 9999  # no cap — limited only by available cash
+ORB_MINUTES       = 30         # opening range window
+ORB_STOP_MULT     = 0.5        # trail distance = 0.5× ORB width
+VOLUME_FILTER     = 1.2        # require 1.2× avg bar volume on breakout bar
+FORCE_CLOSE_TIME  = dt_time(15, 45)   # 3:45pm ET
+ORB_END_TIME      = dt_time(10, 0)    # 10:00am ET — ORB window ends
+MARKET_OPEN_TIME  = dt_time(9, 30)    # 9:30am ET
+
+ET = ZoneInfo("America/New_York")
+
+# Universe loaded dynamically from S&P 500 at startup (cached daily in sp500_cache.json)
+INTRADAY_UNIVERSE: list[str] = []
+
+BASE_DIR      = Path(__file__).parent
+TRADES_FILE   = BASE_DIR / "intraday_trades_v2.json"
+SP500_CACHE   = BASE_DIR / "sp500_cache_v2.json"
+
+WIKI_URL = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
+
+# ── v2 enhancements ───────────────────────────────────────────────────────────
+ACTIVE_WEEKDAYS  = {1, 2, 3}    # Tue=1, Wed=2, Thu=3 — skip Mon(0)/Fri(4)
+GAP_MIN_PCT      = 0.5          # require >= 0.5% pre-market gap in breakout direction
+RVOL_TIERS = [                  # (vol_ratio_threshold, size_multiplier)
+    (3.0,  1.0),                # 1.2–2.9× → normal size
+    (5.0,  1.25),               # 3.0–4.9× → 1.25× normal
+    (float("inf"), 1.5),        # 5.0+× → 1.5× normal
+]
+UNIVERSE_TOP_N   = 50           # narrow entry universe to top N by recent volume
+VWAP5_FILTER     = True         # skip long below 5-day VWAP; skip short above it
+
+def get_sp500_tickers() -> list[str]:
+    """Fetch S&P 500 tickers via HTML table, cached for the day."""
+    today = date.today().isoformat()
+    if SP500_CACHE.exists():
+        try:
+            cached = json.loads(SP500_CACHE.read_text())
+            if cached.get("date") == today and len(cached.get("tickers", [])) > 400:
+                return cached["tickers"]
+        except Exception:
+            pass
+    try:
+        import requests
+        from io import StringIO
+        resp = requests.get(WIKI_URL, headers={"User-Agent": "Mozilla/5.0"}, timeout=20)
+        resp.raise_for_status()
+        tickers = (
+            pd.read_html(StringIO(resp.text))[0]["Symbol"]
+            .str.replace(".", "-", regex=False)
+            .tolist()
+        )
+        if len(tickers) > 400:
+            SP500_CACHE.write_text(json.dumps({"date": today, "tickers": tickers}))
+            print(f"  S&P 500 universe: {len(tickers)} tickers (refreshed)")
+            return tickers
+    except Exception as e:
+        print(f"  S&P 500 fetch error: {e}")
+    if SP500_CACHE.exists():
+        try:
+            return json.loads(SP500_CACHE.read_text()).get("tickers", [])
+        except Exception:
+            pass
+    return []
+
+# ── State ─────────────────────────────────────────────────────────────────────
+
+def load_state() -> dict:
+    if TRADES_FILE.exists():
+        return json.loads(TRADES_FILE.read_text())
+    return _fresh_state()
+
+def _fresh_state() -> dict:
+    return {
+        "capital":          STARTING_CAPITAL,
+        "open_positions":   [],
+        "closed_today":     [],
+        "all_closed":       [],
+        "today":            None,
+        "today_orb":        {},       # {ticker: {high, low, width}}
+        "nav_history":      {},
+        "inception_date":   None,
+        "log":              [],
+    }
+
+def save_state(state: dict) -> None:
+    TRADES_FILE.write_text(json.dumps(state, indent=2, default=str))
+
+def migrate_positions(state: dict) -> None:
+    """Migrate old fixed-target positions to trailing stop format."""
+    for pos in state.get("open_positions", []):
+        if "trail_dist" not in pos:
+            orb_w = pos.get("orb_width", 0.5)
+            pos["trail_dist"] = round(ORB_STOP_MULT * orb_w, 4)
+            pos.pop("target", None)
+        if "peak" not in pos:
+            pos["peak"] = pos["entry_price"]
+
+def close_stale_positions(state: dict, prev_date: str) -> None:
+    """Close any positions left open from a previous day using that day's closing prices."""
+    stale = state.get("open_positions", [])
+    if not stale:
+        return
+    tickers = [p["ticker"] for p in stale]
+    print(f"  Missed force-close detected — closing {len(stale)} stale positions from {prev_date} at prior close")
+    try:
+        raw = yf.download(tickers, period="5d", interval="1d", auto_adjust=True, progress=False)
+        if not raw.empty:
+            if isinstance(raw.columns, pd.MultiIndex):
+                close_df = raw["Close"]
+            else:
+                close_df = raw
+        else:
+            close_df = pd.DataFrame()
+    except Exception:
+        close_df = pd.DataFrame()
+
+    capital = state["capital"]
+    for pos in stale:
+        tk    = pos["ticker"]
+        side  = pos["side"]
+        entry = pos["entry_price"]
+        shares= pos["shares"]
+        cost  = pos["cost"]
+
+        # Get the prior day's closing price
+        exit_px = entry  # fallback: close at cost (zero P&L)
+        if tk in close_df.columns:
+            series = close_df[tk].dropna()
+            # Find the row closest to prev_date
+            prev_ts = pd.Timestamp(prev_date)
+            prior = series[series.index.normalize() <= prev_ts]
+            if not prior.empty:
+                exit_px = float(prior.iloc[-1])
+
+        pnl = (exit_px - entry) * shares if side == "long" else (entry - exit_px) * shares
+        capital += cost + pnl
+
+        closed = {**pos,
+                  "exit_date":   prev_date,
+                  "exit_price":  round(exit_px, 4),
+                  "pnl":         round(pnl, 2),
+                  "exit_reason": "missed force-close — closed at prior day EOD",
+                  "exit_time":   "EOD"}
+        state["all_closed"].append(closed)
+        print(f"    {side} {tk} entry=${entry:.2f} exit=${exit_px:.2f} pnl=${pnl:+,.0f}")
+
+    state["capital"] = round(capital, 2)
+    state["open_positions"] = []
+
+
+def reset_for_new_day(state: dict, today_str: str) -> None:
+    """Move closed_today to all_closed and reset daily fields."""
+    prev_date = state.get("today")
+    if prev_date and prev_date != today_str and state.get("open_positions"):
+        close_stale_positions(state, prev_date)
+    state["all_closed"].extend(state.get("closed_today", []))
+    state["closed_today"]   = []
+    state["open_positions"] = []
+    state["today_orb"]      = {}
+    state["today"]          = today_str
+    if state["inception_date"] is None:
+        state["inception_date"] = today_str
+
+# ── Market phase ──────────────────────────────────────────────────────────────
+
+def get_market_phase() -> str:
+    now = datetime.now(ET).time()
+    if now < MARKET_OPEN_TIME:
+        return "pre_market"
+    if now < ORB_END_TIME:
+        return "orb_window"
+    if now < FORCE_CLOSE_TIME:
+        return "trading"
+    if now <= dt_time(16, 0):
+        return "force_close"
+    return "after_hours"
+
+# ── Price data ────────────────────────────────────────────────────────────────
+
+def fetch_intraday(tickers: list[str]) -> dict[str, pd.DataFrame]:
+    """Download today's 5-min bars + 21 days of daily bars for avg volume."""
+    result = {}
+    try:
+        raw5 = yf.download(
+            tickers, period="1d", interval="5m",
+            auto_adjust=True, progress=False,
+        )
+        if raw5.empty:
+            return result
+        raw5.index = pd.DatetimeIndex(raw5.index).tz_convert(ET)
+
+        raw1d = yf.download(
+            tickers, period="22d", interval="1d",
+            auto_adjust=True, progress=False,
+        )
+
+        for tk in tickers:
+            try:
+                if isinstance(raw5.columns, pd.MultiIndex):
+                    df5  = raw5.xs(tk, axis=1, level=1).dropna(how="all")
+                    df1d = raw1d.xs(tk, axis=1, level=1).dropna(how="all") if not raw1d.empty else pd.DataFrame()
+                else:
+                    df5  = raw5.dropna(how="all")
+                    df1d = raw1d.dropna(how="all") if not raw1d.empty else pd.DataFrame()
+                if df5.empty:
+                    continue
+                # avg_bar_volume: use opening-hour bars (9:30–10:30) as the baseline.
+                # Comparing a breakout bar to full-day avg penalises afternoon bars when
+                # volume naturally fades — opening-hour avg is the correct reference for ORB.
+                if "Volume" in df5.columns:
+                    orb_bars = df5.between_time("09:30", "10:30")
+                    if len(orb_bars) >= 3:
+                        avg_bar_vol = float(orb_bars["Volume"].mean())
+                    elif not df1d.empty and "Volume" in df1d.columns:
+                        # fallback: daily vol / 13 bars in first hour
+                        avg_bar_vol = float(df1d["Volume"].iloc[:-1].mean()) / 13.0
+                    else:
+                        avg_bar_vol = float(df5["Volume"].mean())
+                else:
+                    avg_bar_vol = 0
+                result[tk] = {"bars": df5, "avg_bar_vol": avg_bar_vol}
+            except Exception:
+                continue
+    except Exception as e:
+        print(f"  Intraday fetch error: {e}")
+    return result
+
+# ── ORB computation ───────────────────────────────────────────────────────────
+
+def compute_orb(data: dict[str, dict]) -> dict[str, dict]:
+    """Compute ORB high/low from 9:30–9:59 bars for each ticker."""
+    orb = {}
+    for tk, td in data.items():
+        bars = td["bars"]
+        orb_bars = bars.between_time("09:30", "09:59")
+        if orb_bars.empty or len(orb_bars) < 3:
+            continue
+        hi  = float(orb_bars["High"].max())
+        lo  = float(orb_bars["Low"].min())
+        orb[tk] = {"high": round(hi, 4), "low": round(lo, 4), "width": round(hi - lo, 4)}
+    return orb
+
+# ── Entry/exit logic ──────────────────────────────────────────────────────────
+
+def check_exits(state: dict, data: dict[str, dict], force: bool = False) -> list[dict]:
+    exits = []
+    still_open = []
+    capital = state["capital"]
+
+    for pos in state["open_positions"]:
+        tk     = pos["ticker"]
+        side   = pos["side"]
+        entry  = pos["entry_price"]
+        shares = pos["shares"]
+        stop   = pos["stop"]        # current trailing stop level
+        cost   = pos["cost"]
+        trail_dist = pos["trail_dist"]  # fixed trail distance in $
+
+        # Get current price and bar high/low to catch intrabar touches
+        cur_px = entry
+        bar_hi = entry
+        bar_lo = entry
+        if tk in data:
+            bars = data[tk]["bars"]
+            if not bars.empty:
+                cur_px = float(bars["Close"].iloc[-1])
+                bar_hi = float(bars["High"].iloc[-1])
+                bar_lo = float(bars["Low"].iloc[-1])
+
+        if force:
+            reason  = "force close 3:45pm"
+            exit_px = cur_px
+        elif side == "long":
+            # Advance trail stop to highest point seen
+            new_stop = round(bar_hi - trail_dist, 4)
+            if new_stop > stop:
+                pos["stop"] = new_stop
+                pos["peak"] = round(bar_hi, 4)
+                stop = new_stop
+            if bar_lo <= stop:
+                reason, exit_px = "trailing stop", stop
+            else:
+                still_open.append(pos)
+                continue
+        else:
+            # Short: trail stop downward as price falls
+            new_stop = round(bar_lo + trail_dist, 4)
+            if new_stop < stop:
+                pos["stop"] = new_stop
+                pos["peak"] = round(bar_lo, 4)
+                stop = new_stop
+            if bar_hi >= stop:
+                reason, exit_px = "trailing stop", stop
+            else:
+                still_open.append(pos)
+                continue
+
+        pnl = (exit_px - entry) * shares if side == "long" else (entry - exit_px) * shares
+        capital += cost + pnl
+
+        closed = {**pos, "exit_date": date.today().isoformat(),
+                  "exit_price": round(exit_px, 4), "pnl": round(pnl, 2),
+                  "exit_reason": reason, "exit_time": datetime.now(ET).strftime("%H:%M ET")}
+        state["closed_today"].append(closed)
+        exits.append({"ticker": tk, "side": side, "exit_price": round(exit_px, 2),
+                       "pnl": round(pnl, 2), "reason": reason})
+        print(f"  EXIT {side} {tk} @ ${exit_px:.2f}  PnL: ${pnl:+,.0f}  ({reason})")
+
+    state["open_positions"] = still_open
+    state["capital"] = round(capital, 2)
+    return exits
+
+def scan_entries(state: dict, data: dict[str, dict],
+                 premarket_gaps: dict[str, float] | None = None,
+                 vwap5_dict: dict[str, float | None] | None = None,
+                 entries_allowed: bool = True,
+                 scan_universe: list[str] | None = None) -> list[dict]:
+    if not entries_allowed:
+        return []
+    entries = []
+    open_tks = {p["ticker"] for p in state["open_positions"]}
+    slots    = MAX_POSITIONS - len(state["open_positions"])
+    capital  = state["capital"]
+    orb      = state["today_orb"]
+    universe = scan_universe if scan_universe is not None else INTRADAY_UNIVERSE
+
+    if slots <= 0:
+        return []
+
+    candidates = []
+    # Iterate over all tickers in the (possibly narrowed) scan universe
+    for tk in universe:
+        if tk in open_tks:
+            continue
+        if tk not in data:
+            continue
+        orb_data = orb.get(tk)
+        if orb_data is None:
+            continue
+
+        bars    = data[tk]["bars"]
+        avg_vol = data[tk]["avg_bar_vol"]
+        if bars.empty:
+            continue
+
+        # Only look at bars after ORB window
+        post_orb = bars[bars.index.time >= ORB_END_TIME]
+        if post_orb.empty:
+            continue
+
+        last_bar = post_orb.iloc[-1]
+        close_px = float(last_bar["Close"])
+        bar_vol  = float(last_bar["Volume"]) if "Volume" in last_bar else 0
+
+        orb_hi   = orb_data["high"]
+        orb_lo   = orb_data["low"]
+        orb_w    = orb_data["width"]
+
+        if orb_w < 0.01:
+            continue
+
+        vol_ok = (avg_vol == 0) or (bar_vol >= VOLUME_FILTER * avg_vol)
+        long_signal  = close_px > orb_hi and vol_ok
+        short_signal = close_px < orb_lo and vol_ok
+        vol_ratio = bar_vol / avg_vol if avg_vol else 1
+
+        # v2: pre-market gap filter
+        gap = (premarket_gaps or {}).get(tk)
+        if gap is not None:
+            if long_signal  and gap < GAP_MIN_PCT:
+                long_signal  = False
+            if short_signal and gap > -GAP_MIN_PCT:
+                short_signal = False
+
+        # v2: 5-day VWAP trend filter
+        if VWAP5_FILTER:
+            vwap5 = (vwap5_dict or {}).get(tk)
+            if vwap5 is not None:
+                if long_signal  and close_px < vwap5:
+                    long_signal  = False
+                if short_signal and close_px > vwap5:
+                    short_signal = False
+
+        if long_signal:
+            candidates.append({"ticker": tk, "side": "long",  "close": close_px,
+                                "orb_hi": orb_hi, "orb_lo": orb_lo, "orb_w": orb_w,
+                                "vol_ratio": vol_ratio})
+        elif short_signal:
+            candidates.append({"ticker": tk, "side": "short", "close": close_px,
+                                "orb_hi": orb_hi, "orb_lo": orb_lo, "orb_w": orb_w,
+                                "vol_ratio": vol_ratio})
+
+    # Sort by volume ratio (strongest breakouts first)
+    candidates.sort(key=lambda x: -x["vol_ratio"])
+
+    for c in candidates[:slots]:
+        tk    = c["ticker"]
+        side  = c["side"]
+        entry = c["close"]
+        orb_w = c["orb_w"]
+
+        trail_dist = round(ORB_STOP_MULT * orb_w, 4)
+        if side == "long":
+            stop = entry - trail_dist
+        else:
+            stop = entry + trail_dist
+
+        per_share_risk = trail_dist
+        if per_share_risk < 0.01:
+            continue
+        shares = int((capital * RISK_PER_TRADE) / per_share_risk)
+        # v2: RVOL tier multiplier — stronger volume ratio → larger size
+        rvol = c["vol_ratio"]
+        rvol_mult = 1.0
+        for thresh, mult in RVOL_TIERS:
+            if rvol < thresh:
+                rvol_mult = mult
+                break
+        shares = max(1, int(shares * rvol_mult))
+        shares = min(shares, int(capital * 0.30 / entry))
+        if shares <= 0:
+            continue
+
+        cost = shares * entry
+        if cost > capital:
+            continue
+
+        capital -= cost
+        entry_time = datetime.now(ET).strftime("%H:%M ET")
+        pos = {
+            "ticker":      tk,
+            "side":        side,
+            "entry_date":  date.today().isoformat(),
+            "entry_time":  entry_time,
+            "entry_price": round(entry, 4),
+            "shares":      shares,
+            "stop":        round(stop, 4),
+            "trail_dist":  trail_dist,
+            "peak":        round(entry, 4),
+            "orb_width":   round(orb_w, 4),
+            "cost":        round(cost, 2),
+            "vol_ratio":   round(c["vol_ratio"], 2),
+        }
+        state["open_positions"].append(pos)
+        open_tks.add(tk)
+        entries.append({"ticker": tk, "side": side, "price": round(entry, 2), "shares": shares,
+                         "stop": round(stop, 2), "trail_dist": round(trail_dist, 4)})
+        print(f"  ENTER {side} {tk} @ ${entry:.2f}  x{shares}  stop=${stop:.2f}  trail=${trail_dist:.2f}")
+
+    state["capital"] = round(capital, 2)
+    return entries
+
+# ── Index returns for journal ─────────────────────────────────────────────────
+
+INDEX_TICKERS = {"^GSPC": "S&P 500", "^IXIC": "Nasdaq", "^DJI": "DOW", "^RUT": "Russell 2K"}
+
+def fetch_index_returns(nav_history: dict) -> dict:
+    """Return {date_str: {index_name: pct}} for all dates in nav_history."""
+    if not nav_history:
+        return {}
+    dates = sorted(nav_history.keys())
+    start = (date.fromisoformat(dates[0]) - timedelta(days=5)).isoformat()
+    end   = (date.fromisoformat(dates[-1]) + timedelta(days=2)).isoformat()
+    try:
+        raw = yf.download(list(INDEX_TICKERS.keys()), start=start, end=end,
+                          auto_adjust=True, progress=False)
+        if raw.empty:
+            return {}
+        close = raw["Close"] if isinstance(raw.columns, pd.MultiIndex) else raw
+        pct   = (close.pct_change() * 100).rename(columns=INDEX_TICKERS)
+        result = {}
+        for ts, row in pct.iterrows():
+            d = str(ts.date()) if hasattr(ts, "date") else str(ts)[:10]
+            result[d] = {col: round(float(v), 3) for col, v in row.items() if not pd.isna(v)}
+        return result
+    except Exception:
+        return {}
+
+
+def fetch_spy_cumulative(nav_history: dict) -> dict:
+    """Return {date_str: cum_pct} for SPY anchored to the first date in nav_history."""
+    if not nav_history:
+        return {}
+    dates = sorted(nav_history.keys())
+    start = (date.fromisoformat(dates[0]) - timedelta(days=5)).isoformat()
+    end   = (date.fromisoformat(dates[-1]) + timedelta(days=2)).isoformat()
+    try:
+        raw = yf.download("^GSPC", start=start, end=end, auto_adjust=True, progress=False)
+        if raw.empty:
+            return {}
+        close = raw["Close"] if "Close" in raw.columns else raw.iloc[:, 0]
+        if isinstance(close, pd.DataFrame):
+            close = close.iloc[:, 0]  # MultiIndex: ('Close', '^GSPC') → Series
+        close = close.dropna().sort_index()
+        inception_dt = pd.Timestamp(dates[0])
+        prior = close[close.index <= inception_dt]
+        if prior.empty:
+            return {}
+        base = float(prior.iloc[-1])
+        result = {}
+        for ts, val in close.items():
+            d = ts.date().isoformat() if hasattr(ts, "date") else str(ts)[:10]
+            result[d] = round((float(val) / base - 1) * 100, 3)
+        return result
+    except Exception:
+        return {}
+
+
+def build_journal_section(nav_history: dict, idx_returns: dict, spy_cum: dict | None = None) -> str:
+    """Build an HTML journal table of daily P&L vs index returns."""
+    if not nav_history:
+        return ""
+
+    dates = sorted(nav_history.keys(), reverse=True)
+    spy_cum = spy_cum or {}
+
+    def _pc(v, bold=False):
+        if v is None:
+            return '<td style="color:#bbb;text-align:right">—</td>'
+        c = "#1b5e20" if v > 0 else ("#c62828" if v < 0 else "#555")
+        w = "font-weight:bold;" if bold else ""
+        return f'<td style="color:{c};text-align:right;{w}">{"+" if v>0 else ""}{v:.2f}%</td>'
+
+    def _dc(v):
+        if v is None:
+            return '<td style="color:#bbb;text-align:right">—</td>'
+        c = "#1b5e20" if v > 0 else ("#c62828" if v < 0 else "#555")
+        return f'<td style="color:{c};text-align:right;font-weight:bold">{"+" if v>0 else ""}${abs(v):,.0f}</td>'
+
+    def _vs(bot_pct, spx_pct):
+        if bot_pct is None or spx_pct is None:
+            return '<td style="color:#bbb;text-align:right">—</td>'
+        d = bot_pct - spx_pct
+        c = "#1b5e20" if d > 0 else "#c62828"
+        a = "▲" if d > 0 else "▼"
+        return f'<td style="color:{c};text-align:right;font-size:12px">{a} {"+" if d>0 else ""}{d:.2f}%</td>'
+
+    def _cum_vs(bot_cum, spy_c):
+        if bot_cum is None or spy_c is None:
+            return '<td style="color:#bbb;text-align:right">—</td>'
+        d = bot_cum - spy_c
+        c = "#1b5e20" if d > 0 else "#c62828"
+        a = "▲" if d > 0 else "▼"
+        return f'<td style="color:{c};text-align:right;font-weight:bold;font-size:12px">{a} {"+" if d>0 else ""}{d:.2f}%</td>'
+
+    rows = ""
+    for i, d in enumerate(dates):
+        nav_now  = nav_history[d]
+        prev_key = dates[i + 1] if i + 1 < len(dates) else None
+        nav_prev = nav_history[prev_key] if prev_key else STARTING_CAPITAL
+
+        pnl      = round(nav_now - nav_prev, 2)
+        day_pct  = round(pnl / nav_prev * 100, 3) if nav_prev else None
+        cum_pct  = round((nav_now / STARTING_CAPITAL - 1) * 100, 3)
+        spy_c    = spy_cum.get(d)
+
+        idx = idx_returns.get(d, {})
+        spx = idx.get("S&P 500")
+        qqq = idx.get("Nasdaq")
+        dow = idx.get("DOW")
+        rut = idx.get("Russell 2K")
+
+        day_label = date.fromisoformat(d).strftime("%a, %b %d %Y") if d else d
+        rows += f"<tr><td style='white-space:nowrap;font-weight:bold;color:#e65100'>{day_label}</td>"
+        rows += _dc(pnl)
+        rows += _pc(day_pct, bold=True)
+        rows += _pc(cum_pct)
+        rows += _pc(spy_c)
+        rows += _cum_vs(cum_pct, spy_c)
+        rows += _pc(spx)
+        rows += _pc(qqq)
+        rows += _pc(dow)
+        rows += _pc(rut)
+        rows += _vs(day_pct, spx)
+        rows += "</tr>\n"
+
+    if not rows:
+        rows = '<tr><td colspan="11" style="color:#999;text-align:center;padding:12px">No daily data yet</td></tr>'
+
+    return f"""
+  <!-- Daily P&L Journal -->
+  <div class="section">
+    <details open>
+      <summary>Daily P&amp;L Journal — vs Market Indices</summary>
+      <p style="color:#888;font-size:12px;margin:8px 0 8px">
+        Day % = portfolio NAV change that day (realized + open M2M).&nbsp;
+        Cum % = total return since inception.&nbsp;
+        SPY Cum % = buy-and-hold SPY return over the same period.&nbsp;
+        vs S&P = your day % minus S&P 500 day % (green = beat the market).
+      </p>
+      <table id="journal-table">
+        <thead>
+          <tr>
+            <th rowspan="2" style="vertical-align:bottom">Date</th>
+            <th colspan="4" style="background:#bf360c;text-align:center;font-size:11px">Your Portfolio</th>
+            <th colspan="5" style="background:#bf360c;text-align:center;font-size:11px">Benchmark</th>
+          </tr>
+          <tr>
+            <th style="text-align:right">Day P&amp;L $</th>
+            <th style="text-align:right">Day %</th>
+            <th style="text-align:right">Cum %</th>
+            <th style="text-align:right">vs SPY (cum)</th>
+            <th style="text-align:right">SPY Cum %</th>
+            <th style="text-align:right">S&amp;P 500 Day</th>
+            <th style="text-align:right">Nasdaq</th>
+            <th style="text-align:right">DOW</th>
+            <th style="text-align:right">Russell 2K</th>
+          </tr>
+        </thead>
+        <tbody>{rows}</tbody>
+      </table>
+    </details>
+  </div>"""
+
+# ── Mark to market ────────────────────────────────────────────────────────────
+
+def mark_to_market(state: dict, data: dict[str, dict]) -> float:
+    open_value = 0.0
+    for pos in state["open_positions"]:
+        tk    = pos["ticker"]
+        side  = pos["side"]
+        entry = pos["entry_price"]
+        shares= pos["shares"]
+        cost  = pos["cost"]
+        cur_px = entry
+        if tk in data:
+            bars = data[tk]["bars"]
+            if not bars.empty:
+                cur_px = float(bars["Close"].iloc[-1])
+        if side == "long":
+            open_value += cur_px * shares
+        else:
+            open_value += cost + (entry - cur_px) * shares
+    return state["capital"] + open_value
+
+# ── v2 helpers ────────────────────────────────────────────────────────────────
+
+def compute_premarket_gaps(tickers: list[str]) -> dict[str, float]:
+    """Return {ticker: gap_pct} using prior close vs most recent daily close."""
+    try:
+        raw = yf.download(tickers, period="3d", interval="1d", auto_adjust=True, progress=False)
+        if raw.empty:
+            return {}
+        close_df = raw["Close"] if isinstance(raw.columns, pd.MultiIndex) else raw
+        gaps = {}
+        for tk in tickers:
+            if tk not in close_df.columns:
+                continue
+            s = close_df[tk].dropna()
+            if len(s) < 2:
+                continue
+            prior_close = float(s.iloc[-2])
+            last_close  = float(s.iloc[-1])
+            if prior_close > 0:
+                gaps[tk] = round((last_close / prior_close - 1) * 100, 3)
+        return gaps
+    except Exception:
+        return {}
+
+
+def fetch_daily_for_vwap5(tickers: list[str]) -> dict[str, float | None]:
+    """Return {ticker: 5-day VWAP} for given tickers."""
+    try:
+        raw = yf.download(tickers, period="10d", interval="1d", auto_adjust=True, progress=False)
+        if raw.empty:
+            return {}
+        if isinstance(raw.columns, pd.MultiIndex):
+            close_df  = raw["Close"]
+            volume_df = raw["Volume"]
+        else:
+            close_df  = raw[["Close"]] if "Close" in raw.columns else raw
+            volume_df = raw[["Volume"]] if "Volume" in raw.columns else pd.DataFrame()
+        result: dict[str, float | None] = {}
+        for tk in tickers:
+            try:
+                c = close_df[tk].dropna().iloc[-5:] if tk in close_df.columns else pd.Series(dtype=float)
+                v = volume_df[tk].dropna().iloc[-5:] if tk in volume_df.columns else pd.Series(dtype=float)
+                if len(c) < 2 or v.sum() == 0:
+                    result[tk] = None
+                else:
+                    result[tk] = float((c * v).sum() / v.sum())
+            except Exception:
+                result[tk] = None
+        return result
+    except Exception:
+        return {}
+
+
+# ── Main ──────────────────────────────────────────────────────────────────────
+
+def scan_diagnostics(state: dict, data: dict[str, dict]) -> list[dict]:
+    """Return per-ticker scan results for the dashboard diagnostic table."""
+    orb      = state.get("today_orb", {})
+    rows     = []
+    open_tks = {p["ticker"] for p in state["open_positions"]}
+    slots    = MAX_POSITIONS - len(open_tks)
+    phase    = get_market_phase()
+
+    for tk in INTRADAY_UNIVERSE:
+        orb_data = orb.get(tk)
+        if tk not in data:
+            rows.append({"ticker": tk, "status": "no data", "close": None,
+                         "orb_hi": None, "orb_lo": None, "vol_ratio": None, "note": ""})
+            continue
+        bars    = data[tk]["bars"]
+        avg_vol = data[tk]["avg_bar_vol"]
+        if bars.empty:
+            rows.append({"ticker": tk, "status": "empty bars", "close": None,
+                         "orb_hi": None, "orb_lo": None, "vol_ratio": None, "note": ""})
+            continue
+        close_px = float(bars["Close"].iloc[-1])
+        bar_vol  = float(bars["Volume"].iloc[-1]) if "Volume" in bars.columns else 0
+        vol_ratio = round(bar_vol / avg_vol, 2) if avg_vol > 0 else None
+
+        if orb_data is None:
+            rows.append({"ticker": tk, "status": "orb not ready", "close": round(close_px, 2),
+                         "orb_hi": None, "orb_lo": None, "vol_ratio": vol_ratio, "note": "need ≥3 bars 9:30–9:59"})
+            continue
+
+        orb_hi = orb_data["high"]
+        orb_lo = orb_data["low"]
+        orb_w  = orb_data["width"]
+        vol_ok = (avg_vol == 0) or (bar_vol >= VOLUME_FILTER * avg_vol)
+
+        post_orb = bars[bars.index.time >= ORB_END_TIME]
+
+        if tk in open_tks:
+            status = "in position"
+            note   = ""
+        elif orb_w < 0.01:
+            status = "orb too tight"
+            note   = f"width=${orb_w:.4f}"
+        elif close_px > orb_hi and vol_ok:
+            if phase != "trading":
+                status = "LONG signal"
+                note   = f"⚠ not traded — phase={phase}"
+            else:
+                status = "LONG signal"
+                note   = "✓ eligible for entry"
+        elif close_px < orb_lo and vol_ok:
+            if phase != "trading":
+                status = "SHORT signal"
+                note   = f"⚠ not traded — phase={phase}"
+            else:
+                status = "SHORT signal"
+                note   = "✓ eligible for entry"
+        elif close_px > orb_hi:
+            status = "breakout — low vol"
+            note   = f"vol={vol_ratio}× (need {VOLUME_FILTER}×)"
+        elif close_px < orb_lo:
+            status = "breakdown — low vol"
+            note   = f"vol={vol_ratio}× (need {VOLUME_FILTER}×)"
+        else:
+            status = "inside range"
+            note   = ""
+
+        rows.append({"ticker": tk, "status": status, "close": round(close_px, 2),
+                     "orb_hi": round(orb_hi, 2), "orb_lo": round(orb_lo, 2),
+                     "orb_w": round(orb_w, 2), "vol_ratio": vol_ratio, "note": note})
+    return rows
+
+
+def run_intraday():
+    global INTRADAY_UNIVERSE
+    today_str = date.today().isoformat()
+    now_str   = datetime.now(ET).strftime("%H:%M ET")
+    phase     = get_market_phase()
+    state     = load_state()
+
+    if not INTRADAY_UNIVERSE:
+        INTRADAY_UNIVERSE = get_sp500_tickers()
+        if not INTRADAY_UNIVERSE:
+            print("  Could not load S&P 500 universe — aborting")
+            return
+
+    migrate_positions(state)
+    # v2: weekday gate — only trade Tue/Wed/Thu
+    weekday = date.today().weekday()   # Mon=0 … Fri=4
+    entries_allowed = weekday in ACTIVE_WEEKDAYS
+    print(f"Intraday Trader v2 — {today_str} {now_str}  phase={phase}  universe={len(INTRADAY_UNIVERSE)}"
+          f"  weekday={'ACTIVE' if entries_allowed else 'INACTIVE (Mon/Fri)'}")
+
+    # Always reset state for new day
+    if state.get("today") != today_str:
+        print(f"  New trading day — resetting state")
+        reset_for_new_day(state, today_str)
+
+    log_entry = {"date": today_str, "time": now_str, "phase": phase, "entries": [], "exits": []}
+    if not entries_allowed:
+        log_entry["note"] = f"No entries — weekday {weekday} not in active days {ACTIVE_WEEKDAYS}"
+
+    # Always fetch data so dashboard shows current snapshot
+    print(f"  Fetching 5-min bars for {len(INTRADAY_UNIVERSE)} tickers …")
+    data = fetch_intraday(INTRADAY_UNIVERSE)
+    print(f"  Got data for {len(data)} tickers")
+
+    # v2: pre-compute gap and VWAP5 for entry filters (only on active days)
+    premarket_gaps: dict[str, float] = {}
+    vwap5_dict: dict[str, float | None] = {}
+    if entries_allowed and phase == "trading":
+        print(f"  Computing pre-market gaps and 5-day VWAP …")
+        premarket_gaps = compute_premarket_gaps(INTRADAY_UNIVERSE)
+        vwap5_dict     = fetch_daily_for_vwap5(INTRADAY_UNIVERSE)
+        print(f"  Gaps: {len(premarket_gaps)}  VWAP5: {len(vwap5_dict)}")
+
+    if phase not in ("pre_market", "after_hours"):
+        # Refresh ORB
+        state["today_orb"] = compute_orb(data)
+        print(f"  ORB computed for {len(state['today_orb'])} tickers")
+
+        force = (phase == "force_close")
+
+        if state["open_positions"]:
+            exits = check_exits(state, data, force=force)
+            log_entry["exits"] = exits
+
+        if phase == "trading":
+            # v2: narrow scan universe to top UNIVERSE_TOP_N by avg bar volume
+            if len(data) > UNIVERSE_TOP_N:
+                top_by_vol = sorted(data.keys(), key=lambda t: data[t]["avg_bar_vol"], reverse=True)[:UNIVERSE_TOP_N]
+                scan_univ = top_by_vol
+            else:
+                scan_univ = list(data.keys())
+            print(f"  Scan universe: {len(scan_univ)} tickers (top by volume)")
+            entries = scan_entries(state, data,
+                                   premarket_gaps=premarket_gaps,
+                                   vwap5_dict=vwap5_dict,
+                                   entries_allowed=entries_allowed,
+                                   scan_universe=scan_univ)
+            log_entry["entries"] = entries
+
+    # Mark to market and save
+    portfolio_value = mark_to_market(state, data)
+    state["nav_history"][today_str] = round(portfolio_value, 2)
+
+    n_open = len(state["open_positions"])
+    n_closed_today = len(state["closed_today"])
+    pnl_today = sum(p.get("pnl", 0) for p in state["closed_today"])
+    log_entry["portfolio_value"] = round(portfolio_value, 2)
+    log_entry["note"] = (f"${portfolio_value:,.0f} | cash=${state['capital']:,.0f} | "
+                         f"open={n_open} | closed today={n_closed_today} | day PnL=${pnl_today:+,.0f}")
+    state["log"].append(log_entry)
+    save_state(state)
+
+    total_ret = portfolio_value - STARTING_CAPITAL
+    print(f"\n  Portfolio: ${portfolio_value:,.0f}  ({total_ret:+,.0f} / {total_ret/STARTING_CAPITAL:+.2%})")
+    print(f"  Cash: ${state['capital']:,.0f}  |  Open: {n_open}  |  Today PnL: ${pnl_today:+,.0f}")
+
+    diag = scan_diagnostics(state, data)
+    build_intraday_dashboard(state, data, diag)
+
+
+# ── Dashboard ─────────────────────────────────────────────────────────────────
+
+def _diag_rows(diag: list[dict]) -> str:
+    status_color = {
+        "LONG signal":        "#1b5e20",
+        "SHORT signal":       "#880e4f",
+        "in position":        "#0d47a1",
+        "breakout — low vol": "#e65100",
+        "breakdown — low vol":"#e65100",
+        "inside range":       "#555",
+        "orb not ready":      "#999",
+        "orb too tight":      "#999",
+        "no data":            "#bbb",
+        "empty bars":         "#bbb",
+    }
+    rows = ""
+    for r in diag:
+        sc   = status_color.get(r["status"], "#555")
+        bold = "font-weight:bold;" if "signal" in r["status"] else ""
+        note = r.get("note", "")
+        note_color = "#c62828" if "⚠" in note else ("#2e7d32" if "✓" in note else "#888")
+        _dname = _names.get(r["ticker"], "")
+        _dname_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_dname}</span>' if _dname else ''
+        _dborder = "border-left:3px solid #1b5e20;" if r["status"] == "LONG signal" else ("border-left:3px solid #c62828;" if r["status"] == "SHORT signal" else "border-left:3px solid #ccc;")
+        rows += (
+            f'<tr><td style="font-weight:bold">{r["ticker"]}{_dname_html}</td>'
+            f'<td style="color:{sc};{bold}{_dborder}">{r["status"]}</td>'
+            f'<td style="text-align:right">{("$"+str(r["close"])) if r["close"] else "—"}</td>'
+            f'<td style="text-align:right">{("$"+str(r.get("orb_hi",""))) if r.get("orb_hi") else "—"}</td>'
+            f'<td style="text-align:right">{("$"+str(r.get("orb_lo",""))) if r.get("orb_lo") else "—"}</td>'
+            f'<td style="text-align:right">{("$"+str(r.get("orb_w",""))) if r.get("orb_w") else "—"}</td>'
+            f'<td style="text-align:right">{(str(r["vol_ratio"])+"×") if r["vol_ratio"] else "—"}</td>'
+            f'<td style="color:{note_color};font-size:12px">{note}</td>'
+            f'</tr>'
+        )
+    return rows or '<tr><td colspan="8" style="color:#999;text-align:center;padding:12px">No data yet</td></tr>'
+
+
+def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict] | None = None):
+    global _names
+    today_str = date.today().isoformat()
+    open_pos  = state["open_positions"]
+    closed_td = state["closed_today"]
+    idx_returns = fetch_index_returns(state.get("nav_history", {}))
+    all_closed= state["all_closed"]
+
+    # Prefetch company names for every ticker in the dashboard
+    _all_tks = list({p["ticker"] for p in open_pos}
+                  | {r["ticker"] for r in closed_td}
+                  | {r["ticker"] for r in all_closed[-50:]}
+                  | {r["ticker"] for r in (diag or [])})
+    _names = get_company_names(_all_tks)
+    nav       = state["nav_history"]
+    capital   = state["capital"]
+    inception = state["inception_date"] or today_str
+
+    portfolio_value = nav.get(today_str, STARTING_CAPITAL)
+    total_ret = portfolio_value - STARTING_CAPITAL
+    total_pct = total_ret / STARTING_CAPITAL * 100
+    gain_color = "#2e7d32" if total_ret >= 0 else "#c62828"
+    gain_sign  = "+" if total_ret >= 0 else ""
+
+    pnl_today = sum(p.get("pnl", 0) for p in closed_td)
+    pnl_color = "#2e7d32" if pnl_today >= 0 else "#c62828"
+    phase = get_market_phase()
+
+    # Open positions rows
+    open_rows = ""
+    for pos in open_pos:
+        tk    = pos["ticker"]
+        side  = pos["side"]
+        entry = pos["entry_price"]
+        shares= pos["shares"]
+        stop  = pos["stop"]
+        peak  = pos.get("peak", entry)
+        orb_w = pos.get("orb_width", 0)
+
+        cur_px = entry
+        if tk in data:
+            bars = data[tk]["bars"]
+            if not bars.empty:
+                cur_px = float(bars["Close"].iloc[-1])
+
+        if side == "long":
+            unreal = (cur_px - entry) * shares
+        else:
+            unreal = (entry - cur_px) * shares
+        unreal_pct = unreal / pos["cost"] * 100 if pos["cost"] > 0 else 0
+        uc = "#2e7d32" if unreal >= 0 else "#c62828"
+        sb = ('<span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span>'
+              if side == "long" else
+              '<span style="background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">SHORT</span>')
+        _oname = _names.get(tk, "")
+        _oname_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_oname}</span>' if _oname else ''
+        open_rows += f"""
+        <tr data-ticker="{tk}" data-qty="{shares}" data-buypx="{entry:.2f}" data-side="{side}">
+          <td style="font-weight:bold">{tk}{_oname_html}</td><td>{sb}</td>
+          <td>${entry:,.2f}</td><td class="live-price">${cur_px:,.2f}</td>
+          <td style="text-align:right">{shares:,}</td>
+          <td class="live-curval" style="text-align:right">${pos["cost"] + unreal:,.0f}</td>
+          <td class="live-unreal" style="text-align:right;color:{uc};font-weight:bold">${unreal:+,.0f} ({unreal_pct:+.2f}%)</td>
+          <td style="color:#1b5e20">${peak:,.2f}</td><td style="color:#c62828">${stop:,.2f}</td>
+          <td style="color:#666;font-size:12px">{pos.get('entry_date','—')}</td>
+          <td style="color:#666;font-size:12px">{pos.get('entry_time','—')}</td>
+        </tr>"""
+    total_cost_basis = sum(p["cost"] for p in open_pos)
+    total_unreal = portfolio_value - capital - total_cost_basis
+    tu_color = "#2e7d32" if total_unreal >= 0 else "#c62828"
+    tu_sign  = "+" if total_unreal >= 0 else ""
+    total_curval = total_cost_basis + total_unreal
+    open_totals_row = f"""
+        <tr style="background:#e8eaf6;font-weight:bold;border-top:2px solid #9fa8da">
+          <td colspan="4" style="text-align:right;color:#555">Totals</td>
+          <td style="text-align:right">{sum(p['shares'] for p in open_pos):,}</td>
+          <td id="total-curval" style="text-align:right">${total_curval:,.0f}</td>
+          <td id="total-unreal" data-server-total="{total_unreal:.2f}" style="text-align:right;color:{tu_color}">{tu_sign}${abs(total_unreal):,.0f}</td>
+          <td colspan="4"></td>
+        </tr>""" if open_pos else ""
+
+    if not open_rows:
+        open_rows = '<tr><td colspan="10" style="text-align:center;color:#999;padding:20px">No open positions today</td></tr>'
+        open_totals_row = ""
+
+    # Today's closed trades
+    today_rows = ""
+    for pos in reversed(closed_td):
+        tk    = pos["ticker"]
+        side  = pos["side"]
+        entry = pos["entry_price"]
+        exit_p= pos.get("exit_price", entry)
+        pnl   = pos.get("pnl", 0)
+        reason= pos.get("exit_reason", "—")
+        pnl_c = "#2e7d32" if pnl >= 0 else "#c62828"
+        sb = ('<span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span>'
+              if side == "long" else
+              '<span style="background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:4px;font-size:11px">SHORT</span>')
+        _tname = _names.get(tk, "")
+        _tname_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_tname}</span>' if _tname else ''
+        today_rows += f"""
+        <tr>
+          <td style="font-weight:bold">{tk}{_tname_html}</td><td>{sb}</td>
+          <td>${entry:,.2f}</td><td>${exit_p:,.2f}</td>
+          <td style="text-align:right;color:{pnl_c};font-weight:bold">${pnl:+,.0f}</td>
+          <td style="color:#666;font-size:12px">{pos.get('entry_date','—')}</td>
+          <td style="color:#666;font-size:12px">{pos.get('entry_time','—')}</td>
+          <td style="color:#666;font-size:12px">{pos.get('exit_time','—')}</td>
+          <td style="color:#666;font-size:12px">{reason}</td>
+        </tr>"""
+    if not today_rows:
+        today_rows = '<tr><td colspan="9" style="text-align:center;color:#999;padding:20px">No trades closed today</td></tr>'
+
+    # All-time closed trades rows (most recent first, last 50)
+    all_history = all_closed + closed_td
+    hist_rows = ""
+    for pos in reversed(all_history[-50:]):
+        tk     = pos["ticker"]
+        side   = pos["side"]
+        entry  = pos["entry_price"]
+        exit_p = pos.get("exit_price", entry)
+        pnl    = pos.get("pnl", 0)
+        pnl_c  = "#2e7d32" if pnl >= 0 else "#c62828"
+        sb = ('<span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span>'
+              if side == "long" else
+              '<span style="background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:4px;font-size:11px">SHORT</span>')
+        _hn = _names.get(tk, "")
+        _hn_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_hn}</span>' if _hn else ''
+        hist_rows += f"""<tr>
+          <td style="font-weight:bold">{tk}{_hn_html}</td><td>{sb}</td>
+          <td>${entry:,.2f}</td><td>${exit_p:,.2f}</td>
+          <td style="text-align:right;color:{pnl_c};font-weight:bold">${pnl:+,.0f}</td>
+          <td style="color:#666;font-size:12px">{pos.get('entry_date','—')}</td>
+          <td style="color:#666;font-size:12px">{pos.get('exit_time','—')}</td>
+          <td style="color:#666;font-size:12px">{pos.get('exit_reason','—')}</td>
+        </tr>"""
+    if not hist_rows:
+        hist_rows = '<tr><td colspan="8" style="text-align:center;color:#999;padding:20px">No closed trades yet</td></tr>'
+    hist_total_pnl = sum(p.get("pnl", 0) for p in all_history[-50:])
+    hist_tc = "#2e7d32" if hist_total_pnl >= 0 else "#c62828"
+    hist_totals_row = f"""<tr style="background:#e8f5e9;font-weight:bold;border-top:2px solid #a5d6a7">
+      <td colspan="4" style="text-align:right;color:#555">Total P&L (shown)</td>
+      <td style="text-align:right;color:{hist_tc}">${hist_total_pnl:+,.0f}</td>
+      <td colspan="3"></td>
+    </tr>""" if all_history else ""
+
+    # All-time stats
+    all_c = all_closed + closed_td
+    wins  = [p for p in all_c if p.get("pnl", 0) > 0]
+    losses= [p for p in all_c if p.get("pnl", 0) <= 0]
+    win_rate = len(wins) / len(all_c) * 100 if all_c else 0
+    avg_win  = sum(p["pnl"] for p in wins)   / len(wins)   if wins   else 0
+    avg_loss = sum(p["pnl"] for p in losses) / len(losses) if losses else 0
+    pf = abs(avg_win * len(wins) / (avg_loss * len(losses))) if losses and avg_loss != 0 else float("inf")
+
+    nav_dates  = sorted(nav.keys())
+    nav_values = [nav[d] for d in nav_dates]
+    spy_cum    = fetch_spy_cumulative(nav)
+    spy_values = [round(STARTING_CAPITAL * (1 + spy_cum.get(d, 0) / 100), 2) for d in nav_dates]
+    nav_js = json.dumps({"dates": nav_dates, "values": nav_values, "spy": spy_values})
+
+    phase_badge = {
+        "pre_market":  ("Pre-market", "#666"),
+        "orb_window":  ("ORB Window", "#e65100"),
+        "trading":     ("Trading", "#1b5e20"),
+        "force_close": ("Force Close", "#b71c1c"),
+        "after_hours": ("After Hours", "#666"),
+    }.get(phase, ("—", "#666"))
+
+    # ── Today's Activity section ──────────────────────────────────────────────
+    log = state.get("log", [])
+    _today_entries_act = []
+    _today_exits_act = []
+    if log:
+        for le in reversed(log):
+            if le.get("date") == today_str:
+                _today_entries_act = le.get("entries", [])
+                _today_exits_act = le.get("exits", [])
+                break
+    # Also include open positions entered today
+    _open_entries_today = [p for p in open_pos if p.get("entry_date") == today_str]
+    _has_activity = bool(_today_entries_act or _today_exits_act or _open_entries_today)
+    _open_act = "open" if _has_activity else ""
+
+    # Entries subsection
+    if _open_entries_today:
+        _etr = ""
+        for _op in _open_entries_today:
+            _etk = _op["ticker"]
+            _en = _names.get(_etk, "")
+            _en_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_en}</span>' if _en else ''
+            _esb = ('<span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span>'
+                    if _op.get("side") == "long" else
+                    '<span style="background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:4px;font-size:11px">SHORT</span>')
+            _etr += f'<tr><td style="font-weight:bold">{_etk}{_en_html}</td><td>{_esb}</td><td>${_op.get("entry_price",0):,.2f}</td><td style="text-align:right">{_op.get("shares",0):,}</td><td style="color:#666;font-size:12px">{_op.get("entry_time","—")}</td></tr>'
+        _entries_section = f'''<details open style="margin-bottom:12px">
+          <summary style="font-size:14px;color:#1a237e">Entries ({len(_open_entries_today)})</summary>
+          <div style="overflow-x:auto;margin-top:8px">
+          <table id="today-act-entries-table" style="white-space:nowrap"><thead><tr><th>Ticker</th><th>Side</th><th>Entry Price</th><th>Shares</th><th>Entry Time</th></tr></thead><tbody>{_etr}</tbody></table>
+          </div></details>'''
+    else:
+        _entries_section = '<p style="color:#999;font-size:13px;margin:4px 0 12px">No entries today</p>'
+
+    # Exits subsection
+    if closed_td:
+        _xtr = ""
+        for _xp in reversed(closed_td):
+            _xtk = _xp["ticker"]
+            _xn = _names.get(_xtk, "")
+            _xn_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_xn}</span>' if _xn else ''
+            _xsb = ('<span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span>'
+                    if _xp.get("side") == "long" else
+                    '<span style="background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:4px;font-size:11px">SHORT</span>')
+            _xpnl = _xp.get("pnl", 0)
+            _xpc = "#2e7d32" if _xpnl >= 0 else "#c62828"
+            _xtr += f'<tr><td style="font-weight:bold">{_xtk}{_xn_html}</td><td>{_xsb}</td><td>${_xp.get("entry_price",0):,.2f}</td><td>${_xp.get("exit_price",0):,.2f}</td><td style="text-align:right;color:{_xpc};font-weight:bold">${_xpnl:+,.0f}</td><td style="color:#666;font-size:12px">{_xp.get("exit_time","—")}</td><td style="color:#666;font-size:12px">{_xp.get("exit_reason","—")}</td></tr>'
+        _exits_section = f'''<details open>
+          <summary style="font-size:14px;color:#1a237e">Exits ({len(closed_td)})</summary>
+          <div style="overflow-x:auto;margin-top:8px">
+          <table id="today-act-exits-table" style="white-space:nowrap"><thead><tr><th>Ticker</th><th>Side</th><th>Entry</th><th>Exit</th><th>P&amp;L</th><th>Exit Time</th><th>Reason</th></tr></thead><tbody>{_xtr}</tbody></table>
+          </div></details>'''
+    else:
+        _exits_section = '<p style="color:#999;font-size:13px;margin:4px 0">No exits today</p>'
+
+    _today_activity_html = f"""
+  <div class="section">
+    <details {_open_act}>
+      <summary>Today's Activity</summary>
+      <div style="margin-top:12px">
+        {_entries_section}
+        {_exits_section}
+      </div>
+    </details>
+  </div>"""
+
+    # Period return tiles
+    def _period_pct(days):
+        cutoff = (date.today() - timedelta(days=days)).isoformat()
+        past = {d: v for d, v in nav.items() if d <= cutoff}
+        if not past: return None
+        base = past[max(past)]
+        return (portfolio_value - base) / base * 100 if base else None
+
+    def _tile(label, pct):
+        if pct is None:
+            return f'<div style="background:#f5f5f5;border-radius:8px;padding:8px 14px;text-align:center;min-width:80px"><div style="font-size:10px;color:#999;text-transform:uppercase">{label}</div><div style="font-size:15px;color:#bbb">—</div></div>'
+        c = "#2e7d32" if pct >= 0 else "#c62828"
+        return f'<div style="background:#f5f5f5;border-radius:8px;padding:8px 14px;text-align:center;min-width:80px"><div style="font-size:10px;color:#999;text-transform:uppercase">{label}</div><div style="font-size:15px;font-weight:bold;color:{c}">{pct:+.1f}%</div></div>'
+
+    _intraday_period_tiles = "".join([
+        _tile("1 Mo",  _period_pct(30)),
+        _tile("3 Mo",  _period_pct(91)),
+        _tile("6 Mo",  _period_pct(182)),
+        _tile("1 Yr",  _period_pct(365)),
+        _tile("3 Yr",  _period_pct(365*3)),
+        _tile("All",   total_pct if nav else None),
+    ])
+
+    html = f"""<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Intraday Trader v2.0 — {today_str}</title>
+  <style>
+    *, *::before, *::after {{ box-sizing: border-box; }}
+    body {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            margin: 0; padding: 16px 20px; color: #222; background: #f0f2f5; }}
+    h1   {{ color: #1a237e; margin-bottom: 4px; font-size: 22px; }}
+    h2   {{ color: #1a237e; font-size: 16px; margin: 0 0 10px 0; }}
+    table {{ border-collapse: collapse; width: 100%; font-size: 13px; }}
+    th    {{ background: #1a237e; color: white; padding: 8px 10px; text-align: left; white-space: nowrap; cursor:pointer; user-select:none; }}
+    th:hover {{ background: #283593; }}
+    th.sort-asc::after  {{ content: " ▲"; font-size:10px; }}
+    th.sort-desc::after {{ content: " ▼"; font-size:10px; }}
+    td    {{ padding: 6px 10px; border-bottom: 1px solid #eee; white-space: nowrap; }}
+    thead {{ position: sticky; top: 0; z-index: 10; }}
+    tr:hover td {{ background: #f5f5f5; transition: background 0.15s; }}
+    .section {{ background: white; border: 1px solid #e0e0e0; border-radius: 8px;
+                padding: 18px 20px; margin: 12px 0; overflow-x: auto; }}
+    .badge {{ background: #e3f2fd; color: #0d47a1; padding: 3px 10px;
+              border-radius: 12px; font-size: 12px; font-weight: bold; }}
+    .card  {{ background: #f0f4ff; border: 1px solid #c5cae9; border-radius: 10px;
+              padding: 16px 24px; min-width: 150px; box-shadow: 0 2px 4px rgba(0,0,0,0.08); }}
+    .card-label {{ font-size: 11px; color: #6c757d; text-transform: uppercase;
+                   letter-spacing: .5px; margin-bottom: 4px; }}
+    .card-value {{ font-size: 28px; font-weight: bold; line-height: 1; }}
+    details summary {{ cursor: pointer; font-size: 16px; font-weight: bold; color: #1a237e;
+                       padding: 4px 0; user-select: none; list-style: none; }}
+    details summary::before {{ content: "▶ "; font-size: 12px; }}
+    details[open] summary::before {{ content: "▼ "; font-size: 12px; }}
+    details summary::-webkit-details-marker {{ display: none; }}
+  </style>
+</head>
+<body>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px">
+    <div>
+      <h1 style="margin-bottom:4px">⚡ Intraday Trader v2.0 — ORB + Enhanced Filters</h1>
+      <p style="margin: 6px 0 12px">
+        <span class="badge">{today_str}</span>&nbsp;
+        <span class="badge" style="background:#e8f5e9;color:{phase_badge[1]}">{phase_badge[0]}</span>&nbsp;
+        <span class="badge">ORB {ORB_MINUTES}-min</span>&nbsp;
+        <span class="badge">{len(open_pos)} open</span>&nbsp;
+        <span class="badge" id="live-badge">Live prices every 30s</span>
+      </p>
+    </div>
+    <div id="price-status" style="font-size:12px;padding:6px 14px;border-radius:20px;background:#fff;border:1px solid #e0e0e0;color:#888;white-space:nowrap;align-self:center">
+      ⏸ Prices as of last run
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Today's Summary</h2>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px">
+      <div class="card">
+        <div class="card-label">Portfolio Value</div>
+        <div class="card-value" id="port-value" style="color:#1a237e">${portfolio_value:,.0f}</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Total Return</div>
+        <div class="card-value" id="port-total" style="color:{gain_color}">{gain_sign}${abs(total_ret):,.0f}<br>
+          <span style="font-size:14px" id="port-total-pct">{gain_sign}{abs(total_pct):.2f}%</span></div>
+      </div>
+      <div class="card">
+        <div class="card-label">Day P&amp;L (realized + open)</div>
+        <div class="card-value" id="port-today" data-realized="{pnl_today:.2f}" style="color:{pnl_color}">${pnl_today:+,.0f}</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Cash</div>
+        <div class="card-value">${capital:,.0f}</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Win Rate (all-time)</div>
+        <div class="card-value">{win_rate:.1f}%<br>
+          <span style="font-size:12px;color:#666">PF: {pf:.2f}x</span></div>
+      </div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">{_intraday_period_tiles}</div>
+    <canvas id="nav-chart" height="80"></canvas>
+  </div>
+
+  <div class="section">
+    <h2>Open Positions</h2>
+    <div id="col-toggles-open" style="margin-bottom:8px;display:flex;flex-wrap:wrap;gap:6px;font-size:12px"></div>
+    <div style="overflow-x:auto">
+    <table id="open-pos-table" data-toggles="col-toggles-open" style="white-space:nowrap">
+      <thead><tr>
+        <th data-col="0">Ticker</th><th data-col="1">Side</th><th data-col="2">Entry</th><th data-col="3">Current</th>
+        <th data-col="4">Shares</th><th data-col="5">Current Value</th><th data-col="6">Unrealized P&amp;L</th><th data-col="7">Peak</th><th data-col="8">Trail Stop</th><th data-col="9">Entry Date</th><th data-col="10">Entry Time</th>
+      </tr></thead>
+      <tbody>{open_rows}</tbody>
+      {open_totals_row}
+    </table>
+    </div>
+  </div>
+
+  {_today_activity_html}
+
+  <div class="section">
+    <details>
+      <summary>Strategy Info &amp; All-Time Stats</summary>
+      <div style="display:flex;gap:30px;flex-wrap:wrap;margin-top:12px">
+        <table id="stats-table" style="width:auto;min-width:240px">
+          <tr><td>Starting Capital</td><td style="text-align:right;font-weight:bold">${STARTING_CAPITAL:,.0f}</td></tr>
+          <tr><td>Total Closed Trades</td><td style="text-align:right">{len(all_c)}</td></tr>
+          <tr><td>Win Rate</td><td style="text-align:right">{win_rate:.1f}%</td></tr>
+          <tr><td>Avg Win</td><td style="text-align:right;color:#2e7d32">${avg_win:+,.0f}</td></tr>
+          <tr><td>Avg Loss</td><td style="text-align:right;color:#c62828">${avg_loss:+,.0f}</td></tr>
+          <tr><td>Profit Factor</td><td style="text-align:right">{pf:.2f}x</td></tr>
+          <tr><td>Inception</td><td style="text-align:right;color:#666">{inception}</td></tr>
+        </table>
+        <div style="flex:1;min-width:240px">
+          <p style="color:#666;font-size:12px;line-height:1.8;margin:0">
+            <strong>Strategy:</strong> Opening Range Breakout (ORB)<br>
+            <strong>ORB window:</strong> 9:30–10:00 AM ET (first 30 min)<br>
+            <strong>Entry:</strong> 15-min close breaks ORB high/low + volume ≥ 1.2× avg<br>
+            <strong>Exit:</strong> Trailing stop — rides winners, distance = 0.5× ORB width<br>
+            <strong>Initial stop:</strong> Entry ∓ 0.5× ORB width<br>
+            <strong>Force close:</strong> 3:45 PM ET<br>
+            <strong>Risk:</strong> {RISK_PER_TRADE:.0%} per trade, max 30% per position (cash-limited)<br>
+            <strong>Universe:</strong> Top {UNIVERSE_TOP_N} S&amp;P 500 by intraday volume<br>
+            <strong>v2 filters:</strong> Tue/Wed/Thu only · pre-market gap ≥ {GAP_MIN_PCT:.1f}% ·
+            RVOL tiers (3×/5×) · 5-day VWAP trend filter
+          </p>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- All-time closed trades -->
+  <div class="section">
+    <details>
+      <summary>Closed Trades ({len(all_history)} total, showing last 50)</summary>
+      <div style="overflow-x:auto;margin-top:12px">
+      <table id="closed-trades-table" style="white-space:nowrap">
+        <thead><tr>
+          <th data-col="0">Ticker</th><th data-col="1">Side</th><th data-col="2">Entry</th><th data-col="3">Exit</th>
+          <th data-col="4">P&amp;L</th><th data-col="5">Entry Date</th><th data-col="6">Exit Time</th><th data-col="7">Reason</th>
+        </tr></thead>
+        <tbody>{hist_rows}</tbody>
+        {hist_totals_row}
+      </table>
+      </div>
+    </details>
+  </div>
+
+  <!-- Scan diagnostics -->
+  <div class="section">
+    <details>
+      <summary>Scan Diagnostics — {len(diag or [])} tickers checked</summary>
+      <p style="color:#666;font-size:12px;margin:8px 0 6px">
+        Shows what the scanner saw for each ticker this run. Entries only fire when status = "LONG signal" or "SHORT signal".
+      </p>
+      <table id="scan-diag-table" style="margin-top:4px">
+        <thead><tr>
+          <th>Ticker</th><th>Status</th><th>Close</th>
+          <th>ORB High</th><th>ORB Low</th><th>ORB Width</th><th>Vol Ratio</th><th>Note</th>
+        </tr></thead>
+        <tbody>{_diag_rows(diag or [])}</tbody>
+      </table>
+    </details>
+  </div>
+
+  {build_journal_section(nav, idx_returns, spy_cum)}
+
+  <p style="color:#bbb;font-size:11px;margin-top:16px" id="live-status">
+    intraday_trader.py &nbsp;|&nbsp; Simulated only — not real money &nbsp;|&nbsp; Not financial advice.
+  </p>
+
+<script>
+// ── Finnhub live prices ───────────────────────────────────────────────────────
+(function() {{
+  const TOKEN = 'd93d6v1r01qgqnua64j0d93d6v1r01qgqnua64jg';
+  const STARTING = {STARTING_CAPITAL};
+  const delay = ms => new Promise(r => setTimeout(r, ms));
+
+  function isMarketHours() {{
+    const now = new Date();
+    const et = new Date(now.toLocaleString('en-US', {{timeZone: 'America/New_York'}}));
+    const day = et.getDay();
+    if (day === 0 || day === 6) return false;
+    const h = et.getHours(), m = et.getMinutes();
+    const mins = h * 60 + m;
+    return mins >= 570 && mins < 960; // 9:30–4:00
+  }}
+
+  function setStatus(text, color) {{
+    const el = document.getElementById('price-status');
+    if (el) {{ el.textContent = text; el.style.color = color; el.style.borderColor = color === '#388e3c' ? '#a5d6a7' : '#e0e0e0'; }}
+  }}
+
+  async function fetchPrices() {{
+    const rows = document.querySelectorAll('tr[data-ticker]');
+    if (!rows.length) return;
+    setStatus('⏳ Fetching prices…', '#f57c00');
+    const quotes = {{}};
+    for (const row of rows) {{
+      const tk = row.dataset.ticker;
+      try {{
+        const q = await fetch(`https://finnhub.io/api/v1/quote?symbol=${{tk}}&token=${{TOKEN}}`).then(r => r.json());
+        if (q && q.c) quotes[tk] = {{ price: q.c, prevClose: q.pc }};
+      }} catch(e) {{}}
+      await delay(1100);
+    }}
+    applyPrices(rows, quotes);
+    updatePortfolio(rows, quotes);
+    const t = new Date().toLocaleTimeString('en-US', {{timeZone:'America/New_York', hour:'2-digit', minute:'2-digit'}});
+    setStatus(`✅ Updated ${{t}} ET`, '#388e3c');
+    const badge = document.getElementById('live-badge');
+    const status = document.getElementById('live-status');
+    if (badge) badge.textContent = `Updated ${{t}} ET`;
+    if (status) {{
+      status.innerHTML = `Live prices as of ${{t}} ET &nbsp;|&nbsp; Simulated only — not real money.`;
+      status.style.color = '#388e3c';
+    }}
+  }}
+
+  function applyPrices(rows, quotes) {{
+    for (const row of rows) {{
+      const tk   = row.dataset.ticker;
+      const qty  = parseFloat(row.dataset.qty);
+      const buy  = parseFloat(row.dataset.buypx);
+      const side = row.dataset.side;
+      const q    = quotes[tk];
+      if (!q) continue;
+      const price = q.price;
+
+      const priceCell   = row.querySelector('.live-price');
+      const unrealCell  = row.querySelector('.live-unreal');
+      const curvalCell  = row.querySelector('.live-curval');
+      if (priceCell) priceCell.textContent = '$' + price.toLocaleString('en-US', {{minimumFractionDigits:2, maximumFractionDigits:2}});
+
+      const unreal = side === 'long' ? (price - buy) * qty : (buy - price) * qty;
+      const curVal = buy * qty + unreal;
+      if (curvalCell) curvalCell.textContent = '$' + curVal.toLocaleString('en-US', {{maximumFractionDigits:0}});
+
+      if (unrealCell) {{
+        const cost = buy * qty;
+        const pct  = cost > 0 ? unreal / cost * 100 : 0;
+        const sign = unreal >= 0 ? '+' : '';
+        unrealCell.textContent = `${{sign}}$${{Math.abs(unreal).toLocaleString('en-US', {{maximumFractionDigits:0}})}} (${{pct >= 0 ? '+' : ''}}${{pct.toFixed(2)}}%)`;
+        unrealCell.style.color = unreal >= 0 ? '#2e7d32' : '#c62828';
+      }}
+    }}
+  }}
+
+  function updatePortfolio(rows, quotes) {{
+    let openValue = 0;
+    let totalUnreal = 0;
+    for (const row of rows) {{
+      const tk   = row.dataset.ticker;
+      const qty  = parseFloat(row.dataset.qty);
+      const buy  = parseFloat(row.dataset.buypx);
+      const side = row.dataset.side;
+      const q    = quotes[tk];
+      if (!q) {{ openValue += buy * qty; continue; }}
+      const price = q.price;
+      const val   = side === 'long' ? price * qty : buy * qty + (buy - price) * qty;
+      const unreal = side === 'long' ? (price - buy) * qty : (buy - price) * qty;
+      openValue  += val;
+      totalUnreal += unreal;
+    }}
+    const cashVal = (function() {{
+      const cards = document.querySelectorAll('.card');
+      for (const c of cards) {{
+        const lbl = c.querySelector('.card-label');
+        if (lbl && lbl.textContent.trim() === 'Cash') {{
+          const val = c.querySelector('.card-value');
+          if (val) return parseFloat(val.textContent.replace(/[$,]/g, '')) || 0;
+        }}
+      }}
+      return 0;
+    }})();
+    const portVal = cashVal + openValue;
+    const ret     = portVal - STARTING;
+    const retPct  = ret / STARTING * 100;
+    const sign    = ret >= 0 ? '+' : '';
+    const color   = ret >= 0 ? '#2e7d32' : '#c62828';
+
+    const portEl  = document.getElementById('port-value');
+    const totalEl = document.getElementById('port-total');
+    if (portEl) portEl.textContent = '$' + portVal.toLocaleString('en-US', {{maximumFractionDigits:0}});
+    if (totalEl) {{
+      totalEl.innerHTML = `${{sign}}$${{Math.abs(ret).toLocaleString('en-US',{{maximumFractionDigits:0}})}}<br><span style="font-size:14px">${{sign}}${{Math.abs(retPct).toFixed(2)}}%</span>`;
+      totalEl.style.color = color;
+    }}
+
+    // Day P&L = realized (server-rendered) + live unrealized
+    const dayEl = document.getElementById('port-today');
+    if (dayEl) {{
+      const realized = parseFloat(dayEl.dataset.realized) || 0;
+      const dayPnl   = realized + totalUnreal;
+      const dsign    = dayPnl >= 0 ? '+' : '';
+      const dcol     = dayPnl >= 0 ? '#2e7d32' : '#c62828';
+      dayEl.textContent = `$${{dsign.replace('+','')}}${{(dayPnl >= 0 ? '+' : '')}}${{Math.abs(dayPnl).toLocaleString('en-US', {{maximumFractionDigits:0}})}}`;
+      dayEl.textContent = `${{dayPnl >= 0 ? '+' : '-'}}$${{Math.abs(dayPnl).toLocaleString('en-US', {{maximumFractionDigits:0}})}}`;
+      dayEl.style.color = dcol;
+    }}
+
+    // Totals row unrealized + current value
+    const totalUnrealEl = document.getElementById('total-unreal');
+    if (totalUnrealEl) {{
+      const tsign = totalUnreal >= 0 ? '+' : '-';
+      totalUnrealEl.textContent = `${{tsign}}$${{Math.abs(totalUnreal).toLocaleString('en-US', {{maximumFractionDigits:0}})}}`;
+      totalUnrealEl.style.color = totalUnreal >= 0 ? '#2e7d32' : '#c62828';
+    }}
+    const totalCurvalEl = document.getElementById('total-curval');
+    if (totalCurvalEl) {{
+      totalCurvalEl.textContent = '$' + openValue.toLocaleString('en-US', {{maximumFractionDigits:0}});
+    }}
+  }}
+
+  if (isMarketHours()) {{
+    fetchPrices();
+    setInterval(fetchPrices, 30000);  // every 30s for intraday
+  }}
+}})();
+
+// NAV chart with SPY benchmark
+(function() {{
+  const data = {nav_js};
+  if (!data.dates.length) return;
+  const canvas = document.getElementById('nav-chart');
+  const ctx = canvas.getContext('2d');
+  const W = canvas.offsetWidth || 800, H = 140;
+  canvas.width = W; canvas.height = H;
+
+  const vals = data.values, spy = data.spy || [], N = vals.length;
+  if (N < 1) return;
+  const pad = 20;
+
+  const allVals = [...vals, ...spy].filter(v => v != null);
+  const minV = Math.min(...allVals), maxV = Math.max(...allVals);
+  const range = maxV - minV || 1;
+
+  const toX = i => pad + (i / (N - 1 || 1)) * (W - 2 * pad);
+  const toY = v => H - pad - ((v - minV) / range) * (H - 2 * pad);
+
+  // SPY line (grey dashed)
+  if (spy.length) {{
+    ctx.strokeStyle = '#9e9e9e'; ctx.lineWidth = 1.5; ctx.setLineDash([4, 4]);
+    ctx.beginPath();
+    spy.forEach((v, i) => {{ if (v != null) i === 0 ? ctx.moveTo(toX(i), toY(v)) : ctx.lineTo(toX(i), toY(v)); }});
+    ctx.stroke(); ctx.setLineDash([]);
+  }}
+
+  // Portfolio line (solid dark blue — consistent with swing/factor)
+  ctx.strokeStyle = '#1a237e'; ctx.lineWidth = 2;
+  ctx.beginPath();
+  vals.forEach((v, i) => i === 0 ? ctx.moveTo(toX(i), toY(v)) : ctx.lineTo(toX(i), toY(v)));
+  ctx.stroke();
+
+  // Fill
+  ctx.lineTo(toX(N-1), H - pad); ctx.lineTo(toX(0), H - pad); ctx.closePath();
+  const grad = ctx.createLinearGradient(0, 0, 0, H);
+  grad.addColorStop(0, 'rgba(26,35,126,0.12)'); grad.addColorStop(1, 'rgba(26,35,126,0)');
+  ctx.fillStyle = grad; ctx.fill();
+
+  // Labels
+  ctx.font = '11px sans-serif'; ctx.fillStyle = '#666';
+  if (data.dates.length) {{
+    ctx.fillText(data.dates[0], pad, H - 4);
+    const last = data.dates[N-1];
+    ctx.fillText(last, W - pad - ctx.measureText(last).width, H - 4);
+  }}
+  const lastVal = '$' + vals[N-1].toLocaleString('en-US', {{maximumFractionDigits:0}});
+  ctx.fillStyle = vals[N-1] >= {STARTING_CAPITAL} ? '#2e7d32' : '#c62828';
+  ctx.font = 'bold 12px sans-serif';
+  ctx.fillText(lastVal, toX(N-1) - ctx.measureText(lastVal).width - 4, toY(vals[N-1]) - 4);
+  if (spy.length) {{
+    const spyLast = 'SPY $' + spy[N-1].toLocaleString('en-US', {{maximumFractionDigits:0}});
+    ctx.fillStyle = '#757575'; ctx.font = '11px sans-serif';
+    ctx.fillText(spyLast, toX(N-1) - ctx.measureText(spyLast).width - 4, toY(spy[N-1]) + 14);
+  }}
+  // Legend
+  ctx.font = '11px sans-serif';
+  ctx.fillStyle = '#1a237e'; ctx.fillRect(pad, 6, 18, 3);
+  ctx.fillStyle = '#333'; ctx.fillText('Portfolio', pad + 22, 12);
+  ctx.strokeStyle = '#9e9e9e'; ctx.setLineDash([4,4]); ctx.lineWidth = 1.5;
+  ctx.beginPath(); ctx.moveTo(pad + 90, 8); ctx.lineTo(pad + 108, 8); ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle = '#333'; ctx.fillText('SPY (buy & hold)', pad + 112, 12);
+}})();
+
+// ── Sortable + hide/show columns ─────────────────────────────────────────────
+(function() {{
+  document.querySelectorAll('table[id]').forEach(function(table) {{
+    var id = table.id;
+    var sortCol = -1, sortAsc = true;
+    var LS_HIDE = 'colhide:' + id;
+    var hidden = new Set(JSON.parse(localStorage.getItem(LS_HIDE) || '[]'));
+
+    var setCol = function(col, show) {{
+      table.querySelectorAll('tr').forEach(function(row) {{
+        if (row.cells[col]) row.cells[col].style.display = show ? '' : 'none';
+      }});
+    }};
+    hidden.forEach(function(i) {{ setCol(i, false); }});
+
+    table.querySelectorAll('thead th[data-col]').forEach(function(th) {{
+      th.addEventListener('click', function() {{
+        var col = parseInt(th.dataset.col);
+        sortAsc = (sortCol === col) ? !sortAsc : true;
+        sortCol = col;
+        table.querySelectorAll('thead th').forEach(function(t) {{ t.classList.remove('sort-asc','sort-desc'); }});
+        th.classList.add(sortAsc ? 'sort-asc' : 'sort-desc');
+        var tbody = table.querySelector('tbody');
+        var rows = Array.from(tbody.querySelectorAll('tr'));
+        rows.sort(function(a, b) {{
+          var aT = (a.cells[col] ? a.cells[col].textContent : '').trim();
+          var bT = (b.cells[col] ? b.cells[col].textContent : '').trim();
+          var aN = parseFloat(aT.replace(/[^0-9.\-]/g, ''));
+          var bN = parseFloat(bT.replace(/[^0-9.\-]/g, ''));
+          var cmp = isNaN(aN) || isNaN(bN) ? aT.localeCompare(bT) : aN - bN;
+          return sortAsc ? cmp : -cmp;
+        }});
+        rows.forEach(function(r) {{ tbody.appendChild(r); }});
+      }});
+    }});
+
+    var togglesId = table.dataset.toggles;
+    var togglesDiv = togglesId ? document.getElementById(togglesId) : null;
+    if (!togglesDiv) return;
+    var ths = Array.from(table.querySelectorAll('thead th'));
+    ths.forEach(function(th, i) {{
+      var btn = document.createElement('button');
+      btn.textContent = th.textContent.replace(/[▲▼]/g,'').trim();
+      var isHid = hidden.has(i);
+      btn.style.cssText = 'padding:2px 8px;border-radius:10px;border:1px solid #aaa;cursor:pointer;font-size:11px;background:' + (isHid ? '#eee' : '#e3f2fd') + ';color:' + (isHid ? '#999' : '#0d47a1') + ';text-decoration:' + (isHid ? 'line-through' : '');
+      btn.title = 'Click to hide/show column';
+      btn.addEventListener('click', function() {{
+        if (hidden.has(i)) {{
+          hidden.delete(i); setCol(i, true);
+          btn.style.background='#e3f2fd'; btn.style.color='#0d47a1'; btn.style.textDecoration='';
+        }} else {{
+          hidden.add(i); setCol(i, false);
+          btn.style.background='#eee'; btn.style.color='#999'; btn.style.textDecoration='line-through';
+        }}
+        localStorage.setItem(LS_HIDE, JSON.stringify([...hidden]));
+      }});
+      togglesDiv.appendChild(btn);
+    }});
+  }});
+}})();
+
+// ── Resizable columns ─────────────────────────────────────────────────────────
+(function() {{
+  document.querySelectorAll('table[id]').forEach(function(tbl) {{
+    var id = tbl.id;
+    var headerRow = tbl.querySelector('thead tr:first-child');
+    if (!headerRow) return;
+    var ths = Array.from(headerRow.querySelectorAll('th'));
+    if (!ths.length) return;
+    var cg = tbl.querySelector('colgroup');
+    if (!cg) {{
+      cg = document.createElement('colgroup');
+      tbl.insertBefore(cg, tbl.firstChild);
+      ths.forEach(function() {{ cg.appendChild(document.createElement('col')); }});
+    }}
+    var cols = Array.from(cg.querySelectorAll('col'));
+    ths.forEach(function(th, i) {{
+      var saved = localStorage.getItem('colw:' + id + ':' + i);
+      if (saved && cols[i]) {{ cols[i].style.width = saved; }}
+    }});
+    ths.forEach(function(th, i) {{
+      th.style.position = 'relative';
+      if (th.querySelector('.col-resizer')) return;
+      var rz = document.createElement('div');
+      rz.className = 'col-resizer';
+      rz.style.cssText = 'position:absolute;right:0;top:0;width:5px;height:100%;cursor:col-resize;user-select:none;background:transparent;z-index:1';
+      th.appendChild(rz);
+      rz.addEventListener('mousedown', function(e) {{
+        e.preventDefault();
+        var startX = e.pageX;
+        var startW = th.offsetWidth;
+        var onMove = function(e) {{
+          var w = Math.max(30, startW + e.pageX - startX);
+          if (cols[i]) cols[i].style.width = w + 'px';
+        }};
+        var onUp = function(e) {{
+          var w = Math.max(30, startW + e.pageX - startX);
+          localStorage.setItem('colw:' + id + ':' + i, w + 'px');
+          document.removeEventListener('mousemove', onMove);
+          document.removeEventListener('mouseup', onUp);
+        }};
+        document.addEventListener('mousemove', onMove);
+        document.addEventListener('mouseup', onUp);
+      }});
+    }});
+  }});
+}})();
+
+// ── Details state persistence ─────────────────────────────────────────────────
+(function() {{
+  document.querySelectorAll('details').forEach(function(el) {{
+    var sumEl = el.querySelector('summary');
+    if (!sumEl) return;
+    var key = 'details:' + sumEl.textContent.trim().slice(0, 60);
+    var saved = localStorage.getItem(key);
+    if (saved !== null) {{ el.open = (saved === 'open'); }}
+    el.addEventListener('toggle', function() {{
+      localStorage.setItem(key, el.open ? 'open' : 'closed');
+    }});
+  }});
+}})();
+</script>
+</body>
+</html>"""
+
+    report_dir = BASE_DIR / "reports"
+    report_dir.mkdir(exist_ok=True)
+    out = report_dir / f"intraday_v2_{today_str}.html"
+    out.write_text(html)
+    print(f"  Dashboard → {out}")
+
+
+def _smoke_test():
+    """Run all code paths with synthetic data to catch runtime errors before deploy."""
+    import sys
+    print("=== Smoke test ===")
+
+    # Synthetic state
+    state = _fresh_state()
+    state["today"] = date.today().isoformat()
+    state["inception_date"] = date.today().isoformat()
+    state["nav_history"] = {date.today().isoformat(): STARTING_CAPITAL}
+
+    # Synthetic price data for 3 tickers
+    import numpy as np
+    idx = pd.date_range("09:30", "15:55", freq="5min", tz=ET)
+    def _bars(base):
+        n = len(idx)
+        closes = base + np.cumsum(np.random.randn(n) * 0.2)
+        return pd.DataFrame({
+            "Open": closes - 0.1, "High": closes + 0.3,
+            "Low": closes - 0.3, "Close": closes, "Volume": np.random.randint(50000, 200000, n)
+        }, index=idx)
+
+    data = {
+        "AAPL": {"bars": _bars(170), "avg_bar_vol": 80000},
+        "MSFT": {"bars": _bars(380), "avg_bar_vol": 60000},
+        "NVDA": {"bars": _bars(120), "avg_bar_vol": 100000},
+    }
+
+    # Force ORB values so breakout signals are guaranteed
+    state["today_orb"] = {
+        "AAPL": {"high": 169.5, "low": 168.5, "width": 1.0},
+        "MSFT": {"high": 379.5, "low": 378.5, "width": 1.0},
+        "NVDA": {"high": 119.5, "low": 118.5, "width": 1.0},
+    }
+
+    global INTRADAY_UNIVERSE
+    INTRADAY_UNIVERSE = ["AAPL", "MSFT", "NVDA"]
+
+    # Test scan_entries
+    entries = scan_entries(state, data)
+    print(f"  scan_entries: {len(entries)} entries — OK")
+
+    # Test check_exits with open positions
+    for pos in state["open_positions"]:
+        pos["peak"] = pos["entry_price"]
+    exits = check_exits(state, data, force=True)
+    print(f"  check_exits:  {len(exits)} exits — OK")
+
+    # Test scan_diagnostics
+    diag = scan_diagnostics(state, data)
+    print(f"  scan_diagnostics: {len(diag)} rows — OK")
+
+    # Test dashboard build (no file write)
+    idx_returns = {}
+    spy_cum = {}
+    nav = state["nav_history"]
+    nav_dates = sorted(nav.keys())
+    nav_values = [nav[d] for d in nav_dates]
+    spy_values = [STARTING_CAPITAL] * len(nav_dates)
+    nav_js = json.dumps({"dates": nav_dates, "values": nav_values, "spy": spy_values})
+    journal_html = build_journal_section(nav, idx_returns, spy_cum)
+    print(f"  build_journal_section: {len(journal_html)} chars — OK")
+
+    print("=== All checks passed ===")
+
+
+if __name__ == "__main__":
+    import sys
+    if "--test" in sys.argv:
+        _smoke_test()
+    else:
+        run_intraday()
