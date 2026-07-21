@@ -1,5 +1,5 @@
 {
-  "capital": 1807.9,
+  "capital": 3860.95,
   "open_positions": [
     {
       "ticker": "TXT",
@@ -540,9 +540,9 @@
       "entry_time": "11:31 ET",
       "entry_price": 209.11,
       "shares": 17,
-      "stop": 209.1513,
+      "stop": 209.1413,
       "trail_dist": 0.1013,
-      "peak": 209.05,
+      "peak": 209.04,
       "orb_width": 0.2025,
       "cost": 3554.87,
       "vol_ratio": 1.34
@@ -596,9 +596,9 @@
       "entry_time": "11:53 ET",
       "entry_price": 341.08,
       "shares": 3,
-      "stop": 339.505,
+      "stop": 339.795,
       "trail_dist": 4.285,
-      "peak": 343.79,
+      "peak": 344.08,
       "orb_width": 8.57,
       "cost": 1023.24,
       "vol_ratio": 1.23
@@ -624,9 +624,9 @@
       "entry_time": "12:13 ET",
       "entry_price": 77.11,
       "shares": 105,
-      "stop": 77.26,
+      "stop": 77.075,
       "trail_dist": 0.35,
-      "peak": 76.91,
+      "peak": 76.725,
       "orb_width": 0.7,
       "cost": 8096.55,
       "vol_ratio": 1.91
@@ -786,20 +786,6 @@
       "vol_ratio": 1.27
     },
     {
-      "ticker": "EQIX",
-      "side": "long",
-      "entry_date": "2026-07-21",
-      "entry_time": "12:38 ET",
-      "entry_price": 1030.66,
-      "shares": 2,
-      "stop": 1026.5225,
-      "trail_dist": 4.3925,
-      "peak": 1030.915,
-      "orb_width": 8.785,
-      "cost": 2061.32,
-      "vol_ratio": 3.42
-    },
-    {
       "ticker": "DOV",
       "side": "long",
       "entry_date": "2026-07-21",
@@ -932,9 +918,9 @@
       "entry_time": "12:58 ET",
       "entry_price": 56.275,
       "shares": 9,
-      "stop": 55.665,
+      "stop": 55.715,
       "trail_dist": 0.665,
-      "peak": 56.33,
+      "peak": 56.38,
       "orb_width": 1.33,
       "cost": 506.48,
       "vol_ratio": 1.27
@@ -946,9 +932,9 @@
       "entry_time": "13:03 ET",
       "entry_price": 77.77,
       "shares": 19,
-      "stop": 77.24,
+      "stop": 77.3,
       "trail_dist": 0.53,
-      "peak": 77.77,
+      "peak": 77.83,
       "orb_width": 1.06,
       "cost": 1477.63,
       "vol_ratio": 6.05
@@ -960,9 +946,9 @@
       "entry_time": "13:03 ET",
       "entry_price": 311.06,
       "shares": 3,
-      "stop": 312.765,
+      "stop": 312.745,
       "trail_dist": 1.705,
-      "peak": 311.06,
+      "peak": 311.04,
       "orb_width": 3.41,
       "cost": 933.18,
       "vol_ratio": 1.39
@@ -974,9 +960,9 @@
       "entry_time": "13:03 ET",
       "entry_price": 63.15,
       "shares": 12,
-      "stop": 62.5025,
+      "stop": 62.5425,
       "trail_dist": 0.6475,
-      "peak": 63.15,
+      "peak": 63.19,
       "orb_width": 1.295,
       "cost": 757.8,
       "vol_ratio": 1.3
@@ -2141,6 +2127,25 @@
       "pnl": 66.2,
       "exit_reason": "trailing stop",
       "exit_time": "13:03 ET"
+    },
+    {
+      "ticker": "EQIX",
+      "side": "long",
+      "entry_date": "2026-07-21",
+      "entry_time": "12:38 ET",
+      "entry_price": 1030.66,
+      "shares": 2,
+      "stop": 1026.5225,
+      "trail_dist": 4.3925,
+      "peak": 1030.915,
+      "orb_width": 8.785,
+      "cost": 2061.32,
+      "vol_ratio": 3.42,
+      "exit_date": "2026-07-21",
+      "exit_price": 1026.5225,
+      "pnl": -8.28,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:05 ET"
     }
   ],
   "all_closed": [
@@ -16789,7 +16794,7 @@
     "2026-07-16": 99371.82,
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
-    "2026-07-21": 98758.06
+    "2026-07-21": 98795.63
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -32499,6 +32504,23 @@
       ],
       "portfolio_value": 98758.06,
       "note": "$98,758 | cash=$1,808 | open=70 | closed today=61 | day PnL=$-635"
+    },
+    {
+      "date": "2026-07-21",
+      "time": "13:05 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "EQIX",
+          "side": "long",
+          "exit_price": 1026.52,
+          "pnl": -8.28,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98795.63,
+      "note": "$98,796 | cash=$3,861 | open=69 | closed today=62 | day PnL=$-643"
     }
   ]
 }
