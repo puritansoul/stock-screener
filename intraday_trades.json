@@ -1,5 +1,5 @@
 {
-  "capital": 1410.87,
+  "capital": 937.46,
   "open_positions": [
     {
       "ticker": "CI",
@@ -456,9 +456,9 @@
       "entry_time": "12:23 ET",
       "entry_price": 92.08,
       "shares": 13,
-      "stop": 92.7358,
+      "stop": 92.7208,
       "trail_dist": 0.8458,
-      "peak": 91.89,
+      "peak": 91.875,
       "orb_width": 1.6915,
       "cost": 1197.04,
       "vol_ratio": 1.47
@@ -708,9 +708,9 @@
       "entry_time": "13:20 ET",
       "entry_price": 267.64,
       "shares": 8,
-      "stop": 270.095,
+      "stop": 269.925,
       "trail_dist": 3.415,
-      "peak": 266.68,
+      "peak": 266.51,
       "orb_width": 6.83,
       "cost": 2141.12,
       "vol_ratio": 2.98
@@ -856,29 +856,15 @@
       "vol_ratio": 1.7
     },
     {
-      "ticker": "HONA",
-      "side": "short",
-      "entry_date": "2026-07-21",
-      "entry_time": "13:38 ET",
-      "entry_price": 197.05,
-      "shares": 1,
-      "stop": 198.265,
-      "trail_dist": 1.705,
-      "peak": 196.56,
-      "orb_width": 3.41,
-      "cost": 197.05,
-      "vol_ratio": 1.23
-    },
-    {
       "ticker": "CPT",
       "side": "short",
       "entry_date": "2026-07-21",
       "entry_time": "13:40 ET",
       "entry_price": 112.035,
       "shares": 3,
-      "stop": 112.2625,
+      "stop": 112.2475,
       "trail_dist": 0.3075,
-      "peak": 111.955,
+      "peak": 111.94,
       "orb_width": 0.615,
       "cost": 336.11,
       "vol_ratio": 4.0
@@ -932,9 +918,9 @@
       "entry_time": "13:50 ET",
       "entry_price": 132.56,
       "shares": 4,
-      "stop": 133.12,
+      "stop": 133.07,
       "trail_dist": 0.57,
-      "peak": 132.55,
+      "peak": 132.5,
       "orb_width": 1.14,
       "cost": 530.24,
       "vol_ratio": 1.22
@@ -960,9 +946,9 @@
       "entry_time": "13:57 ET",
       "entry_price": 238.61,
       "shares": 6,
-      "stop": 239.925,
+      "stop": 238.935,
       "trail_dist": 2.395,
-      "peak": 237.53,
+      "peak": 236.54,
       "orb_width": 4.79,
       "cost": 1431.66,
       "vol_ratio": 2.4
@@ -1030,9 +1016,9 @@
       "entry_time": "14:05 ET",
       "entry_price": 135.42,
       "shares": 7,
-      "stop": 136.89,
+      "stop": 136.78,
       "trail_dist": 1.765,
-      "peak": 135.125,
+      "peak": 135.015,
       "orb_width": 3.53,
       "cost": 947.94,
       "vol_ratio": 2.24
@@ -1100,9 +1086,9 @@
       "entry_time": "14:05 ET",
       "entry_price": 206.765,
       "shares": 1,
-      "stop": 205.6418,
+      "stop": 205.3418,
       "trail_dist": 1.4418,
-      "peak": 204.2,
+      "peak": 203.9,
       "orb_width": 2.8836,
       "cost": 206.76,
       "vol_ratio": 1.39
@@ -1184,9 +1170,9 @@
       "entry_time": "14:17 ET",
       "entry_price": 126.42,
       "shares": 6,
-      "stop": 125.625,
+      "stop": 125.775,
       "trail_dist": 0.795,
-      "peak": 126.42,
+      "peak": 126.57,
       "orb_width": 1.59,
       "cost": 758.52,
       "vol_ratio": 2.0
@@ -1198,12 +1184,40 @@
       "entry_time": "14:17 ET",
       "entry_price": 86.24,
       "shares": 6,
-      "stop": 86.6182,
+      "stop": 86.5132,
       "trail_dist": 0.3782,
-      "peak": 86.24,
+      "peak": 86.135,
       "orb_width": 0.7564,
       "cost": 517.44,
       "vol_ratio": 1.37
+    },
+    {
+      "ticker": "CDW",
+      "side": "short",
+      "entry_date": "2026-07-21",
+      "entry_time": "14:20 ET",
+      "entry_price": 127.64,
+      "shares": 3,
+      "stop": 128.3927,
+      "trail_dist": 0.7527,
+      "peak": 127.64,
+      "orb_width": 1.5054,
+      "cost": 382.92,
+      "vol_ratio": 1.48
+    },
+    {
+      "ticker": "ABNB",
+      "side": "short",
+      "entry_date": "2026-07-21",
+      "entry_time": "14:20 ET",
+      "entry_price": 143.16,
+      "shares": 2,
+      "stop": 144.315,
+      "trail_dist": 1.155,
+      "peak": 143.16,
+      "orb_width": 2.31,
+      "cost": 286.32,
+      "vol_ratio": 1.25
     }
   ],
   "closed_today": [
@@ -2916,6 +2930,25 @@
       "pnl": -5.34,
       "exit_reason": "trailing stop",
       "exit_time": "14:15 ET"
+    },
+    {
+      "ticker": "HONA",
+      "side": "short",
+      "entry_date": "2026-07-21",
+      "entry_time": "13:38 ET",
+      "entry_price": 197.05,
+      "shares": 1,
+      "stop": 198.265,
+      "trail_dist": 1.705,
+      "peak": 196.56,
+      "orb_width": 3.41,
+      "cost": 197.05,
+      "vol_ratio": 1.23,
+      "exit_date": "2026-07-21",
+      "exit_price": 198.265,
+      "pnl": -1.21,
+      "exit_reason": "trailing stop",
+      "exit_time": "14:20 ET"
     }
   ],
   "all_closed": [
@@ -15424,11 +15457,6 @@
       "low": 25.95,
       "width": 0.42
     },
-    "BLDR": {
-      "high": 72.92,
-      "low": 70.96,
-      "width": 1.96
-    },
     "BG": {
       "high": 122.61,
       "low": 121.25,
@@ -17564,7 +17592,7 @@
     "2026-07-16": 99371.82,
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
-    "2026-07-21": 98681.95
+    "2026-07-21": 98679.84
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -34151,6 +34179,40 @@
       "exits": [],
       "portfolio_value": 98681.95,
       "note": "$98,682 | cash=$1,411 | open=86 | closed today=90 | day PnL=$-779"
+    },
+    {
+      "date": "2026-07-21",
+      "time": "14:19 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "CDW",
+          "side": "short",
+          "price": 127.64,
+          "shares": 3,
+          "stop": 128.39,
+          "trail_dist": 0.7527
+        },
+        {
+          "ticker": "ABNB",
+          "side": "short",
+          "price": 143.16,
+          "shares": 2,
+          "stop": 144.32,
+          "trail_dist": 1.155
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "HONA",
+          "side": "short",
+          "exit_price": 198.26,
+          "pnl": -1.21,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98679.84,
+      "note": "$98,680 | cash=$937 | open=87 | closed today=91 | day PnL=$-781"
     }
   ]
 }
