@@ -1,5 +1,5 @@
 {
-  "capital": 1556.91,
+  "capital": 1013.39,
   "open_positions": [
     {
       "ticker": "CI",
@@ -226,20 +226,6 @@
       "vol_ratio": 2.1
     },
     {
-      "ticker": "PSKY",
-      "side": "short",
-      "entry_date": "2026-07-21",
-      "entry_time": "11:14 ET",
-      "entry_price": 8.46,
-      "shares": 18,
-      "stop": 8.515,
-      "trail_dist": 0.075,
-      "peak": 8.44,
-      "orb_width": 0.15,
-      "cost": 152.28,
-      "vol_ratio": 1.96
-    },
-    {
       "ticker": "NWS",
       "side": "short",
       "entry_date": "2026-07-21",
@@ -456,9 +442,9 @@
       "entry_time": "12:23 ET",
       "entry_price": 92.08,
       "shares": 13,
-      "stop": 92.7208,
+      "stop": 92.7008,
       "trail_dist": 0.8458,
-      "peak": 91.875,
+      "peak": 91.855,
       "orb_width": 1.6915,
       "cost": 1197.04,
       "vol_ratio": 1.47
@@ -470,9 +456,9 @@
       "entry_time": "12:23 ET",
       "entry_price": 190.44,
       "shares": 3,
-      "stop": 190.505,
+      "stop": 190.49,
       "trail_dist": 0.955,
-      "peak": 189.55,
+      "peak": 189.535,
       "orb_width": 1.91,
       "cost": 571.32,
       "vol_ratio": 1.37
@@ -708,9 +694,9 @@
       "entry_time": "13:20 ET",
       "entry_price": 267.64,
       "shares": 8,
-      "stop": 269.815,
+      "stop": 269.805,
       "trail_dist": 3.415,
-      "peak": 266.4,
+      "peak": 266.39,
       "orb_width": 6.83,
       "cost": 2141.12,
       "vol_ratio": 2.98
@@ -1156,9 +1142,9 @@
       "entry_time": "14:17 ET",
       "entry_price": 126.42,
       "shares": 6,
-      "stop": 126.055,
+      "stop": 126.065,
       "trail_dist": 0.795,
-      "peak": 126.85,
+      "peak": 126.86,
       "orb_width": 1.59,
       "cost": 758.52,
       "vol_ratio": 2.0
@@ -1198,9 +1184,9 @@
       "entry_time": "14:20 ET",
       "entry_price": 143.16,
       "shares": 2,
-      "stop": 144.285,
+      "stop": 144.225,
       "trail_dist": 1.155,
-      "peak": 143.13,
+      "peak": 143.07,
       "orb_width": 2.31,
       "cost": 286.32,
       "vol_ratio": 1.25
@@ -1212,12 +1198,40 @@
       "entry_time": "14:22 ET",
       "entry_price": 270.235,
       "shares": 2,
-      "stop": 267.055,
+      "stop": 267.075,
       "trail_dist": 3.18,
-      "peak": 270.235,
+      "peak": 270.255,
       "orb_width": 6.36,
       "cost": 540.47,
       "vol_ratio": 2.0
+    },
+    {
+      "ticker": "PSKY",
+      "side": "short",
+      "entry_date": "2026-07-21",
+      "entry_time": "14:25 ET",
+      "entry_price": 8.4943,
+      "shares": 60,
+      "stop": 8.5693,
+      "trail_dist": 0.075,
+      "peak": 8.4943,
+      "orb_width": 0.15,
+      "cost": 509.66,
+      "vol_ratio": 2.38
+    },
+    {
+      "ticker": "NTRS",
+      "side": "long",
+      "entry_date": "2026-07-21",
+      "entry_time": "14:25 ET",
+      "entry_price": 185.15,
+      "shares": 1,
+      "stop": 184.2,
+      "trail_dist": 0.95,
+      "peak": 185.15,
+      "orb_width": 1.9,
+      "cost": 185.15,
+      "vol_ratio": 1.25
     }
   ],
   "closed_today": [
@@ -2968,6 +2982,25 @@
       "pnl": -1.98,
       "exit_reason": "trailing stop",
       "exit_time": "14:22 ET"
+    },
+    {
+      "ticker": "PSKY",
+      "side": "short",
+      "entry_date": "2026-07-21",
+      "entry_time": "11:14 ET",
+      "entry_price": 8.46,
+      "shares": 18,
+      "stop": 8.515,
+      "trail_dist": 0.075,
+      "peak": 8.44,
+      "orb_width": 0.15,
+      "cost": 152.28,
+      "vol_ratio": 1.96,
+      "exit_date": "2026-07-21",
+      "exit_price": 8.515,
+      "pnl": -0.99,
+      "exit_reason": "trailing stop",
+      "exit_time": "14:25 ET"
     }
   ],
   "all_closed": [
@@ -17616,7 +17649,7 @@
     "2026-07-16": 99371.82,
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
-    "2026-07-21": 98670.86
+    "2026-07-21": 98681.1
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -34263,6 +34296,40 @@
       ],
       "portfolio_value": 98670.86,
       "note": "$98,671 | cash=$1,557 | open=87 | closed today=92 | day PnL=$-783"
+    },
+    {
+      "date": "2026-07-21",
+      "time": "14:24 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "PSKY",
+          "side": "short",
+          "price": 8.49,
+          "shares": 60,
+          "stop": 8.57,
+          "trail_dist": 0.075
+        },
+        {
+          "ticker": "NTRS",
+          "side": "long",
+          "price": 185.15,
+          "shares": 1,
+          "stop": 184.2,
+          "trail_dist": 0.95
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "PSKY",
+          "side": "short",
+          "exit_price": 8.52,
+          "pnl": -0.99,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98681.1,
+      "note": "$98,681 | cash=$1,013 | open=88 | closed today=93 | day PnL=$-784"
     }
   ]
 }
