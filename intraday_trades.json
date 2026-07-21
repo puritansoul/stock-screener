@@ -1,5 +1,5 @@
 {
-  "capital": 717.27,
+  "capital": 516.81,
   "open_positions": [
     {
       "ticker": "TXT",
@@ -526,9 +526,9 @@
       "entry_time": "11:53 ET",
       "entry_price": 341.08,
       "shares": 3,
-      "stop": 341.115,
+      "stop": 341.855,
       "trail_dist": 4.285,
-      "peak": 345.4,
+      "peak": 346.14,
       "orb_width": 8.57,
       "cost": 1023.24,
       "vol_ratio": 1.23
@@ -596,9 +596,9 @@
       "entry_time": "12:18 ET",
       "entry_price": 131.99,
       "shares": 13,
-      "stop": 132.2975,
+      "stop": 132.2475,
       "trail_dist": 0.8875,
-      "peak": 131.41,
+      "peak": 131.36,
       "orb_width": 1.775,
       "cost": 1715.87,
       "vol_ratio": 2.17
@@ -848,9 +848,9 @@
       "entry_time": "13:03 ET",
       "entry_price": 77.77,
       "shares": 19,
-      "stop": 77.4,
+      "stop": 77.45,
       "trail_dist": 0.53,
-      "peak": 77.93,
+      "peak": 77.98,
       "orb_width": 1.06,
       "cost": 1477.63,
       "vol_ratio": 6.05
@@ -890,9 +890,9 @@
       "entry_time": "13:10 ET",
       "entry_price": 654.23,
       "shares": 2,
-      "stop": 652.115,
+      "stop": 653.895,
       "trail_dist": 6.775,
-      "peak": 658.89,
+      "peak": 660.67,
       "orb_width": 13.55,
       "cost": 1308.46,
       "vol_ratio": 1.53
@@ -1058,9 +1058,9 @@
       "entry_time": "13:30 ET",
       "entry_price": 303.02,
       "shares": 1,
-      "stop": 307.3688,
+      "stop": 307.2638,
       "trail_dist": 4.6588,
-      "peak": 302.71,
+      "peak": 302.605,
       "orb_width": 9.3175,
       "cost": 303.02,
       "vol_ratio": 1.49
@@ -1072,12 +1072,26 @@
       "entry_time": "13:33 ET",
       "entry_price": 90.02,
       "shares": 3,
-      "stop": 90.485,
+      "stop": 90.43,
       "trail_dist": 0.465,
-      "peak": 90.02,
+      "peak": 89.965,
       "orb_width": 0.93,
       "cost": 270.06,
       "vol_ratio": 2.24
+    },
+    {
+      "ticker": "BRO",
+      "side": "short",
+      "entry_date": "2026-07-21",
+      "entry_time": "13:35 ET",
+      "entry_price": 66.82,
+      "shares": 3,
+      "stop": 67.365,
+      "trail_dist": 0.545,
+      "peak": 66.82,
+      "orb_width": 1.09,
+      "cost": 200.46,
+      "vol_ratio": 1.62
     }
   ],
   "closed_today": [
@@ -17020,7 +17034,7 @@
     "2026-07-16": 99371.82,
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
-    "2026-07-21": 98727.13
+    "2026-07-21": 98739.58
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -33014,6 +33028,24 @@
       "exits": [],
       "portfolio_value": 98727.13,
       "note": "$98,727 | cash=$717 | open=77 | closed today=68 | day PnL=$-672"
+    },
+    {
+      "date": "2026-07-21",
+      "time": "13:35 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "BRO",
+          "side": "short",
+          "price": 66.82,
+          "shares": 3,
+          "stop": 67.36,
+          "trail_dist": 0.545
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 98739.58,
+      "note": "$98,740 | cash=$517 | open=78 | closed today=68 | day PnL=$-672"
     }
   ]
 }
