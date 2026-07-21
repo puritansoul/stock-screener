@@ -1,5 +1,5 @@
 {
-  "capital": 1176.22,
+  "capital": 1245.76,
   "open_positions": [
     {
       "ticker": "CI",
@@ -372,9 +372,9 @@
       "entry_time": "12:13 ET",
       "entry_price": 77.11,
       "shares": 105,
-      "stop": 76.85,
+      "stop": 76.81,
       "trail_dist": 0.35,
-      "peak": 76.5,
+      "peak": 76.46,
       "orb_width": 0.7,
       "cost": 8096.55,
       "vol_ratio": 1.91
@@ -680,9 +680,9 @@
       "entry_time": "13:20 ET",
       "entry_price": 267.64,
       "shares": 8,
-      "stop": 269.455,
+      "stop": 269.255,
       "trail_dist": 3.415,
-      "peak": 266.04,
+      "peak": 265.84,
       "orb_width": 6.83,
       "cost": 2141.12,
       "vol_ratio": 2.98
@@ -946,9 +946,9 @@
       "entry_time": "13:57 ET",
       "entry_price": 327.68,
       "shares": 2,
-      "stop": 324.975,
+      "stop": 325.535,
       "trail_dist": 3.685,
-      "peak": 328.66,
+      "peak": 329.22,
       "orb_width": 7.37,
       "cost": 655.36,
       "vol_ratio": 1.23
@@ -1072,9 +1072,9 @@
       "entry_time": "14:10 ET",
       "entry_price": 122.55,
       "shares": 18,
-      "stop": 123.85,
+      "stop": 123.83,
       "trail_dist": 1.61,
-      "peak": 122.24,
+      "peak": 122.22,
       "orb_width": 3.22,
       "cost": 2205.9,
       "vol_ratio": 1.47
@@ -1150,20 +1150,6 @@
       "vol_ratio": 1.37
     },
     {
-      "ticker": "CDW",
-      "side": "short",
-      "entry_date": "2026-07-21",
-      "entry_time": "14:20 ET",
-      "entry_price": 127.64,
-      "shares": 3,
-      "stop": 128.1427,
-      "trail_dist": 0.7527,
-      "peak": 127.39,
-      "orb_width": 1.5054,
-      "cost": 382.92,
-      "vol_ratio": 1.48
-    },
-    {
       "ticker": "ABNB",
       "side": "short",
       "entry_date": "2026-07-21",
@@ -1226,9 +1212,9 @@
       "entry_time": "14:27 ET",
       "entry_price": 247.8508,
       "shares": 1,
-      "stop": 249.3075,
+      "stop": 249.2375,
       "trail_dist": 1.9975,
-      "peak": 247.31,
+      "peak": 247.24,
       "orb_width": 3.995,
       "cost": 247.85,
       "vol_ratio": 1.91
@@ -1254,9 +1240,9 @@
       "entry_time": "14:32 ET",
       "entry_price": 121.23,
       "shares": 1,
-      "stop": 121.9,
+      "stop": 121.83,
       "trail_dist": 0.68,
-      "peak": 121.22,
+      "peak": 121.15,
       "orb_width": 1.36,
       "cost": 121.23,
       "vol_ratio": 1.64
@@ -1282,12 +1268,26 @@
       "entry_time": "14:35 ET",
       "entry_price": 17.375,
       "shares": 29,
-      "stop": 17.2507,
+      "stop": 17.2608,
       "trail_dist": 0.1243,
-      "peak": 17.375,
+      "peak": 17.3851,
       "orb_width": 0.2486,
       "cost": 503.88,
       "vol_ratio": 1.24
+    },
+    {
+      "ticker": "VLO",
+      "side": "short",
+      "entry_date": "2026-07-21",
+      "entry_time": "14:37 ET",
+      "entry_price": 311.87,
+      "shares": 1,
+      "stop": 314.745,
+      "trail_dist": 2.875,
+      "peak": 311.87,
+      "orb_width": 5.75,
+      "cost": 311.87,
+      "vol_ratio": 3.71
     }
   ],
   "closed_today": [
@@ -3076,6 +3076,25 @@
       "pnl": 3.54,
       "exit_reason": "trailing stop",
       "exit_time": "14:35 ET"
+    },
+    {
+      "ticker": "CDW",
+      "side": "short",
+      "entry_date": "2026-07-21",
+      "entry_time": "14:20 ET",
+      "entry_price": 127.64,
+      "shares": 3,
+      "stop": 128.1427,
+      "trail_dist": 0.7527,
+      "peak": 127.39,
+      "orb_width": 1.5054,
+      "cost": 382.92,
+      "vol_ratio": 1.48,
+      "exit_date": "2026-07-21",
+      "exit_price": 128.1427,
+      "pnl": -1.51,
+      "exit_reason": "trailing stop",
+      "exit_time": "14:37 ET"
     }
   ],
   "all_closed": [
@@ -17724,7 +17743,7 @@
     "2026-07-16": 99371.82,
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
-    "2026-07-21": 98664.7
+    "2026-07-21": 98661.29
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -34492,6 +34511,32 @@
       ],
       "portfolio_value": 98664.7,
       "note": "$98,665 | cash=$1,176 | open=92 | closed today=94 | day PnL=$-780"
+    },
+    {
+      "date": "2026-07-21",
+      "time": "14:37 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "VLO",
+          "side": "short",
+          "price": 311.87,
+          "shares": 1,
+          "stop": 314.74,
+          "trail_dist": 2.875
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "CDW",
+          "side": "short",
+          "exit_price": 128.14,
+          "pnl": -1.51,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98661.29,
+      "note": "$98,661 | cash=$1,246 | open=92 | closed today=95 | day PnL=$-782"
     }
   ]
 }
