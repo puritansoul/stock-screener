@@ -1,5 +1,5 @@
 {
-  "capital": 1245.76,
+  "capital": 1644.09,
   "open_positions": [
     {
       "ticker": "CI",
@@ -70,20 +70,6 @@
       "orb_width": 1.01,
       "cost": 1803.6,
       "vol_ratio": 2.2
-    },
-    {
-      "ticker": "DLR",
-      "side": "long",
-      "entry_date": "2026-07-21",
-      "entry_time": "10:45 ET",
-      "entry_price": 179.395,
-      "shares": 3,
-      "stop": 179.1,
-      "trail_dist": 0.925,
-      "peak": 180.025,
-      "orb_width": 1.85,
-      "cost": 538.19,
-      "vol_ratio": 1.58
     },
     {
       "ticker": "LNT",
@@ -786,29 +772,15 @@
       "vol_ratio": 1.49
     },
     {
-      "ticker": "VLTO",
-      "side": "short",
-      "entry_date": "2026-07-21",
-      "entry_time": "13:33 ET",
-      "entry_price": 90.02,
-      "shares": 3,
-      "stop": 90.41,
-      "trail_dist": 0.465,
-      "peak": 89.945,
-      "orb_width": 0.93,
-      "cost": 270.06,
-      "vol_ratio": 2.24
-    },
-    {
       "ticker": "BRO",
       "side": "short",
       "entry_date": "2026-07-21",
       "entry_time": "13:35 ET",
       "entry_price": 66.82,
       "shares": 3,
-      "stop": 67.295,
+      "stop": 67.285,
       "trail_dist": 0.545,
-      "peak": 66.75,
+      "peak": 66.74,
       "orb_width": 1.09,
       "cost": 200.46,
       "vol_ratio": 1.62
@@ -946,9 +918,9 @@
       "entry_time": "13:57 ET",
       "entry_price": 327.68,
       "shares": 2,
-      "stop": 325.535,
+      "stop": 325.56,
       "trail_dist": 3.685,
-      "peak": 329.22,
+      "peak": 329.245,
       "orb_width": 7.37,
       "cost": 655.36,
       "vol_ratio": 1.23
@@ -1036,20 +1008,6 @@
       "orb_width": 0.74,
       "cost": 244.02,
       "vol_ratio": 1.41
-    },
-    {
-      "ticker": "BA",
-      "side": "short",
-      "entry_date": "2026-07-21",
-      "entry_time": "14:05 ET",
-      "entry_price": 206.765,
-      "shares": 1,
-      "stop": 205.3418,
-      "trail_dist": 1.4418,
-      "peak": 203.9,
-      "orb_width": 2.8836,
-      "cost": 206.76,
-      "vol_ratio": 1.39
     },
     {
       "ticker": "EXR",
@@ -1254,9 +1212,9 @@
       "entry_time": "14:35 ET",
       "entry_price": 403.5,
       "shares": 1,
-      "stop": 406.195,
+      "stop": 406.185,
       "trail_dist": 2.695,
-      "peak": 403.5,
+      "peak": 403.49,
       "orb_width": 5.39,
       "cost": 403.5,
       "vol_ratio": 1.46
@@ -1288,6 +1246,20 @@
       "orb_width": 5.75,
       "cost": 311.87,
       "vol_ratio": 3.71
+    },
+    {
+      "ticker": "BA",
+      "side": "short",
+      "entry_date": "2026-07-21",
+      "entry_time": "14:40 ET",
+      "entry_price": 205.35,
+      "shares": 3,
+      "stop": 206.7918,
+      "trail_dist": 1.4418,
+      "peak": 205.35,
+      "orb_width": 2.8836,
+      "cost": 616.05,
+      "vol_ratio": 1.66
     }
   ],
   "closed_today": [
@@ -3095,6 +3067,63 @@
       "pnl": -1.51,
       "exit_reason": "trailing stop",
       "exit_time": "14:37 ET"
+    },
+    {
+      "ticker": "DLR",
+      "side": "long",
+      "entry_date": "2026-07-21",
+      "entry_time": "10:45 ET",
+      "entry_price": 179.395,
+      "shares": 3,
+      "stop": 179.1,
+      "trail_dist": 0.925,
+      "peak": 180.025,
+      "orb_width": 1.85,
+      "cost": 538.19,
+      "vol_ratio": 1.58,
+      "exit_date": "2026-07-21",
+      "exit_price": 179.1,
+      "pnl": -0.89,
+      "exit_reason": "trailing stop",
+      "exit_time": "14:40 ET"
+    },
+    {
+      "ticker": "VLTO",
+      "side": "short",
+      "entry_date": "2026-07-21",
+      "entry_time": "13:33 ET",
+      "entry_price": 90.02,
+      "shares": 3,
+      "stop": 90.41,
+      "trail_dist": 0.465,
+      "peak": 89.945,
+      "orb_width": 0.93,
+      "cost": 270.06,
+      "vol_ratio": 2.24,
+      "exit_date": "2026-07-21",
+      "exit_price": 90.41,
+      "pnl": -1.17,
+      "exit_reason": "trailing stop",
+      "exit_time": "14:40 ET"
+    },
+    {
+      "ticker": "BA",
+      "side": "short",
+      "entry_date": "2026-07-21",
+      "entry_time": "14:05 ET",
+      "entry_price": 206.765,
+      "shares": 1,
+      "stop": 205.3418,
+      "trail_dist": 1.4418,
+      "peak": 203.9,
+      "orb_width": 2.8836,
+      "cost": 206.76,
+      "vol_ratio": 1.39,
+      "exit_date": "2026-07-21",
+      "exit_price": 205.3418,
+      "pnl": 1.42,
+      "exit_reason": "trailing stop",
+      "exit_time": "14:40 ET"
     }
   ],
   "all_closed": [
@@ -17743,7 +17772,7 @@
     "2026-07-16": 99371.82,
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
-    "2026-07-21": 98661.29
+    "2026-07-21": 98654.47
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -34537,6 +34566,46 @@
       ],
       "portfolio_value": 98661.29,
       "note": "$98,661 | cash=$1,246 | open=92 | closed today=95 | day PnL=$-782"
+    },
+    {
+      "date": "2026-07-21",
+      "time": "14:39 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "BA",
+          "side": "short",
+          "price": 205.35,
+          "shares": 3,
+          "stop": 206.79,
+          "trail_dist": 1.4418
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "DLR",
+          "side": "long",
+          "exit_price": 179.1,
+          "pnl": -0.89,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "VLTO",
+          "side": "short",
+          "exit_price": 90.41,
+          "pnl": -1.17,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "BA",
+          "side": "short",
+          "exit_price": 205.34,
+          "pnl": 1.42,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98654.47,
+      "note": "$98,654 | cash=$1,644 | open=90 | closed today=98 | day PnL=$-782"
     }
   ]
 }
