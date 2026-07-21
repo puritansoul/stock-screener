@@ -1,5 +1,5 @@
 {
-  "capital": 1363.65,
+  "capital": 618.93,
   "open_positions": [
     {
       "ticker": "CI",
@@ -98,20 +98,6 @@
       "orb_width": 0.31,
       "cost": 447.9,
       "vol_ratio": 1.9
-    },
-    {
-      "ticker": "ES",
-      "side": "short",
-      "entry_date": "2026-07-21",
-      "entry_time": "10:59 ET",
-      "entry_price": 73.12,
-      "shares": 3,
-      "stop": 73.1626,
-      "trail_dist": 0.4375,
-      "peak": 72.7251,
-      "orb_width": 0.875,
-      "cost": 219.36,
-      "vol_ratio": 1.33
     },
     {
       "ticker": "BR",
@@ -540,9 +526,9 @@
       "entry_time": "12:58 ET",
       "entry_price": 56.275,
       "shares": 9,
-      "stop": 56.0,
+      "stop": 56.005,
       "trail_dist": 0.665,
-      "peak": 56.665,
+      "peak": 56.67,
       "orb_width": 1.33,
       "cost": 506.48,
       "vol_ratio": 1.27
@@ -680,9 +666,9 @@
       "entry_time": "13:25 ET",
       "entry_price": 140.61,
       "shares": 2,
-      "stop": 140.5125,
+      "stop": 140.5525,
       "trail_dist": 0.4375,
-      "peak": 140.95,
+      "peak": 140.99,
       "orb_width": 0.875,
       "cost": 281.22,
       "vol_ratio": 1.29
@@ -1030,9 +1016,9 @@
       "entry_time": "14:15 ET",
       "entry_price": 52.135,
       "shares": 21,
-      "stop": 52.482,
+      "stop": 52.462,
       "trail_dist": 0.522,
-      "peak": 51.96,
+      "peak": 51.94,
       "orb_width": 1.044,
       "cost": 1094.83,
       "vol_ratio": 1.46
@@ -1184,9 +1170,9 @@
       "entry_time": "14:35 ET",
       "entry_price": 17.375,
       "shares": 29,
-      "stop": 17.3207,
+      "stop": 17.3257,
       "trail_dist": 0.1243,
-      "peak": 17.445,
+      "peak": 17.45,
       "orb_width": 0.2486,
       "cost": 503.88,
       "vol_ratio": 1.24
@@ -1288,6 +1274,48 @@
       "orb_width": 2.0,
       "cost": 494.12,
       "vol_ratio": 1.36
+    },
+    {
+      "ticker": "ES",
+      "side": "short",
+      "entry_date": "2026-07-21",
+      "entry_time": "14:59 ET",
+      "entry_price": 73.14,
+      "shares": 6,
+      "stop": 73.5775,
+      "trail_dist": 0.4375,
+      "peak": 73.14,
+      "orb_width": 0.875,
+      "cost": 438.84,
+      "vol_ratio": 1.82
+    },
+    {
+      "ticker": "PAYX",
+      "side": "short",
+      "entry_date": "2026-07-21",
+      "entry_time": "14:59 ET",
+      "entry_price": 112.14,
+      "shares": 3,
+      "stop": 113.225,
+      "trail_dist": 1.085,
+      "peak": 112.14,
+      "orb_width": 2.17,
+      "cost": 336.42,
+      "vol_ratio": 1.36
+    },
+    {
+      "ticker": "ECHO",
+      "side": "long",
+      "entry_date": "2026-07-21",
+      "entry_time": "14:59 ET",
+      "entry_price": 94.345,
+      "shares": 2,
+      "stop": 93.0,
+      "trail_dist": 1.345,
+      "peak": 94.345,
+      "orb_width": 2.69,
+      "cost": 188.69,
+      "vol_ratio": 1.35
     }
   ],
   "closed_today": [
@@ -3209,6 +3237,25 @@
       "pnl": 0.03,
       "exit_reason": "trailing stop",
       "exit_time": "14:54 ET"
+    },
+    {
+      "ticker": "ES",
+      "side": "short",
+      "entry_date": "2026-07-21",
+      "entry_time": "10:59 ET",
+      "entry_price": 73.12,
+      "shares": 3,
+      "stop": 73.1626,
+      "trail_dist": 0.4375,
+      "peak": 72.7251,
+      "orb_width": 0.875,
+      "cost": 219.36,
+      "vol_ratio": 1.33,
+      "exit_date": "2026-07-21",
+      "exit_price": 73.1626,
+      "pnl": -0.13,
+      "exit_reason": "trailing stop",
+      "exit_time": "14:59 ET"
     }
   ],
   "all_closed": [
@@ -17857,7 +17904,7 @@
     "2026-07-16": 99371.82,
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
-    "2026-07-21": 98724.26
+    "2026-07-21": 98714.74
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -34821,6 +34868,48 @@
       "exits": [],
       "portfolio_value": 98724.26,
       "note": "$98,724 | cash=$1,364 | open=92 | closed today=101 | day PnL=$-783"
+    },
+    {
+      "date": "2026-07-21",
+      "time": "14:59 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "ES",
+          "side": "short",
+          "price": 73.14,
+          "shares": 6,
+          "stop": 73.58,
+          "trail_dist": 0.4375
+        },
+        {
+          "ticker": "PAYX",
+          "side": "short",
+          "price": 112.14,
+          "shares": 3,
+          "stop": 113.22,
+          "trail_dist": 1.085
+        },
+        {
+          "ticker": "ECHO",
+          "side": "long",
+          "price": 94.35,
+          "shares": 2,
+          "stop": 93.0,
+          "trail_dist": 1.345
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "ES",
+          "side": "short",
+          "exit_price": 73.16,
+          "pnl": -0.13,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98714.74,
+      "note": "$98,715 | cash=$619 | open=94 | closed today=102 | day PnL=$-784"
     }
   ]
 }
