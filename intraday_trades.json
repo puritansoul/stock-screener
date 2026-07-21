@@ -1,5 +1,5 @@
 {
-  "capital": 414.87,
+  "capital": 1176.22,
   "open_positions": [
     {
       "ticker": "CI",
@@ -372,9 +372,9 @@
       "entry_time": "12:13 ET",
       "entry_price": 77.11,
       "shares": 105,
-      "stop": 76.88,
+      "stop": 76.85,
       "trail_dist": 0.35,
-      "peak": 76.53,
+      "peak": 76.5,
       "orb_width": 0.7,
       "cost": 8096.55,
       "vol_ratio": 1.91
@@ -462,20 +462,6 @@
       "orb_width": 1.91,
       "cost": 571.32,
       "vol_ratio": 1.37
-    },
-    {
-      "ticker": "TPL",
-      "side": "long",
-      "entry_date": "2026-07-21",
-      "entry_time": "12:28 ET",
-      "entry_price": 416.295,
-      "shares": 4,
-      "stop": 417.18,
-      "trail_dist": 2.23,
-      "peak": 419.41,
-      "orb_width": 4.46,
-      "cost": 1665.18,
-      "vol_ratio": 1.73
     },
     {
       "ticker": "FANG",
@@ -960,9 +946,9 @@
       "entry_time": "13:57 ET",
       "entry_price": 327.68,
       "shares": 2,
-      "stop": 324.785,
+      "stop": 324.975,
       "trail_dist": 3.685,
-      "peak": 328.47,
+      "peak": 328.66,
       "orb_width": 7.37,
       "cost": 655.36,
       "vol_ratio": 1.23
@@ -1086,9 +1072,9 @@
       "entry_time": "14:10 ET",
       "entry_price": 122.55,
       "shares": 18,
-      "stop": 123.92,
+      "stop": 123.85,
       "trail_dist": 1.61,
-      "peak": 122.31,
+      "peak": 122.24,
       "orb_width": 3.22,
       "cost": 2205.9,
       "vol_ratio": 1.47
@@ -1240,9 +1226,9 @@
       "entry_time": "14:27 ET",
       "entry_price": 247.8508,
       "shares": 1,
-      "stop": 249.3175,
+      "stop": 249.3075,
       "trail_dist": 1.9975,
-      "peak": 247.32,
+      "peak": 247.31,
       "orb_width": 3.995,
       "cost": 247.85,
       "vol_ratio": 1.91
@@ -1268,12 +1254,40 @@
       "entry_time": "14:32 ET",
       "entry_price": 121.23,
       "shares": 1,
-      "stop": 121.91,
+      "stop": 121.9,
       "trail_dist": 0.68,
-      "peak": 121.23,
+      "peak": 121.22,
       "orb_width": 1.36,
       "cost": 121.23,
       "vol_ratio": 1.64
+    },
+    {
+      "ticker": "MSI",
+      "side": "short",
+      "entry_date": "2026-07-21",
+      "entry_time": "14:35 ET",
+      "entry_price": 403.5,
+      "shares": 1,
+      "stop": 406.195,
+      "trail_dist": 2.695,
+      "peak": 403.5,
+      "orb_width": 5.39,
+      "cost": 403.5,
+      "vol_ratio": 1.46
+    },
+    {
+      "ticker": "VTRS",
+      "side": "long",
+      "entry_date": "2026-07-21",
+      "entry_time": "14:35 ET",
+      "entry_price": 17.375,
+      "shares": 29,
+      "stop": 17.2507,
+      "trail_dist": 0.1243,
+      "peak": 17.375,
+      "orb_width": 0.2486,
+      "cost": 503.88,
+      "vol_ratio": 1.24
     }
   ],
   "closed_today": [
@@ -3043,6 +3057,25 @@
       "pnl": -0.99,
       "exit_reason": "trailing stop",
       "exit_time": "14:25 ET"
+    },
+    {
+      "ticker": "TPL",
+      "side": "long",
+      "entry_date": "2026-07-21",
+      "entry_time": "12:28 ET",
+      "entry_price": 416.295,
+      "shares": 4,
+      "stop": 417.18,
+      "trail_dist": 2.23,
+      "peak": 419.41,
+      "orb_width": 4.46,
+      "cost": 1665.18,
+      "vol_ratio": 1.73,
+      "exit_date": "2026-07-21",
+      "exit_price": 417.18,
+      "pnl": 3.54,
+      "exit_reason": "trailing stop",
+      "exit_time": "14:35 ET"
     }
   ],
   "all_closed": [
@@ -17691,7 +17724,7 @@
     "2026-07-16": 99371.82,
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
-    "2026-07-21": 98681.49
+    "2026-07-21": 98664.7
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -34425,6 +34458,40 @@
       "exits": [],
       "portfolio_value": 98681.49,
       "note": "$98,681 | cash=$415 | open=91 | closed today=93 | day PnL=$-784"
+    },
+    {
+      "date": "2026-07-21",
+      "time": "14:34 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "MSI",
+          "side": "short",
+          "price": 403.5,
+          "shares": 1,
+          "stop": 406.19,
+          "trail_dist": 2.695
+        },
+        {
+          "ticker": "VTRS",
+          "side": "long",
+          "price": 17.38,
+          "shares": 29,
+          "stop": 17.25,
+          "trail_dist": 0.1243
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "TPL",
+          "side": "long",
+          "exit_price": 417.18,
+          "pnl": 3.54,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98664.7,
+      "note": "$98,665 | cash=$1,176 | open=92 | closed today=94 | day PnL=$-780"
     }
   ]
 }
