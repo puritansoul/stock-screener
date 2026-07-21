@@ -1,5 +1,5 @@
 {
-  "capital": 3860.95,
+  "capital": 5644.52,
   "open_positions": [
     {
       "ticker": "TXT",
@@ -56,20 +56,6 @@
       "orb_width": 1.63,
       "cost": 1307.76,
       "vol_ratio": 1.59
-    },
-    {
-      "ticker": "BRO",
-      "side": "short",
-      "entry_date": "2026-07-21",
-      "entry_time": "10:30 ET",
-      "entry_price": 67.39,
-      "shares": 21,
-      "stop": 66.765,
-      "trail_dist": 0.545,
-      "peak": 66.22,
-      "orb_width": 1.09,
-      "cost": 1415.19,
-      "vol_ratio": 1.43
     },
     {
       "ticker": "INCY",
@@ -154,20 +140,6 @@
       "orb_width": 1.85,
       "cost": 538.19,
       "vol_ratio": 1.58
-    },
-    {
-      "ticker": "AON",
-      "side": "short",
-      "entry_date": "2026-07-21",
-      "entry_time": "10:45 ET",
-      "entry_price": 356.62,
-      "shares": 1,
-      "stop": 357.9814,
-      "trail_dist": 3.1814,
-      "peak": 354.8,
-      "orb_width": 6.3629,
-      "cost": 356.62,
-      "vol_ratio": 1.49
     },
     {
       "ticker": "HON",
@@ -260,9 +232,9 @@
       "entry_time": "10:59 ET",
       "entry_price": 73.12,
       "shares": 3,
-      "stop": 73.3475,
+      "stop": 73.3275,
       "trail_dist": 0.4375,
-      "peak": 72.91,
+      "peak": 72.89,
       "orb_width": 0.875,
       "cost": 219.36,
       "vol_ratio": 1.33
@@ -274,9 +246,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 145.84,
       "shares": 7,
-      "stop": 146.2625,
+      "stop": 146.2525,
       "trail_dist": 1.1425,
-      "peak": 145.12,
+      "peak": 145.11,
       "orb_width": 2.285,
       "cost": 1020.88,
       "vol_ratio": 2.18
@@ -596,9 +568,9 @@
       "entry_time": "11:53 ET",
       "entry_price": 341.08,
       "shares": 3,
-      "stop": 339.795,
+      "stop": 340.175,
       "trail_dist": 4.285,
-      "peak": 344.08,
+      "peak": 344.46,
       "orb_width": 8.57,
       "cost": 1023.24,
       "vol_ratio": 1.23
@@ -624,9 +596,9 @@
       "entry_time": "12:13 ET",
       "entry_price": 77.11,
       "shares": 105,
-      "stop": 77.075,
+      "stop": 77.04,
       "trail_dist": 0.35,
-      "peak": 76.725,
+      "peak": 76.69,
       "orb_width": 0.7,
       "cost": 8096.55,
       "vol_ratio": 1.91
@@ -918,9 +890,9 @@
       "entry_time": "12:58 ET",
       "entry_price": 56.275,
       "shares": 9,
-      "stop": 55.715,
+      "stop": 55.725,
       "trail_dist": 0.665,
-      "peak": 56.38,
+      "peak": 56.39,
       "orb_width": 1.33,
       "cost": 506.48,
       "vol_ratio": 1.27
@@ -946,9 +918,9 @@
       "entry_time": "13:03 ET",
       "entry_price": 311.06,
       "shares": 3,
-      "stop": 312.745,
+      "stop": 312.365,
       "trail_dist": 1.705,
-      "peak": 311.04,
+      "peak": 310.66,
       "orb_width": 3.41,
       "cost": 933.18,
       "vol_ratio": 1.39
@@ -960,9 +932,9 @@
       "entry_time": "13:03 ET",
       "entry_price": 63.15,
       "shares": 12,
-      "stop": 62.5425,
+      "stop": 62.6075,
       "trail_dist": 0.6475,
-      "peak": 63.19,
+      "peak": 63.255,
       "orb_width": 1.295,
       "cost": 757.8,
       "vol_ratio": 1.3
@@ -2146,6 +2118,44 @@
       "pnl": -8.28,
       "exit_reason": "trailing stop",
       "exit_time": "13:05 ET"
+    },
+    {
+      "ticker": "BRO",
+      "side": "short",
+      "entry_date": "2026-07-21",
+      "entry_time": "10:30 ET",
+      "entry_price": 67.39,
+      "shares": 21,
+      "stop": 66.765,
+      "trail_dist": 0.545,
+      "peak": 66.22,
+      "orb_width": 1.09,
+      "cost": 1415.19,
+      "vol_ratio": 1.43,
+      "exit_date": "2026-07-21",
+      "exit_price": 66.765,
+      "pnl": 13.12,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:08 ET"
+    },
+    {
+      "ticker": "AON",
+      "side": "short",
+      "entry_date": "2026-07-21",
+      "entry_time": "10:45 ET",
+      "entry_price": 356.62,
+      "shares": 1,
+      "stop": 357.9814,
+      "trail_dist": 3.1814,
+      "peak": 354.8,
+      "orb_width": 6.3629,
+      "cost": 356.62,
+      "vol_ratio": 1.49,
+      "exit_date": "2026-07-21",
+      "exit_price": 357.9814,
+      "pnl": -1.36,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:08 ET"
     }
   ],
   "all_closed": [
@@ -16794,7 +16804,7 @@
     "2026-07-16": 99371.82,
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
-    "2026-07-21": 98795.63
+    "2026-07-21": 98760.69
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -32521,6 +32531,30 @@
       ],
       "portfolio_value": 98795.63,
       "note": "$98,796 | cash=$3,861 | open=69 | closed today=62 | day PnL=$-643"
+    },
+    {
+      "date": "2026-07-21",
+      "time": "13:07 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "BRO",
+          "side": "short",
+          "exit_price": 66.77,
+          "pnl": 13.12,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "AON",
+          "side": "short",
+          "exit_price": 357.98,
+          "pnl": -1.36,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98760.69,
+      "note": "$98,761 | cash=$5,645 | open=67 | closed today=64 | day PnL=$-631"
     }
   ]
 }
