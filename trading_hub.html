@@ -41,12 +41,12 @@
           <div class="stat-grid">
             <div class="stat">
               <div class="stat-label">Portfolio Value</div>
-              <div class="stat-val" style="color:#1a237e">$100,000</div>
+              <div class="stat-val" style="color:#1a237e">$98,948</div>
             </div>
             <div class="stat">
               <div class="stat-label">Total Return</div>
-              <div class="stat-val" style="color:#2e7d32">+$0<br>
-                <span style="font-size:13px">+0.00%</span>
+              <div class="stat-val" style="color:#c62828">$1,052<br>
+                <span style="font-size:13px">1.05%</span>
               </div>
             </div>
             <div class="stat">
@@ -55,22 +55,22 @@
             </div>
             <div class="stat">
               <div class="stat-label">Open Positions</div>
-              <div class="stat-val">44</div>
+              <div class="stat-val">38</div>
             </div>
             <div class="stat">
               <div class="stat-label">Win Rate</div>
-              <div class="stat-val">90.0%</div>
+              <div class="stat-val">91.7%</div>
             </div>
             <div class="stat">
               <div class="stat-label">Closed Trades</div>
-              <div class="stat-val">30</div>
+              <div class="stat-val">36</div>
             </div>
           </div>
           <canvas id="swing-chart" style="width:100%;margin:12px 0"></canvas>
           <div style="font-size:11px;color:#999;margin-bottom:12px">
-            Inception: 2026-07-09 &nbsp;|&nbsp; Last run: 2026-07-20
+            Inception: 2026-07-09 &nbsp;|&nbsp; Last run: 2026-07-21
           </div>
-          <a href="reports/swing_2026-07-20.html" class="btn" style="background:#1a237e">Open Dashboard →</a>
+          <a href="reports/swing_2026-07-21.html" class="btn" style="background:#1a237e">Open Dashboard →</a>
         </div>
     
         <div class="bot-card" style="border-top:4px solid #e65100">
@@ -78,11 +78,11 @@
           <div class="stat-grid">
             <div class="stat">
               <div class="stat-label">Portfolio Value</div>
-              <div class="stat-val" style="color:#1a237e">$98,778</div>
+              <div class="stat-val" style="color:#1a237e">$98,777</div>
             </div>
             <div class="stat">
               <div class="stat-label">Total Return</div>
-              <div class="stat-val" style="color:#c62828">$1,222<br>
+              <div class="stat-val" style="color:#c62828">$1,223<br>
                 <span style="font-size:13px">1.22%</span>
               </div>
             </div>
@@ -127,8 +127,8 @@
 <script>
 
 (function() {
-  const dates = ["2026-07-09", "2026-07-10", "2026-07-13", "2026-07-15", "2026-07-16", "2026-07-20"];
-  const vals  = [100000.0, 101615.45, 102667.93, 98011.16, 98225.18, 98779.23];
+  const dates = ["2026-07-09", "2026-07-10", "2026-07-13", "2026-07-15", "2026-07-16", "2026-07-20", "2026-07-21"];
+  const vals  = [100000.0, 101615.45, 102667.93, 98011.16, 98225.18, 98779.23, 98947.51];
   const N = vals.length;
   if (N < 2) return;
   const canvas = document.getElementById('swing-chart');
