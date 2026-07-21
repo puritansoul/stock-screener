@@ -1,5 +1,5 @@
 {
-  "capital": 516.81,
+  "capital": 497.24,
   "open_positions": [
     {
       "ticker": "TXT",
@@ -56,20 +56,6 @@
       "orb_width": 2.48,
       "cost": 938.64,
       "vol_ratio": 1.45
-    },
-    {
-      "ticker": "WEC",
-      "side": "short",
-      "entry_date": "2026-07-21",
-      "entry_time": "10:35 ET",
-      "entry_price": 111.31,
-      "shares": 2,
-      "stop": 111.2592,
-      "trail_dist": 0.4575,
-      "peak": 110.8017,
-      "orb_width": 0.915,
-      "cost": 222.62,
-      "vol_ratio": 1.56
     },
     {
       "ticker": "DD",
@@ -408,20 +394,6 @@
       "vol_ratio": 2.51
     },
     {
-      "ticker": "HONA",
-      "side": "short",
-      "entry_date": "2026-07-21",
-      "entry_time": "11:24 ET",
-      "entry_price": 198.185,
-      "shares": 1,
-      "stop": 196.985,
-      "trail_dist": 1.705,
-      "peak": 195.28,
-      "orb_width": 3.41,
-      "cost": 198.18,
-      "vol_ratio": 2.08
-    },
-    {
       "ticker": "AJG",
       "side": "short",
       "entry_date": "2026-07-21",
@@ -554,9 +526,9 @@
       "entry_time": "12:13 ET",
       "entry_price": 209.765,
       "shares": 27,
-      "stop": 209.245,
+      "stop": 209.345,
       "trail_dist": 2.155,
-      "peak": 211.4,
+      "peak": 211.5,
       "orb_width": 4.31,
       "cost": 5663.65,
       "vol_ratio": 1.7
@@ -638,9 +610,9 @@
       "entry_time": "12:23 ET",
       "entry_price": 190.44,
       "shares": 3,
-      "stop": 191.215,
+      "stop": 191.135,
       "trail_dist": 0.955,
-      "peak": 190.26,
+      "peak": 190.18,
       "orb_width": 1.91,
       "cost": 571.32,
       "vol_ratio": 1.37
@@ -652,9 +624,9 @@
       "entry_time": "12:28 ET",
       "entry_price": 416.295,
       "shares": 4,
-      "stop": 415.05,
+      "stop": 415.405,
       "trail_dist": 2.23,
-      "peak": 417.28,
+      "peak": 417.635,
       "orb_width": 4.46,
       "cost": 1665.18,
       "vol_ratio": 1.73
@@ -890,9 +862,9 @@
       "entry_time": "13:10 ET",
       "entry_price": 654.23,
       "shares": 2,
-      "stop": 653.895,
+      "stop": 654.215,
       "trail_dist": 6.775,
-      "peak": 660.67,
+      "peak": 660.99,
       "orb_width": 13.55,
       "cost": 1308.46,
       "vol_ratio": 1.53
@@ -1058,9 +1030,9 @@
       "entry_time": "13:30 ET",
       "entry_price": 303.02,
       "shares": 1,
-      "stop": 307.2638,
+      "stop": 307.1588,
       "trail_dist": 4.6588,
-      "peak": 302.605,
+      "peak": 302.5,
       "orb_width": 9.3175,
       "cost": 303.02,
       "vol_ratio": 1.49
@@ -1086,12 +1058,40 @@
       "entry_time": "13:35 ET",
       "entry_price": 66.82,
       "shares": 3,
-      "stop": 67.365,
+      "stop": 67.345,
       "trail_dist": 0.545,
-      "peak": 66.82,
+      "peak": 66.8,
       "orb_width": 1.09,
       "cost": 200.46,
       "vol_ratio": 1.62
+    },
+    {
+      "ticker": "TAP",
+      "side": "short",
+      "entry_date": "2026-07-21",
+      "entry_time": "13:38 ET",
+      "entry_price": 40.77,
+      "shares": 6,
+      "stop": 41.07,
+      "trail_dist": 0.3,
+      "peak": 40.77,
+      "orb_width": 0.6,
+      "cost": 244.62,
+      "vol_ratio": 1.7
+    },
+    {
+      "ticker": "HONA",
+      "side": "short",
+      "entry_date": "2026-07-21",
+      "entry_time": "13:38 ET",
+      "entry_price": 197.05,
+      "shares": 1,
+      "stop": 198.755,
+      "trail_dist": 1.705,
+      "peak": 197.05,
+      "orb_width": 3.41,
+      "cost": 197.05,
+      "vol_ratio": 1.23
     }
   ],
   "closed_today": [
@@ -2386,6 +2386,44 @@
       "pnl": -3.35,
       "exit_reason": "trailing stop",
       "exit_time": "13:30 ET"
+    },
+    {
+      "ticker": "WEC",
+      "side": "short",
+      "entry_date": "2026-07-21",
+      "entry_time": "10:35 ET",
+      "entry_price": 111.31,
+      "shares": 2,
+      "stop": 111.2592,
+      "trail_dist": 0.4575,
+      "peak": 110.8017,
+      "orb_width": 0.915,
+      "cost": 222.62,
+      "vol_ratio": 1.56,
+      "exit_date": "2026-07-21",
+      "exit_price": 111.2592,
+      "pnl": 0.1,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:38 ET"
+    },
+    {
+      "ticker": "HONA",
+      "side": "short",
+      "entry_date": "2026-07-21",
+      "entry_time": "11:24 ET",
+      "entry_price": 198.185,
+      "shares": 1,
+      "stop": 196.985,
+      "trail_dist": 1.705,
+      "peak": 195.28,
+      "orb_width": 3.41,
+      "cost": 198.18,
+      "vol_ratio": 2.08,
+      "exit_date": "2026-07-21",
+      "exit_price": 196.985,
+      "pnl": 1.2,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:38 ET"
     }
   ],
   "all_closed": [
@@ -17034,7 +17072,7 @@
     "2026-07-16": 99371.82,
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
-    "2026-07-21": 98739.58
+    "2026-07-21": 98745.3
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -33046,6 +33084,47 @@
       "exits": [],
       "portfolio_value": 98739.58,
       "note": "$98,740 | cash=$517 | open=78 | closed today=68 | day PnL=$-672"
+    },
+    {
+      "date": "2026-07-21",
+      "time": "13:37 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "TAP",
+          "side": "short",
+          "price": 40.77,
+          "shares": 6,
+          "stop": 41.07,
+          "trail_dist": 0.3
+        },
+        {
+          "ticker": "HONA",
+          "side": "short",
+          "price": 197.05,
+          "shares": 1,
+          "stop": 198.76,
+          "trail_dist": 1.705
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "WEC",
+          "side": "short",
+          "exit_price": 111.26,
+          "pnl": 0.1,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "HONA",
+          "side": "short",
+          "exit_price": 196.99,
+          "pnl": 1.2,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98745.3,
+      "note": "$98,745 | cash=$497 | open=78 | closed today=70 | day PnL=$-671"
     }
   ]
 }
