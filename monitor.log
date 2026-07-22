@@ -499,3 +499,46 @@ Traceback (most recent call last):
   File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 355, in raw_decode
     raise JSONDecodeError("Expecting value", s, err.value) from None
 json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+============================================================
+  Factor Screener — 2026-07-22
+  Daily screen
+============================================================
+
+[1] S&P 500 tickers …
+[2] CIK map …
+[3] Prices (14-month lookback) …
+[4] SEC EDGAR balance sheet Q1/2026, annual flows 2025 + year-ago + 3yr-ago …
+[5] Scoring (ROIC, FCF/EV, Piotroski, hard filters) …
+[6b] Computing score × inverse-vol weights …
+[6] Updating portfolio NAV …
+[7] Saving HTML report …
+
+  NAV: $116,912  (daily: +0.54%)
+  Holdings: 21  |  High-conviction alerts: 0
+
+  Top 15:
+    #  Ticker     Score   Alloc     Price  Status
+  --------------------------------------------------------
+    1  APA        0.879    4.6%    $36.26  HELD   
+    2  NEM        0.843    3.9%    $96.15  HELD   
+    3  EXPE       0.823    4.5%   $264.06  HELD   
+    4  COHR       0.823    2.1%   $314.99  HELD   
+    5  UAL        0.808    3.6%   $117.24  HELD   
+    6  JBHT       0.806    5.4%   $291.89  HELD   
+    7  NTAP       0.795    2.9%   $166.57  HELD   
+    8  LMT        0.786    6.5%   $516.48  HELD   
+    9  LVS        0.780    5.9%    $46.03  HELD   
+   10  RL         0.776    4.1%   $384.95  HELD   
+   11  STT        0.771    7.8%   $182.88  HELD   
+   12  MO         0.768    6.2%    $72.79  HELD   
+   13  BBY        0.760    3.8%    $85.79  HELD   
+   14  AIZ        0.758    8.9%   $272.92  HELD   
+   15  FCX        0.751    3.0%    $64.35  HELD   
+
+  Report: /Users/vishalgupta/claude/reports/2026-07-22.html
+
+Done.
+

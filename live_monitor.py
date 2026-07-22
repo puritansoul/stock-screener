@@ -1035,12 +1035,17 @@ def save_html_report(
             tot_ret_p = (cur_px_val - buy_px) / buy_px
             tot_color = "#2e7d32" if tot_ret_d >= 0 else "#c62828"
             tot_sign  = "+" if tot_ret_d >= 0 else ""
-            tot_ret_str = (
-                f'<span style="color:{tot_color};font-weight:bold">'
-                f'{tot_sign}${abs(tot_ret_d):,.0f} ({tot_sign}{tot_ret_p:.2%})</span>'
+            tot_ret_str_d = (
+                f'<span data-sort="{tot_ret_d:.2f}" style="color:{tot_color};font-weight:bold">'
+                f'{tot_sign}${abs(tot_ret_d):,.0f}</span>'
+            )
+            tot_ret_str_p = (
+                f'<span data-sort="{tot_ret_p*100:.4f}" style="color:{tot_color};font-weight:bold">'
+                f'{tot_sign}{tot_ret_p:.2%}</span>'
             )
         else:
-            tot_ret_str = "—"
+            tot_ret_str_d = "—"
+            tot_ret_str_p = "—"
 
         # ── Compact holdings row ────────────────────────────────────────────
         _stale_val  = round(qty * cur_px_val, 2) if qty and cur_px_val else 0
@@ -1057,7 +1062,8 @@ def save_html_report(
           <td class="live-invested" style="text-align:right;font-weight:bold">{invested_str}</td>
           <td class="live-day-d" style="text-align:right">{day_chg_str}</td>
           <td class="live-day-pct" style="text-align:right">{day_pct_str}</td>
-          <td class="live-total-ret" style="text-align:right">{tot_ret_str}</td>
+          <td class="live-total-ret-d" style="text-align:right">{tot_ret_str_d}</td>
+          <td class="live-total-ret-pct" style="text-align:right">{tot_ret_str_p}</td>
           <td style="text-align:right;font-size:12px;color:#555">{_fmt(comp, '.3f')}</td>
         </tr>"""
 
@@ -1183,7 +1189,7 @@ def save_html_report(
       <thead><tr>
         <th data-col="0">#</th><th data-col="1">Ticker</th><th data-col="2">Price</th>
         <th data-col="3">Alloc %</th><th data-col="4">Qty</th><th data-col="5">Buy Price</th><th data-col="6">Buy Date</th>
-        <th data-col="7">$ Invested</th><th data-col="8">Day Δ $</th><th data-col="9">Day Δ %</th><th data-col="10">Total Return</th><th data-col="11">Score</th>
+        <th data-col="7">$ Invested</th><th data-col="8">Day Δ $</th><th data-col="9">Day Δ %</th><th data-col="10">Total Ret $</th><th data-col="11">Total Ret %</th><th data-col="12">Score</th>
       </tr></thead>
       <tbody>{holdings_rows}</tbody>
     </table>
@@ -1321,8 +1327,15 @@ def save_html_report(
           `<span style="color:${{col(dayChgD)}};font-weight:bold">${{sgn(dayChgD)}}$${{fmtI(dayChgD)}}</span>`;
         row.querySelector('.live-day-pct').innerHTML    =
           `<span style="color:${{col(dayChgP)}};font-weight:bold">${{sgn(dayChgP)}}${{Math.abs(dayChgP*100).toFixed(2)}}%</span>`;
-        row.querySelector('.live-total-ret').innerHTML  =
-          `<span style="color:${{col(totRetD)}};font-weight:bold">${{sgn(totRetD)}}$${{fmtI(totRetD)}} (${{sgn(totRetP)}}${{Math.abs(totRetP*100).toFixed(2)}}%)</span>`;
+        const _trDEl = row.querySelector('.live-total-ret-d');
+        if (_trDEl) {{
+          _trDEl.innerHTML = `<span data-sort="${{totRetD.toFixed(2)}}" style="color:${{col(totRetD)}};font-weight:bold">${{sgn(totRetD)}}$${{fmtI(totRetD)}}</span>`;
+          _trDEl.querySelector('span').dataset.sort = totRetD.toFixed(2);
+        }}
+        const _trPEl = row.querySelector('.live-total-ret-pct');
+        if (_trPEl) {{
+          _trPEl.innerHTML = `<span data-sort="${{(totRetP*100).toFixed(4)}}" style="color:${{col(totRetP)}};font-weight:bold">${{sgn(totRetP)}}${{Math.abs(totRetP*100).toFixed(2)}}%</span>`;
+        }}
 
         // Update running totals with live data and refresh cards incrementally
         liveVal[tk]     = curVal;
@@ -1361,10 +1374,13 @@ def save_html_report(
         const tbody = table.querySelector('tbody');
         const rows  = Array.from(tbody.querySelectorAll('tr'));
         rows.sort((a, b) => {{
-          const aText = (a.cells[col] ? a.cells[col].textContent : '').trim();
-          const bText = (b.cells[col] ? b.cells[col].textContent : '').trim();
-          const aNum  = parseFloat(aText.replace(/[^0-9.\-]/g, ''));
-          const bNum  = parseFloat(bText.replace(/[^0-9.\-]/g, ''));
+          const aC = a.cells[col], bC = b.cells[col];
+          const aText = (aC ? aC.textContent : '').trim();
+          const bText = (bC ? bC.textContent : '').trim();
+          const aSpan = aC ? aC.querySelector('[data-sort]') : null;
+          const bSpan = bC ? bC.querySelector('[data-sort]') : null;
+          const aNum  = aSpan ? parseFloat(aSpan.dataset.sort) : (aC && aC.dataset.sort !== undefined ? parseFloat(aC.dataset.sort) : parseFloat(aText.replace(/[^0-9.\-]/g, '')));
+          const bNum  = bSpan ? parseFloat(bSpan.dataset.sort) : (bC && bC.dataset.sort !== undefined ? parseFloat(bC.dataset.sort) : parseFloat(bText.replace(/[^0-9.\-]/g, '')));
           const cmp   = isNaN(aNum) || isNaN(bNum) ? aText.localeCompare(bText) : aNum - bNum;
           return sortAsc ? cmp : -cmp;
         }});

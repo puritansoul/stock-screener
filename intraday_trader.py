@@ -903,7 +903,8 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
           <td>${entry:,.2f}</td><td class="live-price">${cur_px:,.2f}</td>
           <td style="text-align:right">{shares:,}</td>
           <td class="live-curval" style="text-align:right">${pos["cost"] + unreal:,.0f}</td>
-          <td class="live-unreal" style="text-align:right;color:{uc};font-weight:bold">${unreal:+,.0f} ({unreal_pct:+.2f}%)</td>
+          <td class="live-unreal-d" data-sort="{unreal:.2f}" style="text-align:right;color:{uc};font-weight:bold">{'+' if unreal >= 0 else ''}${abs(unreal):,.0f}</td>
+          <td class="live-unreal-pct" data-sort="{unreal_pct:.4f}" style="text-align:right;color:{uc};font-weight:bold">{unreal_pct:+.2f}%</td>
           <td style="color:#1b5e20">${peak:,.2f}</td><td style="color:#c62828">${stop:,.2f}</td>
           <td style="color:#666;font-size:12px">{pos.get('entry_date','—')}</td>
           <td style="color:#666;font-size:12px">{pos.get('entry_time','—')}</td>
@@ -918,12 +919,13 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
           <td colspan="4" style="text-align:right;color:#555">Totals</td>
           <td style="text-align:right">{sum(p['shares'] for p in open_pos):,}</td>
           <td id="total-curval" style="text-align:right">${total_curval:,.0f}</td>
-          <td id="total-unreal" data-server-total="{total_unreal:.2f}" style="text-align:right;color:{tu_color}">{tu_sign}${abs(total_unreal):,.0f}</td>
+          <td id="total-unreal-d" data-server-total="{total_unreal:.2f}" style="text-align:right;color:{tu_color}">{tu_sign}${abs(total_unreal):,.0f}</td>
+          <td id="total-unreal-pct" style="text-align:right;color:{tu_color}">{total_unreal / total_cost_basis * 100 if total_cost_basis else 0:+.2f}%</td>
           <td colspan="4"></td>
         </tr>""" if open_pos else ""
 
     if not open_rows:
-        open_rows = '<tr><td colspan="10" style="text-align:center;color:#999;padding:20px">No open positions today</td></tr>'
+        open_rows = '<tr><td colspan="12" style="text-align:center;color:#999;padding:20px">No open positions today</td></tr>'
         open_totals_row = ""
 
     # Today's closed trades
@@ -936,6 +938,8 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
         pnl   = pos.get("pnl", 0)
         reason= pos.get("exit_reason", "—")
         pnl_c = "#2e7d32" if pnl >= 0 else "#c62828"
+        pnl_cost = pos.get("cost", 1)
+        pnl_pct  = pnl / pnl_cost * 100 if pnl_cost else 0
         sb = ('<span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span>'
               if side == "long" else
               '<span style="background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:4px;font-size:11px">SHORT</span>')
@@ -945,14 +949,15 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
         <tr>
           <td style="font-weight:bold">{tk}{_tname_html}</td><td>{sb}</td>
           <td>${entry:,.2f}</td><td>${exit_p:,.2f}</td>
-          <td style="text-align:right;color:{pnl_c};font-weight:bold">${pnl:+,.0f}</td>
+          <td data-sort="{pnl:.2f}" style="text-align:right;color:{pnl_c};font-weight:bold">${pnl:+,.0f}</td>
+          <td data-sort="{pnl_pct:.4f}" style="text-align:right;color:{pnl_c};font-weight:bold">{pnl_pct:+.2f}%</td>
           <td style="color:#666;font-size:12px">{pos.get('entry_date','—')}</td>
           <td style="color:#666;font-size:12px">{pos.get('entry_time','—')}</td>
           <td style="color:#666;font-size:12px">{pos.get('exit_time','—')}</td>
           <td style="color:#666;font-size:12px">{reason}</td>
         </tr>"""
     if not today_rows:
-        today_rows = '<tr><td colspan="9" style="text-align:center;color:#999;padding:20px">No trades closed today</td></tr>'
+        today_rows = '<tr><td colspan="10" style="text-align:center;color:#999;padding:20px">No trades closed today</td></tr>'
 
     # All-time closed trades rows (most recent first, last 50)
     all_history = all_closed + closed_td
@@ -964,6 +969,8 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
         exit_p = pos.get("exit_price", entry)
         pnl    = pos.get("pnl", 0)
         pnl_c  = "#2e7d32" if pnl >= 0 else "#c62828"
+        hist_pnl_cost = pos.get("cost", 1)
+        hist_pnl_pct  = pnl / hist_pnl_cost * 100 if hist_pnl_cost else 0
         sb = ('<span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span>'
               if side == "long" else
               '<span style="background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:4px;font-size:11px">SHORT</span>')
@@ -972,18 +979,22 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
         hist_rows += f"""<tr>
           <td style="font-weight:bold">{tk}{_hn_html}</td><td>{sb}</td>
           <td>${entry:,.2f}</td><td>${exit_p:,.2f}</td>
-          <td style="text-align:right;color:{pnl_c};font-weight:bold">${pnl:+,.0f}</td>
+          <td data-sort="{pnl:.2f}" style="text-align:right;color:{pnl_c};font-weight:bold">${pnl:+,.0f}</td>
+          <td data-sort="{hist_pnl_pct:.4f}" style="text-align:right;color:{pnl_c};font-weight:bold">{hist_pnl_pct:+.2f}%</td>
           <td style="color:#666;font-size:12px">{pos.get('entry_date','—')}</td>
           <td style="color:#666;font-size:12px">{pos.get('exit_time','—')}</td>
           <td style="color:#666;font-size:12px">{pos.get('exit_reason','—')}</td>
         </tr>"""
     if not hist_rows:
-        hist_rows = '<tr><td colspan="8" style="text-align:center;color:#999;padding:20px">No closed trades yet</td></tr>'
+        hist_rows = '<tr><td colspan="9" style="text-align:center;color:#999;padding:20px">No closed trades yet</td></tr>'
     hist_total_pnl = sum(p.get("pnl", 0) for p in all_history[-50:])
+    hist_total_cost = sum(p.get("cost", 0) for p in all_history[-50:])
+    hist_total_pct = hist_total_pnl / hist_total_cost * 100 if hist_total_cost else 0
     hist_tc = "#2e7d32" if hist_total_pnl >= 0 else "#c62828"
     hist_totals_row = f"""<tr style="background:#e8f5e9;font-weight:bold;border-top:2px solid #a5d6a7">
       <td colspan="4" style="text-align:right;color:#555">Total P&L (shown)</td>
-      <td style="text-align:right;color:{hist_tc}">${hist_total_pnl:+,.0f}</td>
+      <td data-sort="{hist_total_pnl:.2f}" style="text-align:right;color:{hist_tc}">${hist_total_pnl:+,.0f}</td>
+      <td style="text-align:right;color:{hist_tc}">{hist_total_pct:+.2f}%</td>
       <td colspan="3"></td>
     </tr>""" if all_history else ""
 
@@ -1189,7 +1200,7 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
     <table id="open-pos-table" data-toggles="col-toggles-open" style="white-space:nowrap">
       <thead><tr>
         <th data-col="0">Ticker</th><th data-col="1">Side</th><th data-col="2">Entry</th><th data-col="3">Current</th>
-        <th data-col="4">Shares</th><th data-col="5">Current Value</th><th data-col="6">Unrealized P&amp;L</th><th data-col="7">Peak</th><th data-col="8">Trail Stop</th><th data-col="9">Entry Date</th><th data-col="10">Entry Time</th>
+        <th data-col="4">Shares</th><th data-col="5">Current Value</th><th data-col="6">Unreal P&amp;L $</th><th data-col="7">Unreal %</th><th data-col="8">Peak</th><th data-col="9">Trail Stop</th><th data-col="10">Entry Date</th><th data-col="11">Entry Time</th>
       </tr></thead>
       <tbody>{open_rows}</tbody>
       {open_totals_row}
@@ -1236,7 +1247,7 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
       <table id="closed-trades-table" style="white-space:nowrap">
         <thead><tr>
           <th data-col="0">Ticker</th><th data-col="1">Side</th><th data-col="2">Entry</th><th data-col="3">Exit</th>
-          <th data-col="4">P&amp;L</th><th data-col="5">Entry Date</th><th data-col="6">Exit Time</th><th data-col="7">Reason</th>
+          <th data-col="4">P&amp;L $</th><th data-col="5">P&amp;L %</th><th data-col="6">Entry Date</th><th data-col="7">Exit Time</th><th data-col="8">Reason</th>
         </tr></thead>
         <tbody>{hist_rows}</tbody>
         {hist_totals_row}
@@ -1327,7 +1338,8 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
       const price = q.price;
 
       const priceCell   = row.querySelector('.live-price');
-      const unrealCell  = row.querySelector('.live-unreal');
+      const unrealCellD   = row.querySelector('.live-unreal-d');
+      const unrealCellPct = row.querySelector('.live-unreal-pct');
       const curvalCell  = row.querySelector('.live-curval');
       if (priceCell) priceCell.textContent = '$' + price.toLocaleString('en-US', {{minimumFractionDigits:2, maximumFractionDigits:2}});
 
@@ -1335,12 +1347,21 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
       const curVal = buy * qty + unreal;
       if (curvalCell) curvalCell.textContent = '$' + curVal.toLocaleString('en-US', {{maximumFractionDigits:0}});
 
-      if (unrealCell) {{
+      if (unrealCellD || unrealCellPct) {{
         const cost = buy * qty;
         const pct  = cost > 0 ? unreal / cost * 100 : 0;
         const sign = unreal >= 0 ? '+' : '';
-        unrealCell.textContent = `${{sign}}$${{Math.abs(unreal).toLocaleString('en-US', {{maximumFractionDigits:0}})}} (${{pct >= 0 ? '+' : ''}}${{pct.toFixed(2)}}%)`;
-        unrealCell.style.color = unreal >= 0 ? '#2e7d32' : '#c62828';
+        const color = unreal >= 0 ? '#2e7d32' : '#c62828';
+        if (unrealCellD) {{
+          unrealCellD.textContent = `${{sign}}$${{Math.abs(unreal).toLocaleString('en-US', {{maximumFractionDigits:0}})}}`;
+          unrealCellD.style.color = color;
+          unrealCellD.dataset.sort = unreal.toFixed(2);
+        }}
+        if (unrealCellPct) {{
+          unrealCellPct.textContent = `${{pct >= 0 ? '+' : ''}}${{pct.toFixed(2)}}%`;
+          unrealCellPct.style.color = color;
+          unrealCellPct.dataset.sort = pct.toFixed(4);
+        }}
       }}
     }}
   }}
@@ -1399,11 +1420,18 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
     }}
 
     // Totals row unrealized + current value
-    const totalUnrealEl = document.getElementById('total-unreal');
+    const totalUnrealEl = document.getElementById('total-unreal-d');
     if (totalUnrealEl) {{
       const tsign = totalUnreal >= 0 ? '+' : '-';
       totalUnrealEl.textContent = `${{tsign}}$${{Math.abs(totalUnreal).toLocaleString('en-US', {{maximumFractionDigits:0}})}}`;
       totalUnrealEl.style.color = totalUnreal >= 0 ? '#2e7d32' : '#c62828';
+    }}
+    const totalUnrealPctEl = document.getElementById('total-unreal-pct');
+    if (totalUnrealPctEl) {{
+      const totalCostBasis = parseFloat((document.getElementById('total-curval') || {{}}).textContent?.replace(/[$,]/g,'') || '0') - totalUnreal;
+      const pctVal = totalCostBasis > 0 ? totalUnreal / totalCostBasis * 100 : 0;
+      totalUnrealPctEl.textContent = `${{pctVal >= 0 ? '+' : ''}}${{pctVal.toFixed(2)}}%`;
+      totalUnrealPctEl.style.color = totalUnreal >= 0 ? '#2e7d32' : '#c62828';
     }}
     const totalCurvalEl = document.getElementById('total-curval');
     if (totalCurvalEl) {{
@@ -1508,10 +1536,11 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
         var tbody = table.querySelector('tbody');
         var rows = Array.from(tbody.querySelectorAll('tr'));
         rows.sort(function(a, b) {{
-          var aT = (a.cells[col] ? a.cells[col].textContent : '').trim();
-          var bT = (b.cells[col] ? b.cells[col].textContent : '').trim();
-          var aN = parseFloat(aT.replace(/[^0-9.\-]/g, ''));
-          var bN = parseFloat(bT.replace(/[^0-9.\-]/g, ''));
+          var aC = a.cells[col], bC = b.cells[col];
+          var aT = (aC ? aC.textContent : '').trim();
+          var bT = (bC ? bC.textContent : '').trim();
+          var aN = aC && aC.dataset.sort !== undefined ? parseFloat(aC.dataset.sort) : parseFloat(aT.replace(/[^0-9.\-]/g, ''));
+          var bN = bC && bC.dataset.sort !== undefined ? parseFloat(bC.dataset.sort) : parseFloat(bT.replace(/[^0-9.\-]/g, ''));
           var cmp = isNaN(aN) || isNaN(bN) ? aT.localeCompare(bT) : aN - bN;
           return sortAsc ? cmp : -cmp;
         }});

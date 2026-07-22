@@ -712,7 +712,8 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
           <td style="text-align:right">{shares:,}</td>
           <td style="text-align:right">${cost:,.0f}</td>
           <td class="live-curval" style="text-align:right">${cur_val:,.0f}</td>
-          <td class="live-unreal" style="text-align:right;color:{unreal_color};font-weight:bold">{gain_sign if unreal >= 0 else ''}${abs(unreal):,.0f} ({unreal_pct:+.2f}%)</td>
+          <td class="live-unreal-d" data-sort="{unreal:.2f}" style="text-align:right;color:{unreal_color};font-weight:bold">{gain_sign if unreal >= 0 else ''}${abs(unreal):,.0f}</td>
+          <td class="live-unreal-pct" data-sort="{unreal_pct:.4f}" style="text-align:right;color:{unreal_color};font-weight:bold">{unreal_pct:+.2f}%</td>
           <td>${stop:,.2f}</td>
           <td style="color:#666;font-size:12px">{rsi_e}</td>
           <td style="color:#666;font-size:12px">{edate}</td>
@@ -731,12 +732,13 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
           <td colspan="5" style="text-align:right;color:#555">Totals</td>
           <td id="total-invested" style="text-align:right">${total_invested:,.0f}</td>
           <td id="total-curval" style="text-align:right">${total_curval:,.0f}</td>
-          <td id="total-unreal" data-server-total="{total_unreal:.2f}" style="text-align:right;color:{tu_color}">{tu_sign}${abs(total_unreal):,.0f}</td>
+          <td id="total-unreal-d" data-server-total="{total_unreal:.2f}" style="text-align:right;color:{tu_color}">{tu_sign}${abs(total_unreal):,.0f}</td>
+          <td id="total-unreal-pct" style="text-align:right;color:{tu_color}">{total_unreal / total_invested * 100 if total_invested else 0:+.2f}%</td>
           <td colspan="3"></td>
         </tr>""" if open_pos else ""
 
     if not open_rows:
-        open_rows = '<tr><td colspan="10" style="text-align:center;color:#999;padding:20px">No open positions</td></tr>'
+        open_rows = '<tr><td colspan="12" style="text-align:center;color:#999;padding:20px">No open positions</td></tr>'
 
     # Closed positions rows (most recent first)
     closed_rows = ""
@@ -765,24 +767,28 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
           <td>{side_badge}</td>
           <td>${entry:,.2f}</td>
           <td>${exit_p:,.2f}</td>
-          <td style="text-align:right;color:{pnl_color};font-weight:bold">${pnl:+,.0f} ({pnl_pct:+.2f}%)</td>
+          <td data-sort="{pnl:.2f}" style="text-align:right;color:{pnl_color};font-weight:bold">${pnl:+,.0f}</td>
+          <td data-sort="{pnl_pct:.4f}" style="text-align:right;color:{pnl_color};font-weight:bold">{pnl_pct:+.2f}%</td>
           <td style="color:#666;font-size:12px">{edate}</td>
           <td style="color:#666;font-size:12px">{xdate}</td>
           <td style="color:#666;font-size:12px">{reason}</td>
         </tr>"""
 
     closed_total_pnl = sum(p.get("pnl", 0) for p in closed[-50:])
+    closed_total_cost = sum(p.get("cost", 0) for p in closed[-50:])
+    ctp_pct = closed_total_pnl / closed_total_cost * 100 if closed_total_cost > 0 else 0
     ctp_color = "#2e7d32" if closed_total_pnl >= 0 else "#c62828"
     ctp_sign  = "+" if closed_total_pnl >= 0 else ""
     closed_totals_row = f"""
         <tr style="background:#e8f5e9;font-weight:bold;border-top:2px solid #a5d6a7">
           <td colspan="4" style="text-align:right;color:#555">Total P&amp;L (shown)</td>
-          <td style="text-align:right;color:{ctp_color}">{ctp_sign}${closed_total_pnl:,.0f}</td>
+          <td data-sort="{closed_total_pnl:.2f}" style="text-align:right;color:{ctp_color}">{ctp_sign}${closed_total_pnl:,.0f}</td>
+          <td style="text-align:right;color:{ctp_color}">{ctp_pct:+.2f}%</td>
           <td colspan="3"></td>
         </tr>""" if closed else ""
 
     if not closed_rows:
-        closed_rows = '<tr><td colspan="8" style="text-align:center;color:#999;padding:20px">No closed trades yet</td></tr>'
+        closed_rows = '<tr><td colspan="9" style="text-align:center;color:#999;padding:20px">No closed trades yet</td></tr>'
 
     # NAV chart data for sparkline
     nav_dates  = sorted(nav.keys())
@@ -1048,8 +1054,8 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
     <table id="open-pos-table" data-toggles="col-toggles-open" style="white-space:nowrap">
       <thead><tr>
         <th data-col="0">Ticker</th><th data-col="1">Side</th><th data-col="2">Entry</th><th data-col="3">Current</th>
-        <th data-col="4">Shares</th><th data-col="5">$ Invested</th><th data-col="6">Current Value</th><th data-col="7">Unrealized P&amp;L</th>
-        <th data-col="8">Stop</th><th data-col="9">RSI(2) at entry</th><th data-col="10">Entry Date</th>
+        <th data-col="4">Shares</th><th data-col="5">$ Invested</th><th data-col="6">Current Value</th><th data-col="7">Unreal P&amp;L $</th><th data-col="8">Unreal %</th>
+        <th data-col="9">Stop</th><th data-col="10">RSI(2) at entry</th><th data-col="11">Entry Date</th>
       </tr></thead>
       <tbody>{open_rows}</tbody>
       {open_totals_row}
@@ -1092,7 +1098,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
       <table id="closed-trades-table" style="margin-top:12px;white-space:nowrap">
         <thead><tr>
           <th data-col="0">Ticker</th><th data-col="1">Side</th><th data-col="2">Entry</th><th data-col="3">Exit</th>
-          <th data-col="4">P&amp;L</th><th data-col="5">Entry Date</th><th data-col="6">Exit Date</th><th data-col="7">Reason</th>
+          <th data-col="4">P&amp;L $</th><th data-col="5">P&amp;L %</th><th data-col="6">Entry Date</th><th data-col="7">Exit Date</th><th data-col="8">Reason</th>
         </tr></thead>
         <tbody>{closed_rows}</tbody>
         {closed_totals_row}
@@ -1154,7 +1160,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
   let liveAdj = 0;
 
   function refreshTotalUnreal() {{
-    const tuEl = document.getElementById('total-unreal');
+    const tuEl = document.getElementById('total-unreal-d');
     const bkEl = document.getElementById('bk-unreal');
     if (!tuEl) return;
     const serverTotal = parseFloat(tuEl.dataset.serverTotal) || 0;
@@ -1200,7 +1206,8 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
     const buy  = parseFloat(row.dataset.buypx);
     const side = row.dataset.side;
     const priceCell   = row.querySelector('.live-price');
-    const unrealCell  = row.querySelector('.live-unreal');
+    const unrealCellD   = row.querySelector('.live-unreal-d');
+    const unrealCellPct = row.querySelector('.live-unreal-pct');
     const curvalCell  = row.querySelector('.live-curval');
     if (priceCell) priceCell.textContent = '$' + price.toLocaleString('en-US', {{minimumFractionDigits:2, maximumFractionDigits:2}});
     const liveUnreal = side === 'long' ? (price - buy) * qty : (buy - price) * qty;
@@ -1208,13 +1215,22 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
     if (curvalCell) {{
       curvalCell.textContent = '$' + curVal.toLocaleString('en-US', {{maximumFractionDigits:0}});
     }}
-    if (unrealCell) {{
+    if (unrealCellD || unrealCellPct) {{
       const serverUnreal = parseFloat(row.dataset.serverUnreal) || 0;
       const cost = buy * qty;
       const pct  = cost > 0 ? liveUnreal / cost * 100 : 0;
       const sign = liveUnreal >= 0 ? '+' : '';
-      unrealCell.textContent = `${{sign}}$${{Math.abs(liveUnreal).toLocaleString('en-US', {{maximumFractionDigits:0}})}} (${{pct >= 0 ? '+' : ''}}${{pct.toFixed(2)}}%)`;
-      unrealCell.style.color = liveUnreal >= 0 ? '#2e7d32' : '#c62828';
+      const color = liveUnreal >= 0 ? '#2e7d32' : '#c62828';
+      if (unrealCellD) {{
+        unrealCellD.textContent = `${{sign}}$${{Math.abs(liveUnreal).toLocaleString('en-US', {{maximumFractionDigits:0}})}}`;
+        unrealCellD.style.color = color;
+        unrealCellD.dataset.sort = liveUnreal.toFixed(2);
+      }}
+      if (unrealCellPct) {{
+        unrealCellPct.textContent = `${{pct >= 0 ? '+' : ''}}${{pct.toFixed(2)}}%`;
+        unrealCellPct.style.color = color;
+        unrealCellPct.dataset.sort = pct.toFixed(4);
+      }}
       // update liveAdj: remove old contribution, add new
       const prevAdj = parseFloat(row.dataset.liveAdj) || 0;
       liveAdj += (liveUnreal - serverUnreal) - prevAdj;
@@ -1223,7 +1239,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
       // sync total-curval
       const tcEl = document.getElementById('total-curval');
       if (tcEl) {{
-        const tuEl = document.getElementById('total-unreal');
+        const tuEl = document.getElementById('total-unreal-d');
         const serverTotal = parseFloat(tuEl ? tuEl.dataset.serverTotal : 0) || 0;
         const inv = parseFloat((document.getElementById('total-invested') || {{}}).textContent?.replace(/[$,]/g,'')) || 0;
         tcEl.textContent = '$' + (inv + serverTotal + liveAdj).toLocaleString('en-US', {{maximumFractionDigits:0}});
@@ -1405,10 +1421,11 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
         var tbody = table.querySelector('tbody');
         var rows = Array.from(tbody.querySelectorAll('tr'));
         rows.sort(function(a, b) {{
-          var aT = (a.cells[col] ? a.cells[col].textContent : '').trim();
-          var bT = (b.cells[col] ? b.cells[col].textContent : '').trim();
-          var aN = parseFloat(aT.replace(/[^0-9.\-]/g, ''));
-          var bN = parseFloat(bT.replace(/[^0-9.\-]/g, ''));
+          var aC = a.cells[col], bC = b.cells[col];
+          var aT = (aC ? aC.textContent : '').trim();
+          var bT = (bC ? bC.textContent : '').trim();
+          var aN = aC && aC.dataset.sort !== undefined ? parseFloat(aC.dataset.sort) : parseFloat(aT.replace(/[^0-9.\-]/g, ''));
+          var bN = bC && bC.dataset.sort !== undefined ? parseFloat(bC.dataset.sort) : parseFloat(bT.replace(/[^0-9.\-]/g, ''));
           var cmp = isNaN(aN) || isNaN(bN) ? aT.localeCompare(bT) : aN - bN;
           return sortAsc ? cmp : -cmp;
         }});
