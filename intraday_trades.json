@@ -1,5 +1,5 @@
 {
-  "capital": 282.07,
+  "capital": 823.97,
   "open_positions": [
     {
       "ticker": "MSI",
@@ -148,9 +148,9 @@
       "entry_time": "10:24 ET",
       "entry_price": 233.6,
       "shares": 1,
-      "stop": 234.595,
+      "stop": 234.52,
       "trail_dist": 1.395,
-      "peak": 233.2,
+      "peak": 233.125,
       "orb_width": 2.79,
       "cost": 233.6,
       "vol_ratio": 3.91
@@ -162,9 +162,9 @@
       "entry_time": "10:24 ET",
       "entry_price": 175.67,
       "shares": 1,
-      "stop": 175.74,
+      "stop": 175.46,
       "trail_dist": 1.24,
-      "peak": 174.5,
+      "peak": 174.22,
       "orb_width": 2.48,
       "cost": 175.67,
       "vol_ratio": 1.62
@@ -210,20 +210,6 @@
       "orb_width": 0.95,
       "cost": 83.72,
       "vol_ratio": 1.2
-    },
-    {
-      "ticker": "HRL",
-      "side": "long",
-      "entry_date": "2026-07-22",
-      "entry_time": "10:29 ET",
-      "entry_price": 25.39,
-      "shares": 52,
-      "stop": 25.24,
-      "trail_dist": 0.15,
-      "peak": 25.39,
-      "orb_width": 0.3,
-      "cost": 1320.28,
-      "vol_ratio": 1.46
     },
     {
       "ticker": "JKHY",
@@ -414,9 +400,9 @@
       "entry_time": "10:39 ET",
       "entry_price": 132.095,
       "shares": 1,
-      "stop": 131.765,
+      "stop": 131.865,
       "trail_dist": 0.625,
-      "peak": 132.39,
+      "peak": 132.49,
       "orb_width": 1.25,
       "cost": 132.1,
       "vol_ratio": 1.48
@@ -456,12 +442,40 @@
       "entry_time": "10:44 ET",
       "entry_price": 50.095,
       "shares": 1,
-      "stop": 50.5775,
+      "stop": 50.4575,
       "trail_dist": 0.4825,
-      "peak": 50.095,
+      "peak": 49.975,
       "orb_width": 0.965,
       "cost": 50.1,
       "vol_ratio": 1.28
+    },
+    {
+      "ticker": "PNR",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:46 ET",
+      "entry_price": 62.81,
+      "shares": 7,
+      "stop": 62.33,
+      "trail_dist": 0.48,
+      "peak": 62.81,
+      "orb_width": 0.96,
+      "cost": 439.67,
+      "vol_ratio": 1.64
+    },
+    {
+      "ticker": "NCLH",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:46 ET",
+      "entry_price": 19.465,
+      "shares": 17,
+      "stop": 19.3,
+      "trail_dist": 0.165,
+      "peak": 19.465,
+      "orb_width": 0.33,
+      "cost": 330.91,
+      "vol_ratio": 1.43
     }
   ],
   "closed_today": [
@@ -654,6 +668,25 @@
       "pnl": -2.5,
       "exit_reason": "trailing stop",
       "exit_time": "10:39 ET"
+    },
+    {
+      "ticker": "HRL",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:29 ET",
+      "entry_price": 25.39,
+      "shares": 52,
+      "stop": 25.24,
+      "trail_dist": 0.15,
+      "peak": 25.39,
+      "orb_width": 0.3,
+      "cost": 1320.28,
+      "vol_ratio": 1.46,
+      "exit_date": "2026-07-22",
+      "exit_price": 25.24,
+      "pnl": -7.8,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:46 ET"
     }
   ],
   "all_closed": [
@@ -17971,8 +18004,8 @@
     },
     "CTSH": {
       "high": 44.64,
-      "low": 43.74,
-      "width": 0.9
+      "low": 43.58,
+      "width": 1.06
     },
     "COHR": {
       "high": 318.99,
@@ -19920,7 +19953,7 @@
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
-    "2026-07-22": 98162.21
+    "2026-07-22": 98202.72
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -39260,6 +39293,40 @@
       "exits": [],
       "portfolio_value": 98162.21,
       "note": "$98,162 | cash=$282 | open=33 | closed today=10 | day PnL=$-325"
+    },
+    {
+      "date": "2026-07-22",
+      "time": "10:46 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "PNR",
+          "side": "long",
+          "price": 62.81,
+          "shares": 7,
+          "stop": 62.33,
+          "trail_dist": 0.48
+        },
+        {
+          "ticker": "NCLH",
+          "side": "long",
+          "price": 19.47,
+          "shares": 17,
+          "stop": 19.3,
+          "trail_dist": 0.165
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "HRL",
+          "side": "long",
+          "exit_price": 25.24,
+          "pnl": -7.8,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98202.72,
+      "note": "$98,203 | cash=$824 | open=34 | closed today=11 | day PnL=$-333"
     }
   ]
 }
