@@ -1,5 +1,5 @@
 {
-  "capital": 4463.5,
+  "capital": 2592.86,
   "open_positions": [
     {
       "ticker": "LVS",
@@ -148,9 +148,9 @@
       "entry_time": "10:14 ET",
       "entry_price": 116.91,
       "shares": 6,
-      "stop": 117.805,
+      "stop": 117.495,
       "trail_dist": 2.125,
-      "peak": 115.68,
+      "peak": 115.37,
       "orb_width": 4.25,
       "cost": 701.46,
       "vol_ratio": 1.3
@@ -204,9 +204,9 @@
       "entry_time": "10:24 ET",
       "entry_price": 175.67,
       "shares": 1,
-      "stop": 176.68,
+      "stop": 176.38,
       "trail_dist": 1.24,
-      "peak": 175.44,
+      "peak": 175.14,
       "orb_width": 2.48,
       "cost": 175.67,
       "vol_ratio": 1.62
@@ -232,9 +232,9 @@
       "entry_time": "10:24 ET",
       "entry_price": 123.92,
       "shares": 1,
-      "stop": 123.9561,
+      "stop": 123.785,
       "trail_dist": 0.695,
-      "peak": 123.2611,
+      "peak": 123.09,
       "orb_width": 1.39,
       "cost": 123.92,
       "vol_ratio": 1.55
@@ -246,9 +246,9 @@
       "entry_time": "10:24 ET",
       "entry_price": 24.56,
       "shares": 5,
-      "stop": 24.464,
+      "stop": 24.4775,
       "trail_dist": 0.1075,
-      "peak": 24.5715,
+      "peak": 24.585,
       "orb_width": 0.215,
       "cost": 122.8,
       "vol_ratio": 1.33
@@ -260,12 +260,40 @@
       "entry_time": "10:24 ET",
       "entry_price": 41.86,
       "shares": 2,
-      "stop": 42.21,
+      "stop": 42.075,
       "trail_dist": 0.475,
-      "peak": 41.735,
+      "peak": 41.6,
       "orb_width": 0.95,
       "cost": 83.72,
       "vol_ratio": 1.2
+    },
+    {
+      "ticker": "HRL",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:29 ET",
+      "entry_price": 25.39,
+      "shares": 52,
+      "stop": 25.24,
+      "trail_dist": 0.15,
+      "peak": 25.39,
+      "orb_width": 0.3,
+      "cost": 1320.28,
+      "vol_ratio": 1.46
+    },
+    {
+      "ticker": "MLM",
+      "side": "short",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:29 ET",
+      "entry_price": 550.365,
+      "shares": 1,
+      "stop": 554.155,
+      "trail_dist": 3.79,
+      "peak": 550.365,
+      "orb_width": 7.58,
+      "cost": 550.36,
+      "vol_ratio": 1.23
     }
   ],
   "closed_today": [
@@ -19610,7 +19638,7 @@
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
-    "2026-07-22": 98451.67
+    "2026-07-22": 98446.22
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -38676,6 +38704,32 @@
       ],
       "portfolio_value": 98451.67,
       "note": "$98,452 | cash=$4,464 | open=19 | closed today=4 | day PnL=$-70"
+    },
+    {
+      "date": "2026-07-22",
+      "time": "10:28 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "HRL",
+          "side": "long",
+          "price": 25.39,
+          "shares": 52,
+          "stop": 25.24,
+          "trail_dist": 0.15
+        },
+        {
+          "ticker": "MLM",
+          "side": "short",
+          "price": 550.36,
+          "shares": 1,
+          "stop": 554.15,
+          "trail_dist": 3.79
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 98446.22,
+      "note": "$98,446 | cash=$2,593 | open=21 | closed today=4 | day PnL=$-70"
     }
   ]
 }
