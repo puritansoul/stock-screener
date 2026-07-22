@@ -1,5 +1,5 @@
 {
-  "capital": 3628.01,
+  "capital": 1128.1,
   "open_positions": [
     {
       "ticker": "HPE",
@@ -652,9 +652,9 @@
       "entry_time": "12:45 ET",
       "entry_price": 179.94,
       "shares": 14,
-      "stop": 179.475,
+      "stop": 179.52,
       "trail_dist": 0.685,
-      "peak": 180.16,
+      "peak": 180.205,
       "orb_width": 1.37,
       "cost": 2519.16,
       "vol_ratio": 3.95
@@ -708,9 +708,9 @@
       "entry_time": "12:47 ET",
       "entry_price": 30.5,
       "shares": 24,
-      "stop": 30.31,
+      "stop": 30.32,
       "trail_dist": 0.26,
-      "peak": 30.57,
+      "peak": 30.58,
       "orb_width": 0.52,
       "cost": 732.0,
       "vol_ratio": 1.8
@@ -968,20 +968,6 @@
       "vol_ratio": 2.44
     },
     {
-      "ticker": "IRM",
-      "side": "short",
-      "entry_date": "2026-07-22",
-      "entry_time": "13:08 ET",
-      "entry_price": 124.375,
-      "shares": 1,
-      "stop": 124.507,
-      "trail_dist": 0.507,
-      "peak": 124.0,
-      "orb_width": 1.014,
-      "cost": 124.38,
-      "vol_ratio": 2.11
-    },
-    {
       "ticker": "AEE",
       "side": "long",
       "entry_date": "2026-07-22",
@@ -1030,9 +1016,9 @@
       "entry_time": "13:18 ET",
       "entry_price": 49.2,
       "shares": 2,
-      "stop": 49.0725,
+      "stop": 49.0825,
       "trail_dist": 0.1375,
-      "peak": 49.21,
+      "peak": 49.22,
       "orb_width": 0.275,
       "cost": 98.4,
       "vol_ratio": 2.32
@@ -1086,9 +1072,9 @@
       "entry_time": "13:25 ET",
       "entry_price": 95.31,
       "shares": 1,
-      "stop": 94.995,
+      "stop": 95.01,
       "trail_dist": 0.345,
-      "peak": 95.34,
+      "peak": 95.355,
       "orb_width": 0.69,
       "cost": 95.31,
       "vol_ratio": 1.5
@@ -1156,26 +1142,12 @@
       "entry_time": "13:34 ET",
       "entry_price": 29.58,
       "shares": 1,
-      "stop": 29.675,
+      "stop": 29.6652,
       "trail_dist": 0.095,
-      "peak": 29.58,
+      "peak": 29.5702,
       "orb_width": 0.19,
       "cost": 29.58,
       "vol_ratio": 1.56
-    },
-    {
-      "ticker": "PSKY",
-      "side": "long",
-      "entry_date": "2026-07-22",
-      "entry_time": "13:36 ET",
-      "entry_price": 8.65,
-      "shares": 238,
-      "stop": 8.59,
-      "trail_dist": 0.06,
-      "peak": 8.65,
-      "orb_width": 0.12,
-      "cost": 2058.7,
-      "vol_ratio": 6.62
     },
     {
       "ticker": "HUM",
@@ -1190,6 +1162,76 @@
       "orb_width": 4.8,
       "cost": 1190.43,
       "vol_ratio": 1.89
+    },
+    {
+      "ticker": "PSKY",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "13:39 ET",
+      "entry_price": 8.705,
+      "shares": 200,
+      "stop": 8.645,
+      "trail_dist": 0.06,
+      "peak": 8.705,
+      "orb_width": 0.12,
+      "cost": 1741.0,
+      "vol_ratio": 9.84
+    },
+    {
+      "ticker": "ABT",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "13:39 ET",
+      "entry_price": 100.74,
+      "shares": 12,
+      "stop": 100.375,
+      "trail_dist": 0.365,
+      "peak": 100.74,
+      "orb_width": 0.73,
+      "cost": 1208.88,
+      "vol_ratio": 4.37
+    },
+    {
+      "ticker": "WSM",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "13:39 ET",
+      "entry_price": 222.84,
+      "shares": 3,
+      "stop": 221.715,
+      "trail_dist": 1.125,
+      "peak": 222.84,
+      "orb_width": 2.25,
+      "cost": 668.52,
+      "vol_ratio": 2.97
+    },
+    {
+      "ticker": "XOM",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "13:39 ET",
+      "entry_price": 154.235,
+      "shares": 4,
+      "stop": 153.66,
+      "trail_dist": 0.575,
+      "peak": 154.235,
+      "orb_width": 1.15,
+      "cost": 616.94,
+      "vol_ratio": 2.76
+    },
+    {
+      "ticker": "TSN",
+      "side": "short",
+      "entry_date": "2026-07-22",
+      "entry_time": "13:39 ET",
+      "entry_price": 57.1301,
+      "shares": 8,
+      "stop": 57.3001,
+      "trail_dist": 0.17,
+      "peak": 57.1301,
+      "orb_width": 0.34,
+      "cost": 457.04,
+      "vol_ratio": 1.82
     }
   ],
   "closed_today": [
@@ -2370,6 +2412,44 @@
       "pnl": 0.18,
       "exit_reason": "trailing stop",
       "exit_time": "13:36 ET"
+    },
+    {
+      "ticker": "IRM",
+      "side": "short",
+      "entry_date": "2026-07-22",
+      "entry_time": "13:08 ET",
+      "entry_price": 124.375,
+      "shares": 1,
+      "stop": 124.507,
+      "trail_dist": 0.507,
+      "peak": 124.0,
+      "orb_width": 1.014,
+      "cost": 124.38,
+      "vol_ratio": 2.11,
+      "exit_date": "2026-07-22",
+      "exit_price": 124.507,
+      "pnl": -0.13,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:39 ET"
+    },
+    {
+      "ticker": "PSKY",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "13:36 ET",
+      "entry_price": 8.65,
+      "shares": 238,
+      "stop": 8.69,
+      "trail_dist": 0.06,
+      "peak": 8.75,
+      "orb_width": 0.12,
+      "cost": 2058.7,
+      "vol_ratio": 6.62,
+      "exit_date": "2026-07-22",
+      "exit_price": 8.69,
+      "pnl": 9.52,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:39 ET"
     }
   ],
   "all_closed": [
@@ -21125,6 +21205,11 @@
       "low": 428.88,
       "width": 6.84
     },
+    "CRM": {
+      "high": 169.57,
+      "low": 165.65,
+      "width": 3.92
+    },
     "SNDK": {
       "high": 1581.9999,
       "low": 1516.12,
@@ -21631,7 +21716,7 @@
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
-    "2026-07-22": 97989.62
+    "2026-07-22": 97998.72
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -42600,6 +42685,71 @@
       ],
       "portfolio_value": 97989.62,
       "note": "$97,990 | cash=$3,628 | open=85 | closed today=62 | day PnL=$-736"
+    },
+    {
+      "date": "2026-07-22",
+      "time": "13:38 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "PSKY",
+          "side": "long",
+          "price": 8.7,
+          "shares": 200,
+          "stop": 8.64,
+          "trail_dist": 0.06
+        },
+        {
+          "ticker": "ABT",
+          "side": "long",
+          "price": 100.74,
+          "shares": 12,
+          "stop": 100.37,
+          "trail_dist": 0.365
+        },
+        {
+          "ticker": "WSM",
+          "side": "long",
+          "price": 222.84,
+          "shares": 3,
+          "stop": 221.71,
+          "trail_dist": 1.125
+        },
+        {
+          "ticker": "XOM",
+          "side": "long",
+          "price": 154.24,
+          "shares": 4,
+          "stop": 153.66,
+          "trail_dist": 0.575
+        },
+        {
+          "ticker": "TSN",
+          "side": "short",
+          "price": 57.13,
+          "shares": 8,
+          "stop": 57.3,
+          "trail_dist": 0.17
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "IRM",
+          "side": "short",
+          "exit_price": 124.51,
+          "pnl": -0.13,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "PSKY",
+          "side": "long",
+          "exit_price": 8.69,
+          "pnl": 9.52,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 97998.72,
+      "note": "$97,999 | cash=$1,128 | open=88 | closed today=64 | day PnL=$-727"
     }
   ]
 }
