@@ -1,5 +1,5 @@
 {
-  "capital": 112.92,
+  "capital": 74.95,
   "open_positions": [
     {
       "ticker": "HPE",
@@ -204,9 +204,9 @@
       "entry_time": "10:44 ET",
       "entry_price": 46.27,
       "shares": 3,
-      "stop": 46.19,
+      "stop": 46.205,
       "trail_dist": 0.185,
-      "peak": 46.375,
+      "peak": 46.39,
       "orb_width": 0.37,
       "cost": 138.81,
       "vol_ratio": 4.18
@@ -218,9 +218,9 @@
       "entry_time": "10:44 ET",
       "entry_price": 50.095,
       "shares": 1,
-      "stop": 50.2039,
+      "stop": 50.1875,
       "trail_dist": 0.4825,
-      "peak": 49.7214,
+      "peak": 49.705,
       "orb_width": 0.965,
       "cost": 50.1,
       "vol_ratio": 1.28
@@ -554,9 +554,9 @@
       "entry_time": "11:35 ET",
       "entry_price": 244.06,
       "shares": 2,
-      "stop": 245.55,
+      "stop": 245.32,
       "trail_dist": 2.48,
-      "peak": 243.07,
+      "peak": 242.84,
       "orb_width": 4.96,
       "cost": 488.12,
       "vol_ratio": 1.29
@@ -1072,9 +1072,9 @@
       "entry_time": "13:18 ET",
       "entry_price": 74.09,
       "shares": 1,
-      "stop": 73.89,
+      "stop": 73.97,
       "trail_dist": 0.25,
-      "peak": 74.14,
+      "peak": 74.22,
       "orb_width": 0.5,
       "cost": 74.09,
       "vol_ratio": 1.78
@@ -1142,9 +1142,9 @@
       "entry_time": "13:27 ET",
       "entry_price": 24.53,
       "shares": 4,
-      "stop": 24.4375,
+      "stop": 24.4525,
       "trail_dist": 0.1075,
-      "peak": 24.545,
+      "peak": 24.56,
       "orb_width": 0.215,
       "cost": 98.12,
       "vol_ratio": 2.35
@@ -1178,18 +1178,32 @@
       "vol_ratio": 1.36
     },
     {
-      "ticker": "WBD",
+      "ticker": "PSKY",
       "side": "long",
       "entry_date": "2026-07-22",
-      "entry_time": "13:32 ET",
-      "entry_price": 26.14,
+      "entry_time": "13:34 ET",
+      "entry_price": 8.645,
+      "shares": 4,
+      "stop": 8.585,
+      "trail_dist": 0.06,
+      "peak": 8.645,
+      "orb_width": 0.12,
+      "cost": 34.58,
+      "vol_ratio": 1.82
+    },
+    {
+      "ticker": "INVH",
+      "side": "short",
+      "entry_date": "2026-07-22",
+      "entry_time": "13:34 ET",
+      "entry_price": 29.58,
       "shares": 1,
-      "stop": 26.065,
-      "trail_dist": 0.075,
-      "peak": 26.14,
-      "orb_width": 0.15,
-      "cost": 26.14,
-      "vol_ratio": 7.51
+      "stop": 29.675,
+      "trail_dist": 0.095,
+      "peak": 29.58,
+      "orb_width": 0.19,
+      "cost": 29.58,
+      "vol_ratio": 1.56
     }
   ],
   "closed_today": [
@@ -2294,6 +2308,25 @@
       "pnl": 0.86,
       "exit_reason": "trailing stop",
       "exit_time": "13:20 ET"
+    },
+    {
+      "ticker": "WBD",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "13:32 ET",
+      "entry_price": 26.14,
+      "shares": 1,
+      "stop": 26.19,
+      "trail_dist": 0.075,
+      "peak": 26.265,
+      "orb_width": 0.15,
+      "cost": 26.14,
+      "vol_ratio": 7.51,
+      "exit_date": "2026-07-22",
+      "exit_price": 26.19,
+      "pnl": 0.05,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:34 ET"
     }
   ],
   "all_closed": [
@@ -21560,7 +21593,7 @@
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
-    "2026-07-22": 97982.28
+    "2026-07-22": 97962.86
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -42447,6 +42480,40 @@
       "exits": [],
       "portfolio_value": 97982.28,
       "note": "$97,982 | cash=$113 | open=85 | closed today=58 | day PnL=$-733"
+    },
+    {
+      "date": "2026-07-22",
+      "time": "13:34 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "PSKY",
+          "side": "long",
+          "price": 8.65,
+          "shares": 4,
+          "stop": 8.59,
+          "trail_dist": 0.06
+        },
+        {
+          "ticker": "INVH",
+          "side": "short",
+          "price": 29.58,
+          "shares": 1,
+          "stop": 29.67,
+          "trail_dist": 0.095
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "WBD",
+          "side": "long",
+          "exit_price": 26.19,
+          "pnl": 0.05,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 97962.86,
+      "note": "$97,963 | cash=$75 | open=86 | closed today=59 | day PnL=$-733"
     }
   ]
 }
