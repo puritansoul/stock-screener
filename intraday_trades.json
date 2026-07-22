@@ -1,6 +1,77 @@
 {
-  "capital": 98691.24,
-  "open_positions": [],
+  "capital": 16787.19,
+  "open_positions": [
+    {
+      "ticker": "LVS",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:04 ET",
+      "entry_price": 46.24,
+      "shares": 640,
+      "stop": 45.92,
+      "trail_dist": 0.32,
+      "peak": 46.24,
+      "orb_width": 0.64,
+      "cost": 29593.6,
+      "vol_ratio": 2.24
+    },
+    {
+      "ticker": "MSI",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:04 ET",
+      "entry_price": 408.73,
+      "shares": 50,
+      "stop": 405.5412,
+      "trail_dist": 3.1888,
+      "peak": 408.73,
+      "orb_width": 6.3776,
+      "cost": 20436.5,
+      "vol_ratio": 1.72
+    },
+    {
+      "ticker": "CAH",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:04 ET",
+      "entry_price": 229.27,
+      "shares": 63,
+      "stop": 228.32,
+      "trail_dist": 0.95,
+      "peak": 229.27,
+      "orb_width": 1.9,
+      "cost": 14444.01,
+      "vol_ratio": 1.47
+    },
+    {
+      "ticker": "DLTR",
+      "side": "short",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:04 ET",
+      "entry_price": 125.18,
+      "shares": 82,
+      "stop": 125.875,
+      "trail_dist": 0.695,
+      "peak": 125.18,
+      "orb_width": 1.39,
+      "cost": 10264.76,
+      "vol_ratio": 1.37
+    },
+    {
+      "ticker": "HPE",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:04 ET",
+      "entry_price": 49.415,
+      "shares": 145,
+      "stop": 48.23,
+      "trail_dist": 1.185,
+      "peak": 49.415,
+      "orb_width": 2.37,
+      "cost": 7165.18,
+      "vol_ratio": 1.28
+    }
+  ],
   "closed_today": [],
   "all_closed": [
     {
@@ -16752,8 +16823,8 @@
     },
     "ABT": {
       "high": 100.63,
-      "low": 99.67,
-      "width": 0.96
+      "low": 99.9,
+      "width": 0.73
     },
     "ABBV": {
       "high": 257.81,
@@ -16831,9 +16902,9 @@
       "width": 0.5
     },
     "ALL": {
-      "high": 251.79,
-      "low": 249.365,
-      "width": 2.425
+      "high": 252.79,
+      "low": 250.95,
+      "width": 1.84
     },
     "GOOGL": {
       "high": 348.83,
@@ -16871,9 +16942,9 @@
       "width": 0.99
     },
     "AXP": {
-      "high": 349.69,
+      "high": 349.7,
       "low": 347.0,
-      "width": 2.69
+      "width": 2.7
     },
     "AIG": {
       "high": 80.13,
@@ -16987,8 +17058,8 @@
     },
     "ATO": {
       "high": 176.99,
-      "low": 176.22,
-      "width": 0.77
+      "low": 176.21,
+      "width": 0.78
     },
     "ADSK": {
       "high": 211.965,
@@ -17306,9 +17377,9 @@
       "width": 9.87
     },
     "CMS": {
-      "high": 73.31,
+      "high": 73.28,
       "low": 72.875,
-      "width": 0.435
+      "width": 0.405
     },
     "KO": {
       "high": 82.92,
@@ -18371,9 +18442,9 @@
       "width": 0.49
     },
     "MSI": {
-      "high": 408.485,
+      "high": 408.57,
       "low": 402.1924,
-      "width": 6.2926
+      "width": 6.3776
     },
     "MSCI": {
       "high": 569.14,
@@ -18612,8 +18683,8 @@
     },
     "PG": {
       "high": 150.23,
-      "low": 148.1,
-      "width": 2.13
+      "low": 149.4201,
+      "width": 0.8099
     },
     "PGR": {
       "high": 206.9,
@@ -19041,9 +19112,9 @@
       "width": 2.63
     },
     "UPS": {
-      "high": 117.565,
+      "high": 117.575,
       "low": 116.45,
-      "width": 1.115
+      "width": 1.125
     },
     "URI": {
       "high": 1028.6851,
@@ -38020,6 +38091,56 @@
       "exits": [],
       "portfolio_value": 98691.24,
       "note": "$98,691 | cash=$98,691 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-22",
+      "time": "10:03 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "LVS",
+          "side": "long",
+          "price": 46.24,
+          "shares": 640,
+          "stop": 45.92,
+          "trail_dist": 0.32
+        },
+        {
+          "ticker": "MSI",
+          "side": "long",
+          "price": 408.73,
+          "shares": 50,
+          "stop": 405.54,
+          "trail_dist": 3.1888
+        },
+        {
+          "ticker": "CAH",
+          "side": "long",
+          "price": 229.27,
+          "shares": 63,
+          "stop": 228.32,
+          "trail_dist": 0.95
+        },
+        {
+          "ticker": "DLTR",
+          "side": "short",
+          "price": 125.18,
+          "shares": 82,
+          "stop": 125.88,
+          "trail_dist": 0.695
+        },
+        {
+          "ticker": "HPE",
+          "side": "long",
+          "price": 49.42,
+          "shares": 145,
+          "stop": 48.23,
+          "trail_dist": 1.185
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 98691.24,
+      "note": "$98,691 | cash=$16,787 | open=5 | closed today=0 | day PnL=$+0"
     }
   ]
 }
