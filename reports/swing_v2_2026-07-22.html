@@ -144,10 +144,10 @@
     <table id="open-pos-table" data-toggles="col-toggles-open" style="white-space:nowrap">
       <thead><tr>
         <th data-col="0">Ticker</th><th data-col="1">Side</th><th data-col="2">Entry</th><th data-col="3">Current</th>
-        <th data-col="4">Shares</th><th data-col="5">$ Invested</th><th data-col="6">Current Value</th><th data-col="7">Unrealized P&amp;L</th>
-        <th data-col="8">Stop</th><th data-col="9">RSI(2) at entry</th><th data-col="10">Entry Date</th>
+        <th data-col="4">Shares</th><th data-col="5">$ Invested</th><th data-col="6">Current Value</th><th data-col="7">Unreal P&amp;L $</th><th data-col="8">Unreal %</th>
+        <th data-col="9">Stop</th><th data-col="10">RSI(2) at entry</th><th data-col="11">Entry Date</th>
       </tr></thead>
-      <tbody><tr><td colspan="10" style="text-align:center;color:#999;padding:20px">No open positions</td></tr></tbody>
+      <tbody><tr><td colspan="12" style="text-align:center;color:#999;padding:20px">No open positions</td></tr></tbody>
       
     </table>
     </div>
@@ -211,9 +211,9 @@
       <table id="closed-trades-table" style="margin-top:12px;white-space:nowrap">
         <thead><tr>
           <th data-col="0">Ticker</th><th data-col="1">Side</th><th data-col="2">Entry</th><th data-col="3">Exit</th>
-          <th data-col="4">P&amp;L</th><th data-col="5">Entry Date</th><th data-col="6">Exit Date</th><th data-col="7">Reason</th>
+          <th data-col="4">P&amp;L $</th><th data-col="5">P&amp;L %</th><th data-col="6">Entry Date</th><th data-col="7">Exit Date</th><th data-col="8">Reason</th>
         </tr></thead>
-        <tbody><tr><td colspan="8" style="text-align:center;color:#999;padding:20px">No closed trades yet</td></tr></tbody>
+        <tbody><tr><td colspan="9" style="text-align:center;color:#999;padding:20px">No closed trades yet</td></tr></tbody>
         
       </table>
       </div>
@@ -267,7 +267,7 @@
             <th style="text-align:right">Russell 2K</th>
           </tr>
         </thead>
-        <tbody><tr><td style='white-space:nowrap;font-weight:bold;color:#1a237e'>Wed, Jul 22 2026</td><td style="color:#555;text-align:right;font-weight:bold">$0</td><td style="color:#555;text-align:right;font-weight:bold;">0.00%</td><td style="color:#555;text-align:right;">0.00%</td><td style="color:#555;text-align:right;">0.00%</td><td style="color:#c62828;text-align:right;font-weight:bold;font-size:12px">▼ 0.00%</td><td style="color:#1b5e20;text-align:right;">+0.03%</td><td style="color:#c62828;text-align:right;">-0.24%</td><td style="color:#1b5e20;text-align:right;">+0.42%</td><td style="color:#c62828;text-align:right;">-0.28%</td><td style="color:#c62828;text-align:right;font-size:12px">▼ -0.03%</td></tr>
+        <tbody><tr><td style='white-space:nowrap;font-weight:bold;color:#1a237e'>Wed, Jul 22 2026</td><td style="color:#555;text-align:right;font-weight:bold">$0</td><td style="color:#555;text-align:right;font-weight:bold;">0.00%</td><td style="color:#555;text-align:right;">0.00%</td><td style="color:#555;text-align:right;">0.00%</td><td style="color:#c62828;text-align:right;font-weight:bold;font-size:12px">▼ 0.00%</td><td style="color:#c62828;text-align:right;">-0.02%</td><td style="color:#c62828;text-align:right;">-0.34%</td><td style="color:#1b5e20;text-align:right;">+0.12%</td><td style="color:#c62828;text-align:right;">-0.76%</td><td style="color:#1b5e20;text-align:right;font-size:12px">▲ +0.02%</td></tr>
 </tbody>
       </table>
     </details>
@@ -307,7 +307,7 @@
   let liveAdj = 0;
 
   function refreshTotalUnreal() {
-    const tuEl = document.getElementById('total-unreal');
+    const tuEl = document.getElementById('total-unreal-d');
     const bkEl = document.getElementById('bk-unreal');
     if (!tuEl) return;
     const serverTotal = parseFloat(tuEl.dataset.serverTotal) || 0;
@@ -353,7 +353,8 @@
     const buy  = parseFloat(row.dataset.buypx);
     const side = row.dataset.side;
     const priceCell   = row.querySelector('.live-price');
-    const unrealCell  = row.querySelector('.live-unreal');
+    const unrealCellD   = row.querySelector('.live-unreal-d');
+    const unrealCellPct = row.querySelector('.live-unreal-pct');
     const curvalCell  = row.querySelector('.live-curval');
     if (priceCell) priceCell.textContent = '$' + price.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
     const liveUnreal = side === 'long' ? (price - buy) * qty : (buy - price) * qty;
@@ -361,13 +362,22 @@
     if (curvalCell) {
       curvalCell.textContent = '$' + curVal.toLocaleString('en-US', {maximumFractionDigits:0});
     }
-    if (unrealCell) {
+    if (unrealCellD || unrealCellPct) {
       const serverUnreal = parseFloat(row.dataset.serverUnreal) || 0;
       const cost = buy * qty;
       const pct  = cost > 0 ? liveUnreal / cost * 100 : 0;
       const sign = liveUnreal >= 0 ? '+' : '';
-      unrealCell.textContent = `${sign}$${Math.abs(liveUnreal).toLocaleString('en-US', {maximumFractionDigits:0})} (${pct >= 0 ? '+' : ''}${pct.toFixed(2)}%)`;
-      unrealCell.style.color = liveUnreal >= 0 ? '#2e7d32' : '#c62828';
+      const color = liveUnreal >= 0 ? '#2e7d32' : '#c62828';
+      if (unrealCellD) {
+        unrealCellD.textContent = `${sign}$${Math.abs(liveUnreal).toLocaleString('en-US', {maximumFractionDigits:0})}`;
+        unrealCellD.style.color = color;
+        unrealCellD.dataset.sort = liveUnreal.toFixed(2);
+      }
+      if (unrealCellPct) {
+        unrealCellPct.textContent = `${pct >= 0 ? '+' : ''}${pct.toFixed(2)}%`;
+        unrealCellPct.style.color = color;
+        unrealCellPct.dataset.sort = pct.toFixed(4);
+      }
       // update liveAdj: remove old contribution, add new
       const prevAdj = parseFloat(row.dataset.liveAdj) || 0;
       liveAdj += (liveUnreal - serverUnreal) - prevAdj;
@@ -376,7 +386,7 @@
       // sync total-curval
       const tcEl = document.getElementById('total-curval');
       if (tcEl) {
-        const tuEl = document.getElementById('total-unreal');
+        const tuEl = document.getElementById('total-unreal-d');
         const serverTotal = parseFloat(tuEl ? tuEl.dataset.serverTotal : 0) || 0;
         const inv = parseFloat((document.getElementById('total-invested') || {}).textContent?.replace(/[$,]/g,'')) || 0;
         tcEl.textContent = '$' + (inv + serverTotal + liveAdj).toLocaleString('en-US', {maximumFractionDigits:0});
@@ -558,10 +568,11 @@
         var tbody = table.querySelector('tbody');
         var rows = Array.from(tbody.querySelectorAll('tr'));
         rows.sort(function(a, b) {
-          var aT = (a.cells[col] ? a.cells[col].textContent : '').trim();
-          var bT = (b.cells[col] ? b.cells[col].textContent : '').trim();
-          var aN = parseFloat(aT.replace(/[^0-9.\-]/g, ''));
-          var bN = parseFloat(bT.replace(/[^0-9.\-]/g, ''));
+          var aC = a.cells[col], bC = b.cells[col];
+          var aT = (aC ? aC.textContent : '').trim();
+          var bT = (bC ? bC.textContent : '').trim();
+          var aN = aC && aC.dataset.sort !== undefined ? parseFloat(aC.dataset.sort) : parseFloat(aT.replace(/[^0-9.\-]/g, ''));
+          var bN = bC && bC.dataset.sort !== undefined ? parseFloat(bC.dataset.sort) : parseFloat(bT.replace(/[^0-9.\-]/g, ''));
           var cmp = isNaN(aN) || isNaN(bN) ? aT.localeCompare(bT) : aN - bN;
           return sortAsc ? cmp : -cmp;
         });
