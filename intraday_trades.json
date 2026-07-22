@@ -1,5 +1,5 @@
 {
-  "capital": 1058.38,
+  "capital": 1341.88,
   "open_positions": [
     {
       "ticker": "HPE",
@@ -652,9 +652,9 @@
       "entry_time": "12:45 ET",
       "entry_price": 179.94,
       "shares": 14,
-      "stop": 179.525,
+      "stop": 179.755,
       "trail_dist": 0.685,
-      "peak": 180.21,
+      "peak": 180.44,
       "orb_width": 1.37,
       "cost": 2519.16,
       "vol_ratio": 3.95
@@ -1072,9 +1072,9 @@
       "entry_time": "13:25 ET",
       "entry_price": 95.31,
       "shares": 1,
-      "stop": 95.015,
+      "stop": 95.025,
       "trail_dist": 0.345,
-      "peak": 95.36,
+      "peak": 95.37,
       "orb_width": 0.69,
       "cost": 95.31,
       "vol_ratio": 1.5
@@ -1100,9 +1100,9 @@
       "entry_time": "13:27 ET",
       "entry_price": 24.53,
       "shares": 4,
-      "stop": 24.4575,
+      "stop": 24.4675,
       "trail_dist": 0.1075,
-      "peak": 24.565,
+      "peak": 24.575,
       "orb_width": 0.215,
       "cost": 98.12,
       "vol_ratio": 2.35
@@ -1220,20 +1220,6 @@
       "vol_ratio": 1.82
     },
     {
-      "ticker": "PSKY",
-      "side": "long",
-      "entry_date": "2026-07-22",
-      "entry_time": "13:43 ET",
-      "entry_price": 8.885,
-      "shares": 96,
-      "stop": 8.825,
-      "trail_dist": 0.06,
-      "peak": 8.885,
-      "orb_width": 0.12,
-      "cost": 852.96,
-      "vol_ratio": 7.23
-    },
-    {
       "ticker": "DUK",
       "side": "long",
       "entry_date": "2026-07-22",
@@ -1259,6 +1245,20 @@
       "peak": 27.435,
       "orb_width": 0.32,
       "cost": 438.96,
+      "vol_ratio": 1.26
+    },
+    {
+      "ticker": "IP",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "13:46 ET",
+      "entry_price": 37.58,
+      "shares": 15,
+      "stop": 37.02,
+      "trail_dist": 0.56,
+      "peak": 37.58,
+      "orb_width": 1.12,
+      "cost": 563.7,
       "vol_ratio": 1.26
     }
   ],
@@ -2497,6 +2497,25 @@
       "pnl": -8.0,
       "exit_reason": "trailing stop",
       "exit_time": "13:41 ET"
+    },
+    {
+      "ticker": "PSKY",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "13:43 ET",
+      "entry_price": 8.885,
+      "shares": 96,
+      "stop": 8.825,
+      "trail_dist": 0.06,
+      "peak": 8.885,
+      "orb_width": 0.12,
+      "cost": 852.96,
+      "vol_ratio": 7.23,
+      "exit_date": "2026-07-22",
+      "exit_price": 8.825,
+      "pnl": -5.76,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:46 ET"
     }
   ],
   "all_closed": [
@@ -21763,7 +21782,7 @@
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
-    "2026-07-22": 98002.6
+    "2026-07-22": 97997.36
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -42848,6 +42867,32 @@
       "exits": [],
       "portfolio_value": 98002.6,
       "note": "$98,003 | cash=$1,058 | open=90 | closed today=65 | day PnL=$-735"
+    },
+    {
+      "date": "2026-07-22",
+      "time": "13:45 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "IP",
+          "side": "long",
+          "price": 37.58,
+          "shares": 15,
+          "stop": 37.02,
+          "trail_dist": 0.56
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "PSKY",
+          "side": "long",
+          "exit_price": 8.82,
+          "pnl": -5.76,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 97997.36,
+      "note": "$97,997 | cash=$1,342 | open=90 | closed today=66 | day PnL=$-741"
     }
   ]
 }
