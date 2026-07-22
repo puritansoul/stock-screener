@@ -1,20 +1,6 @@
 {
-  "capital": 2592.86,
+  "capital": 20135.1,
   "open_positions": [
-    {
-      "ticker": "LVS",
-      "side": "long",
-      "entry_date": "2026-07-22",
-      "entry_time": "10:04 ET",
-      "entry_price": 46.24,
-      "shares": 640,
-      "stop": 45.96,
-      "trail_dist": 0.32,
-      "peak": 46.28,
-      "orb_width": 0.64,
-      "cost": 29593.6,
-      "vol_ratio": 2.24
-    },
     {
       "ticker": "MSI",
       "side": "long",
@@ -36,9 +22,9 @@
       "entry_time": "10:04 ET",
       "entry_price": 49.415,
       "shares": 145,
-      "stop": 48.445,
+      "stop": 48.495,
       "trail_dist": 1.185,
-      "peak": 49.63,
+      "peak": 49.68,
       "orb_width": 2.37,
       "cost": 7165.18,
       "vol_ratio": 1.28
@@ -56,20 +42,6 @@
       "orb_width": 0.724,
       "cost": 12362.8,
       "vol_ratio": 1.97
-    },
-    {
-      "ticker": "GD",
-      "side": "long",
-      "entry_date": "2026-07-22",
-      "entry_time": "10:09 ET",
-      "entry_price": 373.935,
-      "shares": 23,
-      "stop": 373.3175,
-      "trail_dist": 1.8725,
-      "peak": 375.19,
-      "orb_width": 3.745,
-      "cost": 8600.5,
-      "vol_ratio": 1.28
     },
     {
       "ticker": "MOS",
@@ -170,20 +142,6 @@
       "vol_ratio": 1.23
     },
     {
-      "ticker": "GILD",
-      "side": "long",
-      "entry_date": "2026-07-22",
-      "entry_time": "10:19 ET",
-      "entry_price": 132.3851,
-      "shares": 2,
-      "stop": 131.89,
-      "trail_dist": 0.625,
-      "peak": 132.515,
-      "orb_width": 1.25,
-      "cost": 264.77,
-      "vol_ratio": 1.67
-    },
-    {
       "ticker": "DVA",
       "side": "short",
       "entry_date": "2026-07-22",
@@ -246,9 +204,9 @@
       "entry_time": "10:24 ET",
       "entry_price": 24.56,
       "shares": 5,
-      "stop": 24.4775,
+      "stop": 24.4825,
       "trail_dist": 0.1075,
-      "peak": 24.585,
+      "peak": 24.59,
       "orb_width": 0.215,
       "cost": 122.8,
       "vol_ratio": 1.33
@@ -288,12 +246,40 @@
       "entry_time": "10:29 ET",
       "entry_price": 550.365,
       "shares": 1,
-      "stop": 554.155,
+      "stop": 552.87,
       "trail_dist": 3.79,
-      "peak": 550.365,
+      "peak": 549.08,
       "orb_width": 7.58,
       "cost": 550.36,
       "vol_ratio": 1.23
+    },
+    {
+      "ticker": "EL",
+      "side": "short",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:31 ET",
+      "entry_price": 81.78,
+      "shares": 149,
+      "stop": 82.175,
+      "trail_dist": 0.395,
+      "peak": 81.78,
+      "orb_width": 0.79,
+      "cost": 12185.22,
+      "vol_ratio": 3.69
+    },
+    {
+      "ticker": "JKHY",
+      "side": "short",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:31 ET",
+      "entry_price": 147.19,
+      "shares": 58,
+      "stop": 148.53,
+      "trail_dist": 1.34,
+      "peak": 147.19,
+      "orb_width": 2.68,
+      "cost": 8537.02,
+      "vol_ratio": 2.14
     }
   ],
   "closed_today": [
@@ -372,6 +358,63 @@
       "pnl": -5.85,
       "exit_reason": "trailing stop",
       "exit_time": "10:26 ET"
+    },
+    {
+      "ticker": "LVS",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:04 ET",
+      "entry_price": 46.24,
+      "shares": 640,
+      "stop": 45.96,
+      "trail_dist": 0.32,
+      "peak": 46.28,
+      "orb_width": 0.64,
+      "cost": 29593.6,
+      "vol_ratio": 2.24,
+      "exit_date": "2026-07-22",
+      "exit_price": 45.96,
+      "pnl": -179.2,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:31 ET"
+    },
+    {
+      "ticker": "GD",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:09 ET",
+      "entry_price": 373.935,
+      "shares": 23,
+      "stop": 373.3175,
+      "trail_dist": 1.8725,
+      "peak": 375.19,
+      "orb_width": 3.745,
+      "cost": 8600.5,
+      "vol_ratio": 1.28,
+      "exit_date": "2026-07-22",
+      "exit_price": 373.3175,
+      "pnl": -14.2,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:31 ET"
+    },
+    {
+      "ticker": "GILD",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:19 ET",
+      "entry_price": 132.3851,
+      "shares": 2,
+      "stop": 131.89,
+      "trail_dist": 0.625,
+      "peak": 132.515,
+      "orb_width": 1.25,
+      "cost": 264.77,
+      "vol_ratio": 1.67,
+      "exit_date": "2026-07-22",
+      "exit_price": 131.89,
+      "pnl": -0.99,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:31 ET"
     }
   ],
   "all_closed": [
@@ -19638,7 +19681,7 @@
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
-    "2026-07-22": 98446.22
+    "2026-07-22": 98310.05
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -38730,6 +38773,54 @@
       "exits": [],
       "portfolio_value": 98446.22,
       "note": "$98,446 | cash=$2,593 | open=21 | closed today=4 | day PnL=$-70"
+    },
+    {
+      "date": "2026-07-22",
+      "time": "10:31 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "EL",
+          "side": "short",
+          "price": 81.78,
+          "shares": 149,
+          "stop": 82.17,
+          "trail_dist": 0.395
+        },
+        {
+          "ticker": "JKHY",
+          "side": "short",
+          "price": 147.19,
+          "shares": 58,
+          "stop": 148.53,
+          "trail_dist": 1.34
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "LVS",
+          "side": "long",
+          "exit_price": 45.96,
+          "pnl": -179.2,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "GD",
+          "side": "long",
+          "exit_price": 373.32,
+          "pnl": -14.2,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "GILD",
+          "side": "long",
+          "exit_price": 131.89,
+          "pnl": -0.99,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98310.05,
+      "note": "$98,310 | cash=$20,135 | open=20 | closed today=7 | day PnL=$-264"
     }
   ]
 }
