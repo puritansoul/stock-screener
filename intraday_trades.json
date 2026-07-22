@@ -1,5 +1,5 @@
 {
-  "capital": 605.81,
+  "capital": 458.87,
   "open_positions": [
     {
       "ticker": "HPE",
@@ -204,9 +204,9 @@
       "entry_time": "10:34 ET",
       "entry_price": 62.005,
       "shares": 53,
-      "stop": 62.05,
+      "stop": 62.01,
       "trail_dist": 0.22,
-      "peak": 61.83,
+      "peak": 61.79,
       "orb_width": 0.44,
       "cost": 3286.27,
       "vol_ratio": 1.36
@@ -316,9 +316,9 @@
       "entry_time": "10:39 ET",
       "entry_price": 84.07,
       "shares": 1,
-      "stop": 84.0425,
+      "stop": 84.1825,
       "trail_dist": 0.8925,
-      "peak": 84.935,
+      "peak": 85.075,
       "orb_width": 1.785,
       "cost": 84.07,
       "vol_ratio": 1.25
@@ -470,9 +470,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 93.0,
       "shares": 27,
-      "stop": 92.255,
+      "stop": 92.385,
       "trail_dist": 1.225,
-      "peak": 93.48,
+      "peak": 93.61,
       "orb_width": 2.45,
       "cost": 2511.0,
       "vol_ratio": 4.18
@@ -568,9 +568,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 82.57,
       "shares": 3,
-      "stop": 82.305,
+      "stop": 82.32,
       "trail_dist": 0.275,
-      "peak": 82.58,
+      "peak": 82.595,
       "orb_width": 0.55,
       "cost": 247.71,
       "vol_ratio": 1.56
@@ -610,9 +610,9 @@
       "entry_time": "11:09 ET",
       "entry_price": 1282.8538,
       "shares": 2,
-      "stop": 1289.7463,
+      "stop": 1288.0525,
       "trail_dist": 6.8925,
-      "peak": 1282.8538,
+      "peak": 1281.16,
       "orb_width": 13.785,
       "cost": 2565.71,
       "vol_ratio": 3.05
@@ -624,9 +624,9 @@
       "entry_time": "11:09 ET",
       "entry_price": 121.0102,
       "shares": 18,
-      "stop": 122.0152,
+      "stop": 121.935,
       "trail_dist": 1.005,
-      "peak": 121.0102,
+      "peak": 120.93,
       "orb_width": 2.01,
       "cost": 2178.18,
       "vol_ratio": 2.83
@@ -638,9 +638,9 @@
       "entry_time": "11:09 ET",
       "entry_price": 207.0037,
       "shares": 7,
-      "stop": 208.6637,
+      "stop": 208.635,
       "trail_dist": 1.66,
-      "peak": 207.0037,
+      "peak": 206.975,
       "orb_width": 3.32,
       "cost": 1449.03,
       "vol_ratio": 2.09
@@ -666,9 +666,9 @@
       "entry_time": "11:09 ET",
       "entry_price": 211.385,
       "shares": 4,
-      "stop": 209.745,
+      "stop": 210.7,
       "trail_dist": 1.64,
-      "peak": 211.385,
+      "peak": 212.34,
       "orb_width": 3.28,
       "cost": 845.54,
       "vol_ratio": 1.58
@@ -680,9 +680,9 @@
       "entry_time": "11:09 ET",
       "entry_price": 79.2622,
       "shares": 7,
-      "stop": 79.5972,
+      "stop": 79.55,
       "trail_dist": 0.335,
-      "peak": 79.2622,
+      "peak": 79.215,
       "orb_width": 0.67,
       "cost": 554.84,
       "vol_ratio": 1.47
@@ -708,9 +708,9 @@
       "entry_time": "11:09 ET",
       "entry_price": 110.8862,
       "shares": 3,
-      "stop": 111.8602,
+      "stop": 111.739,
       "trail_dist": 0.974,
-      "peak": 110.8862,
+      "peak": 110.765,
       "orb_width": 1.948,
       "cost": 332.66,
       "vol_ratio": 1.34
@@ -722,12 +722,26 @@
       "entry_time": "11:09 ET",
       "entry_price": 88.0378,
       "shares": 2,
-      "stop": 88.8178,
+      "stop": 88.68,
       "trail_dist": 0.78,
-      "peak": 88.0378,
+      "peak": 87.9,
       "orb_width": 1.56,
       "cost": 176.08,
       "vol_ratio": 1.29
+    },
+    {
+      "ticker": "FE",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "11:11 ET",
+      "entry_price": 48.98,
+      "shares": 3,
+      "stop": 48.8425,
+      "trail_dist": 0.1375,
+      "peak": 48.98,
+      "orb_width": 0.275,
+      "cost": 146.94,
+      "vol_ratio": 1.92
     }
   ],
   "closed_today": [
@@ -20376,7 +20390,7 @@
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
-    "2026-07-22": 98101.1
+    "2026-07-22": 98120.5
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -40121,6 +40135,24 @@
       "exits": [],
       "portfolio_value": 98101.1,
       "note": "$98,101 | cash=$606 | open=52 | closed today=20 | day PnL=$-510"
+    },
+    {
+      "date": "2026-07-22",
+      "time": "11:11 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "FE",
+          "side": "long",
+          "price": 48.98,
+          "shares": 3,
+          "stop": 48.84,
+          "trail_dist": 0.1375
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 98120.5,
+      "note": "$98,120 | cash=$459 | open=53 | closed today=20 | day PnL=$-510"
     }
   ]
 }
