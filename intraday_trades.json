@@ -1,5 +1,5 @@
 {
-  "capital": 16787.19,
+  "capital": 31171.35,
   "open_positions": [
     {
       "ticker": "LVS",
@@ -8,9 +8,9 @@
       "entry_time": "10:04 ET",
       "entry_price": 46.24,
       "shares": 640,
-      "stop": 45.92,
+      "stop": 45.96,
       "trail_dist": 0.32,
-      "peak": 46.24,
+      "peak": 46.28,
       "orb_width": 0.64,
       "cost": 29593.6,
       "vol_ratio": 2.24
@@ -30,29 +30,15 @@
       "vol_ratio": 1.72
     },
     {
-      "ticker": "CAH",
-      "side": "long",
-      "entry_date": "2026-07-22",
-      "entry_time": "10:04 ET",
-      "entry_price": 229.27,
-      "shares": 63,
-      "stop": 228.32,
-      "trail_dist": 0.95,
-      "peak": 229.27,
-      "orb_width": 1.9,
-      "cost": 14444.01,
-      "vol_ratio": 1.47
-    },
-    {
       "ticker": "DLTR",
       "side": "short",
       "entry_date": "2026-07-22",
       "entry_time": "10:04 ET",
       "entry_price": 125.18,
       "shares": 82,
-      "stop": 125.875,
+      "stop": 125.73,
       "trail_dist": 0.695,
-      "peak": 125.18,
+      "peak": 125.035,
       "orb_width": 1.39,
       "cost": 10264.76,
       "vol_ratio": 1.37
@@ -64,15 +50,35 @@
       "entry_time": "10:04 ET",
       "entry_price": 49.415,
       "shares": 145,
-      "stop": 48.23,
+      "stop": 48.335,
       "trail_dist": 1.185,
-      "peak": 49.415,
+      "peak": 49.52,
       "orb_width": 2.37,
       "cost": 7165.18,
       "vol_ratio": 1.28
     }
   ],
-  "closed_today": [],
+  "closed_today": [
+    {
+      "ticker": "CAH",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:04 ET",
+      "entry_price": 229.27,
+      "shares": 63,
+      "stop": 228.32,
+      "trail_dist": 0.95,
+      "peak": 229.27,
+      "orb_width": 1.9,
+      "cost": 14444.01,
+      "vol_ratio": 1.47,
+      "exit_date": "2026-07-22",
+      "exit_price": 228.32,
+      "pnl": -59.85,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:06 ET"
+    }
+  ],
   "all_closed": [
     {
       "ticker": "SNOW",
@@ -16902,9 +16908,9 @@
       "width": 0.5
     },
     "ALL": {
-      "high": 252.79,
-      "low": 250.95,
-      "width": 1.84
+      "high": 251.79,
+      "low": 249.365,
+      "width": 2.425
     },
     "GOOGL": {
       "high": 348.83,
@@ -17151,11 +17157,6 @@
       "low": 78.06,
       "width": 1.38
     },
-    "BNY": {
-      "high": 160.2498,
-      "low": 158.09,
-      "width": 2.1598
-    },
     "BA": {
       "high": 207.53,
       "low": 205.0,
@@ -17298,8 +17299,8 @@
     },
     "CRL": {
       "high": 220.02,
-      "low": 217.1,
-      "width": 2.92
+      "low": 216.99,
+      "width": 3.03
     },
     "SCHW": {
       "high": 101.34,
@@ -17337,9 +17338,9 @@
       "width": 14.14
     },
     "CI": {
-      "high": 293.005,
+      "high": 293.21,
       "low": 289.88,
-      "width": 3.125
+      "width": 3.33
     },
     "CINF": {
       "high": 180.455,
@@ -17377,9 +17378,9 @@
       "width": 9.87
     },
     "CMS": {
-      "high": 73.28,
+      "high": 73.31,
       "low": 72.875,
-      "width": 0.405
+      "width": 0.435
     },
     "KO": {
       "high": 82.92,
@@ -17692,9 +17693,9 @@
       "width": 9.54
     },
     "EQR": {
-      "high": 68.76,
+      "high": 68.86,
       "low": 68.33,
-      "width": 0.43
+      "width": 0.53
     },
     "ERIE": {
       "high": 216.13,
@@ -18442,9 +18443,9 @@
       "width": 0.49
     },
     "MSI": {
-      "high": 408.57,
+      "high": 408.7095,
       "low": 402.1924,
-      "width": 6.3776
+      "width": 6.5171
     },
     "MSCI": {
       "high": 569.14,
@@ -18888,8 +18889,8 @@
     },
     "SNA": {
       "high": 408.64,
-      "low": 404.544,
-      "width": 4.096
+      "low": 404.5445,
+      "width": 4.0955
     },
     "SOLV": {
       "high": 79.16,
@@ -19138,8 +19139,8 @@
     },
     "VEEV": {
       "high": 189.83,
-      "low": 184.025,
-      "width": 5.805
+      "low": 184.17,
+      "width": 5.66
     },
     "VTR": {
       "high": 97.87,
@@ -19187,9 +19188,9 @@
       "width": 0.133
     },
     "V": {
-      "high": 357.4999,
+      "high": 357.53,
       "low": 354.69,
-      "width": 2.8099
+      "width": 2.84
     },
     "VST": {
       "high": 166.51,
@@ -19337,7 +19338,7 @@
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
-    "2026-07-22": 98691.24
+    "2026-07-22": 98611.01
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -38141,6 +38142,23 @@
       "exits": [],
       "portfolio_value": 98691.24,
       "note": "$98,691 | cash=$16,787 | open=5 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-22",
+      "time": "10:06 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "CAH",
+          "side": "long",
+          "exit_price": 228.32,
+          "pnl": -59.85,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98611.01,
+      "note": "$98,611 | cash=$31,171 | open=4 | closed today=1 | day PnL=$-60"
     }
   ]
 }
