@@ -1,5 +1,5 @@
 {
-  "capital": 777.23,
+  "capital": 240.7,
   "open_positions": [
     {
       "ticker": "LVS",
@@ -36,9 +36,9 @@
       "entry_time": "10:04 ET",
       "entry_price": 49.415,
       "shares": 145,
-      "stop": 48.375,
+      "stop": 48.445,
       "trail_dist": 1.185,
-      "peak": 49.56,
+      "peak": 49.63,
       "orb_width": 2.37,
       "cost": 7165.18,
       "vol_ratio": 1.28
@@ -92,9 +92,9 @@
       "entry_time": "10:14 ET",
       "entry_price": 93.97,
       "shares": 45,
-      "stop": 94.29,
+      "stop": 94.1,
       "trail_dist": 0.77,
-      "peak": 93.52,
+      "peak": 93.33,
       "orb_width": 1.54,
       "cost": 4228.65,
       "vol_ratio": 3.2
@@ -106,9 +106,9 @@
       "entry_time": "10:14 ET",
       "entry_price": 137.315,
       "shares": 22,
-      "stop": 135.69,
+      "stop": 136.14,
       "trail_dist": 2.11,
-      "peak": 137.8,
+      "peak": 138.25,
       "orb_width": 4.22,
       "cost": 3020.93,
       "vol_ratio": 1.56
@@ -162,9 +162,9 @@
       "entry_time": "10:14 ET",
       "entry_price": 116.91,
       "shares": 6,
-      "stop": 118.345,
+      "stop": 117.885,
       "trail_dist": 2.125,
-      "peak": 116.22,
+      "peak": 115.76,
       "orb_width": 4.25,
       "cost": 701.46,
       "vol_ratio": 1.3
@@ -176,26 +176,12 @@
       "entry_time": "10:14 ET",
       "entry_price": 342.71,
       "shares": 1,
-      "stop": 345.61,
+      "stop": 345.16,
       "trail_dist": 4.61,
-      "peak": 341.0,
+      "peak": 340.55,
       "orb_width": 9.22,
       "cost": 342.71,
       "vol_ratio": 1.23
-    },
-    {
-      "ticker": "DUK",
-      "side": "long",
-      "entry_date": "2026-07-22",
-      "entry_time": "10:16 ET",
-      "entry_price": 127.61,
-      "shares": 3,
-      "stop": 127.1948,
-      "trail_dist": 0.5152,
-      "peak": 127.71,
-      "orb_width": 1.0305,
-      "cost": 382.83,
-      "vol_ratio": 1.79
     },
     {
       "ticker": "GILD",
@@ -210,6 +196,90 @@
       "orb_width": 1.25,
       "cost": 264.77,
       "vol_ratio": 1.67
+    },
+    {
+      "ticker": "DVA",
+      "side": "short",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:24 ET",
+      "entry_price": 233.6,
+      "shares": 1,
+      "stop": 234.995,
+      "trail_dist": 1.395,
+      "peak": 233.6,
+      "orb_width": 2.79,
+      "cost": 233.6,
+      "vol_ratio": 3.91
+    },
+    {
+      "ticker": "ALGN",
+      "side": "short",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:24 ET",
+      "entry_price": 175.67,
+      "shares": 1,
+      "stop": 176.91,
+      "trail_dist": 1.24,
+      "peak": 175.67,
+      "orb_width": 2.48,
+      "cost": 175.67,
+      "vol_ratio": 1.62
+    },
+    {
+      "ticker": "GDDY",
+      "side": "short",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:24 ET",
+      "entry_price": 89.2,
+      "shares": 2,
+      "stop": 90.61,
+      "trail_dist": 1.41,
+      "peak": 89.2,
+      "orb_width": 2.82,
+      "cost": 178.4,
+      "vol_ratio": 1.6
+    },
+    {
+      "ticker": "DLTR",
+      "side": "short",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:24 ET",
+      "entry_price": 123.92,
+      "shares": 1,
+      "stop": 124.615,
+      "trail_dist": 0.695,
+      "peak": 123.92,
+      "orb_width": 1.39,
+      "cost": 123.92,
+      "vol_ratio": 1.55
+    },
+    {
+      "ticker": "HST",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:24 ET",
+      "entry_price": 24.56,
+      "shares": 5,
+      "stop": 24.4525,
+      "trail_dist": 0.1075,
+      "peak": 24.56,
+      "orb_width": 0.215,
+      "cost": 122.8,
+      "vol_ratio": 1.33
+    },
+    {
+      "ticker": "NKE",
+      "side": "short",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:24 ET",
+      "entry_price": 41.86,
+      "shares": 2,
+      "stop": 42.335,
+      "trail_dist": 0.475,
+      "peak": 41.86,
+      "orb_width": 0.95,
+      "cost": 83.72,
+      "vol_ratio": 1.2
     }
   ],
   "closed_today": [
@@ -250,6 +320,25 @@
       "pnl": -2.87,
       "exit_reason": "trailing stop",
       "exit_time": "10:09 ET"
+    },
+    {
+      "ticker": "DUK",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:16 ET",
+      "entry_price": 127.61,
+      "shares": 3,
+      "stop": 127.1948,
+      "trail_dist": 0.5152,
+      "peak": 127.71,
+      "orb_width": 1.0305,
+      "cost": 382.83,
+      "vol_ratio": 1.79,
+      "exit_date": "2026-07-22",
+      "exit_price": 127.1948,
+      "pnl": -1.25,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:24 ET"
     }
   ],
   "all_closed": [
@@ -17391,9 +17480,9 @@
       "width": 1.15
     },
     "CHRW": {
-      "high": 210.33,
-      "low": 207.01,
-      "width": 3.32
+      "high": 209.73,
+      "low": 205.93,
+      "width": 3.8
     },
     "CDNS": {
       "high": 345.45,
@@ -19516,7 +19605,7 @@
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
-    "2026-07-22": 98521.02
+    "2026-07-22": 98508.83
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -38499,6 +38588,72 @@
       "exits": [],
       "portfolio_value": 98521.02,
       "note": "$98,521 | cash=$777 | open=15 | closed today=2 | day PnL=$-63"
+    },
+    {
+      "date": "2026-07-22",
+      "time": "10:23 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "DVA",
+          "side": "short",
+          "price": 233.6,
+          "shares": 1,
+          "stop": 235.0,
+          "trail_dist": 1.395
+        },
+        {
+          "ticker": "ALGN",
+          "side": "short",
+          "price": 175.67,
+          "shares": 1,
+          "stop": 176.91,
+          "trail_dist": 1.24
+        },
+        {
+          "ticker": "GDDY",
+          "side": "short",
+          "price": 89.2,
+          "shares": 2,
+          "stop": 90.61,
+          "trail_dist": 1.41
+        },
+        {
+          "ticker": "DLTR",
+          "side": "short",
+          "price": 123.92,
+          "shares": 1,
+          "stop": 124.61,
+          "trail_dist": 0.695
+        },
+        {
+          "ticker": "HST",
+          "side": "long",
+          "price": 24.56,
+          "shares": 5,
+          "stop": 24.45,
+          "trail_dist": 0.1075
+        },
+        {
+          "ticker": "NKE",
+          "side": "short",
+          "price": 41.86,
+          "shares": 2,
+          "stop": 42.34,
+          "trail_dist": 0.475
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "DUK",
+          "side": "long",
+          "exit_price": 127.19,
+          "pnl": -1.25,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98508.83,
+      "note": "$98,509 | cash=$241 | open=20 | closed today=3 | day PnL=$-64"
     }
   ]
 }
