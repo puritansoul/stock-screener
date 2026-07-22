@@ -1,20 +1,6 @@
 {
-  "capital": 526.68,
+  "capital": 14651.16,
   "open_positions": [
-    {
-      "ticker": "MSI",
-      "side": "long",
-      "entry_date": "2026-07-22",
-      "entry_time": "10:04 ET",
-      "entry_price": 408.73,
-      "shares": 50,
-      "stop": 405.5412,
-      "trail_dist": 3.1888,
-      "peak": 408.73,
-      "orb_width": 6.3776,
-      "cost": 20436.5,
-      "vol_ratio": 1.72
-    },
     {
       "ticker": "HPE",
       "side": "long",
@@ -470,9 +456,9 @@
       "entry_time": "10:49 ET",
       "entry_price": 127.58,
       "shares": 1,
-      "stop": 128.1449,
+      "stop": 127.8949,
       "trail_dist": 1.2149,
-      "peak": 126.93,
+      "peak": 126.68,
       "orb_width": 2.4299,
       "cost": 127.58,
       "vol_ratio": 3.4
@@ -512,9 +498,9 @@
       "entry_time": "10:54 ET",
       "entry_price": 93.97,
       "shares": 3,
-      "stop": 94.74,
+      "stop": 94.5025,
       "trail_dist": 0.77,
-      "peak": 93.97,
+      "peak": 93.7325,
       "orb_width": 1.54,
       "cost": 281.91,
       "vol_ratio": 9.55
@@ -532,6 +518,20 @@
       "orb_width": 2.25,
       "cost": 220.44,
       "vol_ratio": 1.37
+    },
+    {
+      "ticker": "ESS",
+      "side": "short",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:56 ET",
+      "entry_price": 292.98,
+      "shares": 21,
+      "stop": 293.81,
+      "trail_dist": 0.83,
+      "peak": 292.98,
+      "orb_width": 1.66,
+      "cost": 6152.58,
+      "vol_ratio": 1.47
     }
   ],
   "closed_today": [
@@ -762,6 +762,25 @@
       "pnl": -3.47,
       "exit_reason": "trailing stop",
       "exit_time": "10:54 ET"
+    },
+    {
+      "ticker": "MSI",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:04 ET",
+      "entry_price": 408.73,
+      "shares": 50,
+      "stop": 405.5412,
+      "trail_dist": 3.1888,
+      "peak": 408.73,
+      "orb_width": 6.3776,
+      "cost": 20436.5,
+      "vol_ratio": 1.72,
+      "exit_date": "2026-07-22",
+      "exit_price": 405.5412,
+      "pnl": -159.44,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:56 ET"
     }
   ],
   "all_closed": [
@@ -17898,9 +17917,9 @@
       "width": 1.17
     },
     "BXP": {
-      "high": 68.96,
-      "low": 67.81,
-      "width": 1.15
+      "high": 69.28,
+      "low": 68.15,
+      "width": 1.13
     },
     "CHRW": {
       "high": 210.33,
@@ -20028,7 +20047,7 @@
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
-    "2026-07-22": 98206.41
+    "2026-07-22": 98094.12
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -39479,6 +39498,32 @@
       ],
       "portfolio_value": 98206.41,
       "note": "$98,206 | cash=$527 | open=38 | closed today=12 | day PnL=$-336"
+    },
+    {
+      "date": "2026-07-22",
+      "time": "10:56 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "ESS",
+          "side": "short",
+          "price": 292.98,
+          "shares": 21,
+          "stop": 293.81,
+          "trail_dist": 0.83
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "MSI",
+          "side": "long",
+          "exit_price": 405.54,
+          "pnl": -159.44,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98094.12,
+      "note": "$98,094 | cash=$14,651 | open=38 | closed today=13 | day PnL=$-496"
     }
   ]
 }
