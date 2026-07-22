@@ -1,5 +1,5 @@
 {
-  "capital": 3909.5,
+  "capital": 2770.08,
   "open_positions": [
     {
       "ticker": "MSI",
@@ -92,9 +92,9 @@
       "entry_time": "10:14 ET",
       "entry_price": 92.02,
       "shares": 16,
-      "stop": 91.7825,
+      "stop": 91.9125,
       "trail_dist": 0.7275,
-      "peak": 92.51,
+      "peak": 92.64,
       "orb_width": 1.455,
       "cost": 1472.32,
       "vol_ratio": 1.35
@@ -106,9 +106,9 @@
       "entry_time": "10:14 ET",
       "entry_price": 147.25,
       "shares": 7,
-      "stop": 147.02,
+      "stop": 147.06,
       "trail_dist": 0.61,
-      "peak": 147.63,
+      "peak": 147.67,
       "orb_width": 1.22,
       "cost": 1030.75,
       "vol_ratio": 1.32
@@ -190,9 +190,9 @@
       "entry_time": "10:24 ET",
       "entry_price": 123.92,
       "shares": 1,
-      "stop": 123.755,
+      "stop": 123.535,
       "trail_dist": 0.695,
-      "peak": 123.06,
+      "peak": 122.84,
       "orb_width": 1.39,
       "cost": 123.92,
       "vol_ratio": 1.55
@@ -218,9 +218,9 @@
       "entry_time": "10:24 ET",
       "entry_price": 41.86,
       "shares": 2,
-      "stop": 42.075,
+      "stop": 42.055,
       "trail_dist": 0.475,
-      "peak": 41.6,
+      "peak": 41.58,
       "orb_width": 0.95,
       "cost": 83.72,
       "vol_ratio": 1.2
@@ -316,9 +316,9 @@
       "entry_time": "10:34 ET",
       "entry_price": 62.005,
       "shares": 53,
-      "stop": 62.225,
+      "stop": 62.18,
       "trail_dist": 0.22,
-      "peak": 62.005,
+      "peak": 61.96,
       "orb_width": 0.44,
       "cost": 3286.27,
       "vol_ratio": 1.36
@@ -330,9 +330,9 @@
       "entry_time": "10:34 ET",
       "entry_price": 119.915,
       "shares": 19,
-      "stop": 122.3525,
+      "stop": 122.3475,
       "trail_dist": 2.4375,
-      "peak": 119.915,
+      "peak": 119.91,
       "orb_width": 4.875,
       "cost": 2278.39,
       "vol_ratio": 1.28
@@ -344,12 +344,26 @@
       "entry_time": "10:34 ET",
       "entry_price": 53.505,
       "shares": 31,
-      "stop": 52.4751,
+      "stop": 52.6301,
       "trail_dist": 1.0299,
-      "peak": 53.505,
+      "peak": 53.66,
       "orb_width": 2.0599,
       "cost": 1658.66,
       "vol_ratio": 1.22
+    },
+    {
+      "ticker": "MSCI",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:36 ET",
+      "entry_price": 569.71,
+      "shares": 2,
+      "stop": 562.645,
+      "trail_dist": 7.065,
+      "peak": 569.71,
+      "orb_width": 14.13,
+      "cost": 1139.42,
+      "vol_ratio": 1.31
     }
   ],
   "closed_today": [
@@ -17645,9 +17659,9 @@
       "width": 1.15
     },
     "CHRW": {
-      "high": 209.73,
-      "low": 205.93,
-      "width": 3.8
+      "high": 210.33,
+      "low": 207.01,
+      "width": 3.32
     },
     "CDNS": {
       "high": 345.45,
@@ -19770,7 +19784,7 @@
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
-    "2026-07-22": 98256.15
+    "2026-07-22": 98249.46
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -38976,6 +38990,24 @@
       ],
       "portfolio_value": 98256.15,
       "note": "$98,256 | cash=$3,910 | open=25 | closed today=8 | day PnL=$-323"
+    },
+    {
+      "date": "2026-07-22",
+      "time": "10:36 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "MSCI",
+          "side": "long",
+          "price": 569.71,
+          "shares": 2,
+          "stop": 562.65,
+          "trail_dist": 7.065
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 98249.46,
+      "note": "$98,249 | cash=$2,770 | open=26 | closed today=8 | day PnL=$-323"
     }
   ]
 }
