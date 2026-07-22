@@ -1,5 +1,5 @@
 {
-  "capital": 8404.69,
+  "capital": 8664.01,
   "open_positions": [
     {
       "ticker": "HPE",
@@ -232,9 +232,9 @@
       "entry_time": "10:34 ET",
       "entry_price": 62.005,
       "shares": 53,
-      "stop": 62.12,
+      "stop": 62.11,
       "trail_dist": 0.22,
-      "peak": 61.9,
+      "peak": 61.89,
       "orb_width": 0.44,
       "cost": 3286.27,
       "vol_ratio": 1.36
@@ -338,29 +338,15 @@
       "vol_ratio": 1.53
     },
     {
-      "ticker": "GILD",
-      "side": "long",
-      "entry_date": "2026-07-22",
-      "entry_time": "10:39 ET",
-      "entry_price": 132.095,
-      "shares": 1,
-      "stop": 131.865,
-      "trail_dist": 0.625,
-      "peak": 132.49,
-      "orb_width": 1.25,
-      "cost": 132.1,
-      "vol_ratio": 1.48
-    },
-    {
       "ticker": "MCHP",
       "side": "long",
       "entry_date": "2026-07-22",
       "entry_time": "10:39 ET",
       "entry_price": 84.07,
       "shares": 1,
-      "stop": 83.2525,
+      "stop": 83.5375,
       "trail_dist": 0.8925,
-      "peak": 84.145,
+      "peak": 84.43,
       "orb_width": 1.785,
       "cost": 84.07,
       "vol_ratio": 1.25
@@ -420,20 +406,6 @@
       "orb_width": 0.33,
       "cost": 330.91,
       "vol_ratio": 1.43
-    },
-    {
-      "ticker": "CHTR",
-      "side": "short",
-      "entry_date": "2026-07-22",
-      "entry_time": "10:49 ET",
-      "entry_price": 127.58,
-      "shares": 1,
-      "stop": 127.7149,
-      "trail_dist": 1.2149,
-      "peak": 126.5,
-      "orb_width": 2.4299,
-      "cost": 127.58,
-      "vol_ratio": 3.4
     },
     {
       "ticker": "DECK",
@@ -498,9 +470,9 @@
       "entry_time": "10:59 ET",
       "entry_price": 22.38,
       "shares": 227,
-      "stop": 22.575,
+      "stop": 22.566,
       "trail_dist": 0.195,
-      "peak": 22.38,
+      "peak": 22.371,
       "orb_width": 0.39,
       "cost": 5080.26,
       "vol_ratio": 1.48
@@ -512,9 +484,9 @@
       "entry_time": "10:59 ET",
       "entry_price": 183.15,
       "shares": 19,
-      "stop": 184.23,
+      "stop": 184.15,
       "trail_dist": 1.08,
-      "peak": 183.15,
+      "peak": 183.07,
       "orb_width": 2.16,
       "cost": 3479.85,
       "vol_ratio": 1.27
@@ -824,6 +796,44 @@
       "pnl": -0.41,
       "exit_reason": "trailing stop",
       "exit_time": "10:59 ET"
+    },
+    {
+      "ticker": "GILD",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:39 ET",
+      "entry_price": 132.095,
+      "shares": 1,
+      "stop": 131.865,
+      "trail_dist": 0.625,
+      "peak": 132.49,
+      "orb_width": 1.25,
+      "cost": 132.1,
+      "vol_ratio": 1.48,
+      "exit_date": "2026-07-22",
+      "exit_price": 131.865,
+      "pnl": -0.23,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:01 ET"
+    },
+    {
+      "ticker": "CHTR",
+      "side": "short",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:49 ET",
+      "entry_price": 127.58,
+      "shares": 1,
+      "stop": 127.7149,
+      "trail_dist": 1.2149,
+      "peak": 126.5,
+      "orb_width": 2.4299,
+      "cost": 127.58,
+      "vol_ratio": 3.4,
+      "exit_date": "2026-07-22",
+      "exit_price": 127.7149,
+      "pnl": -0.13,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:01 ET"
     }
   ],
   "all_closed": [
@@ -18864,6 +18874,11 @@
       "low": 29.92,
       "width": 0.52
     },
+    "INVH": {
+      "high": 30.03,
+      "low": 29.84,
+      "width": 0.19
+    },
     "IQV": {
       "high": 202.635,
       "low": 198.01,
@@ -20085,7 +20100,7 @@
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
-    "2026-07-22": 98086.36
+    "2026-07-22": 98096.37
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -39610,6 +39625,30 @@
       ],
       "portfolio_value": 98086.36,
       "note": "$98,086 | cash=$8,405 | open=37 | closed today=16 | day PnL=$-502"
+    },
+    {
+      "date": "2026-07-22",
+      "time": "11:01 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "GILD",
+          "side": "long",
+          "exit_price": 131.87,
+          "pnl": -0.23,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "CHTR",
+          "side": "short",
+          "exit_price": 127.71,
+          "pnl": -0.13,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98096.37,
+      "note": "$98,096 | cash=$8,664 | open=35 | closed today=18 | day PnL=$-502"
     }
   ]
 }
