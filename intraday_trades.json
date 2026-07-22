@@ -1,5 +1,5 @@
 {
-  "capital": 355.23,
+  "capital": 190.73,
   "open_positions": [
     {
       "ticker": "HPE",
@@ -218,9 +218,9 @@
       "entry_time": "10:44 ET",
       "entry_price": 50.095,
       "shares": 1,
-      "stop": 50.2725,
+      "stop": 50.2425,
       "trail_dist": 0.4825,
-      "peak": 49.79,
+      "peak": 49.76,
       "orb_width": 0.965,
       "cost": 50.1,
       "vol_ratio": 1.28
@@ -526,9 +526,9 @@
       "entry_time": "11:35 ET",
       "entry_price": 325.38,
       "shares": 3,
-      "stop": 325.1247,
+      "stop": 324.9947,
       "trail_dist": 1.6547,
-      "peak": 323.47,
+      "peak": 323.34,
       "orb_width": 3.3095,
       "cost": 976.14,
       "vol_ratio": 1.67
@@ -568,9 +568,9 @@
       "entry_time": "11:35 ET",
       "entry_price": 43.825,
       "shares": 7,
-      "stop": 43.545,
+      "stop": 43.44,
       "trail_dist": 0.355,
-      "peak": 43.19,
+      "peak": 43.085,
       "orb_width": 0.71,
       "cost": 306.78,
       "vol_ratio": 1.29
@@ -806,9 +806,9 @@
       "entry_time": "12:54 ET",
       "entry_price": 1354.65,
       "shares": 1,
-      "stop": 1359.895,
+      "stop": 1359.205,
       "trail_dist": 6.995,
-      "peak": 1352.9,
+      "peak": 1352.21,
       "orb_width": 13.99,
       "cost": 1354.65,
       "vol_ratio": 3.17
@@ -834,9 +834,9 @@
       "entry_time": "12:54 ET",
       "entry_price": 61.635,
       "shares": 20,
-      "stop": 61.8,
+      "stop": 61.71,
       "trail_dist": 0.22,
-      "peak": 61.58,
+      "peak": 61.49,
       "orb_width": 0.44,
       "cost": 1232.7,
       "vol_ratio": 1.39
@@ -974,9 +974,9 @@
       "entry_time": "13:08 ET",
       "entry_price": 287.51,
       "shares": 1,
-      "stop": 289.02,
+      "stop": 288.92,
       "trail_dist": 3.27,
-      "peak": 285.75,
+      "peak": 285.65,
       "orb_width": 6.54,
       "cost": 287.51,
       "vol_ratio": 3.76
@@ -1030,9 +1030,9 @@
       "entry_time": "13:13 ET",
       "entry_price": 133.425,
       "shares": 1,
-      "stop": 134.045,
+      "stop": 133.995,
       "trail_dist": 1.285,
-      "peak": 132.76,
+      "peak": 132.71,
       "orb_width": 2.57,
       "cost": 133.43,
       "vol_ratio": 1.23
@@ -1072,9 +1072,9 @@
       "entry_time": "13:18 ET",
       "entry_price": 74.09,
       "shares": 1,
-      "stop": 73.888,
+      "stop": 73.89,
       "trail_dist": 0.25,
-      "peak": 74.138,
+      "peak": 74.14,
       "orb_width": 0.5,
       "cost": 74.09,
       "vol_ratio": 1.78
@@ -1114,9 +1114,9 @@
       "entry_time": "13:25 ET",
       "entry_price": 95.31,
       "shares": 1,
-      "stop": 94.965,
+      "stop": 94.995,
       "trail_dist": 0.345,
-      "peak": 95.31,
+      "peak": 95.34,
       "orb_width": 0.69,
       "cost": 95.31,
       "vol_ratio": 1.5
@@ -1134,6 +1134,34 @@
       "orb_width": 0.87,
       "cost": 148.12,
       "vol_ratio": 1.24
+    },
+    {
+      "ticker": "HST",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "13:27 ET",
+      "entry_price": 24.53,
+      "shares": 4,
+      "stop": 24.4225,
+      "trail_dist": 0.1075,
+      "peak": 24.53,
+      "orb_width": 0.215,
+      "cost": 98.12,
+      "vol_ratio": 2.35
+    },
+    {
+      "ticker": "CNC",
+      "side": "short",
+      "entry_date": "2026-07-22",
+      "entry_time": "13:27 ET",
+      "entry_price": 66.38,
+      "shares": 1,
+      "stop": 66.845,
+      "trail_dist": 0.465,
+      "peak": 66.38,
+      "orb_width": 0.93,
+      "cost": 66.38,
+      "vol_ratio": 1.58
     }
   ],
   "closed_today": [
@@ -21504,7 +21532,7 @@
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
-    "2026-07-22": 97992.59
+    "2026-07-22": 97978.96
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -42329,6 +42357,32 @@
       "exits": [],
       "portfolio_value": 97992.59,
       "note": "$97,993 | cash=$355 | open=81 | closed today=58 | day PnL=$-733"
+    },
+    {
+      "date": "2026-07-22",
+      "time": "13:27 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "HST",
+          "side": "long",
+          "price": 24.53,
+          "shares": 4,
+          "stop": 24.42,
+          "trail_dist": 0.1075
+        },
+        {
+          "ticker": "CNC",
+          "side": "short",
+          "price": 66.38,
+          "shares": 1,
+          "stop": 66.84,
+          "trail_dist": 0.465
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 97978.96,
+      "note": "$97,979 | cash=$191 | open=83 | closed today=58 | day PnL=$-733"
     }
   ]
 }
