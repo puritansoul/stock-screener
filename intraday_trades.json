@@ -1,5 +1,5 @@
 {
-  "capital": 31171.35,
+  "capital": 14342.11,
   "open_positions": [
     {
       "ticker": "LVS",
@@ -30,32 +30,60 @@
       "vol_ratio": 1.72
     },
     {
-      "ticker": "DLTR",
-      "side": "short",
-      "entry_date": "2026-07-22",
-      "entry_time": "10:04 ET",
-      "entry_price": 125.18,
-      "shares": 82,
-      "stop": 125.73,
-      "trail_dist": 0.695,
-      "peak": 125.035,
-      "orb_width": 1.39,
-      "cost": 10264.76,
-      "vol_ratio": 1.37
-    },
-    {
       "ticker": "HPE",
       "side": "long",
       "entry_date": "2026-07-22",
       "entry_time": "10:04 ET",
       "entry_price": 49.415,
       "shares": 145,
-      "stop": 48.335,
+      "stop": 48.375,
       "trail_dist": 1.185,
-      "peak": 49.52,
+      "peak": 49.56,
       "orb_width": 2.37,
       "cost": 7165.18,
       "vol_ratio": 1.28
+    },
+    {
+      "ticker": "EIX",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:09 ET",
+      "entry_price": 79.76,
+      "shares": 155,
+      "stop": 79.398,
+      "trail_dist": 0.362,
+      "peak": 79.76,
+      "orb_width": 0.724,
+      "cost": 12362.8,
+      "vol_ratio": 1.97
+    },
+    {
+      "ticker": "GD",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:09 ET",
+      "entry_price": 373.935,
+      "shares": 23,
+      "stop": 372.0625,
+      "trail_dist": 1.8725,
+      "peak": 373.935,
+      "orb_width": 3.745,
+      "cost": 8600.5,
+      "vol_ratio": 1.28
+    },
+    {
+      "ticker": "MOS",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:09 ET",
+      "entry_price": 22.865,
+      "shares": 268,
+      "stop": 22.62,
+      "trail_dist": 0.245,
+      "peak": 22.865,
+      "orb_width": 0.49,
+      "cost": 6127.82,
+      "vol_ratio": 1.27
     }
   ],
   "closed_today": [
@@ -77,6 +105,25 @@
       "pnl": -59.85,
       "exit_reason": "trailing stop",
       "exit_time": "10:06 ET"
+    },
+    {
+      "ticker": "DLTR",
+      "side": "short",
+      "entry_date": "2026-07-22",
+      "entry_time": "10:04 ET",
+      "entry_price": 125.18,
+      "shares": 82,
+      "stop": 125.215,
+      "trail_dist": 0.695,
+      "peak": 124.52,
+      "orb_width": 1.39,
+      "cost": 10264.76,
+      "vol_ratio": 1.37,
+      "exit_date": "2026-07-22",
+      "exit_price": 125.215,
+      "pnl": -2.87,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:09 ET"
     }
   ],
   "all_closed": [
@@ -16963,9 +17010,9 @@
       "width": 2.3383
     },
     "AWK": {
-      "high": 133.35,
+      "high": 133.44,
       "low": 132.03,
-      "width": 1.32
+      "width": 1.41
     },
     "AMP": {
       "high": 531.1975,
@@ -17088,9 +17135,9 @@
       "width": 1.16
     },
     "AVY": {
-      "high": 157.92,
+      "high": 157.98,
       "low": 155.8,
-      "width": 2.12
+      "width": 2.18
     },
     "AXON": {
       "high": 511.46,
@@ -17157,6 +17204,11 @@
       "low": 78.06,
       "width": 1.38
     },
+    "BNY": {
+      "high": 160.2498,
+      "low": 158.09,
+      "width": 2.1598
+    },
     "BA": {
       "high": 207.53,
       "low": 205.0,
@@ -17209,8 +17261,8 @@
     },
     "BXP": {
       "high": 68.96,
-      "low": 67.845,
-      "width": 1.115
+      "low": 67.81,
+      "width": 1.15
     },
     "CHRW": {
       "high": 210.33,
@@ -17458,9 +17510,9 @@
       "width": 6.5311
     },
     "CTVA": {
-      "high": 88.272,
+      "high": 88.28,
       "low": 87.415,
-      "width": 0.857
+      "width": 0.865
     },
     "CSGP": {
       "high": 28.8625,
@@ -17693,9 +17745,9 @@
       "width": 9.54
     },
     "EQR": {
-      "high": 68.86,
+      "high": 68.76,
       "low": 68.33,
-      "width": 0.53
+      "width": 0.43
     },
     "ERIE": {
       "high": 216.13,
@@ -17789,8 +17841,8 @@
     },
     "FDXF": {
       "high": 150.335,
-      "low": 148.585,
-      "width": 1.75
+      "low": 148.42,
+      "width": 1.915
     },
     "FIS": {
       "high": 42.24,
@@ -18093,9 +18145,9 @@
       "width": 0.8299
     },
     "IP": {
-      "high": 37.51,
+      "high": 37.52,
       "low": 36.4,
-      "width": 1.11
+      "width": 1.12
     },
     "INTU": {
       "high": 294.55,
@@ -18304,8 +18356,8 @@
     },
     "MPC": {
       "high": 326.92,
-      "low": 323.13,
-      "width": 3.79
+      "low": 323.0875,
+      "width": 3.8325
     },
     "MAR": {
       "high": 370.45,
@@ -18328,9 +18380,9 @@
       "width": 8.45
     },
     "MAS": {
-      "high": 78.41,
+      "high": 78.47,
       "low": 77.04,
-      "width": 1.37
+      "width": 1.43
     },
     "MA": {
       "high": 540.0,
@@ -18483,9 +18535,9 @@
       "width": 0.34
     },
     "NEE": {
-      "high": 88.945,
+      "high": 88.95,
       "low": 88.34,
-      "width": 0.605
+      "width": 0.61
     },
     "NKE": {
       "high": 42.91,
@@ -18853,9 +18905,9 @@
       "width": 43.62
     },
     "SRE": {
-      "high": 92.49,
+      "high": 92.5,
       "low": 91.355,
-      "width": 1.135
+      "width": 1.145
     },
     "NOW": {
       "high": 101.16,
@@ -18934,8 +18986,8 @@
     },
     "SYK": {
       "high": 316.99,
-      "low": 311.7,
-      "width": 5.29
+      "low": 311.65,
+      "width": 5.34
     },
     "SMCI": {
       "high": 31.4,
@@ -19089,8 +19141,8 @@
     },
     "UBER": {
       "high": 71.47,
-      "low": 70.12,
-      "width": 1.35
+      "low": 70.11,
+      "width": 1.36
     },
     "UDR": {
       "high": 39.69,
@@ -19139,8 +19191,8 @@
     },
     "VEEV": {
       "high": 189.83,
-      "low": 184.17,
-      "width": 5.66
+      "low": 184.0,
+      "width": 5.83
     },
     "VTR": {
       "high": 97.87,
@@ -19338,7 +19390,7 @@
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
-    "2026-07-22": 98611.01
+    "2026-07-22": 98478.05
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -38159,6 +38211,48 @@
       ],
       "portfolio_value": 98611.01,
       "note": "$98,611 | cash=$31,171 | open=4 | closed today=1 | day PnL=$-60"
+    },
+    {
+      "date": "2026-07-22",
+      "time": "10:08 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "EIX",
+          "side": "long",
+          "price": 79.76,
+          "shares": 155,
+          "stop": 79.4,
+          "trail_dist": 0.362
+        },
+        {
+          "ticker": "GD",
+          "side": "long",
+          "price": 373.93,
+          "shares": 23,
+          "stop": 372.06,
+          "trail_dist": 1.8725
+        },
+        {
+          "ticker": "MOS",
+          "side": "long",
+          "price": 22.86,
+          "shares": 268,
+          "stop": 22.62,
+          "trail_dist": 0.245
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "DLTR",
+          "side": "short",
+          "exit_price": 125.22,
+          "pnl": -2.87,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98478.05,
+      "note": "$98,478 | cash=$14,342 | open=6 | closed today=2 | day PnL=$-63"
     }
   ]
 }
