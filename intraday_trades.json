@@ -1,5 +1,5 @@
 {
-  "capital": 74.95,
+  "capital": 3628.01,
   "open_positions": [
     {
       "ticker": "HPE",
@@ -204,9 +204,9 @@
       "entry_time": "10:44 ET",
       "entry_price": 46.27,
       "shares": 3,
-      "stop": 46.205,
+      "stop": 46.2127,
       "trail_dist": 0.185,
-      "peak": 46.39,
+      "peak": 46.3977,
       "orb_width": 0.37,
       "cost": 138.81,
       "vol_ratio": 4.18
@@ -478,20 +478,6 @@
       "vol_ratio": 1.47
     },
     {
-      "ticker": "CVS",
-      "side": "short",
-      "entry_date": "2026-07-22",
-      "entry_time": "11:35 ET",
-      "entry_price": 109.2815,
-      "shares": 50,
-      "stop": 109.3875,
-      "trail_dist": 0.5025,
-      "peak": 108.885,
-      "orb_width": 1.005,
-      "cost": 5464.08,
-      "vol_ratio": 9.13
-    },
-    {
       "ticker": "BXP",
       "side": "short",
       "entry_date": "2026-07-22",
@@ -666,26 +652,12 @@
       "entry_time": "12:45 ET",
       "entry_price": 179.94,
       "shares": 14,
-      "stop": 179.415,
+      "stop": 179.475,
       "trail_dist": 0.685,
-      "peak": 180.1,
+      "peak": 180.16,
       "orb_width": 1.37,
       "cost": 2519.16,
       "vol_ratio": 3.95
-    },
-    {
-      "ticker": "REGN",
-      "side": "short",
-      "entry_date": "2026-07-22",
-      "entry_time": "12:45 ET",
-      "entry_price": 653.49,
-      "shares": 2,
-      "stop": 652.6535,
-      "trail_dist": 3.7525,
-      "peak": 648.901,
-      "orb_width": 7.505,
-      "cost": 1306.98,
-      "vol_ratio": 3.44
     },
     {
       "ticker": "SJM",
@@ -750,9 +722,9 @@
       "entry_time": "12:49 ET",
       "entry_price": 73.6,
       "shares": 6,
-      "stop": 73.4125,
+      "stop": 73.4225,
       "trail_dist": 0.2175,
-      "peak": 73.63,
+      "peak": 73.64,
       "orb_width": 0.435,
       "cost": 441.6,
       "vol_ratio": 2.43
@@ -792,9 +764,9 @@
       "entry_time": "12:49 ET",
       "entry_price": 89.35,
       "shares": 2,
-      "stop": 89.175,
+      "stop": 89.19,
       "trail_dist": 0.305,
-      "peak": 89.48,
+      "peak": 89.495,
       "orb_width": 0.61,
       "cost": 178.7,
       "vol_ratio": 1.24
@@ -834,9 +806,9 @@
       "entry_time": "12:54 ET",
       "entry_price": 61.635,
       "shares": 20,
-      "stop": 61.71,
+      "stop": 61.7001,
       "trail_dist": 0.22,
-      "peak": 61.49,
+      "peak": 61.4801,
       "orb_width": 0.44,
       "cost": 1232.7,
       "vol_ratio": 1.39
@@ -1016,9 +988,9 @@
       "entry_time": "13:08 ET",
       "entry_price": 111.765,
       "shares": 1,
-      "stop": 111.51,
+      "stop": 111.585,
       "trail_dist": 0.45,
-      "peak": 111.96,
+      "peak": 112.035,
       "orb_width": 0.9,
       "cost": 111.76,
       "vol_ratio": 1.57
@@ -1072,9 +1044,9 @@
       "entry_time": "13:18 ET",
       "entry_price": 74.09,
       "shares": 1,
-      "stop": 73.97,
+      "stop": 73.9932,
       "trail_dist": 0.25,
-      "peak": 74.22,
+      "peak": 74.2432,
       "orb_width": 0.5,
       "cost": 74.09,
       "vol_ratio": 1.78
@@ -1178,20 +1150,6 @@
       "vol_ratio": 1.36
     },
     {
-      "ticker": "PSKY",
-      "side": "long",
-      "entry_date": "2026-07-22",
-      "entry_time": "13:34 ET",
-      "entry_price": 8.645,
-      "shares": 4,
-      "stop": 8.585,
-      "trail_dist": 0.06,
-      "peak": 8.645,
-      "orb_width": 0.12,
-      "cost": 34.58,
-      "vol_ratio": 1.82
-    },
-    {
       "ticker": "INVH",
       "side": "short",
       "entry_date": "2026-07-22",
@@ -1204,6 +1162,34 @@
       "orb_width": 0.19,
       "cost": 29.58,
       "vol_ratio": 1.56
+    },
+    {
+      "ticker": "PSKY",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "13:36 ET",
+      "entry_price": 8.65,
+      "shares": 238,
+      "stop": 8.59,
+      "trail_dist": 0.06,
+      "peak": 8.65,
+      "orb_width": 0.12,
+      "cost": 2058.7,
+      "vol_ratio": 6.62
+    },
+    {
+      "ticker": "HUM",
+      "side": "short",
+      "entry_date": "2026-07-22",
+      "entry_time": "13:36 ET",
+      "entry_price": 396.81,
+      "shares": 3,
+      "stop": 399.21,
+      "trail_dist": 2.4,
+      "peak": 396.81,
+      "orb_width": 4.8,
+      "cost": 1190.43,
+      "vol_ratio": 1.89
     }
   ],
   "closed_today": [
@@ -2327,6 +2313,63 @@
       "pnl": 0.05,
       "exit_reason": "trailing stop",
       "exit_time": "13:34 ET"
+    },
+    {
+      "ticker": "CVS",
+      "side": "short",
+      "entry_date": "2026-07-22",
+      "entry_time": "11:35 ET",
+      "entry_price": 109.2815,
+      "shares": 50,
+      "stop": 109.3875,
+      "trail_dist": 0.5025,
+      "peak": 108.885,
+      "orb_width": 1.005,
+      "cost": 5464.08,
+      "vol_ratio": 9.13,
+      "exit_date": "2026-07-22",
+      "exit_price": 109.3875,
+      "pnl": -5.3,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:36 ET"
+    },
+    {
+      "ticker": "REGN",
+      "side": "short",
+      "entry_date": "2026-07-22",
+      "entry_time": "12:45 ET",
+      "entry_price": 653.49,
+      "shares": 2,
+      "stop": 652.6535,
+      "trail_dist": 3.7525,
+      "peak": 648.901,
+      "orb_width": 7.505,
+      "cost": 1306.98,
+      "vol_ratio": 3.44,
+      "exit_date": "2026-07-22",
+      "exit_price": 652.6535,
+      "pnl": 1.67,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:36 ET"
+    },
+    {
+      "ticker": "PSKY",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "13:34 ET",
+      "entry_price": 8.645,
+      "shares": 4,
+      "stop": 8.69,
+      "trail_dist": 0.06,
+      "peak": 8.75,
+      "orb_width": 0.12,
+      "cost": 34.58,
+      "vol_ratio": 1.82,
+      "exit_date": "2026-07-22",
+      "exit_price": 8.69,
+      "pnl": 0.18,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:36 ET"
     }
   ],
   "all_closed": [
@@ -21082,11 +21125,6 @@
       "low": 428.88,
       "width": 6.84
     },
-    "CRM": {
-      "high": 169.57,
-      "low": 165.65,
-      "width": 3.92
-    },
     "SNDK": {
       "high": 1581.9999,
       "low": 1516.12,
@@ -21593,7 +21631,7 @@
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
-    "2026-07-22": 97962.86
+    "2026-07-22": 97989.62
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -42514,6 +42552,54 @@
       ],
       "portfolio_value": 97962.86,
       "note": "$97,963 | cash=$75 | open=86 | closed today=59 | day PnL=$-733"
+    },
+    {
+      "date": "2026-07-22",
+      "time": "13:36 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "PSKY",
+          "side": "long",
+          "price": 8.65,
+          "shares": 238,
+          "stop": 8.59,
+          "trail_dist": 0.06
+        },
+        {
+          "ticker": "HUM",
+          "side": "short",
+          "price": 396.81,
+          "shares": 3,
+          "stop": 399.21,
+          "trail_dist": 2.4
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "CVS",
+          "side": "short",
+          "exit_price": 109.39,
+          "pnl": -5.3,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "REGN",
+          "side": "short",
+          "exit_price": 652.65,
+          "pnl": 1.67,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "PSKY",
+          "side": "long",
+          "exit_price": 8.69,
+          "pnl": 0.18,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 97989.62,
+      "note": "$97,990 | cash=$3,628 | open=85 | closed today=62 | day PnL=$-736"
     }
   ]
 }
