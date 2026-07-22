@@ -2184,6 +2184,16 @@
         "SPY regime: BULL (longs only)",
         "Portfolio: $100,830  |  Cash: $26,518  |  Open: 22  |  Exits: 18  |  Entries: 2"
       ]
+    },
+    {
+      "date": "2026-07-22",
+      "run_at": "2026-07-22 18:11 UTC",
+      "entries": [],
+      "exits": [],
+      "notes": [
+        "SPY regime: BULL (longs only)",
+        "Portfolio: $100,830  |  Cash: $26,518  |  Open: 22  |  Exits: 0  |  Entries: 0"
+      ]
     }
   ],
   "last_scan": [
@@ -2279,13 +2289,6 @@
       "status": "above SMA200"
     },
     {
-      "ticker": "HAL",
-      "rsi2": 3.3,
-      "close": 33.19,
-      "sma200": 33.17,
-      "status": "LONG signal"
-    },
-    {
       "ticker": "HST",
       "rsi2": 96.6,
       "close": 24.44,
@@ -2305,13 +2308,6 @@
       "close": 237.38,
       "sma200": 273.76,
       "status": "below SMA200"
-    },
-    {
-      "ticker": "CRL",
-      "rsi2": 4.7,
-      "close": 219.4,
-      "sma200": 184.91,
-      "status": "LONG signal"
     },
     {
       "ticker": "CCI",
@@ -2464,7 +2460,21 @@
       "ticker": "DLR",
       "rsi2": 90.1,
       "close": 179.31,
-      "sma200": 175.51,
+      "sma200": 173.55,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "CARR",
+      "rsi2": 10.0,
+      "close": 66.69,
+      "sma200": 60.15,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "HIG",
+      "rsi2": 90.0,
+      "close": 141.98,
+      "sma200": 133.4,
       "status": "above SMA200"
     }
   ]
