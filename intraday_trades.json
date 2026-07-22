@@ -1,5 +1,5 @@
 {
-  "capital": 2285.16,
+  "capital": 3208.05,
   "open_positions": [
     {
       "ticker": "HPE",
@@ -176,9 +176,9 @@
       "entry_time": "10:39 ET",
       "entry_price": 81.93,
       "shares": 4,
-      "stop": 82.465,
+      "stop": 82.455,
       "trail_dist": 0.58,
-      "peak": 81.885,
+      "peak": 81.875,
       "orb_width": 1.16,
       "cost": 327.72,
       "vol_ratio": 1.54
@@ -400,9 +400,9 @@
       "entry_time": "11:09 ET",
       "entry_price": 211.385,
       "shares": 4,
-      "stop": 212.27,
+      "stop": 212.425,
       "trail_dist": 1.64,
-      "peak": 213.91,
+      "peak": 214.065,
       "orb_width": 3.28,
       "cost": 845.54,
       "vol_ratio": 1.58
@@ -512,9 +512,9 @@
       "entry_time": "11:35 ET",
       "entry_price": 109.2815,
       "shares": 50,
-      "stop": 109.5325,
+      "stop": 109.4225,
       "trail_dist": 0.5025,
-      "peak": 109.03,
+      "peak": 108.92,
       "orb_width": 1.005,
       "cost": 5464.08,
       "vol_ratio": 9.13
@@ -596,9 +596,9 @@
       "entry_time": "11:35 ET",
       "entry_price": 43.825,
       "shares": 7,
-      "stop": 44.005,
+      "stop": 43.99,
       "trail_dist": 0.355,
-      "peak": 43.65,
+      "peak": 43.635,
       "orb_width": 0.71,
       "cost": 306.78,
       "vol_ratio": 1.29
@@ -618,29 +618,15 @@
       "vol_ratio": 6.91
     },
     {
-      "ticker": "RCL",
-      "side": "long",
-      "entry_date": "2026-07-22",
-      "entry_time": "11:43 ET",
-      "entry_price": 287.77,
-      "shares": 8,
-      "stop": 286.385,
-      "trail_dist": 2.125,
-      "peak": 288.51,
-      "orb_width": 4.2499,
-      "cost": 2302.16,
-      "vol_ratio": 3.07
-    },
-    {
       "ticker": "IR",
       "side": "long",
       "entry_date": "2026-07-22",
       "entry_time": "11:43 ET",
       "entry_price": 82.665,
       "shares": 20,
-      "stop": 82.3475,
+      "stop": 82.4575,
       "trail_dist": 0.7725,
-      "peak": 83.12,
+      "peak": 83.23,
       "orb_width": 1.545,
       "cost": 1653.3,
       "vol_ratio": 1.68
@@ -666,9 +652,9 @@
       "entry_time": "12:41 ET",
       "entry_price": 116.375,
       "shares": 38,
-      "stop": 116.8175,
+      "stop": 116.7775,
       "trail_dist": 0.4875,
-      "peak": 116.33,
+      "peak": 116.29,
       "orb_width": 0.975,
       "cost": 4422.25,
       "vol_ratio": 1.42
@@ -764,9 +750,9 @@
       "entry_time": "12:45 ET",
       "entry_price": 95.3,
       "shares": 8,
-      "stop": 95.155,
+      "stop": 95.17,
       "trail_dist": 0.265,
-      "peak": 95.42,
+      "peak": 95.435,
       "orb_width": 0.53,
       "cost": 762.4,
       "vol_ratio": 1.32
@@ -778,9 +764,9 @@
       "entry_time": "12:47 ET",
       "entry_price": 30.5,
       "shares": 24,
-      "stop": 30.275,
+      "stop": 30.3,
       "trail_dist": 0.26,
-      "peak": 30.535,
+      "peak": 30.56,
       "orb_width": 0.52,
       "cost": 732.0,
       "vol_ratio": 1.8
@@ -806,9 +792,9 @@
       "entry_time": "12:49 ET",
       "entry_price": 92.92,
       "shares": 4,
-      "stop": 91.875,
+      "stop": 92.085,
       "trail_dist": 1.225,
-      "peak": 93.1,
+      "peak": 93.31,
       "orb_width": 2.45,
       "cost": 371.68,
       "vol_ratio": 1.31
@@ -848,9 +834,9 @@
       "entry_time": "12:54 ET",
       "entry_price": 1354.65,
       "shares": 1,
-      "stop": 1361.645,
+      "stop": 1360.735,
       "trail_dist": 6.995,
-      "peak": 1354.65,
+      "peak": 1353.74,
       "orb_width": 13.99,
       "cost": 1354.65,
       "vol_ratio": 3.17
@@ -896,6 +882,20 @@
       "orb_width": 4.4748,
       "cost": 754.5,
       "vol_ratio": 1.26
+    },
+    {
+      "ticker": "PPL",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "12:56 ET",
+      "entry_price": 36.005,
+      "shares": 38,
+      "stop": 35.87,
+      "trail_dist": 0.135,
+      "peak": 36.005,
+      "orb_width": 0.27,
+      "cost": 1368.19,
+      "vol_ratio": 2.21
     }
   ],
   "closed_today": [
@@ -1905,6 +1905,25 @@
       "pnl": -1.37,
       "exit_reason": "trailing stop",
       "exit_time": "12:52 ET"
+    },
+    {
+      "ticker": "RCL",
+      "side": "long",
+      "entry_date": "2026-07-22",
+      "entry_time": "11:43 ET",
+      "entry_price": 287.77,
+      "shares": 8,
+      "stop": 286.385,
+      "trail_dist": 2.125,
+      "peak": 288.51,
+      "orb_width": 4.2499,
+      "cost": 2302.16,
+      "vol_ratio": 3.07,
+      "exit_date": "2026-07-22",
+      "exit_price": 286.385,
+      "pnl": -11.08,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:56 ET"
     }
   ],
   "all_closed": [
@@ -21171,7 +21190,7 @@
     "2026-07-17": 99204.19,
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
-    "2026-07-22": 97929.46
+    "2026-07-22": 97933.85
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -41653,6 +41672,32 @@
       "exits": [],
       "portfolio_value": 97929.46,
       "note": "$97,929 | cash=$2,285 | open=64 | closed today=53 | day PnL=$-710"
+    },
+    {
+      "date": "2026-07-22",
+      "time": "12:56 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "PPL",
+          "side": "long",
+          "price": 36.01,
+          "shares": 38,
+          "stop": 35.87,
+          "trail_dist": 0.135
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "RCL",
+          "side": "long",
+          "exit_price": 286.38,
+          "pnl": -11.08,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 97933.85,
+      "note": "$97,934 | cash=$3,208 | open=64 | closed today=54 | day PnL=$-721"
     }
   ]
 }
