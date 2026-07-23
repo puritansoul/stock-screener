@@ -1,5 +1,5 @@
 {
-  "capital": 1839.92,
+  "capital": 438.12,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -190,9 +190,9 @@
       "entry_time": "10:20 ET",
       "entry_price": 275.69,
       "shares": 1,
-      "stop": 274.2612,
+      "stop": 274.2812,
       "trail_dist": 2.1488,
-      "peak": 276.41,
+      "peak": 276.43,
       "orb_width": 4.2975,
       "cost": 275.69,
       "vol_ratio": 2.17
@@ -274,9 +274,9 @@
       "entry_time": "10:29 ET",
       "entry_price": 346.03,
       "shares": 1,
-      "stop": 350.47,
+      "stop": 350.53,
       "trail_dist": 2.0,
-      "peak": 352.47,
+      "peak": 352.53,
       "orb_width": 4.0,
       "cost": 346.03,
       "vol_ratio": 1.36
@@ -338,20 +338,6 @@
       "vol_ratio": 2.12
     },
     {
-      "ticker": "DASH",
-      "side": "short",
-      "entry_date": "2026-07-23",
-      "entry_time": "10:38 ET",
-      "entry_price": 169.63,
-      "shares": 1,
-      "stop": 168.55,
-      "trail_dist": 1.97,
-      "peak": 166.58,
-      "orb_width": 3.94,
-      "cost": 169.63,
-      "vol_ratio": 1.32
-    },
-    {
       "ticker": "ES",
       "side": "long",
       "entry_date": "2026-07-23",
@@ -386,9 +372,9 @@
       "entry_time": "10:43 ET",
       "entry_price": 375.81,
       "shares": 1,
-      "stop": 376.4336,
+      "stop": 376.5537,
       "trail_dist": 2.0463,
-      "peak": 378.4799,
+      "peak": 378.6,
       "orb_width": 4.0927,
       "cost": 375.81,
       "vol_ratio": 1.52
@@ -758,20 +744,6 @@
       "vol_ratio": 5.01
     },
     {
-      "ticker": "MDT",
-      "side": "long",
-      "entry_date": "2026-07-23",
-      "entry_time": "11:09 ET",
-      "entry_price": 82.66,
-      "shares": 3,
-      "stop": 82.28,
-      "trail_dist": 0.4,
-      "peak": 82.68,
-      "orb_width": 0.8,
-      "cost": 247.98,
-      "vol_ratio": 3.11
-    },
-    {
       "ticker": "PPG",
       "side": "short",
       "entry_date": "2026-07-23",
@@ -904,9 +876,9 @@
       "entry_time": "11:28 ET",
       "entry_price": 74.685,
       "shares": 2,
-      "stop": 74.35,
+      "stop": 74.355,
       "trail_dist": 0.335,
-      "peak": 74.685,
+      "peak": 74.69,
       "orb_width": 0.67,
       "cost": 149.37,
       "vol_ratio": 1.62
@@ -974,9 +946,9 @@
       "entry_time": "11:40 ET",
       "entry_price": 249.37,
       "shares": 1,
-      "stop": 247.3755,
+      "stop": 247.4755,
       "trail_dist": 1.9945,
-      "peak": 249.37,
+      "peak": 249.47,
       "orb_width": 3.989,
       "cost": 249.37,
       "vol_ratio": 2.36
@@ -988,12 +960,96 @@
       "entry_time": "11:40 ET",
       "entry_price": 129.905,
       "shares": 1,
-      "stop": 129.305,
+      "stop": 129.495,
       "trail_dist": 0.945,
-      "peak": 130.25,
+      "peak": 130.44,
       "orb_width": 1.89,
       "cost": 129.9,
       "vol_ratio": 1.31
+    },
+    {
+      "ticker": "UBER",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:45 ET",
+      "entry_price": 68.58,
+      "shares": 9,
+      "stop": 69.245,
+      "trail_dist": 0.665,
+      "peak": 68.58,
+      "orb_width": 1.33,
+      "cost": 617.22,
+      "vol_ratio": 2.24
+    },
+    {
+      "ticker": "EL",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:45 ET",
+      "entry_price": 79.495,
+      "shares": 6,
+      "stop": 80.1625,
+      "trail_dist": 0.6675,
+      "peak": 79.495,
+      "orb_width": 1.335,
+      "cost": 476.97,
+      "vol_ratio": 1.81
+    },
+    {
+      "ticker": "AFL",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:45 ET",
+      "entry_price": 123.91,
+      "shares": 2,
+      "stop": 123.3025,
+      "trail_dist": 0.6075,
+      "peak": 123.91,
+      "orb_width": 1.215,
+      "cost": 247.82,
+      "vol_ratio": 1.52
+    },
+    {
+      "ticker": "OKE",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:45 ET",
+      "entry_price": 93.245,
+      "shares": 2,
+      "stop": 92.86,
+      "trail_dist": 0.385,
+      "peak": 93.245,
+      "orb_width": 0.77,
+      "cost": 186.49,
+      "vol_ratio": 1.51
+    },
+    {
+      "ticker": "COP",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:45 ET",
+      "entry_price": 121.99,
+      "shares": 1,
+      "stop": 121.525,
+      "trail_dist": 0.465,
+      "peak": 121.99,
+      "orb_width": 0.93,
+      "cost": 121.99,
+      "vol_ratio": 1.44
+    },
+    {
+      "ticker": "DASH",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:45 ET",
+      "entry_price": 168.855,
+      "shares": 1,
+      "stop": 170.825,
+      "trail_dist": 1.97,
+      "peak": 168.855,
+      "orb_width": 3.94,
+      "cost": 168.85,
+      "vol_ratio": 1.22
     }
   ],
   "closed_today": [
@@ -1699,6 +1755,44 @@
       "pnl": 2.73,
       "exit_reason": "trailing stop",
       "exit_time": "11:42 ET"
+    },
+    {
+      "ticker": "DASH",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:38 ET",
+      "entry_price": 169.63,
+      "shares": 1,
+      "stop": 168.55,
+      "trail_dist": 1.97,
+      "peak": 166.58,
+      "orb_width": 3.94,
+      "cost": 169.63,
+      "vol_ratio": 1.32,
+      "exit_date": "2026-07-23",
+      "exit_price": 168.55,
+      "pnl": 1.08,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:45 ET"
+    },
+    {
+      "ticker": "MDT",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:09 ET",
+      "entry_price": 82.66,
+      "shares": 3,
+      "stop": 82.28,
+      "trail_dist": 0.4,
+      "peak": 82.68,
+      "orb_width": 0.8,
+      "cost": 247.98,
+      "vol_ratio": 3.11,
+      "exit_date": "2026-07-23",
+      "exit_price": 82.28,
+      "pnl": -1.14,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:45 ET"
     }
   ],
   "all_closed": [
@@ -26381,8 +26475,8 @@
     },
     "PPL": {
       "high": 36.08,
-      "low": 35.815,
-      "width": 0.265
+      "low": 35.79,
+      "width": 0.29
     },
     "PFG": {
       "high": 107.5,
@@ -27046,7 +27140,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98451.53
+    "2026-07-23": 98453.16
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -53442,6 +53536,79 @@
       ],
       "portfolio_value": 98451.53,
       "note": "$98,452 | cash=$1,840 | open=71 | closed today=37 | day PnL=$+256"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "11:44 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "UBER",
+          "side": "short",
+          "price": 68.58,
+          "shares": 9,
+          "stop": 69.25,
+          "trail_dist": 0.665
+        },
+        {
+          "ticker": "EL",
+          "side": "short",
+          "price": 79.5,
+          "shares": 6,
+          "stop": 80.16,
+          "trail_dist": 0.6675
+        },
+        {
+          "ticker": "AFL",
+          "side": "long",
+          "price": 123.91,
+          "shares": 2,
+          "stop": 123.3,
+          "trail_dist": 0.6075
+        },
+        {
+          "ticker": "OKE",
+          "side": "long",
+          "price": 93.25,
+          "shares": 2,
+          "stop": 92.86,
+          "trail_dist": 0.385
+        },
+        {
+          "ticker": "COP",
+          "side": "long",
+          "price": 121.99,
+          "shares": 1,
+          "stop": 121.52,
+          "trail_dist": 0.465
+        },
+        {
+          "ticker": "DASH",
+          "side": "short",
+          "price": 168.85,
+          "shares": 1,
+          "stop": 170.82,
+          "trail_dist": 1.97
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "DASH",
+          "side": "short",
+          "exit_price": 168.55,
+          "pnl": 1.08,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "MDT",
+          "side": "long",
+          "exit_price": 82.28,
+          "pnl": -1.14,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98453.16,
+      "note": "$98,453 | cash=$438 | open=75 | closed today=39 | day PnL=$+256"
     }
   ]
 }
