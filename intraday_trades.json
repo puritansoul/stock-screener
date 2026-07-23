@@ -1,5 +1,5 @@
 {
-  "capital": 697.88,
+  "capital": 666.57,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -162,9 +162,9 @@
       "entry_time": "10:38 ET",
       "entry_price": 25.595,
       "shares": 12,
-      "stop": 25.52,
+      "stop": 25.5,
       "trail_dist": 0.175,
-      "peak": 25.345,
+      "peak": 25.325,
       "orb_width": 0.35,
       "cost": 307.14,
       "vol_ratio": 2.12
@@ -450,20 +450,6 @@
       "vol_ratio": 1.52
     },
     {
-      "ticker": "DTE",
-      "side": "long",
-      "entry_date": "2026-07-23",
-      "entry_time": "11:49 ET",
-      "entry_price": 148.5627,
-      "shares": 1,
-      "stop": 147.7927,
-      "trail_dist": 0.77,
-      "peak": 148.5627,
-      "orb_width": 1.54,
-      "cost": 148.56,
-      "vol_ratio": 1.62
-    },
-    {
       "ticker": "ES",
       "side": "long",
       "entry_date": "2026-07-23",
@@ -540,9 +526,9 @@
       "entry_time": "12:08 ET",
       "entry_price": 295.375,
       "shares": 5,
-      "stop": 296.6875,
+      "stop": 296.5426,
       "trail_dist": 1.9925,
-      "peak": 294.695,
+      "peak": 294.5501,
       "orb_width": 3.985,
       "cost": 1476.88,
       "vol_ratio": 1.29
@@ -638,9 +624,9 @@
       "entry_time": "12:25 ET",
       "entry_price": 394.36,
       "shares": 2,
-      "stop": 396.215,
+      "stop": 396.105,
       "trail_dist": 3.155,
-      "peak": 393.06,
+      "peak": 392.95,
       "orb_width": 6.31,
       "cost": 788.72,
       "vol_ratio": 2.37
@@ -694,9 +680,9 @@
       "entry_time": "12:27 ET",
       "entry_price": 129.77,
       "shares": 6,
-      "stop": 129.945,
+      "stop": 129.93,
       "trail_dist": 0.53,
-      "peak": 129.415,
+      "peak": 129.4,
       "orb_width": 1.06,
       "cost": 778.62,
       "vol_ratio": 1.27
@@ -736,9 +722,9 @@
       "entry_time": "12:32 ET",
       "entry_price": 22.065,
       "shares": 13,
-      "stop": 22.075,
+      "stop": 22.06,
       "trail_dist": 0.085,
-      "peak": 21.99,
+      "peak": 21.975,
       "orb_width": 0.17,
       "cost": 286.85,
       "vol_ratio": 1.32
@@ -820,9 +806,9 @@
       "entry_time": "12:48 ET",
       "entry_price": 213.485,
       "shares": 1,
-      "stop": 213.3675,
+      "stop": 213.4175,
       "trail_dist": 0.5125,
-      "peak": 213.88,
+      "peak": 213.93,
       "orb_width": 1.025,
       "cost": 213.49,
       "vol_ratio": 1.89
@@ -834,9 +820,9 @@
       "entry_time": "12:53 ET",
       "entry_price": 166.87,
       "shares": 8,
-      "stop": 168.63,
+      "stop": 168.22,
       "trail_dist": 1.8,
-      "peak": 166.83,
+      "peak": 166.42,
       "orb_width": 3.6,
       "cost": 1334.96,
       "vol_ratio": 1.46
@@ -884,20 +870,6 @@
       "vol_ratio": 1.58
     },
     {
-      "ticker": "VRSN",
-      "side": "short",
-      "entry_date": "2026-07-23",
-      "entry_time": "13:00 ET",
-      "entry_price": 258.185,
-      "shares": 2,
-      "stop": 258.815,
-      "trail_dist": 1.655,
-      "peak": 257.16,
-      "orb_width": 3.31,
-      "cost": 516.37,
-      "vol_ratio": 1.21
-    },
-    {
       "ticker": "FTNT",
       "side": "short",
       "entry_date": "2026-07-23",
@@ -938,6 +910,48 @@
       "orb_width": 4.34,
       "cost": 255.57,
       "vol_ratio": 4.05
+    },
+    {
+      "ticker": "VRSN",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "13:09 ET",
+      "entry_price": 256.455,
+      "shares": 1,
+      "stop": 258.11,
+      "trail_dist": 1.655,
+      "peak": 256.455,
+      "orb_width": 3.31,
+      "cost": 256.45,
+      "vol_ratio": 2.82
+    },
+    {
+      "ticker": "GNRC",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "13:09 ET",
+      "entry_price": 210.19,
+      "shares": 1,
+      "stop": 213.275,
+      "trail_dist": 3.085,
+      "peak": 210.19,
+      "orb_width": 6.17,
+      "cost": 210.19,
+      "vol_ratio": 1.93
+    },
+    {
+      "ticker": "SJM",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "13:09 ET",
+      "entry_price": 114.785,
+      "shares": 2,
+      "stop": 115.7475,
+      "trail_dist": 0.9625,
+      "peak": 114.785,
+      "orb_width": 1.925,
+      "cost": 229.57,
+      "vol_ratio": 1.47
     }
   ],
   "closed_today": [
@@ -2745,6 +2759,44 @@
       "pnl": -0.8,
       "exit_reason": "trailing stop",
       "exit_time": "13:05 ET"
+    },
+    {
+      "ticker": "DTE",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:49 ET",
+      "entry_price": 148.5627,
+      "shares": 1,
+      "stop": 147.7927,
+      "trail_dist": 0.77,
+      "peak": 148.5627,
+      "orb_width": 1.54,
+      "cost": 148.56,
+      "vol_ratio": 1.62,
+      "exit_date": "2026-07-23",
+      "exit_price": 147.7927,
+      "pnl": -0.77,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:09 ET"
+    },
+    {
+      "ticker": "VRSN",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "13:00 ET",
+      "entry_price": 258.185,
+      "shares": 2,
+      "stop": 257.815,
+      "trail_dist": 1.655,
+      "peak": 256.16,
+      "orb_width": 3.31,
+      "cost": 516.37,
+      "vol_ratio": 1.21,
+      "exit_date": "2026-07-23",
+      "exit_price": 257.815,
+      "pnl": 0.74,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:09 ET"
     }
   ],
   "all_closed": [
@@ -28092,7 +28144,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98208.73
+    "2026-07-23": 98236.72
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -55701,6 +55753,55 @@
       "exits": [],
       "portfolio_value": 98208.73,
       "note": "$98,209 | cash=$698 | open=67 | closed today=95 | day PnL=$+110"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "13:09 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "VRSN",
+          "side": "short",
+          "price": 256.45,
+          "shares": 1,
+          "stop": 258.11,
+          "trail_dist": 1.655
+        },
+        {
+          "ticker": "GNRC",
+          "side": "short",
+          "price": 210.19,
+          "shares": 1,
+          "stop": 213.28,
+          "trail_dist": 3.085
+        },
+        {
+          "ticker": "SJM",
+          "side": "short",
+          "price": 114.79,
+          "shares": 2,
+          "stop": 115.75,
+          "trail_dist": 0.9625
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "DTE",
+          "side": "long",
+          "exit_price": 147.79,
+          "pnl": -0.77,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "VRSN",
+          "side": "short",
+          "exit_price": 257.81,
+          "pnl": 0.74,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98236.72,
+      "note": "$98,237 | cash=$667 | open=68 | closed today=97 | day PnL=$+110"
     }
   ]
 }
