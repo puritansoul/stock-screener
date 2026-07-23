@@ -1,5 +1,5 @@
 {
-  "capital": 1107.5,
+  "capital": 467.21,
   "open_positions": [
     {
       "ticker": "CBOE",
@@ -156,20 +156,6 @@
       "vol_ratio": 1.26
     },
     {
-      "ticker": "WAB",
-      "side": "long",
-      "entry_date": "2026-07-23",
-      "entry_time": "10:12 ET",
-      "entry_price": 296.08,
-      "shares": 2,
-      "stop": 294.23,
-      "trail_dist": 1.85,
-      "peak": 296.08,
-      "orb_width": 3.7,
-      "cost": 592.16,
-      "vol_ratio": 1.76
-    },
-    {
       "ticker": "COR",
       "side": "long",
       "entry_date": "2026-07-23",
@@ -190,12 +176,82 @@
       "entry_time": "10:12 ET",
       "entry_price": 36.065,
       "shares": 13,
-      "stop": 36.3675,
+      "stop": 36.3425,
       "trail_dist": 0.3025,
-      "peak": 36.065,
+      "peak": 36.04,
       "orb_width": 0.605,
       "cost": 468.84,
       "vol_ratio": 1.41
+    },
+    {
+      "ticker": "BIIB",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:15 ET",
+      "entry_price": 200.0001,
+      "shares": 2,
+      "stop": 198.8651,
+      "trail_dist": 1.135,
+      "peak": 200.0001,
+      "orb_width": 2.27,
+      "cost": 400.0,
+      "vol_ratio": 2.73
+    },
+    {
+      "ticker": "WAB",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:15 ET",
+      "entry_price": 296.43,
+      "shares": 1,
+      "stop": 294.58,
+      "trail_dist": 1.85,
+      "peak": 296.43,
+      "orb_width": 3.7,
+      "cost": 296.43,
+      "vol_ratio": 2.57
+    },
+    {
+      "ticker": "ZBRA",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:15 ET",
+      "entry_price": 258.54,
+      "shares": 1,
+      "stop": 260.8325,
+      "trail_dist": 2.2925,
+      "peak": 258.54,
+      "orb_width": 4.5849,
+      "cost": 258.54,
+      "vol_ratio": 1.74
+    },
+    {
+      "ticker": "VLTO",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:15 ET",
+      "entry_price": 90.43,
+      "shares": 2,
+      "stop": 91.0175,
+      "trail_dist": 0.5875,
+      "peak": 90.43,
+      "orb_width": 1.175,
+      "cost": 180.86,
+      "vol_ratio": 1.33
+    },
+    {
+      "ticker": "EXE",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:15 ET",
+      "entry_price": 93.89,
+      "shares": 1,
+      "stop": 93.105,
+      "trail_dist": 0.785,
+      "peak": 93.89,
+      "orb_width": 1.57,
+      "cost": 93.89,
+      "vol_ratio": 1.27
     }
   ],
   "closed_today": [
@@ -217,6 +273,25 @@
       "pnl": -0.88,
       "exit_reason": "trailing stop",
       "exit_time": "10:10 ET"
+    },
+    {
+      "ticker": "WAB",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:12 ET",
+      "entry_price": 296.08,
+      "shares": 2,
+      "stop": 294.715,
+      "trail_dist": 1.85,
+      "peak": 296.565,
+      "orb_width": 3.7,
+      "cost": 592.16,
+      "vol_ratio": 1.76,
+      "exit_date": "2026-07-23",
+      "exit_price": 294.715,
+      "pnl": -2.73,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:15 ET"
     }
   ],
   "all_closed": [
@@ -23138,9 +23213,9 @@
       "width": 6.25
     },
     "GOOG": {
-      "high": 348.12,
-      "low": 345.67,
-      "width": 2.45
+      "high": 324.39,
+      "low": 317.91,
+      "width": 6.48
     },
     "MO": {
       "high": 72.2318,
@@ -23189,8 +23264,8 @@
     },
     "AMP": {
       "high": 536.58,
-      "low": 515.135,
-      "width": 21.445
+      "low": 515.09,
+      "width": 21.49
     },
     "AME": {
       "high": 241.055,
@@ -23543,9 +23618,9 @@
       "width": 1.01
     },
     "CMG": {
-      "high": 32.0965,
+      "high": 32.1,
       "low": 31.4705,
-      "width": 0.626
+      "width": 0.6295
     },
     "CB": {
       "high": 345.78,
@@ -23839,8 +23914,8 @@
     },
     "DD": {
       "high": 139.89,
-      "low": 138.025,
-      "width": 1.865
+      "low": 138.0,
+      "width": 1.89
     },
     "ETN": {
       "high": 416.35,
@@ -23863,9 +23938,9 @@
       "width": 3.97
     },
     "EIX": {
-      "high": 79.325,
-      "low": 78.601,
-      "width": 0.724
+      "high": 80.14,
+      "low": 78.84,
+      "width": 1.3
     },
     "EW": {
       "high": 84.45,
@@ -24136,6 +24211,11 @@
       "high": 121.15,
       "low": 118.365,
       "width": 2.785
+    },
+    "GILD": {
+      "high": 129.5,
+      "low": 127.61,
+      "width": 1.89
     },
     "GPN": {
       "high": 78.88,
@@ -25023,9 +25103,9 @@
       "width": 10.3256
     },
     "ROL": {
-      "high": 38.9262,
+      "high": 38.94,
       "low": 36.5875,
-      "width": 2.3387
+      "width": 2.3525
     },
     "ROP": {
       "high": 369.15,
@@ -25148,9 +25228,9 @@
       "width": 5.96
     },
     "STE": {
-      "high": 212.13,
+      "high": 212.18,
       "low": 209.565,
-      "width": 2.565
+      "width": 2.615
     },
     "SYK": {
       "high": 314.64,
@@ -25164,8 +25244,8 @@
     },
     "SYF": {
       "high": 71.81,
-      "low": 70.815,
-      "width": 0.995
+      "low": 70.795,
+      "width": 1.015
     },
     "SNPS": {
       "high": 378.92,
@@ -25304,8 +25384,8 @@
     },
     "USB": {
       "high": 63.935,
-      "low": 63.064,
-      "width": 0.871
+      "low": 63.06,
+      "width": 0.875
     },
     "UBER": {
       "high": 71.08,
@@ -25559,7 +25639,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98206.98
+    "2026-07-23": 98080.6
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -50570,6 +50650,64 @@
       "exits": [],
       "portfolio_value": 98206.98,
       "note": "$98,207 | cash=$1,108 | open=14 | closed today=1 | day PnL=$-1"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "10:14 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "BIIB",
+          "side": "long",
+          "price": 200.0,
+          "shares": 2,
+          "stop": 198.87,
+          "trail_dist": 1.135
+        },
+        {
+          "ticker": "WAB",
+          "side": "long",
+          "price": 296.43,
+          "shares": 1,
+          "stop": 294.58,
+          "trail_dist": 1.85
+        },
+        {
+          "ticker": "ZBRA",
+          "side": "short",
+          "price": 258.54,
+          "shares": 1,
+          "stop": 260.83,
+          "trail_dist": 2.2925
+        },
+        {
+          "ticker": "VLTO",
+          "side": "short",
+          "price": 90.43,
+          "shares": 2,
+          "stop": 91.02,
+          "trail_dist": 0.5875
+        },
+        {
+          "ticker": "EXE",
+          "side": "long",
+          "price": 93.89,
+          "shares": 1,
+          "stop": 93.1,
+          "trail_dist": 0.785
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "WAB",
+          "side": "long",
+          "exit_price": 294.71,
+          "pnl": -2.73,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98080.6,
+      "note": "$98,081 | cash=$467 | open=18 | closed today=2 | day PnL=$-4"
     }
   ]
 }
