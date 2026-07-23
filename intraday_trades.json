@@ -1,5 +1,5 @@
 {
-  "capital": 675.72,
+  "capital": 1032.32,
   "open_positions": [
     {
       "ticker": "APP",
@@ -610,9 +610,9 @@
       "entry_time": "13:49 ET",
       "entry_price": 168.23,
       "shares": 3,
-      "stop": 167.3717,
+      "stop": 167.6127,
       "trail_dist": 0.9783,
-      "peak": 168.35,
+      "peak": 168.591,
       "orb_width": 1.9566,
       "cost": 504.69,
       "vol_ratio": 1.22
@@ -1100,9 +1100,9 @@
       "entry_time": "15:10 ET",
       "entry_price": 209.06,
       "shares": 1,
-      "stop": 209.465,
+      "stop": 209.385,
       "trail_dist": 1.015,
-      "peak": 208.45,
+      "peak": 208.37,
       "orb_width": 2.03,
       "cost": 209.06,
       "vol_ratio": 1.23
@@ -1198,9 +1198,9 @@
       "entry_time": "15:17 ET",
       "entry_price": 64.7,
       "shares": 2,
-      "stop": 64.9061,
+      "stop": 64.8961,
       "trail_dist": 0.2911,
-      "peak": 64.615,
+      "peak": 64.605,
       "orb_width": 0.5822,
       "cost": 129.4,
       "vol_ratio": 1.26
@@ -1226,9 +1226,9 @@
       "entry_time": "15:19 ET",
       "entry_price": 105.51,
       "shares": 6,
-      "stop": 106.035,
+      "stop": 106.025,
       "trail_dist": 0.58,
-      "peak": 105.455,
+      "peak": 105.445,
       "orb_width": 1.16,
       "cost": 633.06,
       "vol_ratio": 3.09
@@ -1268,9 +1268,9 @@
       "entry_time": "15:19 ET",
       "entry_price": 74.81,
       "shares": 3,
-      "stop": 75.58,
+      "stop": 75.51,
       "trail_dist": 0.93,
-      "peak": 74.65,
+      "peak": 74.58,
       "orb_width": 1.86,
       "cost": 224.43,
       "vol_ratio": 1.36
@@ -1318,29 +1318,15 @@
       "vol_ratio": 4.35
     },
     {
-      "ticker": "VRSN",
-      "side": "short",
-      "entry_date": "2026-07-23",
-      "entry_time": "15:24 ET",
-      "entry_price": 259.85,
-      "shares": 4,
-      "stop": 261.505,
-      "trail_dist": 1.655,
-      "peak": 259.85,
-      "orb_width": 3.31,
-      "cost": 1039.4,
-      "vol_ratio": 3.25
-    },
-    {
       "ticker": "FOX",
       "side": "short",
       "entry_date": "2026-07-23",
       "entry_time": "15:24 ET",
       "entry_price": 49.14,
       "shares": 17,
-      "stop": 49.655,
+      "stop": 49.605,
       "trail_dist": 0.515,
-      "peak": 49.14,
+      "peak": 49.09,
       "orb_width": 1.03,
       "cost": 835.38,
       "vol_ratio": 1.77
@@ -1380,9 +1366,9 @@
       "entry_time": "15:24 ET",
       "entry_price": 276.295,
       "shares": 1,
-      "stop": 274.1462,
+      "stop": 274.2612,
       "trail_dist": 2.1488,
-      "peak": 276.295,
+      "peak": 276.41,
       "orb_width": 4.2975,
       "cost": 276.3,
       "vol_ratio": 1.52
@@ -1394,12 +1380,40 @@
       "entry_time": "15:24 ET",
       "entry_price": 90.18,
       "shares": 2,
-      "stop": 89.6328,
+      "stop": 89.7128,
       "trail_dist": 0.5472,
-      "peak": 90.18,
+      "peak": 90.26,
       "orb_width": 1.0944,
       "cost": 180.36,
       "vol_ratio": 1.31
+    },
+    {
+      "ticker": "TRV",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "15:26 ET",
+      "entry_price": 375.91,
+      "shares": 1,
+      "stop": 373.8637,
+      "trail_dist": 2.0463,
+      "peak": 375.91,
+      "orb_width": 4.0927,
+      "cost": 375.91,
+      "vol_ratio": 2.97
+    },
+    {
+      "ticker": "UHS",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "15:26 ET",
+      "entry_price": 150.135,
+      "shares": 2,
+      "stop": 148.815,
+      "trail_dist": 1.32,
+      "peak": 150.135,
+      "orb_width": 2.64,
+      "cost": 300.27,
+      "vol_ratio": 1.49
     }
   ],
   "closed_today": [
@@ -4499,6 +4513,25 @@
       "pnl": -0.9,
       "exit_reason": "trailing stop",
       "exit_time": "15:24 ET"
+    },
+    {
+      "ticker": "VRSN",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "15:24 ET",
+      "entry_price": 259.85,
+      "shares": 4,
+      "stop": 261.505,
+      "trail_dist": 1.655,
+      "peak": 259.85,
+      "orb_width": 3.31,
+      "cost": 1039.4,
+      "vol_ratio": 3.25,
+      "exit_date": "2026-07-23",
+      "exit_price": 261.505,
+      "pnl": -6.62,
+      "exit_reason": "trailing stop",
+      "exit_time": "15:26 ET"
     }
   ],
   "all_closed": [
@@ -29846,7 +29879,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 97924.05
+    "2026-07-23": 97907.52
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -59272,6 +59305,40 @@
       ],
       "portfolio_value": 97924.05,
       "note": "$97,924 | cash=$676 | open=100 | closed today=163 | day PnL=$-203"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "15:26 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "TRV",
+          "side": "long",
+          "price": 375.91,
+          "shares": 1,
+          "stop": 373.86,
+          "trail_dist": 2.0463
+        },
+        {
+          "ticker": "UHS",
+          "side": "long",
+          "price": 150.13,
+          "shares": 2,
+          "stop": 148.81,
+          "trail_dist": 1.32
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "VRSN",
+          "side": "short",
+          "exit_price": 261.5,
+          "pnl": -6.62,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 97907.52,
+      "note": "$97,908 | cash=$1,032 | open=101 | closed today=164 | day PnL=$-209"
     }
   ]
 }
