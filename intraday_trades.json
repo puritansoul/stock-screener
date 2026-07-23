@@ -1,5 +1,5 @@
 {
-  "capital": 15425.77,
+  "capital": 16959.82,
   "open_positions": [
     {
       "ticker": "GPN",
@@ -36,9 +36,9 @@
       "entry_time": "10:29 ET",
       "entry_price": 146.655,
       "shares": 2,
-      "stop": 146.575,
+      "stop": 146.63,
       "trail_dist": 1.13,
-      "peak": 147.705,
+      "peak": 147.76,
       "orb_width": 2.26,
       "cost": 293.31,
       "vol_ratio": 1.34
@@ -176,9 +176,9 @@
       "entry_time": "11:45 ET",
       "entry_price": 123.91,
       "shares": 2,
-      "stop": 123.7325,
+      "stop": 123.7475,
       "trail_dist": 0.6075,
-      "peak": 124.34,
+      "peak": 124.355,
       "orb_width": 1.215,
       "cost": 247.82,
       "vol_ratio": 1.52
@@ -442,9 +442,9 @@
       "entry_time": "13:00 ET",
       "entry_price": 71.23,
       "shares": 12,
-      "stop": 70.9875,
+      "stop": 71.0325,
       "trail_dist": 0.2725,
-      "peak": 71.26,
+      "peak": 71.305,
       "orb_width": 0.545,
       "cost": 854.76,
       "vol_ratio": 1.58
@@ -568,26 +568,12 @@
       "entry_time": "13:19 ET",
       "entry_price": 17.06,
       "shares": 99,
-      "stop": 17.0125,
+      "stop": 17.0175,
       "trail_dist": 0.1175,
-      "peak": 17.13,
+      "peak": 17.135,
       "orb_width": 0.235,
       "cost": 1688.94,
       "vol_ratio": 1.25
-    },
-    {
-      "ticker": "SOLV",
-      "side": "short",
-      "entry_date": "2026-07-23",
-      "entry_time": "13:23 ET",
-      "entry_price": 77.0,
-      "shares": 20,
-      "stop": 77.2975,
-      "trail_dist": 0.4775,
-      "peak": 76.82,
-      "orb_width": 0.955,
-      "cost": 1540.0,
-      "vol_ratio": 2.05
     },
     {
       "ticker": "FRT",
@@ -708,9 +694,9 @@
       "entry_time": "13:37 ET",
       "entry_price": 115.61,
       "shares": 2,
-      "stop": 114.985,
+      "stop": 115.015,
       "trail_dist": 0.735,
-      "peak": 115.72,
+      "peak": 115.75,
       "orb_width": 1.47,
       "cost": 231.22,
       "vol_ratio": 3.73
@@ -862,9 +848,9 @@
       "entry_time": "13:54 ET",
       "entry_price": 44.055,
       "shares": 8,
-      "stop": 43.9425,
+      "stop": 43.9675,
       "trail_dist": 0.1475,
-      "peak": 44.09,
+      "peak": 44.115,
       "orb_width": 0.295,
       "cost": 352.44,
       "vol_ratio": 1.37
@@ -918,9 +904,9 @@
       "entry_time": "14:03 ET",
       "entry_price": 373.77,
       "shares": 1,
-      "stop": 375.3748,
+      "stop": 375.3348,
       "trail_dist": 2.9048,
-      "peak": 372.47,
+      "peak": 372.43,
       "orb_width": 5.8096,
       "cost": 373.77,
       "vol_ratio": 1.55
@@ -946,9 +932,9 @@
       "entry_time": "14:28 ET",
       "entry_price": 49.52,
       "shares": 189,
-      "stop": 49.285,
+      "stop": 49.295,
       "trail_dist": 0.235,
-      "peak": 49.52,
+      "peak": 49.53,
       "orb_width": 0.47,
       "cost": 9359.28,
       "vol_ratio": 1.99
@@ -3514,6 +3500,25 @@
       "pnl": -0.75,
       "exit_reason": "trailing stop",
       "exit_time": "14:28 ET"
+    },
+    {
+      "ticker": "SOLV",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "13:23 ET",
+      "entry_price": 77.0,
+      "shares": 20,
+      "stop": 77.2975,
+      "trail_dist": 0.4775,
+      "peak": 76.82,
+      "orb_width": 0.955,
+      "cost": 1540.0,
+      "vol_ratio": 2.05,
+      "exit_date": "2026-07-23",
+      "exit_price": 77.2975,
+      "pnl": -5.95,
+      "exit_reason": "trailing stop",
+      "exit_time": "14:30 ET"
     }
   ],
   "all_closed": [
@@ -28861,7 +28866,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98008.19
+    "2026-07-23": 97991.78
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -57349,6 +57354,23 @@
       ],
       "portfolio_value": 98008.19,
       "note": "$98,008 | cash=$15,426 | open=69 | closed today=134 | day PnL=$-105"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "14:30 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "SOLV",
+          "side": "short",
+          "exit_price": 77.3,
+          "pnl": -5.95,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 97991.78,
+      "note": "$97,992 | cash=$16,960 | open=68 | closed today=135 | day PnL=$-111"
     }
   ]
 }
