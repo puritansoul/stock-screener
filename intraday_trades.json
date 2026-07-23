@@ -1,5 +1,5 @@
 {
-  "capital": 8444.22,
+  "capital": 2472.7,
   "open_positions": [
     {
       "ticker": "CBOE",
@@ -8,9 +8,9 @@
       "entry_time": "10:03 ET",
       "entry_price": 284.015,
       "shares": 103,
-      "stop": 282.37,
+      "stop": 283.76,
       "trail_dist": 2.91,
-      "peak": 285.28,
+      "peak": 286.67,
       "orb_width": 5.82,
       "cost": 29253.55,
       "vol_ratio": 1.56
@@ -64,9 +64,9 @@
       "entry_time": "10:05 ET",
       "entry_price": 130.5,
       "shares": 54,
-      "stop": 131.29,
+      "stop": 130.95,
       "trail_dist": 0.9,
-      "peak": 130.39,
+      "peak": 130.05,
       "orb_width": 1.8,
       "cost": 7047.0,
       "vol_ratio": 1.38
@@ -86,21 +86,97 @@
       "vol_ratio": 1.58
     },
     {
+      "ticker": "MLM",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:10 ET",
+      "entry_price": 543.235,
+      "shares": 6,
+      "stop": 547.8775,
+      "trail_dist": 4.6425,
+      "peak": 543.235,
+      "orb_width": 9.285,
+      "cost": 3259.41,
+      "vol_ratio": 2.65
+    },
+    {
+      "ticker": "TDY",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:10 ET",
+      "entry_price": 667.67,
+      "shares": 3,
+      "stop": 660.79,
+      "trail_dist": 6.88,
+      "peak": 667.67,
+      "orb_width": 13.76,
+      "cost": 2003.01,
+      "vol_ratio": 1.88
+    },
+    {
+      "ticker": "GPN",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:10 ET",
+      "entry_price": 77.36,
+      "shares": 25,
+      "stop": 78.005,
+      "trail_dist": 0.645,
+      "peak": 77.36,
+      "orb_width": 1.29,
+      "cost": 1934.0,
+      "vol_ratio": 1.38
+    },
+    {
+      "ticker": "EA",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:10 ET",
+      "entry_price": 209.01,
+      "shares": 6,
+      "stop": 209.085,
+      "trail_dist": 0.075,
+      "peak": 209.01,
+      "orb_width": 0.15,
+      "cost": 1254.06,
+      "vol_ratio": 1.31
+    },
+    {
+      "ticker": "WSM",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:10 ET",
+      "entry_price": 216.12,
+      "shares": 4,
+      "stop": 217.645,
+      "trail_dist": 1.525,
+      "peak": 216.12,
+      "orb_width": 3.05,
+      "cost": 864.48,
+      "vol_ratio": 1.26
+    }
+  ],
+  "closed_today": [
+    {
       "ticker": "EA",
       "side": "short",
       "entry_date": "2026-07-23",
       "entry_time": "10:08 ET",
       "entry_price": 209.02,
       "shares": 16,
-      "stop": 209.095,
+      "stop": 209.075,
       "trail_dist": 0.075,
-      "peak": 209.02,
+      "peak": 209.0,
       "orb_width": 0.15,
       "cost": 3344.32,
-      "vol_ratio": 1.2
+      "vol_ratio": 1.2,
+      "exit_date": "2026-07-23",
+      "exit_price": 209.075,
+      "pnl": -0.88,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:10 ET"
     }
   ],
-  "closed_today": [],
   "all_closed": [
     {
       "ticker": "SNOW",
@@ -23149,11 +23225,6 @@
       "low": 172.77,
       "width": 6.66
     },
-    "AJG": {
-      "high": 243.58,
-      "low": 240.98,
-      "width": 2.6
-    },
     "AIZ": {
       "high": 272.55,
       "low": 269.78,
@@ -23211,8 +23282,8 @@
     },
     "BAC": {
       "high": 61.5,
-      "low": 60.765,
-      "width": 0.735
+      "low": 60.76,
+      "width": 0.74
     },
     "BAX": {
       "high": 21.78,
@@ -23330,9 +23401,9 @@
       "width": 5.88
     },
     "CPT": {
-      "high": 113.19,
+      "high": 113.2,
       "low": 112.06,
-      "width": 1.13
+      "width": 1.14
     },
     "COF": {
       "high": 200.01,
@@ -23650,9 +23721,9 @@
       "width": 1.3858
     },
     "DVN": {
-      "high": 46.19,
-      "low": 45.745,
-      "width": 0.445
+      "high": 45.1,
+      "low": 44.69,
+      "width": 0.41
     },
     "DXCM": {
       "high": 71.43,
@@ -24016,13 +24087,8 @@
     },
     "GPC": {
       "high": 121.15,
-      "low": 118.41,
-      "width": 2.74
-    },
-    "GILD": {
-      "high": 129.5,
-      "low": 127.61,
-      "width": 1.89
+      "low": 118.365,
+      "width": 2.785
     },
     "GPN": {
       "high": 78.88,
@@ -24126,8 +24192,8 @@
     },
     "HUBB": {
       "high": 482.98,
-      "low": 477.08,
-      "width": 5.9
+      "low": 476.81,
+      "width": 6.17
     },
     "HUM": {
       "high": 397.4,
@@ -24856,8 +24922,8 @@
     },
     "RJF": {
       "high": 169.35,
-      "low": 163.58,
-      "width": 5.77
+      "low": 163.38,
+      "width": 5.97
     },
     "RTX": {
       "high": 212.0,
@@ -24900,9 +24966,9 @@
       "width": 3.9
     },
     "HOOD": {
-      "high": 106.885,
-      "low": 105.1092,
-      "width": 1.7758
+      "high": 104.1,
+      "low": 100.9,
+      "width": 3.2
     },
     "ROK": {
       "high": 462.27,
@@ -25001,8 +25067,8 @@
     },
     "SOLV": {
       "high": 78.015,
-      "low": 77.135,
-      "width": 0.88
+      "low": 77.06,
+      "width": 0.955
     },
     "SO": {
       "high": 95.88,
@@ -25405,9 +25471,9 @@
       "width": 4.7243
     },
     "XEL": {
-      "high": 80.41,
-      "low": 79.51,
-      "width": 0.9
+      "high": 79.7,
+      "low": 79.25,
+      "width": 0.45
     },
     "XYL": {
       "high": 117.0011,
@@ -25446,7 +25512,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98197.35
+    "2026-07-23": 98239.3
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -50365,6 +50431,64 @@
       "exits": [],
       "portfolio_value": 98197.35,
       "note": "$98,197 | cash=$8,444 | open=7 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "10:10 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "MLM",
+          "side": "short",
+          "price": 543.23,
+          "shares": 6,
+          "stop": 547.88,
+          "trail_dist": 4.6425
+        },
+        {
+          "ticker": "TDY",
+          "side": "long",
+          "price": 667.67,
+          "shares": 3,
+          "stop": 660.79,
+          "trail_dist": 6.88
+        },
+        {
+          "ticker": "GPN",
+          "side": "short",
+          "price": 77.36,
+          "shares": 25,
+          "stop": 78.01,
+          "trail_dist": 0.645
+        },
+        {
+          "ticker": "EA",
+          "side": "short",
+          "price": 209.01,
+          "shares": 6,
+          "stop": 209.08,
+          "trail_dist": 0.075
+        },
+        {
+          "ticker": "WSM",
+          "side": "short",
+          "price": 216.12,
+          "shares": 4,
+          "stop": 217.64,
+          "trail_dist": 1.525
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "EA",
+          "side": "short",
+          "exit_price": 209.07,
+          "pnl": -0.88,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98239.3,
+      "note": "$98,239 | cash=$2,473 | open=11 | closed today=1 | day PnL=$-1"
     }
   ]
 }
