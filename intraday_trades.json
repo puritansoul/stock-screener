@@ -1,5 +1,5 @@
 {
-  "capital": 1026.19,
+  "capital": 826.04,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -238,20 +238,6 @@
       "orb_width": 1.4699,
       "cost": 230.62,
       "vol_ratio": 1.53
-    },
-    {
-      "ticker": "FDXF",
-      "side": "long",
-      "entry_date": "2026-07-23",
-      "entry_time": "11:04 ET",
-      "entry_price": 154.51,
-      "shares": 1,
-      "stop": 152.2875,
-      "trail_dist": 2.4625,
-      "peak": 154.75,
-      "orb_width": 4.925,
-      "cost": 154.51,
-      "vol_ratio": 1.33
     },
     {
       "ticker": "REG",
@@ -932,9 +918,9 @@
       "entry_time": "13:35 ET",
       "entry_price": 137.28,
       "shares": 2,
-      "stop": 137.915,
+      "stop": 137.885,
       "trail_dist": 0.945,
-      "peak": 136.97,
+      "peak": 136.94,
       "orb_width": 1.89,
       "cost": 274.56,
       "vol_ratio": 1.28
@@ -1016,9 +1002,9 @@
       "entry_time": "13:44 ET",
       "entry_price": 175.87,
       "shares": 1,
-      "stop": 177.5,
+      "stop": 177.43,
       "trail_dist": 1.81,
-      "peak": 175.69,
+      "peak": 175.62,
       "orb_width": 3.62,
       "cost": 175.87,
       "vol_ratio": 2.09
@@ -1030,9 +1016,9 @@
       "entry_time": "13:44 ET",
       "entry_price": 87.28,
       "shares": 1,
-      "stop": 87.785,
+      "stop": 87.765,
       "trail_dist": 0.505,
-      "peak": 87.28,
+      "peak": 87.26,
       "orb_width": 1.01,
       "cost": 87.28,
       "vol_ratio": 1.77
@@ -1044,9 +1030,9 @@
       "entry_time": "13:49 ET",
       "entry_price": 56.59,
       "shares": 30,
-      "stop": 56.9726,
+      "stop": 56.7626,
       "trail_dist": 0.4526,
-      "peak": 56.52,
+      "peak": 56.31,
       "orb_width": 0.9053,
       "cost": 1697.7,
       "vol_ratio": 6.83
@@ -1086,9 +1072,9 @@
       "entry_time": "13:49 ET",
       "entry_price": 256.41,
       "shares": 2,
-      "stop": 258.7025,
+      "stop": 258.4025,
       "trail_dist": 2.2925,
-      "peak": 256.41,
+      "peak": 256.11,
       "orb_width": 4.5849,
       "cost": 512.82,
       "vol_ratio": 1.3
@@ -1114,12 +1100,26 @@
       "entry_time": "13:51 ET",
       "entry_price": 212.18,
       "shares": 2,
-      "stop": 211.6675,
+      "stop": 211.8675,
       "trail_dist": 0.5125,
-      "peak": 212.18,
+      "peak": 212.38,
       "orb_width": 1.025,
       "cost": 424.36,
       "vol_ratio": 1.41
+    },
+    {
+      "ticker": "CNP",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "13:54 ET",
+      "entry_price": 44.055,
+      "shares": 8,
+      "stop": 43.9075,
+      "trail_dist": 0.1475,
+      "peak": 44.055,
+      "orb_width": 0.295,
+      "cost": 352.44,
+      "vol_ratio": 1.37
     }
   ],
   "closed_today": [
@@ -3250,6 +3250,25 @@
       "pnl": -38.07,
       "exit_reason": "trailing stop",
       "exit_time": "13:49 ET"
+    },
+    {
+      "ticker": "FDXF",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:04 ET",
+      "entry_price": 154.51,
+      "shares": 1,
+      "stop": 152.2875,
+      "trail_dist": 2.4625,
+      "peak": 154.75,
+      "orb_width": 4.925,
+      "cost": 154.51,
+      "vol_ratio": 1.33,
+      "exit_date": "2026-07-23",
+      "exit_price": 152.2875,
+      "pnl": -2.22,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:54 ET"
     }
   ],
   "all_closed": [
@@ -28597,7 +28616,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98204.36
+    "2026-07-23": 98200.73
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -56759,6 +56778,32 @@
       "exits": [],
       "portfolio_value": 98204.36,
       "note": "$98,204 | cash=$1,026 | open=80 | closed today=112 | day PnL=$-163"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "13:54 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "CNP",
+          "side": "long",
+          "price": 44.06,
+          "shares": 8,
+          "stop": 43.91,
+          "trail_dist": 0.1475
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "FDXF",
+          "side": "long",
+          "exit_price": 152.29,
+          "pnl": -2.22,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98200.73,
+      "note": "$98,201 | cash=$826 | open=80 | closed today=113 | day PnL=$-165"
     }
   ]
 }
