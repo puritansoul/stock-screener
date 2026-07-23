@@ -1,5 +1,5 @@
 {
-  "capital": 576.72,
+  "capital": 3570.26,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -8,9 +8,9 @@
       "entry_time": "10:03 ET",
       "entry_price": 41.125,
       "shares": 501,
-      "stop": 41.175,
+      "stop": 41.17,
       "trail_dist": 0.35,
-      "peak": 40.825,
+      "peak": 40.82,
       "orb_width": 0.7,
       "cost": 20603.62,
       "vol_ratio": 1.48
@@ -316,9 +316,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 63.1,
       "shares": 7,
-      "stop": 62.49,
+      "stop": 62.4763,
       "trail_dist": 0.785,
-      "peak": 61.705,
+      "peak": 61.6913,
       "orb_width": 1.57,
       "cost": 441.7,
       "vol_ratio": 1.94
@@ -498,26 +498,12 @@
       "entry_time": "11:59 ET",
       "entry_price": 203.05,
       "shares": 27,
-      "stop": 204.59,
+      "stop": 204.46,
       "trail_dist": 1.54,
-      "peak": 203.05,
+      "peak": 202.92,
       "orb_width": 3.08,
       "cost": 5482.35,
       "vol_ratio": 2.49
-    },
-    {
-      "ticker": "FOXA",
-      "side": "short",
-      "entry_date": "2026-07-23",
-      "entry_time": "11:59 ET",
-      "entry_price": 55.08,
-      "shares": 72,
-      "stop": 54.9799,
-      "trail_dist": 0.5799,
-      "peak": 54.4,
-      "orb_width": 1.1599,
-      "cost": 3965.76,
-      "vol_ratio": 2.39
     },
     {
       "ticker": "DASH",
@@ -568,9 +554,9 @@
       "entry_time": "12:08 ET",
       "entry_price": 295.375,
       "shares": 5,
-      "stop": 296.7125,
+      "stop": 296.6875,
       "trail_dist": 1.9925,
-      "peak": 294.72,
+      "peak": 294.695,
       "orb_width": 3.985,
       "cost": 1476.88,
       "vol_ratio": 1.29
@@ -638,9 +624,9 @@
       "entry_time": "12:20 ET",
       "entry_price": 126.44,
       "shares": 9,
-      "stop": 127.0175,
+      "stop": 126.9175,
       "trail_dist": 1.1075,
-      "peak": 125.91,
+      "peak": 125.81,
       "orb_width": 2.215,
       "cost": 1137.96,
       "vol_ratio": 1.39
@@ -688,20 +674,6 @@
       "vol_ratio": 1.98
     },
     {
-      "ticker": "D",
-      "side": "long",
-      "entry_date": "2026-07-23",
-      "entry_time": "12:25 ET",
-      "entry_price": 71.33,
-      "shares": 5,
-      "stop": 71.1075,
-      "trail_dist": 0.2725,
-      "peak": 71.38,
-      "orb_width": 0.545,
-      "cost": 356.65,
-      "vol_ratio": 1.4
-    },
-    {
       "ticker": "MDLZ",
       "side": "short",
       "entry_date": "2026-07-23",
@@ -736,9 +708,9 @@
       "entry_time": "12:27 ET",
       "entry_price": 129.77,
       "shares": 6,
-      "stop": 130.045,
+      "stop": 130.03,
       "trail_dist": 0.53,
-      "peak": 129.515,
+      "peak": 129.5,
       "orb_width": 1.06,
       "cost": 778.62,
       "vol_ratio": 1.27
@@ -876,9 +848,9 @@
       "entry_time": "12:48 ET",
       "entry_price": 76.66,
       "shares": 4,
-      "stop": 77.205,
+      "stop": 77.165,
       "trail_dist": 0.565,
-      "peak": 76.64,
+      "peak": 76.6,
       "orb_width": 1.13,
       "cost": 306.64,
       "vol_ratio": 1.91
@@ -896,6 +868,20 @@
       "orb_width": 1.025,
       "cost": 213.49,
       "vol_ratio": 1.89
+    },
+    {
+      "ticker": "ALGN",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:53 ET",
+      "entry_price": 166.87,
+      "shares": 8,
+      "stop": 168.67,
+      "trail_dist": 1.8,
+      "peak": 166.87,
+      "orb_width": 3.6,
+      "cost": 1334.96,
+      "vol_ratio": 1.46
     }
   ],
   "closed_today": [
@@ -2608,6 +2594,44 @@
       "pnl": 0.44,
       "exit_reason": "trailing stop",
       "exit_time": "12:48 ET"
+    },
+    {
+      "ticker": "FOXA",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:59 ET",
+      "entry_price": 55.08,
+      "shares": 72,
+      "stop": 54.9799,
+      "trail_dist": 0.5799,
+      "peak": 54.4,
+      "orb_width": 1.1599,
+      "cost": 3965.76,
+      "vol_ratio": 2.39,
+      "exit_date": "2026-07-23",
+      "exit_price": 54.9799,
+      "pnl": 7.21,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:53 ET"
+    },
+    {
+      "ticker": "D",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:25 ET",
+      "entry_price": 71.33,
+      "shares": 5,
+      "stop": 71.1075,
+      "trail_dist": 0.2725,
+      "peak": 71.38,
+      "orb_width": 0.545,
+      "cost": 356.65,
+      "vol_ratio": 1.4,
+      "exit_date": "2026-07-23",
+      "exit_price": 71.1075,
+      "pnl": -1.11,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:53 ET"
     }
   ],
   "all_closed": [
@@ -27955,7 +27979,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98290.23
+    "2026-07-23": 98261.7
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -55393,6 +55417,39 @@
       "exits": [],
       "portfolio_value": 98290.23,
       "note": "$98,290 | cash=$577 | open=64 | closed today=90 | day PnL=$+106"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "12:53 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "ALGN",
+          "side": "short",
+          "price": 166.87,
+          "shares": 8,
+          "stop": 168.67,
+          "trail_dist": 1.8
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "FOXA",
+          "side": "short",
+          "exit_price": 54.98,
+          "pnl": 7.21,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "D",
+          "side": "long",
+          "exit_price": 71.11,
+          "pnl": -1.11,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98261.7,
+      "note": "$98,262 | cash=$3,570 | open=63 | closed today=92 | day PnL=$+112"
     }
   ]
 }
