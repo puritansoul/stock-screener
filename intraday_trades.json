@@ -1,5 +1,5 @@
 {
-  "capital": 516.86,
+  "capital": 448.8,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -344,9 +344,9 @@
       "entry_time": "10:43 ET",
       "entry_price": 117.0,
       "shares": 8,
-      "stop": 117.7512,
+      "stop": 117.7462,
       "trail_dist": 0.9062,
-      "peak": 116.845,
+      "peak": 116.84,
       "orb_width": 1.8125,
       "cost": 936.0,
       "vol_ratio": 1.68
@@ -420,20 +420,6 @@
       "orb_width": 1.36,
       "cost": 112.38,
       "vol_ratio": 1.55
-    },
-    {
-      "ticker": "PNW",
-      "side": "long",
-      "entry_date": "2026-07-23",
-      "entry_time": "10:53 ET",
-      "entry_price": 107.22,
-      "shares": 4,
-      "stop": 106.74,
-      "trail_dist": 0.58,
-      "peak": 107.32,
-      "orb_width": 1.16,
-      "cost": 428.88,
-      "vol_ratio": 2.78
     },
     {
       "ticker": "CRL",
@@ -540,9 +526,9 @@
       "entry_time": "11:00 ET",
       "entry_price": 137.96,
       "shares": 22,
-      "stop": 137.695,
+      "stop": 137.685,
       "trail_dist": 0.945,
-      "peak": 136.75,
+      "peak": 136.74,
       "orb_width": 1.89,
       "cost": 3035.12,
       "vol_ratio": 2.52
@@ -786,20 +772,6 @@
       "vol_ratio": 1.9
     },
     {
-      "ticker": "BMY",
-      "side": "long",
-      "entry_date": "2026-07-23",
-      "entry_time": "11:14 ET",
-      "entry_price": 61.87,
-      "shares": 1,
-      "stop": 61.57,
-      "trail_dist": 0.38,
-      "peak": 61.95,
-      "orb_width": 0.76,
-      "cost": 61.87,
-      "vol_ratio": 1.59
-    },
-    {
       "ticker": "RCL",
       "side": "long",
       "entry_date": "2026-07-23",
@@ -974,9 +946,9 @@
       "entry_time": "11:45 ET",
       "entry_price": 79.495,
       "shares": 6,
-      "stop": 80.0575,
+      "stop": 80.0075,
       "trail_dist": 0.6675,
-      "peak": 79.39,
+      "peak": 79.34,
       "orb_width": 1.335,
       "cost": 476.97,
       "vol_ratio": 1.81
@@ -1030,9 +1002,9 @@
       "entry_time": "11:45 ET",
       "entry_price": 168.855,
       "shares": 1,
-      "stop": 170.52,
+      "stop": 170.27,
       "trail_dist": 1.97,
-      "peak": 168.55,
+      "peak": 168.3,
       "orb_width": 3.94,
       "cost": 168.85,
       "vol_ratio": 1.22
@@ -1044,12 +1016,54 @@
       "entry_time": "11:47 ET",
       "entry_price": 89.385,
       "shares": 2,
-      "stop": 89.01,
+      "stop": 89.131,
       "trail_dist": 0.375,
-      "peak": 89.385,
+      "peak": 89.506,
       "orb_width": 0.75,
       "cost": 178.77,
       "vol_ratio": 1.78
+    },
+    {
+      "ticker": "EXPE",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:49 ET",
+      "entry_price": 254.05,
+      "shares": 1,
+      "stop": 256.22,
+      "trail_dist": 2.17,
+      "peak": 254.05,
+      "orb_width": 4.34,
+      "cost": 254.05,
+      "vol_ratio": 2.55
+    },
+    {
+      "ticker": "SOLV",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:49 ET",
+      "entry_price": 76.99,
+      "shares": 2,
+      "stop": 77.4675,
+      "trail_dist": 0.4775,
+      "peak": 76.99,
+      "orb_width": 0.955,
+      "cost": 153.98,
+      "vol_ratio": 2.17
+    },
+    {
+      "ticker": "DTE",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:49 ET",
+      "entry_price": 148.5627,
+      "shares": 1,
+      "stop": 147.7927,
+      "trail_dist": 0.77,
+      "peak": 148.5627,
+      "orb_width": 1.54,
+      "cost": 148.56,
+      "vol_ratio": 1.62
     }
   ],
   "closed_today": [
@@ -1812,6 +1826,44 @@
       "pnl": 2.11,
       "exit_reason": "trailing stop",
       "exit_time": "11:47 ET"
+    },
+    {
+      "ticker": "PNW",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:53 ET",
+      "entry_price": 107.22,
+      "shares": 4,
+      "stop": 106.74,
+      "trail_dist": 0.58,
+      "peak": 107.32,
+      "orb_width": 1.16,
+      "cost": 428.88,
+      "vol_ratio": 2.78,
+      "exit_date": "2026-07-23",
+      "exit_price": 106.74,
+      "pnl": -1.92,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:49 ET"
+    },
+    {
+      "ticker": "BMY",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:14 ET",
+      "entry_price": 61.87,
+      "shares": 1,
+      "stop": 61.57,
+      "trail_dist": 0.38,
+      "peak": 61.95,
+      "orb_width": 0.76,
+      "cost": 61.87,
+      "vol_ratio": 1.59,
+      "exit_date": "2026-07-23",
+      "exit_price": 61.57,
+      "pnl": -0.3,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:49 ET"
     }
   ],
   "all_closed": [
@@ -27159,7 +27211,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98455.62
+    "2026-07-23": 98448.34
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -53654,6 +53706,55 @@
       ],
       "portfolio_value": 98455.62,
       "note": "$98,456 | cash=$517 | open=75 | closed today=40 | day PnL=$+258"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "11:49 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "EXPE",
+          "side": "short",
+          "price": 254.05,
+          "shares": 1,
+          "stop": 256.22,
+          "trail_dist": 2.17
+        },
+        {
+          "ticker": "SOLV",
+          "side": "short",
+          "price": 76.99,
+          "shares": 2,
+          "stop": 77.47,
+          "trail_dist": 0.4775
+        },
+        {
+          "ticker": "DTE",
+          "side": "long",
+          "price": 148.56,
+          "shares": 1,
+          "stop": 147.79,
+          "trail_dist": 0.77
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "PNW",
+          "side": "long",
+          "exit_price": 106.74,
+          "pnl": -1.92,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "BMY",
+          "side": "long",
+          "exit_price": 61.57,
+          "pnl": -0.3,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98448.34,
+      "note": "$98,448 | cash=$449 | open=76 | closed today=42 | day PnL=$+256"
     }
   ]
 }
