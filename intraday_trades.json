@@ -1,5 +1,5 @@
 {
-  "capital": 209.99,
+  "capital": 407.01,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -330,9 +330,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 63.1,
       "shares": 7,
-      "stop": 62.725,
+      "stop": 62.69,
       "trail_dist": 0.785,
-      "peak": 61.94,
+      "peak": 61.905,
       "orb_width": 1.57,
       "cost": 441.7,
       "vol_ratio": 1.94
@@ -638,9 +638,9 @@
       "entry_time": "12:20 ET",
       "entry_price": 116.12,
       "shares": 13,
-      "stop": 115.4825,
+      "stop": 115.5125,
       "trail_dist": 0.7175,
-      "peak": 116.2,
+      "peak": 116.23,
       "orb_width": 1.435,
       "cost": 1509.56,
       "vol_ratio": 1.87
@@ -840,20 +840,6 @@
       "orb_width": 3.9,
       "cost": 223.99,
       "vol_ratio": 2.01
-    },
-    {
-      "ticker": "FOX",
-      "side": "short",
-      "entry_date": "2026-07-23",
-      "entry_time": "12:39 ET",
-      "entry_price": 49.18,
-      "shares": 4,
-      "stop": 49.105,
-      "trail_dist": 0.515,
-      "peak": 48.59,
-      "orb_width": 1.03,
-      "cost": 196.72,
-      "vol_ratio": 1.51
     },
     {
       "ticker": "CHTR",
@@ -2570,6 +2556,25 @@
       "pnl": -0.8,
       "exit_reason": "trailing stop",
       "exit_time": "12:39 ET"
+    },
+    {
+      "ticker": "FOX",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:39 ET",
+      "entry_price": 49.18,
+      "shares": 4,
+      "stop": 49.105,
+      "trail_dist": 0.515,
+      "peak": 48.59,
+      "orb_width": 1.03,
+      "cost": 196.72,
+      "vol_ratio": 1.51,
+      "exit_date": "2026-07-23",
+      "exit_price": 49.105,
+      "pnl": 0.3,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:46 ET"
     }
   ],
   "all_closed": [
@@ -27917,7 +27922,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98266.93
+    "2026-07-23": 98247.3
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -55295,6 +55300,23 @@
       "exits": [],
       "portfolio_value": 98266.93,
       "note": "$98,267 | cash=$210 | open=64 | closed today=88 | day PnL=$+105"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "12:46 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "FOX",
+          "side": "short",
+          "exit_price": 49.1,
+          "pnl": 0.3,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98247.3,
+      "note": "$98,247 | cash=$407 | open=63 | closed today=89 | day PnL=$+105"
     }
   ]
 }
