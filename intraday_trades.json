@@ -1,5 +1,5 @@
 {
-  "capital": 16747.31,
+  "capital": 8444.22,
   "open_positions": [
     {
       "ticker": "CBOE",
@@ -8,9 +8,9 @@
       "entry_time": "10:03 ET",
       "entry_price": 284.015,
       "shares": 103,
-      "stop": 282.2025,
+      "stop": 282.37,
       "trail_dist": 2.91,
-      "peak": 285.1125,
+      "peak": 285.28,
       "orb_width": 5.82,
       "cost": 29253.55,
       "vol_ratio": 1.56
@@ -22,9 +22,9 @@
       "entry_time": "10:03 ET",
       "entry_price": 41.125,
       "shares": 501,
-      "stop": 41.4499,
+      "stop": 41.44,
       "trail_dist": 0.35,
-      "peak": 41.0999,
+      "peak": 41.09,
       "orb_width": 0.7,
       "cost": 20603.62,
       "vol_ratio": 1.48
@@ -36,9 +36,9 @@
       "entry_time": "10:03 ET",
       "entry_price": 302.69,
       "shares": 47,
-      "stop": 296.925,
+      "stop": 297.745,
       "trail_dist": 6.195,
-      "peak": 303.12,
+      "peak": 303.94,
       "orb_width": 12.39,
       "cost": 14226.43,
       "vol_ratio": 1.43
@@ -50,9 +50,9 @@
       "entry_time": "10:03 ET",
       "entry_price": 109.5,
       "shares": 93,
-      "stop": 110.2,
+      "stop": 110.16,
       "trail_dist": 0.95,
-      "peak": 109.25,
+      "peak": 109.21,
       "orb_width": 1.9,
       "cost": 10183.5,
       "vol_ratio": 1.35
@@ -64,12 +64,40 @@
       "entry_time": "10:05 ET",
       "entry_price": 130.5,
       "shares": 54,
-      "stop": 131.4,
+      "stop": 131.29,
       "trail_dist": 0.9,
-      "peak": 130.5,
+      "peak": 130.39,
       "orb_width": 1.8,
       "cost": 7047.0,
       "vol_ratio": 1.38
+    },
+    {
+      "ticker": "LEN",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:08 ET",
+      "entry_price": 79.9801,
+      "shares": 62,
+      "stop": 80.6251,
+      "trail_dist": 0.645,
+      "peak": 79.9801,
+      "orb_width": 1.29,
+      "cost": 4958.77,
+      "vol_ratio": 1.58
+    },
+    {
+      "ticker": "EA",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:08 ET",
+      "entry_price": 209.02,
+      "shares": 16,
+      "stop": 209.095,
+      "trail_dist": 0.075,
+      "peak": 209.02,
+      "orb_width": 0.15,
+      "cost": 3344.32,
+      "vol_ratio": 1.2
     }
   ],
   "closed_today": [],
@@ -22992,9 +23020,9 @@
       "width": 6.25
     },
     "GOOG": {
-      "high": 348.12,
-      "low": 345.67,
-      "width": 2.45
+      "high": 324.39,
+      "low": 317.91,
+      "width": 6.48
     },
     "MO": {
       "high": 72.2318,
@@ -23077,9 +23105,9 @@
       "width": 0.53
     },
     "APO": {
-      "high": 121.7,
+      "high": 121.72,
       "low": 117.525,
-      "width": 4.175
+      "width": 4.195
     },
     "AAPL": {
       "high": 323.3,
@@ -23222,9 +23250,9 @@
       "width": 17.2401
     },
     "BX": {
-      "high": 126.505,
+      "high": 126.51,
       "low": 120.76,
-      "width": 5.745
+      "width": 5.75
     },
     "XYZ": {
       "high": 77.93,
@@ -23373,8 +23401,8 @@
     },
     "CF": {
       "high": 130.05,
-      "low": 127.95,
-      "width": 2.1
+      "low": 127.835,
+      "width": 2.215
     },
     "CRL": {
       "high": 238.85,
@@ -23423,13 +23451,18 @@
     },
     "CINF": {
       "high": 179.3,
-      "low": 177.285,
-      "width": 2.015
+      "low": 177.24,
+      "width": 2.06
     },
     "CTAS": {
       "high": 202.25,
       "low": 199.88,
       "width": 2.37
+    },
+    "CSCO": {
+      "high": 113.9,
+      "low": 111.83,
+      "width": 2.07
     },
     "C": {
       "high": 132.1,
@@ -23788,8 +23821,8 @@
     },
     "EG": {
       "high": 374.57,
-      "low": 370.45,
-      "width": 4.12
+      "low": 369.465,
+      "width": 5.105
     },
     "EVRG": {
       "high": 86.69,
@@ -24413,8 +24446,8 @@
     },
     "MKC": {
       "high": 51.6,
-      "low": 50.675,
-      "width": 0.925
+      "low": 50.66,
+      "width": 0.94
     },
     "MCD": {
       "high": 263.68,
@@ -24867,9 +24900,9 @@
       "width": 3.9
     },
     "HOOD": {
-      "high": 104.1,
-      "low": 100.9,
-      "width": 3.2
+      "high": 106.885,
+      "low": 105.1092,
+      "width": 1.7758
     },
     "ROK": {
       "high": 462.27,
@@ -25413,7 +25446,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98230.48
+    "2026-07-23": 98197.35
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -50306,6 +50339,32 @@
       "exits": [],
       "portfolio_value": 98230.48,
       "note": "$98,230 | cash=$16,747 | open=5 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "10:07 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "LEN",
+          "side": "short",
+          "price": 79.98,
+          "shares": 62,
+          "stop": 80.63,
+          "trail_dist": 0.645
+        },
+        {
+          "ticker": "EA",
+          "side": "short",
+          "price": 209.02,
+          "shares": 16,
+          "stop": 209.1,
+          "trail_dist": 0.075
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 98197.35,
+      "note": "$98,197 | cash=$8,444 | open=7 | closed today=0 | day PnL=$+0"
     }
   ]
 }
