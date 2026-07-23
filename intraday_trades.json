@@ -1,5 +1,5 @@
 {
-  "capital": 1922.4,
+  "capital": 506.6,
   "open_positions": [
     {
       "ticker": "CBOE",
@@ -176,9 +176,9 @@
       "entry_time": "10:15 ET",
       "entry_price": 200.0001,
       "shares": 2,
-      "stop": 199.785,
+      "stop": 199.935,
       "trail_dist": 1.135,
-      "peak": 200.92,
+      "peak": 201.07,
       "orb_width": 2.27,
       "cost": 400.0,
       "vol_ratio": 2.73
@@ -190,9 +190,9 @@
       "entry_time": "10:15 ET",
       "entry_price": 296.43,
       "shares": 1,
-      "stop": 295.29,
+      "stop": 295.46,
       "trail_dist": 1.85,
-      "peak": 297.14,
+      "peak": 297.31,
       "orb_width": 3.7,
       "cost": 296.43,
       "vol_ratio": 2.57
@@ -204,9 +204,9 @@
       "entry_time": "10:15 ET",
       "entry_price": 258.54,
       "shares": 1,
-      "stop": 260.0375,
+      "stop": 259.5175,
       "trail_dist": 2.2925,
-      "peak": 257.745,
+      "peak": 257.225,
       "orb_width": 4.5849,
       "cost": 258.54,
       "vol_ratio": 1.74
@@ -232,9 +232,9 @@
       "entry_time": "10:15 ET",
       "entry_price": 93.89,
       "shares": 1,
-      "stop": 93.205,
+      "stop": 93.455,
       "trail_dist": 0.785,
-      "peak": 93.99,
+      "peak": 94.24,
       "orb_width": 1.57,
       "cost": 93.89,
       "vol_ratio": 1.27
@@ -246,9 +246,9 @@
       "entry_time": "10:17 ET",
       "entry_price": 357.095,
       "shares": 6,
-      "stop": 353.715,
+      "stop": 354.3,
       "trail_dist": 3.38,
-      "peak": 357.095,
+      "peak": 357.68,
       "orb_width": 6.76,
       "cost": 2142.57,
       "vol_ratio": 6.22
@@ -260,9 +260,9 @@
       "entry_time": "10:17 ET",
       "entry_price": 96.02,
       "shares": 16,
-      "stop": 95.5,
+      "stop": 95.62,
       "trail_dist": 0.52,
-      "peak": 96.02,
+      "peak": 96.14,
       "orb_width": 1.04,
       "cost": 1536.32,
       "vol_ratio": 2.89
@@ -274,9 +274,9 @@
       "entry_time": "10:17 ET",
       "entry_price": 68.97,
       "shares": 16,
-      "stop": 68.205,
+      "stop": 68.335,
       "trail_dist": 0.765,
-      "peak": 68.97,
+      "peak": 69.1,
       "orb_width": 1.53,
       "cost": 1103.52,
       "vol_ratio": 1.93
@@ -288,12 +288,82 @@
       "entry_time": "10:17 ET",
       "entry_price": 134.09,
       "shares": 6,
-      "stop": 133.395,
+      "stop": 133.575,
       "trail_dist": 0.695,
-      "peak": 134.09,
+      "peak": 134.27,
       "orb_width": 1.39,
       "cost": 804.54,
       "vol_ratio": 1.38
+    },
+    {
+      "ticker": "PPL",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:20 ET",
+      "entry_price": 36.19,
+      "shares": 15,
+      "stop": 36.045,
+      "trail_dist": 0.145,
+      "peak": 36.19,
+      "orb_width": 0.29,
+      "cost": 542.85,
+      "vol_ratio": 3.64
+    },
+    {
+      "ticker": "EXPE",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:20 ET",
+      "entry_price": 255.4,
+      "shares": 1,
+      "stop": 257.57,
+      "trail_dist": 2.17,
+      "peak": 255.4,
+      "orb_width": 4.34,
+      "cost": 255.4,
+      "vol_ratio": 2.18
+    },
+    {
+      "ticker": "ITW",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:20 ET",
+      "entry_price": 275.69,
+      "shares": 1,
+      "stop": 273.5412,
+      "trail_dist": 2.1488,
+      "peak": 275.69,
+      "orb_width": 4.2975,
+      "cost": 275.69,
+      "vol_ratio": 2.17
+    },
+    {
+      "ticker": "WEC",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:20 ET",
+      "entry_price": 114.08,
+      "shares": 2,
+      "stop": 113.375,
+      "trail_dist": 0.705,
+      "peak": 114.08,
+      "orb_width": 1.41,
+      "cost": 228.16,
+      "vol_ratio": 1.65
+    },
+    {
+      "ticker": "PPG",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:20 ET",
+      "entry_price": 113.705,
+      "shares": 1,
+      "stop": 114.5875,
+      "trail_dist": 0.8825,
+      "peak": 113.705,
+      "orb_width": 1.765,
+      "cost": 113.71,
+      "vol_ratio": 1.51
     }
   ],
   "closed_today": [
@@ -25700,7 +25770,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98046.22
+    "2026-07-23": 98116.42
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -50819,6 +50889,56 @@
       ],
       "portfolio_value": 98046.22,
       "note": "$98,046 | cash=$1,922 | open=21 | closed today=3 | day PnL=$-8"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "10:19 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "PPL",
+          "side": "long",
+          "price": 36.19,
+          "shares": 15,
+          "stop": 36.04,
+          "trail_dist": 0.145
+        },
+        {
+          "ticker": "EXPE",
+          "side": "short",
+          "price": 255.4,
+          "shares": 1,
+          "stop": 257.57,
+          "trail_dist": 2.17
+        },
+        {
+          "ticker": "ITW",
+          "side": "long",
+          "price": 275.69,
+          "shares": 1,
+          "stop": 273.54,
+          "trail_dist": 2.1488
+        },
+        {
+          "ticker": "WEC",
+          "side": "long",
+          "price": 114.08,
+          "shares": 2,
+          "stop": 113.38,
+          "trail_dist": 0.705
+        },
+        {
+          "ticker": "PPG",
+          "side": "short",
+          "price": 113.71,
+          "shares": 1,
+          "stop": 114.59,
+          "trail_dist": 0.8825
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 98116.42,
+      "note": "$98,116 | cash=$507 | open=26 | closed today=3 | day PnL=$-8"
     }
   ]
 }
