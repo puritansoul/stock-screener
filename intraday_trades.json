@@ -1,5 +1,5 @@
 {
-  "capital": 3570.26,
+  "capital": 4104.11,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -730,20 +730,6 @@
       "vol_ratio": 1.2
     },
     {
-      "ticker": "ZBH",
-      "side": "long",
-      "entry_date": "2026-07-23",
-      "entry_time": "12:30 ET",
-      "entry_price": 89.22,
-      "shares": 6,
-      "stop": 88.975,
-      "trail_dist": 0.375,
-      "peak": 89.35,
-      "orb_width": 0.75,
-      "cost": 535.32,
-      "vol_ratio": 1.58
-    },
-    {
       "ticker": "HIG",
       "side": "long",
       "entry_date": "2026-07-23",
@@ -792,9 +778,9 @@
       "entry_time": "12:39 ET",
       "entry_price": 111.995,
       "shares": 2,
-      "stop": 113.275,
+      "stop": 113.24,
       "trail_dist": 1.95,
-      "peak": 111.325,
+      "peak": 111.29,
       "orb_width": 3.9,
       "cost": 223.99,
       "vol_ratio": 2.01
@@ -2632,6 +2618,25 @@
       "pnl": -1.11,
       "exit_reason": "trailing stop",
       "exit_time": "12:53 ET"
+    },
+    {
+      "ticker": "ZBH",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:30 ET",
+      "entry_price": 89.22,
+      "shares": 6,
+      "stop": 88.975,
+      "trail_dist": 0.375,
+      "peak": 89.35,
+      "orb_width": 0.75,
+      "cost": 535.32,
+      "vol_ratio": 1.58,
+      "exit_date": "2026-07-23",
+      "exit_price": 88.975,
+      "pnl": -1.47,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:55 ET"
     }
   ],
   "all_closed": [
@@ -27979,7 +27984,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98261.7
+    "2026-07-23": 98221.09
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -55450,6 +55455,23 @@
       ],
       "portfolio_value": 98261.7,
       "note": "$98,262 | cash=$3,570 | open=63 | closed today=92 | day PnL=$+112"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "12:55 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "ZBH",
+          "side": "long",
+          "exit_price": 88.97,
+          "pnl": -1.47,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98221.09,
+      "note": "$98,221 | cash=$4,104 | open=62 | closed today=93 | day PnL=$+110"
     }
   ]
 }
