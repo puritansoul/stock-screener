@@ -1,5 +1,5 @@
 {
-  "capital": 4956.57,
+  "capital": 3696.37,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -204,9 +204,9 @@
       "entry_time": "10:38 ET",
       "entry_price": 25.595,
       "shares": 12,
-      "stop": 25.5601,
+      "stop": 25.545,
       "trail_dist": 0.175,
-      "peak": 25.3851,
+      "peak": 25.37,
       "orb_width": 0.35,
       "cost": 307.14,
       "vol_ratio": 2.12
@@ -442,9 +442,9 @@
       "entry_time": "11:07 ET",
       "entry_price": 81.98,
       "shares": 3,
-      "stop": 81.6375,
+      "stop": 81.6075,
       "trail_dist": 0.2875,
-      "peak": 81.35,
+      "peak": 81.32,
       "orb_width": 0.575,
       "cost": 245.94,
       "vol_ratio": 1.24
@@ -618,20 +618,6 @@
       "vol_ratio": 1.78
     },
     {
-      "ticker": "SOLV",
-      "side": "short",
-      "entry_date": "2026-07-23",
-      "entry_time": "11:49 ET",
-      "entry_price": 76.99,
-      "shares": 2,
-      "stop": 77.2775,
-      "trail_dist": 0.4775,
-      "peak": 76.8,
-      "orb_width": 0.955,
-      "cost": 153.98,
-      "vol_ratio": 2.17
-    },
-    {
       "ticker": "DTE",
       "side": "long",
       "entry_date": "2026-07-23",
@@ -750,9 +736,9 @@
       "entry_time": "12:08 ET",
       "entry_price": 295.375,
       "shares": 5,
-      "stop": 297.2725,
+      "stop": 297.2025,
       "trail_dist": 1.9925,
-      "peak": 295.28,
+      "peak": 295.21,
       "orb_width": 3.985,
       "cost": 1476.88,
       "vol_ratio": 1.29
@@ -798,6 +784,20 @@
       "orb_width": 1.01,
       "cost": 784.44,
       "vol_ratio": 1.28
+    },
+    {
+      "ticker": "LYV",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:18 ET",
+      "entry_price": 176.7,
+      "shares": 8,
+      "stop": 177.275,
+      "trail_dist": 0.575,
+      "peak": 176.7,
+      "orb_width": 1.15,
+      "cost": 1413.6,
+      "vol_ratio": 3.83
     }
   ],
   "closed_today": [
@@ -2225,6 +2225,25 @@
       "pnl": -5.13,
       "exit_reason": "trailing stop",
       "exit_time": "12:15 ET"
+    },
+    {
+      "ticker": "SOLV",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:49 ET",
+      "entry_price": 76.99,
+      "shares": 2,
+      "stop": 77.2775,
+      "trail_dist": 0.4775,
+      "peak": 76.8,
+      "orb_width": 0.955,
+      "cost": 153.98,
+      "vol_ratio": 2.17,
+      "exit_date": "2026-07-23",
+      "exit_price": 77.2775,
+      "pnl": -0.58,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:18 ET"
     }
   ],
   "all_closed": [
@@ -27572,7 +27591,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98263.45
+    "2026-07-23": 98211.01
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -54575,6 +54594,32 @@
       ],
       "portfolio_value": 98263.45,
       "note": "$98,263 | cash=$4,957 | open=57 | closed today=75 | day PnL=$+126"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "12:17 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "LYV",
+          "side": "short",
+          "price": 176.7,
+          "shares": 8,
+          "stop": 177.27,
+          "trail_dist": 0.575
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "SOLV",
+          "side": "short",
+          "exit_price": 77.28,
+          "pnl": -0.58,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98211.01,
+      "note": "$98,211 | cash=$3,696 | open=57 | closed today=76 | day PnL=$+126"
     }
   ]
 }
