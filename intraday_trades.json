@@ -1,5 +1,5 @@
 {
-  "capital": 1002.63,
+  "capital": 715.78,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -582,9 +582,9 @@
       "entry_time": "11:59 ET",
       "entry_price": 83.72,
       "shares": 23,
-      "stop": 83.9445,
+      "stop": 83.8945,
       "trail_dist": 0.3745,
-      "peak": 83.57,
+      "peak": 83.52,
       "orb_width": 0.749,
       "cost": 1925.56,
       "vol_ratio": 1.23
@@ -680,9 +680,9 @@
       "entry_time": "12:20 ET",
       "entry_price": 126.44,
       "shares": 9,
-      "stop": 127.3576,
+      "stop": 127.1075,
       "trail_dist": 1.1075,
-      "peak": 126.2501,
+      "peak": 126.0,
       "orb_width": 2.215,
       "cost": 1137.96,
       "vol_ratio": 1.39
@@ -736,9 +736,9 @@
       "entry_time": "12:25 ET",
       "entry_price": 71.33,
       "shares": 5,
-      "stop": 71.0575,
+      "stop": 71.1075,
       "trail_dist": 0.2725,
-      "peak": 71.33,
+      "peak": 71.38,
       "orb_width": 0.545,
       "cost": 356.65,
       "vol_ratio": 1.4
@@ -792,9 +792,9 @@
       "entry_time": "12:27 ET",
       "entry_price": 144.275,
       "shares": 3,
-      "stop": 143.8,
+      "stop": 144.03,
       "trail_dist": 0.67,
-      "peak": 144.47,
+      "peak": 144.7,
       "orb_width": 1.34,
       "cost": 432.82,
       "vol_ratio": 1.2
@@ -806,9 +806,9 @@
       "entry_time": "12:30 ET",
       "entry_price": 89.22,
       "shares": 6,
-      "stop": 88.845,
+      "stop": 88.925,
       "trail_dist": 0.375,
-      "peak": 89.22,
+      "peak": 89.3,
       "orb_width": 0.75,
       "cost": 535.32,
       "vol_ratio": 1.58
@@ -820,12 +820,26 @@
       "entry_time": "12:30 ET",
       "entry_price": 141.82,
       "shares": 3,
-      "stop": 141.095,
+      "stop": 141.17,
       "trail_dist": 0.725,
-      "peak": 141.82,
+      "peak": 141.895,
       "orb_width": 1.45,
       "cost": 425.46,
       "vol_ratio": 1.56
+    },
+    {
+      "ticker": "DOC",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:32 ET",
+      "entry_price": 22.065,
+      "shares": 13,
+      "stop": 22.15,
+      "trail_dist": 0.085,
+      "peak": 22.065,
+      "orb_width": 0.17,
+      "cost": 286.85,
+      "vol_ratio": 1.32
     }
   ],
   "closed_today": [
@@ -27809,7 +27823,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98191.59
+    "2026-07-23": 98164.14
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -55058,6 +55072,24 @@
       ],
       "portfolio_value": 98191.59,
       "note": "$98,192 | cash=$1,003 | open=59 | closed today=86 | day PnL=$+107"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "12:32 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "DOC",
+          "side": "short",
+          "price": 22.07,
+          "shares": 13,
+          "stop": 22.15,
+          "trail_dist": 0.085
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 98164.14,
+      "note": "$98,164 | cash=$716 | open=60 | closed today=86 | day PnL=$+107"
     }
   ]
 }
