@@ -1,5 +1,5 @@
 {
-  "capital": 2079.69,
+  "capital": 4956.57,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -50,9 +50,9 @@
       "entry_time": "10:10 ET",
       "entry_price": 209.01,
       "shares": 6,
-      "stop": 208.985,
+      "stop": 208.975,
       "trail_dist": 0.075,
-      "peak": 208.91,
+      "peak": 208.9,
       "orb_width": 0.15,
       "cost": 1254.06,
       "vol_ratio": 1.31
@@ -70,20 +70,6 @@
       "orb_width": 0.605,
       "cost": 468.84,
       "vol_ratio": 1.41
-    },
-    {
-      "ticker": "BIIB",
-      "side": "long",
-      "entry_date": "2026-07-23",
-      "entry_time": "10:15 ET",
-      "entry_price": 200.0001,
-      "shares": 2,
-      "stop": 202.375,
-      "trail_dist": 1.135,
-      "peak": 203.51,
-      "orb_width": 2.27,
-      "cost": 400.0,
-      "vol_ratio": 2.73
     },
     {
       "ticker": "ZBRA",
@@ -218,9 +204,9 @@
       "entry_time": "10:38 ET",
       "entry_price": 25.595,
       "shares": 12,
-      "stop": 25.595,
+      "stop": 25.5601,
       "trail_dist": 0.175,
-      "peak": 25.42,
+      "peak": 25.3851,
       "orb_width": 0.35,
       "cost": 307.14,
       "vol_ratio": 2.12
@@ -562,20 +548,6 @@
       "vol_ratio": 1.59
     },
     {
-      "ticker": "ALGN",
-      "side": "short",
-      "entry_date": "2026-07-23",
-      "entry_time": "11:33 ET",
-      "entry_price": 166.49,
-      "shares": 2,
-      "stop": 168.05,
-      "trail_dist": 1.8,
-      "peak": 166.25,
-      "orb_width": 3.6,
-      "cost": 332.98,
-      "vol_ratio": 1.31
-    },
-    {
       "ticker": "GILD",
       "side": "long",
       "entry_date": "2026-07-23",
@@ -638,9 +610,9 @@
       "entry_time": "11:47 ET",
       "entry_price": 89.385,
       "shares": 2,
-      "stop": 89.215,
+      "stop": 89.28,
       "trail_dist": 0.375,
-      "peak": 89.59,
+      "peak": 89.655,
       "orb_width": 0.75,
       "cost": 178.77,
       "vol_ratio": 1.78
@@ -708,9 +680,9 @@
       "entry_time": "11:59 ET",
       "entry_price": 55.08,
       "shares": 72,
-      "stop": 55.6599,
+      "stop": 55.5499,
       "trail_dist": 0.5799,
-      "peak": 55.08,
+      "peak": 54.97,
       "orb_width": 1.1599,
       "cost": 3965.76,
       "vol_ratio": 2.39
@@ -786,29 +758,15 @@
       "vol_ratio": 1.29
     },
     {
-      "ticker": "ERIE",
-      "side": "long",
-      "entry_date": "2026-07-23",
-      "entry_time": "12:13 ET",
-      "entry_price": 214.74,
-      "shares": 10,
-      "stop": 214.2275,
-      "trail_dist": 0.5125,
-      "peak": 214.74,
-      "orb_width": 1.025,
-      "cost": 2147.4,
-      "vol_ratio": 3.26
-    },
-    {
       "ticker": "AWK",
       "side": "long",
       "entry_date": "2026-07-23",
       "entry_time": "12:13 ET",
       "entry_price": 134.12,
       "shares": 12,
-      "stop": 133.2875,
+      "stop": 133.4725,
       "trail_dist": 0.8325,
-      "peak": 134.12,
+      "peak": 134.305,
       "orb_width": 1.6649,
       "cost": 1609.44,
       "vol_ratio": 3.26
@@ -834,9 +792,9 @@
       "entry_time": "12:13 ET",
       "entry_price": 87.16,
       "shares": 9,
-      "stop": 87.665,
+      "stop": 87.565,
       "trail_dist": 0.505,
-      "peak": 87.16,
+      "peak": 87.06,
       "orb_width": 1.01,
       "cost": 784.44,
       "vol_ratio": 1.28
@@ -2210,6 +2168,63 @@
       "pnl": -4.61,
       "exit_reason": "trailing stop",
       "exit_time": "12:13 ET"
+    },
+    {
+      "ticker": "BIIB",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:15 ET",
+      "entry_price": 200.0001,
+      "shares": 2,
+      "stop": 202.375,
+      "trail_dist": 1.135,
+      "peak": 203.51,
+      "orb_width": 2.27,
+      "cost": 400.0,
+      "vol_ratio": 2.73,
+      "exit_date": "2026-07-23",
+      "exit_price": 202.375,
+      "pnl": 4.75,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:15 ET"
+    },
+    {
+      "ticker": "ALGN",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:33 ET",
+      "entry_price": 166.49,
+      "shares": 2,
+      "stop": 168.05,
+      "trail_dist": 1.8,
+      "peak": 166.25,
+      "orb_width": 3.6,
+      "cost": 332.98,
+      "vol_ratio": 1.31,
+      "exit_date": "2026-07-23",
+      "exit_price": 168.05,
+      "pnl": -3.12,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:15 ET"
+    },
+    {
+      "ticker": "ERIE",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:13 ET",
+      "entry_price": 214.74,
+      "shares": 10,
+      "stop": 214.2275,
+      "trail_dist": 0.5125,
+      "peak": 214.74,
+      "orb_width": 1.025,
+      "cost": 2147.4,
+      "vol_ratio": 3.26,
+      "exit_date": "2026-07-23",
+      "exit_price": 214.2275,
+      "pnl": -5.13,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:15 ET"
     }
   ],
   "all_closed": [
@@ -27557,7 +27572,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98208.45
+    "2026-07-23": 98263.45
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -54529,6 +54544,37 @@
       ],
       "portfolio_value": 98208.45,
       "note": "$98,208 | cash=$2,080 | open=60 | closed today=72 | day PnL=$+130"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "12:15 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "BIIB",
+          "side": "long",
+          "exit_price": 202.38,
+          "pnl": 4.75,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "ALGN",
+          "side": "short",
+          "exit_price": 168.05,
+          "pnl": -3.12,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "ERIE",
+          "side": "long",
+          "exit_price": 214.23,
+          "pnl": -5.13,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98263.45,
+      "note": "$98,263 | cash=$4,957 | open=57 | closed today=75 | day PnL=$+126"
     }
   ]
 }
