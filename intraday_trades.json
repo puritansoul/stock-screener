@@ -1,5 +1,5 @@
 {
-  "capital": 407.01,
+  "capital": 576.72,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -218,9 +218,9 @@
       "entry_time": "10:48 ET",
       "entry_price": 27.2,
       "shares": 12,
-      "stop": 27.175,
+      "stop": 27.165,
       "trail_dist": 0.32,
-      "peak": 26.855,
+      "peak": 26.845,
       "orb_width": 0.64,
       "cost": 326.4,
       "vol_ratio": 4.91
@@ -308,20 +308,6 @@
       "orb_width": 1.08,
       "cost": 371.55,
       "vol_ratio": 1.2
-    },
-    {
-      "ticker": "UPS",
-      "side": "short",
-      "entry_date": "2026-07-23",
-      "entry_time": "11:04 ET",
-      "entry_price": 114.9,
-      "shares": 6,
-      "stop": 114.8275,
-      "trail_dist": 0.6275,
-      "peak": 114.2,
-      "orb_width": 1.255,
-      "cost": 689.4,
-      "vol_ratio": 3.02
     },
     {
       "ticker": "LYB",
@@ -554,9 +540,9 @@
       "entry_time": "11:59 ET",
       "entry_price": 83.72,
       "shares": 23,
-      "stop": 83.8245,
+      "stop": 83.8095,
       "trail_dist": 0.3745,
-      "peak": 83.45,
+      "peak": 83.435,
       "orb_width": 0.749,
       "cost": 1925.56,
       "vol_ratio": 1.23
@@ -582,9 +568,9 @@
       "entry_time": "12:08 ET",
       "entry_price": 295.375,
       "shares": 5,
-      "stop": 297.1625,
+      "stop": 297.0025,
       "trail_dist": 1.9925,
-      "peak": 295.17,
+      "peak": 295.01,
       "orb_width": 3.985,
       "cost": 1476.88,
       "vol_ratio": 1.29
@@ -882,6 +868,34 @@
       "orb_width": 0.16,
       "cost": 85.2,
       "vol_ratio": 1.68
+    },
+    {
+      "ticker": "XYZ",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:48 ET",
+      "entry_price": 76.66,
+      "shares": 4,
+      "stop": 77.225,
+      "trail_dist": 0.565,
+      "peak": 76.66,
+      "orb_width": 1.13,
+      "cost": 306.64,
+      "vol_ratio": 1.91
+    },
+    {
+      "ticker": "ERIE",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:48 ET",
+      "entry_price": 213.485,
+      "shares": 1,
+      "stop": 212.9725,
+      "trail_dist": 0.5125,
+      "peak": 213.485,
+      "orb_width": 1.025,
+      "cost": 213.49,
+      "vol_ratio": 1.89
     }
   ],
   "closed_today": [
@@ -2575,6 +2589,25 @@
       "pnl": 0.3,
       "exit_reason": "trailing stop",
       "exit_time": "12:46 ET"
+    },
+    {
+      "ticker": "UPS",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:04 ET",
+      "entry_price": 114.9,
+      "shares": 6,
+      "stop": 114.8275,
+      "trail_dist": 0.6275,
+      "peak": 114.2,
+      "orb_width": 1.255,
+      "cost": 689.4,
+      "vol_ratio": 3.02,
+      "exit_date": "2026-07-23",
+      "exit_price": 114.8275,
+      "pnl": 0.44,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:48 ET"
     }
   ],
   "all_closed": [
@@ -27922,7 +27955,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98247.3
+    "2026-07-23": 98231.11
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -55317,6 +55350,40 @@
       ],
       "portfolio_value": 98247.3,
       "note": "$98,247 | cash=$407 | open=63 | closed today=89 | day PnL=$+105"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "12:48 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "XYZ",
+          "side": "short",
+          "price": 76.66,
+          "shares": 4,
+          "stop": 77.23,
+          "trail_dist": 0.565
+        },
+        {
+          "ticker": "ERIE",
+          "side": "long",
+          "price": 213.49,
+          "shares": 1,
+          "stop": 212.97,
+          "trail_dist": 0.5125
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "UPS",
+          "side": "short",
+          "exit_price": 114.83,
+          "pnl": 0.44,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98231.11,
+      "note": "$98,231 | cash=$577 | open=64 | closed today=90 | day PnL=$+106"
     }
   ]
 }
