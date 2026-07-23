@@ -1,5 +1,5 @@
 {
-  "capital": 4104.11,
+  "capital": 2936.52,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -42,20 +42,6 @@
       "orb_width": 1.29,
       "cost": 1934.0,
       "vol_ratio": 1.38
-    },
-    {
-      "ticker": "EA",
-      "side": "short",
-      "entry_date": "2026-07-23",
-      "entry_time": "10:10 ET",
-      "entry_price": 209.01,
-      "shares": 6,
-      "stop": 208.925,
-      "trail_dist": 0.075,
-      "peak": 208.85,
-      "orb_width": 0.15,
-      "cost": 1254.06,
-      "vol_ratio": 1.31
     },
     {
       "ticker": "GIS",
@@ -148,9 +134,9 @@
       "entry_time": "10:29 ET",
       "entry_price": 146.655,
       "shares": 2,
-      "stop": 145.85,
+      "stop": 146.08,
       "trail_dist": 1.13,
-      "peak": 146.98,
+      "peak": 147.21,
       "orb_width": 2.26,
       "cost": 293.31,
       "vol_ratio": 1.34
@@ -288,9 +274,9 @@
       "entry_time": "11:00 ET",
       "entry_price": 137.96,
       "shares": 22,
-      "stop": 137.635,
+      "stop": 137.545,
       "trail_dist": 0.945,
-      "peak": 136.69,
+      "peak": 136.6,
       "orb_width": 1.89,
       "cost": 3035.12,
       "vol_ratio": 2.52
@@ -708,9 +694,9 @@
       "entry_time": "12:27 ET",
       "entry_price": 129.77,
       "shares": 6,
-      "stop": 130.03,
+      "stop": 129.99,
       "trail_dist": 0.53,
-      "peak": 129.5,
+      "peak": 129.46,
       "orb_width": 1.06,
       "cost": 778.62,
       "vol_ratio": 1.27
@@ -750,9 +736,9 @@
       "entry_time": "12:32 ET",
       "entry_price": 22.065,
       "shares": 13,
-      "stop": 22.125,
+      "stop": 22.1087,
       "trail_dist": 0.085,
-      "peak": 22.04,
+      "peak": 22.0237,
       "orb_width": 0.17,
       "cost": 286.85,
       "vol_ratio": 1.32
@@ -778,9 +764,9 @@
       "entry_time": "12:39 ET",
       "entry_price": 111.995,
       "shares": 2,
-      "stop": 113.24,
+      "stop": 113.08,
       "trail_dist": 1.95,
-      "peak": 111.29,
+      "peak": 111.13,
       "orb_width": 3.9,
       "cost": 223.99,
       "vol_ratio": 2.01
@@ -862,12 +848,40 @@
       "entry_time": "12:53 ET",
       "entry_price": 166.87,
       "shares": 8,
-      "stop": 168.67,
+      "stop": 168.63,
       "trail_dist": 1.8,
-      "peak": 166.87,
+      "peak": 166.83,
       "orb_width": 3.6,
       "cost": 1334.96,
       "vol_ratio": 1.46
+    },
+    {
+      "ticker": "AIZ",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:58 ET",
+      "entry_price": 272.645,
+      "shares": 5,
+      "stop": 271.26,
+      "trail_dist": 1.385,
+      "peak": 272.645,
+      "orb_width": 2.77,
+      "cost": 1363.22,
+      "vol_ratio": 3.85
+    },
+    {
+      "ticker": "AMD",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:58 ET",
+      "entry_price": 529.47,
+      "shares": 2,
+      "stop": 537.5449,
+      "trail_dist": 8.0749,
+      "peak": 529.47,
+      "orb_width": 16.1499,
+      "cost": 1058.94,
+      "vol_ratio": 1.2
     }
   ],
   "closed_today": [
@@ -2637,6 +2651,25 @@
       "pnl": -1.47,
       "exit_reason": "trailing stop",
       "exit_time": "12:55 ET"
+    },
+    {
+      "ticker": "EA",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:10 ET",
+      "entry_price": 209.01,
+      "shares": 6,
+      "stop": 208.925,
+      "trail_dist": 0.075,
+      "peak": 208.85,
+      "orb_width": 0.15,
+      "cost": 1254.06,
+      "vol_ratio": 1.31,
+      "exit_date": "2026-07-23",
+      "exit_price": 208.925,
+      "pnl": 0.51,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:58 ET"
     }
   ],
   "all_closed": [
@@ -27984,7 +28017,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98221.09
+    "2026-07-23": 98239.39
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -55472,6 +55505,40 @@
       ],
       "portfolio_value": 98221.09,
       "note": "$98,221 | cash=$4,104 | open=62 | closed today=93 | day PnL=$+110"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "12:57 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "AIZ",
+          "side": "long",
+          "price": 272.64,
+          "shares": 5,
+          "stop": 271.26,
+          "trail_dist": 1.385
+        },
+        {
+          "ticker": "AMD",
+          "side": "short",
+          "price": 529.47,
+          "shares": 2,
+          "stop": 537.54,
+          "trail_dist": 8.0749
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "EA",
+          "side": "short",
+          "exit_price": 208.93,
+          "pnl": 0.51,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98239.39,
+      "note": "$98,239 | cash=$2,937 | open=63 | closed today=94 | day PnL=$+111"
     }
   ]
 }
