@@ -1,5 +1,5 @@
 {
-  "capital": 546.58,
+  "capital": 1413.66,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -78,9 +78,9 @@
       "entry_time": "10:17 ET",
       "entry_price": 357.095,
       "shares": 6,
-      "stop": 356.25,
+      "stop": 356.88,
       "trail_dist": 3.38,
-      "peak": 359.63,
+      "peak": 360.26,
       "orb_width": 6.76,
       "cost": 2142.57,
       "vol_ratio": 6.22
@@ -168,20 +168,6 @@
       "orb_width": 1.33,
       "cost": 342.36,
       "vol_ratio": 1.43
-    },
-    {
-      "ticker": "IT",
-      "side": "short",
-      "entry_date": "2026-07-23",
-      "entry_time": "10:38 ET",
-      "entry_price": 129.55,
-      "shares": 2,
-      "stop": 131.09,
-      "trail_dist": 2.2,
-      "peak": 128.89,
-      "orb_width": 4.4,
-      "cost": 259.1,
-      "vol_ratio": 2.38
     },
     {
       "ticker": "KHC",
@@ -288,9 +274,9 @@
       "entry_time": "11:00 ET",
       "entry_price": 55.645,
       "shares": 80,
-      "stop": 55.5525,
+      "stop": 55.5625,
       "trail_dist": 0.2925,
-      "peak": 55.845,
+      "peak": 55.855,
       "orb_width": 0.585,
       "cost": 4451.6,
       "vol_ratio": 2.96
@@ -364,20 +350,6 @@
       "orb_width": 1.57,
       "cost": 441.7,
       "vol_ratio": 1.94
-    },
-    {
-      "ticker": "WRB",
-      "side": "long",
-      "entry_date": "2026-07-23",
-      "entry_time": "11:04 ET",
-      "entry_price": 73.3,
-      "shares": 4,
-      "stop": 72.985,
-      "trail_dist": 0.455,
-      "peak": 73.44,
-      "orb_width": 0.91,
-      "cost": 293.2,
-      "vol_ratio": 1.53
     },
     {
       "ticker": "L",
@@ -548,20 +520,6 @@
       "vol_ratio": 1.52
     },
     {
-      "ticker": "COP",
-      "side": "long",
-      "entry_date": "2026-07-23",
-      "entry_time": "11:45 ET",
-      "entry_price": 121.99,
-      "shares": 1,
-      "stop": 121.575,
-      "trail_dist": 0.465,
-      "peak": 122.04,
-      "orb_width": 0.93,
-      "cost": 121.99,
-      "vol_ratio": 1.44
-    },
-    {
       "ticker": "ZBH",
       "side": "long",
       "entry_date": "2026-07-23",
@@ -722,26 +680,12 @@
       "entry_time": "12:13 ET",
       "entry_price": 87.16,
       "shares": 9,
-      "stop": 87.545,
+      "stop": 87.475,
       "trail_dist": 0.505,
-      "peak": 87.04,
+      "peak": 86.97,
       "orb_width": 1.01,
       "cost": 784.44,
       "vol_ratio": 1.28
-    },
-    {
-      "ticker": "LYV",
-      "side": "short",
-      "entry_date": "2026-07-23",
-      "entry_time": "12:18 ET",
-      "entry_price": 176.7,
-      "shares": 8,
-      "stop": 177.275,
-      "trail_dist": 0.575,
-      "peak": 176.7,
-      "orb_width": 1.15,
-      "cost": 1413.6,
-      "vol_ratio": 3.83
     },
     {
       "ticker": "INCY",
@@ -764,9 +708,9 @@
       "entry_time": "12:20 ET",
       "entry_price": 126.44,
       "shares": 9,
-      "stop": 127.4425,
+      "stop": 127.3775,
       "trail_dist": 1.1075,
-      "peak": 126.335,
+      "peak": 126.27,
       "orb_width": 2.215,
       "cost": 1137.96,
       "vol_ratio": 1.39
@@ -834,9 +778,9 @@
       "entry_time": "12:25 ET",
       "entry_price": 59.82,
       "shares": 5,
-      "stop": 60.1375,
+      "stop": 60.1075,
       "trail_dist": 0.3175,
-      "peak": 59.82,
+      "peak": 59.79,
       "orb_width": 0.635,
       "cost": 299.1,
       "vol_ratio": 1.31
@@ -854,6 +798,34 @@
       "orb_width": 2.27,
       "cost": 201.82,
       "vol_ratio": 1.3
+    },
+    {
+      "ticker": "STZ",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:27 ET",
+      "entry_price": 129.77,
+      "shares": 6,
+      "stop": 130.3,
+      "trail_dist": 0.53,
+      "peak": 129.77,
+      "orb_width": 1.06,
+      "cost": 778.62,
+      "vol_ratio": 1.27
+    },
+    {
+      "ticker": "PLD",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:27 ET",
+      "entry_price": 144.275,
+      "shares": 3,
+      "stop": 143.605,
+      "trail_dist": 0.67,
+      "peak": 144.275,
+      "orb_width": 1.34,
+      "cost": 432.82,
+      "vol_ratio": 1.2
     }
   ],
   "closed_today": [
@@ -2376,6 +2348,82 @@
       "pnl": -0.97,
       "exit_reason": "trailing stop",
       "exit_time": "12:25 ET"
+    },
+    {
+      "ticker": "IT",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:38 ET",
+      "entry_price": 129.55,
+      "shares": 2,
+      "stop": 131.09,
+      "trail_dist": 2.2,
+      "peak": 128.89,
+      "orb_width": 4.4,
+      "cost": 259.1,
+      "vol_ratio": 2.38,
+      "exit_date": "2026-07-23",
+      "exit_price": 131.09,
+      "pnl": -3.08,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:27 ET"
+    },
+    {
+      "ticker": "WRB",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:04 ET",
+      "entry_price": 73.3,
+      "shares": 4,
+      "stop": 72.985,
+      "trail_dist": 0.455,
+      "peak": 73.44,
+      "orb_width": 0.91,
+      "cost": 293.2,
+      "vol_ratio": 1.53,
+      "exit_date": "2026-07-23",
+      "exit_price": 72.985,
+      "pnl": -1.26,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:27 ET"
+    },
+    {
+      "ticker": "COP",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:45 ET",
+      "entry_price": 121.99,
+      "shares": 1,
+      "stop": 121.575,
+      "trail_dist": 0.465,
+      "peak": 122.04,
+      "orb_width": 0.93,
+      "cost": 121.99,
+      "vol_ratio": 1.44,
+      "exit_date": "2026-07-23",
+      "exit_price": 121.575,
+      "pnl": -0.41,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:27 ET"
+    },
+    {
+      "ticker": "LYV",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:18 ET",
+      "entry_price": 176.7,
+      "shares": 8,
+      "stop": 177.275,
+      "trail_dist": 0.575,
+      "peak": 176.7,
+      "orb_width": 1.15,
+      "cost": 1413.6,
+      "vol_ratio": 3.83,
+      "exit_date": "2026-07-23",
+      "exit_price": 177.275,
+      "pnl": -4.6,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:27 ET"
     }
   ],
   "all_closed": [
@@ -27222,9 +27270,9 @@
       "width": 93.89
     },
     "SBAC": {
-      "high": 179.59,
+      "high": 177.645,
       "low": 175.97,
-      "width": 3.62
+      "width": 1.675
     },
     "SLB": {
       "high": 48.56,
@@ -27723,7 +27771,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98142.29
+    "2026-07-23": 98167.42
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -54876,6 +54924,61 @@
       ],
       "portfolio_value": 98142.29,
       "note": "$98,142 | cash=$547 | open=61 | closed today=80 | day PnL=$+119"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "12:27 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "STZ",
+          "side": "short",
+          "price": 129.77,
+          "shares": 6,
+          "stop": 130.3,
+          "trail_dist": 0.53
+        },
+        {
+          "ticker": "PLD",
+          "side": "long",
+          "price": 144.27,
+          "shares": 3,
+          "stop": 143.6,
+          "trail_dist": 0.67
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "IT",
+          "side": "short",
+          "exit_price": 131.09,
+          "pnl": -3.08,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "WRB",
+          "side": "long",
+          "exit_price": 72.98,
+          "pnl": -1.26,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "COP",
+          "side": "long",
+          "exit_price": 121.58,
+          "pnl": -0.41,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "LYV",
+          "side": "short",
+          "exit_price": 177.28,
+          "pnl": -4.6,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98167.42,
+      "note": "$98,167 | cash=$1,414 | open=59 | closed today=84 | day PnL=$+110"
     }
   ]
 }
