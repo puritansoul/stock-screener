@@ -1,5 +1,5 @@
 {
-  "capital": 4053.99,
+  "capital": 4871.34,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -106,9 +106,9 @@
       "entry_time": "10:17 ET",
       "entry_price": 357.095,
       "shares": 6,
-      "stop": 355.45,
+      "stop": 355.95,
       "trail_dist": 3.38,
-      "peak": 358.83,
+      "peak": 359.33,
       "orb_width": 6.76,
       "cost": 2142.57,
       "vol_ratio": 6.22
@@ -252,20 +252,6 @@
       "orb_width": 4.0927,
       "cost": 375.81,
       "vol_ratio": 1.52
-    },
-    {
-      "ticker": "HAS",
-      "side": "short",
-      "entry_date": "2026-07-23",
-      "entry_time": "10:43 ET",
-      "entry_price": 87.06,
-      "shares": 7,
-      "stop": 87.3,
-      "trail_dist": 0.505,
-      "peak": 86.795,
-      "orb_width": 1.01,
-      "cost": 609.42,
-      "vol_ratio": 1.32
     },
     {
       "ticker": "CSGP",
@@ -414,9 +400,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 63.1,
       "shares": 7,
-      "stop": 62.945,
+      "stop": 62.84,
       "trail_dist": 0.785,
-      "peak": 62.16,
+      "peak": 62.055,
       "orb_width": 1.57,
       "cost": 441.7,
       "vol_ratio": 1.94
@@ -820,26 +806,12 @@
       "entry_time": "12:03 ET",
       "entry_price": 874.89,
       "shares": 2,
-      "stop": 862.64,
+      "stop": 862.92,
       "trail_dist": 12.25,
-      "peak": 874.89,
+      "peak": 875.17,
       "orb_width": 24.5,
       "cost": 1749.78,
       "vol_ratio": 1.33
-    },
-    {
-      "ticker": "ERIE",
-      "side": "long",
-      "entry_date": "2026-07-23",
-      "entry_time": "12:08 ET",
-      "entry_price": 214.74,
-      "shares": 10,
-      "stop": 214.2275,
-      "trail_dist": 0.5125,
-      "peak": 214.74,
-      "orb_width": 1.025,
-      "cost": 2147.4,
-      "vol_ratio": 3.26
     },
     {
       "ticker": "APD",
@@ -854,6 +826,20 @@
       "orb_width": 3.985,
       "cost": 1476.88,
       "vol_ratio": 1.29
+    },
+    {
+      "ticker": "ERIE",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:11 ET",
+      "entry_price": 214.74,
+      "shares": 9,
+      "stop": 214.2275,
+      "trail_dist": 0.5125,
+      "peak": 214.74,
+      "orb_width": 1.025,
+      "cost": 1932.66,
+      "vol_ratio": 3.26
     }
   ],
   "closed_today": [
@@ -2110,6 +2096,44 @@
       "pnl": -5.88,
       "exit_reason": "trailing stop",
       "exit_time": "12:08 ET"
+    },
+    {
+      "ticker": "HAS",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:43 ET",
+      "entry_price": 87.06,
+      "shares": 7,
+      "stop": 87.3,
+      "trail_dist": 0.505,
+      "peak": 86.795,
+      "orb_width": 1.01,
+      "cost": 609.42,
+      "vol_ratio": 1.32,
+      "exit_date": "2026-07-23",
+      "exit_price": 87.3,
+      "pnl": -1.68,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:11 ET"
+    },
+    {
+      "ticker": "ERIE",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:08 ET",
+      "entry_price": 214.74,
+      "shares": 10,
+      "stop": 214.2275,
+      "trail_dist": 0.5125,
+      "peak": 214.74,
+      "orb_width": 1.025,
+      "cost": 2147.4,
+      "vol_ratio": 3.26,
+      "exit_date": "2026-07-23",
+      "exit_price": 214.2275,
+      "pnl": -5.13,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:11 ET"
     }
   ],
   "all_closed": [
@@ -26126,9 +26150,9 @@
       "width": 0.345
     },
     "HWM": {
-      "high": 281.59,
-      "low": 277.4807,
-      "width": 4.1093
+      "high": 286.96,
+      "low": 278.61,
+      "width": 8.35
     },
     "HPQ": {
       "high": 25.53,
@@ -27457,7 +27481,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98241.67
+    "2026-07-23": 98239.27
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -54325,6 +54349,39 @@
       ],
       "portfolio_value": 98241.67,
       "note": "$98,242 | cash=$4,054 | open=61 | closed today=66 | day PnL=$+149"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "12:10 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "ERIE",
+          "side": "long",
+          "price": 214.74,
+          "shares": 9,
+          "stop": 214.23,
+          "trail_dist": 0.5125
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "HAS",
+          "side": "short",
+          "exit_price": 87.3,
+          "pnl": -1.68,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "ERIE",
+          "side": "long",
+          "exit_price": 214.23,
+          "pnl": -5.13,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98239.27,
+      "note": "$98,239 | cash=$4,871 | open=60 | closed today=68 | day PnL=$+143"
     }
   ]
 }
