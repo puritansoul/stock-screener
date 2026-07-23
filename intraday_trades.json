@@ -1,5 +1,5 @@
 {
-  "capital": 2718.8,
+  "capital": 1946.9,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -596,9 +596,9 @@
       "entry_time": "12:25 ET",
       "entry_price": 59.82,
       "shares": 5,
-      "stop": 59.9475,
+      "stop": 59.9425,
       "trail_dist": 0.3175,
-      "peak": 59.63,
+      "peak": 59.625,
       "orb_width": 0.635,
       "cost": 299.1,
       "vol_ratio": 1.31
@@ -750,9 +750,9 @@
       "entry_time": "12:58 ET",
       "entry_price": 272.645,
       "shares": 5,
-      "stop": 271.765,
+      "stop": 271.91,
       "trail_dist": 1.385,
-      "peak": 273.15,
+      "peak": 273.295,
       "orb_width": 2.77,
       "cost": 1363.22,
       "vol_ratio": 3.85
@@ -792,9 +792,9 @@
       "entry_time": "13:02 ET",
       "entry_price": 241.36,
       "shares": 1,
-      "stop": 242.415,
+      "stop": 242.3223,
       "trail_dist": 1.655,
-      "peak": 240.76,
+      "peak": 240.6673,
       "orb_width": 3.31,
       "cost": 241.36,
       "vol_ratio": 1.36
@@ -806,9 +806,9 @@
       "entry_time": "13:05 ET",
       "entry_price": 255.575,
       "shares": 1,
-      "stop": 256.985,
+      "stop": 256.9,
       "trail_dist": 2.17,
-      "peak": 254.815,
+      "peak": 254.73,
       "orb_width": 4.34,
       "cost": 255.57,
       "vol_ratio": 4.05
@@ -876,9 +876,9 @@
       "entry_time": "13:19 ET",
       "entry_price": 87.36,
       "shares": 27,
-      "stop": 88.45,
+      "stop": 88.43,
       "trail_dist": 1.09,
-      "peak": 87.36,
+      "peak": 87.34,
       "orb_width": 2.18,
       "cost": 2358.72,
       "vol_ratio": 2.32
@@ -890,9 +890,9 @@
       "entry_time": "13:19 ET",
       "entry_price": 17.06,
       "shares": 99,
-      "stop": 16.9575,
+      "stop": 16.9675,
       "trail_dist": 0.1175,
-      "peak": 17.075,
+      "peak": 17.085,
       "orb_width": 0.235,
       "cost": 1688.94,
       "vol_ratio": 1.25
@@ -904,9 +904,9 @@
       "entry_time": "13:23 ET",
       "entry_price": 77.0,
       "shares": 20,
-      "stop": 77.4775,
+      "stop": 77.4475,
       "trail_dist": 0.4775,
-      "peak": 77.0,
+      "peak": 76.97,
       "orb_width": 0.955,
       "cost": 1540.0,
       "vol_ratio": 2.05
@@ -918,12 +918,26 @@
       "entry_time": "13:23 ET",
       "entry_price": 124.495,
       "shares": 8,
-      "stop": 125.325,
+      "stop": 125.31,
       "trail_dist": 0.83,
-      "peak": 124.495,
+      "peak": 124.48,
       "orb_width": 1.66,
       "cost": 995.96,
       "vol_ratio": 1.4
+    },
+    {
+      "ticker": "VRSN",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "13:26 ET",
+      "entry_price": 257.3,
+      "shares": 3,
+      "stop": 258.955,
+      "trail_dist": 1.655,
+      "peak": 257.3,
+      "orb_width": 3.31,
+      "cost": 771.9,
+      "vol_ratio": 1.73
     }
   ],
   "closed_today": [
@@ -25991,9 +26005,9 @@
       "width": 6.71
     },
     "AJG": {
-      "high": 248.04,
-      "low": 241.65,
-      "width": 6.39
+      "high": 243.58,
+      "low": 240.98,
+      "width": 2.6
     },
     "AIZ": {
       "high": 272.55,
@@ -28287,7 +28301,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98237.79
+    "2026-07-23": 98233.94
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -56126,6 +56140,24 @@
       ],
       "portfolio_value": 98237.79,
       "note": "$98,238 | cash=$2,719 | open=66 | closed today=106 | day PnL=$-134"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "13:25 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "VRSN",
+          "side": "short",
+          "price": 257.3,
+          "shares": 3,
+          "stop": 258.95,
+          "trail_dist": 1.655
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 98233.94,
+      "note": "$98,234 | cash=$1,947 | open=67 | closed today=106 | day PnL=$-134"
     }
   ]
 }
