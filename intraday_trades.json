@@ -1,5 +1,5 @@
 {
-  "capital": 4871.34,
+  "capital": 2079.69,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -106,9 +106,9 @@
       "entry_time": "10:17 ET",
       "entry_price": 357.095,
       "shares": 6,
-      "stop": 355.95,
+      "stop": 356.25,
       "trail_dist": 3.38,
-      "peak": 359.33,
+      "peak": 359.63,
       "orb_width": 6.76,
       "cost": 2142.57,
       "vol_ratio": 6.22
@@ -400,9 +400,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 63.1,
       "shares": 7,
-      "stop": 62.84,
+      "stop": 62.825,
       "trail_dist": 0.785,
-      "peak": 62.055,
+      "peak": 62.04,
       "orb_width": 1.57,
       "cost": 441.7,
       "vol_ratio": 1.94
@@ -456,9 +456,9 @@
       "entry_time": "11:07 ET",
       "entry_price": 81.98,
       "shares": 3,
-      "stop": 81.6725,
+      "stop": 81.6375,
       "trail_dist": 0.2875,
-      "peak": 81.385,
+      "peak": 81.35,
       "orb_width": 0.575,
       "cost": 245.94,
       "vol_ratio": 1.24
@@ -562,20 +562,6 @@
       "vol_ratio": 1.59
     },
     {
-      "ticker": "QCOM",
-      "side": "short",
-      "entry_date": "2026-07-23",
-      "entry_time": "11:23 ET",
-      "entry_price": 169.1,
-      "shares": 1,
-      "stop": 169.7447,
-      "trail_dist": 1.4347,
-      "peak": 168.31,
-      "orb_width": 2.8695,
-      "cost": 169.1,
-      "vol_ratio": 1.53
-    },
-    {
       "ticker": "ALGN",
       "side": "short",
       "entry_date": "2026-07-23",
@@ -590,20 +576,6 @@
       "vol_ratio": 1.31
     },
     {
-      "ticker": "WELL",
-      "side": "long",
-      "entry_date": "2026-07-23",
-      "entry_time": "11:40 ET",
-      "entry_price": 249.37,
-      "shares": 1,
-      "stop": 247.4755,
-      "trail_dist": 1.9945,
-      "peak": 249.47,
-      "orb_width": 3.989,
-      "cost": 249.37,
-      "vol_ratio": 2.36
-    },
-    {
       "ticker": "GILD",
       "side": "long",
       "entry_date": "2026-07-23",
@@ -616,20 +588,6 @@
       "orb_width": 1.89,
       "cost": 129.9,
       "vol_ratio": 1.31
-    },
-    {
-      "ticker": "UBER",
-      "side": "short",
-      "entry_date": "2026-07-23",
-      "entry_time": "11:45 ET",
-      "entry_price": 68.58,
-      "shares": 9,
-      "stop": 69.205,
-      "trail_dist": 0.665,
-      "peak": 68.54,
-      "orb_width": 1.33,
-      "cost": 617.22,
-      "vol_ratio": 2.24
     },
     {
       "ticker": "EL",
@@ -680,9 +638,9 @@
       "entry_time": "11:47 ET",
       "entry_price": 89.385,
       "shares": 2,
-      "stop": 89.155,
+      "stop": 89.215,
       "trail_dist": 0.375,
-      "peak": 89.53,
+      "peak": 89.59,
       "orb_width": 0.75,
       "cost": 178.77,
       "vol_ratio": 1.78
@@ -820,9 +778,9 @@
       "entry_time": "12:08 ET",
       "entry_price": 295.375,
       "shares": 5,
-      "stop": 297.3675,
+      "stop": 297.2725,
       "trail_dist": 1.9925,
-      "peak": 295.375,
+      "peak": 295.28,
       "orb_width": 3.985,
       "cost": 1476.88,
       "vol_ratio": 1.29
@@ -831,15 +789,57 @@
       "ticker": "ERIE",
       "side": "long",
       "entry_date": "2026-07-23",
-      "entry_time": "12:11 ET",
+      "entry_time": "12:13 ET",
       "entry_price": 214.74,
-      "shares": 9,
+      "shares": 10,
       "stop": 214.2275,
       "trail_dist": 0.5125,
       "peak": 214.74,
       "orb_width": 1.025,
-      "cost": 1932.66,
+      "cost": 2147.4,
       "vol_ratio": 3.26
+    },
+    {
+      "ticker": "AWK",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:13 ET",
+      "entry_price": 134.12,
+      "shares": 12,
+      "stop": 133.2875,
+      "trail_dist": 0.8325,
+      "peak": 134.12,
+      "orb_width": 1.6649,
+      "cost": 1609.44,
+      "vol_ratio": 3.26
+    },
+    {
+      "ticker": "TTD",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:13 ET",
+      "entry_price": 16.985,
+      "shares": 71,
+      "stop": 17.175,
+      "trail_dist": 0.19,
+      "peak": 16.985,
+      "orb_width": 0.38,
+      "cost": 1205.94,
+      "vol_ratio": 2.15
+    },
+    {
+      "ticker": "HAS",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:13 ET",
+      "entry_price": 87.16,
+      "shares": 9,
+      "stop": 87.665,
+      "trail_dist": 0.505,
+      "peak": 87.16,
+      "orb_width": 1.01,
+      "cost": 784.44,
+      "vol_ratio": 1.28
     }
   ],
   "closed_today": [
@@ -2134,6 +2134,82 @@
       "pnl": -5.13,
       "exit_reason": "trailing stop",
       "exit_time": "12:11 ET"
+    },
+    {
+      "ticker": "QCOM",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:23 ET",
+      "entry_price": 169.1,
+      "shares": 1,
+      "stop": 169.7447,
+      "trail_dist": 1.4347,
+      "peak": 168.31,
+      "orb_width": 2.8695,
+      "cost": 169.1,
+      "vol_ratio": 1.53,
+      "exit_date": "2026-07-23",
+      "exit_price": 169.7447,
+      "pnl": -0.64,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:13 ET"
+    },
+    {
+      "ticker": "WELL",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:40 ET",
+      "entry_price": 249.37,
+      "shares": 1,
+      "stop": 247.4755,
+      "trail_dist": 1.9945,
+      "peak": 249.47,
+      "orb_width": 3.989,
+      "cost": 249.37,
+      "vol_ratio": 2.36,
+      "exit_date": "2026-07-23",
+      "exit_price": 247.4755,
+      "pnl": -1.89,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:13 ET"
+    },
+    {
+      "ticker": "UBER",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:45 ET",
+      "entry_price": 68.58,
+      "shares": 9,
+      "stop": 69.205,
+      "trail_dist": 0.665,
+      "peak": 68.54,
+      "orb_width": 1.33,
+      "cost": 617.22,
+      "vol_ratio": 2.24,
+      "exit_date": "2026-07-23",
+      "exit_price": 69.205,
+      "pnl": -5.62,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:13 ET"
+    },
+    {
+      "ticker": "ERIE",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:11 ET",
+      "entry_price": 214.74,
+      "shares": 9,
+      "stop": 214.2275,
+      "trail_dist": 0.5125,
+      "peak": 214.74,
+      "orb_width": 1.025,
+      "cost": 1932.66,
+      "vol_ratio": 3.26,
+      "exit_date": "2026-07-23",
+      "exit_price": 214.2275,
+      "pnl": -4.61,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:13 ET"
     }
   ],
   "all_closed": [
@@ -27481,7 +27557,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98239.27
+    "2026-07-23": 98208.45
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -54382,6 +54458,77 @@
       ],
       "portfolio_value": 98239.27,
       "note": "$98,239 | cash=$4,871 | open=60 | closed today=68 | day PnL=$+143"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "12:13 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "ERIE",
+          "side": "long",
+          "price": 214.74,
+          "shares": 10,
+          "stop": 214.23,
+          "trail_dist": 0.5125
+        },
+        {
+          "ticker": "AWK",
+          "side": "long",
+          "price": 134.12,
+          "shares": 12,
+          "stop": 133.29,
+          "trail_dist": 0.8325
+        },
+        {
+          "ticker": "TTD",
+          "side": "short",
+          "price": 16.99,
+          "shares": 71,
+          "stop": 17.18,
+          "trail_dist": 0.19
+        },
+        {
+          "ticker": "HAS",
+          "side": "short",
+          "price": 87.16,
+          "shares": 9,
+          "stop": 87.67,
+          "trail_dist": 0.505
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "QCOM",
+          "side": "short",
+          "exit_price": 169.74,
+          "pnl": -0.64,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "WELL",
+          "side": "long",
+          "exit_price": 247.48,
+          "pnl": -1.89,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "UBER",
+          "side": "short",
+          "exit_price": 69.2,
+          "pnl": -5.62,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "ERIE",
+          "side": "long",
+          "exit_price": 214.23,
+          "pnl": -4.61,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98208.45,
+      "note": "$98,208 | cash=$2,080 | open=60 | closed today=72 | day PnL=$+130"
     }
   ]
 }
