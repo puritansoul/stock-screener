@@ -1,5 +1,5 @@
 {
-  "capital": 715.78,
+  "capital": 556.89,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -582,9 +582,9 @@
       "entry_time": "11:59 ET",
       "entry_price": 83.72,
       "shares": 23,
-      "stop": 83.8945,
+      "stop": 83.8245,
       "trail_dist": 0.3745,
-      "peak": 83.52,
+      "peak": 83.45,
       "orb_width": 0.749,
       "cost": 1925.56,
       "vol_ratio": 1.23
@@ -680,9 +680,9 @@
       "entry_time": "12:20 ET",
       "entry_price": 126.44,
       "shares": 9,
-      "stop": 127.1075,
+      "stop": 127.0901,
       "trail_dist": 1.1075,
-      "peak": 126.0,
+      "peak": 125.9826,
       "orb_width": 2.215,
       "cost": 1137.96,
       "vol_ratio": 1.39
@@ -708,9 +708,9 @@
       "entry_time": "12:25 ET",
       "entry_price": 394.36,
       "shares": 2,
-      "stop": 397.41,
+      "stop": 396.58,
       "trail_dist": 3.155,
-      "peak": 394.255,
+      "peak": 393.425,
       "orb_width": 6.31,
       "cost": 788.72,
       "vol_ratio": 2.37
@@ -792,9 +792,9 @@
       "entry_time": "12:27 ET",
       "entry_price": 144.275,
       "shares": 3,
-      "stop": 144.03,
+      "stop": 144.415,
       "trail_dist": 0.67,
-      "peak": 144.7,
+      "peak": 145.085,
       "orb_width": 1.34,
       "cost": 432.82,
       "vol_ratio": 1.2
@@ -820,9 +820,9 @@
       "entry_time": "12:30 ET",
       "entry_price": 141.82,
       "shares": 3,
-      "stop": 141.17,
+      "stop": 141.255,
       "trail_dist": 0.725,
-      "peak": 141.895,
+      "peak": 141.98,
       "orb_width": 1.45,
       "cost": 425.46,
       "vol_ratio": 1.56
@@ -834,12 +834,26 @@
       "entry_time": "12:32 ET",
       "entry_price": 22.065,
       "shares": 13,
-      "stop": 22.15,
+      "stop": 22.125,
       "trail_dist": 0.085,
-      "peak": 22.065,
+      "peak": 22.04,
       "orb_width": 0.17,
       "cost": 286.85,
       "vol_ratio": 1.32
+    },
+    {
+      "ticker": "GM",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:34 ET",
+      "entry_price": 79.445,
+      "shares": 2,
+      "stop": 80.522,
+      "trail_dist": 1.077,
+      "peak": 79.445,
+      "orb_width": 2.154,
+      "cost": 158.89,
+      "vol_ratio": 1.67
     }
   ],
   "closed_today": [
@@ -27823,7 +27837,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98164.14
+    "2026-07-23": 98163.29
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -55090,6 +55104,24 @@
       "exits": [],
       "portfolio_value": 98164.14,
       "note": "$98,164 | cash=$716 | open=60 | closed today=86 | day PnL=$+107"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "12:34 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "GM",
+          "side": "short",
+          "price": 79.44,
+          "shares": 2,
+          "stop": 80.52,
+          "trail_dist": 1.077
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 98163.29,
+      "note": "$98,163 | cash=$557 | open=61 | closed today=86 | day PnL=$+107"
     }
   ]
 }
