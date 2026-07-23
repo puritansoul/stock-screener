@@ -1,5 +1,5 @@
 {
-  "capital": 2472.7,
+  "capital": 1107.5,
   "open_positions": [
     {
       "ticker": "CBOE",
@@ -8,9 +8,9 @@
       "entry_time": "10:03 ET",
       "entry_price": 284.015,
       "shares": 103,
-      "stop": 283.76,
+      "stop": 284.23,
       "trail_dist": 2.91,
-      "peak": 286.67,
+      "peak": 287.14,
       "orb_width": 5.82,
       "cost": 29253.55,
       "vol_ratio": 1.56
@@ -64,9 +64,9 @@
       "entry_time": "10:05 ET",
       "entry_price": 130.5,
       "shares": 54,
-      "stop": 130.95,
+      "stop": 130.59,
       "trail_dist": 0.9,
-      "peak": 130.05,
+      "peak": 129.69,
       "orb_width": 1.8,
       "cost": 7047.0,
       "vol_ratio": 1.38
@@ -106,9 +106,9 @@
       "entry_time": "10:10 ET",
       "entry_price": 667.67,
       "shares": 3,
-      "stop": 660.79,
+      "stop": 662.685,
       "trail_dist": 6.88,
-      "peak": 667.67,
+      "peak": 669.565,
       "orb_width": 13.76,
       "cost": 2003.01,
       "vol_ratio": 1.88
@@ -148,12 +148,54 @@
       "entry_time": "10:10 ET",
       "entry_price": 216.12,
       "shares": 4,
-      "stop": 217.645,
+      "stop": 217.575,
       "trail_dist": 1.525,
-      "peak": 216.12,
+      "peak": 216.05,
       "orb_width": 3.05,
       "cost": 864.48,
       "vol_ratio": 1.26
+    },
+    {
+      "ticker": "WAB",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:12 ET",
+      "entry_price": 296.08,
+      "shares": 2,
+      "stop": 294.23,
+      "trail_dist": 1.85,
+      "peak": 296.08,
+      "orb_width": 3.7,
+      "cost": 592.16,
+      "vol_ratio": 1.76
+    },
+    {
+      "ticker": "COR",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:12 ET",
+      "entry_price": 304.2,
+      "shares": 1,
+      "stop": 301.735,
+      "trail_dist": 2.465,
+      "peak": 304.2,
+      "orb_width": 4.93,
+      "cost": 304.2,
+      "vol_ratio": 1.67
+    },
+    {
+      "ticker": "GIS",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:12 ET",
+      "entry_price": 36.065,
+      "shares": 13,
+      "stop": 36.3675,
+      "trail_dist": 0.3025,
+      "peak": 36.065,
+      "orb_width": 0.605,
+      "cost": 468.84,
+      "vol_ratio": 1.41
     }
   ],
   "closed_today": [
@@ -23037,8 +23079,8 @@
     },
     "AFL": {
       "high": 123.885,
-      "low": 122.7,
-      "width": 1.185
+      "low": 122.67,
+      "width": 1.215
     },
     "A": {
       "high": 141.95,
@@ -23096,9 +23138,9 @@
       "width": 6.25
     },
     "GOOG": {
-      "high": 324.39,
-      "low": 317.91,
-      "width": 6.48
+      "high": 348.12,
+      "low": 345.67,
+      "width": 2.45
     },
     "MO": {
       "high": 72.2318,
@@ -23221,9 +23263,14 @@
       "width": 6.435
     },
     "ANET": {
-      "high": 179.43,
+      "high": 179.48,
       "low": 172.77,
-      "width": 6.66
+      "width": 6.71
+    },
+    "AJG": {
+      "high": 243.58,
+      "low": 240.98,
+      "width": 2.6
     },
     "AIZ": {
       "high": 272.55,
@@ -23297,8 +23344,8 @@
     },
     "BRK-B": {
       "high": 490.02,
-      "low": 486.07,
-      "width": 3.95
+      "low": 486.06,
+      "width": 3.96
     },
     "BBY": {
       "high": 87.02,
@@ -23571,9 +23618,9 @@
       "width": 0.78
     },
     "COHR": {
-      "high": 327.77,
+      "high": 327.78,
       "low": 306.85,
-      "width": 20.92
+      "width": 20.93
     },
     "COIN": {
       "high": 165.74,
@@ -23661,9 +23708,9 @@
       "width": 6.1679
     },
     "CCI": {
-      "high": 78.215,
+      "high": 78.24,
       "low": 76.38,
-      "width": 1.835
+      "width": 1.86
     },
     "CSX": {
       "high": 53.3,
@@ -23721,9 +23768,9 @@
       "width": 1.3858
     },
     "DVN": {
-      "high": 45.1,
-      "low": 44.69,
-      "width": 0.41
+      "high": 46.19,
+      "low": 45.745,
+      "width": 0.445
     },
     "DXCM": {
       "high": 71.43,
@@ -23816,9 +23863,9 @@
       "width": 3.97
     },
     "EIX": {
-      "high": 80.14,
-      "low": 78.84,
-      "width": 1.3
+      "high": 79.325,
+      "low": 78.601,
+      "width": 0.724
     },
     "EW": {
       "high": 84.45,
@@ -24146,9 +24193,9 @@
       "width": 2.49
     },
     "HPE": {
-      "high": 48.955,
+      "high": 48.98,
       "low": 47.95,
-      "width": 1.005
+      "width": 1.03
     },
     "HLT": {
       "high": 321.56,
@@ -24477,8 +24524,8 @@
     },
     "MPC": {
       "high": 323.755,
-      "low": 318.01,
-      "width": 5.745
+      "low": 318.0,
+      "width": 5.755
     },
     "MAR": {
       "high": 365.87,
@@ -24862,8 +24909,8 @@
     },
     "PGR": {
       "high": 206.08,
-      "low": 203.115,
-      "width": 2.965
+      "low": 203.11,
+      "width": 2.97
     },
     "PLD": {
       "high": 143.83,
@@ -25016,9 +25063,9 @@
       "width": 3.62
     },
     "SLB": {
-      "high": 48.555,
+      "high": 48.56,
       "low": 48.0,
-      "width": 0.555
+      "width": 0.56
     },
     "STX": {
       "high": 935.0,
@@ -25377,8 +25424,8 @@
     },
     "WRB": {
       "high": 72.78,
-      "low": 71.88,
-      "width": 0.9
+      "low": 71.87,
+      "width": 0.91
     },
     "GWW": {
       "high": 1369.9,
@@ -25471,9 +25518,9 @@
       "width": 4.7243
     },
     "XEL": {
-      "high": 79.7,
-      "low": 79.25,
-      "width": 0.45
+      "high": 80.41,
+      "low": 79.51,
+      "width": 0.9
     },
     "XYL": {
       "high": 117.0011,
@@ -25491,9 +25538,9 @@
       "width": 4.5849
     },
     "ZBH": {
-      "high": 88.98,
+      "high": 89.0,
       "low": 88.25,
-      "width": 0.73
+      "width": 0.75
     },
     "ZTS": {
       "high": 75.11,
@@ -25512,7 +25559,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98239.3
+    "2026-07-23": 98206.98
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -50489,6 +50536,40 @@
       ],
       "portfolio_value": 98239.3,
       "note": "$98,239 | cash=$2,473 | open=11 | closed today=1 | day PnL=$-1"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "10:12 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "WAB",
+          "side": "long",
+          "price": 296.08,
+          "shares": 2,
+          "stop": 294.23,
+          "trail_dist": 1.85
+        },
+        {
+          "ticker": "COR",
+          "side": "long",
+          "price": 304.2,
+          "shares": 1,
+          "stop": 301.74,
+          "trail_dist": 2.465
+        },
+        {
+          "ticker": "GIS",
+          "side": "short",
+          "price": 36.06,
+          "shares": 13,
+          "stop": 36.37,
+          "trail_dist": 0.3025
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 98206.98,
+      "note": "$98,207 | cash=$1,108 | open=14 | closed today=1 | day PnL=$-1"
     }
   ]
 }
