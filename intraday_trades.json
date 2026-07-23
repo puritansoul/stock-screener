@@ -1,5 +1,5 @@
 {
-  "capital": 3696.37,
+  "capital": 2700.31,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -70,20 +70,6 @@
       "orb_width": 0.605,
       "cost": 468.84,
       "vol_ratio": 1.41
-    },
-    {
-      "ticker": "ZBRA",
-      "side": "short",
-      "entry_date": "2026-07-23",
-      "entry_time": "10:15 ET",
-      "entry_price": 258.54,
-      "shares": 1,
-      "stop": 256.3925,
-      "trail_dist": 2.2925,
-      "peak": 254.1,
-      "orb_width": 4.5849,
-      "cost": 258.54,
-      "vol_ratio": 1.74
     },
     {
       "ticker": "CPAY",
@@ -204,9 +190,9 @@
       "entry_time": "10:38 ET",
       "entry_price": 25.595,
       "shares": 12,
-      "stop": 25.545,
+      "stop": 25.53,
       "trail_dist": 0.175,
-      "peak": 25.37,
+      "peak": 25.355,
       "orb_width": 0.35,
       "cost": 307.14,
       "vol_ratio": 2.12
@@ -702,20 +688,6 @@
       "vol_ratio": 1.23
     },
     {
-      "ticker": "DVA",
-      "side": "long",
-      "entry_date": "2026-07-23",
-      "entry_time": "12:01 ET",
-      "entry_price": 233.03,
-      "shares": 6,
-      "stop": 231.795,
-      "trail_dist": 1.495,
-      "peak": 233.29,
-      "orb_width": 2.99,
-      "cost": 1398.18,
-      "vol_ratio": 2.0
-    },
-    {
       "ticker": "CASY",
       "side": "long",
       "entry_date": "2026-07-23",
@@ -778,9 +750,9 @@
       "entry_time": "12:13 ET",
       "entry_price": 87.16,
       "shares": 9,
-      "stop": 87.565,
+      "stop": 87.545,
       "trail_dist": 0.505,
-      "peak": 87.06,
+      "peak": 87.04,
       "orb_width": 1.01,
       "cost": 784.44,
       "vol_ratio": 1.28
@@ -798,6 +770,34 @@
       "orb_width": 1.15,
       "cost": 1413.6,
       "vol_ratio": 3.83
+    },
+    {
+      "ticker": "INCY",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:20 ET",
+      "entry_price": 116.12,
+      "shares": 13,
+      "stop": 115.4025,
+      "trail_dist": 0.7175,
+      "peak": 116.12,
+      "orb_width": 1.435,
+      "cost": 1509.56,
+      "vol_ratio": 1.87
+    },
+    {
+      "ticker": "CF",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:20 ET",
+      "entry_price": 126.44,
+      "shares": 9,
+      "stop": 127.5475,
+      "trail_dist": 1.1075,
+      "peak": 126.44,
+      "orb_width": 2.215,
+      "cost": 1137.96,
+      "vol_ratio": 1.39
     }
   ],
   "closed_today": [
@@ -2244,6 +2244,44 @@
       "pnl": -0.58,
       "exit_reason": "trailing stop",
       "exit_time": "12:18 ET"
+    },
+    {
+      "ticker": "ZBRA",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:15 ET",
+      "entry_price": 258.54,
+      "shares": 1,
+      "stop": 256.3925,
+      "trail_dist": 2.2925,
+      "peak": 254.1,
+      "orb_width": 4.5849,
+      "cost": 258.54,
+      "vol_ratio": 1.74,
+      "exit_date": "2026-07-23",
+      "exit_price": 256.3925,
+      "pnl": 2.15,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:20 ET"
+    },
+    {
+      "ticker": "DVA",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:01 ET",
+      "entry_price": 233.03,
+      "shares": 6,
+      "stop": 231.795,
+      "trail_dist": 1.495,
+      "peak": 233.29,
+      "orb_width": 2.99,
+      "cost": 1398.18,
+      "vol_ratio": 2.0,
+      "exit_date": "2026-07-23",
+      "exit_price": 231.795,
+      "pnl": -7.41,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:20 ET"
     }
   ],
   "all_closed": [
@@ -25674,11 +25712,6 @@
       "low": 121.0,
       "width": 0.93
     },
-    "ED": {
-      "high": 112.34,
-      "low": 110.98,
-      "width": 1.36
-    },
     "STZ": {
       "high": 131.03,
       "low": 129.97,
@@ -27591,7 +27624,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98211.01
+    "2026-07-23": 98250.2
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -54620,6 +54653,47 @@
       ],
       "portfolio_value": 98211.01,
       "note": "$98,211 | cash=$3,696 | open=57 | closed today=76 | day PnL=$+126"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "12:20 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "INCY",
+          "side": "long",
+          "price": 116.12,
+          "shares": 13,
+          "stop": 115.4,
+          "trail_dist": 0.7175
+        },
+        {
+          "ticker": "CF",
+          "side": "short",
+          "price": 126.44,
+          "shares": 9,
+          "stop": 127.55,
+          "trail_dist": 1.1075
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "ZBRA",
+          "side": "short",
+          "exit_price": 256.39,
+          "pnl": 2.15,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "DVA",
+          "side": "long",
+          "exit_price": 231.79,
+          "pnl": -7.41,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98250.2,
+      "note": "$98,250 | cash=$2,700 | open=57 | closed today=78 | day PnL=$+121"
     }
   ]
 }
