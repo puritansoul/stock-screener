@@ -1,5 +1,5 @@
 {
-  "capital": 1967.16,
+  "capital": 546.58,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -64,9 +64,9 @@
       "entry_time": "10:12 ET",
       "entry_price": 36.065,
       "shares": 13,
-      "stop": 36.1225,
+      "stop": 36.0325,
       "trail_dist": 0.3025,
-      "peak": 35.82,
+      "peak": 35.73,
       "orb_width": 0.605,
       "cost": 468.84,
       "vol_ratio": 1.41
@@ -324,20 +324,6 @@
       "vol_ratio": 1.2
     },
     {
-      "ticker": "GNRC",
-      "side": "short",
-      "entry_date": "2026-07-23",
-      "entry_time": "11:02 ET",
-      "entry_price": 209.815,
-      "shares": 3,
-      "stop": 209.99,
-      "trail_dist": 3.085,
-      "peak": 206.905,
-      "orb_width": 6.17,
-      "cost": 629.45,
-      "vol_ratio": 2.06
-    },
-    {
       "ticker": "UPS",
       "side": "short",
       "entry_date": "2026-07-23",
@@ -462,20 +448,6 @@
       "orb_width": 1.765,
       "cost": 114.02,
       "vol_ratio": 2.64
-    },
-    {
-      "ticker": "ORCL",
-      "side": "short",
-      "entry_date": "2026-07-23",
-      "entry_time": "11:14 ET",
-      "entry_price": 120.13,
-      "shares": 1,
-      "stop": 121.095,
-      "trail_dist": 1.395,
-      "peak": 119.7,
-      "orb_width": 2.79,
-      "cost": 120.13,
-      "vol_ratio": 1.98
     },
     {
       "ticker": "AIG",
@@ -778,9 +750,9 @@
       "entry_time": "12:20 ET",
       "entry_price": 116.12,
       "shares": 13,
-      "stop": 115.4025,
+      "stop": 115.4825,
       "trail_dist": 0.7175,
-      "peak": 116.12,
+      "peak": 116.2,
       "orb_width": 1.435,
       "cost": 1509.56,
       "vol_ratio": 1.87
@@ -792,9 +764,9 @@
       "entry_time": "12:20 ET",
       "entry_price": 126.44,
       "shares": 9,
-      "stop": 127.5375,
+      "stop": 127.4425,
       "trail_dist": 1.1075,
-      "peak": 126.43,
+      "peak": 126.335,
       "orb_width": 2.215,
       "cost": 1137.96,
       "vol_ratio": 1.39
@@ -806,12 +778,82 @@
       "entry_time": "12:22 ET",
       "entry_price": 244.385,
       "shares": 3,
-      "stop": 245.8225,
+      "stop": 245.8175,
       "trail_dist": 1.4375,
-      "peak": 244.385,
+      "peak": 244.38,
       "orb_width": 2.875,
       "cost": 733.15,
       "vol_ratio": 1.73
+    },
+    {
+      "ticker": "FFIV",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:25 ET",
+      "entry_price": 394.36,
+      "shares": 2,
+      "stop": 397.515,
+      "trail_dist": 3.155,
+      "peak": 394.36,
+      "orb_width": 6.31,
+      "cost": 788.72,
+      "vol_ratio": 2.37
+    },
+    {
+      "ticker": "MRK",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:25 ET",
+      "entry_price": 130.595,
+      "shares": 4,
+      "stop": 129.695,
+      "trail_dist": 0.9,
+      "peak": 130.595,
+      "orb_width": 1.8,
+      "cost": 522.38,
+      "vol_ratio": 1.98
+    },
+    {
+      "ticker": "D",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:25 ET",
+      "entry_price": 71.33,
+      "shares": 5,
+      "stop": 71.0575,
+      "trail_dist": 0.2725,
+      "peak": 71.33,
+      "orb_width": 0.545,
+      "cost": 356.65,
+      "vol_ratio": 1.4
+    },
+    {
+      "ticker": "MDLZ",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:25 ET",
+      "entry_price": 59.82,
+      "shares": 5,
+      "stop": 60.1375,
+      "trail_dist": 0.3175,
+      "peak": 59.82,
+      "orb_width": 0.635,
+      "cost": 299.1,
+      "vol_ratio": 1.31
+    },
+    {
+      "ticker": "BIIB",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:25 ET",
+      "entry_price": 201.82,
+      "shares": 1,
+      "stop": 200.685,
+      "trail_dist": 1.135,
+      "peak": 201.82,
+      "orb_width": 2.27,
+      "cost": 201.82,
+      "vol_ratio": 1.3
     }
   ],
   "closed_today": [
@@ -2296,6 +2338,44 @@
       "pnl": -7.41,
       "exit_reason": "trailing stop",
       "exit_time": "12:20 ET"
+    },
+    {
+      "ticker": "GNRC",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:02 ET",
+      "entry_price": 209.815,
+      "shares": 3,
+      "stop": 209.99,
+      "trail_dist": 3.085,
+      "peak": 206.905,
+      "orb_width": 6.17,
+      "cost": 629.45,
+      "vol_ratio": 2.06,
+      "exit_date": "2026-07-23",
+      "exit_price": 209.99,
+      "pnl": -0.53,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:25 ET"
+    },
+    {
+      "ticker": "ORCL",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:14 ET",
+      "entry_price": 120.13,
+      "shares": 1,
+      "stop": 121.095,
+      "trail_dist": 1.395,
+      "peak": 119.7,
+      "orb_width": 2.79,
+      "cost": 120.13,
+      "vol_ratio": 1.98,
+      "exit_date": "2026-07-23",
+      "exit_price": 121.095,
+      "pnl": -0.97,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:25 ET"
     }
   ],
   "all_closed": [
@@ -27643,7 +27723,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98199.53
+    "2026-07-23": 98142.29
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -54731,6 +54811,71 @@
       "exits": [],
       "portfolio_value": 98199.53,
       "note": "$98,200 | cash=$1,967 | open=58 | closed today=78 | day PnL=$+121"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "12:24 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "FFIV",
+          "side": "short",
+          "price": 394.36,
+          "shares": 2,
+          "stop": 397.51,
+          "trail_dist": 3.155
+        },
+        {
+          "ticker": "MRK",
+          "side": "long",
+          "price": 130.6,
+          "shares": 4,
+          "stop": 129.7,
+          "trail_dist": 0.9
+        },
+        {
+          "ticker": "D",
+          "side": "long",
+          "price": 71.33,
+          "shares": 5,
+          "stop": 71.06,
+          "trail_dist": 0.2725
+        },
+        {
+          "ticker": "MDLZ",
+          "side": "short",
+          "price": 59.82,
+          "shares": 5,
+          "stop": 60.14,
+          "trail_dist": 0.3175
+        },
+        {
+          "ticker": "BIIB",
+          "side": "long",
+          "price": 201.82,
+          "shares": 1,
+          "stop": 200.69,
+          "trail_dist": 1.135
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "GNRC",
+          "side": "short",
+          "exit_price": 209.99,
+          "pnl": -0.53,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "ORCL",
+          "side": "short",
+          "exit_price": 121.09,
+          "pnl": -0.97,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98142.29,
+      "note": "$98,142 | cash=$547 | open=61 | closed today=80 | day PnL=$+119"
     }
   ]
 }
