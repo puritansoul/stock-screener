@@ -1,5 +1,5 @@
 {
-  "capital": 495.77,
+  "capital": 1839.92,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -106,9 +106,9 @@
       "entry_time": "10:15 ET",
       "entry_price": 200.0001,
       "shares": 2,
-      "stop": 202.325,
+      "stop": 202.375,
       "trail_dist": 1.135,
-      "peak": 203.46,
+      "peak": 203.51,
       "orb_width": 2.27,
       "cost": 400.0,
       "vol_ratio": 2.73
@@ -168,20 +168,6 @@
       "orb_width": 1.39,
       "cost": 804.54,
       "vol_ratio": 1.38
-    },
-    {
-      "ticker": "PPL",
-      "side": "long",
-      "entry_date": "2026-07-23",
-      "entry_time": "10:20 ET",
-      "entry_price": 36.19,
-      "shares": 15,
-      "stop": 36.315,
-      "trail_dist": 0.145,
-      "peak": 36.46,
-      "orb_width": 0.29,
-      "cost": 542.85,
-      "vol_ratio": 3.64
     },
     {
       "ticker": "EXPE",
@@ -268,20 +254,6 @@
       "vol_ratio": 1.43
     },
     {
-      "ticker": "EL",
-      "side": "short",
-      "entry_date": "2026-07-23",
-      "entry_time": "10:24 ET",
-      "entry_price": 79.67,
-      "shares": 10,
-      "stop": 79.3975,
-      "trail_dist": 0.6675,
-      "peak": 78.73,
-      "orb_width": 1.335,
-      "cost": 796.7,
-      "vol_ratio": 1.25
-    },
-    {
       "ticker": "FE",
       "side": "long",
       "entry_date": "2026-07-23",
@@ -302,9 +274,9 @@
       "entry_time": "10:29 ET",
       "entry_price": 346.03,
       "shares": 1,
-      "stop": 349.935,
+      "stop": 350.47,
       "trail_dist": 2.0,
-      "peak": 351.935,
+      "peak": 352.47,
       "orb_width": 4.0,
       "cost": 346.03,
       "vol_ratio": 1.36
@@ -414,9 +386,9 @@
       "entry_time": "10:43 ET",
       "entry_price": 375.81,
       "shares": 1,
-      "stop": 376.3187,
+      "stop": 376.4336,
       "trail_dist": 2.0463,
-      "peak": 378.365,
+      "peak": 378.4799,
       "orb_width": 4.0927,
       "cost": 375.81,
       "vol_ratio": 1.52
@@ -736,9 +708,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 115.31,
       "shares": 2,
-      "stop": 114.7651,
+      "stop": 114.8251,
       "trail_dist": 0.7349,
-      "peak": 115.5,
+      "peak": 115.56,
       "orb_width": 1.4699,
       "cost": 230.62,
       "vol_ratio": 1.53
@@ -1016,9 +988,9 @@
       "entry_time": "11:40 ET",
       "entry_price": 129.905,
       "shares": 1,
-      "stop": 128.96,
+      "stop": 129.305,
       "trail_dist": 0.945,
-      "peak": 129.905,
+      "peak": 130.25,
       "orb_width": 1.89,
       "cost": 129.9,
       "vol_ratio": 1.31
@@ -1689,6 +1661,44 @@
       "pnl": -0.6,
       "exit_reason": "trailing stop",
       "exit_time": "11:37 ET"
+    },
+    {
+      "ticker": "PPL",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:20 ET",
+      "entry_price": 36.19,
+      "shares": 15,
+      "stop": 36.315,
+      "trail_dist": 0.145,
+      "peak": 36.46,
+      "orb_width": 0.29,
+      "cost": 542.85,
+      "vol_ratio": 3.64,
+      "exit_date": "2026-07-23",
+      "exit_price": 36.315,
+      "pnl": 1.88,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:42 ET"
+    },
+    {
+      "ticker": "EL",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:24 ET",
+      "entry_price": 79.67,
+      "shares": 10,
+      "stop": 79.3975,
+      "trail_dist": 0.6675,
+      "peak": 78.73,
+      "orb_width": 1.335,
+      "cost": 796.7,
+      "vol_ratio": 1.25,
+      "exit_date": "2026-07-23",
+      "exit_price": 79.3975,
+      "pnl": 2.73,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:42 ET"
     }
   ],
   "all_closed": [
@@ -25465,9 +25475,9 @@
       "width": 4.44
     },
     "FICO": {
-      "high": 1248.28,
-      "low": 1222.9301,
-      "width": 25.35
+      "high": 1230.02,
+      "low": 1201.42,
+      "width": 28.6
     },
     "FAST": {
       "high": 45.78,
@@ -26371,8 +26381,8 @@
     },
     "PPL": {
       "high": 36.08,
-      "low": 35.79,
-      "width": 0.29
+      "low": 35.815,
+      "width": 0.265
     },
     "PFG": {
       "high": 107.5,
@@ -27036,7 +27046,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98451.64
+    "2026-07-23": 98451.53
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -53408,6 +53418,30 @@
       "exits": [],
       "portfolio_value": 98451.64,
       "note": "$98,452 | cash=$496 | open=73 | closed today=35 | day PnL=$+252"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "11:42 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "PPL",
+          "side": "long",
+          "exit_price": 36.31,
+          "pnl": 1.88,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "EL",
+          "side": "short",
+          "exit_price": 79.4,
+          "pnl": 2.73,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98451.53,
+      "note": "$98,452 | cash=$1,840 | open=71 | closed today=37 | day PnL=$+256"
     }
   ]
 }
