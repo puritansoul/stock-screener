@@ -1,5 +1,5 @@
 {
-  "capital": 438.12,
+  "capital": 516.86,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -168,20 +168,6 @@
       "orb_width": 1.39,
       "cost": 804.54,
       "vol_ratio": 1.38
-    },
-    {
-      "ticker": "EXPE",
-      "side": "short",
-      "entry_date": "2026-07-23",
-      "entry_time": "10:20 ET",
-      "entry_price": 255.4,
-      "shares": 1,
-      "stop": 253.29,
-      "trail_dist": 2.17,
-      "peak": 251.12,
-      "orb_width": 4.34,
-      "cost": 255.4,
-      "vol_ratio": 2.18
     },
     {
       "ticker": "ITW",
@@ -512,9 +498,9 @@
       "entry_time": "11:00 ET",
       "entry_price": 73.0,
       "shares": 124,
-      "stop": 73.65,
+      "stop": 73.63,
       "trail_dist": 1.18,
-      "peak": 72.47,
+      "peak": 72.45,
       "orb_width": 2.36,
       "cost": 9052.0,
       "vol_ratio": 3.56
@@ -960,9 +946,9 @@
       "entry_time": "11:40 ET",
       "entry_price": 129.905,
       "shares": 1,
-      "stop": 129.495,
+      "stop": 129.545,
       "trail_dist": 0.945,
-      "peak": 130.44,
+      "peak": 130.49,
       "orb_width": 1.89,
       "cost": 129.9,
       "vol_ratio": 1.31
@@ -974,9 +960,9 @@
       "entry_time": "11:45 ET",
       "entry_price": 68.58,
       "shares": 9,
-      "stop": 69.245,
+      "stop": 69.205,
       "trail_dist": 0.665,
-      "peak": 68.58,
+      "peak": 68.54,
       "orb_width": 1.33,
       "cost": 617.22,
       "vol_ratio": 2.24
@@ -988,9 +974,9 @@
       "entry_time": "11:45 ET",
       "entry_price": 79.495,
       "shares": 6,
-      "stop": 80.1625,
+      "stop": 80.0575,
       "trail_dist": 0.6675,
-      "peak": 79.495,
+      "peak": 79.39,
       "orb_width": 1.335,
       "cost": 476.97,
       "vol_ratio": 1.81
@@ -1002,9 +988,9 @@
       "entry_time": "11:45 ET",
       "entry_price": 123.91,
       "shares": 2,
-      "stop": 123.3025,
+      "stop": 123.3075,
       "trail_dist": 0.6075,
-      "peak": 123.91,
+      "peak": 123.915,
       "orb_width": 1.215,
       "cost": 247.82,
       "vol_ratio": 1.52
@@ -1016,9 +1002,9 @@
       "entry_time": "11:45 ET",
       "entry_price": 93.245,
       "shares": 2,
-      "stop": 92.86,
+      "stop": 92.935,
       "trail_dist": 0.385,
-      "peak": 93.245,
+      "peak": 93.32,
       "orb_width": 0.77,
       "cost": 186.49,
       "vol_ratio": 1.51
@@ -1030,9 +1016,9 @@
       "entry_time": "11:45 ET",
       "entry_price": 121.99,
       "shares": 1,
-      "stop": 121.525,
+      "stop": 121.575,
       "trail_dist": 0.465,
-      "peak": 121.99,
+      "peak": 122.04,
       "orb_width": 0.93,
       "cost": 121.99,
       "vol_ratio": 1.44
@@ -1044,12 +1030,26 @@
       "entry_time": "11:45 ET",
       "entry_price": 168.855,
       "shares": 1,
-      "stop": 170.825,
+      "stop": 170.52,
       "trail_dist": 1.97,
-      "peak": 168.855,
+      "peak": 168.55,
       "orb_width": 3.94,
       "cost": 168.85,
       "vol_ratio": 1.22
+    },
+    {
+      "ticker": "ZBH",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:47 ET",
+      "entry_price": 89.385,
+      "shares": 2,
+      "stop": 89.01,
+      "trail_dist": 0.375,
+      "peak": 89.385,
+      "orb_width": 0.75,
+      "cost": 178.77,
+      "vol_ratio": 1.78
     }
   ],
   "closed_today": [
@@ -1793,6 +1793,25 @@
       "pnl": -1.14,
       "exit_reason": "trailing stop",
       "exit_time": "11:45 ET"
+    },
+    {
+      "ticker": "EXPE",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:20 ET",
+      "entry_price": 255.4,
+      "shares": 1,
+      "stop": 253.29,
+      "trail_dist": 2.17,
+      "peak": 251.12,
+      "orb_width": 4.34,
+      "cost": 255.4,
+      "vol_ratio": 2.18,
+      "exit_date": "2026-07-23",
+      "exit_price": 253.29,
+      "pnl": 2.11,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:47 ET"
     }
   ],
   "all_closed": [
@@ -27140,7 +27159,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98453.16
+    "2026-07-23": 98455.62
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -53609,6 +53628,32 @@
       ],
       "portfolio_value": 98453.16,
       "note": "$98,453 | cash=$438 | open=75 | closed today=39 | day PnL=$+256"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "11:47 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "ZBH",
+          "side": "long",
+          "price": 89.39,
+          "shares": 2,
+          "stop": 89.01,
+          "trail_dist": 0.375
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "EXPE",
+          "side": "short",
+          "exit_price": 253.29,
+          "pnl": 2.11,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98455.62,
+      "note": "$98,456 | cash=$517 | open=75 | closed today=40 | day PnL=$+258"
     }
   ]
 }
