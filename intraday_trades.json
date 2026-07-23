@@ -1,5 +1,5 @@
 {
-  "capital": 556.89,
+  "capital": 414.31,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -218,9 +218,9 @@
       "entry_time": "10:48 ET",
       "entry_price": 27.2,
       "shares": 12,
-      "stop": 27.23,
+      "stop": 27.2099,
       "trail_dist": 0.32,
-      "peak": 26.91,
+      "peak": 26.8899,
       "orb_width": 0.64,
       "cost": 326.4,
       "vol_ratio": 4.91
@@ -330,9 +330,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 63.1,
       "shares": 7,
-      "stop": 62.825,
+      "stop": 62.805,
       "trail_dist": 0.785,
-      "peak": 62.04,
+      "peak": 62.02,
       "orb_width": 1.57,
       "cost": 441.7,
       "vol_ratio": 1.94
@@ -422,20 +422,6 @@
       "vol_ratio": 1.9
     },
     {
-      "ticker": "RCL",
-      "side": "long",
-      "entry_date": "2026-07-23",
-      "entry_time": "11:21 ET",
-      "entry_price": 284.535,
-      "shares": 1,
-      "stop": 282.815,
-      "trail_dist": 2.475,
-      "peak": 285.29,
-      "orb_width": 4.95,
-      "cost": 284.54,
-      "vol_ratio": 2.54
-    },
-    {
       "ticker": "AMT",
       "side": "long",
       "entry_date": "2026-07-23",
@@ -448,20 +434,6 @@
       "orb_width": 2.2502,
       "cost": 167.36,
       "vol_ratio": 1.36
-    },
-    {
-      "ticker": "AKAM",
-      "side": "short",
-      "entry_date": "2026-07-23",
-      "entry_time": "11:23 ET",
-      "entry_price": 121.14,
-      "shares": 1,
-      "stop": 121.945,
-      "trail_dist": 1.725,
-      "peak": 120.22,
-      "orb_width": 3.45,
-      "cost": 121.14,
-      "vol_ratio": 1.59
     },
     {
       "ticker": "GILD",
@@ -554,9 +526,9 @@
       "entry_time": "11:59 ET",
       "entry_price": 55.08,
       "shares": 72,
-      "stop": 55.5049,
+      "stop": 55.4699,
       "trail_dist": 0.5799,
-      "peak": 54.925,
+      "peak": 54.89,
       "orb_width": 1.1599,
       "cost": 3965.76,
       "vol_ratio": 2.39
@@ -638,9 +610,9 @@
       "entry_time": "12:13 ET",
       "entry_price": 16.985,
       "shares": 71,
-      "stop": 17.165,
+      "stop": 17.15,
       "trail_dist": 0.19,
-      "peak": 16.975,
+      "peak": 16.96,
       "orb_width": 0.38,
       "cost": 1205.94,
       "vol_ratio": 2.15
@@ -722,9 +694,9 @@
       "entry_time": "12:25 ET",
       "entry_price": 130.595,
       "shares": 4,
-      "stop": 129.81,
+      "stop": 129.82,
       "trail_dist": 0.9,
-      "peak": 130.71,
+      "peak": 130.72,
       "orb_width": 1.8,
       "cost": 522.38,
       "vol_ratio": 1.98
@@ -792,9 +764,9 @@
       "entry_time": "12:27 ET",
       "entry_price": 144.275,
       "shares": 3,
-      "stop": 144.685,
+      "stop": 144.85,
       "trail_dist": 0.67,
-      "peak": 145.355,
+      "peak": 145.52,
       "orb_width": 1.34,
       "cost": 432.82,
       "vol_ratio": 1.2
@@ -820,9 +792,9 @@
       "entry_time": "12:30 ET",
       "entry_price": 141.82,
       "shares": 3,
-      "stop": 141.275,
+      "stop": 141.28,
       "trail_dist": 0.725,
-      "peak": 142.0,
+      "peak": 142.005,
       "orb_width": 1.45,
       "cost": 425.46,
       "vol_ratio": 1.56
@@ -854,6 +826,48 @@
       "orb_width": 2.154,
       "cost": 158.89,
       "vol_ratio": 1.67
+    },
+    {
+      "ticker": "RVTY",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:39 ET",
+      "entry_price": 111.995,
+      "shares": 2,
+      "stop": 113.945,
+      "trail_dist": 1.95,
+      "peak": 111.995,
+      "orb_width": 3.9,
+      "cost": 223.99,
+      "vol_ratio": 2.01
+    },
+    {
+      "ticker": "FOX",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:39 ET",
+      "entry_price": 49.18,
+      "shares": 4,
+      "stop": 49.695,
+      "trail_dist": 0.515,
+      "peak": 49.18,
+      "orb_width": 1.03,
+      "cost": 196.72,
+      "vol_ratio": 1.51
+    },
+    {
+      "ticker": "CHTR",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:39 ET",
+      "entry_price": 125.025,
+      "shares": 1,
+      "stop": 126.595,
+      "trail_dist": 1.57,
+      "peak": 125.025,
+      "orb_width": 3.14,
+      "cost": 125.03,
+      "vol_ratio": 1.47
     }
   ],
   "closed_today": [
@@ -2490,6 +2504,44 @@
       "pnl": -0.21,
       "exit_reason": "trailing stop",
       "exit_time": "12:30 ET"
+    },
+    {
+      "ticker": "RCL",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:21 ET",
+      "entry_price": 284.535,
+      "shares": 1,
+      "stop": 282.815,
+      "trail_dist": 2.475,
+      "peak": 285.29,
+      "orb_width": 4.95,
+      "cost": 284.54,
+      "vol_ratio": 2.54,
+      "exit_date": "2026-07-23",
+      "exit_price": 282.815,
+      "pnl": -1.72,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:39 ET"
+    },
+    {
+      "ticker": "AKAM",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:23 ET",
+      "entry_price": 121.14,
+      "shares": 1,
+      "stop": 121.945,
+      "trail_dist": 1.725,
+      "peak": 120.22,
+      "orb_width": 3.45,
+      "cost": 121.14,
+      "vol_ratio": 1.59,
+      "exit_date": "2026-07-23",
+      "exit_price": 121.945,
+      "pnl": -0.8,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:39 ET"
     }
   ],
   "all_closed": [
@@ -27837,7 +27889,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98210.21
+    "2026-07-23": 98232.86
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -55131,6 +55183,55 @@
       "exits": [],
       "portfolio_value": 98210.21,
       "note": "$98,210 | cash=$557 | open=61 | closed today=86 | day PnL=$+107"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "12:39 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "RVTY",
+          "side": "short",
+          "price": 112.0,
+          "shares": 2,
+          "stop": 113.95,
+          "trail_dist": 1.95
+        },
+        {
+          "ticker": "FOX",
+          "side": "short",
+          "price": 49.18,
+          "shares": 4,
+          "stop": 49.7,
+          "trail_dist": 0.515
+        },
+        {
+          "ticker": "CHTR",
+          "side": "short",
+          "price": 125.03,
+          "shares": 1,
+          "stop": 126.6,
+          "trail_dist": 1.57
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "RCL",
+          "side": "long",
+          "exit_price": 282.81,
+          "pnl": -1.72,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "AKAM",
+          "side": "short",
+          "exit_price": 121.94,
+          "pnl": -0.8,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98232.86,
+      "note": "$98,233 | cash=$414 | open=62 | closed today=88 | day PnL=$+105"
     }
   ]
 }
