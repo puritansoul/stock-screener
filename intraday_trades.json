@@ -1,5 +1,5 @@
 {
-  "capital": 666.57,
+  "capital": 1037.95,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -162,9 +162,9 @@
       "entry_time": "10:38 ET",
       "entry_price": 25.595,
       "shares": 12,
-      "stop": 25.5,
+      "stop": 25.46,
       "trail_dist": 0.175,
-      "peak": 25.325,
+      "peak": 25.285,
       "orb_width": 0.35,
       "cost": 307.14,
       "vol_ratio": 2.12
@@ -450,20 +450,6 @@
       "vol_ratio": 1.52
     },
     {
-      "ticker": "ES",
-      "side": "long",
-      "entry_date": "2026-07-23",
-      "entry_time": "11:52 ET",
-      "entry_price": 74.735,
-      "shares": 5,
-      "stop": 74.275,
-      "trail_dist": 0.46,
-      "peak": 74.735,
-      "orb_width": 0.92,
-      "cost": 373.68,
-      "vol_ratio": 1.94
-    },
-    {
       "ticker": "ADSK",
       "side": "short",
       "entry_date": "2026-07-23",
@@ -722,9 +708,9 @@
       "entry_time": "12:32 ET",
       "entry_price": 22.065,
       "shares": 13,
-      "stop": 22.06,
+      "stop": 22.0578,
       "trail_dist": 0.085,
-      "peak": 21.975,
+      "peak": 21.9728,
       "orb_width": 0.17,
       "cost": 286.85,
       "vol_ratio": 1.32
@@ -918,9 +904,9 @@
       "entry_time": "13:09 ET",
       "entry_price": 256.455,
       "shares": 1,
-      "stop": 258.11,
+      "stop": 257.235,
       "trail_dist": 1.655,
-      "peak": 256.455,
+      "peak": 255.58,
       "orb_width": 3.31,
       "cost": 256.45,
       "vol_ratio": 2.82
@@ -932,9 +918,9 @@
       "entry_time": "13:09 ET",
       "entry_price": 210.19,
       "shares": 1,
-      "stop": 213.275,
+      "stop": 213.075,
       "trail_dist": 3.085,
-      "peak": 210.19,
+      "peak": 209.99,
       "orb_width": 6.17,
       "cost": 210.19,
       "vol_ratio": 1.93
@@ -2797,6 +2783,25 @@
       "pnl": 0.74,
       "exit_reason": "trailing stop",
       "exit_time": "13:09 ET"
+    },
+    {
+      "ticker": "ES",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:52 ET",
+      "entry_price": 74.735,
+      "shares": 5,
+      "stop": 74.275,
+      "trail_dist": 0.46,
+      "peak": 74.735,
+      "orb_width": 0.92,
+      "cost": 373.68,
+      "vol_ratio": 1.94,
+      "exit_date": "2026-07-23",
+      "exit_price": 74.275,
+      "pnl": -2.3,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:12 ET"
     }
   ],
   "all_closed": [
@@ -28144,7 +28149,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98236.72
+    "2026-07-23": 98251.92
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -55802,6 +55807,23 @@
       ],
       "portfolio_value": 98236.72,
       "note": "$98,237 | cash=$667 | open=68 | closed today=97 | day PnL=$+110"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "13:11 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "ES",
+          "side": "long",
+          "exit_price": 74.28,
+          "pnl": -2.3,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98251.92,
+      "note": "$98,252 | cash=$1,038 | open=67 | closed today=98 | day PnL=$+108"
     }
   ]
 }
