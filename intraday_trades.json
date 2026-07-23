@@ -1,5 +1,5 @@
 {
-  "capital": 5278.15,
+  "capital": 4053.99,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -106,26 +106,12 @@
       "entry_time": "10:17 ET",
       "entry_price": 357.095,
       "shares": 6,
-      "stop": 355.4,
+      "stop": 355.45,
       "trail_dist": 3.38,
-      "peak": 358.78,
+      "peak": 358.83,
       "orb_width": 6.76,
       "cost": 2142.57,
       "vol_ratio": 6.22
-    },
-    {
-      "ticker": "SO",
-      "side": "long",
-      "entry_date": "2026-07-23",
-      "entry_time": "10:17 ET",
-      "entry_price": 96.02,
-      "shares": 16,
-      "stop": 96.15,
-      "trail_dist": 0.52,
-      "peak": 96.67,
-      "orb_width": 1.04,
-      "cost": 1536.32,
-      "vol_ratio": 2.89
     },
     {
       "ticker": "ITW",
@@ -330,9 +316,9 @@
       "entry_time": "11:00 ET",
       "entry_price": 73.0,
       "shares": 124,
-      "stop": 73.6,
+      "stop": 73.55,
       "trail_dist": 1.18,
-      "peak": 72.42,
+      "peak": 72.37,
       "orb_width": 2.36,
       "cost": 9052.0,
       "vol_ratio": 3.56
@@ -344,9 +330,9 @@
       "entry_time": "11:00 ET",
       "entry_price": 55.645,
       "shares": 80,
-      "stop": 55.5475,
+      "stop": 55.5525,
       "trail_dist": 0.2925,
-      "peak": 55.84,
+      "peak": 55.845,
       "orb_width": 0.585,
       "cost": 4451.6,
       "vol_ratio": 2.96
@@ -364,20 +350,6 @@
       "orb_width": 1.89,
       "cost": 3035.12,
       "vol_ratio": 2.52
-    },
-    {
-      "ticker": "CI",
-      "side": "long",
-      "entry_date": "2026-07-23",
-      "entry_time": "11:00 ET",
-      "entry_price": 289.2,
-      "shares": 3,
-      "stop": 287.24,
-      "trail_dist": 2.72,
-      "peak": 289.96,
-      "orb_width": 5.44,
-      "cost": 867.6,
-      "vol_ratio": 1.42
     },
     {
       "ticker": "CMS",
@@ -722,9 +694,9 @@
       "entry_time": "11:47 ET",
       "entry_price": 89.385,
       "shares": 2,
-      "stop": 89.131,
+      "stop": 89.155,
       "trail_dist": 0.375,
-      "peak": 89.506,
+      "peak": 89.53,
       "orb_width": 0.75,
       "cost": 178.77,
       "vol_ratio": 1.78
@@ -854,6 +826,34 @@
       "orb_width": 24.5,
       "cost": 1749.78,
       "vol_ratio": 1.33
+    },
+    {
+      "ticker": "ERIE",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:08 ET",
+      "entry_price": 214.74,
+      "shares": 10,
+      "stop": 214.2275,
+      "trail_dist": 0.5125,
+      "peak": 214.74,
+      "orb_width": 1.025,
+      "cost": 2147.4,
+      "vol_ratio": 3.26
+    },
+    {
+      "ticker": "APD",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:08 ET",
+      "entry_price": 295.375,
+      "shares": 5,
+      "stop": 297.3675,
+      "trail_dist": 1.9925,
+      "peak": 295.375,
+      "orb_width": 3.985,
+      "cost": 1476.88,
+      "vol_ratio": 1.29
     }
   ],
   "closed_today": [
@@ -2072,6 +2072,44 @@
       "pnl": -0.81,
       "exit_reason": "trailing stop",
       "exit_time": "12:06 ET"
+    },
+    {
+      "ticker": "SO",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:17 ET",
+      "entry_price": 96.02,
+      "shares": 16,
+      "stop": 96.15,
+      "trail_dist": 0.52,
+      "peak": 96.67,
+      "orb_width": 1.04,
+      "cost": 1536.32,
+      "vol_ratio": 2.89,
+      "exit_date": "2026-07-23",
+      "exit_price": 96.15,
+      "pnl": 2.08,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:08 ET"
+    },
+    {
+      "ticker": "CI",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:00 ET",
+      "entry_price": 289.2,
+      "shares": 3,
+      "stop": 287.24,
+      "trail_dist": 2.72,
+      "peak": 289.96,
+      "orb_width": 5.44,
+      "cost": 867.6,
+      "vol_ratio": 1.42,
+      "exit_date": "2026-07-23",
+      "exit_price": 287.24,
+      "pnl": -5.88,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:08 ET"
     }
   ],
   "all_closed": [
@@ -26088,9 +26126,9 @@
       "width": 0.345
     },
     "HWM": {
-      "high": 286.96,
-      "low": 278.61,
-      "width": 8.35
+      "high": 281.59,
+      "low": 277.4807,
+      "width": 4.1093
     },
     "HPQ": {
       "high": 25.53,
@@ -27419,7 +27457,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98306.48
+    "2026-07-23": 98241.67
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -54246,6 +54284,47 @@
       ],
       "portfolio_value": 98306.48,
       "note": "$98,306 | cash=$5,278 | open=61 | closed today=64 | day PnL=$+153"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "12:08 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "ERIE",
+          "side": "long",
+          "price": 214.74,
+          "shares": 10,
+          "stop": 214.23,
+          "trail_dist": 0.5125
+        },
+        {
+          "ticker": "APD",
+          "side": "short",
+          "price": 295.38,
+          "shares": 5,
+          "stop": 297.37,
+          "trail_dist": 1.9925
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "SO",
+          "side": "long",
+          "exit_price": 96.15,
+          "pnl": 2.08,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "CI",
+          "side": "long",
+          "exit_price": 287.24,
+          "pnl": -5.88,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98241.67,
+      "note": "$98,242 | cash=$4,054 | open=61 | closed today=66 | day PnL=$+149"
     }
   ]
 }
