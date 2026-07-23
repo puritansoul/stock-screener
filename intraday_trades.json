@@ -1,5 +1,5 @@
 {
-  "capital": 5177.05,
+  "capital": 5278.15,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -50,9 +50,9 @@
       "entry_time": "10:10 ET",
       "entry_price": 209.01,
       "shares": 6,
-      "stop": 209.015,
+      "stop": 208.985,
       "trail_dist": 0.075,
-      "peak": 208.94,
+      "peak": 208.91,
       "orb_width": 0.15,
       "cost": 1254.06,
       "vol_ratio": 1.31
@@ -232,9 +232,9 @@
       "entry_time": "10:38 ET",
       "entry_price": 25.595,
       "shares": 12,
-      "stop": 25.6,
+      "stop": 25.595,
       "trail_dist": 0.175,
-      "peak": 25.425,
+      "peak": 25.42,
       "orb_width": 0.35,
       "cost": 307.14,
       "vol_ratio": 2.12
@@ -344,9 +344,9 @@
       "entry_time": "11:00 ET",
       "entry_price": 55.645,
       "shares": 80,
-      "stop": 55.5425,
+      "stop": 55.5475,
       "trail_dist": 0.2925,
-      "peak": 55.835,
+      "peak": 55.84,
       "orb_width": 0.585,
       "cost": 4451.6,
       "vol_ratio": 2.96
@@ -498,9 +498,9 @@
       "entry_time": "11:07 ET",
       "entry_price": 81.98,
       "shares": 3,
-      "stop": 81.6975,
+      "stop": 81.6725,
       "trail_dist": 0.2875,
-      "peak": 81.41,
+      "peak": 81.385,
       "orb_width": 0.575,
       "cost": 245.94,
       "vol_ratio": 1.24
@@ -616,20 +616,6 @@
       "orb_width": 2.8695,
       "cost": 169.1,
       "vol_ratio": 1.53
-    },
-    {
-      "ticker": "TTD",
-      "side": "short",
-      "entry_date": "2026-07-23",
-      "entry_time": "11:28 ET",
-      "entry_price": 16.985,
-      "shares": 6,
-      "stop": 17.12,
-      "trail_dist": 0.19,
-      "peak": 16.93,
-      "orb_width": 0.38,
-      "cost": 101.91,
-      "vol_ratio": 1.2
     },
     {
       "ticker": "ALGN",
@@ -2067,6 +2053,25 @@
       "pnl": -2.07,
       "exit_reason": "trailing stop",
       "exit_time": "12:03 ET"
+    },
+    {
+      "ticker": "TTD",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:28 ET",
+      "entry_price": 16.985,
+      "shares": 6,
+      "stop": 17.12,
+      "trail_dist": 0.19,
+      "peak": 16.93,
+      "orb_width": 0.38,
+      "cost": 101.91,
+      "vol_ratio": 1.2,
+      "exit_date": "2026-07-23",
+      "exit_price": 17.12,
+      "pnl": -0.81,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:06 ET"
     }
   ],
   "all_closed": [
@@ -27414,7 +27419,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98265.51
+    "2026-07-23": 98306.48
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -54224,6 +54229,23 @@
       ],
       "portfolio_value": 98265.51,
       "note": "$98,266 | cash=$5,177 | open=62 | closed today=63 | day PnL=$+154"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "12:06 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "TTD",
+          "side": "short",
+          "exit_price": 17.12,
+          "pnl": -0.81,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98306.48,
+      "note": "$98,306 | cash=$5,278 | open=61 | closed today=64 | day PnL=$+153"
     }
   ]
 }
