@@ -1,5 +1,5 @@
 {
-  "capital": 506.6,
+  "capital": 760.47,
   "open_positions": [
     {
       "ticker": "CBOE",
@@ -42,20 +42,6 @@
       "orb_width": 12.39,
       "cost": 14226.43,
       "vol_ratio": 1.43
-    },
-    {
-      "ticker": "LULU",
-      "side": "short",
-      "entry_date": "2026-07-23",
-      "entry_time": "10:03 ET",
-      "entry_price": 109.5,
-      "shares": 93,
-      "stop": 110.16,
-      "trail_dist": 0.95,
-      "peak": 109.21,
-      "orb_width": 1.9,
-      "cost": 10183.5,
-      "vol_ratio": 1.35
     },
     {
       "ticker": "LEN",
@@ -162,9 +148,9 @@
       "entry_time": "10:12 ET",
       "entry_price": 36.065,
       "shares": 13,
-      "stop": 36.3075,
+      "stop": 36.2925,
       "trail_dist": 0.3025,
-      "peak": 36.005,
+      "peak": 35.99,
       "orb_width": 0.605,
       "cost": 468.84,
       "vol_ratio": 1.41
@@ -302,9 +288,9 @@
       "entry_time": "10:20 ET",
       "entry_price": 36.19,
       "shares": 15,
-      "stop": 36.045,
+      "stop": 36.055,
       "trail_dist": 0.145,
-      "peak": 36.19,
+      "peak": 36.2,
       "orb_width": 0.29,
       "cost": 542.85,
       "vol_ratio": 3.64
@@ -316,9 +302,9 @@
       "entry_time": "10:20 ET",
       "entry_price": 255.4,
       "shares": 1,
-      "stop": 257.13,
+      "stop": 256.37,
       "trail_dist": 2.17,
-      "peak": 254.96,
+      "peak": 254.2,
       "orb_width": 4.34,
       "cost": 255.4,
       "vol_ratio": 2.18
@@ -344,9 +330,9 @@
       "entry_time": "10:20 ET",
       "entry_price": 114.08,
       "shares": 2,
-      "stop": 113.375,
+      "stop": 113.46,
       "trail_dist": 0.705,
-      "peak": 114.08,
+      "peak": 114.165,
       "orb_width": 1.41,
       "cost": 228.16,
       "vol_ratio": 1.65
@@ -364,6 +350,118 @@
       "orb_width": 1.765,
       "cost": 113.71,
       "vol_ratio": 1.51
+    },
+    {
+      "ticker": "HIG",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:24 ET",
+      "entry_price": 141.39,
+      "shares": 22,
+      "stop": 140.665,
+      "trail_dist": 0.725,
+      "peak": 141.39,
+      "orb_width": 1.45,
+      "cost": 3110.58,
+      "vol_ratio": 2.22
+    },
+    {
+      "ticker": "APP",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:24 ET",
+      "entry_price": 401.5,
+      "shares": 5,
+      "stop": 407.285,
+      "trail_dist": 5.785,
+      "peak": 401.5,
+      "orb_width": 11.5699,
+      "cost": 2007.5,
+      "vol_ratio": 1.98
+    },
+    {
+      "ticker": "FLEX",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:24 ET",
+      "entry_price": 130.55,
+      "shares": 12,
+      "stop": 128.005,
+      "trail_dist": 2.545,
+      "peak": 130.55,
+      "orb_width": 5.09,
+      "cost": 1566.6,
+      "vol_ratio": 1.51
+    },
+    {
+      "ticker": "VEEV",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:24 ET",
+      "entry_price": 182.14,
+      "shares": 6,
+      "stop": 184.27,
+      "trail_dist": 2.13,
+      "peak": 182.14,
+      "orb_width": 4.26,
+      "cost": 1092.84,
+      "vol_ratio": 1.43
+    },
+    {
+      "ticker": "EL",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:24 ET",
+      "entry_price": 79.67,
+      "shares": 10,
+      "stop": 80.3375,
+      "trail_dist": 0.6675,
+      "peak": 79.67,
+      "orb_width": 1.335,
+      "cost": 796.7,
+      "vol_ratio": 1.25
+    },
+    {
+      "ticker": "FE",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:24 ET",
+      "entry_price": 49.44,
+      "shares": 12,
+      "stop": 49.205,
+      "trail_dist": 0.235,
+      "peak": 49.44,
+      "orb_width": 0.47,
+      "cost": 593.28,
+      "vol_ratio": 1.24
+    },
+    {
+      "ticker": "TXT",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:24 ET",
+      "entry_price": 94.3,
+      "shares": 4,
+      "stop": 93.115,
+      "trail_dist": 1.185,
+      "peak": 94.3,
+      "orb_width": 2.37,
+      "cost": 377.2,
+      "vol_ratio": 1.23
+    },
+    {
+      "ticker": "JBL",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:24 ET",
+      "entry_price": 323.55,
+      "shares": 1,
+      "stop": 318.3225,
+      "trail_dist": 5.2275,
+      "peak": 323.55,
+      "orb_width": 10.455,
+      "cost": 323.55,
+      "vol_ratio": 1.21
     }
   ],
   "closed_today": [
@@ -423,6 +521,25 @@
       "pnl": -4.86,
       "exit_reason": "trailing stop",
       "exit_time": "10:17 ET"
+    },
+    {
+      "ticker": "LULU",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:03 ET",
+      "entry_price": 109.5,
+      "shares": 93,
+      "stop": 110.16,
+      "trail_dist": 0.95,
+      "peak": 109.21,
+      "orb_width": 1.9,
+      "cost": 10183.5,
+      "vol_ratio": 1.35,
+      "exit_date": "2026-07-23",
+      "exit_price": 110.16,
+      "pnl": -61.38,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:24 ET"
     }
   ],
   "all_closed": [
@@ -23474,9 +23591,9 @@
       "width": 6.71
     },
     "AJG": {
-      "high": 248.04,
-      "low": 241.65,
-      "width": 6.39
+      "high": 243.58,
+      "low": 240.98,
+      "width": 2.6
     },
     "AIZ": {
       "high": 272.55,
@@ -23688,6 +23805,11 @@
       "low": 840.0,
       "width": 24.5
     },
+    "CAT": {
+      "high": 901.75,
+      "low": 881.95,
+      "width": 19.8
+    },
     "CBOE": {
       "high": 283.82,
       "low": 278.0,
@@ -23804,9 +23926,9 @@
       "width": 4.67
     },
     "CMS": {
-      "high": 73.31,
-      "low": 72.875,
-      "width": 0.435
+      "high": 74.135,
+      "low": 73.055,
+      "width": 1.08
     },
     "KO": {
       "high": 81.869,
@@ -25765,7 +25887,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98219.93
+    "2026-07-23": 98173.3
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -50943,6 +51065,88 @@
       "exits": [],
       "portfolio_value": 98219.93,
       "note": "$98,220 | cash=$507 | open=26 | closed today=3 | day PnL=$-8"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "10:24 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "HIG",
+          "side": "long",
+          "price": 141.39,
+          "shares": 22,
+          "stop": 140.66,
+          "trail_dist": 0.725
+        },
+        {
+          "ticker": "APP",
+          "side": "short",
+          "price": 401.5,
+          "shares": 5,
+          "stop": 407.29,
+          "trail_dist": 5.785
+        },
+        {
+          "ticker": "FLEX",
+          "side": "long",
+          "price": 130.55,
+          "shares": 12,
+          "stop": 128.01,
+          "trail_dist": 2.545
+        },
+        {
+          "ticker": "VEEV",
+          "side": "short",
+          "price": 182.14,
+          "shares": 6,
+          "stop": 184.27,
+          "trail_dist": 2.13
+        },
+        {
+          "ticker": "EL",
+          "side": "short",
+          "price": 79.67,
+          "shares": 10,
+          "stop": 80.34,
+          "trail_dist": 0.6675
+        },
+        {
+          "ticker": "FE",
+          "side": "long",
+          "price": 49.44,
+          "shares": 12,
+          "stop": 49.2,
+          "trail_dist": 0.235
+        },
+        {
+          "ticker": "TXT",
+          "side": "long",
+          "price": 94.3,
+          "shares": 4,
+          "stop": 93.12,
+          "trail_dist": 1.185
+        },
+        {
+          "ticker": "JBL",
+          "side": "long",
+          "price": 323.55,
+          "shares": 1,
+          "stop": 318.32,
+          "trail_dist": 5.2275
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "LULU",
+          "side": "short",
+          "exit_price": 110.16,
+          "pnl": -61.38,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98173.3,
+      "note": "$98,173 | cash=$760 | open=33 | closed today=4 | day PnL=$-70"
     }
   ]
 }
