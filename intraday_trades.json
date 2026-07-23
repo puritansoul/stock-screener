@@ -1,6 +1,63 @@
 {
-  "capital": 98061.41,
-  "open_positions": [],
+  "capital": 23794.31,
+  "open_positions": [
+    {
+      "ticker": "CBOE",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:03 ET",
+      "entry_price": 284.015,
+      "shares": 103,
+      "stop": 281.105,
+      "trail_dist": 2.91,
+      "peak": 284.015,
+      "orb_width": 5.82,
+      "cost": 29253.55,
+      "vol_ratio": 1.56
+    },
+    {
+      "ticker": "NKE",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:03 ET",
+      "entry_price": 41.125,
+      "shares": 501,
+      "stop": 41.475,
+      "trail_dist": 0.35,
+      "peak": 41.125,
+      "orb_width": 0.7,
+      "cost": 20603.62,
+      "vol_ratio": 1.48
+    },
+    {
+      "ticker": "LHX",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:03 ET",
+      "entry_price": 302.69,
+      "shares": 47,
+      "stop": 296.495,
+      "trail_dist": 6.195,
+      "peak": 302.69,
+      "orb_width": 12.39,
+      "cost": 14226.43,
+      "vol_ratio": 1.43
+    },
+    {
+      "ticker": "LULU",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:03 ET",
+      "entry_price": 109.5,
+      "shares": 93,
+      "stop": 110.45,
+      "trail_dist": 0.95,
+      "peak": 109.5,
+      "orb_width": 1.9,
+      "cost": 10183.5,
+      "vol_ratio": 1.35
+    }
+  ],
   "closed_today": [],
   "all_closed": [
     {
@@ -22967,8 +23024,8 @@
     },
     "AWK": {
       "high": 134.075,
-      "low": 132.41,
-      "width": 1.665
+      "low": 132.4101,
+      "width": 1.6649
     },
     "AMP": {
       "high": 536.58,
@@ -22986,9 +23043,9 @@
       "width": 6.388
     },
     "APH": {
-      "high": 159.74,
+      "high": 159.78,
       "low": 156.12,
-      "width": 3.62
+      "width": 3.66
     },
     "ADI": {
       "high": 382.965,
@@ -23086,9 +23143,9 @@
       "width": 38.5
     },
     "AVB": {
-      "high": 192.96,
-      "low": 189.68,
-      "width": 3.28
+      "high": 192.5,
+      "low": 190.42,
+      "width": 2.08
     },
     "AVY": {
       "high": 157.4,
@@ -23266,9 +23323,9 @@
       "width": 24.5
     },
     "CAT": {
-      "high": 901.65,
+      "high": 901.75,
       "low": 881.95,
-      "width": 19.7
+      "width": 19.8
     },
     "CBOE": {
       "high": 283.82,
@@ -23366,9 +23423,9 @@
       "width": 2.07
     },
     "C": {
-      "high": 132.25,
+      "high": 132.1,
       "low": 130.02,
-      "width": 2.23
+      "width": 2.08
     },
     "CFG": {
       "high": 72.16,
@@ -23526,9 +23583,9 @@
       "width": 5.14
     },
     "DVA": {
-      "high": 232.78,
+      "high": 232.99,
       "low": 230.0,
-      "width": 2.78
+      "width": 2.99
     },
     "DECK": {
       "high": 102.254,
@@ -23896,9 +23953,9 @@
       "width": 0.36
     },
     "GNRC": {
-      "high": 216.42,
+      "high": 216.5,
       "low": 210.33,
-      "width": 6.09
+      "width": 6.17
     },
     "GD": {
       "high": 387.32,
@@ -23931,9 +23988,9 @@
       "width": 1.29
     },
     "GL": {
-      "high": 184.0,
+      "high": 175.47,
       "low": 168.17,
-      "width": 15.83
+      "width": 7.3
     },
     "GDDY": {
       "high": 89.81,
@@ -24306,9 +24363,9 @@
       "width": 1.57
     },
     "MTB": {
-      "high": 250.73,
+      "high": 247.65,
       "low": 244.775,
-      "width": 5.955
+      "width": 2.875
     },
     "MPC": {
       "high": 323.755,
@@ -24367,8 +24424,8 @@
     },
     "MRK": {
       "high": 129.62,
-      "low": 127.47,
-      "width": 2.15
+      "low": 127.82,
+      "width": 1.8
     },
     "META": {
       "high": 614.635,
@@ -24382,8 +24439,8 @@
     },
     "MTD": {
       "high": 1346.26,
-      "low": 1311.5,
-      "width": 34.76
+      "low": 1311.14,
+      "width": 35.12
     },
     "MGM": {
       "high": 45.37,
@@ -24436,9 +24493,9 @@
       "width": 1.12
     },
     "MCO": {
-      "high": 489.7,
+      "high": 484.47,
       "low": 478.01,
-      "width": 11.69
+      "width": 6.46
     },
     "MS": {
       "high": 217.26,
@@ -24546,9 +24603,9 @@
       "width": 2.4187
     },
     "NVR": {
-      "high": 6349.2798,
+      "high": 6272.8799,
       "low": 5919.25,
-      "width": 430.0298
+      "width": 353.6299
     },
     "NXPI": {
       "high": 279.87,
@@ -24746,9 +24803,9 @@
       "width": 14.13
     },
     "Q": {
-      "high": 140.185,
+      "high": 140.2475,
       "low": 135.89,
-      "width": 4.295
+      "width": 4.3575
     },
     "RL": {
       "high": 387.14,
@@ -25181,9 +25238,9 @@
       "width": 8.01
     },
     "VRT": {
-      "high": 311.35,
+      "high": 311.4,
       "low": 300.0,
-      "width": 11.35
+      "width": 11.4
     },
     "VTRS": {
       "high": 16.99,
@@ -50180,6 +50237,48 @@
       "exits": [],
       "portfolio_value": 98061.41,
       "note": "$98,061 | cash=$98,061 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "10:03 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "CBOE",
+          "side": "long",
+          "price": 284.02,
+          "shares": 103,
+          "stop": 281.11,
+          "trail_dist": 2.91
+        },
+        {
+          "ticker": "NKE",
+          "side": "short",
+          "price": 41.12,
+          "shares": 501,
+          "stop": 41.48,
+          "trail_dist": 0.35
+        },
+        {
+          "ticker": "LHX",
+          "side": "long",
+          "price": 302.69,
+          "shares": 47,
+          "stop": 296.5,
+          "trail_dist": 6.195
+        },
+        {
+          "ticker": "LULU",
+          "side": "short",
+          "price": 109.5,
+          "shares": 93,
+          "stop": 110.45,
+          "trail_dist": 0.95
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 98061.41,
+      "note": "$98,061 | cash=$23,794 | open=4 | closed today=0 | day PnL=$+0"
     }
   ]
 }
