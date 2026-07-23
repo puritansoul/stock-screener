@@ -1,5 +1,5 @@
 {
-  "capital": 11006.14,
+  "capital": 13225.97,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -422,20 +422,6 @@
       "vol_ratio": 2.52
     },
     {
-      "ticker": "CME",
-      "side": "long",
-      "entry_date": "2026-07-23",
-      "entry_time": "11:00 ET",
-      "entry_price": 256.5,
-      "shares": 8,
-      "stop": 254.245,
-      "trail_dist": 2.335,
-      "peak": 256.58,
-      "orb_width": 4.67,
-      "cost": 2052.0,
-      "vol_ratio": 2.2
-    },
-    {
       "ticker": "CI",
       "side": "long",
       "entry_date": "2026-07-23",
@@ -512,9 +498,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 63.1,
       "shares": 7,
-      "stop": 63.09,
+      "stop": 63.055,
       "trail_dist": 0.785,
-      "peak": 62.305,
+      "peak": 62.27,
       "orb_width": 1.57,
       "cost": 441.7,
       "vol_ratio": 1.94
@@ -568,9 +554,9 @@
       "entry_time": "11:07 ET",
       "entry_price": 81.98,
       "shares": 3,
-      "stop": 81.8025,
+      "stop": 81.7975,
       "trail_dist": 0.2875,
-      "peak": 81.515,
+      "peak": 81.51,
       "orb_width": 0.575,
       "cost": 245.94,
       "vol_ratio": 1.24
@@ -812,20 +798,6 @@
       "orb_width": 1.215,
       "cost": 247.82,
       "vol_ratio": 1.52
-    },
-    {
-      "ticker": "OKE",
-      "side": "long",
-      "entry_date": "2026-07-23",
-      "entry_time": "11:45 ET",
-      "entry_price": 93.245,
-      "shares": 2,
-      "stop": 92.935,
-      "trail_dist": 0.385,
-      "peak": 93.32,
-      "orb_width": 0.77,
-      "cost": 186.49,
-      "vol_ratio": 1.51
     },
     {
       "ticker": "COP",
@@ -1933,6 +1905,44 @@
       "pnl": -0.85,
       "exit_reason": "trailing stop",
       "exit_time": "11:54 ET"
+    },
+    {
+      "ticker": "CME",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:00 ET",
+      "entry_price": 256.5,
+      "shares": 8,
+      "stop": 254.245,
+      "trail_dist": 2.335,
+      "peak": 256.58,
+      "orb_width": 4.67,
+      "cost": 2052.0,
+      "vol_ratio": 2.2,
+      "exit_date": "2026-07-23",
+      "exit_price": 254.245,
+      "pnl": -18.04,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:56 ET"
+    },
+    {
+      "ticker": "OKE",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "11:45 ET",
+      "entry_price": 93.245,
+      "shares": 2,
+      "stop": 92.935,
+      "trail_dist": 0.385,
+      "peak": 93.32,
+      "orb_width": 0.77,
+      "cost": 186.49,
+      "vol_ratio": 1.51,
+      "exit_date": "2026-07-23",
+      "exit_price": 92.935,
+      "pnl": -0.62,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:56 ET"
     }
   ],
   "all_closed": [
@@ -26778,11 +26788,6 @@
       "low": 1558.61,
       "width": 93.89
     },
-    "SBAC": {
-      "high": 179.59,
-      "low": 175.97,
-      "width": 3.62
-    },
     "SLB": {
       "high": 48.56,
       "low": 48.0,
@@ -27280,7 +27285,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98419.69
+    "2026-07-23": 98401.43
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -53930,6 +53935,30 @@
       ],
       "portfolio_value": 98419.69,
       "note": "$98,420 | cash=$11,006 | open=66 | closed today=53 | day PnL=$+190"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "11:56 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "CME",
+          "side": "long",
+          "exit_price": 254.25,
+          "pnl": -18.04,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "OKE",
+          "side": "long",
+          "exit_price": 92.94,
+          "pnl": -0.62,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98401.43,
+      "note": "$98,401 | cash=$13,226 | open=64 | closed today=55 | day PnL=$+172"
     }
   ]
 }
