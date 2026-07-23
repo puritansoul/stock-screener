@@ -1,5 +1,5 @@
 {
-  "capital": 2700.31,
+  "capital": 1967.16,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -190,9 +190,9 @@
       "entry_time": "10:38 ET",
       "entry_price": 25.595,
       "shares": 12,
-      "stop": 25.53,
+      "stop": 25.5275,
       "trail_dist": 0.175,
-      "peak": 25.355,
+      "peak": 25.3525,
       "orb_width": 0.35,
       "cost": 307.14,
       "vol_ratio": 2.12
@@ -708,9 +708,9 @@
       "entry_time": "12:08 ET",
       "entry_price": 295.375,
       "shares": 5,
-      "stop": 297.2025,
+      "stop": 297.1625,
       "trail_dist": 1.9925,
-      "peak": 295.21,
+      "peak": 295.17,
       "orb_width": 3.985,
       "cost": 1476.88,
       "vol_ratio": 1.29
@@ -792,12 +792,26 @@
       "entry_time": "12:20 ET",
       "entry_price": 126.44,
       "shares": 9,
-      "stop": 127.5475,
+      "stop": 127.5375,
       "trail_dist": 1.1075,
-      "peak": 126.44,
+      "peak": 126.43,
       "orb_width": 2.215,
       "cost": 1137.96,
       "vol_ratio": 1.39
+    },
+    {
+      "ticker": "MTB",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "12:22 ET",
+      "entry_price": 244.385,
+      "shares": 3,
+      "stop": 245.8225,
+      "trail_dist": 1.4375,
+      "peak": 244.385,
+      "orb_width": 2.875,
+      "cost": 733.15,
+      "vol_ratio": 1.73
     }
   ],
   "closed_today": [
@@ -25712,6 +25726,11 @@
       "low": 121.0,
       "width": 0.93
     },
+    "ED": {
+      "high": 112.34,
+      "low": 110.98,
+      "width": 1.36
+    },
     "STZ": {
       "high": 131.03,
       "low": 129.97,
@@ -27624,7 +27643,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98250.2
+    "2026-07-23": 98199.53
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -54694,6 +54713,24 @@
       ],
       "portfolio_value": 98250.2,
       "note": "$98,250 | cash=$2,700 | open=57 | closed today=78 | day PnL=$+121"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "12:22 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "MTB",
+          "side": "short",
+          "price": 244.38,
+          "shares": 3,
+          "stop": 245.82,
+          "trail_dist": 1.4375
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 98199.53,
+      "note": "$98,200 | cash=$1,967 | open=58 | closed today=78 | day PnL=$+121"
     }
   ]
 }
