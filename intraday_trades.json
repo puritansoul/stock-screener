@@ -1,5 +1,5 @@
 {
-  "capital": 2990.99,
+  "capital": 902.97,
   "open_positions": [
     {
       "ticker": "NKE",
@@ -56,20 +56,6 @@
       "orb_width": 6.76,
       "cost": 2142.57,
       "vol_ratio": 6.22
-    },
-    {
-      "ticker": "ITW",
-      "side": "long",
-      "entry_date": "2026-07-23",
-      "entry_time": "10:20 ET",
-      "entry_price": 275.69,
-      "shares": 1,
-      "stop": 274.2812,
-      "trail_dist": 2.1488,
-      "peak": 276.43,
-      "orb_width": 4.2975,
-      "cost": 275.69,
-      "vol_ratio": 2.17
     },
     {
       "ticker": "APP",
@@ -288,9 +274,9 @@
       "entry_time": "11:09 ET",
       "entry_price": 24.1,
       "shares": 15,
-      "stop": 24.1925,
+      "stop": 24.1775,
       "trail_dist": 0.1725,
-      "peak": 24.02,
+      "peak": 24.005,
       "orb_width": 0.345,
       "cost": 361.5,
       "vol_ratio": 5.01
@@ -386,9 +372,9 @@
       "entry_time": "11:59 ET",
       "entry_price": 170.85,
       "shares": 16,
-      "stop": 172.8,
+      "stop": 172.715,
       "trail_dist": 1.97,
-      "peak": 170.83,
+      "peak": 170.745,
       "orb_width": 3.94,
       "cost": 2733.6,
       "vol_ratio": 2.0
@@ -400,9 +386,9 @@
       "entry_time": "11:59 ET",
       "entry_price": 83.72,
       "shares": 23,
-      "stop": 83.6345,
+      "stop": 83.5845,
       "trail_dist": 0.3745,
-      "peak": 83.26,
+      "peak": 83.21,
       "orb_width": 0.749,
       "cost": 1925.56,
       "vol_ratio": 1.23
@@ -512,9 +498,9 @@
       "entry_time": "12:22 ET",
       "entry_price": 244.385,
       "shares": 3,
-      "stop": 245.8175,
+      "stop": 245.725,
       "trail_dist": 1.4375,
-      "peak": 244.38,
+      "peak": 244.2875,
       "orb_width": 2.875,
       "cost": 733.15,
       "vol_ratio": 1.73
@@ -862,9 +848,9 @@
       "entry_time": "13:23 ET",
       "entry_price": 77.0,
       "shares": 20,
-      "stop": 77.4375,
+      "stop": 77.4175,
       "trail_dist": 0.4775,
-      "peak": 76.96,
+      "peak": 76.94,
       "orb_width": 0.955,
       "cost": 1540.0,
       "vol_ratio": 2.05
@@ -876,9 +862,9 @@
       "entry_time": "13:23 ET",
       "entry_price": 124.495,
       "shares": 8,
-      "stop": 125.2,
+      "stop": 125.06,
       "trail_dist": 0.83,
-      "peak": 124.37,
+      "peak": 124.23,
       "orb_width": 1.66,
       "cost": 995.96,
       "vol_ratio": 1.4
@@ -918,12 +904,68 @@
       "entry_time": "13:33 ET",
       "entry_price": 199.87,
       "shares": 5,
-      "stop": 201.2733,
+      "stop": 200.9233,
       "trail_dist": 1.4033,
-      "peak": 199.87,
+      "peak": 199.52,
       "orb_width": 2.8065,
       "cost": 999.35,
       "vol_ratio": 1.35
+    },
+    {
+      "ticker": "PPL",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "13:35 ET",
+      "entry_price": 36.195,
+      "shares": 27,
+      "stop": 36.05,
+      "trail_dist": 0.145,
+      "peak": 36.195,
+      "orb_width": 0.29,
+      "cost": 977.26,
+      "vol_ratio": 3.06
+    },
+    {
+      "ticker": "CTAS",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "13:35 ET",
+      "entry_price": 202.99,
+      "shares": 3,
+      "stop": 201.805,
+      "trail_dist": 1.185,
+      "peak": 202.99,
+      "orb_width": 2.37,
+      "cost": 608.97,
+      "vol_ratio": 1.8
+    },
+    {
+      "ticker": "GEN",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "13:35 ET",
+      "entry_price": 25.075,
+      "shares": 20,
+      "stop": 25.255,
+      "trail_dist": 0.18,
+      "peak": 25.075,
+      "orb_width": 0.36,
+      "cost": 501.5,
+      "vol_ratio": 1.55
+    },
+    {
+      "ticker": "DD",
+      "side": "short",
+      "entry_date": "2026-07-23",
+      "entry_time": "13:35 ET",
+      "entry_price": 137.28,
+      "shares": 2,
+      "stop": 138.225,
+      "trail_dist": 0.945,
+      "peak": 137.28,
+      "orb_width": 1.89,
+      "cost": 274.56,
+      "vol_ratio": 1.28
     }
   ],
   "closed_today": [
@@ -2997,6 +3039,25 @@
       "pnl": 9.13,
       "exit_reason": "trailing stop",
       "exit_time": "13:33 ET"
+    },
+    {
+      "ticker": "ITW",
+      "side": "long",
+      "entry_date": "2026-07-23",
+      "entry_time": "10:20 ET",
+      "entry_price": 275.69,
+      "shares": 1,
+      "stop": 274.2812,
+      "trail_dist": 2.1488,
+      "peak": 276.43,
+      "orb_width": 4.2975,
+      "cost": 275.69,
+      "vol_ratio": 2.17,
+      "exit_date": "2026-07-23",
+      "exit_price": 274.2812,
+      "pnl": -1.41,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:35 ET"
     }
   ],
   "all_closed": [
@@ -28344,7 +28405,7 @@
     "2026-07-20": 99285.85,
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
-    "2026-07-23": 98251.99
+    "2026-07-23": 98267.16
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -56268,6 +56329,56 @@
       ],
       "portfolio_value": 98251.99,
       "note": "$98,252 | cash=$2,991 | open=66 | closed today=109 | day PnL=$-122"
+    },
+    {
+      "date": "2026-07-23",
+      "time": "13:35 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "PPL",
+          "side": "long",
+          "price": 36.19,
+          "shares": 27,
+          "stop": 36.05,
+          "trail_dist": 0.145
+        },
+        {
+          "ticker": "CTAS",
+          "side": "long",
+          "price": 202.99,
+          "shares": 3,
+          "stop": 201.81,
+          "trail_dist": 1.185
+        },
+        {
+          "ticker": "GEN",
+          "side": "short",
+          "price": 25.08,
+          "shares": 20,
+          "stop": 25.26,
+          "trail_dist": 0.18
+        },
+        {
+          "ticker": "DD",
+          "side": "short",
+          "price": 137.28,
+          "shares": 2,
+          "stop": 138.22,
+          "trail_dist": 0.945
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "ITW",
+          "side": "long",
+          "exit_price": 274.28,
+          "pnl": -1.41,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 98267.16,
+      "note": "$98,267 | cash=$903 | open=69 | closed today=110 | day PnL=$-124"
     }
   ]
 }
