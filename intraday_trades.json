@@ -1,5 +1,5 @@
 {
-  "capital": 2693.91,
+  "capital": 1315.13,
   "open_positions": [
     {
       "ticker": "WELL",
@@ -330,9 +330,9 @@
       "entry_time": "11:59 ET",
       "entry_price": 23.775,
       "shares": 27,
-      "stop": 23.715,
+      "stop": 23.74,
       "trail_dist": 0.31,
-      "peak": 24.025,
+      "peak": 24.05,
       "orb_width": 0.62,
       "cost": 641.92,
       "vol_ratio": 1.45
@@ -420,20 +420,6 @@
       "orb_width": 2.965,
       "cost": 1223.85,
       "vol_ratio": 1.35
-    },
-    {
-      "ticker": "DASH",
-      "side": "long",
-      "entry_date": "2026-07-24",
-      "entry_time": "12:18 ET",
-      "entry_price": 174.07,
-      "shares": 5,
-      "stop": 172.625,
-      "trail_dist": 1.4575,
-      "peak": 174.0825,
-      "orb_width": 2.915,
-      "cost": 870.35,
-      "vol_ratio": 2.32
     },
     {
       "ticker": "WST",
@@ -1226,9 +1212,9 @@
       "entry_time": "14:19 ET",
       "entry_price": 293.31,
       "shares": 2,
-      "stop": 293.7,
+      "stop": 293.695,
       "trail_dist": 0.705,
-      "peak": 292.995,
+      "peak": 292.99,
       "orb_width": 1.41,
       "cost": 586.62,
       "vol_ratio": 2.45
@@ -1296,9 +1282,9 @@
       "entry_time": "14:24 ET",
       "entry_price": 201.895,
       "shares": 1,
-      "stop": 202.6875,
+      "stop": 202.5075,
       "trail_dist": 1.4075,
-      "peak": 201.28,
+      "peak": 201.1,
       "orb_width": 2.815,
       "cost": 201.9,
       "vol_ratio": 2.74
@@ -1394,9 +1380,9 @@
       "entry_time": "14:34 ET",
       "entry_price": 1330.4301,
       "shares": 1,
-      "stop": 1348.9051,
+      "stop": 1348.835,
       "trail_dist": 18.475,
-      "peak": 1330.4301,
+      "peak": 1330.36,
       "orb_width": 36.95,
       "cost": 1330.43,
       "vol_ratio": 2.5
@@ -1414,6 +1400,48 @@
       "orb_width": 2.145,
       "cost": 879.06,
       "vol_ratio": 2.17
+    },
+    {
+      "ticker": "NI",
+      "side": "short",
+      "entry_date": "2026-07-24",
+      "entry_time": "14:36 ET",
+      "entry_price": 46.62,
+      "shares": 22,
+      "stop": 46.7725,
+      "trail_dist": 0.1525,
+      "peak": 46.62,
+      "orb_width": 0.305,
+      "cost": 1025.64,
+      "vol_ratio": 2.3
+    },
+    {
+      "ticker": "NTAP",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "14:36 ET",
+      "entry_price": 167.12,
+      "shares": 4,
+      "stop": 166.12,
+      "trail_dist": 1.0,
+      "peak": 167.12,
+      "orb_width": 2.0,
+      "cost": 668.48,
+      "vol_ratio": 1.63
+    },
+    {
+      "ticker": "KIM",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "14:36 ET",
+      "entry_price": 26.085,
+      "shares": 21,
+      "stop": 26.0125,
+      "trail_dist": 0.0725,
+      "peak": 26.085,
+      "orb_width": 0.145,
+      "cost": 547.78,
+      "vol_ratio": 1.34
     }
   ],
   "closed_today": [
@@ -5425,6 +5453,25 @@
       "pnl": -11.26,
       "exit_reason": "trailing stop",
       "exit_time": "14:34 ET"
+    },
+    {
+      "ticker": "DASH",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "12:18 ET",
+      "entry_price": 174.07,
+      "shares": 5,
+      "stop": 172.625,
+      "trail_dist": 1.4575,
+      "peak": 174.0825,
+      "orb_width": 2.915,
+      "cost": 870.35,
+      "vol_ratio": 2.32,
+      "exit_date": "2026-07-24",
+      "exit_price": 172.625,
+      "pnl": -7.22,
+      "exit_reason": "trailing stop",
+      "exit_time": "14:36 ET"
     }
   ],
   "all_closed": [
@@ -33681,8 +33728,8 @@
     },
     "AAPL": {
       "high": 327.76,
-      "low": 321.62,
-      "width": 6.14
+      "low": 323.23,
+      "width": 4.53
     },
     "AMAT": {
       "high": 562.8,
@@ -35070,9 +35117,9 @@
       "width": 36.9754
     },
     "MSFT": {
-      "high": 389.03,
+      "high": 386.595,
       "low": 380.65,
-      "width": 8.38
+      "width": 5.945
     },
     "MAA": {
       "high": 133.85,
@@ -35591,8 +35638,8 @@
     },
     "SBUX": {
       "high": 105.16,
-      "low": 103.6348,
-      "width": 1.5252
+      "low": 103.84,
+      "width": 1.32
     },
     "STT": {
       "high": 185.99,
@@ -36017,7 +36064,7 @@
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
-    "2026-07-24": 95765.74
+    "2026-07-24": 95730.57
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -70721,6 +70768,48 @@
       ],
       "portfolio_value": 95765.74,
       "note": "$95,766 | cash=$2,694 | open=101 | closed today=211 | day PnL=$-2,307"
+    },
+    {
+      "date": "2026-07-24",
+      "time": "14:36 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "NI",
+          "side": "short",
+          "price": 46.62,
+          "shares": 22,
+          "stop": 46.77,
+          "trail_dist": 0.1525
+        },
+        {
+          "ticker": "NTAP",
+          "side": "long",
+          "price": 167.12,
+          "shares": 4,
+          "stop": 166.12,
+          "trail_dist": 1.0
+        },
+        {
+          "ticker": "KIM",
+          "side": "long",
+          "price": 26.08,
+          "shares": 21,
+          "stop": 26.01,
+          "trail_dist": 0.0725
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "DASH",
+          "side": "long",
+          "exit_price": 172.62,
+          "pnl": -7.22,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95730.57,
+      "note": "$95,731 | cash=$1,315 | open=103 | closed today=212 | day PnL=$-2,314"
     }
   ]
 }
