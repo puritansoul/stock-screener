@@ -232,9 +232,9 @@
       "entry_time": "11:29 ET",
       "entry_price": 330.865,
       "shares": 1,
-      "stop": 330.7149,
+      "stop": 330.715,
       "trail_dist": 2.385,
-      "peak": 333.0999,
+      "peak": 333.1,
       "orb_width": 4.77,
       "cost": 330.86,
       "vol_ratio": 1.72
@@ -876,9 +876,9 @@
       "entry_time": "12:51 ET",
       "entry_price": 113.165,
       "shares": 26,
-      "stop": 113.35,
+      "stop": 113.27,
       "trail_dist": 0.29,
-      "peak": 113.06,
+      "peak": 112.98,
       "orb_width": 0.58,
       "cost": 2942.29,
       "vol_ratio": 1.43
@@ -890,9 +890,9 @@
       "entry_time": "12:54 ET",
       "entry_price": 121.6,
       "shares": 29,
-      "stop": 122.44,
+      "stop": 122.37,
       "trail_dist": 0.84,
-      "peak": 121.6,
+      "peak": 121.53,
       "orb_width": 1.68,
       "cost": 3526.4,
       "vol_ratio": 1.39
@@ -32158,6 +32158,11 @@
       "low": 355.65,
       "width": 3.17
     },
+    "APA": {
+      "high": 36.67,
+      "low": 36.22,
+      "width": 0.45
+    },
     "APO": {
       "high": 119.66,
       "low": 118.0101,
@@ -32302,11 +32307,6 @@
       "high": 1044.3199,
       "low": 1033.49,
       "width": 10.83
-    },
-    "BX": {
-      "high": 126.24,
-      "low": 124.25,
-      "width": 1.99
     },
     "XYZ": {
       "high": 77.14,
@@ -34501,7 +34501,7 @@
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
-    "2026-07-24": 95619.18
+    "2026-07-24": 95639.52
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -67717,6 +67717,15 @@
       ],
       "portfolio_value": 95619.18,
       "note": "$95,619 | cash=$6,031 | open=65 | closed today=158 | day PnL=$-2,240"
+    },
+    {
+      "date": "2026-07-24",
+      "time": "12:56 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 95639.52,
+      "note": "$95,640 | cash=$6,031 | open=65 | closed today=158 | day PnL=$-2,240"
     }
   ]
 }
