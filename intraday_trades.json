@@ -1,5 +1,5 @@
 {
-  "capital": 751.32,
+  "capital": 750.41,
   "open_positions": [
     {
       "ticker": "PCAR",
@@ -383,7 +383,7 @@
       "ticker": "MO",
       "side": "long",
       "entry_date": "2026-07-24",
-      "entry_time": "10:47 ET",
+      "entry_time": "10:49 ET",
       "entry_price": 73.35,
       "shares": 3,
       "stop": 73.045,
@@ -1496,6 +1496,25 @@
       "pnl": -1.22,
       "exit_reason": "trailing stop",
       "exit_time": "10:47 ET"
+    },
+    {
+      "ticker": "MO",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "10:47 ET",
+      "entry_price": 73.35,
+      "shares": 3,
+      "stop": 73.045,
+      "trail_dist": 0.305,
+      "peak": 73.35,
+      "orb_width": 0.61,
+      "cost": 220.05,
+      "vol_ratio": 1.51,
+      "exit_date": "2026-07-24",
+      "exit_price": 73.045,
+      "pnl": -0.91,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:49 ET"
     }
   ],
   "all_closed": [
@@ -32088,7 +32107,7 @@
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
-    "2026-07-24": 95879.95
+    "2026-07-24": 95879.04
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -63032,6 +63051,32 @@
       ],
       "portfolio_value": 95879.95,
       "note": "$95,880 | cash=$751 | open=28 | closed today=58 | day PnL=$-2,053"
+    },
+    {
+      "date": "2026-07-24",
+      "time": "10:49 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "MO",
+          "side": "long",
+          "price": 73.35,
+          "shares": 3,
+          "stop": 73.04,
+          "trail_dist": 0.305
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "MO",
+          "side": "long",
+          "exit_price": 73.05,
+          "pnl": -0.91,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95879.04,
+      "note": "$95,879 | cash=$750 | open=28 | closed today=59 | day PnL=$-2,054"
     }
   ]
 }
