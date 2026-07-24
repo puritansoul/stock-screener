@@ -1,5 +1,5 @@
 {
-  "capital": 369.81,
+  "capital": 1096.34,
   "open_positions": [
     {
       "ticker": "PCAR",
@@ -226,20 +226,6 @@
       "vol_ratio": 2.06
     },
     {
-      "ticker": "MTB",
-      "side": "long",
-      "entry_date": "2026-07-24",
-      "entry_time": "10:35 ET",
-      "entry_price": 247.46,
-      "shares": 14,
-      "stop": 246.8425,
-      "trail_dist": 0.6175,
-      "peak": 247.46,
-      "orb_width": 1.235,
-      "cost": 3464.44,
-      "vol_ratio": 1.94
-    },
-    {
       "ticker": "VLO",
       "side": "long",
       "entry_date": "2026-07-24",
@@ -408,18 +394,60 @@
       "vol_ratio": 1.98
     },
     {
+      "ticker": "MTB",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "11:07 ET",
+      "entry_price": 247.46,
+      "shares": 4,
+      "stop": 246.8425,
+      "trail_dist": 0.6175,
+      "peak": 247.46,
+      "orb_width": 1.235,
+      "cost": 989.84,
+      "vol_ratio": 2.19
+    },
+    {
       "ticker": "MO",
       "side": "long",
       "entry_date": "2026-07-24",
-      "entry_time": "11:04 ET",
+      "entry_time": "11:07 ET",
       "entry_price": 73.35,
-      "shares": 2,
+      "shares": 12,
       "stop": 73.045,
       "trail_dist": 0.305,
       "peak": 73.35,
       "orb_width": 0.61,
-      "cost": 146.7,
+      "cost": 880.2,
       "vol_ratio": 1.51
+    },
+    {
+      "ticker": "XYL",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "11:07 ET",
+      "entry_price": 119.54,
+      "shares": 5,
+      "stop": 118.54,
+      "trail_dist": 1.0,
+      "peak": 119.54,
+      "orb_width": 2.0,
+      "cost": 597.7,
+      "vol_ratio": 1.36
+    },
+    {
+      "ticker": "MSI",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "11:07 ET",
+      "entry_price": 409.3,
+      "shares": 1,
+      "stop": 406.94,
+      "trail_dist": 2.36,
+      "peak": 409.3,
+      "orb_width": 4.72,
+      "cost": 409.3,
+      "vol_ratio": 1.25
     }
   ],
   "closed_today": [
@@ -1657,6 +1685,44 @@
       "pnl": -0.61,
       "exit_reason": "trailing stop",
       "exit_time": "11:04 ET"
+    },
+    {
+      "ticker": "MTB",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "10:35 ET",
+      "entry_price": 247.46,
+      "shares": 14,
+      "stop": 246.9625,
+      "trail_dist": 0.6175,
+      "peak": 247.58,
+      "orb_width": 1.235,
+      "cost": 3464.44,
+      "vol_ratio": 1.94,
+      "exit_date": "2026-07-24",
+      "exit_price": 246.9625,
+      "pnl": -6.97,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:07 ET"
+    },
+    {
+      "ticker": "MO",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "11:04 ET",
+      "entry_price": 73.35,
+      "shares": 2,
+      "stop": 73.045,
+      "trail_dist": 0.305,
+      "peak": 73.35,
+      "orb_width": 0.61,
+      "cost": 146.7,
+      "vol_ratio": 1.51,
+      "exit_date": "2026-07-24",
+      "exit_price": 73.045,
+      "pnl": -0.61,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:07 ET"
     }
   ],
   "all_closed": [
@@ -32249,7 +32315,7 @@
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
-    "2026-07-24": 95874.77
+    "2026-07-24": 95867.2
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -63391,6 +63457,63 @@
       ],
       "portfolio_value": 95874.77,
       "note": "$95,875 | cash=$370 | open=30 | closed today=65 | day PnL=$-2,058"
+    },
+    {
+      "date": "2026-07-24",
+      "time": "11:06 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "MTB",
+          "side": "long",
+          "price": 247.46,
+          "shares": 4,
+          "stop": 246.84,
+          "trail_dist": 0.6175
+        },
+        {
+          "ticker": "MO",
+          "side": "long",
+          "price": 73.35,
+          "shares": 12,
+          "stop": 73.04,
+          "trail_dist": 0.305
+        },
+        {
+          "ticker": "XYL",
+          "side": "long",
+          "price": 119.54,
+          "shares": 5,
+          "stop": 118.54,
+          "trail_dist": 1.0
+        },
+        {
+          "ticker": "MSI",
+          "side": "long",
+          "price": 409.3,
+          "shares": 1,
+          "stop": 406.94,
+          "trail_dist": 2.36
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "MTB",
+          "side": "long",
+          "exit_price": 246.96,
+          "pnl": -6.97,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "MO",
+          "side": "long",
+          "exit_price": 73.05,
+          "pnl": -0.61,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95867.2,
+      "note": "$95,867 | cash=$1,096 | open=32 | closed today=67 | day PnL=$-2,066"
     }
   ]
 }
