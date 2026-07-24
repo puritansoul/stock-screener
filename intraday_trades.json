@@ -1,5 +1,5 @@
 {
-  "capital": 1131.79,
+  "capital": 2369.91,
   "open_positions": [
     {
       "ticker": "WELL",
@@ -512,9 +512,9 @@
       "entry_time": "12:05 ET",
       "entry_price": 68.985,
       "shares": 1,
-      "stop": 69.0925,
+      "stop": 69.1175,
       "trail_dist": 0.2625,
-      "peak": 69.355,
+      "peak": 69.38,
       "orb_width": 0.525,
       "cost": 68.99,
       "vol_ratio": 1.56
@@ -526,9 +526,9 @@
       "entry_time": "12:05 ET",
       "entry_price": 24.64,
       "shares": 2,
-      "stop": 24.5175,
+      "stop": 24.5225,
       "trail_dist": 0.1975,
-      "peak": 24.715,
+      "peak": 24.72,
       "orb_width": 0.395,
       "cost": 49.28,
       "vol_ratio": 1.24
@@ -540,9 +540,9 @@
       "entry_time": "12:10 ET",
       "entry_price": 296.425,
       "shares": 4,
-      "stop": 293.6875,
+      "stop": 293.8425,
       "trail_dist": 3.0975,
-      "peak": 296.785,
+      "peak": 296.94,
       "orb_width": 6.195,
       "cost": 1185.7,
       "vol_ratio": 1.92
@@ -632,20 +632,6 @@
       "vol_ratio": 2.6
     },
     {
-      "ticker": "TDG",
-      "side": "long",
-      "entry_date": "2026-07-24",
-      "entry_time": "12:41 ET",
-      "entry_price": 1244.4351,
-      "shares": 1,
-      "stop": 1238.12,
-      "trail_dist": 9.72,
-      "peak": 1247.84,
-      "orb_width": 19.4399,
-      "cost": 1244.44,
-      "vol_ratio": 1.38
-    },
-    {
       "ticker": "KVUE",
       "side": "long",
       "entry_date": "2026-07-24",
@@ -708,9 +694,9 @@
       "entry_time": "12:49 ET",
       "entry_price": 138.95,
       "shares": 25,
-      "stop": 138.3825,
+      "stop": 138.3975,
       "trail_dist": 1.5025,
-      "peak": 139.885,
+      "peak": 139.9,
       "orb_width": 3.005,
       "cost": 3473.75,
       "vol_ratio": 1.36
@@ -750,9 +736,9 @@
       "entry_time": "12:59 ET",
       "entry_price": 139.34,
       "shares": 12,
-      "stop": 138.9449,
+      "stop": 138.985,
       "trail_dist": 0.795,
-      "peak": 139.7399,
+      "peak": 139.78,
       "orb_width": 1.59,
       "cost": 1672.08,
       "vol_ratio": 2.47
@@ -904,9 +890,9 @@
       "entry_time": "13:10 ET",
       "entry_price": 65.225,
       "shares": 1,
-      "stop": 65.1599,
+      "stop": 65.185,
       "trail_dist": 0.17,
-      "peak": 65.3299,
+      "peak": 65.355,
       "orb_width": 0.34,
       "cost": 65.22,
       "vol_ratio": 1.36
@@ -946,9 +932,9 @@
       "entry_time": "13:15 ET",
       "entry_price": 225.01,
       "shares": 2,
-      "stop": 223.2413,
+      "stop": 223.4013,
       "trail_dist": 1.8887,
-      "peak": 225.13,
+      "peak": 225.29,
       "orb_width": 3.7775,
       "cost": 450.02,
       "vol_ratio": 1.36
@@ -1142,9 +1128,9 @@
       "entry_time": "13:35 ET",
       "entry_price": 93.67,
       "shares": 11,
-      "stop": 92.87,
+      "stop": 92.89,
       "trail_dist": 0.82,
-      "peak": 93.69,
+      "peak": 93.71,
       "orb_width": 1.64,
       "cost": 1030.37,
       "vol_ratio": 3.88
@@ -1170,9 +1156,9 @@
       "entry_time": "13:35 ET",
       "entry_price": 422.4,
       "shares": 1,
-      "stop": 425.5075,
+      "stop": 425.4675,
       "trail_dist": 3.3875,
-      "peak": 422.12,
+      "peak": 422.08,
       "orb_width": 6.775,
       "cost": 422.4,
       "vol_ratio": 1.57
@@ -1226,9 +1212,9 @@
       "entry_time": "13:43 ET",
       "entry_price": 206.29,
       "shares": 2,
-      "stop": 207.6975,
+      "stop": 207.5775,
       "trail_dist": 1.4075,
-      "peak": 206.29,
+      "peak": 206.17,
       "orb_width": 2.815,
       "cost": 412.58,
       "vol_ratio": 1.55
@@ -4692,6 +4678,25 @@
       "pnl": -0.46,
       "exit_reason": "trailing stop",
       "exit_time": "13:43 ET"
+    },
+    {
+      "ticker": "TDG",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "12:41 ET",
+      "entry_price": 1244.4351,
+      "shares": 1,
+      "stop": 1238.12,
+      "trail_dist": 9.72,
+      "peak": 1247.84,
+      "orb_width": 19.4399,
+      "cost": 1244.44,
+      "vol_ratio": 1.38,
+      "exit_date": "2026-07-24",
+      "exit_price": 1238.12,
+      "pnl": -6.32,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:45 ET"
     }
   ],
   "all_closed": [
@@ -33431,11 +33436,6 @@
       "low": 75.12,
       "width": 1.64
     },
-    "CSX": {
-      "high": 53.175,
-      "low": 52.59,
-      "width": 0.585
-    },
     "CMI": {
       "high": 668.565,
       "low": 661.41,
@@ -35191,11 +35191,6 @@
       "low": 115.0,
       "width": 0.97
     },
-    "WFC": {
-      "high": 86.43,
-      "low": 85.7,
-      "width": 0.73
-    },
     "WELL": {
       "high": 249.75,
       "low": 246.03,
@@ -35284,7 +35279,7 @@
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
-    "2026-07-24": 95761.17
+    "2026-07-24": 95749.75
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -69242,6 +69237,23 @@
       ],
       "portfolio_value": 95761.17,
       "note": "$95,761 | cash=$1,132 | open=88 | closed today=182 | day PnL=$-2,223"
+    },
+    {
+      "date": "2026-07-24",
+      "time": "13:45 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "TDG",
+          "side": "long",
+          "exit_price": 1238.12,
+          "pnl": -6.32,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95749.75,
+      "note": "$95,750 | cash=$2,370 | open=87 | closed today=183 | day PnL=$-2,230"
     }
   ]
 }
