@@ -1,5 +1,5 @@
 {
-  "capital": 370.42,
+  "capital": 369.81,
   "open_positions": [
     {
       "ticker": "PCAR",
@@ -400,9 +400,9 @@
       "entry_time": "11:02 ET",
       "entry_price": 209.675,
       "shares": 1,
-      "stop": 208.285,
+      "stop": 208.48,
       "trail_dist": 1.39,
-      "peak": 209.675,
+      "peak": 209.87,
       "orb_width": 2.78,
       "cost": 209.68,
       "vol_ratio": 1.98
@@ -411,7 +411,7 @@
       "ticker": "MO",
       "side": "long",
       "entry_date": "2026-07-24",
-      "entry_time": "11:02 ET",
+      "entry_time": "11:04 ET",
       "entry_price": 73.35,
       "shares": 2,
       "stop": 73.045,
@@ -1638,6 +1638,25 @@
       "pnl": -0.61,
       "exit_reason": "trailing stop",
       "exit_time": "11:02 ET"
+    },
+    {
+      "ticker": "MO",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "11:02 ET",
+      "entry_price": 73.35,
+      "shares": 2,
+      "stop": 73.045,
+      "trail_dist": 0.305,
+      "peak": 73.35,
+      "orb_width": 0.61,
+      "cost": 146.7,
+      "vol_ratio": 1.51,
+      "exit_date": "2026-07-24",
+      "exit_price": 73.045,
+      "pnl": -0.61,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:04 ET"
     }
   ],
   "all_closed": [
@@ -32230,7 +32249,7 @@
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
-    "2026-07-24": 95875.38
+    "2026-07-24": 95874.77
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -63346,6 +63365,32 @@
       ],
       "portfolio_value": 95875.38,
       "note": "$95,875 | cash=$370 | open=30 | closed today=64 | day PnL=$-2,058"
+    },
+    {
+      "date": "2026-07-24",
+      "time": "11:04 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "MO",
+          "side": "long",
+          "price": 73.35,
+          "shares": 2,
+          "stop": 73.04,
+          "trail_dist": 0.305
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "MO",
+          "side": "long",
+          "exit_price": 73.05,
+          "pnl": -0.61,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95874.77,
+      "note": "$95,875 | cash=$370 | open=30 | closed today=65 | day PnL=$-2,058"
     }
   ]
 }
