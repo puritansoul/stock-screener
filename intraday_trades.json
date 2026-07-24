@@ -1,5 +1,5 @@
 {
-  "capital": 581.93,
+  "capital": 581.32,
   "open_positions": [
     {
       "ticker": "PCAR",
@@ -386,9 +386,9 @@
       "entry_time": "10:54 ET",
       "entry_price": 240.0,
       "shares": 1,
-      "stop": 241.4825,
+      "stop": 241.0925,
       "trail_dist": 1.4825,
-      "peak": 240.0,
+      "peak": 239.61,
       "orb_width": 2.965,
       "cost": 240.0,
       "vol_ratio": 1.88
@@ -397,7 +397,7 @@
       "ticker": "MO",
       "side": "long",
       "entry_date": "2026-07-24",
-      "entry_time": "10:54 ET",
+      "entry_time": "10:57 ET",
       "entry_price": 73.35,
       "shares": 2,
       "stop": 73.045,
@@ -1567,6 +1567,25 @@
       "pnl": -0.91,
       "exit_reason": "trailing stop",
       "exit_time": "10:54 ET"
+    },
+    {
+      "ticker": "MO",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "10:54 ET",
+      "entry_price": 73.35,
+      "shares": 2,
+      "stop": 73.045,
+      "trail_dist": 0.305,
+      "peak": 73.35,
+      "orb_width": 0.61,
+      "cost": 146.7,
+      "vol_ratio": 1.51,
+      "exit_date": "2026-07-24",
+      "exit_price": 73.045,
+      "pnl": -0.61,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:57 ET"
     }
   ],
   "all_closed": [
@@ -30886,11 +30905,6 @@
       "low": 83.86,
       "width": 1.8799
     },
-    "PODD": {
-      "high": 160.37,
-      "low": 158.49,
-      "width": 1.88
-    },
     "INTC": {
       "high": 101.74,
       "low": 95.75,
@@ -32159,7 +32173,7 @@
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
-    "2026-07-24": 95877.21
+    "2026-07-24": 95876.6
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -63189,6 +63203,32 @@
       ],
       "portfolio_value": 95877.21,
       "note": "$95,877 | cash=$582 | open=29 | closed today=61 | day PnL=$-2,056"
+    },
+    {
+      "date": "2026-07-24",
+      "time": "10:56 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "MO",
+          "side": "long",
+          "price": 73.35,
+          "shares": 2,
+          "stop": 73.04,
+          "trail_dist": 0.305
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "MO",
+          "side": "long",
+          "exit_price": 73.05,
+          "pnl": -0.61,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95876.6,
+      "note": "$95,877 | cash=$581 | open=29 | closed today=62 | day PnL=$-2,057"
     }
   ]
 }
