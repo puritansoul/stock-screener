@@ -1,5 +1,5 @@
 {
-  "capital": 6031.37,
+  "capital": 634.83,
   "open_positions": [
     {
       "ticker": "WELL",
@@ -400,9 +400,9 @@
       "entry_time": "11:49 ET",
       "entry_price": 93.455,
       "shares": 14,
-      "stop": 93.385,
+      "stop": 93.375,
       "trail_dist": 0.385,
-      "peak": 93.0,
+      "peak": 92.99,
       "orb_width": 0.77,
       "cost": 1308.37,
       "vol_ratio": 1.75
@@ -596,9 +596,9 @@
       "entry_time": "11:59 ET",
       "entry_price": 57.565,
       "shares": 3,
-      "stop": 57.325,
+      "stop": 57.335,
       "trail_dist": 0.265,
-      "peak": 57.59,
+      "peak": 57.6,
       "orb_width": 0.53,
       "cost": 172.69,
       "vol_ratio": 1.38
@@ -722,9 +722,9 @@
       "entry_time": "12:15 ET",
       "entry_price": 244.77,
       "shares": 5,
-      "stop": 244.0975,
+      "stop": 244.1625,
       "trail_dist": 1.4825,
-      "peak": 245.58,
+      "peak": 245.645,
       "orb_width": 2.965,
       "cost": 1223.85,
       "vol_ratio": 1.35
@@ -834,9 +834,9 @@
       "entry_time": "12:46 ET",
       "entry_price": 248.59,
       "shares": 8,
-      "stop": 248.0825,
+      "stop": 248.3225,
       "trail_dist": 0.6175,
-      "peak": 248.7,
+      "peak": 248.94,
       "orb_width": 1.235,
       "cost": 1988.72,
       "vol_ratio": 7.27
@@ -876,9 +876,9 @@
       "entry_time": "12:51 ET",
       "entry_price": 113.165,
       "shares": 26,
-      "stop": 113.27,
+      "stop": 113.23,
       "trail_dist": 0.29,
-      "peak": 112.98,
+      "peak": 112.94,
       "orb_width": 0.58,
       "cost": 2942.29,
       "vol_ratio": 1.43
@@ -904,12 +904,110 @@
       "entry_time": "12:54 ET",
       "entry_price": 32.66,
       "shares": 79,
-      "stop": 32.4875,
+      "stop": 32.5175,
       "trail_dist": 0.1725,
-      "peak": 32.66,
+      "peak": 32.69,
       "orb_width": 0.345,
       "cost": 2580.14,
       "vol_ratio": 1.27
+    },
+    {
+      "ticker": "CBRE",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "12:59 ET",
+      "entry_price": 139.34,
+      "shares": 12,
+      "stop": 138.545,
+      "trail_dist": 0.795,
+      "peak": 139.34,
+      "orb_width": 1.59,
+      "cost": 1672.08,
+      "vol_ratio": 2.47
+    },
+    {
+      "ticker": "UAL",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "12:59 ET",
+      "entry_price": 119.92,
+      "shares": 10,
+      "stop": 118.8701,
+      "trail_dist": 1.0499,
+      "peak": 119.92,
+      "orb_width": 2.0999,
+      "cost": 1199.2,
+      "vol_ratio": 2.21
+    },
+    {
+      "ticker": "PEG",
+      "side": "short",
+      "entry_date": "2026-07-24",
+      "entry_time": "12:59 ET",
+      "entry_price": 79.985,
+      "shares": 11,
+      "stop": 80.1825,
+      "trail_dist": 0.1975,
+      "peak": 79.985,
+      "orb_width": 0.395,
+      "cost": 879.84,
+      "vol_ratio": 2.11
+    },
+    {
+      "ticker": "GPC",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "12:59 ET",
+      "entry_price": 122.9044,
+      "shares": 5,
+      "stop": 122.0869,
+      "trail_dist": 0.8175,
+      "peak": 122.9044,
+      "orb_width": 1.635,
+      "cost": 614.52,
+      "vol_ratio": 1.7
+    },
+    {
+      "ticker": "HBAN",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "12:59 ET",
+      "entry_price": 17.4,
+      "shares": 28,
+      "stop": 17.2825,
+      "trail_dist": 0.1175,
+      "peak": 17.4,
+      "orb_width": 0.235,
+      "cost": 487.2,
+      "vol_ratio": 1.66
+    },
+    {
+      "ticker": "PCG",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "12:59 ET",
+      "entry_price": 17.835,
+      "shares": 19,
+      "stop": 17.6975,
+      "trail_dist": 0.1375,
+      "peak": 17.835,
+      "orb_width": 0.275,
+      "cost": 338.86,
+      "vol_ratio": 1.4
+    },
+    {
+      "ticker": "ACGL",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "12:59 ET",
+      "entry_price": 102.42,
+      "shares": 2,
+      "stop": 101.81,
+      "trail_dist": 0.61,
+      "peak": 102.42,
+      "orb_width": 1.22,
+      "cost": 204.84,
+      "vol_ratio": 1.25
     }
   ],
   "closed_today": [
@@ -32308,6 +32406,11 @@
       "low": 1033.49,
       "width": 10.83
     },
+    "BX": {
+      "high": 126.24,
+      "low": 124.25,
+      "width": 1.99
+    },
     "XYZ": {
       "high": 77.14,
       "low": 76.08,
@@ -34501,7 +34604,7 @@
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
-    "2026-07-24": 95639.52
+    "2026-07-24": 95673.87
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -67726,6 +67829,72 @@
       "exits": [],
       "portfolio_value": 95639.52,
       "note": "$95,640 | cash=$6,031 | open=65 | closed today=158 | day PnL=$-2,240"
+    },
+    {
+      "date": "2026-07-24",
+      "time": "12:59 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "CBRE",
+          "side": "long",
+          "price": 139.34,
+          "shares": 12,
+          "stop": 138.54,
+          "trail_dist": 0.795
+        },
+        {
+          "ticker": "UAL",
+          "side": "long",
+          "price": 119.92,
+          "shares": 10,
+          "stop": 118.87,
+          "trail_dist": 1.0499
+        },
+        {
+          "ticker": "PEG",
+          "side": "short",
+          "price": 79.99,
+          "shares": 11,
+          "stop": 80.18,
+          "trail_dist": 0.1975
+        },
+        {
+          "ticker": "GPC",
+          "side": "long",
+          "price": 122.9,
+          "shares": 5,
+          "stop": 122.09,
+          "trail_dist": 0.8175
+        },
+        {
+          "ticker": "HBAN",
+          "side": "long",
+          "price": 17.4,
+          "shares": 28,
+          "stop": 17.28,
+          "trail_dist": 0.1175
+        },
+        {
+          "ticker": "PCG",
+          "side": "long",
+          "price": 17.83,
+          "shares": 19,
+          "stop": 17.7,
+          "trail_dist": 0.1375
+        },
+        {
+          "ticker": "ACGL",
+          "side": "long",
+          "price": 102.42,
+          "shares": 2,
+          "stop": 101.81,
+          "trail_dist": 0.61
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 95673.87,
+      "note": "$95,674 | cash=$635 | open=72 | closed today=158 | day PnL=$-2,240"
     }
   ]
 }
