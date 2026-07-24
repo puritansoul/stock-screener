@@ -1,5 +1,5 @@
 {
-  "capital": 3431.22,
+  "capital": 5467.78,
   "open_positions": [
     {
       "ticker": "PCAR",
@@ -338,20 +338,6 @@
       "vol_ratio": 1.24
     },
     {
-      "ticker": "RCL",
-      "side": "long",
-      "entry_date": "2026-07-24",
-      "entry_time": "11:36 ET",
-      "entry_price": 299.72,
-      "shares": 1,
-      "stop": 295.94,
-      "trail_dist": 4.38,
-      "peak": 300.32,
-      "orb_width": 8.76,
-      "cost": 299.72,
-      "vol_ratio": 1.8
-    },
-    {
       "ticker": "SW",
       "side": "long",
       "entry_date": "2026-07-24",
@@ -422,20 +408,6 @@
       "vol_ratio": 1.51
     },
     {
-      "ticker": "MTB",
-      "side": "long",
-      "entry_date": "2026-07-24",
-      "entry_time": "11:49 ET",
-      "entry_price": 249.09,
-      "shares": 15,
-      "stop": 248.6225,
-      "trail_dist": 0.6175,
-      "peak": 249.24,
-      "orb_width": 1.235,
-      "cost": 3736.35,
-      "vol_ratio": 2.37
-    },
-    {
       "ticker": "NDAQ",
       "side": "long",
       "entry_date": "2026-07-24",
@@ -470,9 +442,9 @@
       "entry_time": "11:49 ET",
       "entry_price": 93.455,
       "shares": 14,
-      "stop": 93.425,
+      "stop": 93.395,
       "trail_dist": 0.385,
-      "peak": 93.04,
+      "peak": 93.01,
       "orb_width": 0.77,
       "cost": 1308.37,
       "vol_ratio": 1.75
@@ -596,9 +568,9 @@
       "entry_time": "11:54 ET",
       "entry_price": 216.67,
       "shares": 2,
-      "stop": 216.7975,
+      "stop": 216.7625,
       "trail_dist": 0.8875,
-      "peak": 215.91,
+      "peak": 215.875,
       "orb_width": 1.775,
       "cost": 433.34,
       "vol_ratio": 1.22
@@ -652,9 +624,9 @@
       "entry_time": "11:59 ET",
       "entry_price": 207.51,
       "shares": 5,
-      "stop": 208.1075,
+      "stop": 208.0875,
       "trail_dist": 1.4075,
-      "peak": 206.7,
+      "peak": 206.68,
       "orb_width": 2.815,
       "cost": 1037.55,
       "vol_ratio": 1.68
@@ -764,9 +736,9 @@
       "entry_time": "12:05 ET",
       "entry_price": 68.985,
       "shares": 1,
-      "stop": 68.7775,
+      "stop": 68.8575,
       "trail_dist": 0.2625,
-      "peak": 69.04,
+      "peak": 69.12,
       "orb_width": 0.525,
       "cost": 68.99,
       "vol_ratio": 1.56
@@ -1002,9 +974,9 @@
       "entry_time": "12:44 ET",
       "entry_price": 19.075,
       "shares": 110,
-      "stop": 18.9701,
+      "stop": 18.9901,
       "trail_dist": 0.1049,
-      "peak": 19.075,
+      "peak": 19.095,
       "orb_width": 0.2098,
       "cost": 2098.25,
       "vol_ratio": 1.83
@@ -1016,12 +988,26 @@
       "entry_time": "12:44 ET",
       "entry_price": 14.4001,
       "shares": 102,
-      "stop": 14.2701,
+      "stop": 14.28,
       "trail_dist": 0.13,
-      "peak": 14.4001,
+      "peak": 14.41,
       "orb_width": 0.26,
       "cost": 1468.81,
       "vol_ratio": 1.44
+    },
+    {
+      "ticker": "MTB",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "12:46 ET",
+      "entry_price": 248.59,
+      "shares": 8,
+      "stop": 247.9725,
+      "trail_dist": 0.6175,
+      "peak": 248.59,
+      "orb_width": 1.235,
+      "cost": 1988.72,
+      "vol_ratio": 7.27
     }
   ],
   "closed_today": [
@@ -3760,6 +3746,44 @@
       "pnl": -0.42,
       "exit_reason": "trailing stop",
       "exit_time": "12:44 ET"
+    },
+    {
+      "ticker": "RCL",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "11:36 ET",
+      "entry_price": 299.72,
+      "shares": 1,
+      "stop": 295.94,
+      "trail_dist": 4.38,
+      "peak": 300.32,
+      "orb_width": 8.76,
+      "cost": 299.72,
+      "vol_ratio": 1.8,
+      "exit_date": "2026-07-24",
+      "exit_price": 295.94,
+      "pnl": -3.78,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:46 ET"
+    },
+    {
+      "ticker": "MTB",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "11:49 ET",
+      "entry_price": 249.09,
+      "shares": 15,
+      "stop": 248.6225,
+      "trail_dist": 0.6175,
+      "peak": 249.24,
+      "orb_width": 1.235,
+      "cost": 3736.35,
+      "vol_ratio": 2.37,
+      "exit_date": "2026-07-24",
+      "exit_price": 248.6225,
+      "pnl": -7.01,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:46 ET"
     }
   ],
   "all_closed": [
@@ -32794,6 +32818,11 @@
       "low": 125.4,
       "width": 0.57
     },
+    "FDX": {
+      "high": 318.44,
+      "low": 314.0002,
+      "width": 4.4398
+    },
     "FDXF": {
       "high": 156.5,
       "low": 153.0078,
@@ -34347,7 +34376,7 @@
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
-    "2026-07-24": 95693.29
+    "2026-07-24": 95692.21
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -67373,6 +67402,39 @@
       ],
       "portfolio_value": 95693.29,
       "note": "$95,693 | cash=$3,431 | open=73 | closed today=144 | day PnL=$-2,277"
+    },
+    {
+      "date": "2026-07-24",
+      "time": "12:46 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "MTB",
+          "side": "long",
+          "price": 248.59,
+          "shares": 8,
+          "stop": 247.97,
+          "trail_dist": 0.6175
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "RCL",
+          "side": "long",
+          "exit_price": 295.94,
+          "pnl": -3.78,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "MTB",
+          "side": "long",
+          "exit_price": 248.62,
+          "pnl": -7.01,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95692.21,
+      "note": "$95,692 | cash=$5,468 | open=72 | closed today=146 | day PnL=$-2,288"
     }
   ]
 }
