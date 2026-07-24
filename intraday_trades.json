@@ -1,5 +1,5 @@
 {
-  "capital": 1553.96,
+  "capital": 1549.72,
   "open_positions": [
     {
       "ticker": "PCAR",
@@ -425,7 +425,7 @@
       "ticker": "MTB",
       "side": "long",
       "entry_date": "2026-07-24",
-      "entry_time": "11:11 ET",
+      "entry_time": "11:14 ET",
       "entry_price": 247.46,
       "shares": 3,
       "stop": 246.8425,
@@ -439,7 +439,7 @@
       "ticker": "MO",
       "side": "long",
       "entry_date": "2026-07-24",
-      "entry_time": "11:11 ET",
+      "entry_time": "11:14 ET",
       "entry_price": 73.35,
       "shares": 9,
       "stop": 73.045,
@@ -1799,6 +1799,44 @@
       "pnl": -2.74,
       "exit_reason": "trailing stop",
       "exit_time": "11:11 ET"
+    },
+    {
+      "ticker": "MTB",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "11:11 ET",
+      "entry_price": 247.46,
+      "shares": 3,
+      "stop": 246.9625,
+      "trail_dist": 0.6175,
+      "peak": 247.58,
+      "orb_width": 1.235,
+      "cost": 742.38,
+      "vol_ratio": 2.19,
+      "exit_date": "2026-07-24",
+      "exit_price": 246.9625,
+      "pnl": -1.49,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:14 ET"
+    },
+    {
+      "ticker": "MO",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "11:11 ET",
+      "entry_price": 73.35,
+      "shares": 9,
+      "stop": 73.045,
+      "trail_dist": 0.305,
+      "peak": 73.35,
+      "orb_width": 0.61,
+      "cost": 660.15,
+      "vol_ratio": 1.51,
+      "exit_date": "2026-07-24",
+      "exit_price": 73.045,
+      "pnl": -2.74,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:14 ET"
     }
   ],
   "all_closed": [
@@ -32391,7 +32429,7 @@
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
-    "2026-07-24": 95857.31
+    "2026-07-24": 95853.07
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -63672,6 +63710,47 @@
       ],
       "portfolio_value": 95857.31,
       "note": "$95,857 | cash=$1,554 | open=32 | closed today=71 | day PnL=$-2,076"
+    },
+    {
+      "date": "2026-07-24",
+      "time": "11:13 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "MTB",
+          "side": "long",
+          "price": 247.46,
+          "shares": 3,
+          "stop": 246.84,
+          "trail_dist": 0.6175
+        },
+        {
+          "ticker": "MO",
+          "side": "long",
+          "price": 73.35,
+          "shares": 9,
+          "stop": 73.04,
+          "trail_dist": 0.305
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "MTB",
+          "side": "long",
+          "exit_price": 246.96,
+          "pnl": -1.49,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "MO",
+          "side": "long",
+          "exit_price": 73.05,
+          "pnl": -2.74,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95853.07,
+      "note": "$95,853 | cash=$1,550 | open=32 | closed today=73 | day PnL=$-2,080"
     }
   ]
 }
