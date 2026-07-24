@@ -1,5 +1,5 @@
 {
-  "capital": 407.21,
+  "capital": 2191.34,
   "open_positions": [
     {
       "ticker": "PCAR",
@@ -8,9 +8,9 @@
       "entry_time": "10:10 ET",
       "entry_price": 132.165,
       "shares": 76,
-      "stop": 133.0075,
+      "stop": 133.0475,
       "trail_dist": 0.7825,
-      "peak": 133.79,
+      "peak": 133.83,
       "orb_width": 1.565,
       "cost": 10044.54,
       "vol_ratio": 1.61
@@ -344,9 +344,9 @@
       "entry_time": "11:24 ET",
       "entry_price": 102.69,
       "shares": 19,
-      "stop": 102.255,
+      "stop": 102.3,
       "trail_dist": 0.61,
-      "peak": 102.865,
+      "peak": 102.91,
       "orb_width": 1.22,
       "cost": 1951.11,
       "vol_ratio": 2.7
@@ -492,20 +492,6 @@
       "vol_ratio": 1.22
     },
     {
-      "ticker": "FIS",
-      "side": "long",
-      "entry_date": "2026-07-24",
-      "entry_time": "11:26 ET",
-      "entry_price": 41.89,
-      "shares": 57,
-      "stop": 41.6155,
-      "trail_dist": 0.3645,
-      "peak": 41.98,
-      "orb_width": 0.729,
-      "cost": 2387.73,
-      "vol_ratio": 2.91
-    },
-    {
       "ticker": "GPC",
       "side": "long",
       "entry_date": "2026-07-24",
@@ -554,9 +540,9 @@
       "entry_time": "11:29 ET",
       "entry_price": 296.41,
       "shares": 7,
-      "stop": 295.84,
+      "stop": 295.925,
       "trail_dist": 0.635,
-      "peak": 296.475,
+      "peak": 296.56,
       "orb_width": 1.27,
       "cost": 2074.87,
       "vol_ratio": 4.33
@@ -638,9 +624,9 @@
       "entry_time": "11:29 ET",
       "entry_price": 52.24,
       "shares": 7,
-      "stop": 51.945,
+      "stop": 51.955,
       "trail_dist": 0.495,
-      "peak": 52.44,
+      "peak": 52.45,
       "orb_width": 0.99,
       "cost": 365.68,
       "vol_ratio": 1.72
@@ -946,9 +932,9 @@
       "entry_time": "11:42 ET",
       "entry_price": 78.94,
       "shares": 1,
-      "stop": 78.6145,
+      "stop": 78.6195,
       "trail_dist": 0.3755,
-      "peak": 78.99,
+      "peak": 78.995,
       "orb_width": 0.7511,
       "cost": 78.94,
       "vol_ratio": 1.46
@@ -960,9 +946,9 @@
       "entry_time": "11:44 ET",
       "entry_price": 60.56,
       "shares": 4,
-      "stop": 61.14,
+      "stop": 61.1,
       "trail_dist": 0.58,
-      "peak": 60.56,
+      "peak": 60.52,
       "orb_width": 1.16,
       "cost": 242.24,
       "vol_ratio": 2.29
@@ -974,9 +960,9 @@
       "entry_time": "11:44 ET",
       "entry_price": 103.94,
       "shares": 1,
-      "stop": 103.31,
+      "stop": 103.48,
       "trail_dist": 0.63,
-      "peak": 103.94,
+      "peak": 104.11,
       "orb_width": 1.26,
       "cost": 103.94,
       "vol_ratio": 1.55
@@ -994,6 +980,20 @@
       "orb_width": 1.125,
       "cost": 134.2,
       "vol_ratio": 1.23
+    },
+    {
+      "ticker": "WTW",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "11:47 ET",
+      "entry_price": 293.9742,
+      "shares": 2,
+      "stop": 292.2392,
+      "trail_dist": 1.735,
+      "peak": 293.9742,
+      "orb_width": 3.47,
+      "cost": 587.95,
+      "vol_ratio": 1.51
     }
   ],
   "closed_today": [
@@ -2820,6 +2820,25 @@
       "pnl": -4.06,
       "exit_reason": "trailing stop",
       "exit_time": "11:44 ET"
+    },
+    {
+      "ticker": "FIS",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "11:26 ET",
+      "entry_price": 41.89,
+      "shares": 57,
+      "stop": 41.6155,
+      "trail_dist": 0.3645,
+      "peak": 41.98,
+      "orb_width": 0.729,
+      "cost": 2387.73,
+      "vol_ratio": 2.91,
+      "exit_date": "2026-07-24",
+      "exit_price": 41.6155,
+      "pnl": -15.65,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:47 ET"
     }
   ],
   "all_closed": [
@@ -33412,7 +33431,7 @@
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
-    "2026-07-24": 96001.68
+    "2026-07-24": 95978.86
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -65521,6 +65540,32 @@
       ],
       "portfolio_value": 96001.68,
       "note": "$96,002 | cash=$407 | open=71 | closed today=96 | day PnL=$-2,203"
+    },
+    {
+      "date": "2026-07-24",
+      "time": "11:46 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "WTW",
+          "side": "long",
+          "price": 293.97,
+          "shares": 2,
+          "stop": 292.24,
+          "trail_dist": 1.735
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "FIS",
+          "side": "long",
+          "exit_price": 41.62,
+          "pnl": -15.65,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95978.86,
+      "note": "$95,979 | cash=$2,191 | open=71 | closed today=97 | day PnL=$-2,219"
     }
   ]
 }
