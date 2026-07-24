@@ -1,5 +1,5 @@
 {
-  "capital": 414.28,
+  "capital": 1256.8,
   "open_positions": [
     {
       "ticker": "PCAR",
@@ -134,9 +134,9 @@
       "entry_time": "10:35 ET",
       "entry_price": 375.715,
       "shares": 18,
-      "stop": 376.715,
+      "stop": 376.545,
       "trail_dist": 2.615,
-      "peak": 374.1,
+      "peak": 373.93,
       "orb_width": 5.23,
       "cost": 6762.87,
       "vol_ratio": 2.85
@@ -162,9 +162,9 @@
       "entry_time": "10:35 ET",
       "entry_price": 131.125,
       "shares": 13,
-      "stop": 128.715,
+      "stop": 128.85,
       "trail_dist": 2.88,
-      "peak": 131.595,
+      "peak": 131.73,
       "orb_width": 5.76,
       "cost": 1704.62,
       "vol_ratio": 1.69
@@ -260,9 +260,9 @@
       "entry_time": "11:07 ET",
       "entry_price": 409.3,
       "shares": 1,
-      "stop": 409.82,
+      "stop": 409.9,
       "trail_dist": 2.36,
-      "peak": 412.18,
+      "peak": 412.26,
       "orb_width": 4.72,
       "cost": 409.3,
       "vol_ratio": 1.25
@@ -442,9 +442,9 @@
       "entry_time": "11:24 ET",
       "entry_price": 136.865,
       "shares": 2,
-      "stop": 136.5,
+      "stop": 136.515,
       "trail_dist": 0.845,
-      "peak": 137.345,
+      "peak": 137.36,
       "orb_width": 1.69,
       "cost": 273.73,
       "vol_ratio": 1.52
@@ -534,20 +534,6 @@
       "vol_ratio": 2.81
     },
     {
-      "ticker": "AON",
-      "side": "long",
-      "entry_date": "2026-07-24",
-      "entry_time": "11:26 ET",
-      "entry_price": 361.03,
-      "shares": 3,
-      "stop": 360.495,
-      "trail_dist": 1.585,
-      "peak": 362.08,
-      "orb_width": 3.17,
-      "cost": 1083.09,
-      "vol_ratio": 2.52
-    },
-    {
       "ticker": "AMCR",
       "side": "long",
       "entry_date": "2026-07-24",
@@ -596,9 +582,9 @@
       "entry_time": "11:29 ET",
       "entry_price": 121.0,
       "shares": 12,
-      "stop": 119.9501,
+      "stop": 120.1801,
       "trail_dist": 1.0499,
-      "peak": 121.0,
+      "peak": 121.23,
       "orb_width": 2.0999,
       "cost": 1452.0,
       "vol_ratio": 3.38
@@ -708,9 +694,9 @@
       "entry_time": "11:29 ET",
       "entry_price": 19.85,
       "shares": 9,
-      "stop": 19.7475,
+      "stop": 19.7775,
       "trail_dist": 0.1525,
-      "peak": 19.9,
+      "peak": 19.93,
       "orb_width": 0.305,
       "cost": 178.65,
       "vol_ratio": 1.44
@@ -742,20 +728,6 @@
       "orb_width": 1.455,
       "cost": 85.79,
       "vol_ratio": 1.33
-    },
-    {
-      "ticker": "CVNA",
-      "side": "long",
-      "entry_date": "2026-07-24",
-      "entry_time": "11:29 ET",
-      "entry_price": 60.89,
-      "shares": 1,
-      "stop": 60.755,
-      "trail_dist": 0.415,
-      "peak": 61.17,
-      "orb_width": 0.83,
-      "cost": 60.89,
-      "vol_ratio": 1.26
     },
     {
       "ticker": "GIS",
@@ -806,9 +778,9 @@
       "entry_time": "11:34 ET",
       "entry_price": 252.5,
       "shares": 2,
-      "stop": 251.3175,
+      "stop": 251.7175,
       "trail_dist": 1.1825,
-      "peak": 252.5,
+      "peak": 252.9,
       "orb_width": 2.365,
       "cost": 505.0,
       "vol_ratio": 1.7
@@ -862,9 +834,9 @@
       "entry_time": "11:34 ET",
       "entry_price": 100.18,
       "shares": 1,
-      "stop": 99.25,
+      "stop": 99.31,
       "trail_dist": 0.93,
-      "peak": 100.18,
+      "peak": 100.24,
       "orb_width": 1.86,
       "cost": 100.18,
       "vol_ratio": 1.41
@@ -882,6 +854,20 @@
       "orb_width": 2.26,
       "cost": 125.0,
       "vol_ratio": 1.24
+    },
+    {
+      "ticker": "RCL",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "11:36 ET",
+      "entry_price": 299.72,
+      "shares": 1,
+      "stop": 295.34,
+      "trail_dist": 4.38,
+      "peak": 299.72,
+      "orb_width": 8.76,
+      "cost": 299.72,
+      "vol_ratio": 1.8
     }
   ],
   "closed_today": [
@@ -2613,6 +2599,44 @@
       "pnl": 75.74,
       "exit_reason": "trailing stop",
       "exit_time": "11:34 ET"
+    },
+    {
+      "ticker": "AON",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "11:26 ET",
+      "entry_price": 361.03,
+      "shares": 3,
+      "stop": 360.495,
+      "trail_dist": 1.585,
+      "peak": 362.08,
+      "orb_width": 3.17,
+      "cost": 1083.09,
+      "vol_ratio": 2.52,
+      "exit_date": "2026-07-24",
+      "exit_price": 360.495,
+      "pnl": -1.6,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:36 ET"
+    },
+    {
+      "ticker": "CVNA",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "11:29 ET",
+      "entry_price": 60.89,
+      "shares": 1,
+      "stop": 60.755,
+      "trail_dist": 0.415,
+      "peak": 61.17,
+      "orb_width": 0.83,
+      "cost": 60.89,
+      "vol_ratio": 1.26,
+      "exit_date": "2026-07-24",
+      "exit_price": 60.755,
+      "pnl": -0.13,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:36 ET"
     }
   ],
   "all_closed": [
@@ -33205,7 +33229,7 @@
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
-    "2026-07-24": 96014.8
+    "2026-07-24": 95995.08
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -65132,6 +65156,39 @@
       ],
       "portfolio_value": 96014.8,
       "note": "$96,015 | cash=$414 | open=63 | closed today=91 | day PnL=$-2,196"
+    },
+    {
+      "date": "2026-07-24",
+      "time": "11:36 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "RCL",
+          "side": "long",
+          "price": 299.72,
+          "shares": 1,
+          "stop": 295.34,
+          "trail_dist": 4.38
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "AON",
+          "side": "long",
+          "exit_price": 360.5,
+          "pnl": -1.6,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "CVNA",
+          "side": "long",
+          "exit_price": 60.76,
+          "pnl": -0.13,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95995.08,
+      "note": "$95,995 | cash=$1,257 | open=62 | closed today=93 | day PnL=$-2,197"
     }
   ]
 }
