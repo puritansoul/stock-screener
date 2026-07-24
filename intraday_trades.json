@@ -1,5 +1,5 @@
 {
-  "capital": 680.43,
+  "capital": 1932.68,
   "open_positions": [
     {
       "ticker": "PCAR",
@@ -240,20 +240,6 @@
       "vol_ratio": 1.25
     },
     {
-      "ticker": "MO",
-      "side": "long",
-      "entry_date": "2026-07-24",
-      "entry_time": "11:19 ET",
-      "entry_price": 73.35,
-      "shares": 9,
-      "stop": 73.045,
-      "trail_dist": 0.305,
-      "peak": 73.35,
-      "orb_width": 0.61,
-      "cost": 660.15,
-      "vol_ratio": 1.51
-    },
-    {
       "ticker": "TDG",
       "side": "long",
       "entry_date": "2026-07-24",
@@ -484,9 +470,9 @@
       "entry_time": "11:29 ET",
       "entry_price": 296.41,
       "shares": 7,
-      "stop": 295.925,
+      "stop": 295.965,
       "trail_dist": 0.635,
-      "peak": 296.56,
+      "peak": 296.6,
       "orb_width": 1.27,
       "cost": 2074.87,
       "vol_ratio": 4.33
@@ -518,20 +504,6 @@
       "orb_width": 0.545,
       "cost": 1088.1,
       "vol_ratio": 3.11
-    },
-    {
-      "ticker": "VRSK",
-      "side": "long",
-      "entry_date": "2026-07-24",
-      "entry_time": "11:29 ET",
-      "entry_price": 199.97,
-      "shares": 3,
-      "stop": 198.2825,
-      "trail_dist": 1.6875,
-      "peak": 199.97,
-      "orb_width": 3.375,
-      "cost": 599.91,
-      "vol_ratio": 1.87
     },
     {
       "ticker": "CPAY",
@@ -568,9 +540,9 @@
       "entry_time": "11:29 ET",
       "entry_price": 52.24,
       "shares": 7,
-      "stop": 51.975,
+      "stop": 52.055,
       "trail_dist": 0.495,
-      "peak": 52.47,
+      "peak": 52.55,
       "orb_width": 0.99,
       "cost": 365.68,
       "vol_ratio": 1.72
@@ -694,9 +666,9 @@
       "entry_time": "11:34 ET",
       "entry_price": 108.89,
       "shares": 2,
-      "stop": 108.42,
+      "stop": 108.505,
       "trail_dist": 0.47,
-      "peak": 108.89,
+      "peak": 108.975,
       "orb_width": 0.94,
       "cost": 217.78,
       "vol_ratio": 1.52
@@ -792,9 +764,9 @@
       "entry_time": "11:39 ET",
       "entry_price": 45.13,
       "shares": 5,
-      "stop": 44.555,
+      "stop": 44.57,
       "trail_dist": 0.6,
-      "peak": 45.155,
+      "peak": 45.17,
       "orb_width": 1.2,
       "cost": 225.65,
       "vol_ratio": 1.38
@@ -946,9 +918,9 @@
       "entry_time": "11:49 ET",
       "entry_price": 249.09,
       "shares": 15,
-      "stop": 248.4725,
+      "stop": 248.5125,
       "trail_dist": 0.6175,
-      "peak": 249.09,
+      "peak": 249.13,
       "orb_width": 1.235,
       "cost": 3736.35,
       "vol_ratio": 2.37
@@ -988,9 +960,9 @@
       "entry_time": "11:49 ET",
       "entry_price": 93.455,
       "shares": 14,
-      "stop": 93.84,
+      "stop": 93.81,
       "trail_dist": 0.385,
-      "peak": 93.455,
+      "peak": 93.425,
       "orb_width": 0.77,
       "cost": 1308.37,
       "vol_ratio": 1.75
@@ -1002,9 +974,9 @@
       "entry_time": "11:49 ET",
       "entry_price": 78.39,
       "shares": 12,
-      "stop": 77.965,
+      "stop": 78.025,
       "trail_dist": 0.425,
-      "peak": 78.39,
+      "peak": 78.45,
       "orb_width": 0.85,
       "cost": 940.68,
       "vol_ratio": 1.72
@@ -1030,9 +1002,9 @@
       "entry_time": "11:49 ET",
       "entry_price": 145.95,
       "shares": 3,
-      "stop": 144.63,
+      "stop": 144.77,
       "trail_dist": 1.32,
-      "peak": 145.95,
+      "peak": 146.09,
       "orb_width": 2.64,
       "cost": 437.85,
       "vol_ratio": 1.55
@@ -1044,9 +1016,9 @@
       "entry_time": "11:49 ET",
       "entry_price": 84.68,
       "shares": 4,
-      "stop": 84.11,
+      "stop": 84.21,
       "trail_dist": 0.57,
-      "peak": 84.68,
+      "peak": 84.78,
       "orb_width": 1.14,
       "cost": 338.72,
       "vol_ratio": 1.45
@@ -2985,6 +2957,44 @@
       "pnl": -18.46,
       "exit_reason": "trailing stop",
       "exit_time": "11:49 ET"
+    },
+    {
+      "ticker": "MO",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "11:19 ET",
+      "entry_price": 73.35,
+      "shares": 9,
+      "stop": 73.045,
+      "trail_dist": 0.305,
+      "peak": 73.35,
+      "orb_width": 0.61,
+      "cost": 660.15,
+      "vol_ratio": 1.51,
+      "exit_date": "2026-07-24",
+      "exit_price": 73.045,
+      "pnl": -2.74,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:52 ET"
+    },
+    {
+      "ticker": "VRSK",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "11:29 ET",
+      "entry_price": 199.97,
+      "shares": 3,
+      "stop": 198.2825,
+      "trail_dist": 1.6875,
+      "peak": 199.97,
+      "orb_width": 3.375,
+      "cost": 599.91,
+      "vol_ratio": 1.87,
+      "exit_date": "2026-07-24",
+      "exit_price": 198.2825,
+      "pnl": -5.06,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:52 ET"
     }
   ],
   "all_closed": [
@@ -33577,7 +33587,7 @@
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
-    "2026-07-24": 95885.0
+    "2026-07-24": 95870.2
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -65823,6 +65833,30 @@
       ],
       "portfolio_value": 95885.0,
       "note": "$95,885 | cash=$680 | open=76 | closed today=101 | day PnL=$-2,246"
+    },
+    {
+      "date": "2026-07-24",
+      "time": "11:51 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "MO",
+          "side": "long",
+          "exit_price": 73.05,
+          "pnl": -2.74,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "VRSK",
+          "side": "long",
+          "exit_price": 198.28,
+          "pnl": -5.06,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95870.2,
+      "note": "$95,870 | cash=$1,933 | open=74 | closed today=103 | day PnL=$-2,254"
     }
   ]
 }
