@@ -1,5 +1,5 @@
 {
-  "capital": 2552.33,
+  "capital": 5254.67,
   "open_positions": [
     {
       "ticker": "PCAR",
@@ -170,20 +170,6 @@
       "vol_ratio": 1.25
     },
     {
-      "ticker": "TDG",
-      "side": "long",
-      "entry_date": "2026-07-24",
-      "entry_time": "11:21 ET",
-      "entry_price": 1250.7,
-      "shares": 3,
-      "stop": 1245.57,
-      "trail_dist": 9.72,
-      "peak": 1255.29,
-      "orb_width": 19.4399,
-      "cost": 3752.1,
-      "vol_ratio": 1.35
-    },
-    {
       "ticker": "DXCM",
       "side": "long",
       "entry_date": "2026-07-24",
@@ -268,20 +254,6 @@
       "vol_ratio": 1.37
     },
     {
-      "ticker": "F",
-      "side": "long",
-      "entry_date": "2026-07-24",
-      "entry_time": "11:24 ET",
-      "entry_price": 14.4801,
-      "shares": 5,
-      "stop": 14.41,
-      "trail_dist": 0.13,
-      "peak": 14.54,
-      "orb_width": 0.26,
-      "cost": 72.4,
-      "vol_ratio": 1.22
-    },
-    {
       "ticker": "AMCR",
       "side": "long",
       "entry_date": "2026-07-24",
@@ -302,9 +274,9 @@
       "entry_time": "11:29 ET",
       "entry_price": 330.865,
       "shares": 1,
-      "stop": 330.7047,
+      "stop": 330.7149,
       "trail_dist": 2.385,
-      "peak": 333.0897,
+      "peak": 333.0999,
       "orb_width": 4.77,
       "cost": 330.86,
       "vol_ratio": 1.72
@@ -526,9 +498,9 @@
       "entry_time": "11:49 ET",
       "entry_price": 206.27,
       "shares": 9,
-      "stop": 205.19,
+      "stop": 205.24,
       "trail_dist": 1.2,
-      "peak": 206.39,
+      "peak": 206.44,
       "orb_width": 2.4,
       "cost": 1856.43,
       "vol_ratio": 2.09
@@ -540,9 +512,9 @@
       "entry_time": "11:49 ET",
       "entry_price": 93.455,
       "shares": 14,
-      "stop": 93.495,
+      "stop": 93.455,
       "trail_dist": 0.385,
-      "peak": 93.11,
+      "peak": 93.07,
       "orb_width": 0.77,
       "cost": 1308.37,
       "vol_ratio": 1.75
@@ -722,9 +694,9 @@
       "entry_time": "11:59 ET",
       "entry_price": 279.835,
       "shares": 6,
-      "stop": 278.366,
+      "stop": 278.461,
       "trail_dist": 1.914,
-      "peak": 280.28,
+      "peak": 280.375,
       "orb_width": 3.828,
       "cost": 1679.01,
       "vol_ratio": 1.98
@@ -736,9 +708,9 @@
       "entry_time": "11:59 ET",
       "entry_price": 207.51,
       "shares": 5,
-      "stop": 208.3325,
+      "stop": 208.1075,
       "trail_dist": 1.4075,
-      "peak": 206.925,
+      "peak": 206.7,
       "orb_width": 2.815,
       "cost": 1037.55,
       "vol_ratio": 1.68
@@ -856,20 +828,6 @@
       "vol_ratio": 1.85
     },
     {
-      "ticker": "NCLH",
-      "side": "long",
-      "entry_date": "2026-07-24",
-      "entry_time": "12:05 ET",
-      "entry_price": 19.865,
-      "shares": 7,
-      "stop": 19.7175,
-      "trail_dist": 0.1525,
-      "peak": 19.87,
-      "orb_width": 0.305,
-      "cost": 139.05,
-      "vol_ratio": 1.66
-    },
-    {
       "ticker": "BXP",
       "side": "long",
       "entry_date": "2026-07-24",
@@ -932,9 +890,9 @@
       "entry_time": "12:10 ET",
       "entry_price": 292.835,
       "shares": 5,
-      "stop": 293.295,
+      "stop": 292.895,
       "trail_dist": 0.705,
-      "peak": 292.59,
+      "peak": 292.19,
       "orb_width": 1.41,
       "cost": 1464.17,
       "vol_ratio": 2.47
@@ -1072,9 +1030,9 @@
       "entry_time": "12:39 ET",
       "entry_price": 172.7,
       "shares": 8,
-      "stop": 169.27,
+      "stop": 169.275,
       "trail_dist": 3.43,
-      "peak": 172.7,
+      "peak": 172.705,
       "orb_width": 6.86,
       "cost": 1381.6,
       "vol_ratio": 2.83
@@ -1092,6 +1050,20 @@
       "orb_width": 0.2088,
       "cost": 1087.38,
       "vol_ratio": 2.6
+    },
+    {
+      "ticker": "TDG",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "12:41 ET",
+      "entry_price": 1244.4351,
+      "shares": 1,
+      "stop": 1234.7151,
+      "trail_dist": 9.72,
+      "peak": 1244.4351,
+      "orb_width": 19.4399,
+      "cost": 1244.44,
+      "vol_ratio": 1.38
     }
   ],
   "closed_today": [
@@ -3678,6 +3650,63 @@
       "pnl": -1.66,
       "exit_reason": "trailing stop",
       "exit_time": "12:39 ET"
+    },
+    {
+      "ticker": "TDG",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "11:21 ET",
+      "entry_price": 1250.7,
+      "shares": 3,
+      "stop": 1245.57,
+      "trail_dist": 9.72,
+      "peak": 1255.29,
+      "orb_width": 19.4399,
+      "cost": 3752.1,
+      "vol_ratio": 1.35,
+      "exit_date": "2026-07-24",
+      "exit_price": 1245.57,
+      "pnl": -15.39,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:41 ET"
+    },
+    {
+      "ticker": "F",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "11:24 ET",
+      "entry_price": 14.4801,
+      "shares": 5,
+      "stop": 14.41,
+      "trail_dist": 0.13,
+      "peak": 14.54,
+      "orb_width": 0.26,
+      "cost": 72.4,
+      "vol_ratio": 1.22,
+      "exit_date": "2026-07-24",
+      "exit_price": 14.41,
+      "pnl": -0.35,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:41 ET"
+    },
+    {
+      "ticker": "NCLH",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "12:05 ET",
+      "entry_price": 19.865,
+      "shares": 7,
+      "stop": 19.7175,
+      "trail_dist": 0.1525,
+      "peak": 19.87,
+      "orb_width": 0.305,
+      "cost": 139.05,
+      "vol_ratio": 1.66,
+      "exit_date": "2026-07-24",
+      "exit_price": 19.7175,
+      "pnl": -1.03,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:41 ET"
     }
   ],
   "all_closed": [
@@ -32382,11 +32411,6 @@
       "low": 149.0901,
       "width": 8.3099
     },
-    "CPAY": {
-      "high": 368.99,
-      "low": 364.74,
-      "width": 4.25
-    },
     "CTVA": {
       "high": 89.05,
       "low": 88.18,
@@ -34222,11 +34246,6 @@
       "low": 130.5,
       "width": 2.91
     },
-    "WYNN": {
-      "high": 97.61,
-      "low": 96.4073,
-      "width": 1.2027
-    },
     "XEL": {
       "high": 81.78,
       "low": 80.96,
@@ -34270,7 +34289,7 @@
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
-    "2026-07-24": 95807.56
+    "2026-07-24": 95728.86
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -67194,6 +67213,46 @@
       ],
       "portfolio_value": 95807.56,
       "note": "$95,808 | cash=$2,552 | open=78 | closed today=136 | day PnL=$-2,253"
+    },
+    {
+      "date": "2026-07-24",
+      "time": "12:41 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "TDG",
+          "side": "long",
+          "price": 1244.44,
+          "shares": 1,
+          "stop": 1234.72,
+          "trail_dist": 9.72
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "TDG",
+          "side": "long",
+          "exit_price": 1245.57,
+          "pnl": -15.39,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "F",
+          "side": "long",
+          "exit_price": 14.41,
+          "pnl": -0.35,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "NCLH",
+          "side": "long",
+          "exit_price": 19.72,
+          "pnl": -1.03,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95728.86,
+      "note": "$95,729 | cash=$5,255 | open=76 | closed today=139 | day PnL=$-2,270"
     }
   ]
 }
