@@ -1,5 +1,5 @@
 {
-  "capital": 303.72,
+  "capital": 276.74,
   "open_positions": [
     {
       "ticker": "WELL",
@@ -422,20 +422,6 @@
       "vol_ratio": 1.55
     },
     {
-      "ticker": "LEN",
-      "side": "long",
-      "entry_date": "2026-07-24",
-      "entry_time": "11:49 ET",
-      "entry_price": 84.68,
-      "shares": 4,
-      "stop": 84.21,
-      "trail_dist": 0.57,
-      "peak": 84.78,
-      "orb_width": 1.14,
-      "cost": 338.72,
-      "vol_ratio": 1.45
-    },
-    {
       "ticker": "CF",
       "side": "short",
       "entry_date": "2026-07-24",
@@ -526,9 +512,9 @@
       "entry_time": "11:59 ET",
       "entry_price": 207.51,
       "shares": 5,
-      "stop": 207.6728,
+      "stop": 207.5075,
       "trail_dist": 1.4075,
-      "peak": 206.2653,
+      "peak": 206.1,
       "orb_width": 2.815,
       "cost": 1037.55,
       "vol_ratio": 1.68
@@ -560,20 +546,6 @@
       "orb_width": 1.68,
       "cost": 174.68,
       "vol_ratio": 1.4
-    },
-    {
-      "ticker": "PNR",
-      "side": "long",
-      "entry_date": "2026-07-24",
-      "entry_time": "11:59 ET",
-      "entry_price": 63.64,
-      "shares": 4,
-      "stop": 63.1775,
-      "trail_dist": 0.5725,
-      "peak": 63.75,
-      "orb_width": 1.145,
-      "cost": 254.56,
-      "vol_ratio": 1.39
     },
     {
       "ticker": "FITB",
@@ -904,9 +876,9 @@
       "entry_time": "12:59 ET",
       "entry_price": 139.34,
       "shares": 12,
-      "stop": 138.713,
+      "stop": 138.72,
       "trail_dist": 0.795,
-      "peak": 139.508,
+      "peak": 139.515,
       "orb_width": 1.59,
       "cost": 1672.08,
       "vol_ratio": 2.47
@@ -1016,9 +988,9 @@
       "entry_time": "13:07 ET",
       "entry_price": 175.595,
       "shares": 1,
-      "stop": 177.285,
+      "stop": 177.18,
       "trail_dist": 1.69,
-      "peak": 175.595,
+      "peak": 175.49,
       "orb_width": 3.38,
       "cost": 175.6,
       "vol_ratio": 1.67
@@ -1030,9 +1002,9 @@
       "entry_time": "13:07 ET",
       "entry_price": 67.69,
       "shares": 2,
-      "stop": 68.0,
+      "stop": 67.94,
       "trail_dist": 0.31,
-      "peak": 67.69,
+      "peak": 67.63,
       "orb_width": 0.62,
       "cost": 135.38,
       "vol_ratio": 1.61
@@ -1044,12 +1016,68 @@
       "entry_time": "13:07 ET",
       "entry_price": 98.11,
       "shares": 1,
-      "stop": 97.555,
+      "stop": 97.835,
       "trail_dist": 0.555,
-      "peak": 98.11,
+      "peak": 98.39,
       "orb_width": 1.11,
       "cost": 98.11,
       "vol_ratio": 1.47
+    },
+    {
+      "ticker": "LEN",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "13:10 ET",
+      "entry_price": 84.24,
+      "shares": 3,
+      "stop": 83.67,
+      "trail_dist": 0.57,
+      "peak": 84.24,
+      "orb_width": 1.14,
+      "cost": 252.72,
+      "vol_ratio": 4.93
+    },
+    {
+      "ticker": "HSIC",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "13:10 ET",
+      "entry_price": 85.595,
+      "shares": 2,
+      "stop": 85.195,
+      "trail_dist": 0.4,
+      "peak": 85.595,
+      "orb_width": 0.8,
+      "cost": 171.19,
+      "vol_ratio": 1.66
+    },
+    {
+      "ticker": "PHM",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "13:10 ET",
+      "entry_price": 127.4,
+      "shares": 1,
+      "stop": 126.0425,
+      "trail_dist": 1.3575,
+      "peak": 127.4,
+      "orb_width": 2.715,
+      "cost": 127.4,
+      "vol_ratio": 1.49
+    },
+    {
+      "ticker": "O",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "13:10 ET",
+      "entry_price": 65.225,
+      "shares": 1,
+      "stop": 65.055,
+      "trail_dist": 0.17,
+      "peak": 65.225,
+      "orb_width": 0.34,
+      "cost": 65.22,
+      "vol_ratio": 1.36
     }
   ],
   "closed_today": [
@@ -4073,6 +4101,44 @@
       "pnl": -1.58,
       "exit_reason": "trailing stop",
       "exit_time": "13:07 ET"
+    },
+    {
+      "ticker": "LEN",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "11:49 ET",
+      "entry_price": 84.68,
+      "shares": 4,
+      "stop": 84.21,
+      "trail_dist": 0.57,
+      "peak": 84.78,
+      "orb_width": 1.14,
+      "cost": 338.72,
+      "vol_ratio": 1.45,
+      "exit_date": "2026-07-24",
+      "exit_price": 84.21,
+      "pnl": -1.88,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:10 ET"
+    },
+    {
+      "ticker": "PNR",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "11:59 ET",
+      "entry_price": 63.64,
+      "shares": 4,
+      "stop": 63.1775,
+      "trail_dist": 0.5725,
+      "peak": 63.75,
+      "orb_width": 1.145,
+      "cost": 254.56,
+      "vol_ratio": 1.39,
+      "exit_date": "2026-07-24",
+      "exit_price": 63.1775,
+      "pnl": -1.85,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:10 ET"
     }
   ],
   "all_closed": [
@@ -32877,6 +32943,11 @@
       "low": 70.03,
       "width": 1.39
     },
+    "FANG": {
+      "high": 207.8,
+      "low": 205.24,
+      "width": 2.56
+    },
     "DLR": {
       "high": 202.72,
       "low": 188.975,
@@ -33221,6 +33292,11 @@
       "high": 35.93,
       "low": 35.57,
       "width": 0.36
+    },
+    "GM": {
+      "high": 82.98,
+      "low": 80.43,
+      "width": 2.55
     },
     "GPC": {
       "high": 121.655,
@@ -33591,6 +33667,11 @@
       "high": 116.94,
       "low": 114.46,
       "width": 2.48
+    },
+    "LOW": {
+      "high": 204.63,
+      "low": 201.955,
+      "width": 2.675
     },
     "LULU": {
       "high": 112.51,
@@ -34372,6 +34453,11 @@
       "low": 377.865,
       "width": 7.135
     },
+    "TRMB": {
+      "high": 51.46,
+      "low": 50.47,
+      "width": 0.99
+    },
     "TFC": {
       "high": 51.6821,
       "low": 51.285,
@@ -34645,7 +34731,7 @@
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
-    "2026-07-24": 95632.22
+    "2026-07-24": 95600.02
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -68005,6 +68091,63 @@
       ],
       "portfolio_value": 95632.22,
       "note": "$95,632 | cash=$304 | open=75 | closed today=159 | day PnL=$-2,242"
+    },
+    {
+      "date": "2026-07-24",
+      "time": "13:09 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "LEN",
+          "side": "long",
+          "price": 84.24,
+          "shares": 3,
+          "stop": 83.67,
+          "trail_dist": 0.57
+        },
+        {
+          "ticker": "HSIC",
+          "side": "long",
+          "price": 85.6,
+          "shares": 2,
+          "stop": 85.2,
+          "trail_dist": 0.4
+        },
+        {
+          "ticker": "PHM",
+          "side": "long",
+          "price": 127.4,
+          "shares": 1,
+          "stop": 126.04,
+          "trail_dist": 1.3575
+        },
+        {
+          "ticker": "O",
+          "side": "long",
+          "price": 65.22,
+          "shares": 1,
+          "stop": 65.05,
+          "trail_dist": 0.17
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "LEN",
+          "side": "long",
+          "exit_price": 84.21,
+          "pnl": -1.88,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "PNR",
+          "side": "long",
+          "exit_price": 63.18,
+          "pnl": -1.85,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95600.02,
+      "note": "$95,600 | cash=$277 | open=77 | closed today=161 | day PnL=$-2,245"
     }
   ]
 }
