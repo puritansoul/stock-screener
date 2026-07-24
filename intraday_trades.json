@@ -1,5 +1,5 @@
 {
-  "capital": 634.83,
+  "capital": 510.34,
   "open_positions": [
     {
       "ticker": "WELL",
@@ -64,9 +64,9 @@
       "entry_time": "10:35 ET",
       "entry_price": 176.08,
       "shares": 28,
-      "stop": 175.605,
+      "stop": 175.65,
       "trail_dist": 0.875,
-      "peak": 176.48,
+      "peak": 176.525,
       "orb_width": 1.75,
       "cost": 4930.24,
       "vol_ratio": 2.06
@@ -330,9 +330,9 @@
       "entry_time": "11:42 ET",
       "entry_price": 44.97,
       "shares": 3,
-      "stop": 45.205,
+      "stop": 45.185,
       "trail_dist": 0.255,
-      "peak": 44.95,
+      "peak": 44.93,
       "orb_width": 0.5099,
       "cost": 134.91,
       "vol_ratio": 1.58
@@ -540,9 +540,9 @@
       "entry_time": "11:59 ET",
       "entry_price": 207.51,
       "shares": 5,
-      "stop": 207.8575,
+      "stop": 207.6728,
       "trail_dist": 1.4075,
-      "peak": 206.45,
+      "peak": 206.2653,
       "orb_width": 2.815,
       "cost": 1037.55,
       "vol_ratio": 1.68
@@ -638,9 +638,9 @@
       "entry_time": "12:05 ET",
       "entry_price": 68.985,
       "shares": 1,
-      "stop": 68.8575,
+      "stop": 68.8625,
       "trail_dist": 0.2625,
-      "peak": 69.12,
+      "peak": 69.125,
       "orb_width": 0.525,
       "cost": 68.99,
       "vol_ratio": 1.56
@@ -722,9 +722,9 @@
       "entry_time": "12:15 ET",
       "entry_price": 244.77,
       "shares": 5,
-      "stop": 244.2575,
+      "stop": 244.2775,
       "trail_dist": 1.4825,
-      "peak": 245.74,
+      "peak": 245.76,
       "orb_width": 2.965,
       "cost": 1223.85,
       "vol_ratio": 1.35
@@ -778,9 +778,9 @@
       "entry_time": "12:39 ET",
       "entry_price": 17.26,
       "shares": 63,
-      "stop": 17.3567,
+      "stop": 17.3544,
       "trail_dist": 0.1044,
-      "peak": 17.2523,
+      "peak": 17.25,
       "orb_width": 0.2088,
       "cost": 1087.38,
       "vol_ratio": 2.6
@@ -960,9 +960,9 @@
       "entry_time": "12:59 ET",
       "entry_price": 122.9044,
       "shares": 5,
-      "stop": 122.2625,
+      "stop": 122.3775,
       "trail_dist": 0.8175,
-      "peak": 123.08,
+      "peak": 123.195,
       "orb_width": 1.635,
       "cost": 614.52,
       "vol_ratio": 1.7
@@ -1002,12 +1002,26 @@
       "entry_time": "12:59 ET",
       "entry_price": 102.42,
       "shares": 2,
-      "stop": 101.86,
+      "stop": 101.9,
       "trail_dist": 0.61,
-      "peak": 102.47,
+      "peak": 102.51,
       "orb_width": 1.22,
       "cost": 204.84,
       "vol_ratio": 1.25
+    },
+    {
+      "ticker": "ARES",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "13:05 ET",
+      "entry_price": 124.485,
+      "shares": 1,
+      "stop": 123.355,
+      "trail_dist": 1.13,
+      "peak": 124.485,
+      "orb_width": 2.26,
+      "cost": 124.49,
+      "vol_ratio": 1.51
     }
   ],
   "closed_today": [
@@ -34604,7 +34618,7 @@
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
-    "2026-07-24": 95692.28
+    "2026-07-24": 95678.88
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -67904,6 +67918,24 @@
       "exits": [],
       "portfolio_value": 95692.28,
       "note": "$95,692 | cash=$635 | open=72 | closed today=158 | day PnL=$-2,240"
+    },
+    {
+      "date": "2026-07-24",
+      "time": "13:04 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "ARES",
+          "side": "long",
+          "price": 124.49,
+          "shares": 1,
+          "stop": 123.36,
+          "trail_dist": 1.13
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 95678.88,
+      "note": "$95,679 | cash=$510 | open=73 | closed today=158 | day PnL=$-2,240"
     }
   ]
 }
