@@ -1,5 +1,5 @@
 {
-  "capital": 956.75,
+  "capital": 703.0,
   "open_positions": [
     {
       "ticker": "WELL",
@@ -190,9 +190,9 @@
       "entry_time": "11:26 ET",
       "entry_price": 43.99,
       "shares": 19,
-      "stop": 43.7917,
+      "stop": 43.805,
       "trail_dist": 0.315,
-      "peak": 44.1067,
+      "peak": 44.12,
       "orb_width": 0.63,
       "cost": 835.81,
       "vol_ratio": 2.34
@@ -204,9 +204,9 @@
       "entry_time": "11:29 ET",
       "entry_price": 330.865,
       "shares": 1,
-      "stop": 331.275,
+      "stop": 331.385,
       "trail_dist": 2.385,
-      "peak": 333.66,
+      "peak": 333.77,
       "orb_width": 4.77,
       "cost": 330.86,
       "vol_ratio": 1.72
@@ -260,9 +260,9 @@
       "entry_time": "11:39 ET",
       "entry_price": 45.13,
       "shares": 5,
-      "stop": 44.98,
+      "stop": 45.28,
       "trail_dist": 0.6,
-      "peak": 45.58,
+      "peak": 45.88,
       "orb_width": 1.2,
       "cost": 225.65,
       "vol_ratio": 1.38
@@ -590,20 +590,6 @@
       "vol_ratio": 1.24
     },
     {
-      "ticker": "ESS",
-      "side": "short",
-      "entry_date": "2026-07-24",
-      "entry_time": "12:10 ET",
-      "entry_price": 292.835,
-      "shares": 5,
-      "stop": 292.895,
-      "trail_dist": 0.705,
-      "peak": 292.19,
-      "orb_width": 1.41,
-      "cost": 1464.17,
-      "vol_ratio": 2.47
-    },
-    {
       "ticker": "LH",
       "side": "long",
       "entry_date": "2026-07-24",
@@ -652,9 +638,9 @@
       "entry_time": "12:15 ET",
       "entry_price": 244.77,
       "shares": 5,
-      "stop": 244.3475,
+      "stop": 244.3775,
       "trail_dist": 1.4825,
-      "peak": 245.83,
+      "peak": 245.86,
       "orb_width": 2.965,
       "cost": 1223.85,
       "vol_ratio": 1.35
@@ -848,9 +834,9 @@
       "entry_time": "12:59 ET",
       "entry_price": 139.34,
       "shares": 12,
-      "stop": 138.755,
+      "stop": 138.825,
       "trail_dist": 0.795,
-      "peak": 139.55,
+      "peak": 139.62,
       "orb_width": 1.59,
       "cost": 1672.08,
       "vol_ratio": 2.47
@@ -876,9 +862,9 @@
       "entry_time": "12:59 ET",
       "entry_price": 79.985,
       "shares": 11,
-      "stop": 80.1075,
+      "stop": 80.0875,
       "trail_dist": 0.1975,
-      "peak": 79.91,
+      "peak": 79.89,
       "orb_width": 0.395,
       "cost": 879.84,
       "vol_ratio": 2.11
@@ -1002,9 +988,9 @@
       "entry_time": "13:10 ET",
       "entry_price": 84.24,
       "shares": 3,
-      "stop": 83.77,
+      "stop": 83.78,
       "trail_dist": 0.57,
-      "peak": 84.34,
+      "peak": 84.35,
       "orb_width": 1.14,
       "cost": 252.72,
       "vol_ratio": 4.93
@@ -1030,9 +1016,9 @@
       "entry_time": "13:10 ET",
       "entry_price": 127.4,
       "shares": 1,
-      "stop": 126.2525,
+      "stop": 126.3625,
       "trail_dist": 1.3575,
-      "peak": 127.61,
+      "peak": 127.72,
       "orb_width": 2.715,
       "cost": 127.4,
       "vol_ratio": 1.49
@@ -1100,12 +1086,68 @@
       "entry_time": "13:17 ET",
       "entry_price": 320.685,
       "shares": 1,
-      "stop": 319.365,
+      "stop": 319.65,
       "trail_dist": 1.32,
-      "peak": 320.685,
+      "peak": 320.97,
       "orb_width": 2.64,
       "cost": 320.68,
       "vol_ratio": 1.64
+    },
+    {
+      "ticker": "PKG",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "13:20 ET",
+      "entry_price": 241.185,
+      "shares": 3,
+      "stop": 238.715,
+      "trail_dist": 2.47,
+      "peak": 241.185,
+      "orb_width": 4.94,
+      "cost": 723.55,
+      "vol_ratio": 2.78
+    },
+    {
+      "ticker": "ADSK",
+      "side": "short",
+      "entry_date": "2026-07-24",
+      "entry_time": "13:20 ET",
+      "entry_price": 207.6,
+      "shares": 2,
+      "stop": 209.4,
+      "trail_dist": 1.8,
+      "peak": 207.6,
+      "orb_width": 3.6,
+      "cost": 415.2,
+      "vol_ratio": 1.87
+    },
+    {
+      "ticker": "ESS",
+      "side": "short",
+      "entry_date": "2026-07-24",
+      "entry_time": "13:20 ET",
+      "entry_price": 292.725,
+      "shares": 1,
+      "stop": 293.43,
+      "trail_dist": 0.705,
+      "peak": 292.725,
+      "orb_width": 1.41,
+      "cost": 292.73,
+      "vol_ratio": 1.82
+    },
+    {
+      "ticker": "WY",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "13:20 ET",
+      "entry_price": 23.845,
+      "shares": 12,
+      "stop": 23.7082,
+      "trail_dist": 0.1368,
+      "peak": 23.845,
+      "orb_width": 0.2736,
+      "cost": 286.14,
+      "vol_ratio": 1.43
     }
   ],
   "closed_today": [
@@ -4205,6 +4247,25 @@
       "pnl": -0.61,
       "exit_reason": "trailing stop",
       "exit_time": "13:12 ET"
+    },
+    {
+      "ticker": "ESS",
+      "side": "short",
+      "entry_date": "2026-07-24",
+      "entry_time": "12:10 ET",
+      "entry_price": 292.835,
+      "shares": 5,
+      "stop": 292.895,
+      "trail_dist": 0.705,
+      "peak": 292.19,
+      "orb_width": 1.41,
+      "cost": 1464.17,
+      "vol_ratio": 2.47,
+      "exit_date": "2026-07-24",
+      "exit_price": 292.895,
+      "pnl": -0.3,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:20 ET"
     }
   ],
   "all_closed": [
@@ -34634,6 +34695,11 @@
       "low": 293.01,
       "width": 9.48
     },
+    "VTRS": {
+      "high": 17.4888,
+      "low": 17.28,
+      "width": 0.2088
+    },
     "VICI": {
       "high": 26.725,
       "low": 26.45,
@@ -34792,7 +34858,7 @@
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
-    "2026-07-24": 95663.17
+    "2026-07-24": 95662.51
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -68285,6 +68351,56 @@
       "exits": [],
       "portfolio_value": 95663.17,
       "note": "$95,663 | cash=$957 | open=79 | closed today=163 | day PnL=$-2,233"
+    },
+    {
+      "date": "2026-07-24",
+      "time": "13:19 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "PKG",
+          "side": "long",
+          "price": 241.18,
+          "shares": 3,
+          "stop": 238.71,
+          "trail_dist": 2.47
+        },
+        {
+          "ticker": "ADSK",
+          "side": "short",
+          "price": 207.6,
+          "shares": 2,
+          "stop": 209.4,
+          "trail_dist": 1.8
+        },
+        {
+          "ticker": "ESS",
+          "side": "short",
+          "price": 292.73,
+          "shares": 1,
+          "stop": 293.43,
+          "trail_dist": 0.705
+        },
+        {
+          "ticker": "WY",
+          "side": "long",
+          "price": 23.84,
+          "shares": 12,
+          "stop": 23.71,
+          "trail_dist": 0.1368
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "ESS",
+          "side": "short",
+          "exit_price": 292.89,
+          "pnl": -0.3,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95662.51,
+      "note": "$95,663 | cash=$703 | open=82 | closed today=164 | day PnL=$-2,233"
     }
   ]
 }
