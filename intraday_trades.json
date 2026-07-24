@@ -1,5 +1,5 @@
 {
-  "capital": 510.34,
+  "capital": 303.72,
   "open_positions": [
     {
       "ticker": "WELL",
@@ -170,20 +170,6 @@
       "vol_ratio": 2.61
     },
     {
-      "ticker": "COF",
-      "side": "long",
-      "entry_date": "2026-07-24",
-      "entry_time": "11:24 ET",
-      "entry_price": 204.05,
-      "shares": 1,
-      "stop": 202.475,
-      "trail_dist": 1.955,
-      "peak": 204.43,
-      "orb_width": 3.91,
-      "cost": 204.05,
-      "vol_ratio": 1.55
-    },
-    {
       "ticker": "TGT",
       "side": "long",
       "entry_date": "2026-07-24",
@@ -232,9 +218,9 @@
       "entry_time": "11:29 ET",
       "entry_price": 330.865,
       "shares": 1,
-      "stop": 330.715,
+      "stop": 330.905,
       "trail_dist": 2.385,
-      "peak": 333.1,
+      "peak": 333.29,
       "orb_width": 4.77,
       "cost": 330.86,
       "vol_ratio": 1.72
@@ -722,9 +708,9 @@
       "entry_time": "12:15 ET",
       "entry_price": 244.77,
       "shares": 5,
-      "stop": 244.2775,
+      "stop": 244.3475,
       "trail_dist": 1.4825,
-      "peak": 245.76,
+      "peak": 245.83,
       "orb_width": 2.965,
       "cost": 1223.85,
       "vol_ratio": 1.35
@@ -918,9 +904,9 @@
       "entry_time": "12:59 ET",
       "entry_price": 139.34,
       "shares": 12,
-      "stop": 138.712,
+      "stop": 138.713,
       "trail_dist": 0.795,
-      "peak": 139.507,
+      "peak": 139.508,
       "orb_width": 1.59,
       "cost": 1672.08,
       "vol_ratio": 2.47
@@ -988,9 +974,9 @@
       "entry_time": "12:59 ET",
       "entry_price": 17.835,
       "shares": 19,
-      "stop": 17.6975,
+      "stop": 17.7024,
       "trail_dist": 0.1375,
-      "peak": 17.835,
+      "peak": 17.8399,
       "orb_width": 0.275,
       "cost": 338.86,
       "vol_ratio": 1.4
@@ -1016,12 +1002,54 @@
       "entry_time": "13:05 ET",
       "entry_price": 124.485,
       "shares": 1,
-      "stop": 123.355,
+      "stop": 123.405,
       "trail_dist": 1.13,
-      "peak": 124.485,
+      "peak": 124.535,
       "orb_width": 2.26,
       "cost": 124.49,
       "vol_ratio": 1.51
+    },
+    {
+      "ticker": "SBAC",
+      "side": "short",
+      "entry_date": "2026-07-24",
+      "entry_time": "13:07 ET",
+      "entry_price": 175.595,
+      "shares": 1,
+      "stop": 177.285,
+      "trail_dist": 1.69,
+      "peak": 175.595,
+      "orb_width": 3.38,
+      "cost": 175.6,
+      "vol_ratio": 1.67
+    },
+    {
+      "ticker": "EQR",
+      "side": "short",
+      "entry_date": "2026-07-24",
+      "entry_time": "13:07 ET",
+      "entry_price": 67.69,
+      "shares": 2,
+      "stop": 68.0,
+      "trail_dist": 0.31,
+      "peak": 67.69,
+      "orb_width": 0.62,
+      "cost": 135.38,
+      "vol_ratio": 1.61
+    },
+    {
+      "ticker": "KKR",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "13:07 ET",
+      "entry_price": 98.11,
+      "shares": 1,
+      "stop": 97.555,
+      "trail_dist": 0.555,
+      "peak": 98.11,
+      "orb_width": 1.11,
+      "cost": 98.11,
+      "vol_ratio": 1.47
     }
   ],
   "closed_today": [
@@ -4026,6 +4054,25 @@
       "pnl": -1.1,
       "exit_reason": "trailing stop",
       "exit_time": "12:54 ET"
+    },
+    {
+      "ticker": "COF",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "11:24 ET",
+      "entry_price": 204.05,
+      "shares": 1,
+      "stop": 202.475,
+      "trail_dist": 1.955,
+      "peak": 204.43,
+      "orb_width": 3.91,
+      "cost": 204.05,
+      "vol_ratio": 1.55,
+      "exit_date": "2026-07-24",
+      "exit_price": 202.475,
+      "pnl": -1.58,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:07 ET"
     }
   ],
   "all_closed": [
@@ -32830,11 +32877,6 @@
       "low": 70.03,
       "width": 1.39
     },
-    "FANG": {
-      "high": 207.8,
-      "low": 205.24,
-      "width": 2.56
-    },
     "DLR": {
       "high": 202.72,
       "low": 188.975,
@@ -33179,11 +33221,6 @@
       "high": 35.93,
       "low": 35.57,
       "width": 0.36
-    },
-    "GM": {
-      "high": 82.98,
-      "low": 80.43,
-      "width": 2.55
     },
     "GPC": {
       "high": 121.655,
@@ -33554,11 +33591,6 @@
       "high": 116.94,
       "low": 114.46,
       "width": 2.48
-    },
-    "LOW": {
-      "high": 204.63,
-      "low": 201.955,
-      "width": 2.675
     },
     "LULU": {
       "high": 112.51,
@@ -34340,11 +34372,6 @@
       "low": 377.865,
       "width": 7.135
     },
-    "TRMB": {
-      "high": 51.46,
-      "low": 50.47,
-      "width": 0.99
-    },
     "TFC": {
       "high": 51.6821,
       "low": 51.285,
@@ -34618,7 +34645,7 @@
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
-    "2026-07-24": 95678.88
+    "2026-07-24": 95632.22
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -67936,6 +67963,48 @@
       "exits": [],
       "portfolio_value": 95678.88,
       "note": "$95,679 | cash=$510 | open=73 | closed today=158 | day PnL=$-2,240"
+    },
+    {
+      "date": "2026-07-24",
+      "time": "13:07 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "SBAC",
+          "side": "short",
+          "price": 175.6,
+          "shares": 1,
+          "stop": 177.29,
+          "trail_dist": 1.69
+        },
+        {
+          "ticker": "EQR",
+          "side": "short",
+          "price": 67.69,
+          "shares": 2,
+          "stop": 68.0,
+          "trail_dist": 0.31
+        },
+        {
+          "ticker": "KKR",
+          "side": "long",
+          "price": 98.11,
+          "shares": 1,
+          "stop": 97.56,
+          "trail_dist": 0.555
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "COF",
+          "side": "long",
+          "exit_price": 202.47,
+          "pnl": -1.58,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95632.22,
+      "note": "$95,632 | cash=$304 | open=75 | closed today=159 | day PnL=$-2,242"
     }
   ]
 }
