@@ -1,5 +1,5 @@
 {
-  "capital": 13682.41,
+  "capital": 8302.13,
   "open_positions": [
     {
       "ticker": "SNA",
@@ -100,59 +100,87 @@
       "vol_ratio": 1.29
     },
     {
-      "ticker": "KDP",
-      "side": "short",
-      "entry_date": "2026-07-24",
-      "entry_time": "10:12 ET",
-      "entry_price": 29.59,
-      "shares": 570,
-      "stop": 29.725,
-      "trail_dist": 0.135,
-      "peak": 29.59,
-      "orb_width": 0.27,
-      "cost": 16866.3,
-      "vol_ratio": 3.42
-    },
-    {
-      "ticker": "FTV",
-      "side": "long",
-      "entry_date": "2026-07-24",
-      "entry_time": "10:12 ET",
-      "entry_price": 62.03,
-      "shares": 190,
-      "stop": 61.4225,
-      "trail_dist": 0.6075,
-      "peak": 62.03,
-      "orb_width": 1.215,
-      "cost": 11785.7,
-      "vol_ratio": 2.58
-    },
-    {
       "ticker": "MGM",
       "side": "long",
       "entry_date": "2026-07-24",
       "entry_time": "10:12 ET",
       "entry_price": 45.425,
       "shares": 182,
-      "stop": 45.255,
+      "stop": 45.56,
       "trail_dist": 0.17,
-      "peak": 45.425,
+      "peak": 45.73,
       "orb_width": 0.34,
       "cost": 8267.35,
       "vol_ratio": 1.46
     },
     {
+      "ticker": "KDP",
+      "side": "short",
+      "entry_date": "2026-07-24",
+      "entry_time": "10:15 ET",
+      "entry_price": 29.59,
+      "shares": 484,
+      "stop": 29.725,
+      "trail_dist": 0.135,
+      "peak": 29.59,
+      "orb_width": 0.27,
+      "cost": 14321.56,
+      "vol_ratio": 3.42
+    },
+    {
+      "ticker": "FTV",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "10:15 ET",
+      "entry_price": 62.03,
+      "shares": 162,
+      "stop": 61.4225,
+      "trail_dist": 0.6075,
+      "peak": 62.03,
+      "orb_width": 1.215,
+      "cost": 10048.86,
+      "vol_ratio": 2.58
+    },
+    {
+      "ticker": "FDS",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "10:15 ET",
+      "entry_price": 248.53,
+      "shares": 28,
+      "stop": 247.3475,
+      "trail_dist": 1.1825,
+      "peak": 248.53,
+      "orb_width": 2.365,
+      "cost": 6958.84,
+      "vol_ratio": 1.3
+    },
+    {
+      "ticker": "FDXF",
+      "side": "short",
+      "entry_date": "2026-07-24",
+      "entry_time": "10:15 ET",
+      "entry_price": 151.045,
+      "shares": 32,
+      "stop": 152.7911,
+      "trail_dist": 1.7461,
+      "peak": 151.045,
+      "orb_width": 3.4922,
+      "cost": 4833.44,
+      "vol_ratio": 1.28
+    },
+    {
       "ticker": "RJF",
       "side": "long",
       "entry_date": "2026-07-24",
-      "entry_time": "10:12 ET",
+      "entry_time": "10:15 ET",
       "entry_price": 167.85,
-      "shares": 34,
+      "shares": 20,
       "stop": 166.55,
       "trail_dist": 1.3,
       "peak": 167.85,
       "orb_width": 2.6,
-      "cost": 5706.9,
+      "cost": 3357.0,
       "vol_ratio": 1.28
     }
   ],
@@ -232,6 +260,63 @@
       "pnl": -6.5,
       "exit_reason": "trailing stop",
       "exit_time": "10:12 ET"
+    },
+    {
+      "ticker": "KDP",
+      "side": "short",
+      "entry_date": "2026-07-24",
+      "entry_time": "10:12 ET",
+      "entry_price": 29.59,
+      "shares": 570,
+      "stop": 29.705,
+      "trail_dist": 0.135,
+      "peak": 29.57,
+      "orb_width": 0.27,
+      "cost": 16866.3,
+      "vol_ratio": 3.42,
+      "exit_date": "2026-07-24",
+      "exit_price": 29.705,
+      "pnl": -65.55,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:15 ET"
+    },
+    {
+      "ticker": "FTV",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "10:12 ET",
+      "entry_price": 62.03,
+      "shares": 190,
+      "stop": 61.4525,
+      "trail_dist": 0.6075,
+      "peak": 62.06,
+      "orb_width": 1.215,
+      "cost": 11785.7,
+      "vol_ratio": 2.58,
+      "exit_date": "2026-07-24",
+      "exit_price": 61.4525,
+      "pnl": -109.73,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:15 ET"
+    },
+    {
+      "ticker": "RJF",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "10:12 ET",
+      "entry_price": 167.85,
+      "shares": 34,
+      "stop": 166.55,
+      "trail_dist": 1.3,
+      "peak": 167.85,
+      "orb_width": 2.6,
+      "cost": 5706.9,
+      "vol_ratio": 1.28,
+      "exit_date": "2026-07-24",
+      "exit_price": 166.55,
+      "pnl": -44.2,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:15 ET"
     }
   ],
   "all_closed": [
@@ -28398,8 +28483,8 @@
     },
     "GOOG": {
       "high": 323.98,
-      "low": 317.5,
-      "width": 6.48
+      "low": 318.75,
+      "width": 5.23
     },
     "MO": {
       "high": 72.81,
@@ -28450,11 +28535,6 @@
       "high": 520.75,
       "low": 510.745,
       "width": 10.005
-    },
-    "AME": {
-      "high": 243.65,
-      "low": 241.06,
-      "width": 2.59
     },
     "AMGN": {
       "high": 377.72,
@@ -28510,11 +28590,6 @@
       "high": 101.61,
       "low": 100.39,
       "width": 1.22
-    },
-    "ADM": {
-      "high": 86.7436,
-      "low": 85.78,
-      "width": 0.9636
     },
     "ARES": {
       "high": 122.88,
@@ -28616,11 +28691,6 @@
       "low": 71.76,
       "width": 0.18
     },
-    "BIIB": {
-      "high": 203.2,
-      "low": 200.035,
-      "width": 3.165
-    },
     "BLK": {
       "high": 1044.3199,
       "low": 1033.49,
@@ -28665,11 +28735,6 @@
       "high": 389.27,
       "low": 380.15,
       "width": 9.12
-    },
-    "BR": {
-      "high": 148.35,
-      "low": 145.305,
-      "width": 3.045
     },
     "BRO": {
       "high": 66.385,
@@ -29071,11 +29136,6 @@
       "low": 169.74,
       "width": 2.915
     },
-    "DOV": {
-      "high": 203.48,
-      "low": 200.0025,
-      "width": 3.4775
-    },
     "DOW": {
       "high": 30.775,
       "low": 29.44,
@@ -29351,11 +29411,6 @@
       "low": 135.645,
       "width": 3.005
     },
-    "GE": {
-      "high": 357.19,
-      "low": 350.2,
-      "width": 6.99
-    },
     "GEHC": {
       "high": 62.7467,
       "low": 60.5,
@@ -29450,11 +29505,6 @@
       "high": 85.33,
       "low": 84.53,
       "width": 0.8
-    },
-    "HSY": {
-      "high": 173.8,
-      "low": 172.12,
-      "width": 1.68
     },
     "HPE": {
       "high": 48.98,
@@ -29780,11 +29830,6 @@
       "high": 61.73,
       "low": 60.57,
       "width": 1.16
-    },
-    "MTB": {
-      "high": 247.36,
-      "low": 246.125,
-      "width": 1.235
     },
     "MPC": {
       "high": 312.7286,
@@ -30156,11 +30201,6 @@
       "low": 113.4101,
       "width": 2.1599
     },
-    "PPL": {
-      "high": 36.52,
-      "low": 36.3,
-      "width": 0.22
-    },
     "PFG": {
       "high": 107.94,
       "low": 107.0,
@@ -30182,9 +30222,9 @@
       "width": 2.4
     },
     "PRU": {
-      "high": 118.055,
+      "high": 118.06,
       "low": 117.07,
-      "width": 0.985
+      "width": 0.99
     },
     "PEG": {
       "high": 80.485,
@@ -30331,11 +30371,6 @@
       "low": 49.74,
       "width": 1.73
     },
-    "STX": {
-      "high": 906.0,
-      "low": 866.7,
-      "width": 39.3
-    },
     "SRE": {
       "high": 94.25,
       "low": 93.48,
@@ -30451,11 +30486,6 @@
       "low": 114.96,
       "width": 1.075
     },
-    "TTWO": {
-      "high": 232.57,
-      "low": 230.1,
-      "width": 2.47
-    },
     "TPR": {
       "high": 140.1,
       "low": 137.4638,
@@ -30570,11 +30600,6 @@
       "high": 63.93,
       "low": 63.36,
       "width": 0.57
-    },
-    "UBER": {
-      "high": 69.6,
-      "low": 68.51,
-      "width": 1.09
     },
     "UDR": {
       "high": 39.77,
@@ -30723,8 +30748,8 @@
     },
     "WAT": {
       "high": 384.23,
-      "low": 379.01,
-      "width": 5.22
+      "low": 379.0,
+      "width": 5.23
     },
     "WEC": {
       "high": 115.97,
@@ -30824,7 +30849,7 @@
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
-    "2026-07-24": 97599.61
+    "2026-07-24": 97429.2
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -60668,6 +60693,78 @@
       ],
       "portfolio_value": 97599.61,
       "note": "$97,600 | cash=$13,682 | open=11 | closed today=4 | day PnL=$-312"
+    },
+    {
+      "date": "2026-07-24",
+      "time": "10:14 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "KDP",
+          "side": "short",
+          "price": 29.59,
+          "shares": 484,
+          "stop": 29.73,
+          "trail_dist": 0.135
+        },
+        {
+          "ticker": "FTV",
+          "side": "long",
+          "price": 62.03,
+          "shares": 162,
+          "stop": 61.42,
+          "trail_dist": 0.6075
+        },
+        {
+          "ticker": "FDS",
+          "side": "long",
+          "price": 248.53,
+          "shares": 28,
+          "stop": 247.35,
+          "trail_dist": 1.1825
+        },
+        {
+          "ticker": "FDXF",
+          "side": "short",
+          "price": 151.04,
+          "shares": 32,
+          "stop": 152.79,
+          "trail_dist": 1.7461
+        },
+        {
+          "ticker": "RJF",
+          "side": "long",
+          "price": 167.85,
+          "shares": 20,
+          "stop": 166.55,
+          "trail_dist": 1.3
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "KDP",
+          "side": "short",
+          "exit_price": 29.7,
+          "pnl": -65.55,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "FTV",
+          "side": "long",
+          "exit_price": 61.45,
+          "pnl": -109.73,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "RJF",
+          "side": "long",
+          "exit_price": 166.55,
+          "pnl": -44.2,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 97429.2,
+      "note": "$97,429 | cash=$8,302 | open=13 | closed today=7 | day PnL=$-532"
     }
   ]
 }
