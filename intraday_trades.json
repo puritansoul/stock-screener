@@ -1,20 +1,6 @@
 {
-  "capital": 5467.78,
+  "capital": 8258.86,
   "open_positions": [
-    {
-      "ticker": "PCAR",
-      "side": "long",
-      "entry_date": "2026-07-24",
-      "entry_time": "10:10 ET",
-      "entry_price": 132.165,
-      "shares": 76,
-      "stop": 133.1175,
-      "trail_dist": 0.7825,
-      "peak": 133.9,
-      "orb_width": 1.565,
-      "cost": 10044.54,
-      "vol_ratio": 1.61
-    },
     {
       "ticker": "WELL",
       "side": "long",
@@ -120,9 +106,9 @@
       "entry_time": "10:35 ET",
       "entry_price": 88.69,
       "shares": 3,
-      "stop": 88.098,
+      "stop": 87.933,
       "trail_dist": 0.768,
-      "peak": 87.33,
+      "peak": 87.165,
       "orb_width": 1.5359,
       "cost": 266.07,
       "vol_ratio": 1.43
@@ -568,9 +554,9 @@
       "entry_time": "11:54 ET",
       "entry_price": 216.67,
       "shares": 2,
-      "stop": 216.7625,
+      "stop": 216.6575,
       "trail_dist": 0.8875,
-      "peak": 215.875,
+      "peak": 215.77,
       "orb_width": 1.775,
       "cost": 433.34,
       "vol_ratio": 1.22
@@ -624,26 +610,12 @@
       "entry_time": "11:59 ET",
       "entry_price": 207.51,
       "shares": 5,
-      "stop": 208.0875,
+      "stop": 207.9475,
       "trail_dist": 1.4075,
-      "peak": 206.68,
+      "peak": 206.54,
       "orb_width": 2.815,
       "cost": 1037.55,
       "vol_ratio": 1.68
-    },
-    {
-      "ticker": "APTV",
-      "side": "long",
-      "entry_date": "2026-07-24",
-      "entry_time": "11:59 ET",
-      "entry_price": 57.08,
-      "shares": 15,
-      "stop": 56.905,
-      "trail_dist": 0.305,
-      "peak": 57.21,
-      "orb_width": 0.61,
-      "cost": 856.2,
-      "vol_ratio": 1.61
     },
     {
       "ticker": "T",
@@ -744,20 +716,6 @@
       "vol_ratio": 1.56
     },
     {
-      "ticker": "INVH",
-      "side": "short",
-      "entry_date": "2026-07-24",
-      "entry_time": "12:05 ET",
-      "entry_price": 29.56,
-      "shares": 3,
-      "stop": 29.6125,
-      "trail_dist": 0.0625,
-      "peak": 29.55,
-      "orb_width": 0.125,
-      "cost": 88.68,
-      "vol_ratio": 1.34
-    },
-    {
       "ticker": "HST",
       "side": "long",
       "entry_date": "2026-07-24",
@@ -770,20 +728,6 @@
       "orb_width": 0.395,
       "cost": 49.28,
       "vol_ratio": 1.24
-    },
-    {
-      "ticker": "BA",
-      "side": "long",
-      "entry_date": "2026-07-24",
-      "entry_time": "12:07 ET",
-      "entry_price": 211.9469,
-      "shares": 1,
-      "stop": 211.095,
-      "trail_dist": 1.265,
-      "peak": 212.36,
-      "orb_width": 2.53,
-      "cost": 211.95,
-      "vol_ratio": 1.52
     },
     {
       "ticker": "ESS",
@@ -1008,6 +952,34 @@
       "orb_width": 1.235,
       "cost": 1988.72,
       "vol_ratio": 7.27
+    },
+    {
+      "ticker": "FDS",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "12:49 ET",
+      "entry_price": 250.265,
+      "shares": 20,
+      "stop": 249.0825,
+      "trail_dist": 1.1825,
+      "peak": 250.265,
+      "orb_width": 2.365,
+      "cost": 5005.3,
+      "vol_ratio": 1.99
+    },
+    {
+      "ticker": "IT",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "12:49 ET",
+      "entry_price": 138.95,
+      "shares": 25,
+      "stop": 137.4475,
+      "trail_dist": 1.5025,
+      "peak": 138.95,
+      "orb_width": 3.005,
+      "cost": 3473.75,
+      "vol_ratio": 1.36
     }
   ],
   "closed_today": [
@@ -3784,6 +3756,82 @@
       "pnl": -7.01,
       "exit_reason": "trailing stop",
       "exit_time": "12:46 ET"
+    },
+    {
+      "ticker": "PCAR",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "10:10 ET",
+      "entry_price": 132.165,
+      "shares": 76,
+      "stop": 133.1175,
+      "trail_dist": 0.7825,
+      "peak": 133.9,
+      "orb_width": 1.565,
+      "cost": 10044.54,
+      "vol_ratio": 1.61,
+      "exit_date": "2026-07-24",
+      "exit_price": 133.1175,
+      "pnl": 72.39,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:49 ET"
+    },
+    {
+      "ticker": "APTV",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "11:59 ET",
+      "entry_price": 57.08,
+      "shares": 15,
+      "stop": 56.905,
+      "trail_dist": 0.305,
+      "peak": 57.21,
+      "orb_width": 0.61,
+      "cost": 856.2,
+      "vol_ratio": 1.61,
+      "exit_date": "2026-07-24",
+      "exit_price": 56.905,
+      "pnl": -2.62,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:49 ET"
+    },
+    {
+      "ticker": "INVH",
+      "side": "short",
+      "entry_date": "2026-07-24",
+      "entry_time": "12:05 ET",
+      "entry_price": 29.56,
+      "shares": 3,
+      "stop": 29.6125,
+      "trail_dist": 0.0625,
+      "peak": 29.55,
+      "orb_width": 0.125,
+      "cost": 88.68,
+      "vol_ratio": 1.34,
+      "exit_date": "2026-07-24",
+      "exit_price": 29.6125,
+      "pnl": -0.16,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:49 ET"
+    },
+    {
+      "ticker": "BA",
+      "side": "long",
+      "entry_date": "2026-07-24",
+      "entry_time": "12:07 ET",
+      "entry_price": 211.9469,
+      "shares": 1,
+      "stop": 211.095,
+      "trail_dist": 1.265,
+      "peak": 212.36,
+      "orb_width": 2.53,
+      "cost": 211.95,
+      "vol_ratio": 1.52,
+      "exit_date": "2026-07-24",
+      "exit_price": 211.095,
+      "pnl": -0.85,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:49 ET"
     }
   ],
   "all_closed": [
@@ -32728,11 +32776,6 @@
       "low": 1055.6,
       "width": 44.39
     },
-    "EQR": {
-      "high": 68.98,
-      "low": 68.36,
-      "width": 0.62
-    },
     "ERIE": {
       "high": 218.67,
       "low": 216.525,
@@ -34118,11 +34161,6 @@
       "low": 56.66,
       "width": 0.4871
     },
-    "USB": {
-      "high": 63.93,
-      "low": 63.36,
-      "width": 0.57
-    },
     "UBER": {
       "high": 69.6,
       "low": 68.51,
@@ -34376,7 +34414,7 @@
     "2026-07-21": 98691.24,
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
-    "2026-07-24": 95692.21
+    "2026-07-24": 95637.65
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -67435,6 +67473,61 @@
       ],
       "portfolio_value": 95692.21,
       "note": "$95,692 | cash=$5,468 | open=72 | closed today=146 | day PnL=$-2,288"
+    },
+    {
+      "date": "2026-07-24",
+      "time": "12:48 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "FDS",
+          "side": "long",
+          "price": 250.26,
+          "shares": 20,
+          "stop": 249.08,
+          "trail_dist": 1.1825
+        },
+        {
+          "ticker": "IT",
+          "side": "long",
+          "price": 138.95,
+          "shares": 25,
+          "stop": 137.45,
+          "trail_dist": 1.5025
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "PCAR",
+          "side": "long",
+          "exit_price": 133.12,
+          "pnl": 72.39,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "APTV",
+          "side": "long",
+          "exit_price": 56.91,
+          "pnl": -2.62,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "INVH",
+          "side": "short",
+          "exit_price": 29.61,
+          "pnl": -0.16,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "BA",
+          "side": "long",
+          "exit_price": 211.09,
+          "pnl": -0.85,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95637.65,
+      "note": "$95,638 | cash=$8,259 | open=70 | closed today=150 | day PnL=$-2,219"
     }
   ]
 }
