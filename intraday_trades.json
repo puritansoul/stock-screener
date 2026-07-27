@@ -1,5 +1,5 @@
 {
-  "capital": 737.64,
+  "capital": 1069.44,
   "open_positions": [
     {
       "ticker": "ADSK",
@@ -386,9 +386,9 @@
       "entry_time": "11:20 ET",
       "entry_price": 71.605,
       "shares": 1,
-      "stop": 71.305,
+      "stop": 71.295,
       "trail_dist": 0.365,
-      "peak": 70.94,
+      "peak": 70.93,
       "orb_width": 0.73,
       "cost": 71.61,
       "vol_ratio": 1.43
@@ -442,9 +442,9 @@
       "entry_time": "11:30 ET",
       "entry_price": 132.985,
       "shares": 2,
-      "stop": 132.715,
+      "stop": 132.665,
       "trail_dist": 0.795,
-      "peak": 131.92,
+      "peak": 131.87,
       "orb_width": 1.59,
       "cost": 265.97,
       "vol_ratio": 5.47
@@ -492,20 +492,6 @@
       "vol_ratio": 4.38
     },
     {
-      "ticker": "ODFL",
-      "side": "short",
-      "entry_date": "2026-07-27",
-      "entry_time": "11:44 ET",
-      "entry_price": 225.75,
-      "shares": 3,
-      "stop": 226.881,
-      "trail_dist": 2.395,
-      "peak": 224.486,
-      "orb_width": 4.79,
-      "cost": 677.25,
-      "vol_ratio": 3.38
-    },
-    {
       "ticker": "LUV",
       "side": "short",
       "entry_date": "2026-07-27",
@@ -526,9 +512,9 @@
       "entry_time": "11:44 ET",
       "entry_price": 78.9729,
       "shares": 4,
-      "stop": 79.005,
+      "stop": 78.995,
       "trail_dist": 0.275,
-      "peak": 78.73,
+      "peak": 78.72,
       "orb_width": 0.55,
       "cost": 315.89,
       "vol_ratio": 1.54
@@ -554,9 +540,9 @@
       "entry_time": "11:44 ET",
       "entry_price": 92.36,
       "shares": 2,
-      "stop": 92.125,
+      "stop": 92.035,
       "trail_dist": 0.375,
-      "peak": 91.75,
+      "peak": 91.66,
       "orb_width": 0.75,
       "cost": 184.72,
       "vol_ratio": 1.36
@@ -596,9 +582,9 @@
       "entry_time": "11:49 ET",
       "entry_price": 63.71,
       "shares": 9,
-      "stop": 63.7319,
+      "stop": 63.6819,
       "trail_dist": 0.2919,
-      "peak": 63.44,
+      "peak": 63.39,
       "orb_width": 0.5839,
       "cost": 573.39,
       "vol_ratio": 1.43
@@ -624,9 +610,9 @@
       "entry_time": "11:52 ET",
       "entry_price": 229.14,
       "shares": 1,
-      "stop": 227.3,
+      "stop": 228.35,
       "trail_dist": 2.19,
-      "peak": 229.49,
+      "peak": 230.54,
       "orb_width": 4.38,
       "cost": 229.14,
       "vol_ratio": 1.43
@@ -736,9 +722,9 @@
       "entry_time": "11:59 ET",
       "entry_price": 54.86,
       "shares": 8,
-      "stop": 54.8675,
+      "stop": 54.8975,
       "trail_dist": 0.4125,
-      "peak": 55.28,
+      "peak": 55.31,
       "orb_width": 0.825,
       "cost": 438.88,
       "vol_ratio": 1.21
@@ -1100,9 +1086,9 @@
       "entry_time": "12:38 ET",
       "entry_price": 17.225,
       "shares": 45,
-      "stop": 17.285,
+      "stop": 17.2678,
       "trail_dist": 0.115,
-      "peak": 17.17,
+      "peak": 17.1528,
       "orb_width": 0.23,
       "cost": 775.13,
       "vol_ratio": 5.96
@@ -1162,6 +1148,20 @@
       "orb_width": 2.725,
       "cost": 218.94,
       "vol_ratio": 1.31
+    },
+    {
+      "ticker": "ETR",
+      "side": "short",
+      "entry_date": "2026-07-27",
+      "entry_time": "12:50 ET",
+      "entry_price": 114.02,
+      "shares": 3,
+      "stop": 114.56,
+      "trail_dist": 0.54,
+      "peak": 114.02,
+      "orb_width": 1.08,
+      "cost": 342.06,
+      "vol_ratio": 1.2
     }
   ],
   "closed_today": [
@@ -3178,6 +3178,25 @@
       "pnl": -0.62,
       "exit_reason": "trailing stop",
       "exit_time": "12:43 ET"
+    },
+    {
+      "ticker": "ODFL",
+      "side": "short",
+      "entry_date": "2026-07-27",
+      "entry_time": "11:44 ET",
+      "entry_price": 225.75,
+      "shares": 3,
+      "stop": 226.881,
+      "trail_dist": 2.395,
+      "peak": 224.486,
+      "orb_width": 4.79,
+      "cost": 677.25,
+      "vol_ratio": 3.38,
+      "exit_date": "2026-07-27",
+      "exit_price": 226.881,
+      "pnl": -3.39,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:50 ET"
     }
   ],
   "all_closed": [
@@ -40136,7 +40155,7 @@
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
-    "2026-07-27": 96720.36
+    "2026-07-27": 96725.44
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -79167,6 +79186,32 @@
       "exits": [],
       "portfolio_value": 96720.36,
       "note": "$96,720 | cash=$738 | open=83 | closed today=106 | day PnL=$+595"
+    },
+    {
+      "date": "2026-07-27",
+      "time": "12:50 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "ETR",
+          "side": "short",
+          "price": 114.02,
+          "shares": 3,
+          "stop": 114.56,
+          "trail_dist": 0.54
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "ODFL",
+          "side": "short",
+          "exit_price": 226.88,
+          "pnl": -3.39,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96725.44,
+      "note": "$96,725 | cash=$1,069 | open=83 | closed today=107 | day PnL=$+592"
     }
   ]
 }
