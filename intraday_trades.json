@@ -1,6 +1,105 @@
 {
-  "capital": 95966.69,
-  "open_positions": [],
+  "capital": 8803.04,
+  "open_positions": [
+    {
+      "ticker": "CIEN",
+      "side": "short",
+      "entry_date": "2026-07-27",
+      "entry_time": "10:03 ET",
+      "entry_price": 373.51,
+      "shares": 77,
+      "stop": 379.75,
+      "trail_dist": 6.24,
+      "peak": 373.51,
+      "orb_width": 12.48,
+      "cost": 28760.27,
+      "vol_ratio": 1.92
+    },
+    {
+      "ticker": "BEN",
+      "side": "long",
+      "entry_date": "2026-07-27",
+      "entry_time": "10:03 ET",
+      "entry_price": 33.55,
+      "shares": 600,
+      "stop": 33.1325,
+      "trail_dist": 0.4175,
+      "peak": 33.55,
+      "orb_width": 0.835,
+      "cost": 20130.0,
+      "vol_ratio": 1.79
+    },
+    {
+      "ticker": "AES",
+      "side": "long",
+      "entry_date": "2026-07-27",
+      "entry_time": "10:03 ET",
+      "entry_price": 14.85,
+      "shares": 951,
+      "stop": 14.84,
+      "trail_dist": 0.01,
+      "peak": 14.85,
+      "orb_width": 0.02,
+      "cost": 14122.35,
+      "vol_ratio": 1.78
+    },
+    {
+      "ticker": "ETN",
+      "side": "short",
+      "entry_date": "2026-07-27",
+      "entry_time": "10:03 ET",
+      "entry_price": 397.03,
+      "shares": 24,
+      "stop": 401.51,
+      "trail_dist": 4.48,
+      "peak": 397.03,
+      "orb_width": 8.96,
+      "cost": 9528.72,
+      "vol_ratio": 1.51
+    },
+    {
+      "ticker": "Q",
+      "side": "short",
+      "entry_date": "2026-07-27",
+      "entry_time": "10:03 ET",
+      "entry_price": 132.69,
+      "shares": 52,
+      "stop": 134.34,
+      "trail_dist": 1.65,
+      "peak": 132.69,
+      "orb_width": 3.3,
+      "cost": 6899.88,
+      "vol_ratio": 1.28
+    },
+    {
+      "ticker": "PWR",
+      "side": "short",
+      "entry_date": "2026-07-27",
+      "entry_time": "10:03 ET",
+      "entry_price": 621.44,
+      "shares": 7,
+      "stop": 628.61,
+      "trail_dist": 7.17,
+      "peak": 621.44,
+      "orb_width": 14.34,
+      "cost": 4350.08,
+      "vol_ratio": 1.27
+    },
+    {
+      "ticker": "TER",
+      "side": "short",
+      "entry_date": "2026-07-27",
+      "entry_time": "10:03 ET",
+      "entry_price": 337.235,
+      "shares": 10,
+      "stop": 344.8975,
+      "trail_dist": 7.6625,
+      "peak": 337.235,
+      "orb_width": 15.325,
+      "cost": 3372.35,
+      "vol_ratio": 1.2
+    }
+  ],
   "closed_today": [],
   "all_closed": [
     {
@@ -34441,8 +34540,8 @@
     },
     "ABT": {
       "high": 104.46,
-      "low": 103.06,
-      "width": 1.4
+      "low": 103.375,
+      "width": 1.085
     },
     "ABBV": {
       "high": 262.1,
@@ -34915,9 +35014,9 @@
       "width": 2.835
     },
     "CRL": {
-      "high": 227.03,
+      "high": 227.49,
       "low": 222.68,
-      "width": 4.35
+      "width": 4.81
     },
     "SCHW": {
       "high": 104.03,
@@ -35231,8 +35330,8 @@
     },
     "DD": {
       "high": 139.83,
-      "low": 137.7,
-      "width": 2.13
+      "low": 138.2024,
+      "width": 1.6276
     },
     "ETN": {
       "high": 407.66,
@@ -35920,9 +36019,9 @@
       "width": 1.87
     },
     "MPC": {
-      "high": 311.76,
+      "high": 312.0,
       "low": 305.39,
-      "width": 6.37
+      "width": 6.61
     },
     "MAR": {
       "high": 384.2,
@@ -36440,9 +36539,9 @@
       "width": 6.6
     },
     "SPGI": {
-      "high": 436.3,
+      "high": 436.5,
       "low": 431.8,
-      "width": 4.5
+      "width": 4.7
     },
     "CRM": {
       "high": 171.76,
@@ -36685,9 +36784,9 @@
       "width": 0.825
     },
     "TFC": {
-      "high": 52.74,
+      "high": 52.75,
       "low": 52.03,
-      "width": 0.71
+      "width": 0.72
     },
     "TYL": {
       "high": 309.59,
@@ -36885,9 +36984,9 @@
       "width": 27.59
     },
     "WY": {
-      "high": 24.32,
+      "high": 24.33,
       "low": 23.88,
-      "width": 0.44
+      "width": 0.45
     },
     "WSM": {
       "high": 233.165,
@@ -36941,8 +37040,8 @@
     },
     "ZTS": {
       "high": 76.7,
-      "low": 75.35,
-      "width": 1.35
+      "low": 75.53,
+      "width": 1.17
     }
   },
   "nav_history": {
@@ -73029,6 +73128,72 @@
       "exits": [],
       "portfolio_value": 95966.69,
       "note": "$95,967 | cash=$95,967 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-27",
+      "time": "10:03 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "CIEN",
+          "side": "short",
+          "price": 373.51,
+          "shares": 77,
+          "stop": 379.75,
+          "trail_dist": 6.24
+        },
+        {
+          "ticker": "BEN",
+          "side": "long",
+          "price": 33.55,
+          "shares": 600,
+          "stop": 33.13,
+          "trail_dist": 0.4175
+        },
+        {
+          "ticker": "AES",
+          "side": "long",
+          "price": 14.85,
+          "shares": 951,
+          "stop": 14.84,
+          "trail_dist": 0.01
+        },
+        {
+          "ticker": "ETN",
+          "side": "short",
+          "price": 397.03,
+          "shares": 24,
+          "stop": 401.51,
+          "trail_dist": 4.48
+        },
+        {
+          "ticker": "Q",
+          "side": "short",
+          "price": 132.69,
+          "shares": 52,
+          "stop": 134.34,
+          "trail_dist": 1.65
+        },
+        {
+          "ticker": "PWR",
+          "side": "short",
+          "price": 621.44,
+          "shares": 7,
+          "stop": 628.61,
+          "trail_dist": 7.17
+        },
+        {
+          "ticker": "TER",
+          "side": "short",
+          "price": 337.23,
+          "shares": 10,
+          "stop": 344.9,
+          "trail_dist": 7.6625
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 95966.69,
+      "note": "$95,967 | cash=$8,803 | open=7 | closed today=0 | day PnL=$+0"
     }
   ]
 }
