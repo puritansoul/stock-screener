@@ -1,5 +1,5 @@
 {
-  "capital": 415.01,
+  "capital": 3757.93,
   "open_positions": [
     {
       "ticker": "CIEN",
@@ -78,9 +78,9 @@
       "entry_time": "10:03 ET",
       "entry_price": 337.235,
       "shares": 10,
-      "stop": 338.3825,
+      "stop": 337.8825,
       "trail_dist": 7.6625,
-      "peak": 330.72,
+      "peak": 330.22,
       "orb_width": 15.325,
       "cost": 3372.35,
       "vol_ratio": 1.2
@@ -114,29 +114,15 @@
       "vol_ratio": 3.01
     },
     {
-      "ticker": "MDLZ",
-      "side": "short",
-      "entry_date": "2026-07-27",
-      "entry_time": "10:08 ET",
-      "entry_price": 60.08,
-      "shares": 56,
-      "stop": 60.465,
-      "trail_dist": 0.385,
-      "peak": 60.08,
-      "orb_width": 0.77,
-      "cost": 3364.48,
-      "vol_ratio": 2.79
-    },
-    {
       "ticker": "HUBB",
       "side": "short",
       "entry_date": "2026-07-27",
       "entry_time": "10:08 ET",
       "entry_price": 483.66,
       "shares": 4,
-      "stop": 487.455,
+      "stop": 486.685,
       "trail_dist": 4.745,
-      "peak": 482.71,
+      "peak": 481.94,
       "orb_width": 9.49,
       "cost": 1934.64,
       "vol_ratio": 1.88
@@ -148,9 +134,9 @@
       "entry_time": "10:08 ET",
       "entry_price": 739.95,
       "shares": 2,
-      "stop": 742.6625,
+      "stop": 741.4925,
       "trail_dist": 7.6625,
-      "peak": 735.0,
+      "peak": 733.83,
       "orb_width": 15.325,
       "cost": 1479.9,
       "vol_ratio": 1.69
@@ -162,9 +148,9 @@
       "entry_time": "10:08 ET",
       "entry_price": 46.28,
       "shares": 29,
-      "stop": 46.11,
+      "stop": 46.12,
       "trail_dist": 0.26,
-      "peak": 46.37,
+      "peak": 46.38,
       "orb_width": 0.5199,
       "cost": 1342.12,
       "vol_ratio": 1.55
@@ -176,9 +162,9 @@
       "entry_time": "10:08 ET",
       "entry_price": 219.99,
       "shares": 4,
-      "stop": 217.0075,
+      "stop": 217.3575,
       "trail_dist": 3.2525,
-      "peak": 220.26,
+      "peak": 220.61,
       "orb_width": 6.505,
       "cost": 879.96,
       "vol_ratio": 1.55
@@ -190,9 +176,9 @@
       "entry_time": "10:08 ET",
       "entry_price": 171.99,
       "shares": 4,
-      "stop": 172.6842,
+      "stop": 172.4825,
       "trail_dist": 0.8225,
-      "peak": 171.8617,
+      "peak": 171.66,
       "orb_width": 1.645,
       "cost": 687.96,
       "vol_ratio": 1.48
@@ -204,9 +190,9 @@
       "entry_time": "10:11 ET",
       "entry_price": 126.725,
       "shares": 3,
-      "stop": 126.31,
+      "stop": 126.38,
       "trail_dist": 0.42,
-      "peak": 126.73,
+      "peak": 126.8,
       "orb_width": 0.84,
       "cost": 380.17,
       "vol_ratio": 1.38
@@ -232,9 +218,9 @@
       "entry_time": "10:13 ET",
       "entry_price": 131.6,
       "shares": 2,
-      "stop": 130.57,
+      "stop": 130.91,
       "trail_dist": 1.03,
-      "peak": 131.6,
+      "peak": 131.94,
       "orb_width": 2.06,
       "cost": 263.2,
       "vol_ratio": 1.98
@@ -246,9 +232,9 @@
       "entry_time": "10:13 ET",
       "entry_price": 126.0,
       "shares": 1,
-      "stop": 129.0149,
+      "stop": 128.8699,
       "trail_dist": 3.0149,
-      "peak": 126.0,
+      "peak": 125.855,
       "orb_width": 6.0298,
       "cost": 126.0,
       "vol_ratio": 1.69
@@ -260,9 +246,9 @@
       "entry_time": "10:13 ET",
       "entry_price": 54.89,
       "shares": 2,
-      "stop": 54.4775,
+      "stop": 54.5475,
       "trail_dist": 0.4125,
-      "peak": 54.89,
+      "peak": 54.96,
       "orb_width": 0.825,
       "cost": 109.78,
       "vol_ratio": 1.42
@@ -287,6 +273,25 @@
       "pnl": -9.51,
       "exit_reason": "trailing stop",
       "exit_time": "10:08 ET"
+    },
+    {
+      "ticker": "MDLZ",
+      "side": "short",
+      "entry_date": "2026-07-27",
+      "entry_time": "10:08 ET",
+      "entry_price": 60.08,
+      "shares": 56,
+      "stop": 60.465,
+      "trail_dist": 0.385,
+      "peak": 60.08,
+      "orb_width": 0.77,
+      "cost": 3364.48,
+      "vol_ratio": 2.79,
+      "exit_date": "2026-07-27",
+      "exit_price": 60.465,
+      "pnl": -21.56,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:16 ET"
     }
   ],
   "all_closed": [
@@ -35023,8 +35028,8 @@
     },
     "BRK-B": {
       "high": 498.66,
-      "low": 495.3534,
-      "width": 3.3066
+      "low": 495.34,
+      "width": 3.32
     },
     "BBY": {
       "high": 87.58,
@@ -35103,8 +35108,8 @@
     },
     "BLDR": {
       "high": 75.715,
-      "low": 73.005,
-      "width": 2.71
+      "low": 72.99,
+      "width": 2.725
     },
     "BG": {
       "high": 120.245,
@@ -35148,8 +35153,8 @@
     },
     "CARR": {
       "high": 69.86,
-      "low": 68.95,
-      "width": 0.91
+      "low": 68.93,
+      "width": 0.93
     },
     "CVNA": {
       "high": 64.8,
@@ -35357,9 +35362,9 @@
       "width": 5.07
     },
     "CPAY": {
-      "high": 378.05,
+      "high": 378.12,
       "low": 374.74,
-      "width": 3.31
+      "width": 3.38
     },
     "CTVA": {
       "high": 88.98,
@@ -35523,8 +35528,8 @@
     },
     "ETN": {
       "high": 407.66,
-      "low": 398.7,
-      "width": 8.96
+      "low": 398.54,
+      "width": 9.12
     },
     "EBAY": {
       "high": 110.49,
@@ -35838,8 +35843,8 @@
     },
     "GS": {
       "high": 1088.5,
-      "low": 1077.25,
-      "width": 11.25
+      "low": 1077.13,
+      "width": 11.37
     },
     "HAL": {
       "high": 33.3143,
@@ -35888,8 +35893,8 @@
     },
     "HD": {
       "high": 341.89,
-      "low": 337.84,
-      "width": 4.05
+      "low": 337.715,
+      "width": 4.175
     },
     "HONA": {
       "high": 209.33,
@@ -36028,8 +36033,8 @@
     },
     "IRM": {
       "high": 132.5298,
-      "low": 126.5,
-      "width": 6.0298
+      "low": 126.48,
+      "width": 6.0498
     },
     "JBHT": {
       "high": 289.245,
@@ -36067,9 +36072,9 @@
       "width": 2.55
     },
     "KVUE": {
-      "high": 19.47,
+      "high": 19.475,
       "low": 19.28,
-      "width": 0.19
+      "width": 0.195
     },
     "KDP": {
       "high": 29.95,
@@ -36518,8 +36523,8 @@
     },
     "PH": {
       "high": 998.97,
-      "low": 988.1275,
-      "width": 10.8425
+      "low": 987.92,
+      "width": 11.05
     },
     "PAYX": {
       "high": 115.73,
@@ -37245,7 +37250,7 @@
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
-    "2026-07-27": 96678.98
+    "2026-07-27": 96475.02
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -73533,6 +73538,23 @@
       "exits": [],
       "portfolio_value": 96678.98,
       "note": "$96,679 | cash=$415 | open=19 | closed today=1 | day PnL=$-10"
+    },
+    {
+      "date": "2026-07-27",
+      "time": "10:15 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "MDLZ",
+          "side": "short",
+          "exit_price": 60.47,
+          "pnl": -21.56,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96475.02,
+      "note": "$96,475 | cash=$3,758 | open=18 | closed today=2 | day PnL=$-31"
     }
   ]
 }
