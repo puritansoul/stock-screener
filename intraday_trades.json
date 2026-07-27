@@ -1,5 +1,5 @@
 {
-  "capital": 630.05,
+  "capital": 448.65,
   "open_positions": [
     {
       "ticker": "ADSK",
@@ -498,25 +498,11 @@
       "entry_time": "11:07 ET",
       "entry_price": 117.78,
       "shares": 2,
-      "stop": 118.2625,
+      "stop": 118.2275,
       "trail_dist": 1.0075,
-      "peak": 117.255,
+      "peak": 117.22,
       "orb_width": 2.015,
       "cost": 235.56,
-      "vol_ratio": 1.64
-    },
-    {
-      "ticker": "BMY",
-      "side": "long",
-      "entry_date": "2026-07-27",
-      "entry_time": "11:07 ET",
-      "entry_price": 63.13,
-      "shares": 2,
-      "stop": 62.8607,
-      "trail_dist": 0.3193,
-      "peak": 63.18,
-      "orb_width": 0.6386,
-      "cost": 126.26,
       "vol_ratio": 1.64
     },
     {
@@ -792,9 +778,9 @@
       "entry_time": "11:25 ET",
       "entry_price": 172.255,
       "shares": 2,
-      "stop": 172.7225,
+      "stop": 172.6825,
       "trail_dist": 0.8225,
-      "peak": 171.9,
+      "peak": 171.86,
       "orb_width": 1.645,
       "cost": 344.51,
       "vol_ratio": 1.46
@@ -904,9 +890,9 @@
       "entry_time": "11:44 ET",
       "entry_price": 225.75,
       "shares": 3,
-      "stop": 227.205,
+      "stop": 227.06,
       "trail_dist": 2.395,
-      "peak": 224.81,
+      "peak": 224.665,
       "orb_width": 4.79,
       "cost": 677.25,
       "vol_ratio": 3.38
@@ -946,9 +932,9 @@
       "entry_time": "11:44 ET",
       "entry_price": 74.22,
       "shares": 3,
-      "stop": 74.3725,
+      "stop": 74.3675,
       "trail_dist": 0.2475,
-      "peak": 74.125,
+      "peak": 74.12,
       "orb_width": 0.495,
       "cost": 222.66,
       "vol_ratio": 1.41
@@ -960,9 +946,9 @@
       "entry_time": "11:44 ET",
       "entry_price": 92.36,
       "shares": 2,
-      "stop": 92.575,
+      "stop": 92.485,
       "trail_dist": 0.375,
-      "peak": 92.2,
+      "peak": 92.11,
       "orb_width": 0.75,
       "cost": 184.72,
       "vol_ratio": 1.36
@@ -1002,9 +988,9 @@
       "entry_time": "11:49 ET",
       "entry_price": 27.0105,
       "shares": 65,
-      "stop": 26.75,
+      "stop": 26.7825,
       "trail_dist": 0.2675,
-      "peak": 27.0175,
+      "peak": 27.05,
       "orb_width": 0.535,
       "cost": 1755.68,
       "vol_ratio": 3.21
@@ -1100,12 +1086,40 @@
       "entry_time": "11:52 ET",
       "entry_price": 229.14,
       "shares": 1,
-      "stop": 226.95,
+      "stop": 227.09,
       "trail_dist": 2.19,
-      "peak": 229.14,
+      "peak": 229.28,
       "orb_width": 4.38,
       "cost": 229.14,
       "vol_ratio": 1.43
+    },
+    {
+      "ticker": "NWS",
+      "side": "long",
+      "entry_date": "2026-07-27",
+      "entry_time": "11:54 ET",
+      "entry_price": 30.93,
+      "shares": 7,
+      "stop": 30.805,
+      "trail_dist": 0.125,
+      "peak": 30.93,
+      "orb_width": 0.25,
+      "cost": 216.51,
+      "vol_ratio": 1.53
+    },
+    {
+      "ticker": "ORLY",
+      "side": "long",
+      "entry_date": "2026-07-27",
+      "entry_time": "11:54 ET",
+      "entry_price": 90.605,
+      "shares": 1,
+      "stop": 90.0137,
+      "trail_dist": 0.5913,
+      "peak": 90.605,
+      "orb_width": 1.1825,
+      "cost": 90.61,
+      "vol_ratio": 1.37
     }
   ],
   "closed_today": [
@@ -2362,6 +2376,25 @@
       "pnl": -1.95,
       "exit_reason": "trailing stop",
       "exit_time": "11:49 ET"
+    },
+    {
+      "ticker": "BMY",
+      "side": "long",
+      "entry_date": "2026-07-27",
+      "entry_time": "11:07 ET",
+      "entry_price": 63.13,
+      "shares": 2,
+      "stop": 62.8607,
+      "trail_dist": 0.3193,
+      "peak": 63.18,
+      "orb_width": 0.6386,
+      "cost": 126.26,
+      "vol_ratio": 1.64,
+      "exit_date": "2026-07-27",
+      "exit_price": 62.8607,
+      "pnl": -0.54,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:54 ET"
     }
   ],
   "all_closed": [
@@ -36852,9 +36885,9 @@
       "width": 2.01
     },
     "AKAM": {
-      "high": 116.88,
+      "high": 117.8199,
       "low": 113.785,
-      "width": 3.095
+      "width": 4.0349
     },
     "ALB": {
       "high": 117.185,
@@ -39320,7 +39353,7 @@
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
-    "2026-07-27": 96847.75
+    "2026-07-27": 96861.57
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -77480,6 +77513,40 @@
       "exits": [],
       "portfolio_value": 96847.75,
       "note": "$96,848 | cash=$630 | open=79 | closed today=66 | day PnL=$+631"
+    },
+    {
+      "date": "2026-07-27",
+      "time": "11:54 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "NWS",
+          "side": "long",
+          "price": 30.93,
+          "shares": 7,
+          "stop": 30.81,
+          "trail_dist": 0.125
+        },
+        {
+          "ticker": "ORLY",
+          "side": "long",
+          "price": 90.61,
+          "shares": 1,
+          "stop": 90.01,
+          "trail_dist": 0.5913
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "BMY",
+          "side": "long",
+          "exit_price": 62.86,
+          "pnl": -0.54,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96861.57,
+      "note": "$96,862 | cash=$449 | open=80 | closed today=67 | day PnL=$+630"
     }
   ]
 }
