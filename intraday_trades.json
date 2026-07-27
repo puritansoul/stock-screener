@@ -1,5 +1,5 @@
 {
-  "capital": 147.53,
+  "capital": 1485.01,
   "open_positions": [
     {
       "ticker": "CIEN",
@@ -8,9 +8,9 @@
       "entry_time": "10:03 ET",
       "entry_price": 373.51,
       "shares": 77,
-      "stop": 374.24,
+      "stop": 373.605,
       "trail_dist": 6.24,
-      "peak": 368.0,
+      "peak": 367.365,
       "orb_width": 12.48,
       "cost": 28760.27,
       "vol_ratio": 1.92
@@ -50,9 +50,9 @@
       "entry_time": "10:03 ET",
       "entry_price": 132.69,
       "shares": 52,
-      "stop": 132.28,
+      "stop": 131.8101,
       "trail_dist": 1.65,
-      "peak": 130.63,
+      "peak": 130.1601,
       "orb_width": 3.3,
       "cost": 6899.88,
       "vol_ratio": 1.28
@@ -78,9 +78,9 @@
       "entry_time": "10:03 ET",
       "entry_price": 337.235,
       "shares": 10,
-      "stop": 334.8425,
+      "stop": 332.8925,
       "trail_dist": 7.6625,
-      "peak": 327.18,
+      "peak": 325.23,
       "orb_width": 15.325,
       "cost": 3372.35,
       "vol_ratio": 1.2
@@ -140,20 +140,6 @@
       "orb_width": 15.325,
       "cost": 1479.9,
       "vol_ratio": 1.69
-    },
-    {
-      "ticker": "MGM",
-      "side": "long",
-      "entry_date": "2026-07-27",
-      "entry_time": "10:08 ET",
-      "entry_price": 46.28,
-      "shares": 29,
-      "stop": 46.12,
-      "trail_dist": 0.26,
-      "peak": 46.38,
-      "orb_width": 0.5199,
-      "cost": 1342.12,
-      "vol_ratio": 1.55
     },
     {
       "ticker": "ADSK",
@@ -260,9 +246,9 @@
       "entry_time": "10:18 ET",
       "entry_price": 263.005,
       "shares": 4,
-      "stop": 261.94,
+      "stop": 262.345,
       "trail_dist": 2.62,
-      "peak": 264.56,
+      "peak": 264.965,
       "orb_width": 5.24,
       "cost": 1052.02,
       "vol_ratio": 2.47
@@ -330,9 +316,9 @@
       "entry_time": "10:18 ET",
       "entry_price": 50.85,
       "shares": 3,
-      "stop": 50.5012,
+      "stop": 50.5512,
       "trail_dist": 0.4088,
-      "peak": 50.91,
+      "peak": 50.96,
       "orb_width": 0.8175,
       "cost": 152.55,
       "vol_ratio": 1.42
@@ -400,9 +386,9 @@
       "entry_time": "10:23 ET",
       "entry_price": 24.7601,
       "shares": 4,
-      "stop": 24.651,
+      "stop": 24.6859,
       "trail_dist": 0.1091,
-      "peak": 24.7601,
+      "peak": 24.795,
       "orb_width": 0.2183,
       "cost": 99.04,
       "vol_ratio": 1.33
@@ -428,9 +414,9 @@
       "entry_time": "10:28 ET",
       "entry_price": 30.26,
       "shares": 2,
-      "stop": 30.38,
+      "stop": 30.365,
       "trail_dist": 0.12,
-      "peak": 30.26,
+      "peak": 30.245,
       "orb_width": 0.24,
       "cost": 60.52,
       "vol_ratio": 1.95
@@ -493,6 +479,25 @@
       "pnl": -0.08,
       "exit_reason": "trailing stop",
       "exit_time": "10:21 ET"
+    },
+    {
+      "ticker": "MGM",
+      "side": "long",
+      "entry_date": "2026-07-27",
+      "entry_time": "10:08 ET",
+      "entry_price": 46.28,
+      "shares": 29,
+      "stop": 46.12,
+      "trail_dist": 0.26,
+      "peak": 46.38,
+      "orb_width": 0.5199,
+      "cost": 1342.12,
+      "vol_ratio": 1.55,
+      "exit_date": "2026-07-27",
+      "exit_price": 46.12,
+      "pnl": -4.64,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:31 ET"
     }
   ],
   "all_closed": [
@@ -36242,11 +36247,6 @@
       "low": 283.62,
       "width": 5.625
     },
-    "JBL": {
-      "high": 315.115,
-      "low": 310.52,
-      "width": 4.595
-    },
     "JKHY": {
       "high": 152.64,
       "low": 150.84,
@@ -37451,7 +37451,7 @@
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
-    "2026-07-27": 96665.83
+    "2026-07-27": 96796.12
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -73925,6 +73925,23 @@
       "exits": [],
       "portfolio_value": 96665.83,
       "note": "$96,666 | cash=$148 | open=31 | closed today=3 | day PnL=$-31"
+    },
+    {
+      "date": "2026-07-27",
+      "time": "10:30 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "MGM",
+          "side": "long",
+          "exit_price": 46.12,
+          "pnl": -4.64,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96796.12,
+      "note": "$96,796 | cash=$1,485 | open=30 | closed today=4 | day PnL=$-36"
     }
   ]
 }
