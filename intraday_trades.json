@@ -344,9 +344,9 @@
       "entry_time": "11:12 ET",
       "entry_price": 127.775,
       "shares": 3,
-      "stop": 126.64,
+      "stop": 126.645,
       "trail_dist": 1.24,
-      "peak": 127.88,
+      "peak": 127.885,
       "orb_width": 2.48,
       "cost": 383.33,
       "vol_ratio": 1.28
@@ -414,9 +414,9 @@
       "entry_time": "11:25 ET",
       "entry_price": 195.38,
       "shares": 3,
-      "stop": 193.895,
+      "stop": 193.915,
       "trail_dist": 2.235,
-      "peak": 196.13,
+      "peak": 196.15,
       "orb_width": 4.47,
       "cost": 586.14,
       "vol_ratio": 1.48
@@ -596,9 +596,9 @@
       "entry_time": "11:49 ET",
       "entry_price": 63.71,
       "shares": 9,
-      "stop": 63.8369,
+      "stop": 63.8119,
       "trail_dist": 0.2919,
-      "peak": 63.545,
+      "peak": 63.52,
       "orb_width": 0.5839,
       "cost": 573.39,
       "vol_ratio": 1.43
@@ -736,9 +736,9 @@
       "entry_time": "11:59 ET",
       "entry_price": 54.86,
       "shares": 8,
-      "stop": 54.7875,
+      "stop": 54.7925,
       "trail_dist": 0.4125,
-      "peak": 55.2,
+      "peak": 55.205,
       "orb_width": 0.825,
       "cost": 438.88,
       "vol_ratio": 1.21
@@ -1114,9 +1114,9 @@
       "entry_time": "12:38 ET",
       "entry_price": 17.225,
       "shares": 45,
-      "stop": 17.34,
+      "stop": 17.3068,
       "trail_dist": 0.115,
-      "peak": 17.225,
+      "peak": 17.1918,
       "orb_width": 0.23,
       "cost": 775.13,
       "vol_ratio": 5.96
@@ -38226,6 +38226,11 @@
       "low": 52.27,
       "width": 1.33
     },
+    "CMI": {
+      "high": 671.34,
+      "low": 657.22,
+      "width": 14.1201
+    },
     "CVS": {
       "high": 107.8371,
       "low": 105.59,
@@ -38996,6 +39001,11 @@
       "low": 178.57,
       "width": 2.19
     },
+    "LMT": {
+      "high": 587.99,
+      "low": 578.48,
+      "width": 9.51
+    },
     "L": {
       "high": 119.02,
       "low": 117.2025,
@@ -39611,11 +39621,6 @@
       "low": 48.79,
       "width": 0.9395
     },
-    "SNA": {
-      "high": 405.825,
-      "low": 403.7675,
-      "width": 2.0575
-    },
     "SOLV": {
       "high": 80.195,
       "low": 78.77,
@@ -40065,7 +40070,7 @@
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
-    "2026-07-27": 96711.81
+    "2026-07-27": 96687.88
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -79019,6 +79024,15 @@
       ],
       "portfolio_value": 96711.81,
       "note": "$96,712 | cash=$1,842 | open=80 | closed today=105 | day PnL=$+596"
+    },
+    {
+      "date": "2026-07-27",
+      "time": "12:40 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 96687.88,
+      "note": "$96,688 | cash=$1,842 | open=80 | closed today=105 | day PnL=$+596"
     }
   ]
 }
