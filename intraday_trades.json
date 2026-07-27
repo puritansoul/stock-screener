@@ -1,48 +1,6 @@
 {
-  "capital": 416.87,
+  "capital": 35460.19,
   "open_positions": [
-    {
-      "ticker": "CIEN",
-      "side": "short",
-      "entry_date": "2026-07-27",
-      "entry_time": "10:03 ET",
-      "entry_price": 373.51,
-      "shares": 77,
-      "stop": 366.34,
-      "trail_dist": 6.24,
-      "peak": 360.1,
-      "orb_width": 12.48,
-      "cost": 28760.27,
-      "vol_ratio": 1.92
-    },
-    {
-      "ticker": "ETN",
-      "side": "short",
-      "entry_date": "2026-07-27",
-      "entry_time": "10:03 ET",
-      "entry_price": 397.03,
-      "shares": 24,
-      "stop": 392.44,
-      "trail_dist": 4.48,
-      "peak": 387.96,
-      "orb_width": 8.96,
-      "cost": 9528.72,
-      "vol_ratio": 1.51
-    },
-    {
-      "ticker": "Q",
-      "side": "short",
-      "entry_date": "2026-07-27",
-      "entry_time": "10:03 ET",
-      "entry_price": 132.69,
-      "shares": 52,
-      "stop": 130.435,
-      "trail_dist": 1.65,
-      "peak": 128.785,
-      "orb_width": 3.3,
-      "cost": 6899.88,
-      "vol_ratio": 1.28
-    },
     {
       "ticker": "PWR",
       "side": "short",
@@ -56,20 +14,6 @@
       "orb_width": 14.34,
       "cost": 4350.08,
       "vol_ratio": 1.27
-    },
-    {
-      "ticker": "TER",
-      "side": "short",
-      "entry_date": "2026-07-27",
-      "entry_time": "10:03 ET",
-      "entry_price": 337.235,
-      "shares": 10,
-      "stop": 327.3425,
-      "trail_dist": 7.6625,
-      "peak": 319.68,
-      "orb_width": 15.325,
-      "cost": 3372.35,
-      "vol_ratio": 1.2
     },
     {
       "ticker": "BALL",
@@ -232,9 +176,9 @@
       "entry_time": "10:18 ET",
       "entry_price": 149.87,
       "shares": 5,
-      "stop": 149.49,
+      "stop": 149.57,
       "trail_dist": 1.09,
-      "peak": 150.58,
+      "peak": 150.66,
       "orb_width": 2.18,
       "cost": 749.35,
       "vol_ratio": 2.29
@@ -246,26 +190,12 @@
       "entry_time": "10:18 ET",
       "entry_price": 221.26,
       "shares": 2,
-      "stop": 222.5742,
+      "stop": 222.5712,
       "trail_dist": 1.3862,
-      "peak": 221.188,
+      "peak": 221.185,
       "orb_width": 2.7725,
       "cost": 442.52,
       "vol_ratio": 1.95
-    },
-    {
-      "ticker": "HPE",
-      "side": "short",
-      "entry_date": "2026-07-27",
-      "entry_time": "10:18 ET",
-      "entry_price": 47.28,
-      "shares": 9,
-      "stop": 47.1,
-      "trail_dist": 0.705,
-      "peak": 46.395,
-      "orb_width": 1.41,
-      "cost": 425.52,
-      "vol_ratio": 1.79
     },
     {
       "ticker": "FOX",
@@ -350,20 +280,6 @@
       "orb_width": 6.355,
       "cost": 336.7,
       "vol_ratio": 3.11
-    },
-    {
-      "ticker": "OTIS",
-      "side": "long",
-      "entry_date": "2026-07-27",
-      "entry_time": "10:33 ET",
-      "entry_price": 73.36,
-      "shares": 5,
-      "stop": 73.465,
-      "trail_dist": 0.37,
-      "peak": 73.835,
-      "orb_width": 0.74,
-      "cost": 366.8,
-      "vol_ratio": 2.26
     },
     {
       "ticker": "BRO",
@@ -652,9 +568,9 @@
       "entry_time": "10:48 ET",
       "entry_price": 407.385,
       "shares": 1,
-      "stop": 410.825,
+      "stop": 410.66,
       "trail_dist": 3.44,
-      "peak": 407.385,
+      "peak": 407.22,
       "orb_width": 6.88,
       "cost": 407.39,
       "vol_ratio": 2.35
@@ -714,6 +630,20 @@
       "orb_width": 1.135,
       "cost": 122.45,
       "vol_ratio": 1.37
+    },
+    {
+      "ticker": "PKG",
+      "side": "short",
+      "entry_date": "2026-07-27",
+      "entry_time": "10:50 ET",
+      "entry_price": 253.18,
+      "shares": 60,
+      "stop": 253.9737,
+      "trail_dist": 0.7937,
+      "peak": 253.18,
+      "orb_width": 1.5875,
+      "cost": 15190.8,
+      "vol_ratio": 1.42
     }
   ],
   "closed_today": [
@@ -1058,6 +988,120 @@
       "pnl": -1.23,
       "exit_reason": "trailing stop",
       "exit_time": "10:48 ET"
+    },
+    {
+      "ticker": "CIEN",
+      "side": "short",
+      "entry_date": "2026-07-27",
+      "entry_time": "10:03 ET",
+      "entry_price": 373.51,
+      "shares": 77,
+      "stop": 366.34,
+      "trail_dist": 6.24,
+      "peak": 360.1,
+      "orb_width": 12.48,
+      "cost": 28760.27,
+      "vol_ratio": 1.92,
+      "exit_date": "2026-07-27",
+      "exit_price": 366.34,
+      "pnl": 552.09,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:50 ET"
+    },
+    {
+      "ticker": "ETN",
+      "side": "short",
+      "entry_date": "2026-07-27",
+      "entry_time": "10:03 ET",
+      "entry_price": 397.03,
+      "shares": 24,
+      "stop": 392.44,
+      "trail_dist": 4.48,
+      "peak": 387.96,
+      "orb_width": 8.96,
+      "cost": 9528.72,
+      "vol_ratio": 1.51,
+      "exit_date": "2026-07-27",
+      "exit_price": 392.44,
+      "pnl": 110.16,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:50 ET"
+    },
+    {
+      "ticker": "Q",
+      "side": "short",
+      "entry_date": "2026-07-27",
+      "entry_time": "10:03 ET",
+      "entry_price": 132.69,
+      "shares": 52,
+      "stop": 130.435,
+      "trail_dist": 1.65,
+      "peak": 128.785,
+      "orb_width": 3.3,
+      "cost": 6899.88,
+      "vol_ratio": 1.28,
+      "exit_date": "2026-07-27",
+      "exit_price": 130.435,
+      "pnl": 117.26,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:50 ET"
+    },
+    {
+      "ticker": "TER",
+      "side": "short",
+      "entry_date": "2026-07-27",
+      "entry_time": "10:03 ET",
+      "entry_price": 337.235,
+      "shares": 10,
+      "stop": 327.3425,
+      "trail_dist": 7.6625,
+      "peak": 319.68,
+      "orb_width": 15.325,
+      "cost": 3372.35,
+      "vol_ratio": 1.2,
+      "exit_date": "2026-07-27",
+      "exit_price": 327.3425,
+      "pnl": 98.93,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:50 ET"
+    },
+    {
+      "ticker": "HPE",
+      "side": "short",
+      "entry_date": "2026-07-27",
+      "entry_time": "10:18 ET",
+      "entry_price": 47.28,
+      "shares": 9,
+      "stop": 47.1,
+      "trail_dist": 0.705,
+      "peak": 46.395,
+      "orb_width": 1.41,
+      "cost": 425.52,
+      "vol_ratio": 1.79,
+      "exit_date": "2026-07-27",
+      "exit_price": 47.1,
+      "pnl": 1.62,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:50 ET"
+    },
+    {
+      "ticker": "OTIS",
+      "side": "long",
+      "entry_date": "2026-07-27",
+      "entry_time": "10:33 ET",
+      "entry_price": 73.36,
+      "shares": 5,
+      "stop": 73.465,
+      "trail_dist": 0.37,
+      "peak": 73.835,
+      "orb_width": 0.74,
+      "cost": 366.8,
+      "vol_ratio": 2.26,
+      "exit_date": "2026-07-27",
+      "exit_price": 73.465,
+      "pnl": 0.53,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:50 ET"
     }
   ],
   "all_closed": [
@@ -37844,8 +37888,8 @@
     },
     "VRTX": {
       "high": 486.37,
-      "low": 478.66,
-      "width": 7.71
+      "low": 478.673,
+      "width": 7.697
     },
     "VRT": {
       "high": 296.71,
@@ -38016,7 +38060,7 @@
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
-    "2026-07-27": 96809.67
+    "2026-07-27": 96694.85
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -74958,6 +75002,67 @@
       ],
       "portfolio_value": 96809.67,
       "note": "$96,810 | cash=$417 | open=51 | closed today=18 | day PnL=$-239"
+    },
+    {
+      "date": "2026-07-27",
+      "time": "10:50 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "PKG",
+          "side": "short",
+          "price": 253.18,
+          "shares": 60,
+          "stop": 253.97,
+          "trail_dist": 0.7937
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "CIEN",
+          "side": "short",
+          "exit_price": 366.34,
+          "pnl": 552.09,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "ETN",
+          "side": "short",
+          "exit_price": 392.44,
+          "pnl": 110.16,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "Q",
+          "side": "short",
+          "exit_price": 130.44,
+          "pnl": 117.26,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "TER",
+          "side": "short",
+          "exit_price": 327.34,
+          "pnl": 98.93,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "HPE",
+          "side": "short",
+          "exit_price": 47.1,
+          "pnl": 1.62,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "OTIS",
+          "side": "long",
+          "exit_price": 73.47,
+          "pnl": 0.53,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96694.85,
+      "note": "$96,695 | cash=$35,460 | open=46 | closed today=24 | day PnL=$+641"
     }
   ]
 }
