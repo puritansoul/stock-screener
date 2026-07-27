@@ -1,5 +1,5 @@
 {
-  "capital": 188.9,
+  "capital": 418.31,
   "open_positions": [
     {
       "ticker": "ADSK",
@@ -8,9 +8,9 @@
       "entry_time": "10:08 ET",
       "entry_price": 219.99,
       "shares": 4,
-      "stop": 222.8875,
+      "stop": 223.1375,
       "trail_dist": 3.2525,
-      "peak": 226.14,
+      "peak": 226.39,
       "orb_width": 6.505,
       "cost": 879.96,
       "vol_ratio": 1.55
@@ -226,20 +226,6 @@
       "vol_ratio": 2.35
     },
     {
-      "ticker": "BG",
-      "side": "short",
-      "entry_date": "2026-07-27",
-      "entry_time": "11:07 ET",
-      "entry_price": 117.78,
-      "shares": 2,
-      "stop": 117.8325,
-      "trail_dist": 1.0075,
-      "peak": 116.825,
-      "orb_width": 2.015,
-      "cost": 235.56,
-      "vol_ratio": 1.64
-    },
-    {
       "ticker": "RMD",
       "side": "long",
       "entry_date": "2026-07-27",
@@ -260,9 +246,9 @@
       "entry_time": "11:10 ET",
       "entry_price": 17.705,
       "shares": 64,
-      "stop": 17.6825,
+      "stop": 17.6775,
       "trail_dist": 0.1225,
-      "peak": 17.56,
+      "peak": 17.555,
       "orb_width": 0.245,
       "cost": 1133.12,
       "vol_ratio": 1.53
@@ -350,20 +336,6 @@
       "orb_width": 0.73,
       "cost": 71.61,
       "vol_ratio": 1.43
-    },
-    {
-      "ticker": "TTD",
-      "side": "long",
-      "entry_date": "2026-07-27",
-      "entry_time": "11:20 ET",
-      "entry_price": 18.185,
-      "shares": 4,
-      "stop": 18.2375,
-      "trail_dist": 0.1975,
-      "peak": 18.435,
-      "orb_width": 0.395,
-      "cost": 72.74,
-      "vol_ratio": 1.22
     },
     {
       "ticker": "VEEV",
@@ -470,9 +442,9 @@
       "entry_time": "11:44 ET",
       "entry_price": 78.9729,
       "shares": 4,
-      "stop": 78.765,
+      "stop": 78.735,
       "trail_dist": 0.275,
-      "peak": 78.49,
+      "peak": 78.46,
       "orb_width": 0.55,
       "cost": 315.89,
       "vol_ratio": 1.54
@@ -1086,9 +1058,9 @@
       "entry_time": "13:03 ET",
       "entry_price": 114.135,
       "shares": 1,
-      "stop": 114.22,
+      "stop": 114.2114,
       "trail_dist": 0.34,
-      "peak": 113.88,
+      "peak": 113.8714,
       "orb_width": 0.68,
       "cost": 114.14,
       "vol_ratio": 1.43
@@ -1212,9 +1184,9 @@
       "entry_time": "13:20 ET",
       "entry_price": 148.635,
       "shares": 2,
-      "stop": 147.245,
+      "stop": 147.4249,
       "trail_dist": 2.395,
-      "peak": 149.64,
+      "peak": 149.8199,
       "orb_width": 4.79,
       "cost": 297.27,
       "vol_ratio": 1.4
@@ -1296,9 +1268,9 @@
       "entry_time": "13:35 ET",
       "entry_price": 126.785,
       "shares": 1,
-      "stop": 126.385,
+      "stop": 126.44,
       "trail_dist": 0.42,
-      "peak": 126.805,
+      "peak": 126.86,
       "orb_width": 0.84,
       "cost": 126.79,
       "vol_ratio": 2.42
@@ -1310,9 +1282,9 @@
       "entry_time": "13:35 ET",
       "entry_price": 83.785,
       "shares": 2,
-      "stop": 83.63,
+      "stop": 83.635,
       "trail_dist": 0.24,
-      "peak": 83.87,
+      "peak": 83.875,
       "orb_width": 0.48,
       "cost": 167.57,
       "vol_ratio": 1.72
@@ -1324,9 +1296,9 @@
       "entry_time": "13:35 ET",
       "entry_price": 111.11,
       "shares": 1,
-      "stop": 112.7248,
+      "stop": 112.6398,
       "trail_dist": 2.0248,
-      "peak": 110.7,
+      "peak": 110.615,
       "orb_width": 4.0495,
       "cost": 111.11,
       "vol_ratio": 1.7
@@ -1386,6 +1358,20 @@
       "orb_width": 0.9,
       "cost": 56.73,
       "vol_ratio": 1.29
+    },
+    {
+      "ticker": "PEG",
+      "side": "short",
+      "entry_date": "2026-07-27",
+      "entry_time": "13:45 ET",
+      "entry_price": 78.995,
+      "shares": 1,
+      "stop": 79.29,
+      "trail_dist": 0.295,
+      "peak": 78.995,
+      "orb_width": 0.59,
+      "cost": 79.0,
+      "vol_ratio": 1.21
     }
   ],
   "closed_today": [
@@ -3611,6 +3597,44 @@
       "pnl": 0.26,
       "exit_reason": "trailing stop",
       "exit_time": "13:40 ET"
+    },
+    {
+      "ticker": "BG",
+      "side": "short",
+      "entry_date": "2026-07-27",
+      "entry_time": "11:07 ET",
+      "entry_price": 117.78,
+      "shares": 2,
+      "stop": 117.8325,
+      "trail_dist": 1.0075,
+      "peak": 116.825,
+      "orb_width": 2.015,
+      "cost": 235.56,
+      "vol_ratio": 1.64,
+      "exit_date": "2026-07-27",
+      "exit_price": 117.8325,
+      "pnl": -0.1,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:45 ET"
+    },
+    {
+      "ticker": "TTD",
+      "side": "long",
+      "entry_date": "2026-07-27",
+      "entry_time": "11:20 ET",
+      "entry_price": 18.185,
+      "shares": 4,
+      "stop": 18.2375,
+      "trail_dist": 0.1975,
+      "peak": 18.435,
+      "orb_width": 0.395,
+      "cost": 72.74,
+      "vol_ratio": 1.22,
+      "exit_date": "2026-07-27",
+      "exit_price": 18.2375,
+      "pnl": 0.21,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:45 ET"
     }
   ],
   "all_closed": [
@@ -40370,6 +40394,11 @@
       "low": 189.11,
       "width": 4.47
     },
+    "VTR": {
+      "high": 100.74,
+      "low": 100.0,
+      "width": 0.74
+    },
     "VLTO": {
       "high": 93.015,
       "low": 92.31,
@@ -40564,7 +40593,7 @@
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
-    "2026-07-27": 96791.55
+    "2026-07-27": 96800.26
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -80107,6 +80136,39 @@
       "exits": [],
       "portfolio_value": 96791.55,
       "note": "$96,792 | cash=$189 | open=99 | closed today=117 | day PnL=$+576"
+    },
+    {
+      "date": "2026-07-27",
+      "time": "13:44 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "PEG",
+          "side": "short",
+          "price": 79.0,
+          "shares": 1,
+          "stop": 79.29,
+          "trail_dist": 0.295
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "BG",
+          "side": "short",
+          "exit_price": 117.83,
+          "pnl": -0.1,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "TTD",
+          "side": "long",
+          "exit_price": 18.24,
+          "pnl": 0.21,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96800.26,
+      "note": "$96,800 | cash=$418 | open=98 | closed today=119 | day PnL=$+576"
     }
   ]
 }
