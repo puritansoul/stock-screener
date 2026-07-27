@@ -1,5 +1,5 @@
 {
-  "capital": 448.65,
+  "capital": 2358.17,
   "open_positions": [
     {
       "ticker": "ADSK",
@@ -84,20 +84,6 @@
       "orb_width": 0.8175,
       "cost": 152.55,
       "vol_ratio": 1.42
-    },
-    {
-      "ticker": "AOS",
-      "side": "long",
-      "entry_date": "2026-07-27",
-      "entry_time": "10:18 ET",
-      "entry_price": 62.34,
-      "shares": 1,
-      "stop": 62.145,
-      "trail_dist": 0.545,
-      "peak": 62.69,
-      "orb_width": 1.09,
-      "cost": 62.34,
-      "vol_ratio": 1.23
     },
     {
       "ticker": "BRO",
@@ -498,9 +484,9 @@
       "entry_time": "11:07 ET",
       "entry_price": 117.78,
       "shares": 2,
-      "stop": 118.2275,
+      "stop": 118.1275,
       "trail_dist": 1.0075,
-      "peak": 117.22,
+      "peak": 117.12,
       "orb_width": 2.015,
       "cost": 235.56,
       "vol_ratio": 1.64
@@ -730,20 +716,6 @@
       "vol_ratio": 1.22
     },
     {
-      "ticker": "RSG",
-      "side": "long",
-      "entry_date": "2026-07-27",
-      "entry_time": "11:25 ET",
-      "entry_price": 219.625,
-      "shares": 8,
-      "stop": 219.8125,
-      "trail_dist": 0.7775,
-      "peak": 220.59,
-      "orb_width": 1.555,
-      "cost": 1757.0,
-      "vol_ratio": 5.59
-    },
-    {
       "ticker": "IR",
       "side": "short",
       "entry_date": "2026-07-27",
@@ -778,9 +750,9 @@
       "entry_time": "11:25 ET",
       "entry_price": 172.255,
       "shares": 2,
-      "stop": 172.6825,
+      "stop": 172.6525,
       "trail_dist": 0.8225,
-      "peak": 171.86,
+      "peak": 171.83,
       "orb_width": 1.645,
       "cost": 344.51,
       "vol_ratio": 1.46
@@ -946,9 +918,9 @@
       "entry_time": "11:44 ET",
       "entry_price": 92.36,
       "shares": 2,
-      "stop": 92.485,
+      "stop": 92.455,
       "trail_dist": 0.375,
-      "peak": 92.11,
+      "peak": 92.08,
       "orb_width": 0.75,
       "cost": 184.72,
       "vol_ratio": 1.36
@@ -968,29 +940,15 @@
       "vol_ratio": 1.34
     },
     {
-      "ticker": "IVZ",
-      "side": "short",
-      "entry_date": "2026-07-27",
-      "entry_time": "11:44 ET",
-      "entry_price": 29.74,
-      "shares": 3,
-      "stop": 29.855,
-      "trail_dist": 0.12,
-      "peak": 29.735,
-      "orb_width": 0.24,
-      "cost": 89.22,
-      "vol_ratio": 1.33
-    },
-    {
       "ticker": "BF-B",
       "side": "long",
       "entry_date": "2026-07-27",
       "entry_time": "11:49 ET",
       "entry_price": 27.0105,
       "shares": 65,
-      "stop": 26.7825,
+      "stop": 26.7875,
       "trail_dist": 0.2675,
-      "peak": 27.05,
+      "peak": 27.055,
       "orb_width": 0.535,
       "cost": 1755.68,
       "vol_ratio": 3.21
@@ -1016,9 +974,9 @@
       "entry_time": "11:49 ET",
       "entry_price": 219.435,
       "shares": 4,
-      "stop": 217.885,
+      "stop": 217.905,
       "trail_dist": 1.55,
-      "peak": 219.435,
+      "peak": 219.455,
       "orb_width": 3.1,
       "cost": 877.74,
       "vol_ratio": 1.68
@@ -1044,9 +1002,9 @@
       "entry_time": "11:49 ET",
       "entry_price": 63.71,
       "shares": 9,
-      "stop": 64.0019,
+      "stop": 63.9619,
       "trail_dist": 0.2919,
-      "peak": 63.71,
+      "peak": 63.67,
       "orb_width": 0.5839,
       "cost": 573.39,
       "vol_ratio": 1.43
@@ -1058,9 +1016,9 @@
       "entry_time": "11:49 ET",
       "entry_price": 213.725,
       "shares": 2,
-      "stop": 214.81,
+      "stop": 214.575,
       "trail_dist": 1.115,
-      "peak": 213.695,
+      "peak": 213.46,
       "orb_width": 2.23,
       "cost": 427.45,
       "vol_ratio": 1.42
@@ -1072,9 +1030,9 @@
       "entry_time": "11:52 ET",
       "entry_price": 112.63,
       "shares": 2,
-      "stop": 112.985,
+      "stop": 112.955,
       "trail_dist": 0.355,
-      "peak": 112.63,
+      "peak": 112.6,
       "orb_width": 0.71,
       "cost": 225.26,
       "vol_ratio": 1.52
@@ -1100,9 +1058,9 @@
       "entry_time": "11:54 ET",
       "entry_price": 30.93,
       "shares": 7,
-      "stop": 30.805,
+      "stop": 30.815,
       "trail_dist": 0.125,
-      "peak": 30.93,
+      "peak": 30.94,
       "orb_width": 0.25,
       "cost": 216.51,
       "vol_ratio": 1.53
@@ -2395,6 +2353,63 @@
       "pnl": -0.54,
       "exit_reason": "trailing stop",
       "exit_time": "11:54 ET"
+    },
+    {
+      "ticker": "AOS",
+      "side": "long",
+      "entry_date": "2026-07-27",
+      "entry_time": "10:18 ET",
+      "entry_price": 62.34,
+      "shares": 1,
+      "stop": 62.145,
+      "trail_dist": 0.545,
+      "peak": 62.69,
+      "orb_width": 1.09,
+      "cost": 62.34,
+      "vol_ratio": 1.23,
+      "exit_date": "2026-07-27",
+      "exit_price": 62.145,
+      "pnl": -0.2,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:57 ET"
+    },
+    {
+      "ticker": "RSG",
+      "side": "long",
+      "entry_date": "2026-07-27",
+      "entry_time": "11:25 ET",
+      "entry_price": 219.625,
+      "shares": 8,
+      "stop": 219.8125,
+      "trail_dist": 0.7775,
+      "peak": 220.59,
+      "orb_width": 1.555,
+      "cost": 1757.0,
+      "vol_ratio": 5.59,
+      "exit_date": "2026-07-27",
+      "exit_price": 219.8125,
+      "pnl": 1.5,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:57 ET"
+    },
+    {
+      "ticker": "IVZ",
+      "side": "short",
+      "entry_date": "2026-07-27",
+      "entry_time": "11:44 ET",
+      "entry_price": 29.74,
+      "shares": 3,
+      "stop": 29.855,
+      "trail_dist": 0.12,
+      "peak": 29.735,
+      "orb_width": 0.24,
+      "cost": 89.22,
+      "vol_ratio": 1.33,
+      "exit_date": "2026-07-27",
+      "exit_price": 29.855,
+      "pnl": -0.35,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:57 ET"
     }
   ],
   "all_closed": [
@@ -36885,9 +36900,9 @@
       "width": 2.01
     },
     "AKAM": {
-      "high": 117.8199,
+      "high": 116.88,
       "low": 113.785,
-      "width": 4.0349
+      "width": 3.095
     },
     "ALB": {
       "high": 117.185,
@@ -37959,11 +37974,6 @@
       "low": 140.4,
       "width": 1.505
     },
-    "HAS": {
-      "high": 90.4,
-      "low": 88.791,
-      "width": 1.609
-    },
     "HCA": {
       "high": 391.74,
       "low": 383.63,
@@ -38984,11 +38994,6 @@
       "low": 235.62,
       "width": 2.38
     },
-    "TPR": {
-      "high": 146.84,
-      "low": 144.04,
-      "width": 2.8
-    },
     "TRGP": {
       "high": 281.04,
       "low": 274.355,
@@ -39353,7 +39358,7 @@
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
-    "2026-07-27": 96861.57
+    "2026-07-27": 96831.4
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -77547,6 +77552,37 @@
       ],
       "portfolio_value": 96861.57,
       "note": "$96,862 | cash=$449 | open=80 | closed today=67 | day PnL=$+630"
+    },
+    {
+      "date": "2026-07-27",
+      "time": "11:56 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "AOS",
+          "side": "long",
+          "exit_price": 62.15,
+          "pnl": -0.2,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "RSG",
+          "side": "long",
+          "exit_price": 219.81,
+          "pnl": 1.5,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "IVZ",
+          "side": "short",
+          "exit_price": 29.86,
+          "pnl": -0.35,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96831.4,
+      "note": "$96,831 | cash=$2,358 | open=77 | closed today=70 | day PnL=$+631"
     }
   ]
 }
