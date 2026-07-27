@@ -1,5 +1,5 @@
 {
-  "capital": 2831.88,
+  "capital": 2472.82,
   "open_positions": [
     {
       "ticker": "ADSK",
@@ -268,20 +268,6 @@
       "vol_ratio": 1.5
     },
     {
-      "ticker": "JKHY",
-      "side": "long",
-      "entry_date": "2026-07-27",
-      "entry_time": "11:00 ET",
-      "entry_price": 153.845,
-      "shares": 16,
-      "stop": 153.95,
-      "trail_dist": 0.9,
-      "peak": 154.85,
-      "orb_width": 1.8,
-      "cost": 2461.52,
-      "vol_ratio": 1.82
-    },
-    {
       "ticker": "AJG",
       "side": "long",
       "entry_date": "2026-07-27",
@@ -498,9 +484,9 @@
       "entry_time": "11:15 ET",
       "entry_price": 79.37,
       "shares": 1,
-      "stop": 79.4,
+      "stop": 79.385,
       "trail_dist": 0.295,
-      "peak": 79.105,
+      "peak": 79.09,
       "orb_width": 0.59,
       "cost": 79.37,
       "vol_ratio": 1.45
@@ -632,20 +618,6 @@
       "vol_ratio": 1.48
     },
     {
-      "ticker": "GIS",
-      "side": "long",
-      "entry_date": "2026-07-27",
-      "entry_time": "11:34 ET",
-      "entry_price": 36.71,
-      "shares": 3,
-      "stop": 36.45,
-      "trail_dist": 0.32,
-      "peak": 36.77,
-      "orb_width": 0.64,
-      "cost": 110.13,
-      "vol_ratio": 1.46
-    },
-    {
       "ticker": "EBAY",
       "side": "long",
       "entry_date": "2026-07-27",
@@ -708,9 +680,9 @@
       "entry_time": "11:44 ET",
       "entry_price": 78.9729,
       "shares": 4,
-      "stop": 79.145,
+      "stop": 79.14,
       "trail_dist": 0.275,
-      "peak": 78.87,
+      "peak": 78.865,
       "orb_width": 0.55,
       "cost": 315.89,
       "vol_ratio": 1.54
@@ -722,9 +694,9 @@
       "entry_time": "11:44 ET",
       "entry_price": 74.22,
       "shares": 3,
-      "stop": 74.2975,
+      "stop": 74.2875,
       "trail_dist": 0.2475,
-      "peak": 74.05,
+      "peak": 74.04,
       "orb_width": 0.495,
       "cost": 222.66,
       "vol_ratio": 1.41
@@ -820,9 +792,9 @@
       "entry_time": "11:52 ET",
       "entry_price": 112.63,
       "shares": 2,
-      "stop": 112.705,
+      "stop": 112.685,
       "trail_dist": 0.355,
-      "peak": 112.35,
+      "peak": 112.33,
       "orb_width": 0.71,
       "cost": 225.26,
       "vol_ratio": 1.52
@@ -974,9 +946,9 @@
       "entry_time": "11:59 ET",
       "entry_price": 54.86,
       "shares": 8,
-      "stop": 54.5475,
+      "stop": 54.5575,
       "trail_dist": 0.4125,
-      "peak": 54.96,
+      "peak": 54.97,
       "orb_width": 0.825,
       "cost": 438.88,
       "vol_ratio": 1.21
@@ -1002,9 +974,9 @@
       "entry_time": "12:04 ET",
       "entry_price": 153.56,
       "shares": 2,
-      "stop": 152.3184,
+      "stop": 152.3284,
       "trail_dist": 1.4866,
-      "peak": 153.805,
+      "peak": 153.815,
       "orb_width": 2.9731,
       "cost": 307.12,
       "vol_ratio": 1.94
@@ -1064,6 +1036,48 @@
       "orb_width": 0.67,
       "cost": 402.53,
       "vol_ratio": 1.58
+    },
+    {
+      "ticker": "SPGI",
+      "side": "long",
+      "entry_date": "2026-07-27",
+      "entry_time": "12:14 ET",
+      "entry_price": 438.2,
+      "shares": 3,
+      "stop": 435.85,
+      "trail_dist": 2.35,
+      "peak": 438.2,
+      "orb_width": 4.7,
+      "cost": 1314.6,
+      "vol_ratio": 4.15
+    },
+    {
+      "ticker": "DE",
+      "side": "short",
+      "entry_date": "2026-07-27",
+      "entry_time": "12:14 ET",
+      "entry_price": 614.89,
+      "shares": 1,
+      "stop": 617.9,
+      "trail_dist": 3.01,
+      "peak": 614.89,
+      "orb_width": 6.02,
+      "cost": 614.89,
+      "vol_ratio": 1.64
+    },
+    {
+      "ticker": "CBRE",
+      "side": "long",
+      "entry_date": "2026-07-27",
+      "entry_time": "12:14 ET",
+      "entry_price": 143.16,
+      "shares": 7,
+      "stop": 142.0176,
+      "trail_dist": 1.1424,
+      "peak": 143.16,
+      "orb_width": 2.2849,
+      "cost": 1002.12,
+      "vol_ratio": 1.34
     }
   ],
   "closed_today": [
@@ -2681,6 +2695,44 @@
       "pnl": -0.17,
       "exit_reason": "trailing stop",
       "exit_time": "12:11 ET"
+    },
+    {
+      "ticker": "JKHY",
+      "side": "long",
+      "entry_date": "2026-07-27",
+      "entry_time": "11:00 ET",
+      "entry_price": 153.845,
+      "shares": 16,
+      "stop": 153.95,
+      "trail_dist": 0.9,
+      "peak": 154.85,
+      "orb_width": 1.8,
+      "cost": 2461.52,
+      "vol_ratio": 1.82,
+      "exit_date": "2026-07-27",
+      "exit_price": 153.95,
+      "pnl": 1.68,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:14 ET"
+    },
+    {
+      "ticker": "GIS",
+      "side": "long",
+      "entry_date": "2026-07-27",
+      "entry_time": "11:34 ET",
+      "entry_price": 36.71,
+      "shares": 3,
+      "stop": 36.45,
+      "trail_dist": 0.32,
+      "peak": 36.77,
+      "orb_width": 0.64,
+      "cost": 110.13,
+      "vol_ratio": 1.46,
+      "exit_date": "2026-07-27",
+      "exit_price": 36.45,
+      "pnl": -0.78,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:14 ET"
     }
   ],
   "all_closed": [
@@ -37550,11 +37602,6 @@
       "low": 62.14,
       "width": 2.66
     },
-    "CASY": {
-      "high": 864.915,
-      "low": 840.42,
-      "width": 24.495
-    },
     "CAT": {
       "high": 894.02,
       "low": 875.44,
@@ -39639,7 +39686,7 @@
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
-    "2026-07-27": 96750.24
+    "2026-07-27": 96756.43
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -78145,6 +78192,55 @@
       ],
       "portfolio_value": 96750.24,
       "note": "$96,750 | cash=$2,832 | open=76 | closed today=85 | day PnL=$+596"
+    },
+    {
+      "date": "2026-07-27",
+      "time": "12:13 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "SPGI",
+          "side": "long",
+          "price": 438.2,
+          "shares": 3,
+          "stop": 435.85,
+          "trail_dist": 2.35
+        },
+        {
+          "ticker": "DE",
+          "side": "short",
+          "price": 614.89,
+          "shares": 1,
+          "stop": 617.9,
+          "trail_dist": 3.01
+        },
+        {
+          "ticker": "CBRE",
+          "side": "long",
+          "price": 143.16,
+          "shares": 7,
+          "stop": 142.02,
+          "trail_dist": 1.1424
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "JKHY",
+          "side": "long",
+          "exit_price": 153.95,
+          "pnl": 1.68,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "GIS",
+          "side": "long",
+          "exit_price": 36.45,
+          "pnl": -0.78,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96756.43,
+      "note": "$96,756 | cash=$2,473 | open=77 | closed today=87 | day PnL=$+597"
     }
   ]
 }
