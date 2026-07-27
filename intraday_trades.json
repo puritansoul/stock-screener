@@ -1,5 +1,5 @@
 {
-  "capital": 10159.67,
+  "capital": 6030.26,
   "open_positions": [
     {
       "ticker": "BALL",
@@ -14,20 +14,6 @@
       "orb_width": 0.565,
       "cost": 6858.2,
       "vol_ratio": 3.87
-    },
-    {
-      "ticker": "EME",
-      "side": "short",
-      "entry_date": "2026-07-27",
-      "entry_time": "10:08 ET",
-      "entry_price": 739.95,
-      "shares": 2,
-      "stop": 734.095,
-      "trail_dist": 7.6625,
-      "peak": 726.4325,
-      "orb_width": 15.325,
-      "cost": 1479.9,
-      "vol_ratio": 1.69
     },
     {
       "ticker": "ADSK",
@@ -120,9 +106,9 @@
       "entry_time": "10:18 ET",
       "entry_price": 50.85,
       "shares": 3,
-      "stop": 50.9112,
+      "stop": 50.9512,
       "trail_dist": 0.4088,
-      "peak": 51.32,
+      "peak": 51.36,
       "orb_width": 0.8175,
       "cost": 152.55,
       "vol_ratio": 1.42
@@ -456,9 +442,9 @@
       "entry_time": "10:53 ET",
       "entry_price": 29.15,
       "shares": 92,
-      "stop": 28.8967,
+      "stop": 28.9817,
       "trail_dist": 0.3533,
-      "peak": 29.25,
+      "peak": 29.335,
       "orb_width": 0.7065,
       "cost": 2681.8,
       "vol_ratio": 1.32
@@ -498,9 +484,9 @@
       "entry_time": "10:55 ET",
       "entry_price": 985.155,
       "shares": 4,
-      "stop": 990.68,
+      "stop": 989.135,
       "trail_dist": 5.525,
-      "peak": 985.155,
+      "peak": 983.61,
       "orb_width": 11.05,
       "cost": 3940.62,
       "vol_ratio": 1.33
@@ -512,9 +498,9 @@
       "entry_time": "10:58 ET",
       "entry_price": 218.84,
       "shares": 27,
-      "stop": 218.0625,
+      "stop": 218.1525,
       "trail_dist": 0.7775,
-      "peak": 218.84,
+      "peak": 218.93,
       "orb_width": 1.555,
       "cost": 5908.68,
       "vol_ratio": 3.52
@@ -526,12 +512,40 @@
       "entry_time": "10:58 ET",
       "entry_price": 302.17,
       "shares": 13,
-      "stop": 299.66,
+      "stop": 299.695,
       "trail_dist": 2.51,
-      "peak": 302.17,
+      "peak": 302.205,
       "orb_width": 5.02,
       "cost": 3928.21,
       "vol_ratio": 1.5
+    },
+    {
+      "ticker": "BLK",
+      "side": "short",
+      "entry_date": "2026-07-27",
+      "entry_time": "11:00 ET",
+      "entry_price": 1053.165,
+      "shares": 3,
+      "stop": 1058.265,
+      "trail_dist": 5.1,
+      "peak": 1053.165,
+      "orb_width": 10.2,
+      "cost": 3159.5,
+      "vol_ratio": 2.24
+    },
+    {
+      "ticker": "JKHY",
+      "side": "long",
+      "entry_date": "2026-07-27",
+      "entry_time": "11:00 ET",
+      "entry_price": 153.845,
+      "shares": 16,
+      "stop": 152.945,
+      "trail_dist": 0.9,
+      "peak": 153.845,
+      "orb_width": 1.8,
+      "cost": 2461.52,
+      "vol_ratio": 1.82
     }
   ],
   "closed_today": [
@@ -1332,6 +1346,25 @@
       "pnl": -0.61,
       "exit_reason": "trailing stop",
       "exit_time": "10:58 ET"
+    },
+    {
+      "ticker": "EME",
+      "side": "short",
+      "entry_date": "2026-07-27",
+      "entry_time": "10:08 ET",
+      "entry_price": 739.95,
+      "shares": 2,
+      "stop": 734.095,
+      "trail_dist": 7.6625,
+      "peak": 726.4325,
+      "orb_width": 15.325,
+      "cost": 1479.9,
+      "vol_ratio": 1.69,
+      "exit_date": "2026-07-27",
+      "exit_price": 734.095,
+      "pnl": 11.71,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:00 ET"
     }
   ],
   "all_closed": [
@@ -37721,11 +37754,6 @@
       "low": 659.53,
       "width": 12.45
     },
-    "RF": {
-      "high": 31.195,
-      "low": 30.61,
-      "width": 0.585
-    },
     "RSG": {
       "high": 217.59,
       "low": 216.035,
@@ -37755,6 +37783,11 @@
       "high": 39.63,
       "low": 38.6,
       "width": 1.03
+    },
+    "ROP": {
+      "high": 375.03,
+      "low": 367.51,
+      "width": 7.52
     },
     "ROST": {
       "high": 242.79,
@@ -38285,7 +38318,7 @@
     "2026-07-22": 98061.41,
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
-    "2026-07-27": 96649.39
+    "2026-07-27": 96633.65
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -75527,6 +75560,40 @@
       ],
       "portfolio_value": 96649.39,
       "note": "$96,649 | cash=$10,160 | open=38 | closed today=42 | day PnL=$+648"
+    },
+    {
+      "date": "2026-07-27",
+      "time": "11:00 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "BLK",
+          "side": "short",
+          "price": 1053.17,
+          "shares": 3,
+          "stop": 1058.27,
+          "trail_dist": 5.1
+        },
+        {
+          "ticker": "JKHY",
+          "side": "long",
+          "price": 153.85,
+          "shares": 16,
+          "stop": 152.95,
+          "trail_dist": 0.9
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "EME",
+          "side": "short",
+          "exit_price": 734.1,
+          "pnl": 11.71,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96633.65,
+      "note": "$96,634 | cash=$6,030 | open=39 | closed today=43 | day PnL=$+660"
     }
   ]
 }
