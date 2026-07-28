@@ -1,5 +1,5 @@
 {
-  "capital": 228.51,
+  "capital": 373.77,
   "open_positions": [
     {
       "ticker": "LDOS",
@@ -50,9 +50,9 @@
       "entry_time": "10:03 ET",
       "entry_price": 281.56,
       "shares": 35,
-      "stop": 279.5225,
+      "stop": 279.8025,
       "trail_dist": 5.1575,
-      "peak": 284.68,
+      "peak": 284.96,
       "orb_width": 10.315,
       "cost": 9854.6,
       "vol_ratio": 1.32
@@ -106,9 +106,9 @@
       "entry_time": "10:09 ET",
       "entry_price": 124.76,
       "shares": 13,
-      "stop": 122.6625,
+      "stop": 122.9325,
       "trail_dist": 2.5675,
-      "peak": 125.23,
+      "peak": 125.5,
       "orb_width": 5.135,
       "cost": 1621.88,
       "vol_ratio": 1.36
@@ -190,9 +190,9 @@
       "entry_time": "10:14 ET",
       "entry_price": 158.73,
       "shares": 1,
-      "stop": 158.1,
+      "stop": 158.485,
       "trail_dist": 1.72,
-      "peak": 159.82,
+      "peak": 160.205,
       "orb_width": 3.44,
       "cost": 158.73,
       "vol_ratio": 1.24
@@ -210,20 +210,6 @@
       "orb_width": 3.255,
       "cost": 1569.33,
       "vol_ratio": 2.23
-    },
-    {
-      "ticker": "ZBRA",
-      "side": "long",
-      "entry_date": "2026-07-28",
-      "entry_time": "10:19 ET",
-      "entry_price": 268.15,
-      "shares": 4,
-      "stop": 269.9842,
-      "trail_dist": 1.985,
-      "peak": 271.9692,
-      "orb_width": 3.97,
-      "cost": 1072.6,
-      "vol_ratio": 1.96
     },
     {
       "ticker": "WRB",
@@ -330,9 +316,9 @@
       "entry_time": "10:29 ET",
       "entry_price": 17.295,
       "shares": 4,
-      "stop": 17.275,
+      "stop": 17.295,
       "trail_dist": 0.055,
-      "peak": 17.33,
+      "peak": 17.35,
       "orb_width": 0.11,
       "cost": 69.18,
       "vol_ratio": 1.32
@@ -378,6 +364,62 @@
       "orb_width": 0.7199,
       "cost": 31.7,
       "vol_ratio": 1.47
+    },
+    {
+      "ticker": "CTVA",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:39 ET",
+      "entry_price": 89.365,
+      "shares": 4,
+      "stop": 88.755,
+      "trail_dist": 0.61,
+      "peak": 89.365,
+      "orb_width": 1.22,
+      "cost": 357.46,
+      "vol_ratio": 2.97
+    },
+    {
+      "ticker": "AWK",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:39 ET",
+      "entry_price": 140.3,
+      "shares": 2,
+      "stop": 138.595,
+      "trail_dist": 1.705,
+      "peak": 140.3,
+      "orb_width": 3.41,
+      "cost": 280.6,
+      "vol_ratio": 2.56
+    },
+    {
+      "ticker": "FDXF",
+      "side": "short",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:39 ET",
+      "entry_price": 147.89,
+      "shares": 1,
+      "stop": 150.6472,
+      "trail_dist": 2.7572,
+      "peak": 147.89,
+      "orb_width": 5.5143,
+      "cost": 147.89,
+      "vol_ratio": 2.41
+    },
+    {
+      "ticker": "EXR",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:39 ET",
+      "entry_price": 152.83,
+      "shares": 1,
+      "stop": 151.235,
+      "trail_dist": 1.595,
+      "peak": 152.83,
+      "orb_width": 3.19,
+      "cost": 152.83,
+      "vol_ratio": 2.1
     }
   ],
   "closed_today": [
@@ -418,6 +460,25 @@
       "pnl": 0.06,
       "exit_reason": "trailing stop",
       "exit_time": "10:36 ET"
+    },
+    {
+      "ticker": "ZBRA",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:19 ET",
+      "entry_price": 268.15,
+      "shares": 4,
+      "stop": 271.01,
+      "trail_dist": 1.985,
+      "peak": 272.995,
+      "orb_width": 3.97,
+      "cost": 1072.6,
+      "vol_ratio": 1.96,
+      "exit_date": "2026-07-28",
+      "exit_price": 271.01,
+      "pnl": 11.44,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:39 ET"
     }
   ],
   "all_closed": [
@@ -39270,15 +39331,10 @@
       "low": 401.2,
       "width": 16.9999
     },
-    "APTV": {
-      "high": 58.48,
-      "low": 57.48,
-      "width": 1.0
-    },
     "ACGL": {
       "high": 106.86,
-      "low": 104.553,
-      "width": 2.307
+      "low": 104.85,
+      "width": 2.01
     },
     "ADM": {
       "high": 83.97,
@@ -39317,8 +39373,8 @@
     },
     "ADSK": {
       "high": 237.31,
-      "low": 229.4,
-      "width": 7.91
+      "low": 230.58,
+      "width": 6.73
     },
     "ADP": {
       "high": 264.14,
@@ -40225,11 +40281,6 @@
       "low": 182.61,
       "width": 3.26
     },
-    "HPE": {
-      "high": 46.51,
-      "low": 43.75,
-      "width": 2.76
-    },
     "HLT": {
       "high": 320.615,
       "low": 311.6663,
@@ -40641,9 +40692,9 @@
       "width": 2.35
     },
     "MU": {
-      "high": 848.36,
+      "high": 847.957,
       "low": 805.41,
-      "width": 42.95
+      "width": 42.547
     },
     "MSFT": {
       "high": 400.21,
@@ -41595,7 +41646,7 @@
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
-    "2026-07-28": 96620.51
+    "2026-07-28": 96675.25
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -81990,6 +82041,56 @@
       ],
       "portfolio_value": 96620.51,
       "note": "$96,621 | cash=$229 | open=27 | closed today=2 | day PnL=$-26"
+    },
+    {
+      "date": "2026-07-28",
+      "time": "10:38 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "CTVA",
+          "side": "long",
+          "price": 89.36,
+          "shares": 4,
+          "stop": 88.75,
+          "trail_dist": 0.61
+        },
+        {
+          "ticker": "AWK",
+          "side": "long",
+          "price": 140.3,
+          "shares": 2,
+          "stop": 138.6,
+          "trail_dist": 1.705
+        },
+        {
+          "ticker": "FDXF",
+          "side": "short",
+          "price": 147.89,
+          "shares": 1,
+          "stop": 150.65,
+          "trail_dist": 2.7572
+        },
+        {
+          "ticker": "EXR",
+          "side": "long",
+          "price": 152.83,
+          "shares": 1,
+          "stop": 151.24,
+          "trail_dist": 1.595
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "ZBRA",
+          "side": "long",
+          "exit_price": 271.01,
+          "pnl": 11.44,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96675.25,
+      "note": "$96,675 | cash=$374 | open=30 | closed today=3 | day PnL=$-15"
     }
   ]
 }
