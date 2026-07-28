@@ -1024,11 +1024,11 @@ def save_html_report(
             day_color = "#2e7d32" if day_chg_d >= 0 else "#c62828"
             day_sign  = "+" if day_chg_d >= 0 else ""
             day_chg_str = (
-                f'<span style="color:{day_color};font-weight:bold">'
+                f'<span data-sort="{day_chg_d:.2f}" style="color:{day_color};font-weight:bold">'
                 f'{day_sign}${abs(day_chg_d):,.0f}</span>'
             )
             day_pct_str = (
-                f'<span style="color:{day_color};font-weight:bold">'
+                f'<span data-sort="{day_chg_p*100:.4f}" style="color:{day_color};font-weight:bold">'
                 f'{day_sign}{day_chg_p:.2%}</span>'
             )
         else:
@@ -1402,9 +1402,9 @@ def save_html_report(
         row.querySelector('.live-price').textContent    = fmt2(price);
         row.querySelector('.live-invested').textContent = '$' + fmtI(curVal);
         row.querySelector('.live-day-d').innerHTML      =
-          `<span style="color:${{col(dayChgD)}};font-weight:bold">${{sgn(dayChgD)}}$${{fmtI(dayChgD)}}</span>`;
+          `<span data-sort="${{dayChgD.toFixed(2)}}" style="color:${{col(dayChgD)}};font-weight:bold">${{sgn(dayChgD)}}$${{fmtI(dayChgD)}}</span>`;
         row.querySelector('.live-day-pct').innerHTML    =
-          `<span style="color:${{col(dayChgP)}};font-weight:bold">${{sgn(dayChgP)}}${{Math.abs(dayChgP*100).toFixed(2)}}%</span>`;
+          `<span data-sort="${{(dayChgP*100).toFixed(4)}}" style="color:${{col(dayChgP)}};font-weight:bold">${{sgn(dayChgP)}}${{Math.abs(dayChgP*100).toFixed(2)}}%</span>`;
         const _trDEl = row.querySelector('.live-total-ret-d');
         if (_trDEl) {{
           _trDEl.innerHTML = `<span data-sort="${{totRetD.toFixed(2)}}" style="color:${{col(totRetD)}};font-weight:bold">${{sgn(totRetD)}}$${{fmtI(totRetD)}}</span>`;
