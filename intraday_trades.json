@@ -1,5 +1,5 @@
 {
-  "capital": 2456.03,
+  "capital": 1563.62,
   "open_positions": [
     {
       "ticker": "TEL",
@@ -64,9 +64,9 @@
       "entry_time": "10:09 ET",
       "entry_price": 124.76,
       "shares": 13,
-      "stop": 124.0825,
+      "stop": 124.3925,
       "trail_dist": 2.5675,
-      "peak": 126.65,
+      "peak": 126.96,
       "orb_width": 5.135,
       "cost": 1621.88,
       "vol_ratio": 1.36
@@ -330,9 +330,9 @@
       "entry_time": "10:44 ET",
       "entry_price": 31.805,
       "shares": 3,
-      "stop": 31.8985,
+      "stop": 31.8935,
       "trail_dist": 0.1835,
-      "peak": 31.715,
+      "peak": 31.71,
       "orb_width": 0.3669,
       "cost": 95.42,
       "vol_ratio": 1.38
@@ -428,9 +428,9 @@
       "entry_time": "10:49 ET",
       "entry_price": 128.97,
       "shares": 12,
-      "stop": 131.2988,
+      "stop": 131.0188,
       "trail_dist": 2.9588,
-      "peak": 128.34,
+      "peak": 128.06,
       "orb_width": 5.9175,
       "cost": 1547.64,
       "vol_ratio": 1.38
@@ -512,9 +512,9 @@
       "entry_time": "10:59 ET",
       "entry_price": 152.05,
       "shares": 9,
-      "stop": 150.295,
+      "stop": 150.615,
       "trail_dist": 1.755,
-      "peak": 152.05,
+      "peak": 152.37,
       "orb_width": 3.51,
       "cost": 1368.45,
       "vol_ratio": 1.98
@@ -526,26 +526,12 @@
       "entry_time": "10:59 ET",
       "entry_price": 466.14,
       "shares": 2,
-      "stop": 462.845,
+      "stop": 462.8725,
       "trail_dist": 3.58,
-      "peak": 466.425,
+      "peak": 466.4525,
       "orb_width": 7.16,
       "cost": 932.28,
       "vol_ratio": 1.85
-    },
-    {
-      "ticker": "ZBRA",
-      "side": "long",
-      "entry_date": "2026-07-28",
-      "entry_time": "10:59 ET",
-      "entry_price": 269.7,
-      "shares": 2,
-      "stop": 269.1849,
-      "trail_dist": 1.985,
-      "peak": 271.1699,
-      "orb_width": 3.97,
-      "cost": 539.4,
-      "vol_ratio": 1.66
     },
     {
       "ticker": "AMP",
@@ -554,9 +540,9 @@
       "entry_time": "10:59 ET",
       "entry_price": 544.71,
       "shares": 1,
-      "stop": 542.0,
+      "stop": 542.27,
       "trail_dist": 3.64,
-      "peak": 545.64,
+      "peak": 545.91,
       "orb_width": 7.28,
       "cost": 544.71,
       "vol_ratio": 1.31
@@ -568,12 +554,40 @@
       "entry_time": "11:01 ET",
       "entry_price": 297.43,
       "shares": 3,
-      "stop": 293.66,
+      "stop": 294.4,
       "trail_dist": 3.77,
-      "peak": 297.43,
+      "peak": 298.17,
       "orb_width": 7.54,
       "cost": 892.29,
       "vol_ratio": 1.49
+    },
+    {
+      "ticker": "ED",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "11:04 ET",
+      "entry_price": 114.29,
+      "shares": 7,
+      "stop": 113.2375,
+      "trail_dist": 1.0525,
+      "peak": 114.29,
+      "orb_width": 2.105,
+      "cost": 800.03,
+      "vol_ratio": 1.29
+    },
+    {
+      "ticker": "DG",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "11:04 ET",
+      "entry_price": 126.15,
+      "shares": 5,
+      "stop": 125.425,
+      "trail_dist": 0.725,
+      "peak": 126.15,
+      "orb_width": 1.45,
+      "cost": 630.75,
+      "vol_ratio": 1.25
     }
   ],
   "closed_today": [
@@ -804,6 +818,25 @@
       "pnl": -9.32,
       "exit_reason": "trailing stop",
       "exit_time": "11:01 ET"
+    },
+    {
+      "ticker": "ZBRA",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:59 ET",
+      "entry_price": 269.7,
+      "shares": 2,
+      "stop": 269.1849,
+      "trail_dist": 1.985,
+      "peak": 271.1699,
+      "orb_width": 3.97,
+      "cost": 539.4,
+      "vol_ratio": 1.66,
+      "exit_date": "2026-07-28",
+      "exit_price": 269.1849,
+      "pnl": -1.03,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:04 ET"
     }
   ],
   "all_closed": [
@@ -39613,8 +39646,8 @@
     },
     "AMGN": {
       "high": 395.15,
-      "low": 383.25,
-      "width": 11.9
+      "low": 382.2115,
+      "width": 12.9385
     },
     "APH": {
       "high": 146.0,
@@ -41577,9 +41610,9 @@
       "width": 4.71
     },
     "SMCI": {
-      "high": 28.87,
+      "high": 28.86,
       "low": 27.13,
-      "width": 1.74
+      "width": 1.73
     },
     "SYF": {
       "high": 76.58,
@@ -41981,7 +42014,7 @@
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
-    "2026-07-28": 96375.97
+    "2026-07-28": 96310.58
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -82742,6 +82775,40 @@
       ],
       "portfolio_value": 96375.97,
       "note": "$96,376 | cash=$2,456 | open=41 | closed today=12 | day PnL=$-174"
+    },
+    {
+      "date": "2026-07-28",
+      "time": "11:03 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "ED",
+          "side": "long",
+          "price": 114.29,
+          "shares": 7,
+          "stop": 113.24,
+          "trail_dist": 1.0525
+        },
+        {
+          "ticker": "DG",
+          "side": "long",
+          "price": 126.15,
+          "shares": 5,
+          "stop": 125.43,
+          "trail_dist": 0.725
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "ZBRA",
+          "side": "long",
+          "exit_price": 269.18,
+          "pnl": -1.03,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96310.58,
+      "note": "$96,311 | cash=$1,564 | open=42 | closed today=13 | day PnL=$-175"
     }
   ]
 }
