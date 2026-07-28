@@ -1020,6 +1020,12 @@ def save_html_report(
     holdings_rows = ""   # compact table (always visible)
     factor_rows   = ""   # factor-score table (collapsible)
 
+    # Totals accumulators (held positions only)
+    tot_acc_invested = 0.0
+    tot_acc_prev_val = 0.0
+    tot_acc_day_d    = 0.0
+    tot_acc_ret_d    = 0.0
+
     for rank, (tk, row) in enumerate(scores.head(max(n_target, 50)).iterrows(), 1):
         comp         = row["composite"]
         in_portfolio = tk in holdings_set
@@ -1093,6 +1099,15 @@ def save_html_report(
             tot_ret_str_d = "—"
             tot_ret_str_p = "—"
 
+        # Accumulate totals for held positions
+        if in_portfolio and qty and buy_px and buy_px > 0:
+            tot_acc_invested += qty * buy_px
+            if cur_px_val and prev_px and prev_px > 0:
+                tot_acc_prev_val += qty * prev_px
+                tot_acc_day_d    += (cur_px_val - prev_px) * qty
+            if cur_px_val:
+                tot_acc_ret_d += (cur_px_val - buy_px) * qty
+
         # ── Compact holdings row ────────────────────────────────────────────
         _stale_val  = round(qty * cur_px_val, 2) if qty and cur_px_val else 0
         _stale_cost = round(qty * buy_px, 2)     if qty and buy_px     else 0
@@ -1126,6 +1141,29 @@ def save_html_report(
           <td>{_score_bar(row.get('r_accruals'))} {_fmt(row.get('r_accruals'))}</td>
           <td>{_score_bar(row.get('r_eps_surprise'))} {_fmt(row.get('r_eps_surprise'))}</td>
           <td>{_score_bar(comp)} <strong>{_fmt(comp, '.3f')}</strong></td>
+        </tr>"""
+
+    # ── Totals row ─────────────────────────────────────────────────────────────
+    tot_day_p    = tot_acc_day_d / tot_acc_prev_val if tot_acc_prev_val > 0 else None
+    tot_ret_p    = tot_acc_ret_d / tot_acc_invested if tot_acc_invested  > 0 else None
+
+    def _tot_cell(val, fmt_fn, is_pct=False):
+        if val is None:
+            return "—"
+        color = "#2e7d32" if val >= 0 else "#c62828"
+        sgn   = "+" if val >= 0 else ""
+        sort_val = val * 100 if is_pct else val
+        return f'<span data-sort="{sort_val:.4f}" style="color:{color};font-weight:bold">{sgn}{fmt_fn(val)}</span>'
+
+    holdings_totals_row = f"""
+        <tr id="holdings-totals" style="background:#e8eaf6;font-weight:bold;border-top:2px solid #9fa8da">
+          <td colspan="7" style="text-align:right;color:#1a237e;padding-right:12px">Totals</td>
+          <td id="tot-invested" style="text-align:right">${tot_acc_invested:,.0f}</td>
+          <td id="tot-day-d"  style="text-align:right">{_tot_cell(tot_acc_day_d if tot_acc_prev_val > 0 else None, lambda v: f'${abs(v):,.0f}')}</td>
+          <td id="tot-day-pct" style="text-align:right">{_tot_cell(tot_day_p, lambda v: f'{abs(v):.2%}', True)}</td>
+          <td id="tot-ret-d"  style="text-align:right">{_tot_cell(tot_acc_ret_d if tot_acc_invested > 0 else None, lambda v: f'${abs(v):,.0f}')}</td>
+          <td id="tot-ret-pct" style="text-align:right">{_tot_cell(tot_ret_p, lambda v: f'{abs(v):.2%}', True)}</td>
+          <td></td>
         </tr>"""
 
     html = f"""<!DOCTYPE html>
@@ -1237,7 +1275,7 @@ def save_html_report(
         <th data-col="3">Alloc %</th><th data-col="4">Qty</th><th data-col="5">Buy Price</th><th data-col="6">Buy Date</th>
         <th data-col="7">$ Invested</th><th data-col="8">Day Δ $</th><th data-col="9">Day Δ %</th><th data-col="10">Total Ret $</th><th data-col="11">Total Ret %</th><th data-col="12">Score</th>
       </tr></thead>
-      <tbody>{holdings_rows}</tbody>
+      <tbody>{holdings_rows}{holdings_totals_row}</tbody>
     </table>
   </div>
 
@@ -1347,6 +1385,46 @@ def save_html_report(
     if (el) {{ el.textContent = text; el.style.color = color; el.style.borderColor = color === '#388e3c' ? '#a5d6a7' : '#e0e0e0'; }}
   }}
 
+  function updateHoldingsTotals() {{
+    let totInv = 0, totPrevVal = 0, totDayD = 0, totRetD = 0;
+    heldRows.forEach(r => {{
+      const tk     = r.dataset.ticker;
+      const qty    = parseFloat(r.dataset.qty)    || 0;
+      const buyPx  = parseFloat(r.dataset.buypx)  || 0;
+      const prevPx = parseFloat(r.dataset.prevpx) || 0;
+      const cost   = qty * buyPx;
+      if (cost <= 0) return;
+      totInv += cost;
+      const q = quotes[tk];
+      const curPx   = q ? q.price     : (parseFloat(r.dataset.staleVal)  / qty || 0);
+      const prevPxQ = q ? q.prevClose : prevPx;
+      if (curPx  > 0 && prevPxQ > 0) {{
+        totPrevVal += qty * prevPxQ;
+        totDayD    += (curPx - prevPxQ) * qty;
+      }}
+      if (curPx > 0) totRetD += (curPx - buyPx) * qty;
+    }});
+
+    const totDayP = totPrevVal > 0 ? totDayD / totPrevVal : null;
+    const totRetP = totInv     > 0 ? totRetD / totInv     : null;
+
+    const mkCell = (val, fmt) => {{
+      if (val === null) return '—';
+      const c = val >= 0 ? '#2e7d32' : '#c62828';
+      const s = val >= 0 ? '+' : '';
+      return `<span style="color:${{c}};font-weight:bold">${{s}}${{fmt(val)}}</span>`;
+    }};
+    const fmtD = v => '$' + Math.abs(v).toLocaleString('en-US', {{maximumFractionDigits:0}});
+    const fmtP = v => Math.abs(v*100).toFixed(2) + '%';
+
+    const setEl = (id, html) => {{ const e = document.getElementById(id); if (e) e.innerHTML = html; }};
+    setEl('tot-invested', '$' + totInv.toLocaleString('en-US', {{maximumFractionDigits:0}}));
+    setEl('tot-day-d',   mkCell(totPrevVal > 0 ? totDayD : null, fmtD));
+    setEl('tot-day-pct', mkCell(totDayP, fmtP));
+    setEl('tot-ret-d',   mkCell(totInv > 0 ? totRetD : null, fmtD));
+    setEl('tot-ret-pct', mkCell(totRetP, fmtP));
+  }}
+
   const fetchAll = async () => {{
     setStatus('⏳ Fetching prices…', '#f57c00');
     for (const tk of tickers) {{
@@ -1386,6 +1464,7 @@ def save_html_report(
         liveVal[tk]     = curVal;
         livePrevVal[tk] = dayChgD;
         updateSummaryCards();
+        updateHoldingsTotals();
 
       }} catch(e) {{}}
       await delay(1100);
@@ -1417,7 +1496,8 @@ def save_html_report(
         table.querySelectorAll('thead th').forEach(t => t.classList.remove('sort-asc','sort-desc'));
         th.classList.add(sortAsc ? 'sort-asc' : 'sort-desc');
         const tbody = table.querySelector('tbody');
-        const rows  = Array.from(tbody.querySelectorAll('tr'));
+        const totalsRow = tbody.querySelector('#holdings-totals');
+        const rows  = Array.from(tbody.querySelectorAll('tr')).filter(r => r.id !== 'holdings-totals');
         rows.sort((a, b) => {{
           const aC = a.cells[col], bC = b.cells[col];
           const aText = (aC ? aC.textContent : '').trim();
@@ -1430,6 +1510,7 @@ def save_html_report(
           return sortAsc ? cmp : -cmp;
         }});
         rows.forEach(r => tbody.appendChild(r));
+        if (totalsRow) tbody.appendChild(totalsRow);
       }});
     }});
   }})();
