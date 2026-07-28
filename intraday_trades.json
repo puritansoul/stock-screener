@@ -1,5 +1,5 @@
 {
-  "capital": 1493.73,
+  "capital": 3818.82,
   "open_positions": [
     {
       "ticker": "FDS",
@@ -540,9 +540,9 @@
       "entry_time": "12:39 ET",
       "entry_price": 116.405,
       "shares": 5,
-      "stop": 115.8105,
+      "stop": 115.8505,
       "trail_dist": 1.1095,
-      "peak": 116.92,
+      "peak": 116.96,
       "orb_width": 2.219,
       "cost": 582.02,
       "vol_ratio": 5.51
@@ -588,20 +588,6 @@
       "orb_width": 0.905,
       "cost": 449.8,
       "vol_ratio": 1.46
-    },
-    {
-      "ticker": "ZBRA",
-      "side": "long",
-      "entry_date": "2026-07-28",
-      "entry_time": "12:48 ET",
-      "entry_price": 275.38,
-      "shares": 14,
-      "stop": 274.02,
-      "trail_dist": 1.985,
-      "peak": 276.005,
-      "orb_width": 3.97,
-      "cost": 3855.32,
-      "vol_ratio": 2.26
     },
     {
       "ticker": "MRSH",
@@ -666,9 +652,9 @@
       "entry_time": "13:06 ET",
       "entry_price": 139.44,
       "shares": 1,
-      "stop": 139.06,
+      "stop": 139.13,
       "trail_dist": 0.89,
-      "peak": 139.95,
+      "peak": 140.02,
       "orb_width": 1.78,
       "cost": 139.44,
       "vol_ratio": 1.29
@@ -764,9 +750,9 @@
       "entry_time": "13:48 ET",
       "entry_price": 882.745,
       "shares": 2,
-      "stop": 875.3024,
+      "stop": 876.4125,
       "trail_dist": 8.2175,
-      "peak": 883.5199,
+      "peak": 884.63,
       "orb_width": 16.435,
       "cost": 1765.49,
       "vol_ratio": 3.88
@@ -890,9 +876,9 @@
       "entry_time": "14:03 ET",
       "entry_price": 210.0,
       "shares": 3,
-      "stop": 209.195,
+      "stop": 209.435,
       "trail_dist": 0.805,
-      "peak": 210.0,
+      "peak": 210.24,
       "orb_width": 1.61,
       "cost": 630.0,
       "vol_ratio": 1.63
@@ -904,12 +890,26 @@
       "entry_time": "14:03 ET",
       "entry_price": 202.16,
       "shares": 2,
-      "stop": 203.5575,
+      "stop": 202.9375,
       "trail_dist": 1.3975,
-      "peak": 202.16,
+      "peak": 201.54,
       "orb_width": 2.795,
       "cost": 404.32,
       "vol_ratio": 1.28
+    },
+    {
+      "ticker": "PNC",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "14:05 ET",
+      "entry_price": 251.865,
+      "shares": 6,
+      "stop": 251.1691,
+      "trail_dist": 0.6959,
+      "peak": 251.865,
+      "orb_width": 1.3919,
+      "cost": 1511.19,
+      "vol_ratio": 1.51
     }
   ],
   "closed_today": [
@@ -2945,6 +2945,25 @@
       "pnl": -0.44,
       "exit_reason": "trailing stop",
       "exit_time": "14:03 ET"
+    },
+    {
+      "ticker": "ZBRA",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "12:48 ET",
+      "entry_price": 275.38,
+      "shares": 14,
+      "stop": 274.02,
+      "trail_dist": 1.985,
+      "peak": 276.005,
+      "orb_width": 3.97,
+      "cost": 3855.32,
+      "vol_ratio": 2.26,
+      "exit_date": "2026-07-28",
+      "exit_price": 274.02,
+      "pnl": -19.04,
+      "exit_reason": "trailing stop",
+      "exit_time": "14:05 ET"
     }
   ],
   "all_closed": [
@@ -42127,11 +42146,6 @@
       "low": 174.2044,
       "width": 11.5156
     },
-    "CTAS": {
-      "high": 217.7,
-      "low": 214.37,
-      "width": 3.33
-    },
     "CSCO": {
       "high": 114.41,
       "low": 111.7301,
@@ -43082,11 +43096,6 @@
       "low": 249.11,
       "width": 1.92
     },
-    "MPC": {
-      "high": 315.0,
-      "low": 310.22,
-      "width": 4.78
-    },
     "MAR": {
       "high": 383.06,
       "low": 374.545,
@@ -43612,11 +43621,6 @@
       "low": 176.905,
       "width": 4.18
     },
-    "SNDK": {
-      "high": 1188.0,
-      "low": 1088.39,
-      "width": 99.61
-    },
     "SBAC": {
       "high": 180.7915,
       "low": 174.94,
@@ -44122,7 +44126,7 @@
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
-    "2026-07-28": 96039.93
+    "2026-07-28": 95981.95
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -87246,6 +87250,32 @@
       ],
       "portfolio_value": 96039.93,
       "note": "$96,040 | cash=$1,494 | open=65 | closed today=107 | day PnL=$-539"
+    },
+    {
+      "date": "2026-07-28",
+      "time": "14:05 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "PNC",
+          "side": "long",
+          "price": 251.87,
+          "shares": 6,
+          "stop": 251.17,
+          "trail_dist": 0.6959
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "ZBRA",
+          "side": "long",
+          "exit_price": 274.02,
+          "pnl": -19.04,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95981.95,
+      "note": "$95,982 | cash=$3,819 | open=65 | closed today=108 | day PnL=$-558"
     }
   ]
 }
