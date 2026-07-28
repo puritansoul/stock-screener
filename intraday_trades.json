@@ -1,5 +1,5 @@
 {
-  "capital": 2181.17,
+  "capital": 1699.13,
   "open_positions": [
     {
       "ticker": "FDS",
@@ -106,9 +106,9 @@
       "entry_time": "10:49 ET",
       "entry_price": 436.61,
       "shares": 5,
-      "stop": 437.1225,
+      "stop": 437.6625,
       "trail_dist": 3.9075,
-      "peak": 441.03,
+      "peak": 441.57,
       "orb_width": 7.815,
       "cost": 2183.05,
       "vol_ratio": 1.58
@@ -540,9 +540,9 @@
       "entry_time": "12:39 ET",
       "entry_price": 116.405,
       "shares": 5,
-      "stop": 116.0505,
+      "stop": 116.0705,
       "trail_dist": 1.1095,
-      "peak": 117.16,
+      "peak": 117.18,
       "orb_width": 2.219,
       "cost": 582.02,
       "vol_ratio": 5.51
@@ -652,9 +652,9 @@
       "entry_time": "13:06 ET",
       "entry_price": 139.44,
       "shares": 1,
-      "stop": 139.15,
+      "stop": 139.29,
       "trail_dist": 0.89,
-      "peak": 140.04,
+      "peak": 140.18,
       "orb_width": 1.78,
       "cost": 139.44,
       "vol_ratio": 1.29
@@ -834,9 +834,9 @@
       "entry_time": "13:58 ET",
       "entry_price": 291.35,
       "shares": 6,
-      "stop": 289.3725,
+      "stop": 289.7425,
       "trail_dist": 2.9575,
-      "peak": 292.33,
+      "peak": 292.7,
       "orb_width": 5.915,
       "cost": 1748.1,
       "vol_ratio": 1.4
@@ -848,9 +848,9 @@
       "entry_time": "14:00 ET",
       "entry_price": 236.34,
       "shares": 6,
-      "stop": 237.66,
+      "stop": 237.62,
       "trail_dist": 1.42,
-      "peak": 236.24,
+      "peak": 236.2,
       "orb_width": 2.84,
       "cost": 1418.04,
       "vol_ratio": 1.45
@@ -862,9 +862,9 @@
       "entry_time": "14:03 ET",
       "entry_price": 118.415,
       "shares": 9,
-      "stop": 117.615,
+      "stop": 117.9,
       "trail_dist": 0.8,
-      "peak": 118.415,
+      "peak": 118.7,
       "orb_width": 1.6,
       "cost": 1065.74,
       "vol_ratio": 4.67
@@ -876,9 +876,9 @@
       "entry_time": "14:03 ET",
       "entry_price": 210.0,
       "shares": 3,
-      "stop": 209.785,
+      "stop": 209.915,
       "trail_dist": 0.805,
-      "peak": 210.59,
+      "peak": 210.72,
       "orb_width": 1.61,
       "cost": 630.0,
       "vol_ratio": 1.63
@@ -918,9 +918,9 @@
       "entry_time": "14:08 ET",
       "entry_price": 64.0009,
       "shares": 17,
-      "stop": 65.6859,
+      "stop": 65.61,
       "trail_dist": 1.685,
-      "peak": 64.0009,
+      "peak": 63.925,
       "orb_width": 3.37,
       "cost": 1088.02,
       "vol_ratio": 2.17
@@ -932,12 +932,26 @@
       "entry_time": "14:08 ET",
       "entry_price": 274.815,
       "shares": 2,
-      "stop": 272.83,
+      "stop": 273.1,
       "trail_dist": 1.985,
-      "peak": 274.815,
+      "peak": 275.085,
       "orb_width": 3.97,
       "cost": 549.63,
       "vol_ratio": 1.57
+    },
+    {
+      "ticker": "DVA",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "14:10 ET",
+      "entry_price": 241.02,
+      "shares": 2,
+      "stop": 239.595,
+      "trail_dist": 1.425,
+      "peak": 241.02,
+      "orb_width": 2.85,
+      "cost": 482.04,
+      "vol_ratio": 1.21
     }
   ],
   "closed_today": [
@@ -44169,7 +44183,7 @@
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
-    "2026-07-28": 95977.48
+    "2026-07-28": 95972.57
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -87345,6 +87359,24 @@
       "exits": [],
       "portfolio_value": 95977.48,
       "note": "$95,977 | cash=$2,181 | open=67 | closed today=108 | day PnL=$-558"
+    },
+    {
+      "date": "2026-07-28",
+      "time": "14:10 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "DVA",
+          "side": "long",
+          "price": 241.02,
+          "shares": 2,
+          "stop": 239.6,
+          "trail_dist": 1.425
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 95972.57,
+      "note": "$95,973 | cash=$1,699 | open=68 | closed today=108 | day PnL=$-558"
     }
   ]
 }
