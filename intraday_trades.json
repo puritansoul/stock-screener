@@ -1,5 +1,5 @@
 {
-  "capital": 5574.56,
+  "capital": 6516.58,
   "open_positions": [
     {
       "ticker": "FDS",
@@ -182,20 +182,6 @@
       "orb_width": 3.51,
       "cost": 1368.45,
       "vol_ratio": 1.98
-    },
-    {
-      "ticker": "ROK",
-      "side": "long",
-      "entry_date": "2026-07-28",
-      "entry_time": "10:59 ET",
-      "entry_price": 466.14,
-      "shares": 2,
-      "stop": 471.01,
-      "trail_dist": 3.58,
-      "peak": 474.59,
-      "orb_width": 7.16,
-      "cost": 932.28,
-      "vol_ratio": 1.85
     },
     {
       "ticker": "CBOE",
@@ -428,9 +414,9 @@
       "entry_time": "11:39 ET",
       "entry_price": 97.245,
       "shares": 1,
-      "stop": 96.0575,
+      "stop": 96.2525,
       "trail_dist": 1.1875,
-      "peak": 97.245,
+      "peak": 97.44,
       "orb_width": 2.375,
       "cost": 97.25,
       "vol_ratio": 1.66
@@ -540,9 +526,9 @@
       "entry_time": "12:19 ET",
       "entry_price": 196.89,
       "shares": 12,
-      "stop": 195.3349,
+      "stop": 195.565,
       "trail_dist": 2.195,
-      "peak": 197.5299,
+      "peak": 197.76,
       "orb_width": 4.39,
       "cost": 2362.68,
       "vol_ratio": 1.51
@@ -638,9 +624,9 @@
       "entry_time": "12:44 ET",
       "entry_price": 44.98,
       "shares": 10,
-      "stop": 44.5375,
+      "stop": 44.5675,
       "trail_dist": 0.4525,
-      "peak": 44.99,
+      "peak": 45.02,
       "orb_width": 0.905,
       "cost": 449.8,
       "vol_ratio": 1.46
@@ -750,9 +736,9 @@
       "entry_time": "12:58 ET",
       "entry_price": 190.455,
       "shares": 2,
-      "stop": 190.755,
+      "stop": 190.845,
       "trail_dist": 0.745,
-      "peak": 191.5,
+      "peak": 191.59,
       "orb_width": 1.49,
       "cost": 380.91,
       "vol_ratio": 1.38
@@ -876,9 +862,9 @@
       "entry_time": "13:43 ET",
       "entry_price": 237.14,
       "shares": 18,
-      "stop": 236.11,
+      "stop": 236.4,
       "trail_dist": 1.03,
-      "peak": 237.14,
+      "peak": 237.43,
       "orb_width": 2.06,
       "cost": 4268.52,
       "vol_ratio": 3.69
@@ -890,9 +876,9 @@
       "entry_time": "13:43 ET",
       "entry_price": 704.72,
       "shares": 4,
-      "stop": 715.275,
+      "stop": 714.535,
       "trail_dist": 10.555,
-      "peak": 704.72,
+      "peak": 703.98,
       "orb_width": 21.11,
       "cost": 2818.88,
       "vol_ratio": 2.01
@@ -2736,6 +2722,25 @@
       "pnl": -1.37,
       "exit_reason": "trailing stop",
       "exit_time": "13:43 ET"
+    },
+    {
+      "ticker": "ROK",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:59 ET",
+      "entry_price": 466.14,
+      "shares": 2,
+      "stop": 471.01,
+      "trail_dist": 3.58,
+      "peak": 474.59,
+      "orb_width": 7.16,
+      "cost": 932.28,
+      "vol_ratio": 1.85,
+      "exit_date": "2026-07-28",
+      "exit_price": 471.01,
+      "pnl": 9.74,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:45 ET"
     }
   ],
   "all_closed": [
@@ -41595,8 +41600,8 @@
     },
     "ACGL": {
       "high": 106.86,
-      "low": 104.85,
-      "width": 2.01
+      "low": 104.553,
+      "width": 2.307
     },
     "ADM": {
       "high": 83.97,
@@ -41845,8 +41850,8 @@
     },
     "CDW": {
       "high": 142.565,
-      "low": 138.24,
-      "width": 4.325
+      "low": 139.6,
+      "width": 2.965
     },
     "COR": {
       "high": 319.76,
@@ -43509,9 +43514,9 @@
       "width": 4.71
     },
     "SMCI": {
-      "high": 28.86,
+      "high": 28.87,
       "low": 27.13,
-      "width": 1.73
+      "width": 1.74
     },
     "SYF": {
       "high": 76.58,
@@ -43913,7 +43918,7 @@
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
-    "2026-07-28": 96042.85
+    "2026-07-28": 96024.03
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -86788,6 +86793,23 @@
       ],
       "portfolio_value": 96042.85,
       "note": "$96,043 | cash=$5,575 | open=65 | closed today=96 | day PnL=$-505"
+    },
+    {
+      "date": "2026-07-28",
+      "time": "13:45 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "ROK",
+          "side": "long",
+          "exit_price": 471.01,
+          "pnl": 9.74,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96024.03,
+      "note": "$96,024 | cash=$6,517 | open=64 | closed today=97 | day PnL=$-496"
     }
   ]
 }
