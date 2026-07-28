@@ -98,6 +98,17 @@
         "VIX: 18.0  (VIX 18.0 < 20.0 \u2014 no entries)",
         "Portfolio: $100,000  |  Cash: $100,000  |  Open: 0  |  Exits: 0  |  Entries: 0"
       ]
+    },
+    {
+      "date": "2026-07-28",
+      "run_at": "2026-07-28 17:41 UTC",
+      "entries": [],
+      "exits": [],
+      "notes": [
+        "SPY regime: BULL (longs only)",
+        "VIX: 18.2  (VIX 18.2 < 20.0 \u2014 no entries)",
+        "Portfolio: $100,000  |  Cash: $100,000  |  Open: 0  |  Exits: 0  |  Entries: 0"
+      ]
     }
   ],
   "last_scan": [
@@ -109,13 +120,6 @@
       "status": "above SMA200"
     },
     {
-      "ticker": "EW",
-      "rsi2": 0.8,
-      "close": 83.04,
-      "sma200": 83.43,
-      "status": "below SMA200"
-    },
-    {
       "ticker": "CRWD",
       "rsi2": 0.9,
       "close": 180.11,
@@ -123,11 +127,25 @@
       "status": "LONG signal"
     },
     {
-      "ticker": "ALLE",
+      "ticker": "AOS",
       "rsi2": 98.5,
-      "close": 158.14,
-      "sma200": 151.59,
-      "status": "above SMA200"
+      "close": 62.44,
+      "sma200": 65.58,
+      "status": "below SMA200"
+    },
+    {
+      "ticker": "CHRW",
+      "rsi2": 1.5,
+      "close": 174.46,
+      "sma200": 170.34,
+      "status": "LONG signal"
+    },
+    {
+      "ticker": "GNRC",
+      "rsi2": 1.5,
+      "close": 197.54,
+      "sma200": 204.09,
+      "status": "below SMA200"
     },
     {
       "ticker": "CPRT",
@@ -137,18 +155,25 @@
       "status": "below SMA200"
     },
     {
-      "ticker": "GNRC",
-      "rsi2": 2.0,
-      "close": 197.54,
-      "sma200": 203.92,
-      "status": "below SMA200"
+      "ticker": "EQR",
+      "rsi2": 1.6,
+      "close": 67.24,
+      "sma200": 61.93,
+      "status": "LONG signal"
     },
     {
-      "ticker": "CHRW",
-      "rsi2": 2.1,
-      "close": 174.46,
-      "sma200": 170.07,
-      "status": "LONG signal"
+      "ticker": "LH",
+      "rsi2": 98.0,
+      "close": 301.17,
+      "sma200": 266.55,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "EMR",
+      "rsi2": 97.9,
+      "close": 149.3,
+      "sma200": 138.46,
+      "status": "above SMA200"
     },
     {
       "ticker": "JPM",
@@ -156,13 +181,6 @@
       "close": 356.2,
       "sma200": 308.28,
       "status": "above SMA200"
-    },
-    {
-      "ticker": "AOS",
-      "rsi2": 97.7,
-      "close": 62.44,
-      "sma200": 65.62,
-      "status": "below SMA200"
     },
     {
       "ticker": "T",
@@ -179,25 +197,11 @@
       "status": "below SMA200"
     },
     {
-      "ticker": "EMR",
-      "rsi2": 97.5,
-      "close": 149.3,
-      "sma200": 138.37,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "EQR",
-      "rsi2": 2.5,
-      "close": 67.24,
-      "sma200": 61.89,
-      "status": "LONG signal"
-    },
-    {
-      "ticker": "EQIX",
-      "rsi2": 97.4,
-      "close": 1046.79,
-      "sma200": 919.08,
-      "status": "above SMA200"
+      "ticker": "HSY",
+      "rsi2": 97.6,
+      "close": 180.19,
+      "sma200": 190.3,
+      "status": "below SMA200"
     },
     {
       "ticker": "JNJ",
@@ -207,17 +211,45 @@
       "status": "above SMA200"
     },
     {
-      "ticker": "LH",
-      "rsi2": 97.4,
-      "close": 301.17,
-      "sma200": 266.45,
+      "ticker": "EXPD",
+      "rsi2": 2.6,
+      "close": 171.34,
+      "sma200": 149.67,
+      "status": "LONG signal"
+    },
+    {
+      "ticker": "CTAS",
+      "rsi2": 97.3,
+      "close": 210.98,
+      "sma200": 183.92,
       "status": "above SMA200"
+    },
+    {
+      "ticker": "DRI",
+      "rsi2": 97.2,
+      "close": 204.1,
+      "sma200": 193.42,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "LVS",
+      "rsi2": 97.1,
+      "close": 47.76,
+      "sma200": 55.46,
+      "status": "below SMA200"
     },
     {
       "ticker": "GD",
       "rsi2": 97.0,
       "close": 389.14,
       "sma200": 345.41,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "AFL",
+      "rsi2": 96.9,
+      "close": 126.56,
+      "sma200": 112.2,
       "status": "above SMA200"
     },
     {
@@ -228,6 +260,34 @@
       "status": "above SMA200"
     },
     {
+      "ticker": "J",
+      "rsi2": 96.8,
+      "close": 135.23,
+      "sma200": 133.77,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "LDOS",
+      "rsi2": 96.8,
+      "close": 114.95,
+      "sma200": 160.52,
+      "status": "below SMA200"
+    },
+    {
+      "ticker": "FAST",
+      "rsi2": 96.7,
+      "close": 47.64,
+      "sma200": 43.95,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "APO",
+      "rsi2": 96.6,
+      "close": 124.24,
+      "sma200": 126.2,
+      "status": "below SMA200"
+    },
+    {
       "ticker": "IP",
       "rsi2": 96.6,
       "close": 42.41,
@@ -235,18 +295,18 @@
       "status": "above SMA200"
     },
     {
-      "ticker": "DE",
+      "ticker": "ALL",
       "rsi2": 96.5,
-      "close": 625.02,
-      "sma200": 541.16,
+      "close": 261.27,
+      "sma200": 211.18,
       "status": "above SMA200"
     },
     {
-      "ticker": "J",
-      "rsi2": 96.4,
-      "close": 135.23,
-      "sma200": 133.86,
-      "status": "above SMA200"
+      "ticker": "LHX",
+      "rsi2": 96.5,
+      "close": 303.48,
+      "sma200": 314.53,
+      "status": "below SMA200"
     },
     {
       "ticker": "BRK-B",
@@ -256,11 +316,18 @@
       "status": "above SMA200"
     },
     {
-      "ticker": "ALL",
-      "rsi2": 96.0,
-      "close": 261.27,
-      "sma200": 210.92,
-      "status": "above SMA200"
+      "ticker": "HCA",
+      "rsi2": 96.1,
+      "close": 389.62,
+      "sma200": 456.16,
+      "status": "below SMA200"
+    },
+    {
+      "ticker": "HII",
+      "rsi2": 96.1,
+      "close": 288.25,
+      "sma200": 344.81,
+      "status": "below SMA200"
     },
     {
       "ticker": "BKR",
@@ -270,31 +337,31 @@
       "status": "above SMA200"
     },
     {
-      "ticker": "HSY",
+      "ticker": "ITW",
       "rsi2": 96.0,
-      "close": 180.19,
-      "sma200": 190.38,
-      "status": "below SMA200"
-    },
-    {
-      "ticker": "CTAS",
-      "rsi2": 95.9,
-      "close": 210.98,
-      "sma200": 183.88,
+      "close": 284.82,
+      "sma200": 258.44,
       "status": "above SMA200"
     },
     {
-      "ticker": "EXPD",
-      "rsi2": 4.2,
-      "close": 171.34,
-      "sma200": 149.4,
+      "ticker": "ICE",
+      "rsi2": 95.9,
+      "close": 148.73,
+      "sma200": 153.93,
+      "status": "below SMA200"
+    },
+    {
+      "ticker": "AKAM",
+      "rsi2": 4.1,
+      "close": 112.85,
+      "sma200": 104.38,
       "status": "LONG signal"
     },
     {
-      "ticker": "AFL",
+      "ticker": "MMM",
       "rsi2": 95.8,
-      "close": 126.56,
-      "sma200": 112.13,
+      "close": 178.23,
+      "sma200": 157.52,
       "status": "above SMA200"
     },
     {
@@ -312,74 +379,18 @@
       "status": "above SMA200"
     },
     {
-      "ticker": "HII",
-      "rsi2": 95.8,
-      "close": 288.25,
-      "sma200": 344.78,
-      "status": "below SMA200"
-    },
-    {
-      "ticker": "FAST",
-      "rsi2": 95.7,
-      "close": 47.64,
-      "sma200": 43.95,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "APO",
+      "ticker": "ABT",
       "rsi2": 95.6,
-      "close": 124.24,
-      "sma200": 126.21,
-      "status": "below SMA200"
-    },
-    {
-      "ticker": "LHX",
-      "rsi2": 95.6,
-      "close": 303.48,
-      "sma200": 314.52,
+      "close": 104.49,
+      "sma200": 107.43,
       "status": "below SMA200"
     },
     {
       "ticker": "AMGN",
-      "rsi2": 95.5,
+      "rsi2": 95.6,
       "close": 376.26,
-      "sma200": 338.24,
+      "sma200": 338.68,
       "status": "above SMA200"
-    },
-    {
-      "ticker": "LDOS",
-      "rsi2": 95.5,
-      "close": 114.95,
-      "sma200": 160.94,
-      "status": "below SMA200"
-    },
-    {
-      "ticker": "BSX",
-      "rsi2": 95.4,
-      "close": 45.51,
-      "sma200": 74.17,
-      "status": "below SMA200"
-    },
-    {
-      "ticker": "ITW",
-      "rsi2": 95.3,
-      "close": 284.82,
-      "sma200": 258.28,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "DRI",
-      "rsi2": 95.2,
-      "close": 204.1,
-      "sma200": 193.36,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "LRCX",
-      "rsi2": 4.9,
-      "close": 291.61,
-      "sma200": 237.98,
-      "status": "LONG signal"
     }
   ]
 }
