@@ -1,5 +1,5 @@
 {
-  "capital": 75.03,
+  "capital": 228.51,
   "open_positions": [
     {
       "ticker": "LDOS",
@@ -218,9 +218,9 @@
       "entry_time": "10:19 ET",
       "entry_price": 268.15,
       "shares": 4,
-      "stop": 267.085,
+      "stop": 269.9842,
       "trail_dist": 1.985,
-      "peak": 269.07,
+      "peak": 271.9692,
       "orb_width": 3.97,
       "cost": 1072.6,
       "vol_ratio": 1.96
@@ -296,20 +296,6 @@
       "vol_ratio": 1.53
     },
     {
-      "ticker": "WBD",
-      "side": "long",
-      "entry_date": "2026-07-28",
-      "entry_time": "10:19 ET",
-      "entry_price": 25.57,
-      "shares": 6,
-      "stop": 25.58,
-      "trail_dist": 0.085,
-      "peak": 25.665,
-      "orb_width": 0.17,
-      "cost": 153.42,
-      "vol_ratio": 1.39
-    },
-    {
       "ticker": "GIS",
       "side": "long",
       "entry_date": "2026-07-28",
@@ -344,9 +330,9 @@
       "entry_time": "10:29 ET",
       "entry_price": 17.295,
       "shares": 4,
-      "stop": 17.2519,
+      "stop": 17.275,
       "trail_dist": 0.055,
-      "peak": 17.3069,
+      "peak": 17.33,
       "orb_width": 0.11,
       "cost": 69.18,
       "vol_ratio": 1.32
@@ -413,6 +399,25 @@
       "pnl": -26.03,
       "exit_reason": "trailing stop",
       "exit_time": "10:19 ET"
+    },
+    {
+      "ticker": "WBD",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:19 ET",
+      "entry_price": 25.57,
+      "shares": 6,
+      "stop": 25.58,
+      "trail_dist": 0.085,
+      "peak": 25.665,
+      "orb_width": 0.17,
+      "cost": 153.42,
+      "vol_ratio": 1.39,
+      "exit_date": "2026-07-28",
+      "exit_price": 25.58,
+      "pnl": 0.06,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:36 ET"
     }
   ],
   "all_closed": [
@@ -39222,8 +39227,8 @@
     },
     "AMGN": {
       "high": 395.15,
-      "low": 383.25,
-      "width": 11.9
+      "low": 382.2115,
+      "width": 12.9385
     },
     "APH": {
       "high": 146.0,
@@ -41590,7 +41595,7 @@
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
-    "2026-07-28": 96581.18
+    "2026-07-28": 96620.51
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -81968,6 +81973,23 @@
       "exits": [],
       "portfolio_value": 96581.18,
       "note": "$96,581 | cash=$75 | open=28 | closed today=1 | day PnL=$-26"
+    },
+    {
+      "date": "2026-07-28",
+      "time": "10:36 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "WBD",
+          "side": "long",
+          "exit_price": 25.58,
+          "pnl": 0.06,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96620.51,
+      "note": "$96,621 | cash=$229 | open=27 | closed today=2 | day PnL=$-26"
     }
   ]
 }
