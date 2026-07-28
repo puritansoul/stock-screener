@@ -1,5 +1,5 @@
 {
-  "capital": 4230.49,
+  "capital": 5841.14,
   "open_positions": [
     {
       "ticker": "FDS",
@@ -8,9 +8,9 @@
       "entry_time": "10:03 ET",
       "entry_price": 281.56,
       "shares": 35,
-      "stop": 280.4825,
+      "stop": 281.5025,
       "trail_dist": 5.1575,
-      "peak": 285.64,
+      "peak": 286.66,
       "orb_width": 10.315,
       "cost": 9854.6,
       "vol_ratio": 1.32
@@ -294,20 +294,6 @@
       "orb_width": 2.105,
       "cost": 800.03,
       "vol_ratio": 1.29
-    },
-    {
-      "ticker": "JKHY",
-      "side": "long",
-      "entry_date": "2026-07-28",
-      "entry_time": "11:06 ET",
-      "entry_price": 158.27,
-      "shares": 46,
-      "stop": 157.6125,
-      "trail_dist": 1.3175,
-      "peak": 158.93,
-      "orb_width": 2.635,
-      "cost": 7280.42,
-      "vol_ratio": 1.98
     },
     {
       "ticker": "RJF",
@@ -610,9 +596,9 @@
       "entry_time": "11:31 ET",
       "entry_price": 39.42,
       "shares": 2,
-      "stop": 39.395,
+      "stop": 39.3275,
       "trail_dist": 0.3075,
-      "peak": 39.0875,
+      "peak": 39.02,
       "orb_width": 0.615,
       "cost": 78.84,
       "vol_ratio": 1.99
@@ -722,9 +708,9 @@
       "entry_time": "11:39 ET",
       "entry_price": 104.0,
       "shares": 1,
-      "stop": 103.904,
+      "stop": 103.624,
       "trail_dist": 0.534,
-      "peak": 103.37,
+      "peak": 103.09,
       "orb_width": 1.068,
       "cost": 104.0,
       "vol_ratio": 1.37
@@ -750,9 +736,9 @@
       "entry_time": "11:44 ET",
       "entry_price": 65.73,
       "shares": 1,
-      "stop": 64.885,
+      "stop": 64.905,
       "trail_dist": 0.915,
-      "peak": 65.8,
+      "peak": 65.82,
       "orb_width": 1.83,
       "cost": 65.73,
       "vol_ratio": 1.26
@@ -778,9 +764,9 @@
       "entry_time": "11:49 ET",
       "entry_price": 50.8,
       "shares": 106,
-      "stop": 50.8375,
+      "stop": 50.8075,
       "trail_dist": 0.2675,
-      "peak": 50.57,
+      "peak": 50.54,
       "orb_width": 0.535,
       "cost": 5384.8,
       "vol_ratio": 2.56
@@ -792,9 +778,9 @@
       "entry_time": "11:49 ET",
       "entry_price": 582.77,
       "shares": 6,
-      "stop": 578.4851,
+      "stop": 578.6701,
       "trail_dist": 4.2849,
-      "peak": 582.77,
+      "peak": 582.955,
       "orb_width": 8.5698,
       "cost": 3496.62,
       "vol_ratio": 2.35
@@ -904,9 +890,9 @@
       "entry_time": "11:56 ET",
       "entry_price": 173.14,
       "shares": 3,
-      "stop": 171.315,
+      "stop": 171.8,
       "trail_dist": 2.61,
-      "peak": 173.925,
+      "peak": 174.41,
       "orb_width": 5.22,
       "cost": 519.42,
       "vol_ratio": 1.93
@@ -932,9 +918,9 @@
       "entry_time": "11:59 ET",
       "entry_price": 217.51,
       "shares": 11,
-      "stop": 218.8,
+      "stop": 218.55,
       "trail_dist": 1.29,
-      "peak": 217.51,
+      "peak": 217.26,
       "orb_width": 2.58,
       "cost": 2392.61,
       "vol_ratio": 1.78
@@ -946,12 +932,40 @@
       "entry_time": "11:59 ET",
       "entry_price": 53.935,
       "shares": 33,
-      "stop": 54.1925,
+      "stop": 54.18,
       "trail_dist": 0.275,
-      "peak": 53.9175,
+      "peak": 53.905,
       "orb_width": 0.55,
       "cost": 1779.86,
       "vol_ratio": 1.23
+    },
+    {
+      "ticker": "GRMN",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "12:04 ET",
+      "entry_price": 252.1701,
+      "shares": 13,
+      "stop": 250.2576,
+      "trail_dist": 1.9125,
+      "peak": 252.1701,
+      "orb_width": 3.825,
+      "cost": 3278.21,
+      "vol_ratio": 2.34
+    },
+    {
+      "ticker": "PRU",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "12:04 ET",
+      "entry_price": 124.28,
+      "shares": 19,
+      "stop": 123.3375,
+      "trail_dist": 0.9425,
+      "peak": 124.28,
+      "orb_width": 1.885,
+      "cost": 2361.32,
+      "vol_ratio": 1.37
     }
   ],
   "closed_today": [
@@ -1904,6 +1918,25 @@
       "pnl": -1.53,
       "exit_reason": "trailing stop",
       "exit_time": "11:59 ET"
+    },
+    {
+      "ticker": "JKHY",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "11:06 ET",
+      "entry_price": 158.27,
+      "shares": 46,
+      "stop": 157.6125,
+      "trail_dist": 1.3175,
+      "peak": 158.93,
+      "orb_width": 2.635,
+      "cost": 7280.42,
+      "vol_ratio": 1.98,
+      "exit_date": "2026-07-28",
+      "exit_price": 157.6125,
+      "pnl": -30.24,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:04 ET"
     }
   ],
   "all_closed": [
@@ -40578,8 +40611,8 @@
     },
     "ADBE": {
       "high": 248.06,
-      "low": 241.6946,
-      "width": 6.3654
+      "low": 241.92,
+      "width": 6.14
     },
     "AMD": {
       "high": 472.75,
@@ -40713,8 +40746,8 @@
     },
     "AMGN": {
       "high": 395.15,
-      "low": 382.2115,
-      "width": 12.9385
+      "low": 383.25,
+      "width": 11.9
     },
     "APH": {
       "high": 146.0,
@@ -42218,8 +42251,8 @@
     },
     "NWS": {
       "high": 31.71,
-      "low": 31.145,
-      "width": 0.565
+      "low": 31.22,
+      "width": 0.49
     },
     "NEE": {
       "high": 90.49,
@@ -42388,8 +42421,8 @@
     },
     "PM": {
       "high": 206.31,
-      "low": 200.0,
-      "width": 6.31
+      "low": 198.68,
+      "width": 7.63
     },
     "PSX": {
       "high": 209.72,
@@ -43081,7 +43114,7 @@
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
-    "2026-07-28": 96116.52
+    "2026-07-28": 96151.19
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -84878,6 +84911,40 @@
       "exits": [],
       "portfolio_value": 96116.52,
       "note": "$96,117 | cash=$4,230 | open=68 | closed today=50 | day PnL=$-444"
+    },
+    {
+      "date": "2026-07-28",
+      "time": "12:03 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "GRMN",
+          "side": "long",
+          "price": 252.17,
+          "shares": 13,
+          "stop": 250.26,
+          "trail_dist": 1.9125
+        },
+        {
+          "ticker": "PRU",
+          "side": "long",
+          "price": 124.28,
+          "shares": 19,
+          "stop": 123.34,
+          "trail_dist": 0.9425
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "JKHY",
+          "side": "long",
+          "exit_price": 157.61,
+          "pnl": -30.24,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96151.19,
+      "note": "$96,151 | cash=$5,841 | open=69 | closed today=51 | day PnL=$-474"
     }
   ]
 }
