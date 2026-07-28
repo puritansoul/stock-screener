@@ -1,5 +1,5 @@
 {
-  "capital": 4821.96,
+  "capital": 3653.74,
   "open_positions": [
     {
       "ticker": "FDS",
@@ -98,20 +98,6 @@
       "orb_width": 3.19,
       "cost": 152.83,
       "vol_ratio": 2.1
-    },
-    {
-      "ticker": "ES",
-      "side": "long",
-      "entry_date": "2026-07-28",
-      "entry_time": "10:46 ET",
-      "entry_price": 76.32,
-      "shares": 28,
-      "stop": 75.9,
-      "trail_dist": 0.66,
-      "peak": 76.56,
-      "orb_width": 1.32,
-      "cost": 2136.96,
-      "vol_ratio": 1.3
     },
     {
       "ticker": "CBRE",
@@ -478,20 +464,6 @@
       "vol_ratio": 2.04
     },
     {
-      "ticker": "HON",
-      "side": "short",
-      "entry_date": "2026-07-28",
-      "entry_time": "11:29 ET",
-      "entry_price": 247.86,
-      "shares": 1,
-      "stop": 249.135,
-      "trail_dist": 1.405,
-      "peak": 247.73,
-      "orb_width": 2.81,
-      "cost": 247.86,
-      "vol_ratio": 1.63
-    },
-    {
       "ticker": "AMCR",
       "side": "long",
       "entry_date": "2026-07-28",
@@ -540,9 +512,9 @@
       "entry_time": "11:31 ET",
       "entry_price": 39.42,
       "shares": 2,
-      "stop": 39.1875,
+      "stop": 39.1775,
       "trail_dist": 0.3075,
-      "peak": 38.88,
+      "peak": 38.87,
       "orb_width": 0.615,
       "cost": 78.84,
       "vol_ratio": 1.99
@@ -582,9 +554,9 @@
       "entry_time": "11:34 ET",
       "entry_price": 51.785,
       "shares": 3,
-      "stop": 51.5475,
+      "stop": 51.5425,
       "trail_dist": 0.3075,
-      "peak": 51.24,
+      "peak": 51.235,
       "orb_width": 0.615,
       "cost": 155.35,
       "vol_ratio": 1.9
@@ -708,9 +680,9 @@
       "entry_time": "11:49 ET",
       "entry_price": 425.8288,
       "shares": 6,
-      "stop": 423.37,
+      "stop": 423.45,
       "trail_dist": 3.39,
-      "peak": 426.76,
+      "peak": 426.84,
       "orb_width": 6.78,
       "cost": 2554.97,
       "vol_ratio": 1.88
@@ -792,9 +764,9 @@
       "entry_time": "11:59 ET",
       "entry_price": 251.85,
       "shares": 13,
-      "stop": 250.9,
+      "stop": 250.975,
       "trail_dist": 0.96,
-      "peak": 251.86,
+      "peak": 251.935,
       "orb_width": 1.92,
       "cost": 3274.05,
       "vol_ratio": 1.82
@@ -806,9 +778,9 @@
       "entry_time": "11:59 ET",
       "entry_price": 217.51,
       "shares": 11,
-      "stop": 218.26,
+      "stop": 218.24,
       "trail_dist": 1.29,
-      "peak": 216.97,
+      "peak": 216.95,
       "orb_width": 2.58,
       "cost": 2392.61,
       "vol_ratio": 1.78
@@ -834,9 +806,9 @@
       "entry_time": "12:04 ET",
       "entry_price": 252.1701,
       "shares": 13,
-      "stop": 252.7975,
+      "stop": 253.5875,
       "trail_dist": 1.9125,
-      "peak": 254.71,
+      "peak": 255.5,
       "orb_width": 3.825,
       "cost": 3278.21,
       "vol_ratio": 2.34
@@ -862,9 +834,9 @@
       "entry_time": "12:09 ET",
       "entry_price": 88.78,
       "shares": 22,
-      "stop": 88.49,
+      "stop": 88.53,
       "trail_dist": 0.36,
-      "peak": 88.85,
+      "peak": 88.89,
       "orb_width": 0.72,
       "cost": 1953.16,
       "vol_ratio": 1.44
@@ -904,9 +876,9 @@
       "entry_time": "12:19 ET",
       "entry_price": 196.89,
       "shares": 12,
-      "stop": 194.865,
+      "stop": 194.98,
       "trail_dist": 2.195,
-      "peak": 197.06,
+      "peak": 197.175,
       "orb_width": 4.39,
       "cost": 2362.68,
       "vol_ratio": 1.51
@@ -918,12 +890,40 @@
       "entry_time": "12:19 ET",
       "entry_price": 137.08,
       "shares": 12,
-      "stop": 135.87,
+      "stop": 136.41,
       "trail_dist": 1.21,
-      "peak": 137.08,
+      "peak": 137.62,
       "orb_width": 2.42,
       "cost": 1644.96,
       "vol_ratio": 1.23
+    },
+    {
+      "ticker": "TROW",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "12:24 ET",
+      "entry_price": 121.015,
+      "shares": 17,
+      "stop": 120.205,
+      "trail_dist": 0.81,
+      "peak": 121.015,
+      "orb_width": 1.62,
+      "cost": 2057.25,
+      "vol_ratio": 1.56
+    },
+    {
+      "ticker": "IR",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "12:24 ET",
+      "entry_price": 87.22,
+      "shares": 17,
+      "stop": 85.93,
+      "trail_dist": 1.29,
+      "peak": 87.22,
+      "orb_width": 2.58,
+      "cost": 1482.74,
+      "vol_ratio": 1.36
     }
   ],
   "closed_today": [
@@ -2085,6 +2085,44 @@
       "pnl": -7.09,
       "exit_reason": "trailing stop",
       "exit_time": "12:21 ET"
+    },
+    {
+      "ticker": "ES",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:46 ET",
+      "entry_price": 76.32,
+      "shares": 28,
+      "stop": 75.9,
+      "trail_dist": 0.66,
+      "peak": 76.56,
+      "orb_width": 1.32,
+      "cost": 2136.96,
+      "vol_ratio": 1.3,
+      "exit_date": "2026-07-28",
+      "exit_price": 75.9,
+      "pnl": -11.76,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:24 ET"
+    },
+    {
+      "ticker": "HON",
+      "side": "short",
+      "entry_date": "2026-07-28",
+      "entry_time": "11:29 ET",
+      "entry_price": 247.86,
+      "shares": 1,
+      "stop": 249.135,
+      "trail_dist": 1.405,
+      "peak": 247.73,
+      "orb_width": 2.81,
+      "cost": 247.86,
+      "vol_ratio": 1.63,
+      "exit_date": "2026-07-28",
+      "exit_price": 249.135,
+      "pnl": -1.27,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:24 ET"
     }
   ],
   "all_closed": [
@@ -40759,8 +40797,8 @@
     },
     "ADBE": {
       "high": 248.06,
-      "low": 241.92,
-      "width": 6.14
+      "low": 241.6946,
+      "width": 6.3654
     },
     "AMD": {
       "high": 472.75,
@@ -40984,8 +41022,8 @@
     },
     "ADSK": {
       "high": 237.31,
-      "low": 230.58,
-      "width": 6.73
+      "low": 229.4,
+      "width": 7.91
     },
     "ADP": {
       "high": 264.14,
@@ -41318,9 +41356,9 @@
       "width": 23.83
     },
     "COIN": {
-      "high": 163.44,
+      "high": 163.5,
       "low": 158.58,
-      "width": 4.86
+      "width": 4.92
     },
     "CL": {
       "high": 95.46,
@@ -41748,9 +41786,9 @@
       "width": 0.27
     },
     "FTNT": {
-      "high": 152.94,
+      "high": 152.99,
       "low": 146.92,
-      "width": 6.02
+      "width": 6.07
     },
     "FTV": {
       "high": 64.29,
@@ -42858,9 +42896,9 @@
       "width": 4.71
     },
     "SMCI": {
-      "high": 28.86,
+      "high": 28.87,
       "low": 27.13,
-      "width": 1.73
+      "width": 1.74
     },
     "SYF": {
       "high": 76.58,
@@ -43262,7 +43300,7 @@
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
-    "2026-07-28": 96198.77
+    "2026-07-28": 96209.55
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -85291,6 +85329,47 @@
       ],
       "portfolio_value": 96198.77,
       "note": "$96,199 | cash=$4,822 | open=66 | closed today=61 | day PnL=$-503"
+    },
+    {
+      "date": "2026-07-28",
+      "time": "12:23 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "TROW",
+          "side": "long",
+          "price": 121.01,
+          "shares": 17,
+          "stop": 120.2,
+          "trail_dist": 0.81
+        },
+        {
+          "ticker": "IR",
+          "side": "long",
+          "price": 87.22,
+          "shares": 17,
+          "stop": 85.93,
+          "trail_dist": 1.29
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "ES",
+          "side": "long",
+          "exit_price": 75.9,
+          "pnl": -11.76,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "HON",
+          "side": "short",
+          "exit_price": 249.13,
+          "pnl": -1.27,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96209.55,
+      "note": "$96,210 | cash=$3,654 | open=66 | closed today=63 | day PnL=$-516"
     }
   ]
 }
