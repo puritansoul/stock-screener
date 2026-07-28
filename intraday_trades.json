@@ -1,5 +1,5 @@
 {
-  "capital": 3809.28,
+  "capital": 1558.26,
   "open_positions": [
     {
       "ticker": "FDS",
@@ -274,9 +274,9 @@
       "entry_time": "10:59 ET",
       "entry_price": 466.14,
       "shares": 2,
-      "stop": 470.57,
+      "stop": 470.685,
       "trail_dist": 3.58,
-      "peak": 474.15,
+      "peak": 474.265,
       "orb_width": 7.16,
       "cost": 932.28,
       "vol_ratio": 1.85
@@ -442,9 +442,9 @@
       "entry_time": "11:14 ET",
       "entry_price": 113.36,
       "shares": 1,
-      "stop": 113.1225,
+      "stop": 113.1325,
       "trail_dist": 1.6675,
-      "peak": 114.79,
+      "peak": 114.8,
       "orb_width": 3.335,
       "cost": 113.36,
       "vol_ratio": 1.23
@@ -666,9 +666,9 @@
       "entry_time": "11:31 ET",
       "entry_price": 39.42,
       "shares": 2,
-      "stop": 39.5175,
+      "stop": 39.4875,
       "trail_dist": 0.3075,
-      "peak": 39.21,
+      "peak": 39.18,
       "orb_width": 0.615,
       "cost": 78.84,
       "vol_ratio": 1.99
@@ -702,20 +702,6 @@
       "vol_ratio": 2.24
     },
     {
-      "ticker": "VLO",
-      "side": "short",
-      "entry_date": "2026-07-28",
-      "entry_time": "11:34 ET",
-      "entry_price": 301.305,
-      "shares": 1,
-      "stop": 300.215,
-      "trail_dist": 1.965,
-      "peak": 298.25,
-      "orb_width": 3.93,
-      "cost": 301.3,
-      "vol_ratio": 2.24
-    },
-    {
       "ticker": "AWK",
       "side": "long",
       "entry_date": "2026-07-28",
@@ -742,20 +728,6 @@
       "orb_width": 0.615,
       "cost": 155.35,
       "vol_ratio": 1.9
-    },
-    {
-      "ticker": "OXY",
-      "side": "short",
-      "entry_date": "2026-07-28",
-      "entry_time": "11:39 ET",
-      "entry_price": 53.9675,
-      "shares": 5,
-      "stop": 54.115,
-      "trail_dist": 0.275,
-      "peak": 53.84,
-      "orb_width": 0.55,
-      "cost": 269.84,
-      "vol_ratio": 2.16
     },
     {
       "ticker": "MRK",
@@ -890,9 +862,9 @@
       "entry_time": "11:49 ET",
       "entry_price": 425.8288,
       "shares": 6,
-      "stop": 423.11,
+      "stop": 423.37,
       "trail_dist": 3.39,
-      "peak": 426.5,
+      "peak": 426.76,
       "orb_width": 6.78,
       "cost": 2554.97,
       "vol_ratio": 1.88
@@ -938,6 +910,48 @@
       "orb_width": 5.135,
       "cost": 996.96,
       "vol_ratio": 1.42
+    },
+    {
+      "ticker": "APTV",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "11:54 ET",
+      "entry_price": 58.79,
+      "shares": 22,
+      "stop": 58.29,
+      "trail_dist": 0.5,
+      "peak": 58.79,
+      "orb_width": 1.0,
+      "cost": 1293.38,
+      "vol_ratio": 5.21
+    },
+    {
+      "ticker": "DAL",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "11:54 ET",
+      "entry_price": 88.57,
+      "shares": 10,
+      "stop": 88.21,
+      "trail_dist": 0.36,
+      "peak": 88.57,
+      "orb_width": 0.72,
+      "cost": 885.7,
+      "vol_ratio": 2.21
+    },
+    {
+      "ticker": "ARES",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "11:54 ET",
+      "entry_price": 128.685,
+      "shares": 5,
+      "stop": 127.7625,
+      "trail_dist": 0.9225,
+      "peak": 128.685,
+      "orb_width": 1.845,
+      "cost": 643.42,
+      "vol_ratio": 1.35
     }
   ],
   "closed_today": [
@@ -1776,6 +1790,44 @@
       "pnl": -0.17,
       "exit_reason": "trailing stop",
       "exit_time": "11:51 ET"
+    },
+    {
+      "ticker": "VLO",
+      "side": "short",
+      "entry_date": "2026-07-28",
+      "entry_time": "11:34 ET",
+      "entry_price": 301.305,
+      "shares": 1,
+      "stop": 300.215,
+      "trail_dist": 1.965,
+      "peak": 298.25,
+      "orb_width": 3.93,
+      "cost": 301.3,
+      "vol_ratio": 2.24,
+      "exit_date": "2026-07-28",
+      "exit_price": 300.215,
+      "pnl": 1.09,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:54 ET"
+    },
+    {
+      "ticker": "OXY",
+      "side": "short",
+      "entry_date": "2026-07-28",
+      "entry_time": "11:39 ET",
+      "entry_price": 53.9675,
+      "shares": 5,
+      "stop": 54.115,
+      "trail_dist": 0.275,
+      "peak": 53.84,
+      "orb_width": 0.55,
+      "cost": 269.84,
+      "vol_ratio": 2.16,
+      "exit_date": "2026-07-28",
+      "exit_price": 54.115,
+      "pnl": -0.74,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:54 ET"
     }
   ],
   "all_closed": [
@@ -40675,8 +40727,8 @@
     },
     "ADSK": {
       "high": 237.31,
-      "low": 229.4,
-      "width": 7.91
+      "low": 230.58,
+      "width": 6.73
     },
     "ADP": {
       "high": 264.14,
@@ -41999,9 +42051,9 @@
       "width": 2.35
     },
     "MU": {
-      "high": 847.957,
+      "high": 848.36,
       "low": 805.41,
-      "width": 42.547
+      "width": 42.95
     },
     "MSFT": {
       "high": 400.21,
@@ -42090,8 +42142,8 @@
     },
     "NWS": {
       "high": 31.71,
-      "low": 31.145,
-      "width": 0.565
+      "low": 31.22,
+      "width": 0.49
     },
     "NEE": {
       "high": 90.49,
@@ -42380,8 +42432,8 @@
     },
     "REGN": {
       "high": 689.65,
-      "low": 676.52,
-      "width": 13.13
+      "low": 676.56,
+      "width": 13.09
     },
     "RF": {
       "high": 31.065,
@@ -42549,9 +42601,9 @@
       "width": 4.71
     },
     "SMCI": {
-      "high": 28.86,
+      "high": 28.87,
       "low": 27.13,
-      "width": 1.73
+      "width": 1.74
     },
     "SYF": {
       "high": 76.58,
@@ -42953,7 +43005,7 @@
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
-    "2026-07-28": 96195.04
+    "2026-07-28": 96134.58
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -84610,6 +84662,55 @@
       ],
       "portfolio_value": 96195.04,
       "note": "$96,195 | cash=$3,809 | open=67 | closed today=44 | day PnL=$-292"
+    },
+    {
+      "date": "2026-07-28",
+      "time": "11:53 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "APTV",
+          "side": "long",
+          "price": 58.79,
+          "shares": 22,
+          "stop": 58.29,
+          "trail_dist": 0.5
+        },
+        {
+          "ticker": "DAL",
+          "side": "long",
+          "price": 88.57,
+          "shares": 10,
+          "stop": 88.21,
+          "trail_dist": 0.36
+        },
+        {
+          "ticker": "ARES",
+          "side": "long",
+          "price": 128.68,
+          "shares": 5,
+          "stop": 127.76,
+          "trail_dist": 0.9225
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "VLO",
+          "side": "short",
+          "exit_price": 300.21,
+          "pnl": 1.09,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "OXY",
+          "side": "short",
+          "exit_price": 54.12,
+          "pnl": -0.74,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96134.58,
+      "note": "$96,135 | cash=$1,558 | open=68 | closed today=46 | day PnL=$-292"
     }
   ]
 }
