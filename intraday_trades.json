@@ -1,20 +1,6 @@
 {
-  "capital": 205.16,
+  "capital": 11909.96,
   "open_positions": [
-    {
-      "ticker": "HIG",
-      "side": "long",
-      "entry_date": "2026-07-28",
-      "entry_time": "10:03 ET",
-      "entry_price": 143.64,
-      "shares": 98,
-      "stop": 142.345,
-      "trail_dist": 1.295,
-      "peak": 143.64,
-      "orb_width": 2.59,
-      "cost": 14076.72,
-      "vol_ratio": 1.43
-    },
     {
       "ticker": "FDS",
       "side": "long",
@@ -28,20 +14,6 @@
       "orb_width": 10.315,
       "cost": 9854.6,
       "vol_ratio": 1.32
-    },
-    {
-      "ticker": "INCY",
-      "side": "long",
-      "entry_date": "2026-07-28",
-      "entry_time": "10:09 ET",
-      "entry_price": 124.76,
-      "shares": 13,
-      "stop": 125.6375,
-      "trail_dist": 2.5675,
-      "peak": 128.205,
-      "orb_width": 5.135,
-      "cost": 1621.88,
-      "vol_ratio": 1.36
     },
     {
       "ticker": "EIX",
@@ -112,20 +84,6 @@
       "orb_width": 3.44,
       "cost": 158.73,
       "vol_ratio": 1.24
-    },
-    {
-      "ticker": "WRB",
-      "side": "long",
-      "entry_date": "2026-07-28",
-      "entry_time": "10:19 ET",
-      "entry_price": 77.4226,
-      "shares": 11,
-      "stop": 76.807,
-      "trail_dist": 0.6325,
-      "peak": 77.4395,
-      "orb_width": 1.265,
-      "cost": 851.65,
-      "vol_ratio": 1.93
     },
     {
       "ticker": "LEN",
@@ -246,9 +204,9 @@
       "entry_time": "10:49 ET",
       "entry_price": 128.97,
       "shares": 12,
-      "stop": 130.0788,
+      "stop": 130.0638,
       "trail_dist": 2.9588,
-      "peak": 127.12,
+      "peak": 127.105,
       "orb_width": 5.9175,
       "cost": 1547.64,
       "vol_ratio": 1.38
@@ -344,9 +302,9 @@
       "entry_time": "10:59 ET",
       "entry_price": 466.14,
       "shares": 2,
-      "stop": 469.255,
+      "stop": 469.665,
       "trail_dist": 3.58,
-      "peak": 472.835,
+      "peak": 473.245,
       "orb_width": 7.16,
       "cost": 932.28,
       "vol_ratio": 1.85
@@ -540,9 +498,9 @@
       "entry_time": "11:14 ET",
       "entry_price": 113.36,
       "shares": 1,
-      "stop": 112.8825,
+      "stop": 112.9825,
       "trail_dist": 1.6675,
-      "peak": 114.55,
+      "peak": 114.65,
       "orb_width": 3.335,
       "cost": 113.36,
       "vol_ratio": 1.23
@@ -764,9 +722,9 @@
       "entry_time": "11:31 ET",
       "entry_price": 39.42,
       "shares": 2,
-      "stop": 39.6176,
+      "stop": 39.5575,
       "trail_dist": 0.3075,
-      "peak": 39.3101,
+      "peak": 39.25,
       "orb_width": 0.615,
       "cost": 78.84,
       "vol_ratio": 1.99
@@ -778,9 +736,9 @@
       "entry_time": "11:34 ET",
       "entry_price": 85.595,
       "shares": 8,
-      "stop": 84.4,
+      "stop": 84.45,
       "trail_dist": 1.21,
-      "peak": 85.61,
+      "peak": 85.66,
       "orb_width": 2.42,
       "cost": 684.76,
       "vol_ratio": 12.09
@@ -820,9 +778,9 @@
       "entry_time": "11:34 ET",
       "entry_price": 88.43,
       "shares": 3,
-      "stop": 88.07,
+      "stop": 88.08,
       "trail_dist": 0.36,
-      "peak": 88.43,
+      "peak": 88.44,
       "orb_width": 0.72,
       "cost": 265.29,
       "vol_ratio": 2.18
@@ -932,9 +890,9 @@
       "entry_time": "11:39 ET",
       "entry_price": 104.0,
       "shares": 1,
-      "stop": 104.194,
+      "stop": 104.019,
       "trail_dist": 0.534,
-      "peak": 103.66,
+      "peak": 103.485,
       "orb_width": 1.068,
       "cost": 104.0,
       "vol_ratio": 1.37
@@ -960,12 +918,26 @@
       "entry_time": "11:44 ET",
       "entry_price": 65.73,
       "shares": 1,
-      "stop": 64.815,
+      "stop": 64.885,
       "trail_dist": 0.915,
-      "peak": 65.73,
+      "peak": 65.8,
       "orb_width": 1.83,
       "cost": 65.73,
       "vol_ratio": 1.26
+    },
+    {
+      "ticker": "WST",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "11:46 ET",
+      "entry_price": 337.37,
+      "shares": 14,
+      "stop": 334.075,
+      "trail_dist": 3.295,
+      "peak": 337.37,
+      "orb_width": 6.59,
+      "cost": 4723.18,
+      "vol_ratio": 1.52
     }
   ],
   "closed_today": [
@@ -1633,6 +1605,63 @@
       "pnl": 1.43,
       "exit_reason": "trailing stop",
       "exit_time": "11:39 ET"
+    },
+    {
+      "ticker": "HIG",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:03 ET",
+      "entry_price": 143.64,
+      "shares": 98,
+      "stop": 142.345,
+      "trail_dist": 1.295,
+      "peak": 143.64,
+      "orb_width": 2.59,
+      "cost": 14076.72,
+      "vol_ratio": 1.43,
+      "exit_date": "2026-07-28",
+      "exit_price": 142.345,
+      "pnl": -126.91,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:46 ET"
+    },
+    {
+      "ticker": "INCY",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:09 ET",
+      "entry_price": 124.76,
+      "shares": 13,
+      "stop": 125.6375,
+      "trail_dist": 2.5675,
+      "peak": 128.205,
+      "orb_width": 5.135,
+      "cost": 1621.88,
+      "vol_ratio": 1.36,
+      "exit_date": "2026-07-28",
+      "exit_price": 125.6375,
+      "pnl": 11.41,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:46 ET"
+    },
+    {
+      "ticker": "WRB",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:19 ET",
+      "entry_price": 77.4226,
+      "shares": 11,
+      "stop": 76.807,
+      "trail_dist": 0.6325,
+      "peak": 77.4395,
+      "orb_width": 1.265,
+      "cost": 851.65,
+      "vol_ratio": 1.93,
+      "exit_date": "2026-07-28",
+      "exit_price": 76.807,
+      "pnl": -6.77,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:46 ET"
     }
   ],
   "all_closed": [
@@ -40442,8 +40471,8 @@
     },
     "AMGN": {
       "high": 395.15,
-      "low": 383.25,
-      "width": 11.9
+      "low": 382.2115,
+      "width": 12.9385
     },
     "APH": {
       "high": 146.0,
@@ -42117,8 +42146,8 @@
     },
     "PM": {
       "high": 206.31,
-      "low": 198.68,
-      "width": 7.63
+      "low": 200.0,
+      "width": 6.31
     },
     "PSX": {
       "high": 209.72,
@@ -42810,7 +42839,7 @@
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
-    "2026-07-28": 96420.1
+    "2026-07-28": 96325.19
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -84316,6 +84345,46 @@
       "exits": [],
       "portfolio_value": 96420.1,
       "note": "$96,420 | cash=$205 | open=69 | closed today=35 | day PnL=$-162"
+    },
+    {
+      "date": "2026-07-28",
+      "time": "11:46 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "WST",
+          "side": "long",
+          "price": 337.37,
+          "shares": 14,
+          "stop": 334.07,
+          "trail_dist": 3.295
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "HIG",
+          "side": "long",
+          "exit_price": 142.34,
+          "pnl": -126.91,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "INCY",
+          "side": "long",
+          "exit_price": 125.64,
+          "pnl": 11.41,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "WRB",
+          "side": "long",
+          "exit_price": 76.81,
+          "pnl": -6.77,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96325.19,
+      "note": "$96,325 | cash=$11,910 | open=67 | closed today=38 | day PnL=$-284"
     }
   ]
 }
