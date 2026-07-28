@@ -1,5 +1,5 @@
 {
-  "capital": 3414.18,
+  "capital": 4901.84,
   "open_positions": [
     {
       "ticker": "FDS",
@@ -14,20 +14,6 @@
       "orb_width": 10.315,
       "cost": 9854.6,
       "vol_ratio": 1.32
-    },
-    {
-      "ticker": "EIX",
-      "side": "long",
-      "entry_date": "2026-07-28",
-      "entry_time": "10:14 ET",
-      "entry_price": 81.37,
-      "shares": 14,
-      "stop": 80.54,
-      "trail_dist": 1.075,
-      "peak": 81.615,
-      "orb_width": 2.15,
-      "cost": 1139.18,
-      "vol_ratio": 4.07
     },
     {
       "ticker": "HAS",
@@ -190,9 +176,9 @@
       "entry_time": "10:54 ET",
       "entry_price": 151.0,
       "shares": 12,
-      "stop": 150.2548,
+      "stop": 150.2798,
       "trail_dist": 1.6352,
-      "peak": 151.89,
+      "peak": 151.915,
       "orb_width": 3.2703,
       "cost": 1812.0,
       "vol_ratio": 2.57
@@ -380,20 +366,6 @@
       "vol_ratio": 1.43
     },
     {
-      "ticker": "USB",
-      "side": "long",
-      "entry_date": "2026-07-28",
-      "entry_time": "11:14 ET",
-      "entry_price": 63.94,
-      "shares": 4,
-      "stop": 63.93,
-      "trail_dist": 0.215,
-      "peak": 64.145,
-      "orb_width": 0.43,
-      "cost": 255.76,
-      "vol_ratio": 1.28
-    },
-    {
       "ticker": "PFG",
       "side": "long",
       "entry_date": "2026-07-28",
@@ -568,9 +540,9 @@
       "entry_time": "11:29 ET",
       "entry_price": 42.735,
       "shares": 3,
-      "stop": 42.775,
+      "stop": 42.72,
       "trail_dist": 0.22,
-      "peak": 42.555,
+      "peak": 42.5,
       "orb_width": 0.44,
       "cost": 128.21,
       "vol_ratio": 1.42
@@ -702,20 +674,6 @@
       "vol_ratio": 1.66
     },
     {
-      "ticker": "SBUX",
-      "side": "short",
-      "entry_date": "2026-07-28",
-      "entry_time": "11:39 ET",
-      "entry_price": 104.0,
-      "shares": 1,
-      "stop": 103.624,
-      "trail_dist": 0.534,
-      "peak": 103.09,
-      "orb_width": 1.068,
-      "cost": 104.0,
-      "vol_ratio": 1.37
-    },
-    {
       "ticker": "TRMB",
       "side": "long",
       "entry_date": "2026-07-28",
@@ -764,9 +722,9 @@
       "entry_time": "11:49 ET",
       "entry_price": 50.8,
       "shares": 106,
-      "stop": 50.7975,
+      "stop": 50.7175,
       "trail_dist": 0.2675,
-      "peak": 50.53,
+      "peak": 50.45,
       "orb_width": 0.535,
       "cost": 5384.8,
       "vol_ratio": 2.56
@@ -918,9 +876,9 @@
       "entry_time": "11:59 ET",
       "entry_price": 53.935,
       "shares": 33,
-      "stop": 54.145,
+      "stop": 54.055,
       "trail_dist": 0.275,
-      "peak": 53.87,
+      "peak": 53.78,
       "orb_width": 0.55,
       "cost": 1779.86,
       "vol_ratio": 1.23
@@ -974,9 +932,9 @@
       "entry_time": "12:09 ET",
       "entry_price": 136.01,
       "shares": 10,
-      "stop": 134.8,
+      "stop": 135.22,
       "trail_dist": 1.21,
-      "peak": 136.01,
+      "peak": 136.43,
       "orb_width": 2.42,
       "cost": 1360.1,
       "vol_ratio": 1.39
@@ -1970,6 +1928,63 @@
       "pnl": 0.6,
       "exit_reason": "trailing stop",
       "exit_time": "12:09 ET"
+    },
+    {
+      "ticker": "EIX",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:14 ET",
+      "entry_price": 81.37,
+      "shares": 14,
+      "stop": 80.54,
+      "trail_dist": 1.075,
+      "peak": 81.615,
+      "orb_width": 2.15,
+      "cost": 1139.18,
+      "vol_ratio": 4.07,
+      "exit_date": "2026-07-28",
+      "exit_price": 80.54,
+      "pnl": -11.62,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:11 ET"
+    },
+    {
+      "ticker": "USB",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "11:14 ET",
+      "entry_price": 63.94,
+      "shares": 4,
+      "stop": 63.93,
+      "trail_dist": 0.215,
+      "peak": 64.145,
+      "orb_width": 0.43,
+      "cost": 255.76,
+      "vol_ratio": 1.28,
+      "exit_date": "2026-07-28",
+      "exit_price": 63.93,
+      "pnl": -0.04,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:11 ET"
+    },
+    {
+      "ticker": "SBUX",
+      "side": "short",
+      "entry_date": "2026-07-28",
+      "entry_time": "11:39 ET",
+      "entry_price": 104.0,
+      "shares": 1,
+      "stop": 103.624,
+      "trail_dist": 0.534,
+      "peak": 103.09,
+      "orb_width": 1.068,
+      "cost": 104.0,
+      "vol_ratio": 1.37,
+      "exit_date": "2026-07-28",
+      "exit_price": 103.624,
+      "pnl": 0.38,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:11 ET"
     }
   ],
   "all_closed": [
@@ -42574,8 +42589,8 @@
     },
     "REGN": {
       "high": 689.65,
-      "low": 676.52,
-      "width": 13.13
+      "low": 676.56,
+      "width": 13.09
     },
     "RF": {
       "high": 31.065,
@@ -42743,9 +42758,9 @@
       "width": 4.71
     },
     "SMCI": {
-      "high": 28.87,
+      "high": 28.86,
       "low": 27.13,
-      "width": 1.74
+      "width": 1.73
     },
     "SYF": {
       "high": 76.58,
@@ -43147,7 +43162,7 @@
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
-    "2026-07-28": 96249.01
+    "2026-07-28": 96229.46
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -85021,6 +85036,37 @@
       ],
       "portfolio_value": 96249.01,
       "note": "$96,249 | cash=$3,414 | open=70 | closed today=52 | day PnL=$-473"
+    },
+    {
+      "date": "2026-07-28",
+      "time": "12:11 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "EIX",
+          "side": "long",
+          "exit_price": 80.54,
+          "pnl": -11.62,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "USB",
+          "side": "long",
+          "exit_price": 63.93,
+          "pnl": -0.04,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "SBUX",
+          "side": "short",
+          "exit_price": 103.62,
+          "pnl": 0.38,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96229.46,
+      "note": "$96,229 | cash=$4,902 | open=67 | closed today=55 | day PnL=$-485"
     }
   ]
 }
