@@ -1,5 +1,5 @@
 {
-  "capital": 710.52,
+  "capital": 847.95,
   "open_positions": [
     {
       "ticker": "FDS",
@@ -448,20 +448,6 @@
       "orb_width": 2.42,
       "cost": 684.76,
       "vol_ratio": 12.09
-    },
-    {
-      "ticker": "AWK",
-      "side": "long",
-      "entry_date": "2026-07-28",
-      "entry_time": "11:34 ET",
-      "entry_price": 138.925,
-      "shares": 1,
-      "stop": 137.43,
-      "trail_dist": 1.705,
-      "peak": 139.135,
-      "orb_width": 3.41,
-      "cost": 138.93,
-      "vol_ratio": 2.13
     },
     {
       "ticker": "MRK",
@@ -2605,6 +2591,25 @@
       "pnl": 33.22,
       "exit_reason": "trailing stop",
       "exit_time": "13:16 ET"
+    },
+    {
+      "ticker": "AWK",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "11:34 ET",
+      "entry_price": 138.925,
+      "shares": 1,
+      "stop": 137.43,
+      "trail_dist": 1.705,
+      "peak": 139.135,
+      "orb_width": 3.41,
+      "cost": 138.93,
+      "vol_ratio": 2.13,
+      "exit_date": "2026-07-28",
+      "exit_price": 137.43,
+      "pnl": -1.5,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:31 ET"
     }
   ],
   "all_closed": [
@@ -41504,8 +41509,8 @@
     },
     "ADSK": {
       "high": 237.31,
-      "low": 230.58,
-      "width": 6.73
+      "low": 229.4,
+      "width": 7.91
     },
     "ADP": {
       "high": 264.14,
@@ -41838,9 +41843,9 @@
       "width": 23.83
     },
     "COIN": {
-      "high": 163.5,
+      "high": 163.44,
       "low": 158.58,
-      "width": 4.92
+      "width": 4.86
     },
     "CL": {
       "high": 95.46,
@@ -43782,7 +43787,7 @@
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
-    "2026-07-28": 96239.43
+    "2026-07-28": 96215.87
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -86460,6 +86465,23 @@
       "exits": [],
       "portfolio_value": 96239.43,
       "note": "$96,239 | cash=$711 | open=76 | closed today=81 | day PnL=$-500"
+    },
+    {
+      "date": "2026-07-28",
+      "time": "13:30 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "AWK",
+          "side": "long",
+          "exit_price": 137.43,
+          "pnl": -1.5,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96215.87,
+      "note": "$96,216 | cash=$848 | open=75 | closed today=82 | day PnL=$-502"
     }
   ]
 }
