@@ -1,5 +1,5 @@
 {
-  "capital": 373.77,
+  "capital": 278.35,
   "open_positions": [
     {
       "ticker": "LDOS",
@@ -22,9 +22,9 @@
       "entry_time": "10:03 ET",
       "entry_price": 206.93,
       "shares": 98,
-      "stop": 207.1425,
+      "stop": 207.22,
       "trail_dist": 1.715,
-      "peak": 208.8575,
+      "peak": 208.935,
       "orb_width": 3.43,
       "cost": 20279.14,
       "vol_ratio": 1.53
@@ -106,9 +106,9 @@
       "entry_time": "10:09 ET",
       "entry_price": 124.76,
       "shares": 13,
-      "stop": 122.9525,
+      "stop": 123.0624,
       "trail_dist": 2.5675,
-      "peak": 125.52,
+      "peak": 125.6299,
       "orb_width": 5.135,
       "cost": 1621.88,
       "vol_ratio": 1.36
@@ -190,9 +190,9 @@
       "entry_time": "10:14 ET",
       "entry_price": 158.73,
       "shares": 1,
-      "stop": 158.485,
+      "stop": 158.775,
       "trail_dist": 1.72,
-      "peak": 160.205,
+      "peak": 160.495,
       "orb_width": 3.44,
       "cost": 158.73,
       "vol_ratio": 1.24
@@ -420,6 +420,20 @@
       "orb_width": 3.19,
       "cost": 152.83,
       "vol_ratio": 2.1
+    },
+    {
+      "ticker": "HAL",
+      "side": "short",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:44 ET",
+      "entry_price": 31.805,
+      "shares": 3,
+      "stop": 31.9885,
+      "trail_dist": 0.1835,
+      "peak": 31.805,
+      "orb_width": 0.3669,
+      "cost": 95.42,
+      "vol_ratio": 1.38
     }
   ],
   "closed_today": [
@@ -39288,8 +39302,8 @@
     },
     "AMGN": {
       "high": 395.15,
-      "low": 383.25,
-      "width": 11.9
+      "low": 382.2115,
+      "width": 12.9385
     },
     "APH": {
       "high": 146.0,
@@ -39338,8 +39352,8 @@
     },
     "ACGL": {
       "high": 106.86,
-      "low": 104.85,
-      "width": 2.01
+      "low": 104.553,
+      "width": 2.307
     },
     "ADM": {
       "high": 83.97,
@@ -39378,8 +39392,8 @@
     },
     "ADSK": {
       "high": 237.31,
-      "low": 230.58,
-      "width": 6.73
+      "low": 229.4,
+      "width": 7.91
     },
     "ADP": {
       "high": 264.14,
@@ -41656,7 +41670,7 @@
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
-    "2026-07-28": 96568.77
+    "2026-07-28": 96578.24
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -82110,6 +82124,24 @@
       "exits": [],
       "portfolio_value": 96568.77,
       "note": "$96,569 | cash=$374 | open=30 | closed today=3 | day PnL=$-15"
+    },
+    {
+      "date": "2026-07-28",
+      "time": "10:43 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "HAL",
+          "side": "short",
+          "price": 31.81,
+          "shares": 3,
+          "stop": 31.99,
+          "trail_dist": 0.1835
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 96578.24,
+      "note": "$96,578 | cash=$278 | open=31 | closed today=3 | day PnL=$-15"
     }
   ]
 }
