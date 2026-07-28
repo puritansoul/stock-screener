@@ -1,5 +1,5 @@
 {
-  "capital": 4433.9,
+  "capital": 4029.02,
   "open_positions": [
     {
       "ticker": "FDS",
@@ -576,20 +576,6 @@
       "vol_ratio": 12.09
     },
     {
-      "ticker": "UAL",
-      "side": "long",
-      "entry_date": "2026-07-28",
-      "entry_time": "11:34 ET",
-      "entry_price": 123.23,
-      "shares": 4,
-      "stop": 123.2347,
-      "trail_dist": 0.7653,
-      "peak": 124.0,
-      "orb_width": 1.5307,
-      "cost": 492.92,
-      "vol_ratio": 2.24
-    },
-    {
       "ticker": "AWK",
       "side": "long",
       "entry_date": "2026-07-28",
@@ -722,9 +708,9 @@
       "entry_time": "11:49 ET",
       "entry_price": 582.77,
       "shares": 6,
-      "stop": 580.5551,
+      "stop": 581.2651,
       "trail_dist": 4.2849,
-      "peak": 584.84,
+      "peak": 585.55,
       "orb_width": 8.5698,
       "cost": 3496.62,
       "vol_ratio": 2.35
@@ -756,20 +742,6 @@
       "orb_width": 3.11,
       "cost": 1868.07,
       "vol_ratio": 1.6
-    },
-    {
-      "ticker": "SWK",
-      "side": "long",
-      "entry_date": "2026-07-28",
-      "entry_time": "11:49 ET",
-      "entry_price": 95.92,
-      "shares": 14,
-      "stop": 94.9625,
-      "trail_dist": 0.9575,
-      "peak": 95.92,
-      "orb_width": 1.915,
-      "cost": 1342.88,
-      "vol_ratio": 1.58
     },
     {
       "ticker": "INCY",
@@ -876,9 +848,9 @@
       "entry_time": "12:04 ET",
       "entry_price": 252.1701,
       "shares": 13,
-      "stop": 251.4975,
+      "stop": 252.6875,
       "trail_dist": 1.9125,
-      "peak": 253.41,
+      "peak": 254.6,
       "orb_width": 3.825,
       "cost": 3278.21,
       "vol_ratio": 2.34
@@ -912,29 +884,15 @@
       "vol_ratio": 1.44
     },
     {
-      "ticker": "PCAR",
-      "side": "long",
-      "entry_date": "2026-07-28",
-      "entry_time": "12:14 ET",
-      "entry_price": 137.7,
-      "shares": 13,
-      "stop": 136.95,
-      "trail_dist": 1.21,
-      "peak": 138.16,
-      "orb_width": 2.42,
-      "cost": 1790.1,
-      "vol_ratio": 1.98
-    },
-    {
       "ticker": "COP",
       "side": "short",
       "entry_date": "2026-07-28",
       "entry_time": "12:14 ET",
       "entry_price": 113.61,
       "shares": 11,
-      "stop": 114.21,
+      "stop": 114.17,
       "trail_dist": 0.64,
-      "peak": 113.57,
+      "peak": 113.53,
       "orb_width": 1.28,
       "cost": 1249.71,
       "vol_ratio": 1.8
@@ -952,6 +910,34 @@
       "orb_width": 1.45,
       "cost": 885.78,
       "vol_ratio": 1.71
+    },
+    {
+      "ticker": "BKNG",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "12:19 ET",
+      "entry_price": 196.89,
+      "shares": 12,
+      "stop": 194.695,
+      "trail_dist": 2.195,
+      "peak": 196.89,
+      "orb_width": 4.39,
+      "cost": 2362.68,
+      "vol_ratio": 1.51
+    },
+    {
+      "ticker": "PCAR",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "12:19 ET",
+      "entry_price": 137.08,
+      "shares": 12,
+      "stop": 135.87,
+      "trail_dist": 1.21,
+      "peak": 137.08,
+      "orb_width": 2.42,
+      "cost": 1644.96,
+      "vol_ratio": 1.23
     }
   ],
   "closed_today": [
@@ -2037,6 +2023,63 @@
       "pnl": 4.79,
       "exit_reason": "trailing stop",
       "exit_time": "12:16 ET"
+    },
+    {
+      "ticker": "UAL",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "11:34 ET",
+      "entry_price": 123.23,
+      "shares": 4,
+      "stop": 123.2347,
+      "trail_dist": 0.7653,
+      "peak": 124.0,
+      "orb_width": 1.5307,
+      "cost": 492.92,
+      "vol_ratio": 2.24,
+      "exit_date": "2026-07-28",
+      "exit_price": 123.2347,
+      "pnl": 0.02,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:19 ET"
+    },
+    {
+      "ticker": "SWK",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "11:49 ET",
+      "entry_price": 95.92,
+      "shares": 14,
+      "stop": 94.9625,
+      "trail_dist": 0.9575,
+      "peak": 95.92,
+      "orb_width": 1.915,
+      "cost": 1342.88,
+      "vol_ratio": 1.58,
+      "exit_date": "2026-07-28",
+      "exit_price": 94.9625,
+      "pnl": -13.4,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:19 ET"
+    },
+    {
+      "ticker": "PCAR",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "12:14 ET",
+      "entry_price": 137.7,
+      "shares": 13,
+      "stop": 136.95,
+      "trail_dist": 1.21,
+      "peak": 138.16,
+      "orb_width": 2.42,
+      "cost": 1790.1,
+      "vol_ratio": 1.98,
+      "exit_date": "2026-07-28",
+      "exit_price": 136.95,
+      "pnl": -9.75,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:19 ET"
     }
   ],
   "all_closed": [
@@ -43214,7 +43257,7 @@
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
-    "2026-07-28": 96172.34
+    "2026-07-28": 96181.55
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -85178,6 +85221,54 @@
       ],
       "portfolio_value": 96172.34,
       "note": "$96,172 | cash=$4,434 | open=68 | closed today=57 | day PnL=$-473"
+    },
+    {
+      "date": "2026-07-28",
+      "time": "12:18 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "BKNG",
+          "side": "long",
+          "price": 196.89,
+          "shares": 12,
+          "stop": 194.69,
+          "trail_dist": 2.195
+        },
+        {
+          "ticker": "PCAR",
+          "side": "long",
+          "price": 137.08,
+          "shares": 12,
+          "stop": 135.87,
+          "trail_dist": 1.21
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "UAL",
+          "side": "long",
+          "exit_price": 123.23,
+          "pnl": 0.02,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "SWK",
+          "side": "long",
+          "exit_price": 94.96,
+          "pnl": -13.4,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "PCAR",
+          "side": "long",
+          "exit_price": 136.95,
+          "pnl": -9.75,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96181.55,
+      "note": "$96,182 | cash=$4,029 | open=67 | closed today=60 | day PnL=$-496"
     }
   ]
 }
