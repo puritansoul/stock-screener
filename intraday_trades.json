@@ -1,5 +1,5 @@
 {
-  "capital": 12262.84,
+  "capital": 8733.84,
   "open_positions": [
     {
       "ticker": "HIG",
@@ -50,9 +50,9 @@
       "entry_time": "10:09 ET",
       "entry_price": 124.76,
       "shares": 13,
-      "stop": 124.4325,
+      "stop": 124.4825,
       "trail_dist": 2.5675,
-      "peak": 127.0,
+      "peak": 127.05,
       "orb_width": 5.135,
       "cost": 1621.88,
       "vol_ratio": 1.36
@@ -288,9 +288,9 @@
       "entry_time": "10:44 ET",
       "entry_price": 31.805,
       "shares": 3,
-      "stop": 31.8935,
+      "stop": 31.8835,
       "trail_dist": 0.1835,
-      "peak": 31.71,
+      "peak": 31.7,
       "orb_width": 0.3669,
       "cost": 95.42,
       "vol_ratio": 1.38
@@ -316,9 +316,9 @@
       "entry_time": "10:49 ET",
       "entry_price": 159.0125,
       "shares": 59,
-      "stop": 155.8925,
+      "stop": 155.8997,
       "trail_dist": 3.1625,
-      "peak": 159.055,
+      "peak": 159.0622,
       "orb_width": 6.325,
       "cost": 9381.74,
       "vol_ratio": 1.95
@@ -358,9 +358,9 @@
       "entry_time": "10:49 ET",
       "entry_price": 436.61,
       "shares": 5,
-      "stop": 433.2275,
+      "stop": 433.3925,
       "trail_dist": 3.9075,
-      "peak": 437.135,
+      "peak": 437.3,
       "orb_width": 7.815,
       "cost": 2183.05,
       "vol_ratio": 1.58
@@ -414,9 +414,9 @@
       "entry_time": "10:54 ET",
       "entry_price": 137.855,
       "shares": 10,
-      "stop": 135.675,
+      "stop": 136.115,
       "trail_dist": 2.505,
-      "peak": 138.18,
+      "peak": 138.62,
       "orb_width": 5.01,
       "cost": 1378.55,
       "vol_ratio": 1.36
@@ -512,9 +512,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 114.29,
       "shares": 7,
-      "stop": 113.2375,
+      "stop": 113.2775,
       "trail_dist": 1.0525,
-      "peak": 114.29,
+      "peak": 114.33,
       "orb_width": 2.105,
       "cost": 800.03,
       "vol_ratio": 1.29
@@ -540,9 +540,9 @@
       "entry_time": "11:06 ET",
       "entry_price": 158.27,
       "shares": 46,
-      "stop": 156.9525,
+      "stop": 157.0075,
       "trail_dist": 1.3175,
-      "peak": 158.27,
+      "peak": 158.325,
       "orb_width": 2.635,
       "cost": 7280.42,
       "vol_ratio": 1.98
@@ -554,12 +554,26 @@
       "entry_time": "11:06 ET",
       "entry_price": 101.85,
       "shares": 51,
-      "stop": 100.2125,
+      "stop": 100.6425,
       "trail_dist": 1.6375,
-      "peak": 101.85,
+      "peak": 102.28,
       "orb_width": 3.275,
       "cost": 5194.35,
       "vol_ratio": 1.42
+    },
+    {
+      "ticker": "RJF",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "11:09 ET",
+      "entry_price": 176.45,
+      "shares": 20,
+      "stop": 175.43,
+      "trail_dist": 1.02,
+      "peak": 176.45,
+      "orb_width": 2.04,
+      "cost": 3529.0,
+      "vol_ratio": 1.61
     }
   ],
   "closed_today": [
@@ -39994,8 +40008,8 @@
     },
     "CDW": {
       "high": 142.565,
-      "low": 139.6,
-      "width": 2.965
+      "low": 138.24,
+      "width": 4.325
     },
     "COR": {
       "high": 319.76,
@@ -40548,9 +40562,9 @@
       "width": 0.27
     },
     "FTNT": {
-      "high": 152.99,
+      "high": 152.94,
       "low": 146.92,
-      "width": 6.07
+      "width": 6.02
     },
     "FTV": {
       "high": 64.29,
@@ -41429,8 +41443,8 @@
     },
     "PTC": {
       "high": 130.38,
-      "low": 126.84,
-      "width": 3.54
+      "low": 126.815,
+      "width": 3.565
     },
     "PSA": {
       "high": 333.92,
@@ -42062,7 +42076,7 @@
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
-    "2026-07-28": 96302.27
+    "2026-07-28": 96315.64
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -82912,6 +82926,24 @@
       ],
       "portfolio_value": 96302.27,
       "note": "$96,302 | cash=$12,263 | open=40 | closed today=17 | day PnL=$-104"
+    },
+    {
+      "date": "2026-07-28",
+      "time": "11:08 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "RJF",
+          "side": "long",
+          "price": 176.45,
+          "shares": 20,
+          "stop": 175.43,
+          "trail_dist": 1.02
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 96315.64,
+      "note": "$96,316 | cash=$8,734 | open=41 | closed today=17 | day PnL=$-104"
     }
   ]
 }
