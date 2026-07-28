@@ -1,5 +1,5 @@
 {
-  "capital": 9435.13,
+  "capital": 7612.43,
   "open_positions": [
     {
       "ticker": "FDS",
@@ -168,20 +168,6 @@
       "orb_width": 3.2703,
       "cost": 1812.0,
       "vol_ratio": 2.57
-    },
-    {
-      "ticker": "CHTR",
-      "side": "long",
-      "entry_date": "2026-07-28",
-      "entry_time": "10:54 ET",
-      "entry_price": 137.855,
-      "shares": 10,
-      "stop": 138.605,
-      "trail_dist": 2.505,
-      "peak": 141.11,
-      "orb_width": 5.01,
-      "cost": 1378.55,
-      "vol_ratio": 1.36
     },
     {
       "ticker": "IFF",
@@ -652,9 +638,9 @@
       "entry_time": "11:49 ET",
       "entry_price": 124.62,
       "shares": 8,
-      "stop": 124.9225,
+      "stop": 125.0025,
       "trail_dist": 2.5675,
-      "peak": 127.49,
+      "peak": 127.57,
       "orb_width": 5.135,
       "cost": 996.96,
       "vol_ratio": 1.42
@@ -756,34 +742,6 @@
       "orb_width": 1.885,
       "cost": 2361.32,
       "vol_ratio": 1.37
-    },
-    {
-      "ticker": "DAL",
-      "side": "long",
-      "entry_date": "2026-07-28",
-      "entry_time": "12:09 ET",
-      "entry_price": 88.78,
-      "shares": 22,
-      "stop": 88.91,
-      "trail_dist": 0.36,
-      "peak": 89.27,
-      "orb_width": 0.72,
-      "cost": 1953.16,
-      "vol_ratio": 1.44
-    },
-    {
-      "ticker": "DG",
-      "side": "long",
-      "entry_date": "2026-07-28",
-      "entry_time": "12:14 ET",
-      "entry_price": 126.54,
-      "shares": 7,
-      "stop": 126.01,
-      "trail_dist": 0.725,
-      "peak": 126.735,
-      "orb_width": 1.45,
-      "cost": 885.78,
-      "vol_ratio": 1.71
     },
     {
       "ticker": "BKNG",
@@ -890,9 +848,9 @@
       "entry_time": "12:39 ET",
       "entry_price": 52.69,
       "shares": 6,
-      "stop": 52.4775,
+      "stop": 52.4825,
       "trail_dist": 0.2225,
-      "peak": 52.7,
+      "peak": 52.705,
       "orb_width": 0.445,
       "cost": 316.14,
       "vol_ratio": 1.27
@@ -918,9 +876,9 @@
       "entry_time": "12:44 ET",
       "entry_price": 57.4151,
       "shares": 17,
-      "stop": 57.225,
+      "stop": 57.235,
       "trail_dist": 0.205,
-      "peak": 57.43,
+      "peak": 57.44,
       "orb_width": 0.41,
       "cost": 976.06,
       "vol_ratio": 2.19
@@ -960,12 +918,40 @@
       "entry_time": "12:44 ET",
       "entry_price": 51.39,
       "shares": 6,
-      "stop": 51.06,
+      "stop": 51.085,
       "trail_dist": 0.39,
-      "peak": 51.45,
+      "peak": 51.475,
       "orb_width": 0.7799,
       "cost": 308.34,
       "vol_ratio": 1.21
+    },
+    {
+      "ticker": "ZBRA",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "12:48 ET",
+      "entry_price": 275.38,
+      "shares": 14,
+      "stop": 273.395,
+      "trail_dist": 1.985,
+      "peak": 275.38,
+      "orb_width": 3.97,
+      "cost": 3855.32,
+      "vol_ratio": 2.26
+    },
+    {
+      "ticker": "BLK",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "12:48 ET",
+      "entry_price": 1095.76,
+      "shares": 2,
+      "stop": 1086.57,
+      "trail_dist": 9.19,
+      "peak": 1095.76,
+      "orb_width": 18.38,
+      "cost": 2191.52,
+      "vol_ratio": 1.2
     }
   ],
   "closed_today": [
@@ -2336,6 +2322,63 @@
       "pnl": -2.64,
       "exit_reason": "trailing stop",
       "exit_time": "12:46 ET"
+    },
+    {
+      "ticker": "CHTR",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:54 ET",
+      "entry_price": 137.855,
+      "shares": 10,
+      "stop": 138.605,
+      "trail_dist": 2.505,
+      "peak": 141.11,
+      "orb_width": 5.01,
+      "cost": 1378.55,
+      "vol_ratio": 1.36,
+      "exit_date": "2026-07-28",
+      "exit_price": 138.605,
+      "pnl": 7.5,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:48 ET"
+    },
+    {
+      "ticker": "DAL",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "12:09 ET",
+      "entry_price": 88.78,
+      "shares": 22,
+      "stop": 88.91,
+      "trail_dist": 0.36,
+      "peak": 89.27,
+      "orb_width": 0.72,
+      "cost": 1953.16,
+      "vol_ratio": 1.44,
+      "exit_date": "2026-07-28",
+      "exit_price": 88.91,
+      "pnl": 2.86,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:48 ET"
+    },
+    {
+      "ticker": "DG",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "12:14 ET",
+      "entry_price": 126.54,
+      "shares": 7,
+      "stop": 126.01,
+      "trail_dist": 0.725,
+      "peak": 126.735,
+      "orb_width": 1.45,
+      "cost": 885.78,
+      "vol_ratio": 1.71,
+      "exit_date": "2026-07-28",
+      "exit_price": 126.01,
+      "pnl": -3.71,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:48 ET"
     }
   ],
   "all_closed": [
@@ -42273,11 +42316,6 @@
       "low": 305.73,
       "width": 10.495
     },
-    "ISRG": {
-      "high": 374.7,
-      "low": 365.01,
-      "width": 9.69
-    },
     "IVZ": {
       "high": 30.36,
       "low": 29.06,
@@ -42559,9 +42597,9 @@
       "width": 2.35
     },
     "MU": {
-      "high": 847.957,
+      "high": 848.36,
       "low": 805.41,
-      "width": 42.547
+      "width": 42.95
     },
     "MSFT": {
       "high": 400.21,
@@ -43513,7 +43551,7 @@
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
-    "2026-07-28": 96227.07
+    "2026-07-28": 96201.84
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -85833,6 +85871,54 @@
       ],
       "portfolio_value": 96227.07,
       "note": "$96,227 | cash=$9,435 | open=69 | closed today=72 | day PnL=$-528"
+    },
+    {
+      "date": "2026-07-28",
+      "time": "12:48 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "ZBRA",
+          "side": "long",
+          "price": 275.38,
+          "shares": 14,
+          "stop": 273.4,
+          "trail_dist": 1.985
+        },
+        {
+          "ticker": "BLK",
+          "side": "long",
+          "price": 1095.76,
+          "shares": 2,
+          "stop": 1086.57,
+          "trail_dist": 9.19
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "CHTR",
+          "side": "long",
+          "exit_price": 138.6,
+          "pnl": 7.5,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "DAL",
+          "side": "long",
+          "exit_price": 88.91,
+          "pnl": 2.86,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "DG",
+          "side": "long",
+          "exit_price": 126.01,
+          "pnl": -3.71,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96201.84,
+      "note": "$96,202 | cash=$7,612 | open=68 | closed today=75 | day PnL=$-521"
     }
   ]
 }
