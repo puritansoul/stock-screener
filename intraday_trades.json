@@ -1,5 +1,5 @@
 {
-  "capital": 278.35,
+  "capital": 2674.72,
   "open_positions": [
     {
       "ticker": "LDOS",
@@ -56,20 +56,6 @@
       "orb_width": 10.315,
       "cost": 9854.6,
       "vol_ratio": 1.32
-    },
-    {
-      "ticker": "ARE",
-      "side": "long",
-      "entry_date": "2026-07-28",
-      "entry_time": "10:09 ET",
-      "entry_price": 53.105,
-      "shares": 132,
-      "stop": 53.495,
-      "trail_dist": 0.44,
-      "peak": 53.935,
-      "orb_width": 0.88,
-      "cost": 7009.86,
-      "vol_ratio": 1.79
     },
     {
       "ticker": "SOLV",
@@ -428,12 +414,54 @@
       "entry_time": "10:44 ET",
       "entry_price": 31.805,
       "shares": 3,
-      "stop": 31.9885,
+      "stop": 31.9385,
       "trail_dist": 0.1835,
-      "peak": 31.805,
+      "peak": 31.755,
       "orb_width": 0.3669,
       "cost": 95.42,
       "vol_ratio": 1.38
+    },
+    {
+      "ticker": "ES",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:46 ET",
+      "entry_price": 76.32,
+      "shares": 28,
+      "stop": 75.66,
+      "trail_dist": 0.66,
+      "peak": 76.32,
+      "orb_width": 1.32,
+      "cost": 2136.96,
+      "vol_ratio": 1.3
+    },
+    {
+      "ticker": "TKO",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:46 ET",
+      "entry_price": 187.07,
+      "shares": 8,
+      "stop": 185.625,
+      "trail_dist": 1.445,
+      "peak": 187.07,
+      "orb_width": 2.89,
+      "cost": 1496.56,
+      "vol_ratio": 1.27
+    },
+    {
+      "ticker": "GDDY",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:46 ET",
+      "entry_price": 103.145,
+      "shares": 10,
+      "stop": 101.5075,
+      "trail_dist": 1.6375,
+      "peak": 103.145,
+      "orb_width": 3.275,
+      "cost": 1031.45,
+      "vol_ratio": 1.23
     }
   ],
   "closed_today": [
@@ -493,6 +521,25 @@
       "pnl": 11.44,
       "exit_reason": "trailing stop",
       "exit_time": "10:39 ET"
+    },
+    {
+      "ticker": "ARE",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:09 ET",
+      "entry_price": 53.105,
+      "shares": 132,
+      "stop": 53.495,
+      "trail_dist": 0.44,
+      "peak": 53.935,
+      "orb_width": 0.88,
+      "cost": 7009.86,
+      "vol_ratio": 1.79,
+      "exit_date": "2026-07-28",
+      "exit_price": 53.495,
+      "pnl": 51.48,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:46 ET"
     }
   ],
   "all_closed": [
@@ -40390,11 +40437,6 @@
       "low": 118.645,
       "width": 5.135
     },
-    "IR": {
-      "high": 86.42,
-      "low": 83.84,
-      "width": 2.58
-    },
     "PODD": {
       "high": 171.09,
       "low": 166.69,
@@ -40716,9 +40758,9 @@
       "width": 2.35
     },
     "MU": {
-      "high": 848.36,
+      "high": 847.957,
       "low": 805.41,
-      "width": 42.95
+      "width": 42.547
     },
     "MSFT": {
       "high": 400.21,
@@ -41037,8 +41079,8 @@
     },
     "PTC": {
       "high": 130.38,
-      "low": 126.815,
-      "width": 3.565
+      "low": 126.84,
+      "width": 3.54
     },
     "PSA": {
       "high": 333.92,
@@ -41405,11 +41447,6 @@
       "low": 321.33,
       "width": 13.34
     },
-    "TSN": {
-      "high": 62.37,
-      "low": 61.0,
-      "width": 1.37
-    },
     "USB": {
       "high": 63.88,
       "low": 63.45,
@@ -41670,7 +41707,7 @@
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
-    "2026-07-28": 96578.24
+    "2026-07-28": 96574.47
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -82142,6 +82179,48 @@
       "exits": [],
       "portfolio_value": 96578.24,
       "note": "$96,578 | cash=$278 | open=31 | closed today=3 | day PnL=$-15"
+    },
+    {
+      "date": "2026-07-28",
+      "time": "10:46 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "ES",
+          "side": "long",
+          "price": 76.32,
+          "shares": 28,
+          "stop": 75.66,
+          "trail_dist": 0.66
+        },
+        {
+          "ticker": "TKO",
+          "side": "long",
+          "price": 187.07,
+          "shares": 8,
+          "stop": 185.63,
+          "trail_dist": 1.445
+        },
+        {
+          "ticker": "GDDY",
+          "side": "long",
+          "price": 103.14,
+          "shares": 10,
+          "stop": 101.51,
+          "trail_dist": 1.6375
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "ARE",
+          "side": "long",
+          "exit_price": 53.49,
+          "pnl": 51.48,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96574.47,
+      "note": "$96,574 | cash=$2,675 | open=33 | closed today=4 | day PnL=$+37"
     }
   ]
 }
