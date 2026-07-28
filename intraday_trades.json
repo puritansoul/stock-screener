@@ -1,20 +1,6 @@
 {
-  "capital": 2674.72,
+  "capital": 3012.23,
   "open_positions": [
-    {
-      "ticker": "LDOS",
-      "side": "long",
-      "entry_date": "2026-07-28",
-      "entry_time": "10:03 ET",
-      "entry_price": 118.16,
-      "shares": 244,
-      "stop": 117.4,
-      "trail_dist": 0.8,
-      "peak": 118.2,
-      "orb_width": 1.6,
-      "cost": 28831.04,
-      "vol_ratio": 1.62
-    },
     {
       "ticker": "TEL",
       "side": "long",
@@ -22,9 +8,9 @@
       "entry_time": "10:03 ET",
       "entry_price": 206.93,
       "shares": 98,
-      "stop": 207.22,
+      "stop": 207.255,
       "trail_dist": 1.715,
-      "peak": 208.935,
+      "peak": 208.97,
       "orb_width": 3.43,
       "cost": 20279.14,
       "vol_ratio": 1.53
@@ -296,20 +282,6 @@
       "vol_ratio": 1.41
     },
     {
-      "ticker": "HBAN",
-      "side": "long",
-      "entry_date": "2026-07-28",
-      "entry_time": "10:29 ET",
-      "entry_price": 17.295,
-      "shares": 4,
-      "stop": 17.295,
-      "trail_dist": 0.055,
-      "peak": 17.35,
-      "orb_width": 0.11,
-      "cost": 69.18,
-      "vol_ratio": 1.32
-    },
-    {
       "ticker": "MRNA",
       "side": "short",
       "entry_date": "2026-07-28",
@@ -386,9 +358,9 @@
       "entry_time": "10:39 ET",
       "entry_price": 147.89,
       "shares": 1,
-      "stop": 150.6472,
+      "stop": 150.5422,
       "trail_dist": 2.7572,
-      "peak": 147.89,
+      "peak": 147.785,
       "orb_width": 5.5143,
       "cost": 147.89,
       "vol_ratio": 2.41
@@ -414,9 +386,9 @@
       "entry_time": "10:44 ET",
       "entry_price": 31.805,
       "shares": 3,
-      "stop": 31.9385,
+      "stop": 31.9235,
       "trail_dist": 0.1835,
-      "peak": 31.755,
+      "peak": 31.74,
       "orb_width": 0.3669,
       "cost": 95.42,
       "vol_ratio": 1.38
@@ -428,9 +400,9 @@
       "entry_time": "10:46 ET",
       "entry_price": 76.32,
       "shares": 28,
-      "stop": 75.66,
+      "stop": 75.75,
       "trail_dist": 0.66,
-      "peak": 76.32,
+      "peak": 76.41,
       "orb_width": 1.32,
       "cost": 2136.96,
       "vol_ratio": 1.3
@@ -442,9 +414,9 @@
       "entry_time": "10:46 ET",
       "entry_price": 187.07,
       "shares": 8,
-      "stop": 185.625,
+      "stop": 185.905,
       "trail_dist": 1.445,
-      "peak": 187.07,
+      "peak": 187.35,
       "orb_width": 2.89,
       "cost": 1496.56,
       "vol_ratio": 1.27
@@ -456,12 +428,110 @@
       "entry_time": "10:46 ET",
       "entry_price": 103.145,
       "shares": 10,
-      "stop": 101.5075,
+      "stop": 101.6225,
       "trail_dist": 1.6375,
-      "peak": 103.145,
+      "peak": 103.26,
       "orb_width": 3.275,
       "cost": 1031.45,
       "vol_ratio": 1.23
+    },
+    {
+      "ticker": "IT",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:49 ET",
+      "entry_price": 159.0125,
+      "shares": 59,
+      "stop": 155.85,
+      "trail_dist": 3.1625,
+      "peak": 159.0125,
+      "orb_width": 6.325,
+      "cost": 9381.74,
+      "vol_ratio": 1.95
+    },
+    {
+      "ticker": "CBRE",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:49 ET",
+      "entry_price": 148.385,
+      "shares": 44,
+      "stop": 146.9025,
+      "trail_dist": 1.4825,
+      "peak": 148.385,
+      "orb_width": 2.965,
+      "cost": 6528.94,
+      "vol_ratio": 1.75
+    },
+    {
+      "ticker": "EOG",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:49 ET",
+      "entry_price": 142.855,
+      "shares": 32,
+      "stop": 141.915,
+      "trail_dist": 0.94,
+      "peak": 142.855,
+      "orb_width": 1.88,
+      "cost": 4571.36,
+      "vol_ratio": 1.69
+    },
+    {
+      "ticker": "HON",
+      "side": "short",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:49 ET",
+      "entry_price": 247.63,
+      "shares": 13,
+      "stop": 249.035,
+      "trail_dist": 1.405,
+      "peak": 247.63,
+      "orb_width": 2.81,
+      "cost": 3219.19,
+      "vol_ratio": 1.58
+    },
+    {
+      "ticker": "MSI",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:49 ET",
+      "entry_price": 436.61,
+      "shares": 5,
+      "stop": 432.7025,
+      "trail_dist": 3.9075,
+      "peak": 436.61,
+      "orb_width": 7.815,
+      "cost": 2183.05,
+      "vol_ratio": 1.58
+    },
+    {
+      "ticker": "NRG",
+      "side": "short",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:49 ET",
+      "entry_price": 128.97,
+      "shares": 12,
+      "stop": 131.9288,
+      "trail_dist": 2.9588,
+      "peak": 128.97,
+      "orb_width": 5.9175,
+      "cost": 1547.64,
+      "vol_ratio": 1.38
+    },
+    {
+      "ticker": "WTW",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:49 ET",
+      "entry_price": 315.1175,
+      "shares": 3,
+      "stop": 310.3775,
+      "trail_dist": 4.74,
+      "peak": 315.1175,
+      "orb_width": 9.48,
+      "cost": 945.35,
+      "vol_ratio": 1.25
     }
   ],
   "closed_today": [
@@ -540,6 +610,44 @@
       "pnl": 51.48,
       "exit_reason": "trailing stop",
       "exit_time": "10:46 ET"
+    },
+    {
+      "ticker": "LDOS",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:03 ET",
+      "entry_price": 118.16,
+      "shares": 244,
+      "stop": 117.4,
+      "trail_dist": 0.8,
+      "peak": 118.2,
+      "orb_width": 1.6,
+      "cost": 28831.04,
+      "vol_ratio": 1.62,
+      "exit_date": "2026-07-28",
+      "exit_price": 117.4,
+      "pnl": -185.44,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:49 ET"
+    },
+    {
+      "ticker": "HBAN",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:29 ET",
+      "entry_price": 17.295,
+      "shares": 4,
+      "stop": 17.295,
+      "trail_dist": 0.055,
+      "peak": 17.35,
+      "orb_width": 0.11,
+      "cost": 69.18,
+      "vol_ratio": 1.32,
+      "exit_date": "2026-07-28",
+      "exit_price": 17.295,
+      "pnl": 0.0,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:49 ET"
     }
   ],
   "all_closed": [
@@ -40437,6 +40545,11 @@
       "low": 118.645,
       "width": 5.135
     },
+    "IR": {
+      "high": 86.42,
+      "low": 83.84,
+      "width": 2.58
+    },
     "PODD": {
       "high": 171.09,
       "low": 166.69,
@@ -40758,9 +40871,9 @@
       "width": 2.35
     },
     "MU": {
-      "high": 847.957,
+      "high": 848.36,
       "low": 805.41,
-      "width": 42.547
+      "width": 42.95
     },
     "MSFT": {
       "high": 400.21,
@@ -41079,8 +41192,8 @@
     },
     "PTC": {
       "high": 130.38,
-      "low": 126.84,
-      "width": 3.54
+      "low": 126.815,
+      "width": 3.565
     },
     "PSA": {
       "high": 333.92,
@@ -41447,6 +41560,11 @@
       "low": 321.33,
       "width": 13.34
     },
+    "TSN": {
+      "high": 62.37,
+      "low": 61.0,
+      "width": 1.37
+    },
     "USB": {
       "high": 63.88,
       "low": 63.45,
@@ -41707,7 +41825,7 @@
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
-    "2026-07-28": 96574.47
+    "2026-07-28": 96434.46
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -82221,6 +82339,87 @@
       ],
       "portfolio_value": 96574.47,
       "note": "$96,574 | cash=$2,675 | open=33 | closed today=4 | day PnL=$+37"
+    },
+    {
+      "date": "2026-07-28",
+      "time": "10:48 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "IT",
+          "side": "long",
+          "price": 159.01,
+          "shares": 59,
+          "stop": 155.85,
+          "trail_dist": 3.1625
+        },
+        {
+          "ticker": "CBRE",
+          "side": "long",
+          "price": 148.38,
+          "shares": 44,
+          "stop": 146.9,
+          "trail_dist": 1.4825
+        },
+        {
+          "ticker": "EOG",
+          "side": "long",
+          "price": 142.85,
+          "shares": 32,
+          "stop": 141.91,
+          "trail_dist": 0.94
+        },
+        {
+          "ticker": "HON",
+          "side": "short",
+          "price": 247.63,
+          "shares": 13,
+          "stop": 249.04,
+          "trail_dist": 1.405
+        },
+        {
+          "ticker": "MSI",
+          "side": "long",
+          "price": 436.61,
+          "shares": 5,
+          "stop": 432.7,
+          "trail_dist": 3.9075
+        },
+        {
+          "ticker": "NRG",
+          "side": "short",
+          "price": 128.97,
+          "shares": 12,
+          "stop": 131.93,
+          "trail_dist": 2.9588
+        },
+        {
+          "ticker": "WTW",
+          "side": "long",
+          "price": 315.12,
+          "shares": 3,
+          "stop": 310.38,
+          "trail_dist": 4.74
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "LDOS",
+          "side": "long",
+          "exit_price": 117.4,
+          "pnl": -185.44,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "HBAN",
+          "side": "long",
+          "exit_price": 17.3,
+          "pnl": 0.0,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96434.46,
+      "note": "$96,434 | cash=$3,012 | open=38 | closed today=6 | day PnL=$-148"
     }
   ]
 }
