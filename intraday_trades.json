@@ -1,5 +1,5 @@
 {
-  "capital": 2143.89,
+  "capital": 869.68,
   "open_positions": [
     {
       "ticker": "FDS",
@@ -442,9 +442,9 @@
       "entry_time": "11:29 ET",
       "entry_price": 90.54,
       "shares": 5,
-      "stop": 89.895,
+      "stop": 89.99,
       "trail_dist": 0.935,
-      "peak": 90.83,
+      "peak": 90.925,
       "orb_width": 1.87,
       "cost": 452.7,
       "vol_ratio": 2.04
@@ -462,20 +462,6 @@
       "orb_width": 0.95,
       "cost": 186.72,
       "vol_ratio": 1.43
-    },
-    {
-      "ticker": "DVN",
-      "side": "short",
-      "entry_date": "2026-07-28",
-      "entry_time": "11:29 ET",
-      "entry_price": 42.735,
-      "shares": 3,
-      "stop": 42.635,
-      "trail_dist": 0.22,
-      "peak": 42.415,
-      "orb_width": 0.44,
-      "cost": 128.21,
-      "vol_ratio": 1.42
     },
     {
       "ticker": "BEN",
@@ -610,9 +596,9 @@
       "entry_time": "11:44 ET",
       "entry_price": 65.73,
       "shares": 1,
-      "stop": 65.055,
+      "stop": 65.165,
       "trail_dist": 0.915,
-      "peak": 65.97,
+      "peak": 66.08,
       "orb_width": 1.83,
       "cost": 65.73,
       "vol_ratio": 1.26
@@ -666,9 +652,9 @@
       "entry_time": "11:49 ET",
       "entry_price": 425.8288,
       "shares": 6,
-      "stop": 424.045,
+      "stop": 424.135,
       "trail_dist": 3.39,
-      "peak": 427.435,
+      "peak": 427.525,
       "orb_width": 6.78,
       "cost": 2554.97,
       "vol_ratio": 1.88
@@ -694,9 +680,9 @@
       "entry_time": "11:49 ET",
       "entry_price": 124.62,
       "shares": 8,
-      "stop": 123.0437,
+      "stop": 123.3625,
       "trail_dist": 2.5675,
-      "peak": 125.6112,
+      "peak": 125.93,
       "orb_width": 5.135,
       "cost": 996.96,
       "vol_ratio": 1.42
@@ -750,9 +736,9 @@
       "entry_time": "11:59 ET",
       "entry_price": 251.85,
       "shares": 13,
-      "stop": 251.34,
+      "stop": 251.35,
       "trail_dist": 0.96,
-      "peak": 252.3,
+      "peak": 252.31,
       "orb_width": 1.92,
       "cost": 3274.05,
       "vol_ratio": 1.82
@@ -820,9 +806,9 @@
       "entry_time": "12:09 ET",
       "entry_price": 88.78,
       "shares": 22,
-      "stop": 88.83,
+      "stop": 88.88,
       "trail_dist": 0.36,
-      "peak": 89.19,
+      "peak": 89.24,
       "orb_width": 0.72,
       "cost": 1953.16,
       "vol_ratio": 1.44
@@ -904,9 +890,9 @@
       "entry_time": "12:29 ET",
       "entry_price": 181.77,
       "shares": 13,
-      "stop": 183.125,
+      "stop": 183.055,
       "trail_dist": 1.63,
-      "peak": 181.495,
+      "peak": 181.425,
       "orb_width": 3.26,
       "cost": 2363.01,
       "vol_ratio": 1.47
@@ -946,12 +932,54 @@
       "entry_time": "12:34 ET",
       "entry_price": 382.56,
       "shares": 2,
-      "stop": 377.0475,
+      "stop": 377.6625,
       "trail_dist": 5.7775,
-      "peak": 382.825,
+      "peak": 383.44,
       "orb_width": 11.555,
       "cost": 765.12,
       "vol_ratio": 1.45
+    },
+    {
+      "ticker": "EBAY",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "12:39 ET",
+      "entry_price": 116.405,
+      "shares": 5,
+      "stop": 115.2955,
+      "trail_dist": 1.1095,
+      "peak": 116.405,
+      "orb_width": 2.219,
+      "cost": 582.02,
+      "vol_ratio": 5.51
+    },
+    {
+      "ticker": "HAL",
+      "side": "short",
+      "entry_date": "2026-07-28",
+      "entry_time": "12:39 ET",
+      "entry_price": 31.535,
+      "shares": 16,
+      "stop": 31.7185,
+      "trail_dist": 0.1835,
+      "peak": 31.535,
+      "orb_width": 0.3669,
+      "cost": 504.56,
+      "vol_ratio": 1.28
+    },
+    {
+      "ticker": "TFC",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "12:39 ET",
+      "entry_price": 52.69,
+      "shares": 6,
+      "stop": 52.4675,
+      "trail_dist": 0.2225,
+      "peak": 52.69,
+      "orb_width": 0.445,
+      "cost": 316.14,
+      "vol_ratio": 1.27
     }
   ],
   "closed_today": [
@@ -2189,6 +2217,25 @@
       "pnl": 6.48,
       "exit_reason": "trailing stop",
       "exit_time": "12:29 ET"
+    },
+    {
+      "ticker": "DVN",
+      "side": "short",
+      "entry_date": "2026-07-28",
+      "entry_time": "11:29 ET",
+      "entry_price": 42.735,
+      "shares": 3,
+      "stop": 42.635,
+      "trail_dist": 0.22,
+      "peak": 42.415,
+      "orb_width": 0.44,
+      "cost": 128.21,
+      "vol_ratio": 1.42,
+      "exit_date": "2026-07-28",
+      "exit_price": 42.635,
+      "pnl": 0.3,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:39 ET"
     }
   ],
   "all_closed": [
@@ -43366,7 +43413,7 @@
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
-    "2026-07-28": 96243.58
+    "2026-07-28": 96248.38
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -85531,6 +85578,48 @@
       "exits": [],
       "portfolio_value": 96243.58,
       "note": "$96,244 | cash=$2,144 | open=68 | closed today=65 | day PnL=$-526"
+    },
+    {
+      "date": "2026-07-28",
+      "time": "12:38 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "EBAY",
+          "side": "long",
+          "price": 116.4,
+          "shares": 5,
+          "stop": 115.3,
+          "trail_dist": 1.1095
+        },
+        {
+          "ticker": "HAL",
+          "side": "short",
+          "price": 31.53,
+          "shares": 16,
+          "stop": 31.72,
+          "trail_dist": 0.1835
+        },
+        {
+          "ticker": "TFC",
+          "side": "long",
+          "price": 52.69,
+          "shares": 6,
+          "stop": 52.47,
+          "trail_dist": 0.2225
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "DVN",
+          "side": "short",
+          "exit_price": 42.63,
+          "pnl": 0.3,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96248.38,
+      "note": "$96,248 | cash=$870 | open=70 | closed today=66 | day PnL=$-525"
     }
   ]
 }
