@@ -1,5 +1,5 @@
 {
-  "capital": 871.88,
+  "capital": 9435.13,
   "open_positions": [
     {
       "ticker": "FDS",
@@ -232,9 +232,9 @@
       "entry_time": "10:59 ET",
       "entry_price": 544.71,
       "shares": 1,
-      "stop": 548.35,
+      "stop": 548.425,
       "trail_dist": 3.64,
-      "peak": 551.99,
+      "peak": 552.065,
       "orb_width": 7.28,
       "cost": 544.71,
       "vol_ratio": 1.31
@@ -484,9 +484,9 @@
       "entry_time": "11:31 ET",
       "entry_price": 39.42,
       "shares": 2,
-      "stop": 39.115,
+      "stop": 39.0975,
       "trail_dist": 0.3075,
-      "peak": 38.8075,
+      "peak": 38.79,
       "orb_width": 0.615,
       "cost": 78.84,
       "vol_ratio": 1.99
@@ -548,20 +548,6 @@
       "vol_ratio": 2.0
     },
     {
-      "ticker": "EOG",
-      "side": "short",
-      "entry_date": "2026-07-28",
-      "entry_time": "11:39 ET",
-      "entry_price": 139.585,
-      "shares": 1,
-      "stop": 139.85,
-      "trail_dist": 0.94,
-      "peak": 138.91,
-      "orb_width": 1.88,
-      "cost": 139.59,
-      "vol_ratio": 1.91
-    },
-    {
       "ticker": "VLTO",
       "side": "long",
       "entry_date": "2026-07-28",
@@ -618,20 +604,6 @@
       "vol_ratio": 1.52
     },
     {
-      "ticker": "SLB",
-      "side": "short",
-      "entry_date": "2026-07-28",
-      "entry_time": "11:49 ET",
-      "entry_price": 50.8,
-      "shares": 106,
-      "stop": 50.6476,
-      "trail_dist": 0.2675,
-      "peak": 50.3801,
-      "orb_width": 0.535,
-      "cost": 5384.8,
-      "vol_ratio": 2.56
-    },
-    {
       "ticker": "MSCI",
       "side": "long",
       "entry_date": "2026-07-28",
@@ -680,9 +652,9 @@
       "entry_time": "11:49 ET",
       "entry_price": 124.62,
       "shares": 8,
-      "stop": 124.1025,
+      "stop": 124.9225,
       "trail_dist": 2.5675,
-      "peak": 126.67,
+      "peak": 127.49,
       "orb_width": 5.135,
       "cost": 996.96,
       "vol_ratio": 1.42
@@ -758,20 +730,6 @@
       "vol_ratio": 1.78
     },
     {
-      "ticker": "OXY",
-      "side": "short",
-      "entry_date": "2026-07-28",
-      "entry_time": "11:59 ET",
-      "entry_price": 53.935,
-      "shares": 33,
-      "stop": 54.055,
-      "trail_dist": 0.275,
-      "peak": 53.78,
-      "orb_width": 0.55,
-      "cost": 1779.86,
-      "vol_ratio": 1.23
-    },
-    {
       "ticker": "GRMN",
       "side": "long",
       "entry_date": "2026-07-28",
@@ -812,20 +770,6 @@
       "orb_width": 0.72,
       "cost": 1953.16,
       "vol_ratio": 1.44
-    },
-    {
-      "ticker": "COP",
-      "side": "short",
-      "entry_date": "2026-07-28",
-      "entry_time": "12:14 ET",
-      "entry_price": 113.61,
-      "shares": 11,
-      "stop": 113.85,
-      "trail_dist": 0.64,
-      "peak": 113.21,
-      "orb_width": 1.28,
-      "cost": 1249.71,
-      "vol_ratio": 1.8
     },
     {
       "ticker": "DG",
@@ -974,9 +918,9 @@
       "entry_time": "12:44 ET",
       "entry_price": 57.4151,
       "shares": 17,
-      "stop": 57.2101,
+      "stop": 57.225,
       "trail_dist": 0.205,
-      "peak": 57.4151,
+      "peak": 57.43,
       "orb_width": 0.41,
       "cost": 976.06,
       "vol_ratio": 2.19
@@ -1016,9 +960,9 @@
       "entry_time": "12:44 ET",
       "entry_price": 51.39,
       "shares": 6,
-      "stop": 51.0,
+      "stop": 51.06,
       "trail_dist": 0.39,
-      "peak": 51.39,
+      "peak": 51.45,
       "orb_width": 0.7799,
       "cost": 308.34,
       "vol_ratio": 1.21
@@ -2316,6 +2260,82 @@
       "pnl": -9.2,
       "exit_reason": "trailing stop",
       "exit_time": "12:44 ET"
+    },
+    {
+      "ticker": "EOG",
+      "side": "short",
+      "entry_date": "2026-07-28",
+      "entry_time": "11:39 ET",
+      "entry_price": 139.585,
+      "shares": 1,
+      "stop": 139.85,
+      "trail_dist": 0.94,
+      "peak": 138.91,
+      "orb_width": 1.88,
+      "cost": 139.59,
+      "vol_ratio": 1.91,
+      "exit_date": "2026-07-28",
+      "exit_price": 139.85,
+      "pnl": -0.26,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:46 ET"
+    },
+    {
+      "ticker": "SLB",
+      "side": "short",
+      "entry_date": "2026-07-28",
+      "entry_time": "11:49 ET",
+      "entry_price": 50.8,
+      "shares": 106,
+      "stop": 50.6476,
+      "trail_dist": 0.2675,
+      "peak": 50.3801,
+      "orb_width": 0.535,
+      "cost": 5384.8,
+      "vol_ratio": 2.56,
+      "exit_date": "2026-07-28",
+      "exit_price": 50.6476,
+      "pnl": 16.15,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:46 ET"
+    },
+    {
+      "ticker": "OXY",
+      "side": "short",
+      "entry_date": "2026-07-28",
+      "entry_time": "11:59 ET",
+      "entry_price": 53.935,
+      "shares": 33,
+      "stop": 54.055,
+      "trail_dist": 0.275,
+      "peak": 53.78,
+      "orb_width": 0.55,
+      "cost": 1779.86,
+      "vol_ratio": 1.23,
+      "exit_date": "2026-07-28",
+      "exit_price": 54.055,
+      "pnl": -3.96,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:46 ET"
+    },
+    {
+      "ticker": "COP",
+      "side": "short",
+      "entry_date": "2026-07-28",
+      "entry_time": "12:14 ET",
+      "entry_price": 113.61,
+      "shares": 11,
+      "stop": 113.85,
+      "trail_dist": 0.64,
+      "peak": 113.21,
+      "orb_width": 1.28,
+      "cost": 1249.71,
+      "vol_ratio": 1.8,
+      "exit_date": "2026-07-28",
+      "exit_price": 113.85,
+      "pnl": -2.64,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:46 ET"
     }
   ],
   "all_closed": [
@@ -41175,8 +41195,8 @@
     },
     "ACGL": {
       "high": 106.86,
-      "low": 104.85,
-      "width": 2.01
+      "low": 104.553,
+      "width": 2.307
     },
     "ADM": {
       "high": 83.97,
@@ -42539,9 +42559,9 @@
       "width": 2.35
     },
     "MU": {
-      "high": 848.36,
+      "high": 847.957,
       "low": 805.41,
-      "width": 42.95
+      "width": 42.547
     },
     "MSFT": {
       "high": 400.21,
@@ -42860,8 +42880,8 @@
     },
     "PTC": {
       "high": 130.38,
-      "low": 126.84,
-      "width": 3.54
+      "low": 126.815,
+      "width": 3.565
     },
     "PSA": {
       "high": 333.92,
@@ -43493,7 +43513,7 @@
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
-    "2026-07-28": 96238.45
+    "2026-07-28": 96227.07
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -85775,6 +85795,44 @@
       ],
       "portfolio_value": 96238.45,
       "note": "$96,238 | cash=$872 | open=73 | closed today=68 | day PnL=$-537"
+    },
+    {
+      "date": "2026-07-28",
+      "time": "12:46 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "EOG",
+          "side": "short",
+          "exit_price": 139.85,
+          "pnl": -0.26,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "SLB",
+          "side": "short",
+          "exit_price": 50.65,
+          "pnl": 16.15,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "OXY",
+          "side": "short",
+          "exit_price": 54.05,
+          "pnl": -3.96,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "COP",
+          "side": "short",
+          "exit_price": 113.85,
+          "pnl": -2.64,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96227.07,
+      "note": "$96,227 | cash=$9,435 | open=69 | closed today=72 | day PnL=$-528"
     }
   ]
 }
