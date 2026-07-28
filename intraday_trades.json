@@ -1,5 +1,5 @@
 {
-  "capital": 4802.34,
+  "capital": 3384.3,
   "open_positions": [
     {
       "ticker": "FDS",
@@ -484,9 +484,9 @@
       "entry_time": "12:19 ET",
       "entry_price": 196.89,
       "shares": 12,
-      "stop": 195.775,
+      "stop": 195.81,
       "trail_dist": 2.195,
-      "peak": 197.97,
+      "peak": 198.005,
       "orb_width": 4.39,
       "cost": 2362.68,
       "vol_ratio": 1.51
@@ -540,9 +540,9 @@
       "entry_time": "12:39 ET",
       "entry_price": 116.405,
       "shares": 5,
-      "stop": 115.7005,
+      "stop": 115.7205,
       "trail_dist": 1.1095,
-      "peak": 116.81,
+      "peak": 116.83,
       "orb_width": 2.219,
       "cost": 582.02,
       "vol_ratio": 5.51
@@ -820,9 +820,9 @@
       "entry_time": "13:53 ET",
       "entry_price": 113.355,
       "shares": 12,
-      "stop": 114.1501,
+      "stop": 114.1101,
       "trail_dist": 0.9101,
-      "peak": 113.24,
+      "peak": 113.2,
       "orb_width": 1.8201,
       "cost": 1360.26,
       "vol_ratio": 3.91
@@ -862,12 +862,26 @@
       "entry_time": "13:58 ET",
       "entry_price": 291.35,
       "shares": 6,
-      "stop": 288.3925,
+      "stop": 289.3725,
       "trail_dist": 2.9575,
-      "peak": 291.35,
+      "peak": 292.33,
       "orb_width": 5.915,
       "cost": 1748.1,
       "vol_ratio": 1.4
+    },
+    {
+      "ticker": "WSM",
+      "side": "short",
+      "entry_date": "2026-07-28",
+      "entry_time": "14:00 ET",
+      "entry_price": 236.34,
+      "shares": 6,
+      "stop": 237.76,
+      "trail_dist": 1.42,
+      "peak": 236.34,
+      "orb_width": 2.84,
+      "cost": 1418.04,
+      "vol_ratio": 1.45
     }
   ],
   "closed_today": [
@@ -44061,7 +44075,7 @@
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
-    "2026-07-28": 96049.09
+    "2026-07-28": 96047.78
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -87125,6 +87139,24 @@
       ],
       "portfolio_value": 96049.09,
       "note": "$96,049 | cash=$4,802 | open=62 | closed today=106 | day PnL=$-538"
+    },
+    {
+      "date": "2026-07-28",
+      "time": "14:00 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "WSM",
+          "side": "short",
+          "price": 236.34,
+          "shares": 6,
+          "stop": 237.76,
+          "trail_dist": 1.42
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 96047.78,
+      "note": "$96,048 | cash=$3,384 | open=63 | closed today=106 | day PnL=$-538"
     }
   ]
 }
