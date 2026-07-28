@@ -1,5 +1,5 @@
 {
-  "capital": 317.02,
+  "capital": 710.52,
   "open_positions": [
     {
       "ticker": "FDS",
@@ -576,20 +576,6 @@
       "vol_ratio": 1.6
     },
     {
-      "ticker": "INCY",
-      "side": "long",
-      "entry_date": "2026-07-28",
-      "entry_time": "11:49 ET",
-      "entry_price": 124.62,
-      "shares": 8,
-      "stop": 128.7725,
-      "trail_dist": 2.5675,
-      "peak": 131.34,
-      "orb_width": 5.135,
-      "cost": 996.96,
-      "vol_ratio": 1.42
-    },
-    {
       "ticker": "APTV",
       "side": "long",
       "entry_date": "2026-07-28",
@@ -1050,6 +1036,34 @@
       "orb_width": 1.53,
       "cost": 124.53,
       "vol_ratio": 2.48
+    },
+    {
+      "ticker": "EG",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "13:16 ET",
+      "entry_price": 399.72,
+      "shares": 1,
+      "stop": 396.645,
+      "trail_dist": 3.075,
+      "peak": 399.72,
+      "orb_width": 6.15,
+      "cost": 399.72,
+      "vol_ratio": 1.36
+    },
+    {
+      "ticker": "LDOS",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "13:16 ET",
+      "entry_price": 118.48,
+      "shares": 2,
+      "stop": 117.68,
+      "trail_dist": 0.8,
+      "peak": 118.48,
+      "orb_width": 1.6,
+      "cost": 236.96,
+      "vol_ratio": 1.23
     }
   ],
   "closed_today": [
@@ -2572,6 +2586,25 @@
       "pnl": 0.49,
       "exit_reason": "trailing stop",
       "exit_time": "13:01 ET"
+    },
+    {
+      "ticker": "INCY",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "11:49 ET",
+      "entry_price": 124.62,
+      "shares": 8,
+      "stop": 128.7725,
+      "trail_dist": 2.5675,
+      "peak": 131.34,
+      "orb_width": 5.135,
+      "cost": 996.96,
+      "vol_ratio": 1.42,
+      "exit_date": "2026-07-28",
+      "exit_price": 128.7725,
+      "pnl": 33.22,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:16 ET"
     }
   ],
   "all_closed": [
@@ -41471,8 +41504,8 @@
     },
     "ADSK": {
       "high": 237.31,
-      "low": 230.58,
-      "width": 6.73
+      "low": 229.4,
+      "width": 7.91
     },
     "ADP": {
       "high": 264.14,
@@ -42795,9 +42828,9 @@
       "width": 2.35
     },
     "MU": {
-      "high": 847.957,
+      "high": 848.36,
       "low": 805.41,
-      "width": 42.547
+      "width": 42.95
     },
     "MSFT": {
       "high": 400.21,
@@ -43749,7 +43782,7 @@
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
-    "2026-07-28": 96236.39
+    "2026-07-28": 96234.15
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -86348,6 +86381,40 @@
       "exits": [],
       "portfolio_value": 96236.39,
       "note": "$96,236 | cash=$317 | open=75 | closed today=80 | day PnL=$-533"
+    },
+    {
+      "date": "2026-07-28",
+      "time": "13:15 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "EG",
+          "side": "long",
+          "price": 399.72,
+          "shares": 1,
+          "stop": 396.65,
+          "trail_dist": 3.075
+        },
+        {
+          "ticker": "LDOS",
+          "side": "long",
+          "price": 118.48,
+          "shares": 2,
+          "stop": 117.68,
+          "trail_dist": 0.8
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "INCY",
+          "side": "long",
+          "exit_price": 128.77,
+          "pnl": 33.22,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96234.15,
+      "note": "$96,234 | cash=$711 | open=76 | closed today=81 | day PnL=$-500"
     }
   ]
 }
