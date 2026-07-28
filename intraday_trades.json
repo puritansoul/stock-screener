@@ -1,5 +1,5 @@
 {
-  "capital": 1622.37,
+  "capital": 4230.49,
   "open_positions": [
     {
       "ticker": "FDS",
@@ -8,9 +8,9 @@
       "entry_time": "10:03 ET",
       "entry_price": 281.56,
       "shares": 35,
-      "stop": 280.4725,
+      "stop": 280.4825,
       "trail_dist": 5.1575,
-      "peak": 285.63,
+      "peak": 285.64,
       "orb_width": 10.315,
       "cost": 9854.6,
       "vol_ratio": 1.32
@@ -126,20 +126,6 @@
       "orb_width": 1.32,
       "cost": 2136.96,
       "vol_ratio": 1.3
-    },
-    {
-      "ticker": "IT",
-      "side": "long",
-      "entry_date": "2026-07-28",
-      "entry_time": "10:49 ET",
-      "entry_price": 159.0125,
-      "shares": 59,
-      "stop": 156.5425,
-      "trail_dist": 3.1625,
-      "peak": 159.705,
-      "orb_width": 6.325,
-      "cost": 9381.74,
-      "vol_ratio": 1.95
     },
     {
       "ticker": "CBRE",
@@ -260,9 +246,9 @@
       "entry_time": "10:59 ET",
       "entry_price": 466.14,
       "shares": 2,
-      "stop": 470.685,
+      "stop": 471.01,
       "trail_dist": 3.58,
-      "peak": 474.265,
+      "peak": 474.59,
       "orb_width": 7.16,
       "cost": 932.28,
       "vol_ratio": 1.85
@@ -534,20 +520,6 @@
       "vol_ratio": 1.83
     },
     {
-      "ticker": "ZBRA",
-      "side": "long",
-      "entry_date": "2026-07-28",
-      "entry_time": "11:29 ET",
-      "entry_price": 273.385,
-      "shares": 3,
-      "stop": 272.875,
-      "trail_dist": 1.985,
-      "peak": 274.86,
-      "orb_width": 3.97,
-      "cost": 820.16,
-      "vol_ratio": 4.19
-    },
-    {
       "ticker": "AON",
       "side": "long",
       "entry_date": "2026-07-28",
@@ -638,9 +610,9 @@
       "entry_time": "11:31 ET",
       "entry_price": 39.42,
       "shares": 2,
-      "stop": 39.4475,
+      "stop": 39.395,
       "trail_dist": 0.3075,
-      "peak": 39.14,
+      "peak": 39.0875,
       "orb_width": 0.615,
       "cost": 78.84,
       "vol_ratio": 1.99
@@ -722,9 +694,9 @@
       "entry_time": "11:39 ET",
       "entry_price": 139.585,
       "shares": 1,
-      "stop": 140.18,
+      "stop": 139.98,
       "trail_dist": 0.94,
-      "peak": 139.24,
+      "peak": 139.04,
       "orb_width": 1.88,
       "cost": 139.59,
       "vol_ratio": 1.91
@@ -890,9 +862,9 @@
       "entry_time": "11:54 ET",
       "entry_price": 58.79,
       "shares": 22,
-      "stop": 58.29,
+      "stop": 58.3,
       "trail_dist": 0.5,
-      "peak": 58.79,
+      "peak": 58.8,
       "orb_width": 1.0,
       "cost": 1293.38,
       "vol_ratio": 5.21
@@ -904,9 +876,9 @@
       "entry_time": "11:54 ET",
       "entry_price": 88.57,
       "shares": 10,
-      "stop": 88.21,
+      "stop": 88.3,
       "trail_dist": 0.36,
-      "peak": 88.57,
+      "peak": 88.66,
       "orb_width": 0.72,
       "cost": 885.7,
       "vol_ratio": 2.21
@@ -918,9 +890,9 @@
       "entry_time": "11:54 ET",
       "entry_price": 128.685,
       "shares": 5,
-      "stop": 127.7675,
+      "stop": 127.7725,
       "trail_dist": 0.9225,
-      "peak": 128.69,
+      "peak": 128.695,
       "orb_width": 1.845,
       "cost": 643.42,
       "vol_ratio": 1.35
@@ -932,12 +904,54 @@
       "entry_time": "11:56 ET",
       "entry_price": 173.14,
       "shares": 3,
-      "stop": 170.53,
+      "stop": 171.03,
       "trail_dist": 2.61,
-      "peak": 173.14,
+      "peak": 173.64,
       "orb_width": 5.22,
       "cost": 519.42,
       "vol_ratio": 1.93
+    },
+    {
+      "ticker": "MTB",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "11:59 ET",
+      "entry_price": 251.85,
+      "shares": 13,
+      "stop": 250.89,
+      "trail_dist": 0.96,
+      "peak": 251.85,
+      "orb_width": 1.92,
+      "cost": 3274.05,
+      "vol_ratio": 1.82
+    },
+    {
+      "ticker": "RSG",
+      "side": "short",
+      "entry_date": "2026-07-28",
+      "entry_time": "11:59 ET",
+      "entry_price": 217.51,
+      "shares": 11,
+      "stop": 218.8,
+      "trail_dist": 1.29,
+      "peak": 217.51,
+      "orb_width": 2.58,
+      "cost": 2392.61,
+      "vol_ratio": 1.78
+    },
+    {
+      "ticker": "OXY",
+      "side": "short",
+      "entry_date": "2026-07-28",
+      "entry_time": "11:59 ET",
+      "entry_price": 53.935,
+      "shares": 33,
+      "stop": 54.21,
+      "trail_dist": 0.275,
+      "peak": 53.935,
+      "orb_width": 0.55,
+      "cost": 1779.86,
+      "vol_ratio": 1.23
     }
   ],
   "closed_today": [
@@ -1852,6 +1866,44 @@
       "pnl": -0.75,
       "exit_reason": "trailing stop",
       "exit_time": "11:56 ET"
+    },
+    {
+      "ticker": "IT",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "10:49 ET",
+      "entry_price": 159.0125,
+      "shares": 59,
+      "stop": 156.5425,
+      "trail_dist": 3.1625,
+      "peak": 159.705,
+      "orb_width": 6.325,
+      "cost": 9381.74,
+      "vol_ratio": 1.95,
+      "exit_date": "2026-07-28",
+      "exit_price": 156.5425,
+      "pnl": -145.73,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:59 ET"
+    },
+    {
+      "ticker": "ZBRA",
+      "side": "long",
+      "entry_date": "2026-07-28",
+      "entry_time": "11:29 ET",
+      "entry_price": 273.385,
+      "shares": 3,
+      "stop": 272.875,
+      "trail_dist": 1.985,
+      "peak": 274.86,
+      "orb_width": 3.97,
+      "cost": 820.16,
+      "vol_ratio": 4.19,
+      "exit_date": "2026-07-28",
+      "exit_price": 272.875,
+      "pnl": -1.53,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:59 ET"
     }
   ],
   "all_closed": [
@@ -40526,8 +40578,8 @@
     },
     "ADBE": {
       "high": 248.06,
-      "low": 241.92,
-      "width": 6.14
+      "low": 241.6946,
+      "width": 6.3654
     },
     "AMD": {
       "high": 472.75,
@@ -40834,11 +40886,6 @@
       "low": 130.4001,
       "width": 2.0999
     },
-    "XYZ": {
-      "high": 82.34,
-      "low": 80.61,
-      "width": 1.73
-    },
     "BNY": {
       "high": 159.0323,
       "low": 155.06,
@@ -40961,8 +41008,8 @@
     },
     "CDW": {
       "high": 142.565,
-      "low": 139.6,
-      "width": 2.965
+      "low": 138.24,
+      "width": 4.325
     },
     "COR": {
       "high": 319.76,
@@ -41515,9 +41562,9 @@
       "width": 0.27
     },
     "FTNT": {
-      "high": 152.99,
+      "high": 152.94,
       "low": 146.92,
-      "width": 6.07
+      "width": 6.02
     },
     "FTV": {
       "high": 64.29,
@@ -42625,9 +42672,9 @@
       "width": 4.71
     },
     "SMCI": {
-      "high": 28.86,
+      "high": 28.87,
       "low": 27.13,
-      "width": 1.73
+      "width": 1.74
     },
     "SYF": {
       "high": 76.58,
@@ -43029,7 +43076,7 @@
     "2026-07-23": 97836.48,
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
-    "2026-07-28": 96126.49
+    "2026-07-28": 96106.89
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -84768,6 +84815,55 @@
       ],
       "portfolio_value": 96126.49,
       "note": "$96,126 | cash=$1,622 | open=67 | closed today=48 | day PnL=$-296"
+    },
+    {
+      "date": "2026-07-28",
+      "time": "11:58 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "MTB",
+          "side": "long",
+          "price": 251.85,
+          "shares": 13,
+          "stop": 250.89,
+          "trail_dist": 0.96
+        },
+        {
+          "ticker": "RSG",
+          "side": "short",
+          "price": 217.51,
+          "shares": 11,
+          "stop": 218.8,
+          "trail_dist": 1.29
+        },
+        {
+          "ticker": "OXY",
+          "side": "short",
+          "price": 53.94,
+          "shares": 33,
+          "stop": 54.21,
+          "trail_dist": 0.275
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "IT",
+          "side": "long",
+          "exit_price": 156.54,
+          "pnl": -145.73,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "ZBRA",
+          "side": "long",
+          "exit_price": 272.88,
+          "pnl": -1.53,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96106.89,
+      "note": "$96,107 | cash=$4,230 | open=68 | closed today=50 | day PnL=$-444"
     }
   ]
 }
