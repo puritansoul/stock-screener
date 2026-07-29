@@ -1,5 +1,5 @@
 {
-  "capital": 2776.43,
+  "capital": 749.79,
   "open_positions": [
     {
       "ticker": "BBY",
@@ -288,9 +288,9 @@
       "entry_time": "12:20 ET",
       "entry_price": 116.06,
       "shares": 1,
-      "stop": 115.945,
+      "stop": 115.96,
       "trail_dist": 0.4,
-      "peak": 116.345,
+      "peak": 116.36,
       "orb_width": 0.8,
       "cost": 116.06,
       "vol_ratio": 8.71
@@ -596,9 +596,9 @@
       "entry_time": "13:10 ET",
       "entry_price": 39.465,
       "shares": 25,
-      "stop": 39.37,
+      "stop": 39.375,
       "trail_dist": 0.19,
-      "peak": 39.56,
+      "peak": 39.565,
       "orb_width": 0.38,
       "cost": 986.63,
       "vol_ratio": 1.54
@@ -806,9 +806,9 @@
       "entry_time": "13:35 ET",
       "entry_price": 377.78,
       "shares": 5,
-      "stop": 380.1425,
+      "stop": 380.0625,
       "trail_dist": 2.5925,
-      "peak": 377.55,
+      "peak": 377.47,
       "orb_width": 5.185,
       "cost": 1888.9,
       "vol_ratio": 1.21
@@ -820,9 +820,9 @@
       "entry_time": "13:38 ET",
       "entry_price": 247.03,
       "shares": 7,
-      "stop": 244.7275,
+      "stop": 244.8375,
       "trail_dist": 2.6825,
-      "peak": 247.41,
+      "peak": 247.52,
       "orb_width": 5.365,
       "cost": 1729.21,
       "vol_ratio": 4.35
@@ -854,6 +854,62 @@
       "orb_width": 10.16,
       "cost": 863.22,
       "vol_ratio": 1.22
+    },
+    {
+      "ticker": "ERIE",
+      "side": "long",
+      "entry_date": "2026-07-29",
+      "entry_time": "13:45 ET",
+      "entry_price": 245.73,
+      "shares": 3,
+      "stop": 242.3725,
+      "trail_dist": 3.3575,
+      "peak": 245.73,
+      "orb_width": 6.715,
+      "cost": 737.19,
+      "vol_ratio": 1.81
+    },
+    {
+      "ticker": "CMI",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "13:45 ET",
+      "entry_price": 608.215,
+      "shares": 1,
+      "stop": 614.0875,
+      "trail_dist": 5.8725,
+      "peak": 608.215,
+      "orb_width": 11.745,
+      "cost": 608.22,
+      "vol_ratio": 1.6
+    },
+    {
+      "ticker": "NDAQ",
+      "side": "long",
+      "entry_date": "2026-07-29",
+      "entry_time": "13:45 ET",
+      "entry_price": 96.35,
+      "shares": 4,
+      "stop": 95.865,
+      "trail_dist": 0.485,
+      "peak": 96.35,
+      "orb_width": 0.97,
+      "cost": 385.4,
+      "vol_ratio": 1.43
+    },
+    {
+      "ticker": "WAB",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "13:45 ET",
+      "entry_price": 295.835,
+      "shares": 1,
+      "stop": 299.63,
+      "trail_dist": 3.795,
+      "peak": 295.835,
+      "orb_width": 7.5899,
+      "cost": 295.83,
+      "vol_ratio": 1.24
     }
   ],
   "closed_today": [
@@ -45012,6 +45068,11 @@
       "low": 53.93,
       "width": 1.5899
     },
+    "ALGN": {
+      "high": 182.57,
+      "low": 174.41,
+      "width": 8.16
+    },
     "ALLE": {
       "high": 160.1,
       "low": 157.12,
@@ -46227,6 +46288,11 @@
       "low": 352.99,
       "width": 8.81
     },
+    "IVZ": {
+      "high": 29.37,
+      "low": 28.59,
+      "width": 0.78
+    },
     "INVH": {
       "high": 30.18,
       "low": 29.9,
@@ -47097,10 +47163,20 @@
       "low": 265.76,
       "width": 3.29
     },
+    "TGT": {
+      "high": 145.76,
+      "low": 142.17,
+      "width": 3.59
+    },
     "TEL": {
       "high": 215.03,
       "low": 211.5303,
       "width": 3.4997
+    },
+    "TDY": {
+      "high": 648.11,
+      "low": 641.3945,
+      "width": 6.7155
     },
     "TER": {
       "high": 372.23,
@@ -47448,7 +47524,7 @@
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
-    "2026-07-29": 95781.6
+    "2026-07-29": 95764.69
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -94163,6 +94239,48 @@
       "exits": [],
       "portfolio_value": 95781.6,
       "note": "$95,782 | cash=$2,776 | open=61 | closed today=66 | day PnL=$-328"
+    },
+    {
+      "date": "2026-07-29",
+      "time": "13:45 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "ERIE",
+          "side": "long",
+          "price": 245.73,
+          "shares": 3,
+          "stop": 242.37,
+          "trail_dist": 3.3575
+        },
+        {
+          "ticker": "CMI",
+          "side": "short",
+          "price": 608.22,
+          "shares": 1,
+          "stop": 614.09,
+          "trail_dist": 5.8725
+        },
+        {
+          "ticker": "NDAQ",
+          "side": "long",
+          "price": 96.35,
+          "shares": 4,
+          "stop": 95.86,
+          "trail_dist": 0.485
+        },
+        {
+          "ticker": "WAB",
+          "side": "short",
+          "price": 295.83,
+          "shares": 1,
+          "stop": 299.63,
+          "trail_dist": 3.795
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 95764.69,
+      "note": "$95,765 | cash=$750 | open=65 | closed today=66 | day PnL=$-328"
     }
   ]
 }
