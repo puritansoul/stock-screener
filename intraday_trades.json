@@ -50,9 +50,9 @@
       "entry_time": "11:23 ET",
       "entry_price": 81.72,
       "shares": 4,
-      "stop": 82.01,
+      "stop": 81.945,
       "trail_dist": 0.92,
-      "peak": 81.09,
+      "peak": 81.025,
       "orb_width": 1.84,
       "cost": 326.88,
       "vol_ratio": 2.13
@@ -512,9 +512,9 @@
       "entry_time": "12:58 ET",
       "entry_price": 253.04,
       "shares": 15,
-      "stop": 252.2628,
+      "stop": 252.56,
       "trail_dist": 1.56,
-      "peak": 253.8228,
+      "peak": 254.12,
       "orb_width": 3.12,
       "cost": 3795.6,
       "vol_ratio": 1.61
@@ -582,9 +582,9 @@
       "entry_time": "13:08 ET",
       "entry_price": 289.32,
       "shares": 4,
-      "stop": 289.77,
+      "stop": 289.75,
       "trail_dist": 3.53,
-      "peak": 286.24,
+      "peak": 286.22,
       "orb_width": 7.06,
       "cost": 1157.28,
       "vol_ratio": 1.29
@@ -750,9 +750,9 @@
       "entry_time": "13:33 ET",
       "entry_price": 292.06,
       "shares": 4,
-      "stop": 289.6825,
+      "stop": 289.9825,
       "trail_dist": 3.7875,
-      "peak": 293.47,
+      "peak": 293.77,
       "orb_width": 7.575,
       "cost": 1168.24,
       "vol_ratio": 1.29
@@ -792,9 +792,9 @@
       "entry_time": "13:38 ET",
       "entry_price": 247.03,
       "shares": 7,
-      "stop": 245.1775,
+      "stop": 245.355,
       "trail_dist": 2.6825,
-      "peak": 247.86,
+      "peak": 248.0375,
       "orb_width": 5.365,
       "cost": 1729.21,
       "vol_ratio": 4.35
@@ -806,9 +806,9 @@
       "entry_time": "13:38 ET",
       "entry_price": 103.45,
       "shares": 12,
-      "stop": 103.87,
+      "stop": 103.825,
       "trail_dist": 0.57,
-      "peak": 103.3,
+      "peak": 103.255,
       "orb_width": 1.14,
       "cost": 1241.4,
       "vol_ratio": 2.1
@@ -834,9 +834,9 @@
       "entry_time": "13:45 ET",
       "entry_price": 245.73,
       "shares": 3,
-      "stop": 242.7125,
+      "stop": 242.7575,
       "trail_dist": 3.3575,
-      "peak": 246.07,
+      "peak": 246.115,
       "orb_width": 6.715,
       "cost": 737.19,
       "vol_ratio": 1.81
@@ -46128,6 +46128,11 @@
       "low": 989.0,
       "width": 39.12
     },
+    "HAL": {
+      "high": 32.03,
+      "low": 31.48,
+      "width": 0.55
+    },
     "HIG": {
       "high": 143.98,
       "low": 142.51,
@@ -47529,7 +47534,7 @@
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
-    "2026-07-29": 95769.97
+    "2026-07-29": 95780.69
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -94310,6 +94315,15 @@
       ],
       "portfolio_value": 95769.97,
       "note": "$95,770 | cash=$8,998 | open=63 | closed today=68 | day PnL=$-351"
+    },
+    {
+      "date": "2026-07-29",
+      "time": "13:50 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 95780.69,
+      "note": "$95,781 | cash=$8,998 | open=63 | closed today=68 | day PnL=$-351"
     }
   ]
 }
