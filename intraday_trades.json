@@ -1,5 +1,5 @@
 {
-  "capital": 2143.6,
+  "capital": 1087.0,
   "open_positions": [
     {
       "ticker": "ETR",
@@ -36,9 +36,9 @@
       "entry_time": "10:58 ET",
       "entry_price": 73.04,
       "shares": 193,
-      "stop": 73.335,
+      "stop": 73.285,
       "trail_dist": 0.295,
-      "peak": 73.04,
+      "peak": 72.99,
       "orb_width": 0.59,
       "cost": 14096.72,
       "vol_ratio": 2.64
@@ -50,9 +50,9 @@
       "entry_time": "10:58 ET",
       "entry_price": 198.49,
       "shares": 49,
-      "stop": 199.5925,
+      "stop": 199.1025,
       "trail_dist": 1.1025,
-      "peak": 198.49,
+      "peak": 198.0,
       "orb_width": 2.205,
       "cost": 9726.01,
       "vol_ratio": 2.48
@@ -92,9 +92,9 @@
       "entry_time": "10:58 ET",
       "entry_price": 58.36,
       "shares": 62,
-      "stop": 58.0925,
+      "stop": 58.1625,
       "trail_dist": 0.2675,
-      "peak": 58.36,
+      "peak": 58.43,
       "orb_width": 0.535,
       "cost": 3618.32,
       "vol_ratio": 1.95
@@ -106,9 +106,9 @@
       "entry_time": "10:58 ET",
       "entry_price": 208.7,
       "shares": 12,
-      "stop": 209.8605,
+      "stop": 209.1605,
       "trail_dist": 1.1605,
-      "peak": 208.7,
+      "peak": 208.0,
       "orb_width": 2.321,
       "cost": 2504.4,
       "vol_ratio": 1.94
@@ -134,9 +134,9 @@
       "entry_time": "10:58 ET",
       "entry_price": 17.735,
       "shares": 73,
-      "stop": 17.817,
+      "stop": 17.767,
       "trail_dist": 0.082,
-      "peak": 17.735,
+      "peak": 17.685,
       "orb_width": 0.164,
       "cost": 1294.66,
       "vol_ratio": 1.48
@@ -154,6 +154,34 @@
       "orb_width": 1.025,
       "cost": 889.68,
       "vol_ratio": 1.44
+    },
+    {
+      "ticker": "PNW",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:00 ET",
+      "entry_price": 103.93,
+      "shares": 6,
+      "stop": 104.5,
+      "trail_dist": 0.57,
+      "peak": 103.93,
+      "orb_width": 1.14,
+      "cost": 623.58,
+      "vol_ratio": 1.82
+    },
+    {
+      "ticker": "HIG",
+      "side": "long",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:00 ET",
+      "entry_price": 144.34,
+      "shares": 3,
+      "stop": 143.605,
+      "trail_dist": 0.735,
+      "peak": 144.34,
+      "orb_width": 1.47,
+      "cost": 433.02,
+      "vol_ratio": 1.27
     }
   ],
   "closed_today": [],
@@ -45513,7 +45541,7 @@
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
-    "2026-07-29": 96084.73
+    "2026-07-29": 96082.77
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -90157,6 +90185,32 @@
       "exits": [],
       "portfolio_value": 96084.73,
       "note": "$96,085 | cash=$2,144 | open=11 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-29",
+      "time": "11:00 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "PNW",
+          "side": "short",
+          "price": 103.93,
+          "shares": 6,
+          "stop": 104.5,
+          "trail_dist": 0.57
+        },
+        {
+          "ticker": "HIG",
+          "side": "long",
+          "price": 144.34,
+          "shares": 3,
+          "stop": 143.6,
+          "trail_dist": 0.735
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 96082.77,
+      "note": "$96,083 | cash=$1,087 | open=13 | closed today=0 | day PnL=$+0"
     }
   ]
 }
