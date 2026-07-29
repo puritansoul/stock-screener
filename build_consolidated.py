@@ -5,8 +5,10 @@ Zero data logic here: all computation, live prices, and formatting live in the s
 
 from pathlib import Path
 from datetime import date
+import json
 
 BASE_DIR = Path(__file__).parent
+STARTING_CAPITAL = 100_000.0
 
 
 def latest(pattern: str, fallback: str = "index.html") -> str:
@@ -14,6 +16,103 @@ def latest(pattern: str, fallback: str = "index.html") -> str:
     if reports:
         return f"reports/{reports[0].name}"
     return fallback
+
+
+def _load_json(path: Path) -> dict:
+    try:
+        return json.loads(path.read_text())
+    except Exception:
+        return {}
+
+
+def _nav_value(nav_history: dict, starting: float) -> tuple[float, float]:
+    """Return (current_value, prev_value) from a nav_history dict."""
+    if not nav_history:
+        return starting, starting
+    dates = sorted(nav_history.keys())
+    cur = nav_history[dates[-1]]
+    prev = nav_history[dates[-2]] if len(dates) >= 2 else starting
+    return cur, prev
+
+
+def _screener_nav(nav_file: Path, starting: float) -> tuple[float, float]:
+    """portfolio_nav stores NAV units (1.0 = starting), convert to $."""
+    d = _load_json(nav_file)
+    if not d:
+        return starting, starting
+    dates = sorted(d.keys())
+    cur_nav  = d[dates[-1]]
+    prev_nav = d[dates[-2]] if len(dates) >= 2 else 1.0
+    return cur_nav * starting, prev_nav * starting
+
+
+def build_cross_bot_summary() -> tuple[str, str]:
+    """
+    Returns (summary_html, summary_js) for the cross-bot summary bar.
+    summary_html is static server-rendered values.
+    summary_js reads live values from iframes once they load.
+    """
+    today_str = date.today().isoformat()
+
+    bots = [
+        ("Swing v1",      _load_json(BASE_DIR / "swing_trades.json"),      None),
+        ("Swing v2",      _load_json(BASE_DIR / "swing_trades_v2.json"),    None),
+        ("Intraday v1",   _load_json(BASE_DIR / "intraday_trades.json"),    None),
+        ("Intraday v2",   _load_json(BASE_DIR / "intraday_trades_v2.json"), None),
+        ("Screener v1",   None, BASE_DIR / "portfolio_nav.json"),
+        ("Screener v2",   None, BASE_DIR / "portfolio_nav_v2.json"),
+    ]
+
+    total_value = 0.0
+    total_prev  = 0.0
+    rows_html   = ""
+
+    for name, state, nav_file in bots:
+        if nav_file:
+            cur, prev = _screener_nav(nav_file, STARTING_CAPITAL)
+        elif state:
+            cur, prev = _nav_value(state.get("nav_history", {}), STARTING_CAPITAL)
+        else:
+            cur, prev = STARTING_CAPITAL, STARTING_CAPITAL
+
+        total_value += cur
+        total_prev  += prev
+        day_d  = cur - prev
+        day_p  = day_d / prev * 100 if prev else 0
+        ret_d  = cur - STARTING_CAPITAL
+        ret_p  = ret_d / STARTING_CAPITAL * 100
+        dc = "#2e7d32" if day_d >= 0 else "#c62828"
+        rc = "#2e7d32" if ret_d >= 0 else "#c62828"
+        ds = "+" if day_d >= 0 else ""
+        rs = "+" if ret_d >= 0 else ""
+        rows_html += f"""<div style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
+          <span style="font-size:11px;color:rgba(255,255,255,.6);min-width:72px">{name}</span>
+          <span style="font-weight:bold;color:white">${cur:,.0f}</span>
+          <span style="color:{dc};font-size:12px">{ds}${abs(day_d):,.0f} ({ds}{abs(day_p):.1f}%)</span>
+          <span style="color:{rc};font-size:12px">{rs}{abs(ret_p):.1f}% all-time</span>
+        </div>"""
+
+    total_day_d = total_value - total_prev
+    total_day_p = total_day_d / total_prev * 100 if total_prev else 0
+    total_ret_d = total_value - STARTING_CAPITAL * 6
+    total_ret_p = total_ret_d / (STARTING_CAPITAL * 6) * 100
+    tdc = "#90caf9" if total_day_d >= 0 else "#ef9a9a"
+    trc = "#90caf9" if total_ret_d >= 0 else "#ef9a9a"
+    tds = "+" if total_day_d >= 0 else ""
+    trs = "+" if total_ret_d >= 0 else ""
+
+    summary_html = f"""<div id="summary-bar" style="background:#0d1b6e;border-bottom:1px solid rgba(255,255,255,.1);padding:4px 16px;display:flex;align-items:center;gap:0;overflow-x:auto;white-space:nowrap;font-size:12px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+  <div style="display:flex;gap:12px;align-items:center;padding:4px 16px 4px 0;border-right:1px solid rgba(255,255,255,.25);margin-right:4px">
+    <span style="font-size:11px;font-weight:bold;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px">All Bots</span>
+    <span style="font-weight:bold;color:white;font-size:14px">${total_value:,.0f}</span>
+    <span style="color:{tdc}">{tds}${abs(total_day_d):,.0f} today ({tds}{abs(total_day_p):.1f}%)</span>
+    <span style="color:{trc}">{trs}{abs(total_ret_p):.1f}% all-time</span>
+  </div>
+  {rows_html}
+  <div id="summary-stale" style="margin-left:auto;padding-left:16px;font-size:11px;color:rgba(255,255,255,.4)">as of last run · {today_str}</div>
+</div>"""
+
+    return summary_html
 
 
 def build_consolidated():
@@ -43,9 +142,11 @@ def build_consolidated():
         reverse=True
     )
     intraday_url = f"reports/{intraday_reports[0].name}" if intraday_reports else "intraday_index.html"
-    screener_v2_url = latest("v2_*.html",        "screener_v2_index.html")
-    swing_v2_url   = latest("swing_v2_*.html",   "swing_v2_index.html")
-    intraday_v2_url = latest("intraday_v2_*.html", "intraday_v2_index.html")
+    screener_v2_url  = latest("v2_*.html",           "screener_v2_index.html")
+    swing_v2_url     = latest("swing_v2_*.html",     "swing_v2_index.html")
+    intraday_v2_url  = latest("intraday_v2_*.html",  "intraday_v2_index.html")
+
+    summary_html = build_cross_bot_summary()
 
     html = f"""<!DOCTYPE html>
 <html>
@@ -54,8 +155,10 @@ def build_consolidated():
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Trading Dashboard — {today_str}</title>
   <style>
-    *, *::before, *::after {{ box-sizing: border-box; }}
+    *, *::before, *:: after {{ box-sizing: border-box; }}
     html, body {{ margin: 0; padding: 0; height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f0f2f5; }}
+    #summary-bar::-webkit-scrollbar {{ height: 4px; }}
+    #summary-bar::-webkit-scrollbar-thumb {{ background: rgba(255,255,255,.2); border-radius: 2px; }}
     #tabs {{ display: flex; gap: 0; background: #1a237e; padding: 0 16px; align-items: stretch; overflow-x: auto; }}
     .tab {{ padding: 12px 18px; color: rgba(255,255,255,.65); cursor: pointer; font-size: 13px;
             font-weight: 600; border-bottom: 3px solid transparent; white-space: nowrap;
@@ -66,13 +169,17 @@ def build_consolidated():
     .tab-v2 {{ color: rgba(144,202,249,.75); }}
     .tab-v2.active {{ color: #90caf9; border-bottom-color: #90caf9; }}
     .tab-v2:hover  {{ color: #90caf9; }}
-    #frames {{ position: absolute; top: 43px; left: 0; right: 0; bottom: 0; }}
+    #frames {{ position: absolute; top: 87px; left: 0; right: 0; bottom: 0; }}
     iframe {{ position: absolute; top: 0; left: 0; width: 100%; height: 100%;
               border: none; display: none; background: white; }}
     iframe.active {{ display: block; }}
+    #stale-banner {{ display:none; position:fixed; bottom:16px; right:16px; z-index:999;
+                     background:#b71c1c; color:white; padding:8px 16px; border-radius:8px;
+                     font-size:13px; font-weight:bold; box-shadow:0 2px 8px rgba(0,0,0,.3); }}
   </style>
 </head>
 <body>
+  {summary_html}
   <div id="tabs">
     <div class="tab active"    data-frame="screener">📊 Factor Screener</div>
     <div class="tab"           data-frame="swing">📈 Swing Trader</div>
@@ -90,26 +197,83 @@ def build_consolidated():
     <iframe id="swing-v2"    src="{swing_v2_url}"></iframe>
     <iframe id="intraday-v2" src="{intraday_v2_url}"></iframe>
   </div>
-  <script>
-    document.querySelectorAll('.tab').forEach(tab => {{
-      tab.addEventListener('click', () => {{
-        document.querySelectorAll('.tab, iframe').forEach(el => el.classList.remove('active'));
-        tab.classList.add('active');
-        document.getElementById(tab.dataset.frame).classList.add('active');
-      }});
+  <div id="stale-banner">⚠ Prices may be stale — last update &gt;10 min ago</div>
+
+<script>
+// ── Tab switching ─────────────────────────────────────────────────────────────
+(function() {{
+  document.querySelectorAll('.tab').forEach(tab => {{
+    tab.addEventListener('click', () => {{
+      document.querySelectorAll('.tab, iframe').forEach(el => el.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.frame).classList.add('active');
+      localStorage.setItem('activeTab', tab.dataset.frame);
     }});
-    // Restore last active tab
-    var saved = localStorage.getItem('activeTab');
-    if (saved) {{
-      var t = document.querySelector('.tab[data-frame="' + saved + '"]');
-      if (t) t.click();
+  }});
+  var saved = localStorage.getItem('activeTab');
+  if (saved) {{
+    var t = document.querySelector('.tab[data-frame="' + saved + '"]');
+    if (t) t.click();
+  }}
+}})();
+
+// ── Auto-refresh active iframe every 5 min during market hours ────────────────
+(function() {{
+  function isMarketHours() {{
+    const now = new Date();
+    const et  = new Date(now.toLocaleString('en-US', {{timeZone: 'America/New_York'}}));
+    const day = et.getDay();
+    if (day === 0 || day === 6) return false;
+    const mins = et.getHours() * 60 + et.getMinutes();
+    return mins >= 570 && mins < 960; // 9:30–4:00 ET
+  }}
+
+  function refreshActive() {{
+    if (!isMarketHours()) return;
+    const active = document.querySelector('iframe.active');
+    if (active && active.src) {{
+      const src = active.src;
+      active.src = '';
+      setTimeout(() => {{ active.src = src; }}, 50);
     }}
-    document.querySelectorAll('.tab').forEach(tab => {{
-      tab.addEventListener('click', () => {{
-        localStorage.setItem('activeTab', tab.dataset.frame);
-      }});
-    }});
-  </script>
+  }}
+
+  setInterval(refreshActive, 5 * 60 * 1000); // every 5 min
+}})();
+
+// ── Stale price warning ───────────────────────────────────────────────────────
+(function() {{
+  let lastActivity = Date.now();
+  const banner = document.getElementById('stale-banner');
+
+  function isMarketHours() {{
+    const et  = new Date(new Date().toLocaleString('en-US', {{timeZone: 'America/New_York'}}));
+    const day = et.getDay();
+    if (day === 0 || day === 6) return false;
+    const mins = et.getHours() * 60 + et.getMinutes();
+    return mins >= 570 && mins < 960;
+  }}
+
+  // Listen for price-status updates inside iframes
+  window.addEventListener('message', e => {{
+    if (e.data && e.data.type === 'priceUpdated') {{
+      lastActivity = Date.now();
+      if (banner) banner.style.display = 'none';
+    }}
+  }});
+
+  // Also track iframe src changes as activity
+  document.querySelectorAll('iframe').forEach(f => {{
+    f.addEventListener('load', () => {{ lastActivity = Date.now(); }});
+  }});
+
+  setInterval(() => {{
+    if (!isMarketHours()) {{ if (banner) banner.style.display = 'none'; return; }}
+    const stale = Date.now() - lastActivity > 10 * 60 * 1000;
+    if (banner) banner.style.display = stale ? 'block' : 'none';
+  }}, 60 * 1000);
+}})();
+</script>
 </body>
 </html>"""
 

@@ -1670,6 +1670,16 @@ def save_html_report(
 
   ctx.clearRect(0, 0, W, H);
 
+  // Drawdown shading (red area between running peak and current value)
+  const peaks = vals.map((v, i) => Math.max(...vals.slice(0, i+1)));
+  ctx.beginPath();
+  ctx.moveTo(toX(0), toY(peaks[0]));
+  peaks.forEach((p, i) => {{ if (i > 0) ctx.lineTo(toX(i), toY(p)); }});
+  for (let i = N - 1; i >= 0; i--) {{ ctx.lineTo(toX(i), toY(vals[i])); }}
+  ctx.closePath();
+  ctx.fillStyle = 'rgba(198, 40, 40, 0.12)';
+  ctx.fill();
+
   // SPY line (grey dashed)
   if (hasSpy) {{
     ctx.strokeStyle = '#9e9e9e';
