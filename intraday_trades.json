@@ -1,5 +1,5 @@
 {
-  "capital": 8944.91,
+  "capital": 3301.7,
   "open_positions": [
     {
       "ticker": "BBY",
@@ -274,9 +274,9 @@
       "entry_time": "12:20 ET",
       "entry_price": 116.06,
       "shares": 1,
-      "stop": 116.0,
+      "stop": 116.0588,
       "trail_dist": 0.4,
-      "peak": 116.4,
+      "peak": 116.4588,
       "orb_width": 0.8,
       "cost": 116.06,
       "vol_ratio": 8.71
@@ -498,9 +498,9 @@
       "entry_time": "12:58 ET",
       "entry_price": 253.04,
       "shares": 15,
-      "stop": 252.72,
+      "stop": 252.88,
       "trail_dist": 1.56,
-      "peak": 254.28,
+      "peak": 254.44,
       "orb_width": 3.12,
       "cost": 3795.6,
       "vol_ratio": 1.61
@@ -582,9 +582,9 @@
       "entry_time": "13:10 ET",
       "entry_price": 39.465,
       "shares": 25,
-      "stop": 39.42,
+      "stop": 39.44,
       "trail_dist": 0.19,
-      "peak": 39.61,
+      "peak": 39.63,
       "orb_width": 0.38,
       "cost": 986.63,
       "vol_ratio": 1.54
@@ -666,9 +666,9 @@
       "entry_time": "13:25 ET",
       "entry_price": 84.93,
       "shares": 23,
-      "stop": 84.17,
+      "stop": 84.25,
       "trail_dist": 0.82,
-      "peak": 84.99,
+      "peak": 85.07,
       "orb_width": 1.64,
       "cost": 1953.39,
       "vol_ratio": 1.33
@@ -764,9 +764,9 @@
       "entry_time": "13:35 ET",
       "entry_price": 377.78,
       "shares": 5,
-      "stop": 379.9425,
+      "stop": 379.4125,
       "trail_dist": 2.5925,
-      "peak": 377.35,
+      "peak": 376.82,
       "orb_width": 5.185,
       "cost": 1888.9,
       "vol_ratio": 1.21
@@ -778,9 +778,9 @@
       "entry_time": "13:38 ET",
       "entry_price": 247.03,
       "shares": 7,
-      "stop": 245.4675,
+      "stop": 245.5175,
       "trail_dist": 2.6825,
-      "peak": 248.15,
+      "peak": 248.2,
       "orb_width": 5.365,
       "cost": 1729.21,
       "vol_ratio": 4.35
@@ -806,9 +806,9 @@
       "entry_time": "13:38 ET",
       "entry_price": 287.74,
       "shares": 3,
-      "stop": 292.04,
+      "stop": 291.5675,
       "trail_dist": 5.08,
-      "peak": 286.96,
+      "peak": 286.4875,
       "orb_width": 10.16,
       "cost": 863.22,
       "vol_ratio": 1.22
@@ -820,9 +820,9 @@
       "entry_time": "13:45 ET",
       "entry_price": 245.73,
       "shares": 3,
-      "stop": 242.7575,
+      "stop": 242.8425,
       "trail_dist": 3.3575,
-      "peak": 246.115,
+      "peak": 246.2,
       "orb_width": 6.715,
       "cost": 737.19,
       "vol_ratio": 1.81
@@ -876,12 +876,54 @@
       "entry_time": "13:53 ET",
       "entry_price": 129.93,
       "shares": 29,
-      "stop": 128.6625,
+      "stop": 128.6725,
       "trail_dist": 1.2675,
-      "peak": 129.93,
+      "peak": 129.94,
       "orb_width": 2.535,
       "cost": 3767.97,
       "vol_ratio": 1.38
+    },
+    {
+      "ticker": "CHTR",
+      "side": "long",
+      "entry_date": "2026-07-29",
+      "entry_time": "13:55 ET",
+      "entry_price": 144.565,
+      "shares": 18,
+      "stop": 142.545,
+      "trail_dist": 2.02,
+      "peak": 144.565,
+      "orb_width": 4.0399,
+      "cost": 2602.17,
+      "vol_ratio": 1.74
+    },
+    {
+      "ticker": "NSC",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "13:55 ET",
+      "entry_price": 336.9601,
+      "shares": 5,
+      "stop": 337.9951,
+      "trail_dist": 1.035,
+      "peak": 336.9601,
+      "orb_width": 2.07,
+      "cost": 1684.8,
+      "vol_ratio": 1.63
+    },
+    {
+      "ticker": "UHS",
+      "side": "long",
+      "entry_date": "2026-07-29",
+      "entry_time": "13:55 ET",
+      "entry_price": 169.53,
+      "shares": 8,
+      "stop": 167.88,
+      "trail_dist": 1.65,
+      "peak": 169.53,
+      "orb_width": 3.3,
+      "cost": 1356.24,
+      "vol_ratio": 1.46
     }
   ],
   "closed_today": [
@@ -45827,11 +45869,6 @@
       "low": 138.25,
       "width": 2.83
     },
-    "ETN": {
-      "high": 386.52,
-      "low": 374.3,
-      "width": 12.22
-    },
     "EBAY": {
       "high": 117.63,
       "low": 116.58,
@@ -45976,11 +46013,6 @@
       "high": 292.5,
       "low": 281.35,
       "width": 11.15
-    },
-    "FICO": {
-      "high": 1387.0,
-      "low": 1334.235,
-      "width": 52.765
     },
     "FAST": {
       "high": 47.805,
@@ -47553,7 +47585,7 @@
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
-    "2026-07-29": 95779.69
+    "2026-07-29": 95756.49
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -94369,6 +94401,40 @@
       ],
       "portfolio_value": 95779.69,
       "note": "$95,780 | cash=$8,945 | open=63 | closed today=69 | day PnL=$-347"
+    },
+    {
+      "date": "2026-07-29",
+      "time": "13:55 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "CHTR",
+          "side": "long",
+          "price": 144.57,
+          "shares": 18,
+          "stop": 142.55,
+          "trail_dist": 2.02
+        },
+        {
+          "ticker": "NSC",
+          "side": "short",
+          "price": 336.96,
+          "shares": 5,
+          "stop": 338.0,
+          "trail_dist": 1.035
+        },
+        {
+          "ticker": "UHS",
+          "side": "long",
+          "price": 169.53,
+          "shares": 8,
+          "stop": 167.88,
+          "trail_dist": 1.65
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 95756.49,
+      "note": "$95,756 | cash=$3,302 | open=66 | closed today=69 | day PnL=$-347"
     }
   ]
 }
