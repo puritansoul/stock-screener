@@ -1,5 +1,5 @@
 {
-  "capital": 9141.39,
+  "capital": 9658.17,
   "open_positions": [
     {
       "ticker": "DOV",
@@ -196,20 +196,6 @@
       "orb_width": 7.5899,
       "cost": 6207.18,
       "vol_ratio": 3.48
-    },
-    {
-      "ticker": "DLR",
-      "side": "short",
-      "entry_date": "2026-07-29",
-      "entry_time": "11:30 ET",
-      "entry_price": 187.46,
-      "shares": 23,
-      "stop": 187.425,
-      "trail_dist": 1.625,
-      "peak": 185.8,
-      "orb_width": 3.25,
-      "cost": 4311.58,
-      "vol_ratio": 3.34
     },
     {
       "ticker": "ES",
@@ -456,9 +442,9 @@
       "entry_time": "12:03 ET",
       "entry_price": 30.08,
       "shares": 60,
-      "stop": 30.21,
+      "stop": 30.26,
       "trail_dist": 0.195,
-      "peak": 30.405,
+      "peak": 30.455,
       "orb_width": 0.39,
       "cost": 1804.8,
       "vol_ratio": 3.67
@@ -540,9 +526,9 @@
       "entry_time": "12:08 ET",
       "entry_price": 265.58,
       "shares": 1,
-      "stop": 264.555,
+      "stop": 264.65,
       "trail_dist": 1.53,
-      "peak": 266.085,
+      "peak": 266.18,
       "orb_width": 3.06,
       "cost": 265.58,
       "vol_ratio": 2.07
@@ -582,9 +568,9 @@
       "entry_time": "12:20 ET",
       "entry_price": 116.06,
       "shares": 1,
-      "stop": 115.67,
+      "stop": 115.815,
       "trail_dist": 0.4,
-      "peak": 116.07,
+      "peak": 116.215,
       "orb_width": 0.8,
       "cost": 116.06,
       "vol_ratio": 8.71
@@ -876,9 +862,9 @@
       "entry_time": "12:45 ET",
       "entry_price": 878.57,
       "shares": 1,
-      "stop": 871.7925,
+      "stop": 871.9225,
       "trail_dist": 8.6275,
-      "peak": 880.42,
+      "peak": 880.55,
       "orb_width": 17.255,
       "cost": 878.57,
       "vol_ratio": 1.42
@@ -890,9 +876,9 @@
       "entry_time": "12:53 ET",
       "entry_price": 1365.35,
       "shares": 1,
-      "stop": 1373.7551,
+      "stop": 1373.46,
       "trail_dist": 9.825,
-      "peak": 1363.9301,
+      "peak": 1363.635,
       "orb_width": 19.65,
       "cost": 1365.35,
       "vol_ratio": 5.63
@@ -904,9 +890,9 @@
       "entry_time": "12:53 ET",
       "entry_price": 128.5,
       "shares": 11,
-      "stop": 126.845,
+      "stop": 126.975,
       "trail_dist": 1.675,
-      "peak": 128.52,
+      "peak": 128.65,
       "orb_width": 3.35,
       "cost": 1413.5,
       "vol_ratio": 1.99
@@ -918,9 +904,9 @@
       "entry_time": "12:53 ET",
       "entry_price": 73.86,
       "shares": 14,
-      "stop": 71.415,
+      "stop": 71.575,
       "trail_dist": 2.445,
-      "peak": 73.86,
+      "peak": 74.02,
       "orb_width": 4.89,
       "cost": 1034.04,
       "vol_ratio": 1.5
@@ -938,6 +924,20 @@
       "orb_width": 2.19,
       "cost": 3895.68,
       "vol_ratio": 1.51
+    },
+    {
+      "ticker": "ROST",
+      "side": "long",
+      "entry_date": "2026-07-29",
+      "entry_time": "12:58 ET",
+      "entry_price": 253.04,
+      "shares": 15,
+      "stop": 251.48,
+      "trail_dist": 1.56,
+      "peak": 253.04,
+      "orb_width": 3.12,
+      "cost": 3795.6,
+      "vol_ratio": 1.61
     }
   ],
   "closed_today": [
@@ -1548,6 +1548,25 @@
       "pnl": 9.04,
       "exit_reason": "trailing stop",
       "exit_time": "12:55 ET"
+    },
+    {
+      "ticker": "DLR",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:30 ET",
+      "entry_price": 187.46,
+      "shares": 23,
+      "stop": 187.425,
+      "trail_dist": 1.625,
+      "peak": 185.8,
+      "orb_width": 3.25,
+      "cost": 4311.58,
+      "vol_ratio": 3.34,
+      "exit_date": "2026-07-29",
+      "exit_price": 187.425,
+      "pnl": 0.8,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:58 ET"
     }
   ],
   "all_closed": [
@@ -46906,7 +46925,7 @@
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
-    "2026-07-29": 95967.28
+    "2026-07-29": 95937.02
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -92958,6 +92977,32 @@
       ],
       "portfolio_value": 95967.28,
       "note": "$95,967 | cash=$9,141 | open=67 | closed today=32 | day PnL=$-190"
+    },
+    {
+      "date": "2026-07-29",
+      "time": "12:57 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "ROST",
+          "side": "long",
+          "price": 253.04,
+          "shares": 15,
+          "stop": 251.48,
+          "trail_dist": 1.56
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "DLR",
+          "side": "short",
+          "exit_price": 187.43,
+          "pnl": 0.8,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95937.02,
+      "note": "$95,937 | cash=$9,658 | open=67 | closed today=33 | day PnL=$-189"
     }
   ]
 }
