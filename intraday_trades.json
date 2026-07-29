@@ -1,5 +1,5 @@
 {
-  "capital": 6294.26,
+  "capital": 6571.45,
   "open_positions": [
     {
       "ticker": "PNW",
@@ -8,9 +8,9 @@
       "entry_time": "11:00 ET",
       "entry_price": 103.93,
       "shares": 6,
-      "stop": 103.45,
+      "stop": 103.4274,
       "trail_dist": 0.57,
-      "peak": 102.88,
+      "peak": 102.8574,
       "orb_width": 1.14,
       "cost": 623.58,
       "vol_ratio": 1.82
@@ -204,9 +204,9 @@
       "entry_time": "11:43 ET",
       "entry_price": 19.155,
       "shares": 454,
-      "stop": 19.02,
+      "stop": 19.03,
       "trail_dist": 0.245,
-      "peak": 19.265,
+      "peak": 19.275,
       "orb_width": 0.49,
       "cost": 8696.37,
       "vol_ratio": 3.56
@@ -338,20 +338,6 @@
       "vol_ratio": 1.48
     },
     {
-      "ticker": "HWM",
-      "side": "short",
-      "entry_date": "2026-07-29",
-      "entry_time": "12:08 ET",
-      "entry_price": 277.98,
-      "shares": 1,
-      "stop": 278.7749,
-      "trail_dist": 3.3049,
-      "peak": 275.47,
-      "orb_width": 6.6099,
-      "cost": 277.98,
-      "vol_ratio": 2.63
-    },
-    {
       "ticker": "CME",
       "side": "long",
       "entry_date": "2026-07-29",
@@ -414,9 +400,9 @@
       "entry_time": "12:25 ET",
       "entry_price": 144.71,
       "shares": 1,
-      "stop": 145.5475,
+      "stop": 145.5186,
       "trail_dist": 1.4125,
-      "peak": 144.135,
+      "peak": 144.1061,
       "orb_width": 2.825,
       "cost": 144.71,
       "vol_ratio": 1.24
@@ -498,9 +484,9 @@
       "entry_time": "12:38 ET",
       "entry_price": 128.83,
       "shares": 2,
-      "stop": 127.69,
+      "stop": 127.82,
       "trail_dist": 1.4,
-      "peak": 129.09,
+      "peak": 129.22,
       "orb_width": 2.8,
       "cost": 257.66,
       "vol_ratio": 2.25
@@ -540,9 +526,9 @@
       "entry_time": "12:45 ET",
       "entry_price": 878.57,
       "shares": 1,
-      "stop": 875.9625,
+      "stop": 876.0125,
       "trail_dist": 8.6275,
-      "peak": 884.59,
+      "peak": 884.64,
       "orb_width": 17.255,
       "cost": 878.57,
       "vol_ratio": 1.42
@@ -610,9 +596,9 @@
       "entry_time": "12:58 ET",
       "entry_price": 253.04,
       "shares": 15,
-      "stop": 252.15,
+      "stop": 252.2628,
       "trail_dist": 1.56,
-      "peak": 253.71,
+      "peak": 253.8228,
       "orb_width": 3.12,
       "cost": 3795.6,
       "vol_ratio": 1.61
@@ -694,9 +680,9 @@
       "entry_time": "13:08 ET",
       "entry_price": 289.32,
       "shares": 4,
-      "stop": 292.43,
+      "stop": 292.0,
       "trail_dist": 3.53,
-      "peak": 288.9,
+      "peak": 288.47,
       "orb_width": 7.06,
       "cost": 1157.28,
       "vol_ratio": 1.29
@@ -750,9 +736,9 @@
       "entry_time": "13:15 ET",
       "entry_price": 87.97,
       "shares": 33,
-      "stop": 87.515,
+      "stop": 87.565,
       "trail_dist": 0.485,
-      "peak": 88.0,
+      "peak": 88.05,
       "orb_width": 0.9701,
       "cost": 2903.01,
       "vol_ratio": 3.02
@@ -820,9 +806,9 @@
       "entry_time": "13:20 ET",
       "entry_price": 951.21,
       "shares": 2,
-      "stop": 959.0511,
+      "stop": 959.0411,
       "trail_dist": 7.8411,
-      "peak": 951.21,
+      "peak": 951.2,
       "orb_width": 15.6823,
       "cost": 1902.42,
       "vol_ratio": 7.56
@@ -1911,6 +1897,25 @@
       "pnl": -6.93,
       "exit_reason": "trailing stop",
       "exit_time": "13:20 ET"
+    },
+    {
+      "ticker": "HWM",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "12:08 ET",
+      "entry_price": 277.98,
+      "shares": 1,
+      "stop": 278.7749,
+      "trail_dist": 3.3049,
+      "peak": 275.47,
+      "orb_width": 6.6099,
+      "cost": 277.98,
+      "vol_ratio": 2.63,
+      "exit_date": "2026-07-29",
+      "exit_price": 278.7749,
+      "pnl": -0.79,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:23 ET"
     }
   ],
   "all_closed": [
@@ -47269,7 +47274,7 @@
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
-    "2026-07-29": 95819.23
+    "2026-07-29": 95784.93
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -93741,6 +93746,23 @@
       ],
       "portfolio_value": 95819.23,
       "note": "$95,819 | cash=$6,294 | open=59 | closed today=57 | day PnL=$-274"
+    },
+    {
+      "date": "2026-07-29",
+      "time": "13:22 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "HWM",
+          "side": "short",
+          "exit_price": 278.77,
+          "pnl": -0.79,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95784.93,
+      "note": "$95,785 | cash=$6,571 | open=58 | closed today=58 | day PnL=$-275"
     }
   ]
 }
