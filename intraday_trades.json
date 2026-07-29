@@ -1,5 +1,5 @@
 {
-  "capital": 293.71,
+  "capital": 463.24,
   "open_positions": [
     {
       "ticker": "ETR",
@@ -176,9 +176,9 @@
       "entry_time": "11:00 ET",
       "entry_price": 144.34,
       "shares": 3,
-      "stop": 144.02,
+      "stop": 144.09,
       "trail_dist": 0.735,
-      "peak": 144.755,
+      "peak": 144.825,
       "orb_width": 1.47,
       "cost": 433.02,
       "vol_ratio": 1.27
@@ -196,20 +196,6 @@
       "orb_width": 1.61,
       "cost": 270.93,
       "vol_ratio": 1.86
-    },
-    {
-      "ticker": "EVRG",
-      "side": "short",
-      "entry_date": "2026-07-29",
-      "entry_time": "11:03 ET",
-      "entry_price": 84.8,
-      "shares": 2,
-      "stop": 84.835,
-      "trail_dist": 0.295,
-      "peak": 84.54,
-      "orb_width": 0.59,
-      "cost": 169.6,
-      "vol_ratio": 1.59
     },
     {
       "ticker": "FRT",
@@ -254,7 +240,27 @@
       "vol_ratio": 3.97
     }
   ],
-  "closed_today": [],
+  "closed_today": [
+    {
+      "ticker": "EVRG",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:03 ET",
+      "entry_price": 84.8,
+      "shares": 2,
+      "stop": 84.835,
+      "trail_dist": 0.295,
+      "peak": 84.54,
+      "orb_width": 0.59,
+      "cost": 169.6,
+      "vol_ratio": 1.59,
+      "exit_date": "2026-07-29",
+      "exit_price": 84.835,
+      "pnl": -0.07,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:15 ET"
+    }
+  ],
   "all_closed": [
     {
       "ticker": "SNOW",
@@ -45611,7 +45617,7 @@
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
-    "2026-07-29": 96271.11
+    "2026-07-29": 96159.86
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -90370,6 +90376,23 @@
       "exits": [],
       "portfolio_value": 96271.11,
       "note": "$96,271 | cash=$294 | open=18 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-29",
+      "time": "11:15 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "EVRG",
+          "side": "short",
+          "exit_price": 84.83,
+          "pnl": -0.07,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96159.86,
+      "note": "$96,160 | cash=$463 | open=17 | closed today=1 | day PnL=$-0"
     }
   ]
 }
