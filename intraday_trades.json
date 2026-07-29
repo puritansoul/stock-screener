@@ -1,5 +1,5 @@
 {
-  "capital": 2868.39,
+  "capital": 416.46,
   "open_positions": [
     {
       "ticker": "ETR",
@@ -78,9 +78,9 @@
       "entry_time": "10:58 ET",
       "entry_price": 1010.445,
       "shares": 4,
-      "stop": 1013.785,
+      "stop": 1012.925,
       "trail_dist": 9.085,
-      "peak": 1004.7,
+      "peak": 1003.84,
       "orb_width": 18.17,
       "cost": 4041.78,
       "vol_ratio": 2.14
@@ -92,9 +92,9 @@
       "entry_time": "10:58 ET",
       "entry_price": 58.36,
       "shares": 62,
-      "stop": 58.3525,
+      "stop": 58.3725,
       "trail_dist": 0.2675,
-      "peak": 58.62,
+      "peak": 58.64,
       "orb_width": 0.535,
       "cost": 3618.32,
       "vol_ratio": 1.95
@@ -162,9 +162,9 @@
       "entry_time": "11:03 ET",
       "entry_price": 90.31,
       "shares": 3,
-      "stop": 89.56,
+      "stop": 89.74,
       "trail_dist": 0.805,
-      "peak": 90.365,
+      "peak": 90.545,
       "orb_width": 1.61,
       "cost": 270.93,
       "vol_ratio": 1.86
@@ -218,12 +218,96 @@
       "entry_time": "11:20 ET",
       "entry_price": 954.255,
       "shares": 1,
-      "stop": 962.0961,
+      "stop": 961.6811,
       "trail_dist": 7.8411,
-      "peak": 954.255,
+      "peak": 953.84,
       "orb_width": 15.6823,
       "cost": 954.26,
       "vol_ratio": 1.3
+    },
+    {
+      "ticker": "TKO",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:23 ET",
+      "entry_price": 185.22,
+      "shares": 4,
+      "stop": 185.945,
+      "trail_dist": 0.725,
+      "peak": 185.22,
+      "orb_width": 1.45,
+      "cost": 740.88,
+      "vol_ratio": 2.82
+    },
+    {
+      "ticker": "WMB",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:23 ET",
+      "entry_price": 70.43,
+      "shares": 9,
+      "stop": 70.825,
+      "trail_dist": 0.395,
+      "peak": 70.43,
+      "orb_width": 0.7899,
+      "cost": 633.87,
+      "vol_ratio": 2.74
+    },
+    {
+      "ticker": "NSC",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:23 ET",
+      "entry_price": 336.9,
+      "shares": 1,
+      "stop": 337.935,
+      "trail_dist": 1.035,
+      "peak": 336.9,
+      "orb_width": 2.07,
+      "cost": 336.9,
+      "vol_ratio": 2.15
+    },
+    {
+      "ticker": "ADM",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:23 ET",
+      "entry_price": 81.72,
+      "shares": 4,
+      "stop": 82.64,
+      "trail_dist": 0.92,
+      "peak": 81.72,
+      "orb_width": 1.84,
+      "cost": 326.88,
+      "vol_ratio": 2.13
+    },
+    {
+      "ticker": "XEL",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:23 ET",
+      "entry_price": 79.52,
+      "shares": 3,
+      "stop": 79.9625,
+      "trail_dist": 0.4425,
+      "peak": 79.52,
+      "orb_width": 0.885,
+      "cost": 238.56,
+      "vol_ratio": 2.03
+    },
+    {
+      "ticker": "CNP",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:23 ET",
+      "entry_price": 43.71,
+      "shares": 4,
+      "stop": 44.005,
+      "trail_dist": 0.295,
+      "peak": 43.71,
+      "orb_width": 0.59,
+      "cost": 174.84,
+      "vol_ratio": 1.39
     }
   ],
   "closed_today": [
@@ -43274,6 +43358,11 @@
       "low": 173.68,
       "width": 4.3
     },
+    "AWK": {
+      "high": 140.3,
+      "low": 137.39,
+      "width": 2.91
+    },
     "AMP": {
       "high": 545.695,
       "low": 539.44,
@@ -44714,6 +44803,11 @@
       "low": 136.0,
       "width": 1.23
     },
+    "MRNA": {
+      "high": 56.1999,
+      "low": 55.02,
+      "width": 1.1799
+    },
     "TAP": {
       "high": 43.62,
       "low": 42.255,
@@ -45650,7 +45744,7 @@
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
-    "2026-07-29": 96287.41
+    "2026-07-29": 96128.84
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -90485,6 +90579,64 @@
       ],
       "portfolio_value": 96287.41,
       "note": "$96,287 | cash=$2,868 | open=16 | closed today=4 | day PnL=$-1"
+    },
+    {
+      "date": "2026-07-29",
+      "time": "11:22 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "TKO",
+          "side": "short",
+          "price": 185.22,
+          "shares": 4,
+          "stop": 185.95,
+          "trail_dist": 0.725
+        },
+        {
+          "ticker": "WMB",
+          "side": "short",
+          "price": 70.43,
+          "shares": 9,
+          "stop": 70.83,
+          "trail_dist": 0.395
+        },
+        {
+          "ticker": "NSC",
+          "side": "short",
+          "price": 336.9,
+          "shares": 1,
+          "stop": 337.93,
+          "trail_dist": 1.035
+        },
+        {
+          "ticker": "ADM",
+          "side": "short",
+          "price": 81.72,
+          "shares": 4,
+          "stop": 82.64,
+          "trail_dist": 0.92
+        },
+        {
+          "ticker": "XEL",
+          "side": "short",
+          "price": 79.52,
+          "shares": 3,
+          "stop": 79.96,
+          "trail_dist": 0.4425
+        },
+        {
+          "ticker": "CNP",
+          "side": "short",
+          "price": 43.71,
+          "shares": 4,
+          "stop": 44.0,
+          "trail_dist": 0.295
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 96128.84,
+      "note": "$96,129 | cash=$416 | open=22 | closed today=4 | day PnL=$-1"
     }
   ]
 }
