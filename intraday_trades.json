@@ -1,5 +1,5 @@
 {
-  "capital": 621.63,
+  "capital": 405.31,
   "open_positions": [
     {
       "ticker": "ETR",
@@ -92,9 +92,9 @@
       "entry_time": "11:00 ET",
       "entry_price": 144.34,
       "shares": 3,
-      "stop": 144.6,
+      "stop": 144.61,
       "trail_dist": 0.735,
-      "peak": 145.335,
+      "peak": 145.345,
       "orb_width": 1.47,
       "cost": 433.02,
       "vol_ratio": 1.27
@@ -246,9 +246,9 @@
       "entry_time": "11:25 ET",
       "entry_price": 80.92,
       "shares": 27,
-      "stop": 80.66,
+      "stop": 80.665,
       "trail_dist": 0.31,
-      "peak": 80.97,
+      "peak": 80.975,
       "orb_width": 0.62,
       "cost": 2184.84,
       "vol_ratio": 2.33
@@ -260,9 +260,9 @@
       "entry_time": "11:25 ET",
       "entry_price": 169.285,
       "shares": 9,
-      "stop": 167.52,
+      "stop": 167.705,
       "trail_dist": 2.01,
-      "peak": 169.53,
+      "peak": 169.715,
       "orb_width": 4.02,
       "cost": 1523.57,
       "vol_ratio": 1.87
@@ -274,9 +274,9 @@
       "entry_time": "11:27 ET",
       "entry_price": 88.165,
       "shares": 60,
-      "stop": 87.5449,
+      "stop": 87.567,
       "trail_dist": 0.835,
-      "peak": 88.3799,
+      "peak": 88.402,
       "orb_width": 1.67,
       "cost": 5289.9,
       "vol_ratio": 6.52
@@ -330,9 +330,9 @@
       "entry_time": "11:30 ET",
       "entry_price": 187.46,
       "shares": 23,
-      "stop": 188.825,
+      "stop": 188.745,
       "trail_dist": 1.625,
-      "peak": 187.2,
+      "peak": 187.12,
       "orb_width": 3.25,
       "cost": 4311.58,
       "vol_ratio": 3.34
@@ -372,9 +372,9 @@
       "entry_time": "11:30 ET",
       "entry_price": 236.31,
       "shares": 6,
-      "stop": 238.0,
+      "stop": 237.665,
       "trail_dist": 1.9,
-      "peak": 236.1,
+      "peak": 235.765,
       "orb_width": 3.8,
       "cost": 1417.86,
       "vol_ratio": 1.44
@@ -428,9 +428,9 @@
       "entry_time": "11:33 ET",
       "entry_price": 73.13,
       "shares": 6,
-      "stop": 73.425,
+      "stop": 73.39,
       "trail_dist": 0.295,
-      "peak": 73.13,
+      "peak": 73.095,
       "orb_width": 0.59,
       "cost": 438.78,
       "vol_ratio": 1.55
@@ -442,9 +442,9 @@
       "entry_time": "11:33 ET",
       "entry_price": 271.39,
       "shares": 1,
-      "stop": 273.695,
+      "stop": 273.11,
       "trail_dist": 2.305,
-      "peak": 271.39,
+      "peak": 270.805,
       "orb_width": 4.61,
       "cost": 271.39,
       "vol_ratio": 1.39
@@ -456,12 +456,40 @@
       "entry_time": "11:33 ET",
       "entry_price": 90.09,
       "shares": 2,
-      "stop": 90.608,
+      "stop": 90.558,
       "trail_dist": 0.518,
-      "peak": 90.09,
+      "peak": 90.04,
       "orb_width": 1.036,
       "cost": 180.18,
       "vol_ratio": 1.22
+    },
+    {
+      "ticker": "AEE",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:35 ET",
+      "entry_price": 111.495,
+      "shares": 1,
+      "stop": 112.0075,
+      "trail_dist": 0.5125,
+      "peak": 111.495,
+      "orb_width": 1.025,
+      "cost": 111.5,
+      "vol_ratio": 2.35
+    },
+    {
+      "ticker": "FOX",
+      "side": "long",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:35 ET",
+      "entry_price": 52.41,
+      "shares": 2,
+      "stop": 52.2075,
+      "trail_dist": 0.2025,
+      "peak": 52.41,
+      "orb_width": 0.405,
+      "cost": 104.82,
+      "vol_ratio": 1.41
     }
   ],
   "closed_today": [
@@ -44902,6 +44930,11 @@
       "low": 449.5,
       "width": 42.4
     },
+    "LLY": {
+      "high": 1227.96,
+      "low": 1211.01,
+      "width": 16.95
+    },
     "LIN": {
       "high": 512.55,
       "low": 508.26,
@@ -45988,7 +46021,7 @@
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
-    "2026-07-29": 95978.16
+    "2026-07-29": 95892.99
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -91087,6 +91120,32 @@
       "exits": [],
       "portfolio_value": 95978.16,
       "note": "$95,978 | cash=$622 | open=33 | closed today=9 | day PnL=$-32"
+    },
+    {
+      "date": "2026-07-29",
+      "time": "11:35 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "AEE",
+          "side": "short",
+          "price": 111.5,
+          "shares": 1,
+          "stop": 112.01,
+          "trail_dist": 0.5125
+        },
+        {
+          "ticker": "FOX",
+          "side": "long",
+          "price": 52.41,
+          "shares": 2,
+          "stop": 52.21,
+          "trail_dist": 0.2025
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 95892.99,
+      "note": "$95,893 | cash=$405 | open=35 | closed today=9 | day PnL=$-32"
     }
   ]
 }
