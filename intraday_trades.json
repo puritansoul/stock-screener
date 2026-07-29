@@ -1,5 +1,5 @@
 {
-  "capital": 2132.85,
+  "capital": 2347.3,
   "open_positions": [
     {
       "ticker": "DOV",
@@ -78,9 +78,9 @@
       "entry_time": "11:10 ET",
       "entry_price": 19.675,
       "shares": 5,
-      "stop": 19.5725,
+      "stop": 19.5775,
       "trail_dist": 0.2125,
-      "peak": 19.785,
+      "peak": 19.79,
       "orb_width": 0.425,
       "cost": 98.37,
       "vol_ratio": 3.97
@@ -428,26 +428,12 @@
       "entry_time": "11:50 ET",
       "entry_price": 112.91,
       "shares": 4,
-      "stop": 111.89,
+      "stop": 111.915,
       "trail_dist": 1.415,
-      "peak": 113.305,
+      "peak": 113.33,
       "orb_width": 2.83,
       "cost": 451.64,
       "vol_ratio": 1.26
-    },
-    {
-      "ticker": "RTX",
-      "side": "short",
-      "entry_date": "2026-07-29",
-      "entry_time": "11:53 ET",
-      "entry_price": 215.88,
-      "shares": 1,
-      "stop": 217.305,
-      "trail_dist": 2.255,
-      "peak": 215.05,
-      "orb_width": 4.51,
-      "cost": 215.88,
-      "vol_ratio": 1.48
     },
     {
       "ticker": "NDAQ",
@@ -512,9 +498,9 @@
       "entry_time": "12:03 ET",
       "entry_price": 30.08,
       "shares": 60,
-      "stop": 30.105,
+      "stop": 30.165,
       "trail_dist": 0.195,
-      "peak": 30.3,
+      "peak": 30.36,
       "orb_width": 0.39,
       "cost": 1804.8,
       "vol_ratio": 3.67
@@ -554,9 +540,9 @@
       "entry_time": "12:03 ET",
       "entry_price": 60.35,
       "shares": 11,
-      "stop": 60.185,
+      "stop": 60.355,
       "trail_dist": 0.405,
-      "peak": 60.59,
+      "peak": 60.76,
       "orb_width": 0.81,
       "cost": 663.85,
       "vol_ratio": 1.22
@@ -778,9 +764,9 @@
       "entry_time": "12:30 ET",
       "entry_price": 29.5,
       "shares": 12,
-      "stop": 28.995,
+      "stop": 29.02,
       "trail_dist": 0.555,
-      "peak": 29.55,
+      "peak": 29.575,
       "orb_width": 1.1099,
       "cost": 354.0,
       "vol_ratio": 1.41
@@ -820,9 +806,9 @@
       "entry_time": "12:33 ET",
       "entry_price": 115.07,
       "shares": 5,
-      "stop": 115.3,
+      "stop": 115.22,
       "trail_dist": 0.61,
-      "peak": 114.69,
+      "peak": 114.61,
       "orb_width": 1.22,
       "cost": 575.35,
       "vol_ratio": 1.22
@@ -918,9 +904,9 @@
       "entry_time": "12:45 ET",
       "entry_price": 236.58,
       "shares": 5,
-      "stop": 238.534,
+      "stop": 238.284,
       "trail_dist": 1.954,
-      "peak": 236.58,
+      "peak": 236.33,
       "orb_width": 3.908,
       "cost": 1182.9,
       "vol_ratio": 1.55
@@ -932,9 +918,9 @@
       "entry_time": "12:45 ET",
       "entry_price": 878.57,
       "shares": 1,
-      "stop": 869.9425,
+      "stop": 871.5125,
       "trail_dist": 8.6275,
-      "peak": 878.57,
+      "peak": 880.14,
       "orb_width": 17.255,
       "cost": 878.57,
       "vol_ratio": 1.42
@@ -1472,6 +1458,25 @@
       "pnl": -7.28,
       "exit_reason": "trailing stop",
       "exit_time": "12:45 ET"
+    },
+    {
+      "ticker": "RTX",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:53 ET",
+      "entry_price": 215.88,
+      "shares": 1,
+      "stop": 217.305,
+      "trail_dist": 2.255,
+      "peak": 215.05,
+      "orb_width": 4.51,
+      "cost": 215.88,
+      "vol_ratio": 1.48,
+      "exit_date": "2026-07-29",
+      "exit_price": 217.305,
+      "pnl": -1.43,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:48 ET"
     }
   ],
   "all_closed": [
@@ -44364,11 +44369,6 @@
       "low": 109.36,
       "width": 3.13
     },
-    "ALB": {
-      "high": 117.0,
-      "low": 114.24,
-      "width": 2.76
-    },
     "ARE": {
       "high": 55.5199,
       "low": 53.93,
@@ -46830,7 +46830,7 @@
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
-    "2026-07-29": 96057.9
+    "2026-07-29": 96000.32
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -92781,6 +92781,23 @@
       ],
       "portfolio_value": 96057.9,
       "note": "$96,058 | cash=$2,133 | open=67 | closed today=28 | day PnL=$-194"
+    },
+    {
+      "date": "2026-07-29",
+      "time": "12:47 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "RTX",
+          "side": "short",
+          "exit_price": 217.31,
+          "pnl": -1.43,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96000.32,
+      "note": "$96,000 | cash=$2,347 | open=66 | closed today=29 | day PnL=$-196"
     }
   ]
 }
