@@ -32,40 +32,40 @@
   <div id="summary-bar" style="background:#0d1b6e;border-bottom:1px solid rgba(255,255,255,.1);padding:4px 16px;display:flex;align-items:center;gap:0;overflow-x:auto;white-space:nowrap;font-size:12px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
   <div style="display:flex;gap:12px;align-items:center;padding:4px 16px 4px 0;border-right:1px solid rgba(255,255,255,.25);margin-right:4px">
     <span style="font-size:11px;font-weight:bold;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px">All Bots</span>
-    <span style="font-weight:bold;color:white;font-size:14px">$617,433</span>
-    <span style="color:#ef9a9a">$3,029 today (0.5%)</span>
-    <span style="color:#90caf9">+2.9% all-time</span>
+    <span id="bar-total-val" style="font-weight:bold;color:white;font-size:14px">$617,433</span>
+    <span id="bar-total-day" style="color:#ef9a9a">-$3,029 today (-0.5%)</span>
+    <span id="bar-total-ret" style="color:#90caf9">+2.9% all-time</span>
   </div>
-  <div style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
-          <span style="font-size:11px;color:rgba(255,255,255,.6);min-width:72px">Swing v1</span>
-          <span style="font-weight:bold;color:white">$101,351</span>
-          <span style="color:#c62828;font-size:12px">$240 (0.2%)</span>
-          <span style="color:#2e7d32;font-size:12px">+1.4% all-time</span>
-        </div><div style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
-          <span style="font-size:11px;color:rgba(255,255,255,.6);min-width:72px">Swing v2</span>
-          <span style="font-weight:bold;color:white">$100,000</span>
-          <span style="color:#2e7d32;font-size:12px">+$0 (+0.0%)</span>
-          <span style="color:#2e7d32;font-size:12px">+0.0% all-time</span>
-        </div><div style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
-          <span style="font-size:11px;color:rgba(255,255,255,.6);min-width:72px">Intraday v1</span>
-          <span style="font-weight:bold;color:white">$95,689</span>
-          <span style="color:#c62828;font-size:12px">$317 (0.3%)</span>
-          <span style="color:#c62828;font-size:12px">4.3% all-time</span>
-        </div><div style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
-          <span style="font-size:11px;color:rgba(255,255,255,.6);min-width:72px">Intraday v2</span>
-          <span style="font-weight:bold;color:white">$99,812</span>
-          <span style="color:#2e7d32;font-size:12px">+$0 (+0.0%)</span>
-          <span style="color:#c62828;font-size:12px">0.2% all-time</span>
-        </div><div style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
+  <div id="bar-screener-v1" data-day-el="port-today" style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
           <span style="font-size:11px;color:rgba(255,255,255,.6);min-width:72px">Screener v1</span>
-          <span style="font-weight:bold;color:white">$128,829</span>
-          <span style="color:#2e7d32;font-size:12px">+$1,443 (+1.1%)</span>
-          <span style="color:#2e7d32;font-size:12px">+28.8% all-time</span>
-        </div><div style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
+          <span id="bar-screener-v1-val" style="font-weight:bold;color:white">$128,829</span>
+          <span id="bar-screener-v1-day" style="color:#2e7d32;font-size:12px">+$1,443 (+1.1%)</span>
+          <span id="bar-screener-v1-ret" style="color:#2e7d32;font-size:12px">+28.8% all-time</span>
+        </div><div id="bar-swing-v1" data-day-el="day-pnl" style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
+          <span style="font-size:11px;color:rgba(255,255,255,.6);min-width:72px">Swing v1</span>
+          <span id="bar-swing-v1-val" style="font-weight:bold;color:white">$101,351</span>
+          <span id="bar-swing-v1-day" style="color:#c62828;font-size:12px">-$240 (-0.2%)</span>
+          <span id="bar-swing-v1-ret" style="color:#2e7d32;font-size:12px">+1.4% all-time</span>
+        </div><div id="bar-intraday-v1" data-day-el="port-today" style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
+          <span style="font-size:11px;color:rgba(255,255,255,.6);min-width:72px">Intraday v1</span>
+          <span id="bar-intraday-v1-val" style="font-weight:bold;color:white">$95,689</span>
+          <span id="bar-intraday-v1-day" style="color:#c62828;font-size:12px">-$317 (-0.3%)</span>
+          <span id="bar-intraday-v1-ret" style="color:#c62828;font-size:12px">-4.3% all-time</span>
+        </div><div id="bar-screener-v2" data-day-el="port-today" style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
           <span style="font-size:11px;color:rgba(255,255,255,.6);min-width:72px">Screener v2</span>
-          <span style="font-weight:bold;color:white">$91,752</span>
-          <span style="color:#c62828;font-size:12px">$3,915 (4.1%)</span>
-          <span style="color:#c62828;font-size:12px">8.2% all-time</span>
+          <span id="bar-screener-v2-val" style="font-weight:bold;color:white">$91,752</span>
+          <span id="bar-screener-v2-day" style="color:#c62828;font-size:12px">-$3,915 (-4.1%)</span>
+          <span id="bar-screener-v2-ret" style="color:#c62828;font-size:12px">-8.2% all-time</span>
+        </div><div id="bar-swing-v2" data-day-el="day-pnl" style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
+          <span style="font-size:11px;color:rgba(255,255,255,.6);min-width:72px">Swing v2</span>
+          <span id="bar-swing-v2-val" style="font-weight:bold;color:white">$100,000</span>
+          <span id="bar-swing-v2-day" style="color:#2e7d32;font-size:12px">+$0 (+0.0%)</span>
+          <span id="bar-swing-v2-ret" style="color:#2e7d32;font-size:12px">+0.0% all-time</span>
+        </div><div id="bar-intraday-v2" data-day-el="port-today" style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
+          <span style="font-size:11px;color:rgba(255,255,255,.6);min-width:72px">Intraday v2</span>
+          <span id="bar-intraday-v2-val" style="font-weight:bold;color:white">$99,812</span>
+          <span id="bar-intraday-v2-day" style="color:#2e7d32;font-size:12px">+$0 (+0.0%)</span>
+          <span id="bar-intraday-v2-ret" style="color:#c62828;font-size:12px">-0.2% all-time</span>
         </div>
   <div id="summary-stale" style="margin-left:auto;padding-left:16px;font-size:11px;color:rgba(255,255,255,.4)">as of last run · 2026-07-29</div>
 </div>
@@ -161,6 +161,117 @@
     const stale = Date.now() - lastActivity > 10 * 60 * 1000;
     if (banner) banner.style.display = stale ? 'block' : 'none';
   }, 60 * 1000);
+})();
+
+// ── Live summary bar sync ─────────────────────────────────────────────────────
+(function() {
+  const STARTING = 100000.0;
+  // barId → {iframeId, dayElId}
+  const BOTS = [
+    {barId:'bar-screener-v1', iframeId:'screener',    dayEl:'port-today'},
+    {barId:'bar-swing-v1',    iframeId:'swing',       dayEl:'day-pnl'},
+    {barId:'bar-intraday-v1', iframeId:'intraday',    dayEl:'port-today'},
+    {barId:'bar-screener-v2', iframeId:'screener-v2', dayEl:'port-today'},
+    {barId:'bar-swing-v2',    iframeId:'swing-v2',    dayEl:'day-pnl'},
+    {barId:'bar-intraday-v2', iframeId:'intraday-v2', dayEl:'port-today'},
+  ];
+
+  function parseDollars(el) {
+    if (!el) return null;
+    // Try data-sort first (swing day-pnl uses this via innerHTML containing $)
+    const raw = el.textContent.replace(/[^0-9.+-]/g, '');
+    const n = parseFloat(raw);
+    return isNaN(n) ? null : (el.textContent.trim().startsWith('-') ? -Math.abs(n) : n);
+  }
+
+  function fmtVal(n) { return '$' + Math.abs(n).toLocaleString('en-US', {maximumFractionDigits:0}); }
+  function sign(n) { return n >= 0 ? '+' : ''; }
+  function col(n) { return n >= 0 ? '#2e7d32' : '#c62828'; }
+
+  function syncBar() {
+    let totalVal = 0, totalDay = 0, anyLive = false;
+    BOTS.forEach(b => {
+      try {
+        const iframe = document.getElementById(b.iframeId);
+        if (!iframe || !iframe.contentDocument) return;
+        const doc = iframe.contentDocument;
+
+        const valEl = doc.getElementById('port-value');
+        const dayEl = doc.getElementById(b.dayEl);
+        if (!valEl) return;
+
+        // Portfolio value
+        const curVal = parseFloat(valEl.textContent.replace(/[^0-9.]/g, '')) || null;
+        if (curVal === null) return;
+
+        // Day P&L — try data-realized attr first (intraday), else parse text
+        let dayPnl = null;
+        if (dayEl) {
+          if (dayEl.dataset && dayEl.dataset.realized !== undefined) {
+            dayPnl = parseFloat(dayEl.dataset.realized);
+          } else {
+            const txt = dayEl.textContent.trim();
+            const sign_ = txt.startsWith('-') ? -1 : 1;
+            const num = parseFloat(txt.replace(/[^0-9.]/g, ''));
+            if (!isNaN(num)) dayPnl = sign_ * num;
+          }
+        }
+
+        anyLive = true;
+        totalVal += curVal;
+        if (dayPnl !== null) totalDay += dayPnl;
+
+        const retD  = curVal - STARTING;
+        const retP  = retD / STARTING * 100;
+        const prevVal = dayPnl !== null ? curVal - dayPnl : STARTING;
+        const dayP  = prevVal > 0 && dayPnl !== null ? dayPnl / prevVal * 100 : 0;
+
+        const valSpan = document.getElementById(b.barId + '-val');
+        const daySpan = document.getElementById(b.barId + '-day');
+        const retSpan = document.getElementById(b.barId + '-ret');
+        if (valSpan) valSpan.textContent = fmtVal(curVal);
+        if (daySpan && dayPnl !== null) {
+          daySpan.textContent = sign(dayPnl) + fmtVal(dayPnl) + ' (' + sign(dayP) + Math.abs(dayP).toFixed(1) + '%)';
+          daySpan.style.color = col(dayPnl);
+        }
+        if (retSpan) {
+          retSpan.textContent = sign(retD) + Math.abs(retP).toFixed(1) + '% all-time';
+          retSpan.style.color = col(retD);
+        }
+      } catch(e) { /* cross-origin or not-yet-loaded, skip */ }
+    });
+
+    if (!anyLive) return;
+
+    const totalRet  = totalVal - STARTING * BOTS.length;
+    const totalRetP = totalRet / (STARTING * BOTS.length) * 100;
+    const totalPrev = totalVal - totalDay;
+    const totalDayP = totalPrev > 0 ? totalDay / totalPrev * 100 : 0;
+
+    const tv = document.getElementById('bar-total-val');
+    const td = document.getElementById('bar-total-day');
+    const tr = document.getElementById('bar-total-ret');
+    if (tv) tv.textContent = fmtVal(totalVal);
+    if (td) {
+      td.textContent = sign(totalDay) + fmtVal(totalDay) + ' today (' + sign(totalDayP) + Math.abs(totalDayP).toFixed(1) + '%)';
+      td.style.color = totalDay >= 0 ? '#90caf9' : '#ef9a9a';
+    }
+    if (tr) {
+      tr.textContent = sign(totalRet) + Math.abs(totalRetP).toFixed(1) + '% all-time';
+      tr.style.color = totalRet >= 0 ? '#90caf9' : '#ef9a9a';
+    }
+
+    // Update stale label to show live
+    const sl = document.getElementById('summary-stale');
+    if (sl) sl.textContent = 'live';
+  }
+
+  // Sync after iframes load and every 30s
+  document.querySelectorAll('iframe').forEach(f => {
+    f.addEventListener('load', () => setTimeout(syncBar, 500));
+  });
+  setInterval(syncBar, 30 * 1000);
+  setTimeout(syncBar, 2000); // initial attempt after page settles
 })();
 </script>
 </body>
