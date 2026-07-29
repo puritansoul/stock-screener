@@ -1,5 +1,5 @@
 {
-  "capital": 9658.17,
+  "capital": 10045.01,
   "open_positions": [
     {
       "ticker": "DOV",
@@ -632,20 +632,6 @@
       "vol_ratio": 1.29
     },
     {
-      "ticker": "FFIV",
-      "side": "short",
-      "entry_date": "2026-07-29",
-      "entry_time": "12:25 ET",
-      "entry_price": 390.475,
-      "shares": 1,
-      "stop": 394.12,
-      "trail_dist": 3.99,
-      "peak": 390.13,
-      "orb_width": 7.98,
-      "cost": 390.48,
-      "vol_ratio": 3.1
-    },
-    {
       "ticker": "HUBB",
       "side": "short",
       "entry_date": "2026-07-29",
@@ -862,9 +848,9 @@
       "entry_time": "12:45 ET",
       "entry_price": 878.57,
       "shares": 1,
-      "stop": 871.9225,
+      "stop": 872.5575,
       "trail_dist": 8.6275,
-      "peak": 880.55,
+      "peak": 881.185,
       "orb_width": 17.255,
       "cost": 878.57,
       "vol_ratio": 1.42
@@ -876,9 +862,9 @@
       "entry_time": "12:53 ET",
       "entry_price": 1365.35,
       "shares": 1,
-      "stop": 1373.46,
+      "stop": 1372.685,
       "trail_dist": 9.825,
-      "peak": 1363.635,
+      "peak": 1362.86,
       "orb_width": 19.65,
       "cost": 1365.35,
       "vol_ratio": 5.63
@@ -932,9 +918,9 @@
       "entry_time": "12:58 ET",
       "entry_price": 253.04,
       "shares": 15,
-      "stop": 251.48,
+      "stop": 251.5,
       "trail_dist": 1.56,
-      "peak": 253.04,
+      "peak": 253.06,
       "orb_width": 3.12,
       "cost": 3795.6,
       "vol_ratio": 1.61
@@ -1567,6 +1553,25 @@
       "pnl": 0.8,
       "exit_reason": "trailing stop",
       "exit_time": "12:58 ET"
+    },
+    {
+      "ticker": "FFIV",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "12:25 ET",
+      "entry_price": 390.475,
+      "shares": 1,
+      "stop": 394.12,
+      "trail_dist": 3.99,
+      "peak": 390.13,
+      "orb_width": 7.98,
+      "cost": 390.48,
+      "vol_ratio": 3.1,
+      "exit_date": "2026-07-29",
+      "exit_price": 394.12,
+      "pnl": -3.64,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:00 ET"
     }
   ],
   "all_closed": [
@@ -46925,7 +46930,7 @@
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
-    "2026-07-29": 95937.02
+    "2026-07-29": 95950.88
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -93003,6 +93008,23 @@
       ],
       "portfolio_value": 95937.02,
       "note": "$95,937 | cash=$9,658 | open=67 | closed today=33 | day PnL=$-189"
+    },
+    {
+      "date": "2026-07-29",
+      "time": "13:00 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "FFIV",
+          "side": "short",
+          "exit_price": 394.12,
+          "pnl": -3.64,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95950.88,
+      "note": "$95,951 | cash=$10,045 | open=66 | closed today=34 | day PnL=$-193"
     }
   ]
 }
