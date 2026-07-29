@@ -1,5 +1,5 @@
 {
-  "capital": 392.08,
+  "capital": 293.71,
   "open_positions": [
     {
       "ticker": "ETR",
@@ -36,9 +36,9 @@
       "entry_time": "10:58 ET",
       "entry_price": 73.04,
       "shares": 193,
-      "stop": 73.005,
+      "stop": 72.985,
       "trail_dist": 0.295,
-      "peak": 72.71,
+      "peak": 72.69,
       "orb_width": 0.59,
       "cost": 14096.72,
       "vol_ratio": 2.64
@@ -162,9 +162,9 @@
       "entry_time": "11:00 ET",
       "entry_price": 103.93,
       "shares": 6,
-      "stop": 104.13,
+      "stop": 104.09,
       "trail_dist": 0.57,
-      "peak": 103.56,
+      "peak": 103.52,
       "orb_width": 1.14,
       "cost": 623.58,
       "vol_ratio": 1.82
@@ -238,6 +238,20 @@
       "orb_width": 1.045,
       "cost": 129.0,
       "vol_ratio": 1.89
+    },
+    {
+      "ticker": "KVUE",
+      "side": "long",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:10 ET",
+      "entry_price": 19.675,
+      "shares": 5,
+      "stop": 19.4625,
+      "trail_dist": 0.2125,
+      "peak": 19.675,
+      "orb_width": 0.425,
+      "cost": 98.37,
+      "vol_ratio": 3.97
     }
   ],
   "closed_today": [],
@@ -43271,11 +43285,6 @@
       "low": 408.19,
       "width": 12.66
     },
-    "APTV": {
-      "high": 59.74,
-      "low": 58.855,
-      "width": 0.885
-    },
     "ACGL": {
       "high": 103.56,
       "low": 101.36,
@@ -45597,7 +45606,7 @@
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
-    "2026-07-29": 96381.14
+    "2026-07-29": 96327.3
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -90329,6 +90338,24 @@
       "exits": [],
       "portfolio_value": 96381.14,
       "note": "$96,381 | cash=$392 | open=17 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-29",
+      "time": "11:10 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "KVUE",
+          "side": "long",
+          "price": 19.67,
+          "shares": 5,
+          "stop": 19.46,
+          "trail_dist": 0.2125
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 96327.3,
+      "note": "$96,327 | cash=$294 | open=18 | closed today=0 | day PnL=$+0"
     }
   ]
 }
