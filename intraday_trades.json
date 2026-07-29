@@ -1,5 +1,5 @@
 {
-  "capital": 2574.27,
+  "capital": 9141.39,
   "open_positions": [
     {
       "ticker": "DOV",
@@ -184,20 +184,6 @@
       "vol_ratio": 1.52
     },
     {
-      "ticker": "IRM",
-      "side": "short",
-      "entry_date": "2026-07-29",
-      "entry_time": "11:30 ET",
-      "entry_price": 121.755,
-      "shares": 73,
-      "stop": 121.7751,
-      "trail_dist": 1.095,
-      "peak": 120.6801,
-      "orb_width": 2.19,
-      "cost": 8888.11,
-      "vol_ratio": 5.32
-    },
-    {
       "ticker": "WAB",
       "side": "short",
       "entry_date": "2026-07-29",
@@ -302,9 +288,9 @@
       "entry_time": "11:33 ET",
       "entry_price": 90.09,
       "shares": 2,
-      "stop": 90.018,
+      "stop": 90.008,
       "trail_dist": 0.518,
-      "peak": 89.5,
+      "peak": 89.49,
       "orb_width": 1.036,
       "cost": 180.18,
       "vol_ratio": 1.22
@@ -364,20 +350,6 @@
       "orb_width": 4.765,
       "cost": 3060.3,
       "vol_ratio": 4.3
-    },
-    {
-      "ticker": "TPL",
-      "side": "short",
-      "entry_date": "2026-07-29",
-      "entry_time": "11:50 ET",
-      "entry_price": 391.78,
-      "shares": 4,
-      "stop": 389.52,
-      "trail_dist": 1.755,
-      "peak": 387.765,
-      "orb_width": 3.51,
-      "cost": 1567.12,
-      "vol_ratio": 1.7
     },
     {
       "ticker": "FDXF",
@@ -484,9 +456,9 @@
       "entry_time": "12:03 ET",
       "entry_price": 30.08,
       "shares": 60,
-      "stop": 30.2036,
+      "stop": 30.21,
       "trail_dist": 0.195,
-      "peak": 30.3986,
+      "peak": 30.405,
       "orb_width": 0.39,
       "cost": 1804.8,
       "vol_ratio": 3.67
@@ -568,9 +540,9 @@
       "entry_time": "12:08 ET",
       "entry_price": 265.58,
       "shares": 1,
-      "stop": 264.52,
+      "stop": 264.555,
       "trail_dist": 1.53,
-      "peak": 266.05,
+      "peak": 266.085,
       "orb_width": 3.06,
       "cost": 265.58,
       "vol_ratio": 2.07
@@ -918,9 +890,9 @@
       "entry_time": "12:53 ET",
       "entry_price": 1365.35,
       "shares": 1,
-      "stop": 1375.175,
+      "stop": 1373.7551,
       "trail_dist": 9.825,
-      "peak": 1365.35,
+      "peak": 1363.9301,
       "orb_width": 19.65,
       "cost": 1365.35,
       "vol_ratio": 5.63
@@ -932,9 +904,9 @@
       "entry_time": "12:53 ET",
       "entry_price": 128.5,
       "shares": 11,
-      "stop": 126.825,
+      "stop": 126.845,
       "trail_dist": 1.675,
-      "peak": 128.5,
+      "peak": 128.52,
       "orb_width": 3.35,
       "cost": 1413.5,
       "vol_ratio": 1.99
@@ -952,6 +924,20 @@
       "orb_width": 4.89,
       "cost": 1034.04,
       "vol_ratio": 1.5
+    },
+    {
+      "ticker": "IRM",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "12:55 ET",
+      "entry_price": 121.74,
+      "shares": 32,
+      "stop": 122.835,
+      "trail_dist": 1.095,
+      "peak": 121.74,
+      "orb_width": 2.19,
+      "cost": 3895.68,
+      "vol_ratio": 1.51
     }
   ],
   "closed_today": [
@@ -1524,6 +1510,44 @@
       "pnl": -1.92,
       "exit_reason": "trailing stop",
       "exit_time": "12:50 ET"
+    },
+    {
+      "ticker": "IRM",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:30 ET",
+      "entry_price": 121.755,
+      "shares": 73,
+      "stop": 121.7751,
+      "trail_dist": 1.095,
+      "peak": 120.6801,
+      "orb_width": 2.19,
+      "cost": 8888.11,
+      "vol_ratio": 5.32,
+      "exit_date": "2026-07-29",
+      "exit_price": 121.7751,
+      "pnl": -1.47,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:55 ET"
+    },
+    {
+      "ticker": "TPL",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:50 ET",
+      "entry_price": 391.78,
+      "shares": 4,
+      "stop": 389.52,
+      "trail_dist": 1.755,
+      "peak": 387.765,
+      "orb_width": 3.51,
+      "cost": 1567.12,
+      "vol_ratio": 1.7,
+      "exit_date": "2026-07-29",
+      "exit_price": 389.52,
+      "pnl": 9.04,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:55 ET"
     }
   ],
   "all_closed": [
@@ -46882,7 +46906,7 @@
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
-    "2026-07-29": 95988.27
+    "2026-07-29": 95967.28
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -92901,6 +92925,39 @@
       "exits": [],
       "portfolio_value": 95988.27,
       "note": "$95,988 | cash=$2,574 | open=68 | closed today=30 | day PnL=$-198"
+    },
+    {
+      "date": "2026-07-29",
+      "time": "12:55 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "IRM",
+          "side": "short",
+          "price": 121.74,
+          "shares": 32,
+          "stop": 122.83,
+          "trail_dist": 1.095
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "IRM",
+          "side": "short",
+          "exit_price": 121.78,
+          "pnl": -1.47,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "TPL",
+          "side": "short",
+          "exit_price": 389.52,
+          "pnl": 9.04,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95967.28,
+      "note": "$95,967 | cash=$9,141 | open=67 | closed today=32 | day PnL=$-190"
     }
   ]
 }
