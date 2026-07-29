@@ -1,5 +1,5 @@
 {
-  "capital": 7242.87,
+  "capital": 1293.74,
   "open_positions": [
     {
       "ticker": "DOV",
@@ -176,9 +176,9 @@
       "entry_time": "11:23 ET",
       "entry_price": 336.9,
       "shares": 1,
-      "stop": 337.615,
+      "stop": 337.52,
       "trail_dist": 1.035,
-      "peak": 336.58,
+      "peak": 336.485,
       "orb_width": 2.07,
       "cost": 336.9,
       "vol_ratio": 2.15
@@ -232,9 +232,9 @@
       "entry_time": "11:25 ET",
       "entry_price": 80.92,
       "shares": 27,
-      "stop": 80.665,
+      "stop": 80.67,
       "trail_dist": 0.31,
-      "peak": 80.975,
+      "peak": 80.98,
       "orb_width": 0.62,
       "cost": 2184.84,
       "vol_ratio": 2.33
@@ -288,9 +288,9 @@
       "entry_time": "11:30 ET",
       "entry_price": 121.755,
       "shares": 73,
-      "stop": 122.685,
+      "stop": 122.68,
       "trail_dist": 1.095,
-      "peak": 121.59,
+      "peak": 121.585,
       "orb_width": 2.19,
       "cost": 8888.11,
       "vol_ratio": 5.32
@@ -316,9 +316,9 @@
       "entry_time": "11:30 ET",
       "entry_price": 187.46,
       "shares": 23,
-      "stop": 188.45,
+      "stop": 188.295,
       "trail_dist": 1.625,
-      "peak": 186.825,
+      "peak": 186.67,
       "orb_width": 3.25,
       "cost": 4311.58,
       "vol_ratio": 3.34
@@ -330,9 +330,9 @@
       "entry_time": "11:30 ET",
       "entry_price": 1369.145,
       "shares": 2,
-      "stop": 1372.655,
+      "stop": 1370.875,
       "trail_dist": 9.825,
-      "peak": 1362.83,
+      "peak": 1361.05,
       "orb_width": 19.65,
       "cost": 2738.29,
       "vol_ratio": 2.14
@@ -400,9 +400,9 @@
       "entry_time": "11:33 ET",
       "entry_price": 87.035,
       "shares": 7,
-      "stop": 87.025,
+      "stop": 87.07,
       "trail_dist": 0.485,
-      "peak": 87.51,
+      "peak": 87.555,
       "orb_width": 0.9701,
       "cost": 609.25,
       "vol_ratio": 1.72
@@ -506,20 +506,6 @@
       "vol_ratio": 1.52
     },
     {
-      "ticker": "CBOE",
-      "side": "long",
-      "entry_date": "2026-07-29",
-      "entry_time": "11:48 ET",
-      "entry_price": 307.62,
-      "shares": 13,
-      "stop": 305.2375,
-      "trail_dist": 2.3825,
-      "peak": 307.62,
-      "orb_width": 4.765,
-      "cost": 3999.06,
-      "vol_ratio": 2.01
-    },
-    {
       "ticker": "EBAY",
       "side": "short",
       "entry_date": "2026-07-29",
@@ -532,6 +518,104 @@
       "orb_width": 1.05,
       "cost": 3010.67,
       "vol_ratio": 1.4
+    },
+    {
+      "ticker": "CBOE",
+      "side": "long",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:50 ET",
+      "entry_price": 306.03,
+      "shares": 10,
+      "stop": 303.6475,
+      "trail_dist": 2.3825,
+      "peak": 306.03,
+      "orb_width": 4.765,
+      "cost": 3060.3,
+      "vol_ratio": 4.3
+    },
+    {
+      "ticker": "LYV",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:50 ET",
+      "entry_price": 179.935,
+      "shares": 13,
+      "stop": 180.61,
+      "trail_dist": 0.675,
+      "peak": 179.935,
+      "orb_width": 1.35,
+      "cost": 2339.15,
+      "vol_ratio": 2.09
+    },
+    {
+      "ticker": "TPL",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:50 ET",
+      "entry_price": 391.78,
+      "shares": 4,
+      "stop": 393.535,
+      "trail_dist": 1.755,
+      "peak": 391.78,
+      "orb_width": 3.51,
+      "cost": 1567.12,
+      "vol_ratio": 1.7
+    },
+    {
+      "ticker": "FDXF",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:50 ET",
+      "entry_price": 145.775,
+      "shares": 8,
+      "stop": 148.7038,
+      "trail_dist": 2.9288,
+      "peak": 145.775,
+      "orb_width": 5.8576,
+      "cost": 1166.2,
+      "vol_ratio": 1.47
+    },
+    {
+      "ticker": "HON",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:50 ET",
+      "entry_price": 241.27,
+      "shares": 3,
+      "stop": 242.47,
+      "trail_dist": 1.2,
+      "peak": 241.27,
+      "orb_width": 2.4,
+      "cost": 723.81,
+      "vol_ratio": 1.35
+    },
+    {
+      "ticker": "DE",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:50 ET",
+      "entry_price": 611.6,
+      "shares": 1,
+      "stop": 617.0625,
+      "trail_dist": 5.4625,
+      "peak": 611.6,
+      "orb_width": 10.925,
+      "cost": 611.6,
+      "vol_ratio": 1.27
+    },
+    {
+      "ticker": "KMB",
+      "side": "long",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:50 ET",
+      "entry_price": 112.91,
+      "shares": 4,
+      "stop": 111.495,
+      "trail_dist": 1.415,
+      "peak": 112.91,
+      "orb_width": 2.83,
+      "cost": 451.64,
+      "vol_ratio": 1.26
     }
   ],
   "closed_today": [
@@ -743,6 +827,25 @@
       "pnl": 12.85,
       "exit_reason": "trailing stop",
       "exit_time": "11:48 ET"
+    },
+    {
+      "ticker": "CBOE",
+      "side": "long",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:48 ET",
+      "entry_price": 307.62,
+      "shares": 13,
+      "stop": 305.4375,
+      "trail_dist": 2.3825,
+      "peak": 307.82,
+      "orb_width": 4.765,
+      "cost": 3999.06,
+      "vol_ratio": 2.01,
+      "exit_date": "2026-07-29",
+      "exit_price": 305.4375,
+      "pnl": -28.37,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:50 ET"
     }
   ],
   "all_closed": [
@@ -46101,7 +46204,7 @@
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
-    "2026-07-29": 95963.35
+    "2026-07-29": 95939.25
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -91329,6 +91432,80 @@
       ],
       "portfolio_value": 95963.35,
       "note": "$95,963 | cash=$7,243 | open=38 | closed today=11 | day PnL=$-169"
+    },
+    {
+      "date": "2026-07-29",
+      "time": "11:50 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "CBOE",
+          "side": "long",
+          "price": 306.03,
+          "shares": 10,
+          "stop": 303.65,
+          "trail_dist": 2.3825
+        },
+        {
+          "ticker": "LYV",
+          "side": "short",
+          "price": 179.93,
+          "shares": 13,
+          "stop": 180.61,
+          "trail_dist": 0.675
+        },
+        {
+          "ticker": "TPL",
+          "side": "short",
+          "price": 391.78,
+          "shares": 4,
+          "stop": 393.53,
+          "trail_dist": 1.755
+        },
+        {
+          "ticker": "FDXF",
+          "side": "short",
+          "price": 145.77,
+          "shares": 8,
+          "stop": 148.7,
+          "trail_dist": 2.9288
+        },
+        {
+          "ticker": "HON",
+          "side": "short",
+          "price": 241.27,
+          "shares": 3,
+          "stop": 242.47,
+          "trail_dist": 1.2
+        },
+        {
+          "ticker": "DE",
+          "side": "short",
+          "price": 611.6,
+          "shares": 1,
+          "stop": 617.06,
+          "trail_dist": 5.4625
+        },
+        {
+          "ticker": "KMB",
+          "side": "long",
+          "price": 112.91,
+          "shares": 4,
+          "stop": 111.5,
+          "trail_dist": 1.415
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "CBOE",
+          "side": "long",
+          "exit_price": 305.44,
+          "pnl": -28.37,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95939.25,
+      "note": "$95,939 | cash=$1,294 | open=44 | closed today=12 | day PnL=$-198"
     }
   ]
 }
