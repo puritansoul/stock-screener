@@ -1,5 +1,5 @@
 {
-  "capital": 2347.3,
+  "capital": 6387.16,
   "open_positions": [
     {
       "ticker": "DOV",
@@ -14,20 +14,6 @@
       "orb_width": 2.205,
       "cost": 9726.01,
       "vol_ratio": 2.48
-    },
-    {
-      "ticker": "EQIX",
-      "side": "short",
-      "entry_date": "2026-07-29",
-      "entry_time": "10:58 ET",
-      "entry_price": 1010.445,
-      "shares": 4,
-      "stop": 1010.925,
-      "trail_dist": 9.085,
-      "peak": 1001.84,
-      "orb_width": 18.17,
-      "cost": 4041.78,
-      "vol_ratio": 2.14
     },
     {
       "ticker": "BLDR",
@@ -540,9 +526,9 @@
       "entry_time": "12:03 ET",
       "entry_price": 60.35,
       "shares": 11,
-      "stop": 60.355,
+      "stop": 60.425,
       "trail_dist": 0.405,
-      "peak": 60.76,
+      "peak": 60.83,
       "orb_width": 0.81,
       "cost": 663.85,
       "vol_ratio": 1.22
@@ -904,9 +890,9 @@
       "entry_time": "12:45 ET",
       "entry_price": 236.58,
       "shares": 5,
-      "stop": 238.284,
+      "stop": 238.194,
       "trail_dist": 1.954,
-      "peak": 236.33,
+      "peak": 236.24,
       "orb_width": 3.908,
       "cost": 1182.9,
       "vol_ratio": 1.55
@@ -1477,6 +1463,25 @@
       "pnl": -1.43,
       "exit_reason": "trailing stop",
       "exit_time": "12:48 ET"
+    },
+    {
+      "ticker": "EQIX",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "10:58 ET",
+      "entry_price": 1010.445,
+      "shares": 4,
+      "stop": 1010.925,
+      "trail_dist": 9.085,
+      "peak": 1001.84,
+      "orb_width": 18.17,
+      "cost": 4041.78,
+      "vol_ratio": 2.14,
+      "exit_date": "2026-07-29",
+      "exit_price": 1010.925,
+      "pnl": -1.92,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:50 ET"
     }
   ],
   "all_closed": [
@@ -44369,6 +44374,11 @@
       "low": 109.36,
       "width": 3.13
     },
+    "ALB": {
+      "high": 117.0,
+      "low": 114.24,
+      "width": 2.76
+    },
     "ARE": {
       "high": 55.5199,
       "low": 53.93,
@@ -46830,7 +46840,7 @@
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
-    "2026-07-29": 96000.32
+    "2026-07-29": 95990.85
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -92798,6 +92808,23 @@
       ],
       "portfolio_value": 96000.32,
       "note": "$96,000 | cash=$2,347 | open=66 | closed today=29 | day PnL=$-196"
+    },
+    {
+      "date": "2026-07-29",
+      "time": "12:50 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "EQIX",
+          "side": "short",
+          "exit_price": 1010.92,
+          "pnl": -1.92,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95990.85,
+      "note": "$95,991 | cash=$6,387 | open=65 | closed today=30 | day PnL=$-198"
     }
   ]
 }
