@@ -1,5 +1,5 @@
 {
-  "capital": 536.02,
+  "capital": 886.68,
   "open_positions": [
     {
       "ticker": "DOV",
@@ -50,26 +50,12 @@
       "entry_time": "11:00 ET",
       "entry_price": 103.93,
       "shares": 6,
-      "stop": 103.78,
+      "stop": 103.76,
       "trail_dist": 0.57,
-      "peak": 103.21,
+      "peak": 103.19,
       "orb_width": 1.14,
       "cost": 623.58,
       "vol_ratio": 1.82
-    },
-    {
-      "ticker": "HIG",
-      "side": "long",
-      "entry_date": "2026-07-29",
-      "entry_time": "11:00 ET",
-      "entry_price": 144.34,
-      "shares": 3,
-      "stop": 144.755,
-      "trail_dist": 0.735,
-      "peak": 145.49,
-      "orb_width": 1.47,
-      "cost": 433.02,
-      "vol_ratio": 1.27
     },
     {
       "ticker": "BBY",
@@ -92,9 +78,9 @@
       "entry_time": "11:10 ET",
       "entry_price": 19.675,
       "shares": 5,
-      "stop": 19.5325,
+      "stop": 19.5398,
       "trail_dist": 0.2125,
-      "peak": 19.745,
+      "peak": 19.7523,
       "orb_width": 0.425,
       "cost": 98.37,
       "vol_ratio": 3.97
@@ -366,20 +352,6 @@
       "vol_ratio": 1.55
     },
     {
-      "ticker": "JBHT",
-      "side": "short",
-      "entry_date": "2026-07-29",
-      "entry_time": "11:33 ET",
-      "entry_price": 271.39,
-      "shares": 1,
-      "stop": 272.385,
-      "trail_dist": 2.305,
-      "peak": 270.08,
-      "orb_width": 4.61,
-      "cost": 271.39,
-      "vol_ratio": 1.39
-    },
-    {
       "ticker": "SRE",
       "side": "short",
       "entry_date": "2026-07-29",
@@ -442,9 +414,9 @@
       "entry_time": "11:50 ET",
       "entry_price": 306.03,
       "shares": 10,
-      "stop": 305.7475,
+      "stop": 305.8575,
       "trail_dist": 2.3825,
-      "peak": 308.13,
+      "peak": 308.24,
       "orb_width": 4.765,
       "cost": 3060.3,
       "vol_ratio": 4.3
@@ -806,9 +778,9 @@
       "entry_time": "12:23 ET",
       "entry_price": 123.07,
       "shares": 3,
-      "stop": 124.2438,
+      "stop": 124.1438,
       "trail_dist": 1.4138,
-      "peak": 122.83,
+      "peak": 122.73,
       "orb_width": 2.8275,
       "cost": 369.21,
       "vol_ratio": 1.46
@@ -862,9 +834,9 @@
       "entry_time": "12:25 ET",
       "entry_price": 393.34,
       "shares": 1,
-      "stop": 394.85,
+      "stop": 394.75,
       "trail_dist": 1.65,
-      "peak": 393.2,
+      "peak": 393.1,
       "orb_width": 3.3,
       "cost": 393.34,
       "vol_ratio": 1.66
@@ -890,9 +862,9 @@
       "entry_time": "12:25 ET",
       "entry_price": 144.71,
       "shares": 1,
-      "stop": 146.1225,
+      "stop": 146.118,
       "trail_dist": 1.4125,
-      "peak": 144.71,
+      "peak": 144.7055,
       "orb_width": 2.825,
       "cost": 144.71,
       "vol_ratio": 1.24
@@ -904,12 +876,26 @@
       "entry_time": "12:25 ET",
       "entry_price": 52.13,
       "shares": 3,
-      "stop": 51.9275,
+      "stop": 51.9325,
       "trail_dist": 0.2025,
-      "peak": 52.13,
+      "peak": 52.135,
       "orb_width": 0.405,
       "cost": 156.39,
       "vol_ratio": 1.23
+    },
+    {
+      "ticker": "BF-B",
+      "side": "long",
+      "entry_date": "2026-07-29",
+      "entry_time": "12:30 ET",
+      "entry_price": 29.5,
+      "shares": 12,
+      "stop": 28.945,
+      "trail_dist": 0.555,
+      "peak": 29.5,
+      "orb_width": 1.1099,
+      "cost": 354.0,
+      "vol_ratio": 1.41
     }
   ],
   "closed_today": [
@@ -1254,6 +1240,44 @@
       "pnl": 4.37,
       "exit_reason": "trailing stop",
       "exit_time": "12:25 ET"
+    },
+    {
+      "ticker": "HIG",
+      "side": "long",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:00 ET",
+      "entry_price": 144.34,
+      "shares": 3,
+      "stop": 144.755,
+      "trail_dist": 0.735,
+      "peak": 145.49,
+      "orb_width": 1.47,
+      "cost": 433.02,
+      "vol_ratio": 1.27,
+      "exit_date": "2026-07-29",
+      "exit_price": 144.755,
+      "pnl": 1.24,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:30 ET"
+    },
+    {
+      "ticker": "JBHT",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:33 ET",
+      "entry_price": 271.39,
+      "shares": 1,
+      "stop": 272.385,
+      "trail_dist": 2.305,
+      "peak": 270.08,
+      "orb_width": 4.61,
+      "cost": 271.39,
+      "vol_ratio": 1.39,
+      "exit_date": "2026-07-29",
+      "exit_price": 272.385,
+      "pnl": -1.0,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:30 ET"
     }
   ],
   "all_closed": [
@@ -45181,6 +45205,11 @@
       "low": 127.155,
       "width": 2.535
     },
+    "GILD": {
+      "high": 134.56,
+      "low": 132.88,
+      "width": 1.68
+    },
     "GPN": {
       "high": 87.9,
       "low": 86.285,
@@ -46607,7 +46636,7 @@
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
-    "2026-07-29": 96170.78
+    "2026-07-29": 96144.63
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -92318,6 +92347,39 @@
       "exits": [],
       "portfolio_value": 96170.78,
       "note": "$96,171 | cash=$536 | open=65 | closed today=18 | day PnL=$-188"
+    },
+    {
+      "date": "2026-07-29",
+      "time": "12:30 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "BF-B",
+          "side": "long",
+          "price": 29.5,
+          "shares": 12,
+          "stop": 28.95,
+          "trail_dist": 0.555
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "HIG",
+          "side": "long",
+          "exit_price": 144.75,
+          "pnl": 1.24,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "JBHT",
+          "side": "short",
+          "exit_price": 272.38,
+          "pnl": -1.0,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96144.63,
+      "note": "$96,145 | cash=$887 | open=64 | closed today=20 | day PnL=$-188"
     }
   ]
 }
