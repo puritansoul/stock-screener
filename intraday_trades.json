@@ -1,5 +1,5 @@
 {
-  "capital": 3673.46,
+  "capital": 8781.2,
   "open_positions": [
     {
       "ticker": "ETR",
@@ -28,20 +28,6 @@
       "orb_width": 0.37,
       "cost": 20135.4,
       "vol_ratio": 4.31
-    },
-    {
-      "ticker": "LNT",
-      "side": "short",
-      "entry_date": "2026-07-29",
-      "entry_time": "10:58 ET",
-      "entry_price": 73.04,
-      "shares": 193,
-      "stop": 72.985,
-      "trail_dist": 0.295,
-      "peak": 72.69,
-      "orb_width": 0.59,
-      "cost": 14096.72,
-      "vol_ratio": 2.64
     },
     {
       "ticker": "DOV",
@@ -134,9 +120,9 @@
       "entry_time": "11:00 ET",
       "entry_price": 144.34,
       "shares": 3,
-      "stop": 144.135,
+      "stop": 144.215,
       "trail_dist": 0.735,
-      "peak": 144.87,
+      "peak": 144.95,
       "orb_width": 1.47,
       "cost": 433.02,
       "vol_ratio": 1.27
@@ -148,9 +134,9 @@
       "entry_time": "11:03 ET",
       "entry_price": 90.31,
       "shares": 3,
-      "stop": 89.765,
+      "stop": 89.935,
       "trail_dist": 0.805,
-      "peak": 90.57,
+      "peak": 90.74,
       "orb_width": 1.61,
       "cost": 270.93,
       "vol_ratio": 1.86
@@ -190,9 +176,9 @@
       "entry_time": "11:18 ET",
       "entry_price": 282.15,
       "shares": 2,
-      "stop": 284.145,
+      "stop": 283.745,
       "trail_dist": 1.995,
-      "peak": 282.15,
+      "peak": 281.75,
       "orb_width": 3.99,
       "cost": 564.3,
       "vol_ratio": 1.41
@@ -260,9 +246,9 @@
       "entry_time": "11:23 ET",
       "entry_price": 81.72,
       "shares": 4,
-      "stop": 82.485,
+      "stop": 82.38,
       "trail_dist": 0.92,
-      "peak": 81.565,
+      "peak": 81.46,
       "orb_width": 1.84,
       "cost": 326.88,
       "vol_ratio": 2.13
@@ -274,9 +260,9 @@
       "entry_time": "11:23 ET",
       "entry_price": 79.52,
       "shares": 3,
-      "stop": 79.9025,
+      "stop": 79.8075,
       "trail_dist": 0.4425,
-      "peak": 79.46,
+      "peak": 79.365,
       "orb_width": 0.885,
       "cost": 238.56,
       "vol_ratio": 2.03
@@ -288,9 +274,9 @@
       "entry_time": "11:23 ET",
       "entry_price": 43.71,
       "shares": 4,
-      "stop": 43.955,
+      "stop": 43.945,
       "trail_dist": 0.295,
-      "peak": 43.66,
+      "peak": 43.65,
       "orb_width": 0.59,
       "cost": 174.84,
       "vol_ratio": 1.39
@@ -316,12 +302,40 @@
       "entry_time": "11:25 ET",
       "entry_price": 169.285,
       "shares": 9,
-      "stop": 167.275,
+      "stop": 167.46,
       "trail_dist": 2.01,
-      "peak": 169.285,
+      "peak": 169.47,
       "orb_width": 4.02,
       "cost": 1523.57,
       "vol_ratio": 1.87
+    },
+    {
+      "ticker": "MDT",
+      "side": "long",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:27 ET",
+      "entry_price": 88.165,
+      "shares": 60,
+      "stop": 87.33,
+      "trail_dist": 0.835,
+      "peak": 88.165,
+      "orb_width": 1.67,
+      "cost": 5289.9,
+      "vol_ratio": 6.52
+    },
+    {
+      "ticker": "WEC",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:27 ET",
+      "entry_price": 112.415,
+      "shares": 33,
+      "stop": 113.0075,
+      "trail_dist": 0.5925,
+      "peak": 112.415,
+      "orb_width": 1.185,
+      "cost": 3709.7,
+      "vol_ratio": 1.52
     }
   ],
   "closed_today": [
@@ -419,6 +433,25 @@
       "pnl": -2.35,
       "exit_reason": "trailing stop",
       "exit_time": "11:25 ET"
+    },
+    {
+      "ticker": "LNT",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "10:58 ET",
+      "entry_price": 73.04,
+      "shares": 193,
+      "stop": 72.985,
+      "trail_dist": 0.295,
+      "peak": 72.69,
+      "orb_width": 0.59,
+      "cost": 14096.72,
+      "vol_ratio": 2.64,
+      "exit_date": "2026-07-29",
+      "exit_price": 72.985,
+      "pnl": 10.62,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:27 ET"
     }
   ],
   "all_closed": [
@@ -45777,7 +45810,7 @@
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
-    "2026-07-29": 96133.45
+    "2026-07-29": 96097.04
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -90704,6 +90737,40 @@
       ],
       "portfolio_value": 96133.45,
       "note": "$96,133 | cash=$3,673 | open=23 | closed today=5 | day PnL=$-3"
+    },
+    {
+      "date": "2026-07-29",
+      "time": "11:27 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "MDT",
+          "side": "long",
+          "price": 88.17,
+          "shares": 60,
+          "stop": 87.33,
+          "trail_dist": 0.835
+        },
+        {
+          "ticker": "WEC",
+          "side": "short",
+          "price": 112.42,
+          "shares": 33,
+          "stop": 113.01,
+          "trail_dist": 0.5925
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "LNT",
+          "side": "short",
+          "exit_price": 72.98,
+          "pnl": 10.62,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96097.04,
+      "note": "$96,097 | cash=$8,781 | open=24 | closed today=6 | day PnL=$+7"
     }
   ]
 }
