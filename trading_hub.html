@@ -41,12 +41,12 @@
           <div class="stat-grid">
             <div class="stat">
               <div class="stat-label">Portfolio Value</div>
-              <div class="stat-val" style="color:#1a237e">$101,591</div>
+              <div class="stat-val" style="color:#1a237e">$101,351</div>
             </div>
             <div class="stat">
               <div class="stat-label">Total Return</div>
-              <div class="stat-val" style="color:#2e7d32">+$1,591<br>
-                <span style="font-size:13px">+1.59%</span>
+              <div class="stat-val" style="color:#2e7d32">+$1,351<br>
+                <span style="font-size:13px">+1.35%</span>
               </div>
             </div>
             <div class="stat">
@@ -55,15 +55,15 @@
             </div>
             <div class="stat">
               <div class="stat-label">Open Positions</div>
-              <div class="stat-val">15</div>
+              <div class="stat-val">20</div>
             </div>
             <div class="stat">
               <div class="stat-label">Win Rate</div>
-              <div class="stat-val">82.3%</div>
+              <div class="stat-val">81.9%</div>
             </div>
             <div class="stat">
               <div class="stat-label">Closed Trades</div>
-              <div class="stat-val">79</div>
+              <div class="stat-val">83</div>
             </div>
           </div>
           <canvas id="swing-chart" style="width:100%;margin:12px 0"></canvas>
@@ -128,7 +128,7 @@
 
 (function() {
   const dates = ["2026-07-09", "2026-07-10", "2026-07-13", "2026-07-15", "2026-07-16", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-27", "2026-07-28", "2026-07-29"];
-  const vals  = [100000.0, 101615.45, 102667.93, 98011.16, 98225.18, 98779.23, 98947.51, 100830.42, 100340.44, 100021.97, 100949.81, 101590.61, 101590.61];
+  const vals  = [100000.0, 101615.45, 102667.93, 98011.16, 98225.18, 98779.23, 98947.51, 100830.42, 100340.44, 100021.97, 100949.81, 101590.61, 101350.51];
   const N = vals.length;
   if (N < 2) return;
   const canvas = document.getElementById('swing-chart');
