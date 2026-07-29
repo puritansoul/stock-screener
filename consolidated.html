@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Trading Dashboard — 2026-07-29</title>
   <style>
-    *, *::before, *::after { box-sizing: border-box; }
+    *, *::before, *:: after { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f0f2f5; }
+    #summary-bar::-webkit-scrollbar { height: 4px; }
+    #summary-bar::-webkit-scrollbar-thumb { background: rgba(255,255,255,.2); border-radius: 2px; }
     #tabs { display: flex; gap: 0; background: #1a237e; padding: 0 16px; align-items: stretch; overflow-x: auto; }
     .tab { padding: 12px 18px; color: rgba(255,255,255,.65); cursor: pointer; font-size: 13px;
             font-weight: 600; border-bottom: 3px solid transparent; white-space: nowrap;
@@ -17,13 +19,56 @@
     .tab-v2 { color: rgba(144,202,249,.75); }
     .tab-v2.active { color: #90caf9; border-bottom-color: #90caf9; }
     .tab-v2:hover  { color: #90caf9; }
-    #frames { position: absolute; top: 43px; left: 0; right: 0; bottom: 0; }
+    #frames { position: absolute; top: 87px; left: 0; right: 0; bottom: 0; }
     iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%;
               border: none; display: none; background: white; }
     iframe.active { display: block; }
+    #stale-banner { display:none; position:fixed; bottom:16px; right:16px; z-index:999;
+                     background:#b71c1c; color:white; padding:8px 16px; border-radius:8px;
+                     font-size:13px; font-weight:bold; box-shadow:0 2px 8px rgba(0,0,0,.3); }
   </style>
 </head>
 <body>
+  <div id="summary-bar" style="background:#0d1b6e;border-bottom:1px solid rgba(255,255,255,.1);padding:4px 16px;display:flex;align-items:center;gap:0;overflow-x:auto;white-space:nowrap;font-size:12px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+  <div style="display:flex;gap:12px;align-items:center;padding:4px 16px 4px 0;border-right:1px solid rgba(255,255,255,.25);margin-right:4px">
+    <span style="font-size:11px;font-weight:bold;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px">All Bots</span>
+    <span style="font-weight:bold;color:white;font-size:14px">$618,184</span>
+    <span style="color:#ef9a9a">$2,277 today (0.4%)</span>
+    <span style="color:#90caf9">+3.0% all-time</span>
+  </div>
+  <div style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
+          <span style="font-size:11px;color:rgba(255,255,255,.6);min-width:72px">Swing v1</span>
+          <span style="font-weight:bold;color:white">$101,591</span>
+          <span style="color:#2e7d32;font-size:12px">+$0 (+0.0%)</span>
+          <span style="color:#2e7d32;font-size:12px">+1.6% all-time</span>
+        </div><div style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
+          <span style="font-size:11px;color:rgba(255,255,255,.6);min-width:72px">Swing v2</span>
+          <span style="font-weight:bold;color:white">$100,000</span>
+          <span style="color:#2e7d32;font-size:12px">+$0 (+0.0%)</span>
+          <span style="color:#2e7d32;font-size:12px">+0.0% all-time</span>
+        </div><div style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
+          <span style="font-size:11px;color:rgba(255,255,255,.6);min-width:72px">Intraday v1</span>
+          <span style="font-weight:bold;color:white">$96,190</span>
+          <span style="color:#2e7d32;font-size:12px">+$184 (+0.2%)</span>
+          <span style="color:#c62828;font-size:12px">3.8% all-time</span>
+        </div><div style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
+          <span style="font-size:11px;color:rgba(255,255,255,.6);min-width:72px">Intraday v2</span>
+          <span style="font-weight:bold;color:white">$99,812</span>
+          <span style="color:#2e7d32;font-size:12px">+$0 (+0.0%)</span>
+          <span style="color:#c62828;font-size:12px">0.2% all-time</span>
+        </div><div style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
+          <span style="font-size:11px;color:rgba(255,255,255,.6);min-width:72px">Screener v1</span>
+          <span style="font-weight:bold;color:white">$127,018</span>
+          <span style="color:#c62828;font-size:12px">$368 (0.3%)</span>
+          <span style="color:#2e7d32;font-size:12px">+27.0% all-time</span>
+        </div><div style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
+          <span style="font-size:11px;color:rgba(255,255,255,.6);min-width:72px">Screener v2</span>
+          <span style="font-weight:bold;color:white">$93,574</span>
+          <span style="color:#c62828;font-size:12px">$2,093 (2.2%)</span>
+          <span style="color:#c62828;font-size:12px">6.4% all-time</span>
+        </div>
+  <div id="summary-stale" style="margin-left:auto;padding-left:16px;font-size:11px;color:rgba(255,255,255,.4)">as of last run · 2026-07-29</div>
+</div>
   <div id="tabs">
     <div class="tab active"    data-frame="screener">📊 Factor Screener</div>
     <div class="tab"           data-frame="swing">📈 Swing Trader</div>
@@ -41,25 +86,82 @@
     <iframe id="swing-v2"    src="reports/swing_v2_2026-07-29.html"></iframe>
     <iframe id="intraday-v2" src="reports/intraday_v2_2026-07-29.html"></iframe>
   </div>
-  <script>
-    document.querySelectorAll('.tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('.tab, iframe').forEach(el => el.classList.remove('active'));
-        tab.classList.add('active');
-        document.getElementById(tab.dataset.frame).classList.add('active');
-      });
+  <div id="stale-banner">⚠ Prices may be stale — last update &gt;10 min ago</div>
+
+<script>
+// ── Tab switching ─────────────────────────────────────────────────────────────
+(function() {
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab, iframe').forEach(el => el.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.frame).classList.add('active');
+      localStorage.setItem('activeTab', tab.dataset.frame);
     });
-    // Restore last active tab
-    var saved = localStorage.getItem('activeTab');
-    if (saved) {
-      var t = document.querySelector('.tab[data-frame="' + saved + '"]');
-      if (t) t.click();
+  });
+  var saved = localStorage.getItem('activeTab');
+  if (saved) {
+    var t = document.querySelector('.tab[data-frame="' + saved + '"]');
+    if (t) t.click();
+  }
+})();
+
+// ── Auto-refresh active iframe every 5 min during market hours ────────────────
+(function() {
+  function isMarketHours() {
+    const now = new Date();
+    const et  = new Date(now.toLocaleString('en-US', {timeZone: 'America/New_York'}));
+    const day = et.getDay();
+    if (day === 0 || day === 6) return false;
+    const mins = et.getHours() * 60 + et.getMinutes();
+    return mins >= 570 && mins < 960; // 9:30–4:00 ET
+  }
+
+  function refreshActive() {
+    if (!isMarketHours()) return;
+    const active = document.querySelector('iframe.active');
+    if (active && active.src) {
+      const src = active.src;
+      active.src = '';
+      setTimeout(() => { active.src = src; }, 50);
     }
-    document.querySelectorAll('.tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        localStorage.setItem('activeTab', tab.dataset.frame);
-      });
-    });
-  </script>
+  }
+
+  setInterval(refreshActive, 5 * 60 * 1000); // every 5 min
+})();
+
+// ── Stale price warning ───────────────────────────────────────────────────────
+(function() {
+  let lastActivity = Date.now();
+  const banner = document.getElementById('stale-banner');
+
+  function isMarketHours() {
+    const et  = new Date(new Date().toLocaleString('en-US', {timeZone: 'America/New_York'}));
+    const day = et.getDay();
+    if (day === 0 || day === 6) return false;
+    const mins = et.getHours() * 60 + et.getMinutes();
+    return mins >= 570 && mins < 960;
+  }
+
+  // Listen for price-status updates inside iframes
+  window.addEventListener('message', e => {
+    if (e.data && e.data.type === 'priceUpdated') {
+      lastActivity = Date.now();
+      if (banner) banner.style.display = 'none';
+    }
+  });
+
+  // Also track iframe src changes as activity
+  document.querySelectorAll('iframe').forEach(f => {
+    f.addEventListener('load', () => { lastActivity = Date.now(); });
+  });
+
+  setInterval(() => {
+    if (!isMarketHours()) { if (banner) banner.style.display = 'none'; return; }
+    const stale = Date.now() - lastActivity > 10 * 60 * 1000;
+    if (banner) banner.style.display = stale ? 'block' : 'none';
+  }, 60 * 1000);
+})();
+</script>
 </body>
 </html>
