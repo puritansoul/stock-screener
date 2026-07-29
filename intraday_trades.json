@@ -1,5 +1,5 @@
 {
-  "capital": 6571.45,
+  "capital": 4618.06,
   "open_positions": [
     {
       "ticker": "PNW",
@@ -92,9 +92,9 @@
       "entry_time": "11:23 ET",
       "entry_price": 43.71,
       "shares": 4,
-      "stop": 43.805,
+      "stop": 43.8,
       "trail_dist": 0.295,
-      "peak": 43.51,
+      "peak": 43.505,
       "orb_width": 0.59,
       "cost": 174.84,
       "vol_ratio": 1.39
@@ -484,9 +484,9 @@
       "entry_time": "12:38 ET",
       "entry_price": 128.83,
       "shares": 2,
-      "stop": 127.82,
+      "stop": 127.945,
       "trail_dist": 1.4,
-      "peak": 129.22,
+      "peak": 129.345,
       "orb_width": 2.8,
       "cost": 257.66,
       "vol_ratio": 2.25
@@ -680,9 +680,9 @@
       "entry_time": "13:08 ET",
       "entry_price": 289.32,
       "shares": 4,
-      "stop": 292.0,
+      "stop": 291.42,
       "trail_dist": 3.53,
-      "peak": 288.47,
+      "peak": 287.89,
       "orb_width": 7.06,
       "cost": 1157.28,
       "vol_ratio": 1.29
@@ -694,9 +694,9 @@
       "entry_time": "13:10 ET",
       "entry_price": 39.465,
       "shares": 25,
-      "stop": 39.275,
+      "stop": 39.285,
       "trail_dist": 0.19,
-      "peak": 39.465,
+      "peak": 39.475,
       "orb_width": 0.38,
       "cost": 986.63,
       "vol_ratio": 1.54
@@ -708,9 +708,9 @@
       "entry_time": "13:13 ET",
       "entry_price": 198.86,
       "shares": 27,
-      "stop": 199.8425,
+      "stop": 199.7925,
       "trail_dist": 1.1025,
-      "peak": 198.74,
+      "peak": 198.69,
       "orb_width": 2.205,
       "cost": 5369.22,
       "vol_ratio": 2.15
@@ -792,9 +792,9 @@
       "entry_time": "13:18 ET",
       "entry_price": 69.66,
       "shares": 14,
-      "stop": 70.605,
+      "stop": 70.6,
       "trail_dist": 1.01,
-      "peak": 69.595,
+      "peak": 69.59,
       "orb_width": 2.02,
       "cost": 975.24,
       "vol_ratio": 1.46
@@ -806,12 +806,26 @@
       "entry_time": "13:20 ET",
       "entry_price": 951.21,
       "shares": 2,
-      "stop": 959.0411,
+      "stop": 957.7511,
       "trail_dist": 7.8411,
-      "peak": 951.2,
+      "peak": 949.91,
       "orb_width": 15.6823,
       "cost": 1902.42,
       "vol_ratio": 7.56
+    },
+    {
+      "ticker": "EL",
+      "side": "long",
+      "entry_date": "2026-07-29",
+      "entry_time": "13:25 ET",
+      "entry_price": 84.93,
+      "shares": 23,
+      "stop": 84.11,
+      "trail_dist": 0.82,
+      "peak": 84.93,
+      "orb_width": 1.64,
+      "cost": 1953.39,
+      "vol_ratio": 1.33
     }
   ],
   "closed_today": [
@@ -47274,7 +47288,7 @@
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
-    "2026-07-29": 95784.93
+    "2026-07-29": 95814.36
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -93763,6 +93777,24 @@
       ],
       "portfolio_value": 95784.93,
       "note": "$95,785 | cash=$6,571 | open=58 | closed today=58 | day PnL=$-275"
+    },
+    {
+      "date": "2026-07-29",
+      "time": "13:25 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "EL",
+          "side": "long",
+          "price": 84.93,
+          "shares": 23,
+          "stop": 84.11,
+          "trail_dist": 0.82
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 95814.36,
+      "note": "$95,814 | cash=$4,618 | open=59 | closed today=58 | day PnL=$-275"
     }
   ]
 }
