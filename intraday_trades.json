@@ -1,5 +1,5 @@
 {
-  "capital": 3072.51,
+  "capital": 4687.02,
   "open_positions": [
     {
       "ticker": "PNW",
@@ -64,9 +64,9 @@
       "entry_time": "11:23 ET",
       "entry_price": 81.72,
       "shares": 4,
-      "stop": 82.12,
+      "stop": 82.04,
       "trail_dist": 0.92,
-      "peak": 81.2,
+      "peak": 81.12,
       "orb_width": 1.84,
       "cost": 326.88,
       "vol_ratio": 2.13
@@ -112,20 +112,6 @@
       "orb_width": 1.185,
       "cost": 3709.7,
       "vol_ratio": 1.52
-    },
-    {
-      "ticker": "WAB",
-      "side": "short",
-      "entry_date": "2026-07-29",
-      "entry_time": "11:30 ET",
-      "entry_price": 295.58,
-      "shares": 21,
-      "stop": 296.345,
-      "trail_dist": 3.795,
-      "peak": 292.55,
-      "orb_width": 7.5899,
-      "cost": 6207.18,
-      "vol_ratio": 3.48
     },
     {
       "ticker": "ES",
@@ -344,9 +330,9 @@
       "entry_time": "12:20 ET",
       "entry_price": 116.06,
       "shares": 1,
-      "stop": 115.87,
+      "stop": 115.89,
       "trail_dist": 0.4,
-      "peak": 116.27,
+      "peak": 116.29,
       "orb_width": 0.8,
       "cost": 116.06,
       "vol_ratio": 8.71
@@ -554,9 +540,9 @@
       "entry_time": "12:53 ET",
       "entry_price": 73.86,
       "shares": 14,
-      "stop": 71.685,
+      "stop": 71.745,
       "trail_dist": 2.445,
-      "peak": 74.13,
+      "peak": 74.19,
       "orb_width": 4.89,
       "cost": 1034.04,
       "vol_ratio": 1.5
@@ -596,9 +582,9 @@
       "entry_time": "13:05 ET",
       "entry_price": 137.39,
       "shares": 17,
-      "stop": 136.895,
+      "stop": 136.945,
       "trail_dist": 0.615,
-      "peak": 137.51,
+      "peak": 137.56,
       "orb_width": 1.23,
       "cost": 2335.63,
       "vol_ratio": 2.04
@@ -610,9 +596,9 @@
       "entry_time": "13:05 ET",
       "entry_price": 297.02,
       "shares": 5,
-      "stop": 296.375,
+      "stop": 296.53,
       "trail_dist": 1.155,
-      "peak": 297.53,
+      "peak": 297.685,
       "orb_width": 2.31,
       "cost": 1485.1,
       "vol_ratio": 1.33
@@ -652,9 +638,9 @@
       "entry_time": "13:10 ET",
       "entry_price": 39.465,
       "shares": 25,
-      "stop": 39.345,
+      "stop": 39.35,
       "trail_dist": 0.19,
-      "peak": 39.535,
+      "peak": 39.54,
       "orb_width": 0.38,
       "cost": 986.63,
       "vol_ratio": 1.54
@@ -708,9 +694,9 @@
       "entry_time": "13:15 ET",
       "entry_price": 144.7,
       "shares": 14,
-      "stop": 144.435,
+      "stop": 144.46,
       "trail_dist": 0.735,
-      "peak": 145.17,
+      "peak": 145.195,
       "orb_width": 1.47,
       "cost": 2025.8,
       "vol_ratio": 1.63
@@ -764,9 +750,9 @@
       "entry_time": "13:25 ET",
       "entry_price": 84.93,
       "shares": 23,
-      "stop": 84.133,
+      "stop": 84.16,
       "trail_dist": 0.82,
-      "peak": 84.953,
+      "peak": 84.98,
       "orb_width": 1.64,
       "cost": 1953.39,
       "vol_ratio": 1.33
@@ -834,12 +820,40 @@
       "entry_time": "13:33 ET",
       "entry_price": 292.06,
       "shares": 4,
-      "stop": 288.2725,
+      "stop": 288.5675,
       "trail_dist": 3.7875,
-      "peak": 292.06,
+      "peak": 292.355,
       "orb_width": 7.575,
       "cost": 1168.24,
       "vol_ratio": 1.29
+    },
+    {
+      "ticker": "MMM",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "13:35 ET",
+      "entry_price": 179.18,
+      "shares": 15,
+      "stop": 180.0625,
+      "trail_dist": 0.8825,
+      "peak": 179.18,
+      "orb_width": 1.765,
+      "cost": 2687.7,
+      "vol_ratio": 1.41
+    },
+    {
+      "ticker": "ELV",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "13:35 ET",
+      "entry_price": 377.78,
+      "shares": 5,
+      "stop": 380.3725,
+      "trail_dist": 2.5925,
+      "peak": 377.78,
+      "orb_width": 5.185,
+      "cost": 1888.9,
+      "vol_ratio": 1.21
     }
   ],
   "closed_today": [
@@ -2020,6 +2034,25 @@
       "pnl": -7.57,
       "exit_reason": "trailing stop",
       "exit_time": "13:30 ET"
+    },
+    {
+      "ticker": "WAB",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:30 ET",
+      "entry_price": 295.58,
+      "shares": 21,
+      "stop": 296.345,
+      "trail_dist": 3.795,
+      "peak": 292.55,
+      "orb_width": 7.5899,
+      "cost": 6207.18,
+      "vol_ratio": 3.48,
+      "exit_date": "2026-07-29",
+      "exit_price": 296.345,
+      "pnl": -16.07,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:35 ET"
     }
   ],
   "all_closed": [
@@ -47378,7 +47411,7 @@
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
-    "2026-07-29": 95793.22
+    "2026-07-29": 95759.69
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -93984,6 +94017,40 @@
       "exits": [],
       "portfolio_value": 95793.22,
       "note": "$95,793 | cash=$3,073 | open=60 | closed today=62 | day PnL=$-323"
+    },
+    {
+      "date": "2026-07-29",
+      "time": "13:35 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "MMM",
+          "side": "short",
+          "price": 179.18,
+          "shares": 15,
+          "stop": 180.06,
+          "trail_dist": 0.8825
+        },
+        {
+          "ticker": "ELV",
+          "side": "short",
+          "price": 377.78,
+          "shares": 5,
+          "stop": 380.37,
+          "trail_dist": 2.5925
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "WAB",
+          "side": "short",
+          "exit_price": 296.35,
+          "pnl": -16.07,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95759.69,
+      "note": "$95,760 | cash=$4,687 | open=61 | closed today=63 | day PnL=$-339"
     }
   ]
 }
