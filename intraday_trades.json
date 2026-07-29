@@ -1,5 +1,5 @@
 {
-  "capital": 340.03,
+  "capital": 281.69,
   "open_positions": [
     {
       "ticker": "DOV",
@@ -330,9 +330,9 @@
       "entry_time": "11:30 ET",
       "entry_price": 1369.145,
       "shares": 2,
-      "stop": 1368.58,
+      "stop": 1367.955,
       "trail_dist": 9.825,
-      "peak": 1358.755,
+      "peak": 1358.13,
       "orb_width": 19.65,
       "cost": 2738.29,
       "vol_ratio": 2.14
@@ -568,9 +568,9 @@
       "entry_time": "11:50 ET",
       "entry_price": 145.775,
       "shares": 8,
-      "stop": 148.5651,
+      "stop": 148.5088,
       "trail_dist": 2.9288,
-      "peak": 145.6363,
+      "peak": 145.58,
       "orb_width": 5.8576,
       "cost": 1166.2,
       "vol_ratio": 1.47
@@ -638,9 +638,9 @@
       "entry_time": "11:53 ET",
       "entry_price": 96.33,
       "shares": 3,
-      "stop": 95.845,
+      "stop": 95.895,
       "trail_dist": 0.485,
-      "peak": 96.33,
+      "peak": 96.38,
       "orb_width": 0.97,
       "cost": 288.99,
       "vol_ratio": 1.39
@@ -666,9 +666,9 @@
       "entry_time": "11:58 ET",
       "entry_price": 130.11,
       "shares": 1,
-      "stop": 129.115,
+      "stop": 129.32,
       "trail_dist": 0.995,
-      "peak": 130.11,
+      "peak": 130.315,
       "orb_width": 1.99,
       "cost": 130.11,
       "vol_ratio": 2.06
@@ -686,6 +686,20 @@
       "orb_width": 2.9,
       "cost": 139.83,
       "vol_ratio": 1.74
+    },
+    {
+      "ticker": "APTV",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "12:00 ET",
+      "entry_price": 58.34,
+      "shares": 1,
+      "stop": 58.7825,
+      "trail_dist": 0.4425,
+      "peak": 58.34,
+      "orb_width": 0.885,
+      "cost": 58.34,
+      "vol_ratio": 5.09
     }
   ],
   "closed_today": [
@@ -45308,6 +45322,11 @@
       "low": 1388.28,
       "width": 24.08
     },
+    "MGM": {
+      "high": 46.26,
+      "low": 45.83,
+      "width": 0.43
+    },
     "MCHP": {
       "high": 75.83,
       "low": 73.44,
@@ -46269,7 +46288,7 @@
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
-    "2026-07-29": 96040.1
+    "2026-07-29": 95998.96
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -91641,6 +91660,24 @@
       "exits": [],
       "portfolio_value": 96040.1,
       "note": "$96,040 | cash=$340 | open=49 | closed today=12 | day PnL=$-198"
+    },
+    {
+      "date": "2026-07-29",
+      "time": "12:00 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "APTV",
+          "side": "short",
+          "price": 58.34,
+          "shares": 1,
+          "stop": 58.78,
+          "trail_dist": 0.4425
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 95998.96,
+      "note": "$95,999 | cash=$282 | open=50 | closed today=12 | day PnL=$-198"
     }
   ]
 }
