@@ -1,5 +1,5 @@
 {
-  "capital": 10045.01,
+  "capital": 6418.72,
   "open_positions": [
     {
       "ticker": "DOV",
@@ -14,20 +14,6 @@
       "orb_width": 2.205,
       "cost": 9726.01,
       "vol_ratio": 2.48
-    },
-    {
-      "ticker": "BLDR",
-      "side": "short",
-      "entry_date": "2026-07-29",
-      "entry_time": "10:58 ET",
-      "entry_price": 69.415,
-      "shares": 26,
-      "stop": 69.25,
-      "trail_dist": 1.01,
-      "peak": 68.24,
-      "orb_width": 2.02,
-      "cost": 1804.79,
-      "vol_ratio": 1.77
     },
     {
       "ticker": "PNW",
@@ -260,9 +246,9 @@
       "entry_time": "11:33 ET",
       "entry_price": 73.13,
       "shares": 6,
-      "stop": 72.82,
+      "stop": 72.795,
       "trail_dist": 0.295,
-      "peak": 72.525,
+      "peak": 72.5,
       "orb_width": 0.59,
       "cost": 438.78,
       "vol_ratio": 1.55
@@ -316,9 +302,9 @@
       "entry_time": "11:43 ET",
       "entry_price": 28.25,
       "shares": 216,
-      "stop": 28.51,
+      "stop": 28.5,
       "trail_dist": 0.39,
-      "peak": 28.12,
+      "peak": 28.11,
       "orb_width": 0.78,
       "cost": 6102.0,
       "vol_ratio": 1.52
@@ -442,9 +428,9 @@
       "entry_time": "12:03 ET",
       "entry_price": 30.08,
       "shares": 60,
-      "stop": 30.26,
+      "stop": 30.295,
       "trail_dist": 0.195,
-      "peak": 30.455,
+      "peak": 30.49,
       "orb_width": 0.39,
       "cost": 1804.8,
       "vol_ratio": 3.67
@@ -484,9 +470,9 @@
       "entry_time": "12:03 ET",
       "entry_price": 60.35,
       "shares": 11,
-      "stop": 60.555,
+      "stop": 60.575,
       "trail_dist": 0.405,
-      "peak": 60.96,
+      "peak": 60.98,
       "orb_width": 0.81,
       "cost": 663.85,
       "vol_ratio": 1.22
@@ -574,20 +560,6 @@
       "orb_width": 0.8,
       "cost": 116.06,
       "vol_ratio": 8.71
-    },
-    {
-      "ticker": "HBAN",
-      "side": "short",
-      "entry_date": "2026-07-29",
-      "entry_time": "12:23 ET",
-      "entry_price": 16.955,
-      "shares": 44,
-      "stop": 17.0025,
-      "trail_dist": 0.0975,
-      "peak": 16.905,
-      "orb_width": 0.195,
-      "cost": 746.02,
-      "vol_ratio": 1.55
     },
     {
       "ticker": "LHX",
@@ -764,9 +736,9 @@
       "entry_time": "12:38 ET",
       "entry_price": 221.455,
       "shares": 2,
-      "stop": 219.605,
+      "stop": 219.719,
       "trail_dist": 1.85,
-      "peak": 221.455,
+      "peak": 221.569,
       "orb_width": 3.7,
       "cost": 442.91,
       "vol_ratio": 9.33
@@ -848,9 +820,9 @@
       "entry_time": "12:45 ET",
       "entry_price": 878.57,
       "shares": 1,
-      "stop": 872.5575,
+      "stop": 873.4525,
       "trail_dist": 8.6275,
-      "peak": 881.185,
+      "peak": 882.08,
       "orb_width": 17.255,
       "cost": 878.57,
       "vol_ratio": 1.42
@@ -924,6 +896,34 @@
       "orb_width": 3.12,
       "cost": 3795.6,
       "vol_ratio": 1.61
+    },
+    {
+      "ticker": "NSC",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "13:03 ET",
+      "entry_price": 336.885,
+      "shares": 11,
+      "stop": 337.92,
+      "trail_dist": 1.035,
+      "peak": 336.885,
+      "orb_width": 2.07,
+      "cost": 3705.74,
+      "vol_ratio": 1.32
+    },
+    {
+      "ticker": "HONA",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "13:03 ET",
+      "entry_price": 206.13,
+      "shares": 12,
+      "stop": 210.5675,
+      "trail_dist": 4.4375,
+      "peak": 206.13,
+      "orb_width": 8.875,
+      "cost": 2473.56,
+      "vol_ratio": 1.22
     }
   ],
   "closed_today": [
@@ -1572,6 +1572,44 @@
       "pnl": -3.64,
       "exit_reason": "trailing stop",
       "exit_time": "13:00 ET"
+    },
+    {
+      "ticker": "BLDR",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "10:58 ET",
+      "entry_price": 69.415,
+      "shares": 26,
+      "stop": 69.25,
+      "trail_dist": 1.01,
+      "peak": 68.24,
+      "orb_width": 2.02,
+      "cost": 1804.79,
+      "vol_ratio": 1.77,
+      "exit_date": "2026-07-29",
+      "exit_price": 69.25,
+      "pnl": 4.29,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:03 ET"
+    },
+    {
+      "ticker": "HBAN",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "12:23 ET",
+      "entry_price": 16.955,
+      "shares": 44,
+      "stop": 17.0025,
+      "trail_dist": 0.0975,
+      "peak": 16.905,
+      "orb_width": 0.195,
+      "cost": 746.02,
+      "vol_ratio": 1.55,
+      "exit_date": "2026-07-29",
+      "exit_price": 17.0025,
+      "pnl": -2.09,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:03 ET"
     }
   ],
   "all_closed": [
@@ -45359,11 +45397,6 @@
       "low": 1334.235,
       "width": 52.765
     },
-    "FAST": {
-      "high": 47.805,
-      "low": 47.19,
-      "width": 0.615
-    },
     "FRT": {
       "high": 126.13,
       "low": 125.5,
@@ -46930,7 +46963,7 @@
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
-    "2026-07-29": 95950.88
+    "2026-07-29": 95940.87
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -93025,6 +93058,47 @@
       ],
       "portfolio_value": 95950.88,
       "note": "$95,951 | cash=$10,045 | open=66 | closed today=34 | day PnL=$-193"
+    },
+    {
+      "date": "2026-07-29",
+      "time": "13:02 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "NSC",
+          "side": "short",
+          "price": 336.89,
+          "shares": 11,
+          "stop": 337.92,
+          "trail_dist": 1.035
+        },
+        {
+          "ticker": "HONA",
+          "side": "short",
+          "price": 206.13,
+          "shares": 12,
+          "stop": 210.57,
+          "trail_dist": 4.4375
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "BLDR",
+          "side": "short",
+          "exit_price": 69.25,
+          "pnl": 4.29,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "HBAN",
+          "side": "short",
+          "exit_price": 17.0,
+          "pnl": -2.09,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95940.87,
+      "note": "$95,941 | cash=$6,419 | open=66 | closed today=36 | day PnL=$-191"
     }
   ]
 }
