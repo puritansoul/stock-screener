@@ -54,20 +54,31 @@ def build_cross_bot_summary() -> tuple[str, str]:
     """
     today_str = date.today().isoformat()
 
+    # Order: Factor Screener v1 → Swing v1 → Intraday v1 → V2s in same order
     bots = [
-        ("Swing v1",      _load_json(BASE_DIR / "swing_trades.json"),      None),
-        ("Swing v2",      _load_json(BASE_DIR / "swing_trades_v2.json"),    None),
-        ("Intraday v1",   _load_json(BASE_DIR / "intraday_trades.json"),    None),
-        ("Intraday v2",   _load_json(BASE_DIR / "intraday_trades_v2.json"), None),
-        ("Screener v1",   None, BASE_DIR / "portfolio_nav.json"),
-        ("Screener v2",   None, BASE_DIR / "portfolio_nav_v2.json"),
+        ("Screener v1",   None, BASE_DIR / "portfolio_nav.json",            "bar-screener-v1", "port-today"),
+        ("Swing v1",      _load_json(BASE_DIR / "swing_trades.json"),      None, "bar-swing-v1",    "day-pnl"),
+        ("Intraday v1",   _load_json(BASE_DIR / "intraday_trades.json"),   None, "bar-intraday-v1", "port-today"),
+        ("Screener v2",   None, BASE_DIR / "portfolio_nav_v2.json",         "bar-screener-v2", "port-today"),
+        ("Swing v2",      _load_json(BASE_DIR / "swing_trades_v2.json"),   None, "bar-swing-v2",    "day-pnl"),
+        ("Intraday v2",   _load_json(BASE_DIR / "intraday_trades_v2.json"),None, "bar-intraday-v2", "port-today"),
     ]
 
     total_value = 0.0
     total_prev  = 0.0
     rows_html   = ""
 
-    for name, state, nav_file in bots:
+    # Map each bot's iframe id (for live JS sync)
+    bot_iframe_map = {
+        "bar-screener-v1": "screener",
+        "bar-swing-v1":    "swing",
+        "bar-intraday-v1": "intraday",
+        "bar-screener-v2": "screener-v2",
+        "bar-swing-v2":    "swing-v2",
+        "bar-intraday-v2": "intraday-v2",
+    }
+
+    for name, state, nav_file, bar_id, day_el_id in bots:
         if nav_file:
             cur, prev = _screener_nav(nav_file, STARTING_CAPITAL)
         elif state:
@@ -83,13 +94,13 @@ def build_cross_bot_summary() -> tuple[str, str]:
         ret_p  = ret_d / STARTING_CAPITAL * 100
         dc = "#2e7d32" if day_d >= 0 else "#c62828"
         rc = "#2e7d32" if ret_d >= 0 else "#c62828"
-        ds = "+" if day_d >= 0 else ""
-        rs = "+" if ret_d >= 0 else ""
-        rows_html += f"""<div style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
+        ds = "+" if day_d >= 0 else "-"
+        rs = "+" if ret_d >= 0 else "-"
+        rows_html += f"""<div id="{bar_id}" data-day-el="{day_el_id}" style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
           <span style="font-size:11px;color:rgba(255,255,255,.6);min-width:72px">{name}</span>
-          <span style="font-weight:bold;color:white">${cur:,.0f}</span>
-          <span style="color:{dc};font-size:12px">{ds}${abs(day_d):,.0f} ({ds}{abs(day_p):.1f}%)</span>
-          <span style="color:{rc};font-size:12px">{rs}{abs(ret_p):.1f}% all-time</span>
+          <span id="{bar_id}-val" style="font-weight:bold;color:white">${cur:,.0f}</span>
+          <span id="{bar_id}-day" style="color:{dc};font-size:12px">{ds}${abs(day_d):,.0f} ({ds}{abs(day_p):.1f}%)</span>
+          <span id="{bar_id}-ret" style="color:{rc};font-size:12px">{rs}{abs(ret_p):.1f}% all-time</span>
         </div>"""
 
     total_day_d = total_value - total_prev
@@ -98,15 +109,15 @@ def build_cross_bot_summary() -> tuple[str, str]:
     total_ret_p = total_ret_d / (STARTING_CAPITAL * 6) * 100
     tdc = "#90caf9" if total_day_d >= 0 else "#ef9a9a"
     trc = "#90caf9" if total_ret_d >= 0 else "#ef9a9a"
-    tds = "+" if total_day_d >= 0 else ""
-    trs = "+" if total_ret_d >= 0 else ""
+    tds = "+" if total_day_d >= 0 else "-"
+    trs = "+" if total_ret_d >= 0 else "-"
 
     summary_html = f"""<div id="summary-bar" style="background:#0d1b6e;border-bottom:1px solid rgba(255,255,255,.1);padding:4px 16px;display:flex;align-items:center;gap:0;overflow-x:auto;white-space:nowrap;font-size:12px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
   <div style="display:flex;gap:12px;align-items:center;padding:4px 16px 4px 0;border-right:1px solid rgba(255,255,255,.25);margin-right:4px">
     <span style="font-size:11px;font-weight:bold;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px">All Bots</span>
-    <span style="font-weight:bold;color:white;font-size:14px">${total_value:,.0f}</span>
-    <span style="color:{tdc}">{tds}${abs(total_day_d):,.0f} today ({tds}{abs(total_day_p):.1f}%)</span>
-    <span style="color:{trc}">{trs}{abs(total_ret_p):.1f}% all-time</span>
+    <span id="bar-total-val" style="font-weight:bold;color:white;font-size:14px">${total_value:,.0f}</span>
+    <span id="bar-total-day" style="color:{tdc}">{tds}${abs(total_day_d):,.0f} today ({tds}{abs(total_day_p):.1f}%)</span>
+    <span id="bar-total-ret" style="color:{trc}">{trs}{abs(total_ret_p):.1f}% all-time</span>
   </div>
   {rows_html}
   <div id="summary-stale" style="margin-left:auto;padding-left:16px;font-size:11px;color:rgba(255,255,255,.4)">as of last run · {today_str}</div>
@@ -272,6 +283,117 @@ def build_consolidated():
     const stale = Date.now() - lastActivity > 10 * 60 * 1000;
     if (banner) banner.style.display = stale ? 'block' : 'none';
   }}, 60 * 1000);
+}})();
+
+// ── Live summary bar sync ─────────────────────────────────────────────────────
+(function() {{
+  const STARTING = {STARTING_CAPITAL};
+  // barId → {{iframeId, dayElId}}
+  const BOTS = [
+    {{barId:'bar-screener-v1', iframeId:'screener',    dayEl:'port-today'}},
+    {{barId:'bar-swing-v1',    iframeId:'swing',       dayEl:'day-pnl'}},
+    {{barId:'bar-intraday-v1', iframeId:'intraday',    dayEl:'port-today'}},
+    {{barId:'bar-screener-v2', iframeId:'screener-v2', dayEl:'port-today'}},
+    {{barId:'bar-swing-v2',    iframeId:'swing-v2',    dayEl:'day-pnl'}},
+    {{barId:'bar-intraday-v2', iframeId:'intraday-v2', dayEl:'port-today'}},
+  ];
+
+  function parseDollars(el) {{
+    if (!el) return null;
+    // Try data-sort first (swing day-pnl uses this via innerHTML containing $)
+    const raw = el.textContent.replace(/[^0-9.+-]/g, '');
+    const n = parseFloat(raw);
+    return isNaN(n) ? null : (el.textContent.trim().startsWith('-') ? -Math.abs(n) : n);
+  }}
+
+  function fmtVal(n) {{ return '$' + Math.abs(n).toLocaleString('en-US', {{maximumFractionDigits:0}}); }}
+  function sign(n) {{ return n >= 0 ? '+' : ''; }}
+  function col(n) {{ return n >= 0 ? '#2e7d32' : '#c62828'; }}
+
+  function syncBar() {{
+    let totalVal = 0, totalDay = 0, anyLive = false;
+    BOTS.forEach(b => {{
+      try {{
+        const iframe = document.getElementById(b.iframeId);
+        if (!iframe || !iframe.contentDocument) return;
+        const doc = iframe.contentDocument;
+
+        const valEl = doc.getElementById('port-value');
+        const dayEl = doc.getElementById(b.dayEl);
+        if (!valEl) return;
+
+        // Portfolio value
+        const curVal = parseFloat(valEl.textContent.replace(/[^0-9.]/g, '')) || null;
+        if (curVal === null) return;
+
+        // Day P&L — try data-realized attr first (intraday), else parse text
+        let dayPnl = null;
+        if (dayEl) {{
+          if (dayEl.dataset && dayEl.dataset.realized !== undefined) {{
+            dayPnl = parseFloat(dayEl.dataset.realized);
+          }} else {{
+            const txt = dayEl.textContent.trim();
+            const sign_ = txt.startsWith('-') ? -1 : 1;
+            const num = parseFloat(txt.replace(/[^0-9.]/g, ''));
+            if (!isNaN(num)) dayPnl = sign_ * num;
+          }}
+        }}
+
+        anyLive = true;
+        totalVal += curVal;
+        if (dayPnl !== null) totalDay += dayPnl;
+
+        const retD  = curVal - STARTING;
+        const retP  = retD / STARTING * 100;
+        const prevVal = dayPnl !== null ? curVal - dayPnl : STARTING;
+        const dayP  = prevVal > 0 && dayPnl !== null ? dayPnl / prevVal * 100 : 0;
+
+        const valSpan = document.getElementById(b.barId + '-val');
+        const daySpan = document.getElementById(b.barId + '-day');
+        const retSpan = document.getElementById(b.barId + '-ret');
+        if (valSpan) valSpan.textContent = fmtVal(curVal);
+        if (daySpan && dayPnl !== null) {{
+          daySpan.textContent = sign(dayPnl) + fmtVal(dayPnl) + ' (' + sign(dayP) + Math.abs(dayP).toFixed(1) + '%)';
+          daySpan.style.color = col(dayPnl);
+        }}
+        if (retSpan) {{
+          retSpan.textContent = sign(retD) + Math.abs(retP).toFixed(1) + '% all-time';
+          retSpan.style.color = col(retD);
+        }}
+      }} catch(e) {{ /* cross-origin or not-yet-loaded, skip */ }}
+    }});
+
+    if (!anyLive) return;
+
+    const totalRet  = totalVal - STARTING * BOTS.length;
+    const totalRetP = totalRet / (STARTING * BOTS.length) * 100;
+    const totalPrev = totalVal - totalDay;
+    const totalDayP = totalPrev > 0 ? totalDay / totalPrev * 100 : 0;
+
+    const tv = document.getElementById('bar-total-val');
+    const td = document.getElementById('bar-total-day');
+    const tr = document.getElementById('bar-total-ret');
+    if (tv) tv.textContent = fmtVal(totalVal);
+    if (td) {{
+      td.textContent = sign(totalDay) + fmtVal(totalDay) + ' today (' + sign(totalDayP) + Math.abs(totalDayP).toFixed(1) + '%)';
+      td.style.color = totalDay >= 0 ? '#90caf9' : '#ef9a9a';
+    }}
+    if (tr) {{
+      tr.textContent = sign(totalRet) + Math.abs(totalRetP).toFixed(1) + '% all-time';
+      tr.style.color = totalRet >= 0 ? '#90caf9' : '#ef9a9a';
+    }}
+
+    // Update stale label to show live
+    const sl = document.getElementById('summary-stale');
+    if (sl) sl.textContent = 'live';
+  }}
+
+  // Sync after iframes load and every 30s
+  document.querySelectorAll('iframe').forEach(f => {{
+    f.addEventListener('load', () => setTimeout(syncBar, 500));
+  }});
+  setInterval(syncBar, 30 * 1000);
+  setTimeout(syncBar, 2000); // initial attempt after page settles
 }})();
 </script>
 </body>
