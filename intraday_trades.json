@@ -1,5 +1,5 @@
 {
-  "capital": 683.59,
+  "capital": 864.6,
   "open_positions": [
     {
       "ticker": "DOV",
@@ -78,9 +78,9 @@
       "entry_time": "11:10 ET",
       "entry_price": 19.675,
       "shares": 5,
-      "stop": 19.5625,
+      "stop": 19.5626,
       "trail_dist": 0.2125,
-      "peak": 19.775,
+      "peak": 19.7751,
       "orb_width": 0.425,
       "cost": 98.37,
       "vol_ratio": 3.97
@@ -456,9 +456,9 @@
       "entry_time": "11:50 ET",
       "entry_price": 112.91,
       "shares": 4,
-      "stop": 111.82,
+      "stop": 111.875,
       "trail_dist": 1.415,
-      "peak": 113.235,
+      "peak": 113.29,
       "orb_width": 2.83,
       "cost": 451.64,
       "vol_ratio": 1.26
@@ -506,20 +506,6 @@
       "vol_ratio": 1.23
     },
     {
-      "ticker": "PTC",
-      "side": "long",
-      "entry_date": "2026-07-29",
-      "entry_time": "11:58 ET",
-      "entry_price": 130.11,
-      "shares": 1,
-      "stop": 129.935,
-      "trail_dist": 0.995,
-      "peak": 130.93,
-      "orb_width": 1.99,
-      "cost": 130.11,
-      "vol_ratio": 2.06
-    },
-    {
       "ticker": "BSX",
       "side": "long",
       "entry_date": "2026-07-29",
@@ -554,9 +540,9 @@
       "entry_time": "12:03 ET",
       "entry_price": 30.08,
       "shares": 60,
-      "stop": 30.015,
+      "stop": 30.075,
       "trail_dist": 0.195,
-      "peak": 30.21,
+      "peak": 30.27,
       "orb_width": 0.39,
       "cost": 1804.8,
       "vol_ratio": 3.67
@@ -596,9 +582,9 @@
       "entry_time": "12:03 ET",
       "entry_price": 60.35,
       "shares": 11,
-      "stop": 60.04,
+      "stop": 60.17,
       "trail_dist": 0.405,
-      "peak": 60.445,
+      "peak": 60.575,
       "orb_width": 0.81,
       "cost": 663.85,
       "vol_ratio": 1.22
@@ -772,20 +758,6 @@
       "vol_ratio": 2.5
     },
     {
-      "ticker": "TRV",
-      "side": "short",
-      "entry_date": "2026-07-29",
-      "entry_time": "12:25 ET",
-      "entry_price": 393.34,
-      "shares": 1,
-      "stop": 394.43,
-      "trail_dist": 1.65,
-      "peak": 392.78,
-      "orb_width": 3.3,
-      "cost": 393.34,
-      "vol_ratio": 1.66
-    },
-    {
       "ticker": "IR",
       "side": "short",
       "entry_date": "2026-07-29",
@@ -834,9 +806,9 @@
       "entry_time": "12:30 ET",
       "entry_price": 29.5,
       "shares": 12,
-      "stop": 28.9514,
+      "stop": 28.955,
       "trail_dist": 0.555,
-      "peak": 29.5064,
+      "peak": 29.51,
       "orb_width": 1.1099,
       "cost": 354.0,
       "vol_ratio": 1.41
@@ -890,9 +862,9 @@
       "entry_time": "12:35 ET",
       "entry_price": 137.29,
       "shares": 3,
-      "stop": 138.67,
+      "stop": 138.62,
       "trail_dist": 1.415,
-      "peak": 137.255,
+      "peak": 137.205,
       "orb_width": 2.83,
       "cost": 411.87,
       "vol_ratio": 1.58
@@ -918,9 +890,9 @@
       "entry_time": "12:38 ET",
       "entry_price": 326.33,
       "shares": 1,
-      "stop": 334.415,
+      "stop": 334.395,
       "trail_dist": 8.085,
-      "peak": 326.33,
+      "peak": 326.31,
       "orb_width": 16.17,
       "cost": 326.33,
       "vol_ratio": 5.33
@@ -938,6 +910,20 @@
       "orb_width": 2.8,
       "cost": 257.66,
       "vol_ratio": 2.25
+    },
+    {
+      "ticker": "LEN",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "12:43 ET",
+      "entry_price": 85.295,
+      "shares": 4,
+      "stop": 86.0175,
+      "trail_dist": 0.7225,
+      "peak": 85.295,
+      "orb_width": 1.445,
+      "cost": 341.18,
+      "vol_ratio": 1.76
     }
   ],
   "closed_today": [
@@ -1396,6 +1382,44 @@
       "pnl": -0.75,
       "exit_reason": "trailing stop",
       "exit_time": "12:38 ET"
+    },
+    {
+      "ticker": "PTC",
+      "side": "long",
+      "entry_date": "2026-07-29",
+      "entry_time": "11:58 ET",
+      "entry_price": 130.11,
+      "shares": 1,
+      "stop": 129.935,
+      "trail_dist": 0.995,
+      "peak": 130.93,
+      "orb_width": 1.99,
+      "cost": 130.11,
+      "vol_ratio": 2.06,
+      "exit_date": "2026-07-29",
+      "exit_price": 129.935,
+      "pnl": -0.18,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:43 ET"
+    },
+    {
+      "ticker": "TRV",
+      "side": "short",
+      "entry_date": "2026-07-29",
+      "entry_time": "12:25 ET",
+      "entry_price": 393.34,
+      "shares": 1,
+      "stop": 394.43,
+      "trail_dist": 1.65,
+      "peak": 392.78,
+      "orb_width": 3.3,
+      "cost": 393.34,
+      "vol_ratio": 1.66,
+      "exit_date": "2026-07-29",
+      "exit_price": 394.43,
+      "pnl": -1.09,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:43 ET"
     }
   ],
   "all_closed": [
@@ -46513,6 +46537,11 @@
       "low": 497.0615,
       "width": 12.3285
     },
+    "UNP": {
+      "high": 295.42,
+      "low": 292.265,
+      "width": 3.155
+    },
     "UAL": {
       "high": 122.0,
       "low": 119.2,
@@ -46749,7 +46778,7 @@
     "2026-07-24": 95966.69,
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
-    "2026-07-29": 96053.66
+    "2026-07-29": 96035.36
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -92618,6 +92647,39 @@
       "exits": [],
       "portfolio_value": 96053.66,
       "note": "$96,054 | cash=$684 | open=67 | closed today=24 | day PnL=$-195"
+    },
+    {
+      "date": "2026-07-29",
+      "time": "12:42 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "LEN",
+          "side": "short",
+          "price": 85.29,
+          "shares": 4,
+          "stop": 86.02,
+          "trail_dist": 0.7225
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "PTC",
+          "side": "long",
+          "exit_price": 129.94,
+          "pnl": -0.18,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "TRV",
+          "side": "short",
+          "exit_price": 394.43,
+          "pnl": -1.09,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96035.36,
+      "note": "$96,035 | cash=$865 | open=66 | closed today=26 | day PnL=$-196"
     }
   ]
 }
