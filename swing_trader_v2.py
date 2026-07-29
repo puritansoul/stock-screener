@@ -818,7 +818,9 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
 
     # Open positions rows
     open_rows = ""
-    open_value = portfolio_value - capital
+    sum_cost   = 0.0
+    sum_curval = 0.0
+    sum_unreal = 0.0
     for pos in open_pos:
         tk    = pos["ticker"]
         side  = pos["side"]
@@ -844,6 +846,10 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
 
         unreal_pct = unreal / cost * 100 if cost > 0 else 0
         unreal_color = "#2e7d32" if unreal >= 0 else "#c62828"
+        pos_sign = "+" if unreal >= 0 else ""
+        sum_cost   += cost
+        sum_curval += cur_val
+        sum_unreal += unreal
         side_badge = (
             '<span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span>'
             if side == "long" else
@@ -860,21 +866,18 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
           <td style="text-align:right">{shares:,}</td>
           <td style="text-align:right">${cost:,.0f}</td>
           <td class="live-curval" style="text-align:right">${cur_val:,.0f}</td>
-          <td class="live-unreal-d" data-sort="{unreal:.2f}" style="text-align:right;color:{unreal_color};font-weight:bold">{gain_sign if unreal >= 0 else ''}${abs(unreal):,.0f}</td>
+          <td class="live-unreal-d" data-sort="{unreal:.2f}" style="text-align:right;color:{unreal_color};font-weight:bold">{pos_sign}${abs(unreal):,.0f}</td>
           <td class="live-unreal-pct" data-sort="{unreal_pct:.4f}" style="text-align:right;color:{unreal_color};font-weight:bold">{unreal_pct:+.2f}%</td>
           <td>${stop:,.2f}</td>
           <td style="color:#666;font-size:12px">{rsi_e}</td>
           <td style="color:#666;font-size:12px">{edate}</td>
         </tr>"""
 
-    total_invested = sum(p["cost"] for p in open_pos)
-    # Unrealized P&L = portfolio value - cash - cost basis.
-    # This is always accurate since portfolio_value is recorded by the trading loop
-    # with real prices; summing per-position deltas fails when prices aren't available.
-    total_unreal = portfolio_value - capital - total_invested
+    total_invested = sum_cost
+    total_unreal   = sum_unreal
+    total_curval   = sum_curval
     tu_color = "#2e7d32" if total_unreal >= 0 else "#c62828"
     tu_sign  = "+" if total_unreal >= 0 else ""
-    total_curval = total_invested + total_unreal
     open_totals_row = f"""
         <tr style="background:#e8eaf6;font-weight:bold;border-top:2px solid #9fa8da">
           <td colspan="5" style="text-align:right;color:#555">Totals</td>
@@ -1304,25 +1307,62 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
     if (el) {{ el.innerHTML = html; el.style.color = color; el.style.borderColor = color === '#388e3c' ? '#a5d6a7' : '#e0e0e0'; }}
   }}
 
-  // serverTotal = NAV-derived unrealized baked into the DOM by Python (always correct)
-  // liveAdj     = running sum of (liveUnreal[tk] - serverUnreal[tk]) for every ticker
-  //               that has received a Finnhub price; starts at 0, grows as prices arrive
-  let liveAdj = 0;
+  const CASH = {capital};
 
-  function refreshTotalUnreal() {{
+  function refreshSummary() {{
+    const rows = document.querySelectorAll('tr[data-ticker]');
+    let sumCost = 0, sumCurval = 0, sumUnreal = 0;
+    rows.forEach(r => {{
+      const qty  = parseFloat(r.dataset.qty)   || 0;
+      const buy  = parseFloat(r.dataset.buypx) || 0;
+      const cvEl = r.querySelector('.live-curval');
+      const curval = cvEl ? (parseFloat(cvEl.textContent.replace(/[$,]/g,'')) || buy*qty) : buy*qty;
+      const unEl = r.querySelector('.live-unreal-d');
+      const liveUnreal = unEl ? (parseFloat(unEl.dataset.sort) || 0) : 0;
+      sumCost   += buy * qty;
+      sumCurval += curval;
+      sumUnreal += liveUnreal;
+    }});
+    const portVal = CASH + sumCurval;
+    const ret     = portVal - STARTING;
+    const retPct  = ret / STARTING * 100;
+    const sign    = v => v >= 0 ? '+' : '';
+    const color   = v => v >= 0 ? '#2e7d32' : '#c62828';
+    const fmtD    = v => '$' + Math.abs(v).toLocaleString('en-US', {{maximumFractionDigits:0}});
+    const fmtP    = v => Math.abs(v).toFixed(2) + '%';
+
+    const portEl = document.getElementById('port-value');
+    if (portEl) portEl.textContent = '$' + portVal.toLocaleString('en-US', {{maximumFractionDigits:0}});
+
+    const totalEl = document.getElementById('port-total');
+    if (totalEl) {{
+      totalEl.innerHTML = `${{sign(ret)}}${{fmtD(ret)}}<br><span style="font-size:14px" id="port-total-pct">${{sign(ret)}}${{fmtP(retPct)}}</span>`;
+      totalEl.style.color = color(ret);
+    }}
+
+    const dayPnl = portVal - PREV_NAV;
+    const dayPct = PREV_NAV > 0 ? dayPnl / PREV_NAV * 100 : 0;
+    const dayEl  = document.getElementById('day-pnl');
+    if (dayEl) {{
+      dayEl.innerHTML = `${{sign(dayPnl)}}${{fmtD(dayPnl)}}<br><span style="font-size:14px" id="day-pnl-pct">${{sign(dayPnl)}}${{fmtP(dayPct)}}</span>`;
+      dayEl.style.color = color(dayPnl);
+    }}
+
+    const bkUnreal = document.getElementById('bk-unreal');
+    if (bkUnreal) {{ bkUnreal.textContent = sign(sumUnreal) + fmtD(sumUnreal); bkUnreal.style.color = color(sumUnreal); }}
+
     const tuEl = document.getElementById('total-unreal-d');
-    const bkEl = document.getElementById('bk-unreal');
-    if (!tuEl) return;
-    const serverTotal = parseFloat(tuEl.dataset.serverTotal) || 0;
-    const sum   = serverTotal + liveAdj;
-    const sign  = sum >= 0 ? '+' : '';
-    const fmt   = `${{sign}}$${{Math.abs(sum).toLocaleString('en-US', {{maximumFractionDigits:0}})}}`;
-    const color = sum >= 0 ? '#2e7d32' : '#c62828';
-    tuEl.textContent = fmt; tuEl.style.color = color;
-    if (bkEl) {{ bkEl.textContent = fmt; bkEl.style.color = color; }}
+    if (tuEl) {{ tuEl.textContent = sign(sumUnreal) + fmtD(sumUnreal); tuEl.style.color = color(sumUnreal); }}
+    const tuPct = document.getElementById('total-unreal-pct');
+    if (tuPct) {{
+      const pct = sumCost > 0 ? sumUnreal / sumCost * 100 : 0;
+      tuPct.textContent = sign(pct) + fmtP(pct); tuPct.style.color = color(pct);
+    }}
+    const tcEl = document.getElementById('total-curval');
+    if (tcEl) tcEl.textContent = '$' + sumCurval.toLocaleString('en-US', {{maximumFractionDigits:0}});
   }}
 
-  document.addEventListener('DOMContentLoaded', refreshTotalUnreal);
+  document.addEventListener('DOMContentLoaded', refreshSummary);
 
   async function fetchPrices() {{
     const rows = document.querySelectorAll('tr[data-ticker]');
@@ -1335,8 +1375,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
         const q = await fetch(`https://finnhub.io/api/v1/quote?symbol=${{tk}}&token=${{TOKEN}}`).then(r => r.json());
         if (q && q.c) {{
           quotes[tk] = {{ price: q.c, prevClose: q.pc }};
-          applyOneRow(row, q.c);       // update row + running total immediately
-          updatePortfolio(rows, quotes);
+          applyOneRow(row, q.c);
         }}
       }} catch(e) {{}}
       await delay(1100);
@@ -1351,7 +1390,6 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
   }}
 
   function applyOneRow(row, price) {{
-    const tk   = row.dataset.ticker;
     const qty  = parseFloat(row.dataset.qty);
     const buy  = parseFloat(row.dataset.buypx);
     const side = row.dataset.side;
@@ -1362,97 +1400,22 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
     if (priceCell) priceCell.textContent = '$' + price.toLocaleString('en-US', {{minimumFractionDigits:2, maximumFractionDigits:2}});
     const liveUnreal = side === 'long' ? (price - buy) * qty : (buy - price) * qty;
     const curVal     = buy * qty + liveUnreal;
-    if (curvalCell) {{
-      curvalCell.textContent = '$' + curVal.toLocaleString('en-US', {{maximumFractionDigits:0}});
+    if (curvalCell) curvalCell.textContent = '$' + curVal.toLocaleString('en-US', {{maximumFractionDigits:0}});
+    const cost  = buy * qty;
+    const pct   = cost > 0 ? liveUnreal / cost * 100 : 0;
+    const sign  = v => v >= 0 ? '+' : '';
+    const color = v => v >= 0 ? '#2e7d32' : '#c62828';
+    if (unrealCellD) {{
+      unrealCellD.textContent = `${{sign(liveUnreal)}}$${{Math.abs(liveUnreal).toLocaleString('en-US', {{maximumFractionDigits:0}})}}`;
+      unrealCellD.style.color = color(liveUnreal);
+      unrealCellD.dataset.sort = liveUnreal.toFixed(2);
     }}
-    if (unrealCellD || unrealCellPct) {{
-      const serverUnreal = parseFloat(row.dataset.serverUnreal) || 0;
-      const cost = buy * qty;
-      const pct  = cost > 0 ? liveUnreal / cost * 100 : 0;
-      const sign = liveUnreal >= 0 ? '+' : '';
-      const color = liveUnreal >= 0 ? '#2e7d32' : '#c62828';
-      if (unrealCellD) {{
-        unrealCellD.textContent = `${{sign}}$${{Math.abs(liveUnreal).toLocaleString('en-US', {{maximumFractionDigits:0}})}}`;
-        unrealCellD.style.color = color;
-        unrealCellD.dataset.sort = liveUnreal.toFixed(2);
-      }}
-      if (unrealCellPct) {{
-        unrealCellPct.textContent = `${{pct >= 0 ? '+' : ''}}${{pct.toFixed(2)}}%`;
-        unrealCellPct.style.color = color;
-        unrealCellPct.dataset.sort = pct.toFixed(4);
-      }}
-      // update liveAdj: remove old contribution, add new
-      const prevAdj = parseFloat(row.dataset.liveAdj) || 0;
-      liveAdj += (liveUnreal - serverUnreal) - prevAdj;
-      row.dataset.liveAdj = (liveUnreal - serverUnreal).toString();
-      refreshTotalUnreal();
-      // sync total-curval
-      const tcEl = document.getElementById('total-curval');
-      if (tcEl) {{
-        const tuEl = document.getElementById('total-unreal-d');
-        const serverTotal = parseFloat(tuEl ? tuEl.dataset.serverTotal : 0) || 0;
-        const inv = parseFloat((document.getElementById('total-invested') || {{}}).textContent?.replace(/[$,]/g,'')) || 0;
-        tcEl.textContent = '$' + (inv + serverTotal + liveAdj).toLocaleString('en-US', {{maximumFractionDigits:0}});
-      }}
+    if (unrealCellPct) {{
+      unrealCellPct.textContent = `${{sign(pct)}}${{Math.abs(pct).toFixed(2)}}%`;
+      unrealCellPct.style.color = color(pct);
+      unrealCellPct.dataset.sort = pct.toFixed(4);
     }}
-  }}
-
-  function applyPrices(rows, quotes) {{
-    for (const row of rows) {{
-      const tk = row.dataset.ticker;
-      const q  = quotes[tk];
-      if (!q) continue;
-      applyOneRow(row, q.price);
-    }}
-  }}
-
-  function updatePortfolio(rows, quotes) {{
-    let openValue = 0;
-    for (const row of rows) {{
-      const tk   = row.dataset.ticker;
-      const qty  = parseFloat(row.dataset.qty);
-      const buy  = parseFloat(row.dataset.buypx);
-      const side = row.dataset.side;
-      const q    = quotes[tk];
-      if (!q) {{ openValue += buy * qty; continue; }}
-      const price = q.price;
-      openValue += side === 'long' ? price * qty : buy * qty + (buy - price) * qty;
-    }}
-    const portEl   = document.getElementById('port-value');
-    const totalEl  = document.getElementById('port-total');
-    if (!portEl) return;
-    const cashVal = (function() {{
-      const cards = document.querySelectorAll('.card');
-      for (const c of cards) {{
-        const lbl = c.querySelector('.card-label');
-        if (lbl && lbl.textContent.trim() === 'Cash') {{
-          const val = c.querySelector('.card-value');
-          if (val) return parseFloat(val.textContent.replace(/[$,]/g, '')) || 0;
-        }}
-      }}
-      return 0;
-    }})();
-    const portVal  = cashVal + openValue;
-    const ret      = portVal - STARTING;
-    const retPct   = ret / STARTING * 100;
-    const sign     = ret >= 0 ? '+' : '';
-    const color    = ret >= 0 ? '#2e7d32' : '#c62828';
-    portEl.textContent  = '$' + portVal.toLocaleString('en-US', {{maximumFractionDigits:0}});
-    if (totalEl) {{
-      totalEl.innerHTML = `${{sign}}$${{Math.abs(ret).toLocaleString('en-US',{{maximumFractionDigits:0}})}}<br><span style="font-size:14px" id="port-total-pct">${{sign}}${{Math.abs(retPct).toFixed(2)}}%</span>`;
-      totalEl.style.color = color;
-    }}
-    const dayEl    = document.getElementById('day-pnl');
-    const dayPctEl = document.getElementById('day-pnl-pct');
-    if (dayEl && PREV_NAV > 0) {{
-      const dayPnl  = portVal - PREV_NAV;
-      const dayPct  = dayPnl / PREV_NAV * 100;
-      const dsign   = dayPnl >= 0 ? '+' : '';
-      const dcolor  = dayPnl >= 0 ? '#2e7d32' : '#c62828';
-      dayEl.firstChild.textContent = `${{dsign}}$${{Math.abs(dayPnl).toLocaleString('en-US',{{maximumFractionDigits:0}})}}`;
-      dayEl.style.color = dcolor;
-      if (dayPctEl) {{ dayPctEl.textContent = `${{dsign}}${{Math.abs(dayPct).toFixed(2)}}%`; }}
-    }}
+    refreshSummary();
   }}
 
   if (isMarketHours()) {{
