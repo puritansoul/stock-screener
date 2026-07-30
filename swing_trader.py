@@ -1209,8 +1209,12 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
       totalEl.style.color = color(ret);
     }}
 
-    const dayPnl  = portVal - PREV_NAV;
-    const dayPct  = PREV_NAV > 0 ? dayPnl / PREV_NAV * 100 : 0;
+    // Day P&L = sum of per-row day deltas (same source as the Day Δ $ totals column)
+    let dayPnl = 0;
+    document.querySelectorAll('tr[data-ticker] .live-day-d').forEach(el => {{
+      dayPnl += parseFloat(el.dataset.sort) || 0;
+    }});
+    const dayPct  = (portVal - dayPnl) > 0 ? dayPnl / (portVal - dayPnl) * 100 : 0;
     const dayEl   = document.getElementById('day-pnl');
     if (dayEl) {{
       dayEl.innerHTML = `${{sign(dayPnl)}}${{fmtD(dayPnl)}}<br><span style="font-size:14px" id="day-pnl-pct">${{sign(dayPnl)}}${{fmtP(dayPct)}}</span>`;
