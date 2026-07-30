@@ -1,5 +1,5 @@
 {
-  "capital": 1120.22,
+  "capital": 1452.66,
   "open_positions": [
     {
       "ticker": "CNP",
@@ -196,20 +196,6 @@
       "orb_width": 3.285,
       "cost": 500.0,
       "vol_ratio": 1.62
-    },
-    {
-      "ticker": "NSC",
-      "side": "short",
-      "entry_date": "2026-07-30",
-      "entry_time": "11:03 ET",
-      "entry_price": 331.55,
-      "shares": 1,
-      "stop": 330.655,
-      "trail_dist": 1.88,
-      "peak": 328.775,
-      "orb_width": 3.76,
-      "cost": 331.55,
-      "vol_ratio": 3.81
     },
     {
       "ticker": "SBAC",
@@ -470,9 +456,9 @@
       "entry_time": "12:19 ET",
       "entry_price": 639.4,
       "shares": 8,
-      "stop": 636.5376,
+      "stop": 636.8275,
       "trail_dist": 4.1175,
-      "peak": 640.6551,
+      "peak": 640.945,
       "orb_width": 8.235,
       "cost": 5115.2,
       "vol_ratio": 2.99
@@ -582,9 +568,9 @@
       "entry_time": "12:24 ET",
       "entry_price": 512.0875,
       "shares": 1,
-      "stop": 510.555,
+      "stop": 510.69,
       "trail_dist": 3.195,
-      "peak": 513.75,
+      "peak": 513.885,
       "orb_width": 6.39,
       "cost": 512.09,
       "vol_ratio": 1.38
@@ -680,9 +666,9 @@
       "entry_time": "12:34 ET",
       "entry_price": 288.98,
       "shares": 1,
-      "stop": 286.6925,
+      "stop": 286.8375,
       "trail_dist": 3.9075,
-      "peak": 290.6,
+      "peak": 290.745,
       "orb_width": 7.815,
       "cost": 288.98,
       "vol_ratio": 2.11
@@ -862,9 +848,9 @@
       "entry_time": "12:49 ET",
       "entry_price": 349.58,
       "shares": 2,
-      "stop": 353.445,
+      "stop": 353.365,
       "trail_dist": 3.865,
-      "peak": 349.58,
+      "peak": 349.5,
       "orb_width": 7.73,
       "cost": 699.16,
       "vol_ratio": 1.48
@@ -876,9 +862,9 @@
       "entry_time": "12:49 ET",
       "entry_price": 88.71,
       "shares": 6,
-      "stop": 89.1601,
+      "stop": 89.1501,
       "trail_dist": 0.4501,
-      "peak": 88.71,
+      "peak": 88.7,
       "orb_width": 0.9002,
       "cost": 532.26,
       "vol_ratio": 1.39
@@ -890,9 +876,9 @@
       "entry_time": "12:49 ET",
       "entry_price": 200.61,
       "shares": 2,
-      "stop": 204.2325,
+      "stop": 204.0625,
       "trail_dist": 3.6225,
-      "peak": 200.61,
+      "peak": 200.44,
       "orb_width": 7.245,
       "cost": 401.22,
       "vol_ratio": 1.23
@@ -1924,6 +1910,25 @@
       "pnl": -1.06,
       "exit_reason": "trailing stop",
       "exit_time": "12:49 ET"
+    },
+    {
+      "ticker": "NSC",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "11:03 ET",
+      "entry_price": 331.55,
+      "shares": 1,
+      "stop": 330.655,
+      "trail_dist": 1.88,
+      "peak": 328.775,
+      "orb_width": 3.76,
+      "cost": 331.55,
+      "vol_ratio": 3.81,
+      "exit_date": "2026-07-30",
+      "exit_price": 330.655,
+      "pnl": 0.9,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:51 ET"
     }
   ],
   "all_closed": [
@@ -51731,11 +51736,6 @@
       "low": 110.28,
       "width": 1.75
     },
-    "STZ": {
-      "high": 130.49,
-      "low": 128.94,
-      "width": 1.55
-    },
     "CEG": {
       "high": 268.85,
       "low": 261.9,
@@ -53648,7 +53648,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 95584.77
+    "2026-07-30": 95606.58
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -106418,6 +106418,23 @@
       ],
       "portfolio_value": 95584.77,
       "note": "$95,585 | cash=$1,120 | open=64 | closed today=54 | day PnL=$-158"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "12:51 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "NSC",
+          "side": "short",
+          "exit_price": 330.65,
+          "pnl": 0.9,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95606.58,
+      "note": "$95,607 | cash=$1,453 | open=63 | closed today=55 | day PnL=$-157"
     }
   ]
 }
