@@ -1,5 +1,5 @@
 {
-  "capital": 8050.19,
+  "capital": 9041.28,
   "open_positions": [
     {
       "ticker": "MKC",
@@ -72,35 +72,55 @@
       "vol_ratio": 1.33
     },
     {
-      "ticker": "MTB",
-      "side": "short",
-      "entry_date": "2026-07-30",
-      "entry_time": "10:03 ET",
-      "entry_price": 248.91,
-      "shares": 19,
-      "stop": 249.6975,
-      "trail_dist": 0.7875,
-      "peak": 248.91,
-      "orb_width": 1.575,
-      "cost": 4729.29,
-      "vol_ratio": 1.27
-    },
-    {
       "ticker": "PCG",
       "side": "short",
       "entry_date": "2026-07-30",
       "entry_time": "10:03 ET",
       "entry_price": 17.497,
       "shares": 197,
-      "stop": 17.622,
+      "stop": 17.62,
       "trail_dist": 0.125,
-      "peak": 17.497,
+      "peak": 17.495,
       "orb_width": 0.25,
       "cost": 3446.91,
       "vol_ratio": 1.23
+    },
+    {
+      "ticker": "MTB",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:06 ET",
+      "entry_price": 248.735,
+      "shares": 15,
+      "stop": 249.5225,
+      "trail_dist": 0.7875,
+      "peak": 248.735,
+      "orb_width": 1.575,
+      "cost": 3731.03,
+      "vol_ratio": 1.99
     }
   ],
-  "closed_today": [],
+  "closed_today": [
+    {
+      "ticker": "MTB",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:03 ET",
+      "entry_price": 248.91,
+      "shares": 19,
+      "stop": 249.2875,
+      "trail_dist": 0.7875,
+      "peak": 248.5,
+      "orb_width": 1.575,
+      "cost": 4729.29,
+      "vol_ratio": 1.27,
+      "exit_date": "2026-07-30",
+      "exit_price": 249.2875,
+      "pnl": -7.17,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:06 ET"
+    }
+  ],
   "all_closed": [
     {
       "ticker": "SNOW",
@@ -49808,8 +49828,8 @@
     },
     "CHD": {
       "high": 98.77,
-      "low": 97.775,
-      "width": 0.995
+      "low": 97.76,
+      "width": 1.01
     },
     "CIEN": {
       "high": 365.8499,
@@ -50951,11 +50971,6 @@
       "low": 92.17,
       "width": 2.155
     },
-    "NWSA": {
-      "high": 28.38,
-      "low": 27.75,
-      "width": 0.63
-    },
     "NWS": {
       "high": 32.23,
       "low": 31.43,
@@ -51143,8 +51158,8 @@
     },
     "PNC": {
       "high": 249.77,
-      "low": 248.215,
-      "width": 1.555
+      "low": 248.2,
+      "width": 1.57
     },
     "PPG": {
       "high": 113.525,
@@ -51688,8 +51703,8 @@
     },
     "GWW": {
       "high": 1373.625,
-      "low": 1356.4399,
-      "width": 17.1851
+      "low": 1356.35,
+      "width": 17.275
     },
     "WAB": {
       "high": 296.04,
@@ -51823,7 +51838,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 95689.19
+    "2026-07-30": 95511.5
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -102757,6 +102772,32 @@
       "exits": [],
       "portfolio_value": 95689.19,
       "note": "$95,689 | cash=$8,050 | open=7 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "10:05 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "MTB",
+          "side": "short",
+          "price": 248.74,
+          "shares": 15,
+          "stop": 249.52,
+          "trail_dist": 0.7875
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "MTB",
+          "side": "short",
+          "exit_price": 249.29,
+          "pnl": -7.17,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95511.5,
+      "note": "$95,512 | cash=$9,041 | open=7 | closed today=1 | day PnL=$-7"
     }
   ]
 }
