@@ -1,5 +1,5 @@
 {
-  "capital": 1504.68,
+  "capital": 2030.64,
   "open_positions": [
     {
       "ticker": "MKC",
@@ -50,9 +50,9 @@
       "entry_time": "10:06 ET",
       "entry_price": 248.735,
       "shares": 15,
-      "stop": 248.1075,
+      "stop": 248.0325,
       "trail_dist": 0.7875,
-      "peak": 247.32,
+      "peak": 247.245,
       "orb_width": 1.575,
       "cost": 3731.03,
       "vol_ratio": 1.99
@@ -106,9 +106,9 @@
       "entry_time": "10:08 ET",
       "entry_price": 209.365,
       "shares": 5,
-      "stop": 207.7,
+      "stop": 207.97,
       "trail_dist": 2.67,
-      "peak": 210.37,
+      "peak": 210.64,
       "orb_width": 5.34,
       "cost": 1046.83,
       "vol_ratio": 1.27
@@ -148,9 +148,9 @@
       "entry_time": "10:13 ET",
       "entry_price": 129.535,
       "shares": 19,
-      "stop": 129.74,
+      "stop": 129.6,
       "trail_dist": 1.6,
-      "peak": 128.14,
+      "peak": 128.0,
       "orb_width": 3.2,
       "cost": 2461.17,
       "vol_ratio": 1.83
@@ -224,20 +224,6 @@
       "orb_width": 1.555,
       "cost": 1751.1,
       "vol_ratio": 2.02
-    },
-    {
-      "ticker": "IVZ",
-      "side": "long",
-      "entry_date": "2026-07-30",
-      "entry_time": "10:18 ET",
-      "entry_price": 28.851,
-      "shares": 44,
-      "stop": 28.97,
-      "trail_dist": 0.23,
-      "peak": 29.2,
-      "orb_width": 0.46,
-      "cost": 1269.44,
-      "vol_ratio": 1.73
     },
     {
       "ticker": "ED",
@@ -498,9 +484,9 @@
       "entry_time": "10:53 ET",
       "entry_price": 7.7589,
       "shares": 117,
-      "stop": 7.8079,
+      "stop": 7.804,
       "trail_dist": 0.049,
-      "peak": 7.7589,
+      "peak": 7.755,
       "orb_width": 0.098,
       "cost": 907.79,
       "vol_ratio": 1.26
@@ -518,6 +504,20 @@
       "orb_width": 4.765,
       "cost": 630.63,
       "vol_ratio": 1.24
+    },
+    {
+      "ticker": "AVB",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:55 ET",
+      "entry_price": 187.18,
+      "shares": 4,
+      "stop": 188.46,
+      "trail_dist": 1.28,
+      "peak": 187.18,
+      "orb_width": 2.56,
+      "cost": 748.72,
+      "vol_ratio": 2.82
     }
   ],
   "closed_today": [
@@ -729,6 +729,25 @@
       "pnl": -1.04,
       "exit_reason": "trailing stop",
       "exit_time": "10:53 ET"
+    },
+    {
+      "ticker": "IVZ",
+      "side": "long",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:18 ET",
+      "entry_price": 28.851,
+      "shares": 44,
+      "stop": 28.97,
+      "trail_dist": 0.23,
+      "peak": 29.2,
+      "orb_width": 0.46,
+      "cost": 1269.44,
+      "vol_ratio": 1.73,
+      "exit_date": "2026-07-30",
+      "exit_price": 28.97,
+      "pnl": 5.24,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:55 ET"
     }
   ],
   "all_closed": [
@@ -50301,11 +50320,6 @@
       "low": 71.56,
       "width": 2.88
     },
-    "BF-B": {
-      "high": 29.16,
-      "low": 28.69,
-      "width": 0.47
-    },
     "BLDR": {
       "high": 68.8433,
       "low": 66.4,
@@ -50831,6 +50845,11 @@
       "low": 83.3,
       "width": 1.07
     },
+    "ES": {
+      "high": 75.59,
+      "low": 74.03,
+      "width": 1.56
+    },
     "EXC": {
       "high": 46.71,
       "low": 45.38,
@@ -51341,11 +51360,6 @@
       "low": 48.2,
       "width": 1.71
     },
-    "LDOS": {
-      "high": 113.145,
-      "low": 111.035,
-      "width": 2.11
-    },
     "LEN": {
       "high": 85.5,
       "low": 83.16,
@@ -51765,11 +51779,6 @@
       "high": 102.42,
       "low": 101.28,
       "width": 1.14
-    },
-    "PNC": {
-      "high": 249.77,
-      "low": 248.2,
-      "width": 1.57
     },
     "PPG": {
       "high": 113.525,
@@ -52448,7 +52457,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 95996.7
+    "2026-07-30": 95971.17
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -103988,6 +103997,32 @@
       ],
       "portfolio_value": 95996.7,
       "note": "$95,997 | cash=$1,505 | open=37 | closed today=11 | day PnL=$-55"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "10:55 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "AVB",
+          "side": "short",
+          "price": 187.18,
+          "shares": 4,
+          "stop": 188.46,
+          "trail_dist": 1.28
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "IVZ",
+          "side": "long",
+          "exit_price": 28.97,
+          "pnl": 5.24,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95971.17,
+      "note": "$95,971 | cash=$2,031 | open=37 | closed today=12 | day PnL=$-49"
     }
   ]
 }
