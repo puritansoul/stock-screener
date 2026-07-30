@@ -1,5 +1,5 @@
 {
-  "capital": 484.18,
+  "capital": 352.43,
   "open_positions": [
     {
       "ticker": "CNP",
@@ -344,9 +344,9 @@
       "entry_time": "12:19 ET",
       "entry_price": 146.89,
       "shares": 26,
-      "stop": 150.4875,
+      "stop": 150.465,
       "trail_dist": 5.63,
-      "peak": 144.8575,
+      "peak": 144.835,
       "orb_width": 11.26,
       "cost": 3819.14,
       "vol_ratio": 1.59
@@ -414,9 +414,9 @@
       "entry_time": "12:24 ET",
       "entry_price": 512.0875,
       "shares": 1,
-      "stop": 512.0,
+      "stop": 512.005,
       "trail_dist": 3.195,
-      "peak": 515.195,
+      "peak": 515.2,
       "orb_width": 6.39,
       "cost": 512.09,
       "vol_ratio": 1.38
@@ -680,9 +680,9 @@
       "entry_time": "13:04 ET",
       "entry_price": 175.575,
       "shares": 8,
-      "stop": 175.075,
+      "stop": 175.015,
       "trail_dist": 0.785,
-      "peak": 174.29,
+      "peak": 174.23,
       "orb_width": 1.57,
       "cost": 1404.6,
       "vol_ratio": 1.23
@@ -856,20 +856,6 @@
       "vol_ratio": 1.23
     },
     {
-      "ticker": "TKO",
-      "side": "short",
-      "entry_date": "2026-07-30",
-      "entry_time": "14:07 ET",
-      "entry_price": 183.37,
-      "shares": 3,
-      "stop": 183.275,
-      "trail_dist": 0.945,
-      "peak": 182.33,
-      "orb_width": 1.89,
-      "cost": 550.11,
-      "vol_ratio": 1.49
-    },
-    {
       "ticker": "CVS",
       "side": "long",
       "entry_date": "2026-07-30",
@@ -1016,9 +1002,9 @@
       "entry_time": "14:29 ET",
       "entry_price": 181.24,
       "shares": 1,
-      "stop": 180.3,
+      "stop": 180.44,
       "trail_dist": 0.94,
-      "peak": 181.24,
+      "peak": 181.38,
       "orb_width": 1.88,
       "cost": 181.24,
       "vol_ratio": 1.8
@@ -1044,12 +1030,68 @@
       "entry_time": "14:29 ET",
       "entry_price": 17.0501,
       "shares": 11,
-      "stop": 16.9524,
+      "stop": 16.9635,
       "trail_dist": 0.1065,
-      "peak": 17.0589,
+      "peak": 17.07,
       "orb_width": 0.213,
       "cost": 187.55,
       "vol_ratio": 1.28
+    },
+    {
+      "ticker": "TKO",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "14:34 ET",
+      "entry_price": 182.105,
+      "shares": 1,
+      "stop": 183.05,
+      "trail_dist": 0.945,
+      "peak": 182.105,
+      "orb_width": 1.89,
+      "cost": 182.1,
+      "vol_ratio": 10.7
+    },
+    {
+      "ticker": "NI",
+      "side": "long",
+      "entry_date": "2026-07-30",
+      "entry_time": "14:34 ET",
+      "entry_price": 45.235,
+      "shares": 5,
+      "stop": 44.945,
+      "trail_dist": 0.29,
+      "peak": 45.235,
+      "orb_width": 0.58,
+      "cost": 226.18,
+      "vol_ratio": 2.65
+    },
+    {
+      "ticker": "FDXF",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "14:34 ET",
+      "entry_price": 136.8834,
+      "shares": 1,
+      "stop": 138.4484,
+      "trail_dist": 1.565,
+      "peak": 136.8834,
+      "orb_width": 3.13,
+      "cost": 136.88,
+      "vol_ratio": 2.04
+    },
+    {
+      "ticker": "FAST",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "14:34 ET",
+      "entry_price": 46.52,
+      "shares": 3,
+      "stop": 46.9375,
+      "trail_dist": 0.4175,
+      "peak": 46.52,
+      "orb_width": 0.835,
+      "cost": 139.56,
+      "vol_ratio": 1.29
     }
   ],
   "closed_today": [
@@ -2477,6 +2519,25 @@
       "pnl": -0.13,
       "exit_reason": "trailing stop",
       "exit_time": "14:22 ET"
+    },
+    {
+      "ticker": "TKO",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "14:07 ET",
+      "entry_price": 183.37,
+      "shares": 3,
+      "stop": 182.415,
+      "trail_dist": 0.945,
+      "peak": 181.47,
+      "orb_width": 1.89,
+      "cost": 550.11,
+      "vol_ratio": 1.49,
+      "exit_date": "2026-07-30",
+      "exit_price": 182.415,
+      "pnl": 2.87,
+      "exit_reason": "trailing stop",
+      "exit_time": "14:34 ET"
     }
   ],
   "all_closed": [
@@ -54201,7 +54262,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 95489.42
+    "2026-07-30": 95484.34
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -107652,6 +107713,56 @@
       "exits": [],
       "portfolio_value": 95489.42,
       "note": "$95,489 | cash=$484 | open=75 | closed today=75 | day PnL=$-273"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "14:34 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "TKO",
+          "side": "short",
+          "price": 182.1,
+          "shares": 1,
+          "stop": 183.05,
+          "trail_dist": 0.945
+        },
+        {
+          "ticker": "NI",
+          "side": "long",
+          "price": 45.24,
+          "shares": 5,
+          "stop": 44.95,
+          "trail_dist": 0.29
+        },
+        {
+          "ticker": "FDXF",
+          "side": "short",
+          "price": 136.88,
+          "shares": 1,
+          "stop": 138.45,
+          "trail_dist": 1.565
+        },
+        {
+          "ticker": "FAST",
+          "side": "short",
+          "price": 46.52,
+          "shares": 3,
+          "stop": 46.94,
+          "trail_dist": 0.4175
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "TKO",
+          "side": "short",
+          "exit_price": 182.41,
+          "pnl": 2.87,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95484.34,
+      "note": "$95,484 | cash=$352 | open=78 | closed today=76 | day PnL=$-271"
     }
   ]
 }
