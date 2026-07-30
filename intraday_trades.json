@@ -1,5 +1,5 @@
 {
-  "capital": 3177.21,
+  "capital": 4935.06,
   "open_positions": [
     {
       "ticker": "CNP",
@@ -168,20 +168,6 @@
       "orb_width": 2.98,
       "cost": 323.54,
       "vol_ratio": 1.47
-    },
-    {
-      "ticker": "FDX",
-      "side": "short",
-      "entry_date": "2026-07-30",
-      "entry_time": "11:18 ET",
-      "entry_price": 304.79,
-      "shares": 1,
-      "stop": 308.0375,
-      "trail_dist": 3.2475,
-      "peak": 304.79,
-      "orb_width": 6.495,
-      "cost": 304.79,
-      "vol_ratio": 1.84
     },
     {
       "ticker": "WY",
@@ -492,20 +478,6 @@
       "vol_ratio": 1.22
     },
     {
-      "ticker": "ALLE",
-      "side": "short",
-      "entry_date": "2026-07-30",
-      "entry_time": "12:42 ET",
-      "entry_price": 154.64,
-      "shares": 12,
-      "stop": 156.4,
-      "trail_dist": 1.95,
-      "peak": 154.45,
-      "orb_width": 3.9,
-      "cost": 1855.68,
-      "vol_ratio": 3.21
-    },
-    {
       "ticker": "GWW",
       "side": "short",
       "entry_date": "2026-07-30",
@@ -546,20 +518,6 @@
       "orb_width": 6.8868,
       "cost": 565.7,
       "vol_ratio": 1.71
-    },
-    {
-      "ticker": "EXR",
-      "side": "short",
-      "entry_date": "2026-07-30",
-      "entry_time": "12:44 ET",
-      "entry_price": 147.62,
-      "shares": 4,
-      "stop": 148.985,
-      "trail_dist": 2.215,
-      "peak": 146.77,
-      "orb_width": 4.43,
-      "cost": 590.48,
-      "vol_ratio": 1.42
     },
     {
       "ticker": "CB",
@@ -632,20 +590,6 @@
       "vol_ratio": 3.0
     },
     {
-      "ticker": "NEE",
-      "side": "short",
-      "entry_date": "2026-07-30",
-      "entry_time": "13:06 ET",
-      "entry_price": 87.65,
-      "shares": 11,
-      "stop": 87.87,
-      "trail_dist": 0.6,
-      "peak": 87.27,
-      "orb_width": 1.2,
-      "cost": 964.15,
-      "vol_ratio": 2.06
-    },
-    {
       "ticker": "RVTY",
       "side": "long",
       "entry_date": "2026-07-30",
@@ -708,9 +652,9 @@
       "entry_time": "13:35 ET",
       "entry_price": 181.86,
       "shares": 2,
-      "stop": 180.8875,
+      "stop": 180.9625,
       "trail_dist": 2.0375,
-      "peak": 182.925,
+      "peak": 183.0,
       "orb_width": 4.075,
       "cost": 363.72,
       "vol_ratio": 1.27
@@ -918,9 +862,9 @@
       "entry_time": "14:29 ET",
       "entry_price": 181.24,
       "shares": 1,
-      "stop": 181.135,
+      "stop": 181.2,
       "trail_dist": 0.94,
-      "peak": 182.075,
+      "peak": 182.14,
       "orb_width": 1.88,
       "cost": 181.24,
       "vol_ratio": 1.8
@@ -988,9 +932,9 @@
       "entry_time": "14:37 ET",
       "entry_price": 76.62,
       "shares": 1,
-      "stop": 76.48,
+      "stop": 76.525,
       "trail_dist": 0.49,
-      "peak": 76.97,
+      "peak": 77.015,
       "orb_width": 0.98,
       "cost": 76.62,
       "vol_ratio": 2.43
@@ -1176,6 +1120,20 @@
       "orb_width": 2.36,
       "cost": 667.38,
       "vol_ratio": 1.37
+    },
+    {
+      "ticker": "ATO",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "15:04 ET",
+      "entry_price": 175.0,
+      "shares": 11,
+      "stop": 175.785,
+      "trail_dist": 0.785,
+      "peak": 175.0,
+      "orb_width": 1.57,
+      "cost": 1925.0,
+      "vol_ratio": 1.48
     }
   ],
   "closed_today": [
@@ -2774,6 +2732,82 @@
       "pnl": -7.44,
       "exit_reason": "trailing stop",
       "exit_time": "15:02 ET"
+    },
+    {
+      "ticker": "FDX",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "11:18 ET",
+      "entry_price": 304.79,
+      "shares": 1,
+      "stop": 308.0375,
+      "trail_dist": 3.2475,
+      "peak": 304.79,
+      "orb_width": 6.495,
+      "cost": 304.79,
+      "vol_ratio": 1.84,
+      "exit_date": "2026-07-30",
+      "exit_price": 308.0375,
+      "pnl": -3.25,
+      "exit_reason": "trailing stop",
+      "exit_time": "15:04 ET"
+    },
+    {
+      "ticker": "ALLE",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "12:42 ET",
+      "entry_price": 154.64,
+      "shares": 12,
+      "stop": 156.4,
+      "trail_dist": 1.95,
+      "peak": 154.45,
+      "orb_width": 3.9,
+      "cost": 1855.68,
+      "vol_ratio": 3.21,
+      "exit_date": "2026-07-30",
+      "exit_price": 156.4,
+      "pnl": -21.12,
+      "exit_reason": "trailing stop",
+      "exit_time": "15:04 ET"
+    },
+    {
+      "ticker": "EXR",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "12:44 ET",
+      "entry_price": 147.62,
+      "shares": 4,
+      "stop": 148.985,
+      "trail_dist": 2.215,
+      "peak": 146.77,
+      "orb_width": 4.43,
+      "cost": 590.48,
+      "vol_ratio": 1.42,
+      "exit_date": "2026-07-30",
+      "exit_price": 148.985,
+      "pnl": -5.46,
+      "exit_reason": "trailing stop",
+      "exit_time": "15:04 ET"
+    },
+    {
+      "ticker": "NEE",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "13:06 ET",
+      "entry_price": 87.65,
+      "shares": 11,
+      "stop": 87.87,
+      "trail_dist": 0.6,
+      "peak": 87.27,
+      "orb_width": 1.2,
+      "cost": 964.15,
+      "vol_ratio": 2.06,
+      "exit_date": "2026-07-30",
+      "exit_price": 87.87,
+      "pnl": -2.42,
+      "exit_reason": "trailing stop",
+      "exit_time": "15:04 ET"
     }
   ],
   "all_closed": [
@@ -52636,6 +52670,11 @@
       "low": 177.7468,
       "width": 5.2432
     },
+    "CCI": {
+      "high": 79.15,
+      "low": 76.205,
+      "width": 2.945
+    },
     "CSX": {
       "high": 51.53,
       "low": 50.23,
@@ -53000,6 +53039,11 @@
       "high": 32.75,
       "low": 32.255,
       "width": 0.495
+    },
+    "FCX": {
+      "high": 63.64,
+      "low": 61.74,
+      "width": 1.9
     },
     "GRMN": {
       "high": 295.73,
@@ -53650,6 +53694,11 @@
       "high": 336.42,
       "low": 332.66,
       "width": 3.76
+    },
+    "NTRS": {
+      "high": 180.19,
+      "low": 178.291,
+      "width": 1.899
     },
     "NOC": {
       "high": 533.0,
@@ -54483,7 +54532,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 95435.23
+    "2026-07-30": 95406.67
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -108264,6 +108313,53 @@
       ],
       "portfolio_value": 95435.23,
       "note": "$95,435 | cash=$3,177 | open=84 | closed today=84 | day PnL=$-355"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "15:04 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "ATO",
+          "side": "short",
+          "price": 175.0,
+          "shares": 11,
+          "stop": 175.78,
+          "trail_dist": 0.785
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "FDX",
+          "side": "short",
+          "exit_price": 308.04,
+          "pnl": -3.25,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "ALLE",
+          "side": "short",
+          "exit_price": 156.4,
+          "pnl": -21.12,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "EXR",
+          "side": "short",
+          "exit_price": 148.99,
+          "pnl": -5.46,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "NEE",
+          "side": "short",
+          "exit_price": 87.87,
+          "pnl": -2.42,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95406.67,
+      "note": "$95,407 | cash=$4,935 | open=81 | closed today=88 | day PnL=$-387"
     }
   ]
 }
