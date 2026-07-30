@@ -991,18 +991,13 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
     capital   = state["capital"]
     inception = state["inception_date"] or today_str
 
-    portfolio_value = nav.get(today_str, STARTING_CAPITAL)
-    total_ret = portfolio_value - STARTING_CAPITAL
-    total_pct = total_ret / STARTING_CAPITAL * 100
-    gain_color = "#2e7d32" if total_ret >= 0 else "#c62828"
-    gain_sign  = "+" if total_ret >= 0 else ""
-
     pnl_today = sum(p.get("pnl", 0) for p in closed_td)
     pnl_color = "#2e7d32" if pnl_today >= 0 else "#c62828"
     phase = get_market_phase()
 
-    # Open positions rows
+    # Open positions rows — accumulate sum_curval for portfolio_value
     open_rows = ""
+    sum_curval = 0.0
     for pos in open_pos:
         tk    = pos["ticker"]
         side  = pos["side"]
@@ -1022,6 +1017,7 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
             unreal = (cur_px - entry) * shares
         else:
             unreal = (entry - cur_px) * shares
+        sum_curval += pos["cost"] + unreal
         unreal_pct = unreal / pos["cost"] * 100 if pos["cost"] > 0 else 0
         uc = "#2e7d32" if unreal >= 0 else "#c62828"
         sb = ('<span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span>'
@@ -1041,11 +1037,18 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
           <td style="color:#666;font-size:12px">{pos.get('entry_date','—')}</td>
           <td style="color:#666;font-size:12px">{pos.get('entry_time','—')}</td>
         </tr>"""
+    # Portfolio value = cash + current market value of all open positions
+    portfolio_value = capital + sum_curval
+    total_ret  = portfolio_value - STARTING_CAPITAL
+    total_pct  = total_ret / STARTING_CAPITAL * 100
+    gain_color = "#2e7d32" if total_ret >= 0 else "#c62828"
+    gain_sign  = "+" if total_ret >= 0 else ""
+
     total_cost_basis = sum(p["cost"] for p in open_pos)
-    total_unreal = portfolio_value - capital - total_cost_basis
+    total_unreal = sum_curval - total_cost_basis
     tu_color = "#2e7d32" if total_unreal >= 0 else "#c62828"
     tu_sign  = "+" if total_unreal >= 0 else ""
-    total_curval = total_cost_basis + total_unreal
+    total_curval = sum_curval
     open_totals_row = f"""
         <tr style="background:#e8eaf6;font-weight:bold;border-top:2px solid #9fa8da">
           <td colspan="4" style="text-align:right;color:#555">Totals</td>
