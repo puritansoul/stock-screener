@@ -1,5 +1,5 @@
 {
-  "capital": 1017.91,
+  "capital": 1121.98,
   "open_positions": [
     {
       "ticker": "CNP",
@@ -84,20 +84,6 @@
       "orb_width": 2.38,
       "cost": 1752.02,
       "vol_ratio": 1.55
-    },
-    {
-      "ticker": "DGX",
-      "side": "long",
-      "entry_date": "2026-07-30",
-      "entry_time": "10:16 ET",
-      "entry_price": 232.73,
-      "shares": 2,
-      "stop": 233.895,
-      "trail_dist": 1.69,
-      "peak": 235.585,
-      "orb_width": 3.38,
-      "cost": 465.46,
-      "vol_ratio": 1.34
     },
     {
       "ticker": "TRV",
@@ -470,9 +456,9 @@
       "entry_time": "12:24 ET",
       "entry_price": 113.47,
       "shares": 19,
-      "stop": 113.995,
+      "stop": 113.975,
       "trail_dist": 0.635,
-      "peak": 113.36,
+      "peak": 113.34,
       "orb_width": 1.27,
       "cost": 2155.93,
       "vol_ratio": 2.1
@@ -610,9 +596,9 @@
       "entry_time": "12:34 ET",
       "entry_price": 112.73,
       "shares": 2,
-      "stop": 113.3038,
+      "stop": 112.8337,
       "trail_dist": 0.7837,
-      "peak": 112.5201,
+      "peak": 112.05,
       "orb_width": 1.5675,
       "cost": 225.46,
       "vol_ratio": 1.43
@@ -862,9 +848,9 @@
       "entry_time": "13:04 ET",
       "entry_price": 175.575,
       "shares": 8,
-      "stop": 176.0751,
+      "stop": 176.005,
       "trail_dist": 0.785,
-      "peak": 175.2901,
+      "peak": 175.22,
       "orb_width": 1.57,
       "cost": 1404.6,
       "vol_ratio": 1.23
@@ -876,9 +862,9 @@
       "entry_time": "13:06 ET",
       "entry_price": 87.65,
       "shares": 11,
-      "stop": 88.02,
+      "stop": 87.87,
       "trail_dist": 0.6,
-      "peak": 87.42,
+      "peak": 87.27,
       "orb_width": 1.2,
       "cost": 964.15,
       "vol_ratio": 2.06
@@ -918,9 +904,9 @@
       "entry_time": "13:14 ET",
       "entry_price": 48.97,
       "shares": 10,
-      "stop": 49.13,
+      "stop": 49.09,
       "trail_dist": 0.25,
-      "peak": 48.88,
+      "peak": 48.84,
       "orb_width": 0.5,
       "cost": 489.7,
       "vol_ratio": 1.33
@@ -938,6 +924,20 @@
       "orb_width": 5.89,
       "cost": 234.57,
       "vol_ratio": 1.4
+    },
+    {
+      "ticker": "GL",
+      "side": "long",
+      "entry_date": "2026-07-30",
+      "entry_time": "13:35 ET",
+      "entry_price": 181.86,
+      "shares": 2,
+      "stop": 179.8225,
+      "trail_dist": 2.0375,
+      "peak": 181.86,
+      "orb_width": 4.075,
+      "cost": 363.72,
+      "vol_ratio": 1.27
     }
   ],
   "closed_today": [
@@ -2118,6 +2118,25 @@
       "pnl": -0.59,
       "exit_reason": "trailing stop",
       "exit_time": "13:14 ET"
+    },
+    {
+      "ticker": "DGX",
+      "side": "long",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:16 ET",
+      "entry_price": 232.73,
+      "shares": 2,
+      "stop": 233.895,
+      "trail_dist": 1.69,
+      "peak": 235.585,
+      "orb_width": 3.38,
+      "cost": 465.46,
+      "vol_ratio": 1.34,
+      "exit_date": "2026-07-30",
+      "exit_price": 233.895,
+      "pnl": 2.33,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:35 ET"
     }
   ],
   "all_closed": [
@@ -51560,11 +51579,6 @@
       "low": 175.85,
       "width": 1.57
     },
-    "ADSK": {
-      "high": 238.69,
-      "low": 234.48,
-      "width": 4.21
-    },
     "ADP": {
       "high": 267.465,
       "low": 263.39,
@@ -51624,6 +51638,11 @@
       "high": 89.75,
       "low": 88.095,
       "width": 1.655
+    },
+    "TECH": {
+      "high": 72.13,
+      "low": 71.99,
+      "width": 0.14
     },
     "BIIB": {
       "high": 210.185,
@@ -53025,11 +53044,6 @@
       "low": 251.965,
       "width": 6.435
     },
-    "NVDA": {
-      "high": 195.6,
-      "low": 191.52,
-      "width": 4.08
-    },
     "NVR": {
       "high": 6394.9399,
       "low": 6264.9502,
@@ -53101,9 +53115,9 @@
       "width": 7.895
     },
     "PSKY": {
-      "high": 7.878,
+      "high": 7.905,
       "low": 7.78,
-      "width": 0.098
+      "width": 0.125
     },
     "PH": {
       "high": 968.04,
@@ -53149,11 +53163,6 @@
       "high": 209.25,
       "low": 203.91,
       "width": 5.34
-    },
-    "PNW": {
-      "high": 102.42,
-      "low": 101.28,
-      "width": 1.14
     },
     "PNC": {
       "high": 249.77,
@@ -53290,6 +53299,11 @@
       "low": 86.21,
       "width": 6.325
     },
+    "ROK": {
+      "high": 474.0,
+      "low": 468.22,
+      "width": 5.78
+    },
     "ROL": {
       "high": 37.9,
       "low": 37.265,
@@ -53394,11 +53408,6 @@
       "high": 45.15,
       "low": 44.191,
       "width": 0.959
-    },
-    "SWK": {
-      "high": 93.93,
-      "low": 91.57,
-      "width": 2.36
     },
     "SBUX": {
       "high": 108.4595,
@@ -53832,7 +53841,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 95588.17
+    "2026-07-30": 95530.36
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -106875,6 +106884,32 @@
       "exits": [],
       "portfolio_value": 95588.17,
       "note": "$95,588 | cash=$1,018 | open=67 | closed today=62 | day PnL=$-187"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "13:30 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "GL",
+          "side": "long",
+          "price": 181.86,
+          "shares": 2,
+          "stop": 179.82,
+          "trail_dist": 2.0375
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "DGX",
+          "side": "long",
+          "exit_price": 233.9,
+          "pnl": 2.33,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95530.36,
+      "note": "$95,530 | cash=$1,122 | open=67 | closed today=63 | day PnL=$-185"
     }
   ]
 }
