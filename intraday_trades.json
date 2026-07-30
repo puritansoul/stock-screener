@@ -1,5 +1,5 @@
 {
-  "capital": 9041.28,
+  "capital": 3077.59,
   "open_positions": [
     {
       "ticker": "MKC",
@@ -22,9 +22,9 @@
       "entry_time": "10:03 ET",
       "entry_price": 29.84,
       "shares": 673,
-      "stop": 30.115,
+      "stop": 30.05,
       "trail_dist": 0.275,
-      "peak": 29.84,
+      "peak": 29.775,
       "orb_width": 0.55,
       "cost": 20082.32,
       "vol_ratio": 1.58
@@ -58,29 +58,15 @@
       "vol_ratio": 1.37
     },
     {
-      "ticker": "FE",
-      "side": "short",
-      "entry_date": "2026-07-30",
-      "entry_time": "10:03 ET",
-      "entry_price": 49.26,
-      "shares": 141,
-      "stop": 49.51,
-      "trail_dist": 0.25,
-      "peak": 49.26,
-      "orb_width": 0.5,
-      "cost": 6945.66,
-      "vol_ratio": 1.33
-    },
-    {
       "ticker": "PCG",
       "side": "short",
       "entry_date": "2026-07-30",
       "entry_time": "10:03 ET",
       "entry_price": 17.497,
       "shares": 197,
-      "stop": 17.62,
+      "stop": 17.595,
       "trail_dist": 0.125,
-      "peak": 17.495,
+      "peak": 17.47,
       "orb_width": 0.25,
       "cost": 3446.91,
       "vol_ratio": 1.23
@@ -98,6 +84,76 @@
       "orb_width": 1.575,
       "cost": 3731.03,
       "vol_ratio": 1.99
+    },
+    {
+      "ticker": "CHD",
+      "side": "long",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:08 ET",
+      "entry_price": 98.79,
+      "shares": 48,
+      "stop": 98.285,
+      "trail_dist": 0.505,
+      "peak": 98.79,
+      "orb_width": 1.01,
+      "cost": 4741.92,
+      "vol_ratio": 2.2
+    },
+    {
+      "ticker": "MPC",
+      "side": "long",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:08 ET",
+      "entry_price": 311.64,
+      "shares": 10,
+      "stop": 308.3275,
+      "trail_dist": 3.3125,
+      "peak": 311.64,
+      "orb_width": 6.625,
+      "cost": 3116.4,
+      "vol_ratio": 1.58
+    },
+    {
+      "ticker": "TFC",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:08 ET",
+      "entry_price": 51.88,
+      "shares": 46,
+      "stop": 52.165,
+      "trail_dist": 0.285,
+      "peak": 51.88,
+      "orb_width": 0.57,
+      "cost": 2386.48,
+      "vol_ratio": 1.34
+    },
+    {
+      "ticker": "CINF",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:08 ET",
+      "entry_price": 175.83,
+      "shares": 9,
+      "stop": 177.67,
+      "trail_dist": 1.84,
+      "peak": 175.83,
+      "orb_width": 3.68,
+      "cost": 1582.47,
+      "vol_ratio": 1.31
+    },
+    {
+      "ticker": "PSX",
+      "side": "long",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:08 ET",
+      "entry_price": 209.365,
+      "shares": 5,
+      "stop": 206.695,
+      "trail_dist": 2.67,
+      "peak": 209.365,
+      "orb_width": 5.34,
+      "cost": 1046.83,
+      "vol_ratio": 1.27
     }
   ],
   "closed_today": [
@@ -119,6 +175,25 @@
       "pnl": -7.17,
       "exit_reason": "trailing stop",
       "exit_time": "10:06 ET"
+    },
+    {
+      "ticker": "FE",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:03 ET",
+      "entry_price": 49.26,
+      "shares": 141,
+      "stop": 49.51,
+      "trail_dist": 0.25,
+      "peak": 49.26,
+      "orb_width": 0.5,
+      "cost": 6945.66,
+      "vol_ratio": 1.33,
+      "exit_date": "2026-07-30",
+      "exit_price": 49.51,
+      "pnl": -35.25,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:08 ET"
     }
   ],
   "all_closed": [
@@ -49647,9 +49722,9 @@
       "width": 4.24
     },
     "XYZ": {
-      "high": 82.3,
+      "high": 82.305,
       "low": 80.82,
-      "width": 1.48
+      "width": 1.485
     },
     "BNY": {
       "high": 154.2593,
@@ -49728,8 +49803,8 @@
     },
     "COF": {
       "high": 209.71,
-      "low": 205.42,
-      "width": 4.29
+      "low": 205.395,
+      "width": 4.315
     },
     "CAH": {
       "high": 226.845,
@@ -50167,9 +50242,9 @@
       "width": 2.41
     },
     "ETR": {
-      "high": 110.29,
+      "high": 110.3,
       "low": 108.115,
-      "width": 2.175
+      "width": 2.185
     },
     "EOG": {
       "high": 145.53,
@@ -50298,8 +50373,8 @@
     },
     "FITB": {
       "high": 57.18,
-      "low": 56.5,
-      "width": 0.68
+      "low": 56.495,
+      "width": 0.685
     },
     "FSLR": {
       "high": 206.08,
@@ -50408,8 +50483,8 @@
     },
     "GPC": {
       "high": 129.97,
-      "low": 125.105,
-      "width": 4.865
+      "low": 125.1,
+      "width": 4.87
     },
     "GILD": {
       "high": 130.6699,
@@ -50622,9 +50697,9 @@
       "width": 9.1317
     },
     "IRM": {
-      "high": 126.09,
+      "high": 126.12,
       "low": 122.5,
-      "width": 3.59
+      "width": 3.62
     },
     "JBHT": {
       "high": 279.65,
@@ -50971,6 +51046,11 @@
       "low": 92.17,
       "width": 2.155
     },
+    "NWSA": {
+      "high": 28.38,
+      "low": 27.75,
+      "width": 0.63
+    },
     "NWS": {
       "high": 32.23,
       "low": 31.43,
@@ -51143,8 +51223,8 @@
     },
     "PM": {
       "high": 195.92,
-      "low": 192.78,
-      "width": 3.14
+      "low": 192.71,
+      "width": 3.21
     },
     "PSX": {
       "high": 209.25,
@@ -51292,9 +51372,9 @@
       "width": 6.325
     },
     "ROK": {
-      "high": 473.97,
+      "high": 474.0,
       "low": 468.22,
-      "width": 5.75
+      "width": 5.78
     },
     "ROL": {
       "high": 37.9,
@@ -51728,8 +51808,8 @@
     },
     "WM": {
       "high": 231.105,
-      "low": 228.0,
-      "width": 3.105
+      "low": 227.9,
+      "width": 3.205
     },
     "WAT": {
       "high": 378.25,
@@ -51838,7 +51918,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 95511.5
+    "2026-07-30": 95486.18
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -102798,6 +102878,64 @@
       ],
       "portfolio_value": 95511.5,
       "note": "$95,512 | cash=$9,041 | open=7 | closed today=1 | day PnL=$-7"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "10:08 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "CHD",
+          "side": "long",
+          "price": 98.79,
+          "shares": 48,
+          "stop": 98.29,
+          "trail_dist": 0.505
+        },
+        {
+          "ticker": "MPC",
+          "side": "long",
+          "price": 311.64,
+          "shares": 10,
+          "stop": 308.33,
+          "trail_dist": 3.3125
+        },
+        {
+          "ticker": "TFC",
+          "side": "short",
+          "price": 51.88,
+          "shares": 46,
+          "stop": 52.17,
+          "trail_dist": 0.285
+        },
+        {
+          "ticker": "CINF",
+          "side": "short",
+          "price": 175.83,
+          "shares": 9,
+          "stop": 177.67,
+          "trail_dist": 1.84
+        },
+        {
+          "ticker": "PSX",
+          "side": "long",
+          "price": 209.37,
+          "shares": 5,
+          "stop": 206.7,
+          "trail_dist": 2.67
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "FE",
+          "side": "short",
+          "exit_price": 49.51,
+          "pnl": -35.25,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95486.18,
+      "note": "$95,486 | cash=$3,078 | open=11 | closed today=2 | day PnL=$-42"
     }
   ]
 }
