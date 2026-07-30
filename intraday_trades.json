@@ -1,5 +1,5 @@
 {
-  "capital": 1858.29,
+  "capital": 3489.47,
   "open_positions": [
     {
       "ticker": "CNP",
@@ -358,9 +358,9 @@
       "entry_time": "11:38 ET",
       "entry_price": 70.635,
       "shares": 4,
-      "stop": 71.79,
+      "stop": 71.771,
       "trail_dist": 1.44,
-      "peak": 70.35,
+      "peak": 70.331,
       "orb_width": 2.88,
       "cost": 282.54,
       "vol_ratio": 1.27
@@ -408,20 +408,6 @@
       "vol_ratio": 2.69
     },
     {
-      "ticker": "NI",
-      "side": "short",
-      "entry_date": "2026-07-30",
-      "entry_time": "11:48 ET",
-      "entry_price": 44.53,
-      "shares": 103,
-      "stop": 44.82,
-      "trail_dist": 0.29,
-      "peak": 44.53,
-      "orb_width": 0.58,
-      "cost": 4586.59,
-      "vol_ratio": 1.27
-    },
-    {
       "ticker": "STLD",
       "side": "long",
       "entry_date": "2026-07-30",
@@ -442,9 +428,9 @@
       "entry_time": "12:19 ET",
       "entry_price": 639.4,
       "shares": 8,
-      "stop": 638.0075,
+      "stop": 638.5325,
       "trail_dist": 4.1175,
-      "peak": 642.125,
+      "peak": 642.65,
       "orb_width": 8.235,
       "cost": 5115.2,
       "vol_ratio": 2.99
@@ -624,9 +610,9 @@
       "entry_time": "12:34 ET",
       "entry_price": 288.98,
       "shares": 1,
-      "stop": 288.6325,
+      "stop": 288.6525,
       "trail_dist": 3.9075,
-      "peak": 292.54,
+      "peak": 292.56,
       "orb_width": 7.815,
       "cost": 288.98,
       "vol_ratio": 2.11
@@ -666,9 +652,9 @@
       "entry_time": "12:34 ET",
       "entry_price": 88.36,
       "shares": 1,
-      "stop": 87.5825,
+      "stop": 87.6225,
       "trail_dist": 0.9775,
-      "peak": 88.56,
+      "peak": 88.6,
       "orb_width": 1.955,
       "cost": 88.36,
       "vol_ratio": 1.21
@@ -750,9 +736,9 @@
       "entry_time": "12:44 ET",
       "entry_price": 209.44,
       "shares": 7,
-      "stop": 209.42,
+      "stop": 209.43,
       "trail_dist": 0.12,
-      "peak": 209.54,
+      "peak": 209.55,
       "orb_width": 0.24,
       "cost": 1466.08,
       "vol_ratio": 3.64
@@ -814,20 +800,6 @@
       "vol_ratio": 1.48
     },
     {
-      "ticker": "SRE",
-      "side": "short",
-      "entry_date": "2026-07-30",
-      "entry_time": "12:49 ET",
-      "entry_price": 88.71,
-      "shares": 6,
-      "stop": 89.1351,
-      "trail_dist": 0.4501,
-      "peak": 88.685,
-      "orb_width": 0.9002,
-      "cost": 532.26,
-      "vol_ratio": 1.39
-    },
-    {
       "ticker": "VRSK",
       "side": "short",
       "entry_date": "2026-07-30",
@@ -876,9 +848,9 @@
       "entry_time": "12:59 ET",
       "entry_price": 85.18,
       "shares": 2,
-      "stop": 84.8777,
+      "stop": 84.9077,
       "trail_dist": 0.4023,
-      "peak": 85.28,
+      "peak": 85.31,
       "orb_width": 0.8046,
       "cost": 170.36,
       "vol_ratio": 2.24
@@ -896,6 +868,34 @@
       "orb_width": 1.2541,
       "cost": 128.85,
       "vol_ratio": 1.37
+    },
+    {
+      "ticker": "SNA",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "13:04 ET",
+      "entry_price": 410.13,
+      "shares": 5,
+      "stop": 413.215,
+      "trail_dist": 3.085,
+      "peak": 410.13,
+      "orb_width": 6.17,
+      "cost": 2050.65,
+      "vol_ratio": 3.0
+    },
+    {
+      "ticker": "ATO",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "13:04 ET",
+      "entry_price": 175.575,
+      "shares": 8,
+      "stop": 176.36,
+      "trail_dist": 0.785,
+      "peak": 175.575,
+      "orb_width": 1.57,
+      "cost": 1404.6,
+      "vol_ratio": 1.23
     }
   ],
   "closed_today": [
@@ -2000,6 +2000,44 @@
       "pnl": -1.45,
       "exit_reason": "trailing stop",
       "exit_time": "13:01 ET"
+    },
+    {
+      "ticker": "NI",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "11:48 ET",
+      "entry_price": 44.53,
+      "shares": 103,
+      "stop": 44.82,
+      "trail_dist": 0.29,
+      "peak": 44.53,
+      "orb_width": 0.58,
+      "cost": 4586.59,
+      "vol_ratio": 1.27,
+      "exit_date": "2026-07-30",
+      "exit_price": 44.82,
+      "pnl": -29.87,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:04 ET"
+    },
+    {
+      "ticker": "SRE",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "12:49 ET",
+      "entry_price": 88.71,
+      "shares": 6,
+      "stop": 89.1351,
+      "trail_dist": 0.4501,
+      "peak": 88.685,
+      "orb_width": 0.9002,
+      "cost": 532.26,
+      "vol_ratio": 1.39,
+      "exit_date": "2026-07-30",
+      "exit_price": 89.1351,
+      "pnl": -2.55,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:04 ET"
     }
   ],
   "all_closed": [
@@ -52988,9 +53026,9 @@
       "width": 7.895
     },
     "PSKY": {
-      "high": 7.905,
+      "high": 7.878,
       "low": 7.78,
-      "width": 0.125
+      "width": 0.098
     },
     "PH": {
       "high": 968.04,
@@ -53724,7 +53762,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 95556.61
+    "2026-07-30": 95531.05
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -106603,6 +106641,47 @@
       ],
       "portfolio_value": 95556.61,
       "note": "$95,557 | cash=$1,858 | open=64 | closed today=58 | day PnL=$-156"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "13:03 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "SNA",
+          "side": "short",
+          "price": 410.13,
+          "shares": 5,
+          "stop": 413.22,
+          "trail_dist": 3.085
+        },
+        {
+          "ticker": "ATO",
+          "side": "short",
+          "price": 175.57,
+          "shares": 8,
+          "stop": 176.36,
+          "trail_dist": 0.785
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "NI",
+          "side": "short",
+          "exit_price": 44.82,
+          "pnl": -29.87,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "SRE",
+          "side": "short",
+          "exit_price": 89.14,
+          "pnl": -2.55,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95531.05,
+      "note": "$95,531 | cash=$3,489 | open=64 | closed today=60 | day PnL=$-188"
     }
   ]
 }
