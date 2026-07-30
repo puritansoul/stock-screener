@@ -1,5 +1,5 @@
 {
-  "capital": 445.25,
+  "capital": 947.34,
   "open_positions": [
     {
       "ticker": "CNP",
@@ -422,20 +422,6 @@
       "vol_ratio": 6.95
     },
     {
-      "ticker": "FITB",
-      "side": "short",
-      "entry_date": "2026-07-30",
-      "entry_time": "11:33 ET",
-      "entry_price": 56.13,
-      "shares": 9,
-      "stop": 56.4725,
-      "trail_dist": 0.3425,
-      "peak": 56.13,
-      "orb_width": 0.685,
-      "cost": 505.17,
-      "vol_ratio": 1.73
-    },
-    {
       "ticker": "HD",
       "side": "short",
       "entry_date": "2026-07-30",
@@ -624,9 +610,9 @@
       "entry_time": "12:19 ET",
       "entry_price": 639.4,
       "shares": 8,
-      "stop": 635.2825,
+      "stop": 636.3325,
       "trail_dist": 4.1175,
-      "peak": 639.4,
+      "peak": 640.45,
       "orb_width": 8.235,
       "cost": 5115.2,
       "vol_ratio": 2.99
@@ -792,9 +778,9 @@
       "entry_time": "12:29 ET",
       "entry_price": 151.99,
       "shares": 1,
-      "stop": 151.085,
+      "stop": 151.295,
       "trail_dist": 0.905,
-      "peak": 151.99,
+      "peak": 152.2,
       "orb_width": 1.81,
       "cost": 151.99,
       "vol_ratio": 1.23
@@ -806,9 +792,9 @@
       "entry_time": "12:29 ET",
       "entry_price": 83.54,
       "shares": 2,
-      "stop": 84.7925,
+      "stop": 84.7475,
       "trail_dist": 1.2525,
-      "peak": 83.54,
+      "peak": 83.495,
       "orb_width": 2.505,
       "cost": 167.08,
       "vol_ratio": 1.22
@@ -1612,6 +1598,25 @@
       "pnl": -0.52,
       "exit_reason": "trailing stop",
       "exit_time": "12:22 ET"
+    },
+    {
+      "ticker": "FITB",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "11:33 ET",
+      "entry_price": 56.13,
+      "shares": 9,
+      "stop": 56.4725,
+      "trail_dist": 0.3425,
+      "peak": 56.13,
+      "orb_width": 0.685,
+      "cost": 505.17,
+      "vol_ratio": 1.73,
+      "exit_date": "2026-07-30",
+      "exit_price": 56.4725,
+      "pnl": -3.08,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:32 ET"
     }
   ],
   "all_closed": [
@@ -51814,11 +51819,6 @@
       "low": 104.21,
       "width": 5.52
     },
-    "F": {
-      "high": 15.3713,
-      "low": 14.78,
-      "width": 0.5913
-    },
     "FTNT": {
       "high": 169.26,
       "low": 158.07,
@@ -53336,7 +53336,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 95786.31
+    "2026-07-30": 95710.23
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -105795,6 +105795,23 @@
       "exits": [],
       "portfolio_value": 95786.31,
       "note": "$95,786 | cash=$445 | open=58 | closed today=42 | day PnL=$-118"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "12:31 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "FITB",
+          "side": "short",
+          "exit_price": 56.47,
+          "pnl": -3.08,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95710.23,
+      "note": "$95,710 | cash=$947 | open=57 | closed today=43 | day PnL=$-121"
     }
   ]
 }
