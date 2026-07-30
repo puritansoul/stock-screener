@@ -1,5 +1,5 @@
 {
-  "capital": 929.55,
+  "capital": 670.02,
   "open_positions": [
     {
       "ticker": "MKC",
@@ -246,9 +246,9 @@
       "entry_time": "10:23 ET",
       "entry_price": 122.015,
       "shares": 2,
-      "stop": 123.085,
+      "stop": 123.08,
       "trail_dist": 1.265,
-      "peak": 121.82,
+      "peak": 121.815,
       "orb_width": 2.53,
       "cost": 244.03,
       "vol_ratio": 1.43
@@ -526,9 +526,9 @@
       "entry_time": "11:13 ET",
       "entry_price": 206.78,
       "shares": 2,
-      "stop": 208.275,
+      "stop": 208.185,
       "trail_dist": 1.645,
-      "peak": 206.63,
+      "peak": 206.54,
       "orb_width": 3.29,
       "cost": 413.56,
       "vol_ratio": 1.85
@@ -686,6 +686,20 @@
       "orb_width": 2.9624,
       "cost": 332.58,
       "vol_ratio": 1.23
+    },
+    {
+      "ticker": "SOLV",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "11:35 ET",
+      "entry_price": 86.51,
+      "shares": 3,
+      "stop": 87.045,
+      "trail_dist": 0.535,
+      "peak": 86.51,
+      "orb_width": 1.07,
+      "cost": 259.53,
+      "vol_ratio": 1.69
     }
   ],
   "closed_today": [
@@ -50463,8 +50477,8 @@
     },
     "AEP": {
       "high": 130.48,
-      "low": 128.3,
-      "width": 2.18
+      "low": 128.395,
+      "width": 2.085
     },
     "AXP": {
       "high": 333.6558,
@@ -50766,6 +50780,11 @@
       "low": 27.16,
       "width": 0.55
     },
+    "CARR": {
+      "high": 61.42,
+      "low": 59.99,
+      "width": 1.43
+    },
     "CVNA": {
       "high": 60.66,
       "low": 56.12,
@@ -50862,9 +50881,9 @@
       "width": 8.47
     },
     "CINF": {
-      "high": 179.92,
+      "high": 179.42,
       "low": 176.24,
-      "width": 3.68
+      "width": 3.18
     },
     "CTAS": {
       "high": 211.06,
@@ -51186,11 +51205,6 @@
       "low": 147.02,
       "width": 2.41
     },
-    "ETR": {
-      "high": 110.3,
-      "low": 108.115,
-      "width": 2.185
-    },
     "EOG": {
       "high": 145.53,
       "low": 143.125,
@@ -51235,11 +51249,6 @@
       "high": 388.97,
       "low": 374.92,
       "width": 14.05
-    },
-    "EVRG": {
-      "high": 84.37,
-      "low": 83.3,
-      "width": 1.07
     },
     "ES": {
       "high": 75.59,
@@ -51571,6 +51580,11 @@
       "low": 558.195,
       "width": 6.395
     },
+    "ITW": {
+      "high": 296.24,
+      "low": 285.89,
+      "width": 10.35
+    },
     "INCY": {
       "high": 126.41,
       "low": 123.88,
@@ -51717,14 +51731,14 @@
       "width": 5.8525
     },
     "KLAC": {
-      "high": 185.64,
+      "high": 186.86,
       "low": 179.05,
-      "width": 6.59
+      "width": 7.81
     },
     "KHC": {
-      "high": 27.11,
+      "high": 27.0399,
       "low": 26.48,
-      "width": 0.63
+      "width": 0.5599
     },
     "KR": {
       "high": 59.5726,
@@ -51840,11 +51854,6 @@
       "high": 181.19,
       "low": 175.16,
       "width": 6.03
-    },
-    "MAS": {
-      "high": 72.55,
-      "low": 71.055,
-      "width": 1.495
     },
     "MA": {
       "high": 582.62,
@@ -51977,9 +51986,9 @@
       "width": 3.61
     },
     "NFLX": {
-      "high": 71.78,
+      "high": 71.6295,
       "low": 70.55,
-      "width": 1.23
+      "width": 1.0795
     },
     "NEM": {
       "high": 94.325,
@@ -52858,7 +52867,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 95922.6
+    "2026-07-30": 95846.6
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -104852,6 +104861,24 @@
       ],
       "portfolio_value": 95922.6,
       "note": "$95,923 | cash=$930 | open=49 | closed today=24 | day PnL=$-71"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "11:35 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "SOLV",
+          "side": "short",
+          "price": 86.51,
+          "shares": 3,
+          "stop": 87.05,
+          "trail_dist": 0.535
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 95846.6,
+      "note": "$95,847 | cash=$670 | open=50 | closed today=24 | day PnL=$-71"
     }
   ]
 }
