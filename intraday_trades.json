@@ -1,5 +1,5 @@
 {
-  "capital": 2525.32,
+  "capital": 1847.11,
   "open_positions": [
     {
       "ticker": "CNP",
@@ -680,9 +680,9 @@
       "entry_time": "12:39 ET",
       "entry_price": 213.08,
       "shares": 1,
-      "stop": 215.34,
+      "stop": 214.995,
       "trail_dist": 2.375,
-      "peak": 212.965,
+      "peak": 212.62,
       "orb_width": 4.75,
       "cost": 213.08,
       "vol_ratio": 2.34
@@ -876,9 +876,9 @@
       "entry_time": "13:04 ET",
       "entry_price": 410.13,
       "shares": 5,
-      "stop": 412.845,
+      "stop": 412.705,
       "trail_dist": 3.085,
-      "peak": 409.76,
+      "peak": 409.62,
       "orb_width": 6.17,
       "cost": 2050.65,
       "vol_ratio": 3.0
@@ -904,12 +904,26 @@
       "entry_time": "13:06 ET",
       "entry_price": 87.65,
       "shares": 11,
-      "stop": 88.25,
+      "stop": 88.145,
       "trail_dist": 0.6,
-      "peak": 87.65,
+      "peak": 87.545,
       "orb_width": 1.2,
       "cost": 964.15,
       "vol_ratio": 2.06
+    },
+    {
+      "ticker": "RVTY",
+      "side": "long",
+      "entry_date": "2026-07-30",
+      "entry_time": "13:09 ET",
+      "entry_price": 113.035,
+      "shares": 6,
+      "stop": 112.49,
+      "trail_dist": 0.545,
+      "peak": 113.035,
+      "orb_width": 1.09,
+      "cost": 678.21,
+      "vol_ratio": 1.27
     }
   ],
   "closed_today": [
@@ -51399,11 +51413,6 @@
       "low": 536.43,
       "width": 8.4677
     },
-    "AME": {
-      "high": 240.44,
-      "low": 237.59,
-      "width": 2.85
-    },
     "AMGN": {
       "high": 384.99,
       "low": 379.745,
@@ -52504,11 +52513,6 @@
       "low": 162.57,
       "width": 5.81
     },
-    "INTC": {
-      "high": 91.4,
-      "low": 85.995,
-      "width": 5.405
-    },
     "IBKR": {
       "high": 89.58,
       "low": 86.82,
@@ -52635,9 +52639,9 @@
       "width": 5.8525
     },
     "KLAC": {
-      "high": 186.86,
+      "high": 185.64,
       "low": 179.05,
-      "width": 7.81
+      "width": 6.59
     },
     "KHC": {
       "high": 27.0399,
@@ -53776,7 +53780,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 95542.58
+    "2026-07-30": 95581.34
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -106714,6 +106718,24 @@
       "exits": [],
       "portfolio_value": 95542.58,
       "note": "$95,543 | cash=$2,525 | open=65 | closed today=60 | day PnL=$-188"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "13:08 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "RVTY",
+          "side": "long",
+          "price": 113.04,
+          "shares": 6,
+          "stop": 112.49,
+          "trail_dist": 0.545
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 95581.34,
+      "note": "$95,581 | cash=$1,847 | open=66 | closed today=60 | day PnL=$-188"
     }
   ]
 }
