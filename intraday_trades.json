@@ -1,5 +1,5 @@
 {
-  "capital": 330.39,
+  "capital": 778.22,
   "open_positions": [
     {
       "ticker": "CNP",
@@ -156,20 +156,6 @@
       "vol_ratio": 1.49
     },
     {
-      "ticker": "INCY",
-      "side": "short",
-      "entry_date": "2026-07-30",
-      "entry_time": "10:23 ET",
-      "entry_price": 122.015,
-      "shares": 2,
-      "stop": 122.915,
-      "trail_dist": 1.265,
-      "peak": 121.65,
-      "orb_width": 2.53,
-      "cost": 244.03,
-      "vol_ratio": 1.43
-    },
-    {
       "ticker": "UNP",
       "side": "short",
       "entry_date": "2026-07-30",
@@ -182,20 +168,6 @@
       "orb_width": 5.52,
       "cost": 1432.65,
       "vol_ratio": 1.22
-    },
-    {
-      "ticker": "MSCI",
-      "side": "short",
-      "entry_date": "2026-07-30",
-      "entry_time": "10:50 ET",
-      "entry_price": 569.605,
-      "shares": 2,
-      "stop": 574.7908,
-      "trail_dist": 5.2608,
-      "peak": 569.53,
-      "orb_width": 10.5217,
-      "cost": 1139.21,
-      "vol_ratio": 1.27
     },
     {
       "ticker": "KVUE",
@@ -624,9 +596,9 @@
       "entry_time": "12:19 ET",
       "entry_price": 132.065,
       "shares": 20,
-      "stop": 133.29,
+      "stop": 133.145,
       "trail_dist": 1.225,
-      "peak": 132.065,
+      "peak": 131.92,
       "orb_width": 2.45,
       "cost": 2641.3,
       "vol_ratio": 1.41
@@ -792,9 +764,9 @@
       "entry_time": "12:34 ET",
       "entry_price": 182.785,
       "shares": 2,
-      "stop": 183.695,
+      "stop": 183.485,
       "trail_dist": 0.945,
-      "peak": 182.75,
+      "peak": 182.54,
       "orb_width": 1.89,
       "cost": 365.57,
       "vol_ratio": 2.85
@@ -806,9 +778,9 @@
       "entry_time": "12:34 ET",
       "entry_price": 288.98,
       "shares": 1,
-      "stop": 285.4125,
+      "stop": 286.0825,
       "trail_dist": 3.9075,
-      "peak": 289.32,
+      "peak": 289.99,
       "orb_width": 7.815,
       "cost": 288.98,
       "vol_ratio": 2.11
@@ -820,9 +792,9 @@
       "entry_time": "12:34 ET",
       "entry_price": 112.73,
       "shares": 2,
-      "stop": 113.5137,
+      "stop": 113.5037,
       "trail_dist": 0.7837,
-      "peak": 112.73,
+      "peak": 112.72,
       "orb_width": 1.5675,
       "cost": 225.46,
       "vol_ratio": 1.43
@@ -854,6 +826,48 @@
       "orb_width": 1.955,
       "cost": 88.36,
       "vol_ratio": 1.21
+    },
+    {
+      "ticker": "J",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "12:39 ET",
+      "entry_price": 132.38,
+      "shares": 3,
+      "stop": 133.6775,
+      "trail_dist": 1.2975,
+      "peak": 132.38,
+      "orb_width": 2.595,
+      "cost": 397.14,
+      "vol_ratio": 2.44
+    },
+    {
+      "ticker": "PGR",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "12:39 ET",
+      "entry_price": 213.08,
+      "shares": 1,
+      "stop": 215.455,
+      "trail_dist": 2.375,
+      "peak": 213.08,
+      "orb_width": 4.75,
+      "cost": 213.08,
+      "vol_ratio": 2.34
+    },
+    {
+      "ticker": "ARE",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "12:39 ET",
+      "entry_price": 52.17,
+      "shares": 6,
+      "stop": 52.8975,
+      "trail_dist": 0.7275,
+      "peak": 52.17,
+      "orb_width": 1.455,
+      "cost": 313.02,
+      "vol_ratio": 1.22
     }
   ],
   "closed_today": [
@@ -1692,6 +1706,44 @@
       "pnl": -3.19,
       "exit_reason": "trailing stop",
       "exit_time": "12:34 ET"
+    },
+    {
+      "ticker": "INCY",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:23 ET",
+      "entry_price": 122.015,
+      "shares": 2,
+      "stop": 122.915,
+      "trail_dist": 1.265,
+      "peak": 121.65,
+      "orb_width": 2.53,
+      "cost": 244.03,
+      "vol_ratio": 1.43,
+      "exit_date": "2026-07-30",
+      "exit_price": 122.915,
+      "pnl": -1.8,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:39 ET"
+    },
+    {
+      "ticker": "MSCI",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:50 ET",
+      "entry_price": 569.605,
+      "shares": 2,
+      "stop": 574.7908,
+      "trail_dist": 5.2608,
+      "peak": 569.53,
+      "orb_width": 10.5217,
+      "cost": 1139.21,
+      "vol_ratio": 1.27,
+      "exit_date": "2026-07-30",
+      "exit_price": 574.7908,
+      "pnl": -10.37,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:39 ET"
     }
   ],
   "all_closed": [
@@ -53416,7 +53468,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 95675.34
+    "2026-07-30": 95656.39
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -105959,6 +106011,55 @@
       "exits": [],
       "portfolio_value": 95675.34,
       "note": "$95,675 | cash=$330 | open=61 | closed today=44 | day PnL=$-124"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "12:39 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "J",
+          "side": "short",
+          "price": 132.38,
+          "shares": 3,
+          "stop": 133.68,
+          "trail_dist": 1.2975
+        },
+        {
+          "ticker": "PGR",
+          "side": "short",
+          "price": 213.08,
+          "shares": 1,
+          "stop": 215.46,
+          "trail_dist": 2.375
+        },
+        {
+          "ticker": "ARE",
+          "side": "short",
+          "price": 52.17,
+          "shares": 6,
+          "stop": 52.9,
+          "trail_dist": 0.7275
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "INCY",
+          "side": "short",
+          "exit_price": 122.92,
+          "pnl": -1.8,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "MSCI",
+          "side": "short",
+          "exit_price": 574.79,
+          "pnl": -10.37,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95656.39,
+      "note": "$95,656 | cash=$778 | open=62 | closed today=46 | day PnL=$-137"
     }
   ]
 }
