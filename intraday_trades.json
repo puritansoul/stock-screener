@@ -1,5 +1,5 @@
 {
-  "capital": 753.82,
+  "capital": 454.61,
   "open_positions": [
     {
       "ticker": "CNP",
@@ -372,9 +372,9 @@
       "entry_time": "11:38 ET",
       "entry_price": 70.635,
       "shares": 4,
-      "stop": 71.83,
+      "stop": 71.79,
       "trail_dist": 1.44,
-      "peak": 70.39,
+      "peak": 70.35,
       "orb_width": 2.88,
       "cost": 282.54,
       "vol_ratio": 1.27
@@ -666,9 +666,9 @@
       "entry_time": "12:34 ET",
       "entry_price": 288.98,
       "shares": 1,
-      "stop": 288.0125,
+      "stop": 288.0825,
       "trail_dist": 3.9075,
-      "peak": 291.92,
+      "peak": 291.99,
       "orb_width": 7.815,
       "cost": 288.98,
       "vol_ratio": 2.11
@@ -680,9 +680,9 @@
       "entry_time": "12:34 ET",
       "entry_price": 112.73,
       "shares": 2,
-      "stop": 113.3604,
+      "stop": 113.3038,
       "trail_dist": 0.7837,
-      "peak": 112.5767,
+      "peak": 112.5201,
       "orb_width": 1.5675,
       "cost": 225.46,
       "vol_ratio": 1.43
@@ -820,9 +820,9 @@
       "entry_time": "12:44 ET",
       "entry_price": 282.85,
       "shares": 2,
-      "stop": 279.4616,
+      "stop": 279.6566,
       "trail_dist": 3.4434,
-      "peak": 282.905,
+      "peak": 283.1,
       "orb_width": 6.8868,
       "cost": 565.7,
       "vol_ratio": 1.71
@@ -834,9 +834,9 @@
       "entry_time": "12:44 ET",
       "entry_price": 147.62,
       "shares": 4,
-      "stop": 149.195,
+      "stop": 148.985,
       "trail_dist": 2.215,
-      "peak": 146.98,
+      "peak": 146.77,
       "orb_width": 4.43,
       "cost": 590.48,
       "vol_ratio": 1.42
@@ -910,6 +910,34 @@
       "orb_width": 11.295,
       "cost": 265.12,
       "vol_ratio": 1.22
+    },
+    {
+      "ticker": "WFC",
+      "side": "long",
+      "entry_date": "2026-07-30",
+      "entry_time": "12:59 ET",
+      "entry_price": 85.18,
+      "shares": 2,
+      "stop": 84.7777,
+      "trail_dist": 0.4023,
+      "peak": 85.18,
+      "orb_width": 0.8046,
+      "cost": 170.36,
+      "vol_ratio": 2.24
+    },
+    {
+      "ticker": "DLTR",
+      "side": "long",
+      "entry_date": "2026-07-30",
+      "entry_time": "12:59 ET",
+      "entry_price": 128.85,
+      "shares": 1,
+      "stop": 128.223,
+      "trail_dist": 0.627,
+      "peak": 128.85,
+      "orb_width": 1.2541,
+      "cost": 128.85,
+      "vol_ratio": 1.37
     }
   ],
   "closed_today": [
@@ -53681,7 +53709,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 95621.77
+    "2026-07-30": 95604.29
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -106503,6 +106531,32 @@
       "exits": [],
       "portfolio_value": 95621.77,
       "note": "$95,622 | cash=$754 | open=65 | closed today=55 | day PnL=$-157"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "12:58 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "WFC",
+          "side": "long",
+          "price": 85.18,
+          "shares": 2,
+          "stop": 84.78,
+          "trail_dist": 0.4023
+        },
+        {
+          "ticker": "DLTR",
+          "side": "long",
+          "price": 128.85,
+          "shares": 1,
+          "stop": 128.22,
+          "trail_dist": 0.627
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 95604.29,
+      "note": "$95,604 | cash=$455 | open=67 | closed today=55 | day PnL=$-157"
     }
   ]
 }
