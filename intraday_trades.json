@@ -1,5 +1,5 @@
 {
-  "capital": 1847.11,
+  "capital": 2287.33,
   "open_positions": [
     {
       "ticker": "CNP",
@@ -112,20 +112,6 @@
       "orb_width": 10.8651,
       "cost": 375.4,
       "vol_ratio": 1.38
-    },
-    {
-      "ticker": "CMS",
-      "side": "short",
-      "entry_date": "2026-07-30",
-      "entry_time": "10:23 ET",
-      "entry_price": 73.065,
-      "shares": 6,
-      "stop": 72.76,
-      "trail_dist": 0.645,
-      "peak": 72.115,
-      "orb_width": 1.29,
-      "cost": 438.39,
-      "vol_ratio": 1.49
     },
     {
       "ticker": "UNP",
@@ -358,9 +344,9 @@
       "entry_time": "11:38 ET",
       "entry_price": 70.635,
       "shares": 4,
-      "stop": 71.771,
+      "stop": 71.745,
       "trail_dist": 1.44,
-      "peak": 70.331,
+      "peak": 70.305,
       "orb_width": 2.88,
       "cost": 282.54,
       "vol_ratio": 1.27
@@ -610,9 +596,9 @@
       "entry_time": "12:34 ET",
       "entry_price": 288.98,
       "shares": 1,
-      "stop": 288.6525,
+      "stop": 288.8525,
       "trail_dist": 3.9075,
-      "peak": 292.56,
+      "peak": 292.76,
       "orb_width": 7.815,
       "cost": 288.98,
       "vol_ratio": 2.11
@@ -680,9 +666,9 @@
       "entry_time": "12:39 ET",
       "entry_price": 213.08,
       "shares": 1,
-      "stop": 214.995,
+      "stop": 214.955,
       "trail_dist": 2.375,
-      "peak": 212.62,
+      "peak": 212.58,
       "orb_width": 4.75,
       "cost": 213.08,
       "vol_ratio": 2.34
@@ -848,9 +834,9 @@
       "entry_time": "12:59 ET",
       "entry_price": 85.18,
       "shares": 2,
-      "stop": 84.9377,
+      "stop": 84.9627,
       "trail_dist": 0.4023,
-      "peak": 85.34,
+      "peak": 85.365,
       "orb_width": 0.8046,
       "cost": 170.36,
       "vol_ratio": 2.24
@@ -876,9 +862,9 @@
       "entry_time": "13:04 ET",
       "entry_price": 410.13,
       "shares": 5,
-      "stop": 412.705,
+      "stop": 412.405,
       "trail_dist": 3.085,
-      "peak": 409.62,
+      "peak": 409.32,
       "orb_width": 6.17,
       "cost": 2050.65,
       "vol_ratio": 3.0
@@ -890,9 +876,9 @@
       "entry_time": "13:04 ET",
       "entry_price": 175.575,
       "shares": 8,
-      "stop": 176.255,
+      "stop": 176.115,
       "trail_dist": 0.785,
-      "peak": 175.47,
+      "peak": 175.33,
       "orb_width": 1.57,
       "cost": 1404.6,
       "vol_ratio": 1.23
@@ -918,9 +904,9 @@
       "entry_time": "13:09 ET",
       "entry_price": 113.035,
       "shares": 6,
-      "stop": 112.49,
+      "stop": 112.705,
       "trail_dist": 0.545,
-      "peak": 113.035,
+      "peak": 113.25,
       "orb_width": 1.09,
       "cost": 678.21,
       "vol_ratio": 1.27
@@ -2066,6 +2052,25 @@
       "pnl": -2.55,
       "exit_reason": "trailing stop",
       "exit_time": "13:04 ET"
+    },
+    {
+      "ticker": "CMS",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:23 ET",
+      "entry_price": 73.065,
+      "shares": 6,
+      "stop": 72.76,
+      "trail_dist": 0.645,
+      "peak": 72.115,
+      "orb_width": 1.29,
+      "cost": 438.39,
+      "vol_ratio": 1.49,
+      "exit_date": "2026-07-30",
+      "exit_price": 72.76,
+      "pnl": 1.83,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:11 ET"
     }
   ],
   "all_closed": [
@@ -51413,6 +51418,11 @@
       "low": 536.43,
       "width": 8.4677
     },
+    "AME": {
+      "high": 240.44,
+      "low": 237.59,
+      "width": 2.85
+    },
     "AMGN": {
       "high": 384.99,
       "low": 379.745,
@@ -51817,11 +51827,6 @@
       "high": 265.0,
       "low": 260.602,
       "width": 4.398
-    },
-    "CMS": {
-      "high": 74.46,
-      "low": 73.17,
-      "width": 1.29
     },
     "KO": {
       "high": 88.41,
@@ -52512,6 +52517,11 @@
       "high": 168.38,
       "low": 162.57,
       "width": 5.81
+    },
+    "INTC": {
+      "high": 91.4,
+      "low": 85.995,
+      "width": 5.405
     },
     "IBKR": {
       "high": 89.58,
@@ -53780,7 +53790,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 95581.34
+    "2026-07-30": 95572.27
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -106736,6 +106746,23 @@
       "exits": [],
       "portfolio_value": 95581.34,
       "note": "$95,581 | cash=$1,847 | open=66 | closed today=60 | day PnL=$-188"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "13:11 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "CMS",
+          "side": "short",
+          "exit_price": 72.76,
+          "pnl": 1.83,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95572.27,
+      "note": "$95,572 | cash=$2,287 | open=65 | closed today=61 | day PnL=$-187"
     }
   ]
 }
