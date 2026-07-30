@@ -1,5 +1,5 @@
 {
-  "capital": 1659.4,
+  "capital": 445.25,
   "open_positions": [
     {
       "ticker": "CNP",
@@ -78,9 +78,9 @@
       "entry_time": "10:13 ET",
       "entry_price": 103.06,
       "shares": 17,
-      "stop": 104.06,
+      "stop": 104.02,
       "trail_dist": 1.19,
-      "peak": 102.87,
+      "peak": 102.83,
       "orb_width": 2.38,
       "cost": 1752.02,
       "vol_ratio": 1.55
@@ -260,9 +260,9 @@
       "entry_time": "11:03 ET",
       "entry_price": 331.55,
       "shares": 1,
-      "stop": 330.81,
+      "stop": 330.655,
       "trail_dist": 1.88,
-      "peak": 328.93,
+      "peak": 328.775,
       "orb_width": 3.76,
       "cost": 331.55,
       "vol_ratio": 3.81
@@ -638,9 +638,9 @@
       "entry_time": "12:19 ET",
       "entry_price": 146.89,
       "shares": 26,
-      "stop": 151.53,
+      "stop": 150.7201,
       "trail_dist": 5.63,
-      "peak": 145.9,
+      "peak": 145.0901,
       "orb_width": 11.26,
       "cost": 3819.14,
       "vol_ratio": 1.59
@@ -680,9 +680,9 @@
       "entry_time": "12:24 ET",
       "entry_price": 113.47,
       "shares": 19,
-      "stop": 114.015,
+      "stop": 113.995,
       "trail_dist": 0.635,
-      "peak": 113.38,
+      "peak": 113.36,
       "orb_width": 1.27,
       "cost": 2155.93,
       "vol_ratio": 2.1
@@ -694,9 +694,9 @@
       "entry_time": "12:24 ET",
       "entry_price": 1051.78,
       "shares": 1,
-      "stop": 1066.8475,
+      "stop": 1065.7175,
       "trail_dist": 15.0675,
-      "peak": 1051.78,
+      "peak": 1050.65,
       "orb_width": 30.135,
       "cost": 1051.78,
       "vol_ratio": 2.0
@@ -722,9 +722,9 @@
       "entry_time": "12:24 ET",
       "entry_price": 177.245,
       "shares": 4,
-      "stop": 180.77,
+      "stop": 180.505,
       "trail_dist": 3.65,
-      "peak": 177.12,
+      "peak": 176.855,
       "orb_width": 7.3,
       "cost": 708.98,
       "vol_ratio": 1.38
@@ -742,6 +742,76 @@
       "orb_width": 6.39,
       "cost": 512.09,
       "vol_ratio": 1.38
+    },
+    {
+      "ticker": "CF",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "12:29 ET",
+      "entry_price": 124.66,
+      "shares": 3,
+      "stop": 125.51,
+      "trail_dist": 0.85,
+      "peak": 124.66,
+      "orb_width": 1.7,
+      "cost": 373.98,
+      "vol_ratio": 1.82
+    },
+    {
+      "ticker": "PNW",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "12:29 ET",
+      "entry_price": 100.78,
+      "shares": 3,
+      "stop": 101.35,
+      "trail_dist": 0.57,
+      "peak": 100.78,
+      "orb_width": 1.14,
+      "cost": 302.34,
+      "vol_ratio": 1.67
+    },
+    {
+      "ticker": "WEC",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "12:29 ET",
+      "entry_price": 109.38,
+      "shares": 2,
+      "stop": 110.1049,
+      "trail_dist": 0.7249,
+      "peak": 109.38,
+      "orb_width": 1.4499,
+      "cost": 218.76,
+      "vol_ratio": 1.25
+    },
+    {
+      "ticker": "TPR",
+      "side": "long",
+      "entry_date": "2026-07-30",
+      "entry_time": "12:29 ET",
+      "entry_price": 151.99,
+      "shares": 1,
+      "stop": 151.085,
+      "trail_dist": 0.905,
+      "peak": 151.99,
+      "orb_width": 1.81,
+      "cost": 151.99,
+      "vol_ratio": 1.23
+    },
+    {
+      "ticker": "IR",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "12:29 ET",
+      "entry_price": 83.54,
+      "shares": 2,
+      "stop": 84.7925,
+      "trail_dist": 1.2525,
+      "peak": 83.54,
+      "orb_width": 2.505,
+      "cost": 167.08,
+      "vol_ratio": 1.22
     }
   ],
   "closed_today": [
@@ -53266,7 +53336,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 95769.91
+    "2026-07-30": 95786.31
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -105675,6 +105745,56 @@
       "exits": [],
       "portfolio_value": 95769.91,
       "note": "$95,770 | cash=$1,659 | open=53 | closed today=42 | day PnL=$-118"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "12:29 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "CF",
+          "side": "short",
+          "price": 124.66,
+          "shares": 3,
+          "stop": 125.51,
+          "trail_dist": 0.85
+        },
+        {
+          "ticker": "PNW",
+          "side": "short",
+          "price": 100.78,
+          "shares": 3,
+          "stop": 101.35,
+          "trail_dist": 0.57
+        },
+        {
+          "ticker": "WEC",
+          "side": "short",
+          "price": 109.38,
+          "shares": 2,
+          "stop": 110.1,
+          "trail_dist": 0.7249
+        },
+        {
+          "ticker": "TPR",
+          "side": "long",
+          "price": 151.99,
+          "shares": 1,
+          "stop": 151.09,
+          "trail_dist": 0.905
+        },
+        {
+          "ticker": "IR",
+          "side": "short",
+          "price": 83.54,
+          "shares": 2,
+          "stop": 84.79,
+          "trail_dist": 1.2525
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 95786.31,
+      "note": "$95,786 | cash=$445 | open=58 | closed today=42 | day PnL=$-118"
     }
   ]
 }
