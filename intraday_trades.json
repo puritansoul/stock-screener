@@ -1,5 +1,5 @@
 {
-  "capital": 869.53,
+  "capital": 320.47,
   "open_positions": [
     {
       "ticker": "MKC",
@@ -344,9 +344,9 @@
       "entry_time": "10:33 ET",
       "entry_price": 49.3,
       "shares": 1,
-      "stop": 49.12,
+      "stop": 49.105,
       "trail_dist": 0.25,
-      "peak": 48.87,
+      "peak": 48.855,
       "orb_width": 0.5,
       "cost": 49.3,
       "vol_ratio": 2.32
@@ -372,9 +372,9 @@
       "entry_time": "10:48 ET",
       "entry_price": 69.7,
       "shares": 34,
-      "stop": 69.655,
+      "stop": 69.64,
       "trail_dist": 0.335,
-      "peak": 69.32,
+      "peak": 69.305,
       "orb_width": 0.6699,
       "cost": 2369.8,
       "vol_ratio": 1.42
@@ -442,9 +442,9 @@
       "entry_time": "10:55 ET",
       "entry_price": 187.18,
       "shares": 4,
-      "stop": 187.785,
+      "stop": 187.4,
       "trail_dist": 1.28,
-      "peak": 186.505,
+      "peak": 186.12,
       "orb_width": 2.56,
       "cost": 748.72,
       "vol_ratio": 2.82
@@ -484,9 +484,9 @@
       "entry_time": "11:03 ET",
       "entry_price": 73.5554,
       "shares": 3,
-      "stop": 74.04,
+      "stop": 74.01,
       "trail_dist": 0.78,
-      "peak": 73.26,
+      "peak": 73.23,
       "orb_width": 1.56,
       "cost": 220.67,
       "vol_ratio": 2.96
@@ -554,9 +554,9 @@
       "entry_time": "11:08 ET",
       "entry_price": 274.4,
       "shares": 2,
-      "stop": 279.4175,
+      "stop": 279.2975,
       "trail_dist": 6.2975,
-      "peak": 273.12,
+      "peak": 273.0,
       "orb_width": 12.595,
       "cost": 548.8,
       "vol_ratio": 1.57
@@ -624,9 +624,9 @@
       "entry_time": "11:18 ET",
       "entry_price": 7.6829,
       "shares": 79,
-      "stop": 7.7319,
+      "stop": 7.709,
       "trail_dist": 0.049,
-      "peak": 7.6829,
+      "peak": 7.66,
       "orb_width": 0.098,
       "cost": 606.95,
       "vol_ratio": 2.96
@@ -652,12 +652,54 @@
       "entry_time": "11:18 ET",
       "entry_price": 88.79,
       "shares": 3,
-      "stop": 87.7445,
+      "stop": 88.2945,
       "trail_dist": 1.0455,
-      "peak": 88.79,
+      "peak": 89.34,
       "orb_width": 2.0911,
       "cost": 266.37,
       "vol_ratio": 1.24
+    },
+    {
+      "ticker": "WY",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "11:23 ET",
+      "entry_price": 23.37,
+      "shares": 11,
+      "stop": 23.69,
+      "trail_dist": 0.32,
+      "peak": 23.37,
+      "orb_width": 0.64,
+      "cost": 257.07,
+      "vol_ratio": 3.58
+    },
+    {
+      "ticker": "AES",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "11:23 ET",
+      "entry_price": 14.81,
+      "shares": 12,
+      "stop": 14.825,
+      "trail_dist": 0.015,
+      "peak": 14.81,
+      "orb_width": 0.03,
+      "cost": 177.72,
+      "vol_ratio": 3.38
+    },
+    {
+      "ticker": "UDR",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "11:23 ET",
+      "entry_price": 38.09,
+      "shares": 3,
+      "stop": 38.445,
+      "trail_dist": 0.355,
+      "peak": 38.09,
+      "orb_width": 0.71,
+      "cost": 114.27,
+      "vol_ratio": 1.67
     }
   ],
   "closed_today": [
@@ -50612,6 +50654,11 @@
       "low": 71.56,
       "width": 2.88
     },
+    "BF-B": {
+      "high": 29.16,
+      "low": 28.69,
+      "width": 0.47
+    },
     "BLDR": {
       "high": 68.8433,
       "low": 66.4,
@@ -52759,7 +52806,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 96011.42
+    "2026-07-30": 95986.47
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -104628,6 +104675,40 @@
       "exits": [],
       "portfolio_value": 96011.42,
       "note": "$96,011 | cash=$870 | open=47 | closed today=20 | day PnL=$-63"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "11:23 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "WY",
+          "side": "short",
+          "price": 23.37,
+          "shares": 11,
+          "stop": 23.69,
+          "trail_dist": 0.32
+        },
+        {
+          "ticker": "AES",
+          "side": "short",
+          "price": 14.81,
+          "shares": 12,
+          "stop": 14.83,
+          "trail_dist": 0.015
+        },
+        {
+          "ticker": "UDR",
+          "side": "short",
+          "price": 38.09,
+          "shares": 3,
+          "stop": 38.45,
+          "trail_dist": 0.355
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 95986.47,
+      "note": "$95,986 | cash=$320 | open=50 | closed today=20 | day PnL=$-63"
     }
   ]
 }
