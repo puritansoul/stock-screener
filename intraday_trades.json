@@ -1,5 +1,5 @@
 {
-  "capital": 1966.72,
+  "capital": 1416.61,
   "open_positions": [
     {
       "ticker": "CNP",
@@ -22,9 +22,9 @@
       "entry_time": "10:08 ET",
       "entry_price": 311.64,
       "shares": 10,
-      "stop": 312.0225,
+      "stop": 312.6374,
       "trail_dist": 3.3125,
-      "peak": 315.335,
+      "peak": 315.9499,
       "orb_width": 6.625,
       "cost": 3116.4,
       "vol_ratio": 1.58
@@ -36,9 +36,9 @@
       "entry_time": "10:08 ET",
       "entry_price": 209.365,
       "shares": 5,
-      "stop": 208.205,
+      "stop": 208.4344,
       "trail_dist": 2.67,
-      "peak": 210.875,
+      "peak": 211.1044,
       "orb_width": 5.34,
       "cost": 1046.83,
       "vol_ratio": 1.27
@@ -498,9 +498,9 @@
       "entry_time": "12:34 ET",
       "entry_price": 112.73,
       "shares": 2,
-      "stop": 112.8037,
+      "stop": 112.7937,
       "trail_dist": 0.7837,
-      "peak": 112.02,
+      "peak": 112.01,
       "orb_width": 1.5675,
       "cost": 225.46,
       "vol_ratio": 1.43
@@ -820,9 +820,9 @@
       "entry_time": "14:04 ET",
       "entry_price": 374.655,
       "shares": 10,
-      "stop": 367.905,
+      "stop": 368.06,
       "trail_dist": 6.75,
-      "peak": 374.655,
+      "peak": 374.81,
       "orb_width": 13.5,
       "cost": 3746.55,
       "vol_ratio": 1.7
@@ -848,9 +848,9 @@
       "entry_time": "14:04 ET",
       "entry_price": 292.52,
       "shares": 7,
-      "stop": 296.0525,
+      "stop": 295.8475,
       "trail_dist": 3.5325,
-      "peak": 292.52,
+      "peak": 292.315,
       "orb_width": 7.065,
       "cost": 2047.64,
       "vol_ratio": 1.38
@@ -862,9 +862,9 @@
       "entry_time": "14:04 ET",
       "entry_price": 504.915,
       "shares": 3,
-      "stop": 507.67,
+      "stop": 507.395,
       "trail_dist": 2.755,
-      "peak": 504.915,
+      "peak": 504.64,
       "orb_width": 5.51,
       "cost": 1514.75,
       "vol_ratio": 1.34
@@ -876,9 +876,9 @@
       "entry_time": "14:04 ET",
       "entry_price": 109.92,
       "shares": 10,
-      "stop": 110.6449,
+      "stop": 110.5549,
       "trail_dist": 0.7249,
-      "peak": 109.92,
+      "peak": 109.83,
       "orb_width": 1.4499,
       "cost": 1099.2,
       "vol_ratio": 1.32
@@ -890,12 +890,26 @@
       "entry_time": "14:04 ET",
       "entry_price": 323.08,
       "shares": 2,
-      "stop": 320.03,
+      "stop": 320.06,
       "trail_dist": 3.05,
-      "peak": 323.08,
+      "peak": 323.11,
       "orb_width": 6.1,
       "cost": 646.16,
       "vol_ratio": 1.23
+    },
+    {
+      "ticker": "TKO",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "14:07 ET",
+      "entry_price": 183.37,
+      "shares": 3,
+      "stop": 184.315,
+      "trail_dist": 0.945,
+      "peak": 183.37,
+      "orb_width": 1.89,
+      "cost": 550.11,
+      "vol_ratio": 1.49
     }
   ],
   "closed_today": [
@@ -51554,9 +51568,9 @@
       "width": 6.0075
     },
     "GOOGL": {
-      "high": 335.54,
+      "high": 336.51,
       "low": 330.34,
-      "width": 5.2
+      "width": 6.17
     },
     "GOOG": {
       "high": 334.7,
@@ -52744,9 +52758,9 @@
       "width": 1.98
     },
     "INTU": {
-      "high": 318.36,
+      "high": 317.83,
       "low": 308.9501,
-      "width": 9.4099
+      "width": 8.8799
     },
     "ISRG": {
       "high": 354.96,
@@ -53538,11 +53552,6 @@
       "low": 410.77,
       "width": 6.17
     },
-    "SOLV": {
-      "high": 88.61,
-      "low": 87.54,
-      "width": 1.07
-    },
     "SO": {
       "high": 97.31,
       "low": 94.84,
@@ -53990,7 +53999,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 95488.78
+    "2026-07-30": 95492.03
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -107200,6 +107209,24 @@
       ],
       "portfolio_value": 95488.78,
       "note": "$95,489 | cash=$1,967 | open=64 | closed today=72 | day PnL=$-263"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "14:07 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "TKO",
+          "side": "short",
+          "price": 183.37,
+          "shares": 3,
+          "stop": 184.31,
+          "trail_dist": 0.945
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 95492.03,
+      "note": "$95,492 | cash=$1,417 | open=65 | closed today=72 | day PnL=$-263"
     }
   ]
 }
