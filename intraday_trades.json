@@ -1,5 +1,5 @@
 {
-  "capital": 778.22,
+  "capital": 3106.64,
   "open_positions": [
     {
       "ticker": "CNP",
@@ -534,20 +534,6 @@
       "vol_ratio": 1.27
     },
     {
-      "ticker": "MTB",
-      "side": "short",
-      "entry_date": "2026-07-30",
-      "entry_time": "12:16 ET",
-      "entry_price": 248.185,
-      "shares": 22,
-      "stop": 248.9925,
-      "trail_dist": 0.8075,
-      "peak": 248.185,
-      "orb_width": 1.615,
-      "cost": 5460.07,
-      "vol_ratio": 3.3
-    },
-    {
       "ticker": "STLD",
       "side": "long",
       "entry_date": "2026-07-30",
@@ -596,9 +582,9 @@
       "entry_time": "12:19 ET",
       "entry_price": 132.065,
       "shares": 20,
-      "stop": 133.145,
+      "stop": 133.075,
       "trail_dist": 1.225,
-      "peak": 131.92,
+      "peak": 131.85,
       "orb_width": 2.45,
       "cost": 2641.3,
       "vol_ratio": 1.41
@@ -638,9 +624,9 @@
       "entry_time": "12:24 ET",
       "entry_price": 1051.78,
       "shares": 1,
-      "stop": 1065.7175,
+      "stop": 1062.3125,
       "trail_dist": 15.0675,
-      "peak": 1050.65,
+      "peak": 1047.245,
       "orb_width": 30.135,
       "cost": 1051.78,
       "vol_ratio": 2.0
@@ -680,9 +666,9 @@
       "entry_time": "12:24 ET",
       "entry_price": 512.0875,
       "shares": 1,
-      "stop": 509.515,
+      "stop": 509.785,
       "trail_dist": 3.195,
-      "peak": 512.71,
+      "peak": 512.98,
       "orb_width": 6.39,
       "cost": 512.09,
       "vol_ratio": 1.38
@@ -694,9 +680,9 @@
       "entry_time": "12:29 ET",
       "entry_price": 124.66,
       "shares": 3,
-      "stop": 125.51,
+      "stop": 125.45,
       "trail_dist": 0.85,
-      "peak": 124.66,
+      "peak": 124.6,
       "orb_width": 1.7,
       "cost": 373.98,
       "vol_ratio": 1.82
@@ -736,9 +722,9 @@
       "entry_time": "12:29 ET",
       "entry_price": 151.99,
       "shares": 1,
-      "stop": 151.295,
+      "stop": 151.315,
       "trail_dist": 0.905,
-      "peak": 152.2,
+      "peak": 152.22,
       "orb_width": 1.81,
       "cost": 151.99,
       "vol_ratio": 1.23
@@ -862,12 +848,40 @@
       "entry_time": "12:39 ET",
       "entry_price": 52.17,
       "shares": 6,
-      "stop": 52.8975,
+      "stop": 52.8775,
       "trail_dist": 0.7275,
-      "peak": 52.17,
+      "peak": 52.15,
       "orb_width": 1.455,
       "cost": 313.02,
       "vol_ratio": 1.22
+    },
+    {
+      "ticker": "ALLE",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "12:42 ET",
+      "entry_price": 154.64,
+      "shares": 12,
+      "stop": 156.59,
+      "trail_dist": 1.95,
+      "peak": 154.64,
+      "orb_width": 3.9,
+      "cost": 1855.68,
+      "vol_ratio": 3.21
+    },
+    {
+      "ticker": "EA",
+      "side": "long",
+      "entry_date": "2026-07-30",
+      "entry_time": "12:42 ET",
+      "entry_price": 209.7,
+      "shares": 6,
+      "stop": 209.58,
+      "trail_dist": 0.12,
+      "peak": 209.7,
+      "orb_width": 0.24,
+      "cost": 1258.2,
+      "vol_ratio": 1.65
     }
   ],
   "closed_today": [
@@ -1744,6 +1758,25 @@
       "pnl": -10.37,
       "exit_reason": "trailing stop",
       "exit_time": "12:39 ET"
+    },
+    {
+      "ticker": "MTB",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "12:16 ET",
+      "entry_price": 248.185,
+      "shares": 22,
+      "stop": 248.9925,
+      "trail_dist": 0.8075,
+      "peak": 248.185,
+      "orb_width": 1.615,
+      "cost": 5460.07,
+      "vol_ratio": 3.3,
+      "exit_date": "2026-07-30",
+      "exit_price": 248.9925,
+      "pnl": -17.77,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:42 ET"
     }
   ],
   "all_closed": [
@@ -53468,7 +53501,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 95656.39
+    "2026-07-30": 95646.97
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -106060,6 +106093,40 @@
       ],
       "portfolio_value": 95656.39,
       "note": "$95,656 | cash=$778 | open=62 | closed today=46 | day PnL=$-137"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "12:41 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "ALLE",
+          "side": "short",
+          "price": 154.64,
+          "shares": 12,
+          "stop": 156.59,
+          "trail_dist": 1.95
+        },
+        {
+          "ticker": "EA",
+          "side": "long",
+          "price": 209.7,
+          "shares": 6,
+          "stop": 209.58,
+          "trail_dist": 0.12
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "MTB",
+          "side": "short",
+          "exit_price": 248.99,
+          "pnl": -17.77,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95646.97,
+      "note": "$95,647 | cash=$3,107 | open=63 | closed today=47 | day PnL=$-154"
     }
   ]
 }
