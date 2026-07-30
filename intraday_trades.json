@@ -1,5 +1,5 @@
 {
-  "capital": 10697.96,
+  "capital": 1966.72,
   "open_positions": [
     {
       "ticker": "CNP",
@@ -36,9 +36,9 @@
       "entry_time": "10:08 ET",
       "entry_price": 209.365,
       "shares": 5,
-      "stop": 208.045,
+      "stop": 208.205,
       "trail_dist": 2.67,
-      "peak": 210.715,
+      "peak": 210.875,
       "orb_width": 5.34,
       "cost": 1046.83,
       "vol_ratio": 1.27
@@ -204,9 +204,9 @@
       "entry_time": "11:16 ET",
       "entry_price": 161.77,
       "shares": 2,
-      "stop": 162.94,
+      "stop": 162.92,
       "trail_dist": 1.49,
-      "peak": 161.45,
+      "peak": 161.43,
       "orb_width": 2.98,
       "cost": 323.54,
       "vol_ratio": 1.47
@@ -364,20 +364,6 @@
       "orb_width": 11.26,
       "cost": 3819.14,
       "vol_ratio": 1.59
-    },
-    {
-      "ticker": "PCAR",
-      "side": "short",
-      "entry_date": "2026-07-30",
-      "entry_time": "12:19 ET",
-      "entry_price": 132.065,
-      "shares": 20,
-      "stop": 133.075,
-      "trail_dist": 1.225,
-      "peak": 131.85,
-      "orb_width": 2.45,
-      "cost": 2641.3,
-      "vol_ratio": 1.41
     },
     {
       "ticker": "AES",
@@ -820,12 +806,96 @@
       "entry_time": "13:35 ET",
       "entry_price": 181.86,
       "shares": 2,
-      "stop": 179.9525,
+      "stop": 180.2775,
       "trail_dist": 2.0375,
-      "peak": 181.99,
+      "peak": 182.315,
       "orb_width": 4.075,
       "cost": 363.72,
       "vol_ratio": 1.27
+    },
+    {
+      "ticker": "HUM",
+      "side": "long",
+      "entry_date": "2026-07-30",
+      "entry_time": "14:04 ET",
+      "entry_price": 374.655,
+      "shares": 10,
+      "stop": 367.905,
+      "trail_dist": 6.75,
+      "peak": 374.655,
+      "orb_width": 13.5,
+      "cost": 3746.55,
+      "vol_ratio": 1.7
+    },
+    {
+      "ticker": "MSCI",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "14:04 ET",
+      "entry_price": 574.5125,
+      "shares": 4,
+      "stop": 579.7733,
+      "trail_dist": 5.2608,
+      "peak": 574.5125,
+      "orb_width": 10.5217,
+      "cost": 2298.05,
+      "vol_ratio": 1.67
+    },
+    {
+      "ticker": "EXPE",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "14:04 ET",
+      "entry_price": 292.52,
+      "shares": 7,
+      "stop": 296.0525,
+      "trail_dist": 3.5325,
+      "peak": 292.52,
+      "orb_width": 7.065,
+      "cost": 2047.64,
+      "vol_ratio": 1.38
+    },
+    {
+      "ticker": "LIN",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "14:04 ET",
+      "entry_price": 504.915,
+      "shares": 3,
+      "stop": 507.67,
+      "trail_dist": 2.755,
+      "peak": 504.915,
+      "orb_width": 5.51,
+      "cost": 1514.75,
+      "vol_ratio": 1.34
+    },
+    {
+      "ticker": "WEC",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "14:04 ET",
+      "entry_price": 109.92,
+      "shares": 10,
+      "stop": 110.6449,
+      "trail_dist": 0.7249,
+      "peak": 109.92,
+      "orb_width": 1.4499,
+      "cost": 1099.2,
+      "vol_ratio": 1.32
+    },
+    {
+      "ticker": "HLT",
+      "side": "long",
+      "entry_date": "2026-07-30",
+      "entry_time": "14:04 ET",
+      "entry_price": 323.08,
+      "shares": 2,
+      "stop": 320.03,
+      "trail_dist": 3.05,
+      "peak": 323.08,
+      "orb_width": 6.1,
+      "cost": 646.16,
+      "vol_ratio": 1.23
     }
   ],
   "closed_today": [
@@ -2177,6 +2247,25 @@
       "pnl": -1.34,
       "exit_reason": "trailing stop",
       "exit_time": "14:00 ET"
+    },
+    {
+      "ticker": "PCAR",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "12:19 ET",
+      "entry_price": 132.065,
+      "shares": 20,
+      "stop": 133.075,
+      "trail_dist": 1.225,
+      "peak": 131.85,
+      "orb_width": 2.45,
+      "cost": 2641.3,
+      "vol_ratio": 1.41,
+      "exit_date": "2026-07-30",
+      "exit_price": 133.075,
+      "pnl": -20.2,
+      "exit_reason": "trailing stop",
+      "exit_time": "14:04 ET"
     }
   ],
   "all_closed": [
@@ -52655,9 +52744,9 @@
       "width": 1.98
     },
     "INTU": {
-      "high": 317.83,
+      "high": 318.36,
       "low": 308.9501,
-      "width": 8.8799
+      "width": 9.4099
     },
     "ISRG": {
       "high": 354.96,
@@ -53901,7 +53990,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 95510.26
+    "2026-07-30": 95488.78
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -107045,6 +107134,72 @@
       "exits": [],
       "portfolio_value": 95510.26,
       "note": "$95,510 | cash=$10,698 | open=59 | closed today=71 | day PnL=$-242"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "14:04 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "HUM",
+          "side": "long",
+          "price": 374.65,
+          "shares": 10,
+          "stop": 367.9,
+          "trail_dist": 6.75
+        },
+        {
+          "ticker": "MSCI",
+          "side": "short",
+          "price": 574.51,
+          "shares": 4,
+          "stop": 579.77,
+          "trail_dist": 5.2608
+        },
+        {
+          "ticker": "EXPE",
+          "side": "short",
+          "price": 292.52,
+          "shares": 7,
+          "stop": 296.05,
+          "trail_dist": 3.5325
+        },
+        {
+          "ticker": "LIN",
+          "side": "short",
+          "price": 504.92,
+          "shares": 3,
+          "stop": 507.67,
+          "trail_dist": 2.755
+        },
+        {
+          "ticker": "WEC",
+          "side": "short",
+          "price": 109.92,
+          "shares": 10,
+          "stop": 110.64,
+          "trail_dist": 0.7249
+        },
+        {
+          "ticker": "HLT",
+          "side": "long",
+          "price": 323.08,
+          "shares": 2,
+          "stop": 320.03,
+          "trail_dist": 3.05
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "PCAR",
+          "side": "short",
+          "exit_price": 133.07,
+          "pnl": -20.2,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95488.78,
+      "note": "$95,489 | cash=$1,967 | open=64 | closed today=72 | day PnL=$-263"
     }
   ]
 }
