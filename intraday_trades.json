@@ -1,5 +1,5 @@
 {
-  "capital": 1370.87,
+  "capital": 981.85,
   "open_positions": [
     {
       "ticker": "CNP",
@@ -218,9 +218,9 @@
       "entry_time": "11:23 ET",
       "entry_price": 23.37,
       "shares": 11,
-      "stop": 23.515,
+      "stop": 23.485,
       "trail_dist": 0.32,
-      "peak": 23.195,
+      "peak": 23.165,
       "orb_width": 0.64,
       "cost": 257.07,
       "vol_ratio": 3.58
@@ -414,9 +414,9 @@
       "entry_time": "12:24 ET",
       "entry_price": 512.0875,
       "shares": 1,
-      "stop": 511.78,
+      "stop": 511.7862,
       "trail_dist": 3.195,
-      "peak": 514.975,
+      "peak": 514.9812,
       "orb_width": 6.39,
       "cost": 512.09,
       "vol_ratio": 1.38
@@ -484,9 +484,9 @@
       "entry_time": "12:34 ET",
       "entry_price": 88.36,
       "shares": 1,
-      "stop": 87.8425,
+      "stop": 87.8825,
       "trail_dist": 0.9775,
-      "peak": 88.82,
+      "peak": 88.86,
       "orb_width": 1.955,
       "cost": 88.36,
       "vol_ratio": 1.21
@@ -680,9 +680,9 @@
       "entry_time": "13:04 ET",
       "entry_price": 175.575,
       "shares": 8,
-      "stop": 175.215,
+      "stop": 175.075,
       "trail_dist": 0.785,
-      "peak": 174.43,
+      "peak": 174.29,
       "orb_width": 1.57,
       "cost": 1404.6,
       "vol_ratio": 1.23
@@ -736,9 +736,9 @@
       "entry_time": "13:14 ET",
       "entry_price": 48.97,
       "shares": 10,
-      "stop": 49.09,
+      "stop": 49.08,
       "trail_dist": 0.25,
-      "peak": 48.84,
+      "peak": 48.83,
       "orb_width": 0.5,
       "cost": 489.7,
       "vol_ratio": 1.33
@@ -834,9 +834,9 @@
       "entry_time": "14:04 ET",
       "entry_price": 109.92,
       "shares": 10,
-      "stop": 110.5036,
+      "stop": 110.3699,
       "trail_dist": 0.7249,
-      "peak": 109.7787,
+      "peak": 109.645,
       "orb_width": 1.4499,
       "cost": 1099.2,
       "vol_ratio": 1.32
@@ -862,9 +862,9 @@
       "entry_time": "14:07 ET",
       "entry_price": 183.37,
       "shares": 3,
-      "stop": 183.97,
+      "stop": 183.795,
       "trail_dist": 0.945,
-      "peak": 183.025,
+      "peak": 182.85,
       "orb_width": 1.89,
       "cost": 550.11,
       "vol_ratio": 1.49
@@ -918,9 +918,9 @@
       "entry_time": "14:14 ET",
       "entry_price": 71.09,
       "shares": 2,
-      "stop": 71.48,
+      "stop": 71.41,
       "trail_dist": 0.41,
-      "peak": 71.07,
+      "peak": 71.0,
       "orb_width": 0.82,
       "cost": 142.18,
       "vol_ratio": 1.34
@@ -946,9 +946,9 @@
       "entry_time": "14:19 ET",
       "entry_price": 109.86,
       "shares": 11,
-      "stop": 110.42,
+      "stop": 110.385,
       "trail_dist": 0.875,
-      "peak": 109.545,
+      "peak": 109.51,
       "orb_width": 1.75,
       "cost": 1208.46,
       "vol_ratio": 1.57
@@ -974,9 +974,9 @@
       "entry_time": "14:19 ET",
       "entry_price": 230.145,
       "shares": 2,
-      "stop": 232.2625,
+      "stop": 232.2575,
       "trail_dist": 2.1175,
-      "peak": 230.145,
+      "peak": 230.14,
       "orb_width": 4.235,
       "cost": 460.29,
       "vol_ratio": 1.31
@@ -988,12 +988,26 @@
       "entry_time": "14:22 ET",
       "entry_price": 126.43,
       "shares": 4,
-      "stop": 127.6025,
+      "stop": 127.4925,
       "trail_dist": 1.1725,
-      "peak": 126.43,
+      "peak": 126.32,
       "orb_width": 2.345,
       "cost": 505.72,
       "vol_ratio": 2.39
+    },
+    {
+      "ticker": "PPL",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "14:24 ET",
+      "entry_price": 35.365,
+      "shares": 11,
+      "stop": 35.59,
+      "trail_dist": 0.225,
+      "peak": 35.365,
+      "orb_width": 0.45,
+      "cost": 389.02,
+      "vol_ratio": 1.31
     }
   ],
   "closed_today": [
@@ -54145,7 +54159,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 95468.51
+    "2026-07-30": 95506.79
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -107526,6 +107540,24 @@
       ],
       "portfolio_value": 95468.51,
       "note": "$95,469 | cash=$1,371 | open=71 | closed today=75 | day PnL=$-273"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "14:24 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "PPL",
+          "side": "short",
+          "price": 35.37,
+          "shares": 11,
+          "stop": 35.59,
+          "trail_dist": 0.225
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 95506.79,
+      "note": "$95,507 | cash=$982 | open=72 | closed today=75 | day PnL=$-273"
     }
   ]
 }
