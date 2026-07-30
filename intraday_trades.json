@@ -1,5 +1,5 @@
 {
-  "capital": 1817.94,
+  "capital": 1085.36,
   "open_positions": [
     {
       "ticker": "MKC",
@@ -134,9 +134,9 @@
       "entry_time": "10:13 ET",
       "entry_price": 87.4986,
       "shares": 40,
-      "stop": 87.91,
+      "stop": 87.795,
       "trail_dist": 1.11,
-      "peak": 86.8,
+      "peak": 86.685,
       "orb_width": 2.22,
       "cost": 3499.94,
       "vol_ratio": 1.88
@@ -232,9 +232,9 @@
       "entry_time": "10:18 ET",
       "entry_price": 375.4,
       "shares": 1,
-      "stop": 375.8825,
+      "stop": 375.2425,
       "trail_dist": 5.4325,
-      "peak": 370.45,
+      "peak": 369.81,
       "orb_width": 10.8651,
       "cost": 375.4,
       "vol_ratio": 1.38
@@ -316,9 +316,9 @@
       "entry_time": "10:33 ET",
       "entry_price": 48.64,
       "shares": 2,
-      "stop": 49.0234,
+      "stop": 48.9984,
       "trail_dist": 0.5234,
-      "peak": 48.5,
+      "peak": 48.475,
       "orb_width": 1.0468,
       "cost": 97.28,
       "vol_ratio": 3.29
@@ -330,9 +330,9 @@
       "entry_time": "10:33 ET",
       "entry_price": 94.28,
       "shares": 1,
-      "stop": 94.5525,
+      "stop": 94.3225,
       "trail_dist": 0.6725,
-      "peak": 93.88,
+      "peak": 93.65,
       "orb_width": 1.345,
       "cost": 94.28,
       "vol_ratio": 2.7
@@ -386,9 +386,9 @@
       "entry_time": "10:48 ET",
       "entry_price": 286.53,
       "shares": 5,
-      "stop": 289.025,
+      "stop": 288.72,
       "trail_dist": 2.76,
-      "peak": 286.265,
+      "peak": 285.96,
       "orb_width": 5.52,
       "cost": 1432.65,
       "vol_ratio": 1.22
@@ -464,20 +464,6 @@
       "vol_ratio": 2.82
     },
     {
-      "ticker": "AES",
-      "side": "short",
-      "entry_date": "2026-07-30",
-      "entry_time": "10:58 ET",
-      "entry_price": 14.8,
-      "shares": 49,
-      "stop": 14.815,
-      "trail_dist": 0.015,
-      "peak": 14.8,
-      "orb_width": 0.03,
-      "cost": 725.2,
-      "vol_ratio": 3.43
-    },
-    {
       "ticker": "ACGL",
       "side": "short",
       "entry_date": "2026-07-30",
@@ -498,9 +484,9 @@
       "entry_time": "11:03 ET",
       "entry_price": 331.55,
       "shares": 1,
-      "stop": 332.88,
+      "stop": 332.74,
       "trail_dist": 1.88,
-      "peak": 331.0,
+      "peak": 330.86,
       "orb_width": 3.76,
       "cost": 331.55,
       "vol_ratio": 3.81
@@ -540,9 +526,9 @@
       "entry_time": "11:08 ET",
       "entry_price": 112.2376,
       "shares": 15,
-      "stop": 113.0213,
+      "stop": 112.8237,
       "trail_dist": 0.7837,
-      "peak": 112.2376,
+      "peak": 112.04,
       "orb_width": 1.5675,
       "cost": 1683.56,
       "vol_ratio": 3.69
@@ -582,12 +568,54 @@
       "entry_time": "11:08 ET",
       "entry_price": 274.4,
       "shares": 2,
-      "stop": 280.5975,
+      "stop": 279.9775,
       "trail_dist": 6.2975,
-      "peak": 274.3,
+      "peak": 273.68,
       "orb_width": 12.595,
       "cost": 548.8,
       "vol_ratio": 1.57
+    },
+    {
+      "ticker": "AES",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "11:13 ET",
+      "entry_price": 14.785,
+      "shares": 51,
+      "stop": 14.8,
+      "trail_dist": 0.015,
+      "peak": 14.785,
+      "orb_width": 0.03,
+      "cost": 754.03,
+      "vol_ratio": 13.08
+    },
+    {
+      "ticker": "DRI",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "11:13 ET",
+      "entry_price": 206.78,
+      "shares": 2,
+      "stop": 208.425,
+      "trail_dist": 1.645,
+      "peak": 206.78,
+      "orb_width": 3.29,
+      "cost": 413.56,
+      "vol_ratio": 1.85
+    },
+    {
+      "ticker": "CBRE",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "11:13 ET",
+      "entry_price": 145.465,
+      "shares": 2,
+      "stop": 146.9228,
+      "trail_dist": 1.4578,
+      "peak": 145.465,
+      "orb_width": 2.9155,
+      "cost": 290.93,
+      "vol_ratio": 1.22
     }
   ],
   "closed_today": [
@@ -913,6 +941,25 @@
       "pnl": -0.96,
       "exit_reason": "trailing stop",
       "exit_time": "11:11 ET"
+    },
+    {
+      "ticker": "AES",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:58 ET",
+      "entry_price": 14.8,
+      "shares": 49,
+      "stop": 14.785,
+      "trail_dist": 0.015,
+      "peak": 14.77,
+      "orb_width": 0.03,
+      "cost": 725.2,
+      "vol_ratio": 3.43,
+      "exit_date": "2026-07-30",
+      "exit_price": 14.785,
+      "pnl": 0.74,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:13 ET"
     }
   ],
   "all_closed": [
@@ -50636,9 +50683,9 @@
       "width": 8.47
     },
     "CINF": {
-      "high": 179.92,
+      "high": 179.42,
       "low": 176.24,
-      "width": 3.68
+      "width": 3.18
     },
     "CTAS": {
       "high": 211.06,
@@ -51150,6 +51197,11 @@
       "low": 61.74,
       "width": 1.9
     },
+    "GRMN": {
+      "high": 295.73,
+      "low": 287.0889,
+      "width": 8.6411
+    },
     "IT": {
       "high": 159.62,
       "low": 154.19,
@@ -51426,9 +51478,9 @@
       "width": 9.43
     },
     "JKHY": {
-      "high": 159.06,
+      "high": 159.135,
       "low": 156.1,
-      "width": 2.96
+      "width": 3.035
     },
     "J": {
       "high": 135.33,
@@ -52632,7 +52684,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 96030.52
+    "2026-07-30": 96027.42
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -104374,6 +104426,48 @@
       ],
       "portfolio_value": 96030.52,
       "note": "$96,031 | cash=$1,818 | open=42 | closed today=17 | day PnL=$-67"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "11:13 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "AES",
+          "side": "short",
+          "price": 14.78,
+          "shares": 51,
+          "stop": 14.8,
+          "trail_dist": 0.015
+        },
+        {
+          "ticker": "DRI",
+          "side": "short",
+          "price": 206.78,
+          "shares": 2,
+          "stop": 208.42,
+          "trail_dist": 1.645
+        },
+        {
+          "ticker": "CBRE",
+          "side": "short",
+          "price": 145.46,
+          "shares": 2,
+          "stop": 146.92,
+          "trail_dist": 1.4578
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "AES",
+          "side": "short",
+          "exit_price": 14.79,
+          "pnl": 0.74,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96027.42,
+      "note": "$96,027 | cash=$1,085 | open=44 | closed today=18 | day PnL=$-67"
     }
   ]
 }
