@@ -1,5 +1,5 @@
 {
-  "capital": 4567.02,
+  "capital": 7278.27,
   "open_positions": [
     {
       "ticker": "CNP",
@@ -70,20 +70,6 @@
       "orb_width": 2.22,
       "cost": 3499.94,
       "vol_ratio": 1.88
-    },
-    {
-      "ticker": "PHM",
-      "side": "short",
-      "entry_date": "2026-07-30",
-      "entry_time": "10:13 ET",
-      "entry_price": 129.535,
-      "shares": 19,
-      "stop": 129.03,
-      "trail_dist": 1.6,
-      "peak": 127.43,
-      "orb_width": 3.2,
-      "cost": 2461.17,
-      "vol_ratio": 1.83
     },
     {
       "ticker": "UPS",
@@ -182,34 +168,6 @@
       "orb_width": 2.53,
       "cost": 244.03,
       "vol_ratio": 1.43
-    },
-    {
-      "ticker": "FDXF",
-      "side": "short",
-      "entry_date": "2026-07-30",
-      "entry_time": "10:25 ET",
-      "entry_price": 142.13,
-      "shares": 1,
-      "stop": 140.535,
-      "trail_dist": 1.565,
-      "peak": 138.97,
-      "orb_width": 3.13,
-      "cost": 142.13,
-      "vol_ratio": 2.79
-    },
-    {
-      "ticker": "SLB",
-      "side": "short",
-      "entry_date": "2026-07-30",
-      "entry_time": "10:33 ET",
-      "entry_price": 48.64,
-      "shares": 2,
-      "stop": 48.8984,
-      "trail_dist": 0.5234,
-      "peak": 48.375,
-      "orb_width": 1.0468,
-      "cost": 97.28,
-      "vol_ratio": 3.29
     },
     {
       "ticker": "UNP",
@@ -680,9 +638,9 @@
       "entry_time": "12:19 ET",
       "entry_price": 146.89,
       "shares": 26,
-      "stop": 152.52,
+      "stop": 152.095,
       "trail_dist": 5.63,
-      "peak": 146.89,
+      "peak": 146.465,
       "orb_width": 11.26,
       "cost": 3819.14,
       "vol_ratio": 1.59
@@ -1457,6 +1415,63 @@
       "pnl": -6.14,
       "exit_reason": "trailing stop",
       "exit_time": "12:19 ET"
+    },
+    {
+      "ticker": "PHM",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:13 ET",
+      "entry_price": 129.535,
+      "shares": 19,
+      "stop": 129.03,
+      "trail_dist": 1.6,
+      "peak": 127.43,
+      "orb_width": 3.2,
+      "cost": 2461.17,
+      "vol_ratio": 1.83,
+      "exit_date": "2026-07-30",
+      "exit_price": 129.03,
+      "pnl": 9.59,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:22 ET"
+    },
+    {
+      "ticker": "FDXF",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:25 ET",
+      "entry_price": 142.13,
+      "shares": 1,
+      "stop": 140.535,
+      "trail_dist": 1.565,
+      "peak": 138.97,
+      "orb_width": 3.13,
+      "cost": 142.13,
+      "vol_ratio": 2.79,
+      "exit_date": "2026-07-30",
+      "exit_price": 140.535,
+      "pnl": 1.59,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:22 ET"
+    },
+    {
+      "ticker": "SLB",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:33 ET",
+      "entry_price": 48.64,
+      "shares": 2,
+      "stop": 48.8984,
+      "trail_dist": 0.5234,
+      "peak": 48.375,
+      "orb_width": 1.0468,
+      "cost": 97.28,
+      "vol_ratio": 3.29,
+      "exit_date": "2026-07-30",
+      "exit_price": 48.8984,
+      "pnl": -0.52,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:22 ET"
     }
   ],
   "all_closed": [
@@ -52124,11 +52139,6 @@
       "low": 115.29,
       "width": 2.24
     },
-    "LITE": {
-      "high": 693.62,
-      "low": 650.0,
-      "width": 43.62
-    },
     "LYB": {
       "high": 60.49,
       "low": 59.502,
@@ -52969,11 +52979,6 @@
       "low": 162.72,
       "width": 2.98
     },
-    "VLO": {
-      "high": 305.475,
-      "low": 294.21,
-      "width": 11.265
-    },
     "VEEV": {
       "high": 203.11,
       "low": 199.28,
@@ -53008,11 +53013,6 @@
       "high": 479.99,
       "low": 473.36,
       "width": 6.63
-    },
-    "VRT": {
-      "high": 241.32,
-      "low": 232.51,
-      "width": 8.81
     },
     "VTRS": {
       "high": 17.75,
@@ -53181,7 +53181,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 95768.04
+    "2026-07-30": 95790.99
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -105500,6 +105500,37 @@
       ],
       "portfolio_value": 95768.04,
       "note": "$95,768 | cash=$4,567 | open=51 | closed today=39 | day PnL=$-129"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "12:21 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "PHM",
+          "side": "short",
+          "exit_price": 129.03,
+          "pnl": 9.59,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "FDXF",
+          "side": "short",
+          "exit_price": 140.53,
+          "pnl": 1.59,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "SLB",
+          "side": "short",
+          "exit_price": 48.9,
+          "pnl": -0.52,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95790.99,
+      "note": "$95,791 | cash=$7,278 | open=48 | closed today=42 | day PnL=$-118"
     }
   ]
 }
