@@ -1,5 +1,5 @@
 {
-  "capital": 947.34,
+  "capital": 330.39,
   "open_positions": [
     {
       "ticker": "CNP",
@@ -492,20 +492,6 @@
       "vol_ratio": 1.75
     },
     {
-      "ticker": "PCG",
-      "side": "short",
-      "entry_date": "2026-07-30",
-      "entry_time": "11:38 ET",
-      "entry_price": 17.4512,
-      "shares": 28,
-      "stop": 17.565,
-      "trail_dist": 0.125,
-      "peak": 17.44,
-      "orb_width": 0.25,
-      "cost": 488.63,
-      "vol_ratio": 1.43
-    },
-    {
       "ticker": "BRO",
       "side": "short",
       "entry_date": "2026-07-30",
@@ -526,9 +512,9 @@
       "entry_time": "11:43 ET",
       "entry_price": 300.355,
       "shares": 21,
-      "stop": 301.9969,
+      "stop": 301.97,
       "trail_dist": 2.38,
-      "peak": 299.6169,
+      "peak": 299.59,
       "orb_width": 4.76,
       "cost": 6307.46,
       "vol_ratio": 1.93
@@ -750,9 +736,9 @@
       "entry_time": "12:29 ET",
       "entry_price": 100.78,
       "shares": 3,
-      "stop": 101.35,
+      "stop": 101.345,
       "trail_dist": 0.57,
-      "peak": 100.78,
+      "peak": 100.775,
       "orb_width": 1.14,
       "cost": 302.34,
       "vol_ratio": 1.67
@@ -798,6 +784,76 @@
       "orb_width": 2.505,
       "cost": 167.08,
       "vol_ratio": 1.22
+    },
+    {
+      "ticker": "TKO",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "12:34 ET",
+      "entry_price": 182.785,
+      "shares": 2,
+      "stop": 183.73,
+      "trail_dist": 0.945,
+      "peak": 182.785,
+      "orb_width": 1.89,
+      "cost": 365.57,
+      "vol_ratio": 2.85
+    },
+    {
+      "ticker": "ZBRA",
+      "side": "long",
+      "entry_date": "2026-07-30",
+      "entry_time": "12:34 ET",
+      "entry_price": 288.98,
+      "shares": 1,
+      "stop": 285.0725,
+      "trail_dist": 3.9075,
+      "peak": 288.98,
+      "orb_width": 7.815,
+      "cost": 288.98,
+      "vol_ratio": 2.11
+    },
+    {
+      "ticker": "EBAY",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "12:34 ET",
+      "entry_price": 112.73,
+      "shares": 2,
+      "stop": 113.5137,
+      "trail_dist": 0.7837,
+      "peak": 112.73,
+      "orb_width": 1.5675,
+      "cost": 225.46,
+      "vol_ratio": 1.43
+    },
+    {
+      "ticker": "EQR",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "12:34 ET",
+      "entry_price": 67.01,
+      "shares": 2,
+      "stop": 67.8794,
+      "trail_dist": 0.8694,
+      "peak": 67.01,
+      "orb_width": 1.7388,
+      "cost": 134.02,
+      "vol_ratio": 1.25
+    },
+    {
+      "ticker": "DAL",
+      "side": "long",
+      "entry_date": "2026-07-30",
+      "entry_time": "12:34 ET",
+      "entry_price": 88.36,
+      "shares": 1,
+      "stop": 87.3825,
+      "trail_dist": 0.9775,
+      "peak": 88.36,
+      "orb_width": 1.955,
+      "cost": 88.36,
+      "vol_ratio": 1.21
     }
   ],
   "closed_today": [
@@ -1617,6 +1673,25 @@
       "pnl": -3.08,
       "exit_reason": "trailing stop",
       "exit_time": "12:32 ET"
+    },
+    {
+      "ticker": "PCG",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "11:38 ET",
+      "entry_price": 17.4512,
+      "shares": 28,
+      "stop": 17.565,
+      "trail_dist": 0.125,
+      "peak": 17.44,
+      "orb_width": 0.25,
+      "cost": 488.63,
+      "vol_ratio": 1.43,
+      "exit_date": "2026-07-30",
+      "exit_price": 17.565,
+      "pnl": -3.19,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:34 ET"
     }
   ],
   "all_closed": [
@@ -51819,6 +51894,11 @@
       "low": 104.21,
       "width": 5.52
     },
+    "F": {
+      "high": 15.3713,
+      "low": 14.78,
+      "width": 0.5913
+    },
     "FTNT": {
       "high": 169.26,
       "low": 158.07,
@@ -53336,7 +53416,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 95710.23
+    "2026-07-30": 95680.53
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -105812,6 +105892,64 @@
       ],
       "portfolio_value": 95710.23,
       "note": "$95,710 | cash=$947 | open=57 | closed today=43 | day PnL=$-121"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "12:34 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "TKO",
+          "side": "short",
+          "price": 182.79,
+          "shares": 2,
+          "stop": 183.73,
+          "trail_dist": 0.945
+        },
+        {
+          "ticker": "ZBRA",
+          "side": "long",
+          "price": 288.98,
+          "shares": 1,
+          "stop": 285.07,
+          "trail_dist": 3.9075
+        },
+        {
+          "ticker": "EBAY",
+          "side": "short",
+          "price": 112.73,
+          "shares": 2,
+          "stop": 113.51,
+          "trail_dist": 0.7837
+        },
+        {
+          "ticker": "EQR",
+          "side": "short",
+          "price": 67.01,
+          "shares": 2,
+          "stop": 67.88,
+          "trail_dist": 0.8694
+        },
+        {
+          "ticker": "DAL",
+          "side": "long",
+          "price": 88.36,
+          "shares": 1,
+          "stop": 87.38,
+          "trail_dist": 0.9775
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "PCG",
+          "side": "short",
+          "exit_price": 17.57,
+          "pnl": -3.19,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95680.53,
+      "note": "$95,681 | cash=$330 | open=61 | closed today=44 | day PnL=$-124"
     }
   ]
 }
