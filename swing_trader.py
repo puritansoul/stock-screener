@@ -650,23 +650,13 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
                                 prices.loc[prices.index[-1], tk] = float(s.iloc[-1])
         except Exception:
             pass  # fall back to the daily prices already in the DataFrame
-    portfolio_value = nav.get(today_str, STARTING_CAPITAL)
-    total_ret = portfolio_value - STARTING_CAPITAL
-    total_pct = total_ret / STARTING_CAPITAL * 100
-    gain_color = "#2e7d32" if total_ret >= 0 else "#c62828"
-    gain_sign  = "+" if total_ret >= 0 else ""
-
-    # Day P&L — compare today's NAV to previous trading day's NAV
+    # Day P&L baseline — previous trading day's NAV
     nav_dates   = sorted(nav.keys())
     prev_nav    = STARTING_CAPITAL
     if len(nav_dates) >= 2 and nav_dates[-1] == today_str:
         prev_nav = nav[nav_dates[-2]]
     elif nav_dates and nav_dates[-1] != today_str:
         prev_nav = nav[nav_dates[-1]]
-    day_pnl      = round(portfolio_value - prev_nav, 2)
-    day_pct      = round(day_pnl / prev_nav * 100, 2) if prev_nav else 0
-    day_pnl_color = "#2e7d32" if day_pnl >= 0 else "#c62828"
-    day_pnl_sign  = "+" if day_pnl >= 0 else ""
 
     # Open positions rows
     open_rows = ""
@@ -730,6 +720,17 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
     total_curval   = sum_curval
     tu_color = "#2e7d32" if total_unreal >= 0 else "#c62828"
     tu_sign  = "+" if total_unreal >= 0 else ""
+
+    # Portfolio value = cash + current market value of holdings (single source of truth)
+    portfolio_value = capital + sum_curval
+    total_ret  = portfolio_value - STARTING_CAPITAL
+    total_pct  = total_ret / STARTING_CAPITAL * 100
+    gain_color = "#2e7d32" if total_ret >= 0 else "#c62828"
+    gain_sign  = "+" if total_ret >= 0 else ""
+    day_pnl    = round(portfolio_value - prev_nav, 2)
+    day_pct    = round(day_pnl / prev_nav * 100, 2) if prev_nav else 0
+    day_pnl_color = "#2e7d32" if day_pnl >= 0 else "#c62828"
+    day_pnl_sign  = "+" if day_pnl >= 0 else ""
     open_totals_row = f"""
         <tr style="background:#e8eaf6;font-weight:bold;border-top:2px solid #9fa8da">
           <td colspan="5" style="text-align:right;color:#555">Totals</td>
