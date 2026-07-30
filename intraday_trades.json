@@ -1,5 +1,5 @@
 {
-  "capital": 5829.96,
+  "capital": 1587.74,
   "open_positions": [
     {
       "ticker": "CNP",
@@ -218,9 +218,9 @@
       "entry_time": "11:23 ET",
       "entry_price": 23.37,
       "shares": 11,
-      "stop": 23.52,
+      "stop": 23.515,
       "trail_dist": 0.32,
-      "peak": 23.2,
+      "peak": 23.195,
       "orb_width": 0.64,
       "cost": 257.07,
       "vol_ratio": 3.58
@@ -344,9 +344,9 @@
       "entry_time": "12:19 ET",
       "entry_price": 146.89,
       "shares": 26,
-      "stop": 150.7201,
+      "stop": 150.57,
       "trail_dist": 5.63,
-      "peak": 145.0901,
+      "peak": 144.94,
       "orb_width": 11.26,
       "cost": 3819.14,
       "vol_ratio": 1.59
@@ -414,9 +414,9 @@
       "entry_time": "12:24 ET",
       "entry_price": 512.0875,
       "shares": 1,
-      "stop": 511.445,
+      "stop": 511.505,
       "trail_dist": 3.195,
-      "peak": 514.64,
+      "peak": 514.7,
       "orb_width": 6.39,
       "cost": 512.09,
       "vol_ratio": 1.38
@@ -498,9 +498,9 @@
       "entry_time": "12:34 ET",
       "entry_price": 88.36,
       "shares": 1,
-      "stop": 87.7225,
+      "stop": 87.7375,
       "trail_dist": 0.9775,
-      "peak": 88.7,
+      "peak": 88.715,
       "orb_width": 1.955,
       "cost": 88.36,
       "vol_ratio": 1.21
@@ -596,9 +596,9 @@
       "entry_time": "12:44 ET",
       "entry_price": 282.85,
       "shares": 2,
-      "stop": 280.0666,
+      "stop": 280.4866,
       "trail_dist": 3.4434,
-      "peak": 283.51,
+      "peak": 283.93,
       "orb_width": 6.8868,
       "cost": 565.7,
       "vol_ratio": 1.71
@@ -778,9 +778,9 @@
       "entry_time": "13:35 ET",
       "entry_price": 181.86,
       "shares": 2,
-      "stop": 180.2825,
+      "stop": 180.6475,
       "trail_dist": 2.0375,
-      "peak": 182.32,
+      "peak": 182.685,
       "orb_width": 4.075,
       "cost": 363.72,
       "vol_ratio": 1.27
@@ -932,12 +932,68 @@
       "entry_time": "14:14 ET",
       "entry_price": 71.09,
       "shares": 2,
-      "stop": 71.4839,
+      "stop": 71.48,
       "trail_dist": 0.41,
-      "peak": 71.0739,
+      "peak": 71.07,
       "orb_width": 0.82,
       "cost": 142.18,
       "vol_ratio": 1.34
+    },
+    {
+      "ticker": "SRE",
+      "side": "long",
+      "entry_date": "2026-07-30",
+      "entry_time": "14:19 ET",
+      "entry_price": 89.63,
+      "shares": 19,
+      "stop": 89.1799,
+      "trail_dist": 0.4501,
+      "peak": 89.63,
+      "orb_width": 0.9002,
+      "cost": 1702.97,
+      "vol_ratio": 11.13
+    },
+    {
+      "ticker": "ED",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "14:19 ET",
+      "entry_price": 109.86,
+      "shares": 11,
+      "stop": 110.735,
+      "trail_dist": 0.875,
+      "peak": 109.86,
+      "orb_width": 1.75,
+      "cost": 1208.46,
+      "vol_ratio": 1.57
+    },
+    {
+      "ticker": "SOLV",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "14:19 ET",
+      "entry_price": 87.05,
+      "shares": 10,
+      "stop": 87.585,
+      "trail_dist": 0.535,
+      "peak": 87.05,
+      "orb_width": 1.07,
+      "cost": 870.5,
+      "vol_ratio": 1.39
+    },
+    {
+      "ticker": "SPG",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "14:19 ET",
+      "entry_price": 230.145,
+      "shares": 2,
+      "stop": 232.2625,
+      "trail_dist": 2.1175,
+      "peak": 230.145,
+      "orb_width": 4.235,
+      "cost": 460.29,
+      "vol_ratio": 1.31
     }
   ],
   "closed_today": [
@@ -54070,7 +54126,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 95512.29
+    "2026-07-30": 95471.2
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -107383,6 +107439,48 @@
       ],
       "portfolio_value": 95512.29,
       "note": "$95,512 | cash=$5,830 | open=67 | closed today=74 | day PnL=$-273"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "14:19 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "SRE",
+          "side": "long",
+          "price": 89.63,
+          "shares": 19,
+          "stop": 89.18,
+          "trail_dist": 0.4501
+        },
+        {
+          "ticker": "ED",
+          "side": "short",
+          "price": 109.86,
+          "shares": 11,
+          "stop": 110.74,
+          "trail_dist": 0.875
+        },
+        {
+          "ticker": "SOLV",
+          "side": "short",
+          "price": 87.05,
+          "shares": 10,
+          "stop": 87.59,
+          "trail_dist": 0.535
+        },
+        {
+          "ticker": "SPG",
+          "side": "short",
+          "price": 230.15,
+          "shares": 2,
+          "stop": 232.26,
+          "trail_dist": 2.1175
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 95471.2,
+      "note": "$95,471 | cash=$1,588 | open=71 | closed today=74 | day PnL=$-273"
     }
   ]
 }
