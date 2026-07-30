@@ -1,5 +1,5 @@
 {
-  "capital": 1461.14,
+  "capital": 1817.94,
   "open_positions": [
     {
       "ticker": "MKC",
@@ -232,9 +232,9 @@
       "entry_time": "10:18 ET",
       "entry_price": 375.4,
       "shares": 1,
-      "stop": 376.0625,
+      "stop": 375.8825,
       "trail_dist": 5.4325,
-      "peak": 370.63,
+      "peak": 370.45,
       "orb_width": 10.8651,
       "cost": 375.4,
       "vol_ratio": 1.38
@@ -484,26 +484,12 @@
       "entry_time": "10:58 ET",
       "entry_price": 100.0,
       "shares": 5,
-      "stop": 101.3925,
+      "stop": 101.2825,
       "trail_dist": 1.6425,
-      "peak": 99.75,
+      "peak": 99.64,
       "orb_width": 3.285,
       "cost": 500.0,
       "vol_ratio": 1.62
-    },
-    {
-      "ticker": "MOS",
-      "side": "short",
-      "entry_date": "2026-07-30",
-      "entry_time": "10:58 ET",
-      "entry_price": 22.36,
-      "shares": 16,
-      "stop": 22.42,
-      "trail_dist": 0.115,
-      "peak": 22.305,
-      "orb_width": 0.23,
-      "cost": 357.76,
-      "vol_ratio": 1.46
     },
     {
       "ticker": "NSC",
@@ -582,9 +568,9 @@
       "entry_time": "11:08 ET",
       "entry_price": 275.845,
       "shares": 3,
-      "stop": 279.2884,
+      "stop": 279.2234,
       "trail_dist": 3.4434,
-      "peak": 275.845,
+      "peak": 275.78,
       "orb_width": 6.8868,
       "cost": 827.54,
       "vol_ratio": 1.74
@@ -596,9 +582,9 @@
       "entry_time": "11:08 ET",
       "entry_price": 274.4,
       "shares": 2,
-      "stop": 280.6975,
+      "stop": 280.5975,
       "trail_dist": 6.2975,
-      "peak": 274.4,
+      "peak": 274.3,
       "orb_width": 12.595,
       "cost": 548.8,
       "vol_ratio": 1.57
@@ -908,6 +894,25 @@
       "pnl": -3.04,
       "exit_reason": "trailing stop",
       "exit_time": "11:08 ET"
+    },
+    {
+      "ticker": "MOS",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:58 ET",
+      "entry_price": 22.36,
+      "shares": 16,
+      "stop": 22.42,
+      "trail_dist": 0.115,
+      "peak": 22.305,
+      "orb_width": 0.23,
+      "cost": 357.76,
+      "vol_ratio": 1.46,
+      "exit_date": "2026-07-30",
+      "exit_price": 22.42,
+      "pnl": -0.96,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:11 ET"
     }
   ],
   "all_closed": [
@@ -50201,9 +50206,9 @@
       "width": 5.2
     },
     "GOOG": {
-      "high": 335.45,
+      "high": 334.7,
       "low": 329.82,
-      "width": 5.63
+      "width": 4.88
     },
     "MO": {
       "high": 70.695,
@@ -51144,11 +51149,6 @@
       "high": 63.64,
       "low": 61.74,
       "width": 1.9
-    },
-    "GRMN": {
-      "high": 295.73,
-      "low": 287.0889,
-      "width": 8.6411
     },
     "IT": {
       "high": 159.62,
@@ -52632,7 +52632,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 96188.34
+    "2026-07-30": 96030.52
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -104357,6 +104357,23 @@
       ],
       "portfolio_value": 96188.34,
       "note": "$96,188 | cash=$1,461 | open=43 | closed today=16 | day PnL=$-67"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "11:10 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "MOS",
+          "side": "short",
+          "exit_price": 22.42,
+          "pnl": -0.96,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96030.52,
+      "note": "$96,031 | cash=$1,818 | open=42 | closed today=17 | day PnL=$-67"
     }
   ]
 }
