@@ -2,7 +2,7 @@
 # Local primary runner — owns intraday_trades.json
 # Runs every 2 min via launchd. GH Actions is fallback only.
 
-SCRIPT_DIR="/Users/vishalgupta/claude"
+SCRIPT_DIR="/Users/vishalgupta/claude/stock-screener"
 LOG="$SCRIPT_DIR/intraday_launchd.log"
 PYTHON="/usr/bin/python3"
 

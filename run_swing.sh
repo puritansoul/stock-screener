@@ -2,7 +2,7 @@
 # Runs swing_trader.py once daily at ~10:15 AM ET, Mon–Fri
 # launchd fires this at 10:15 ET. Script double-checks day/hour as a safeguard.
 
-SCRIPT_DIR="/Users/vishalgupta/claude"
+SCRIPT_DIR="/Users/vishalgupta/claude/stock-screener"
 LOG="$SCRIPT_DIR/swing_local.log"
 PYTHON="/usr/bin/python3"
 
