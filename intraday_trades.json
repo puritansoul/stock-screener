@@ -1,5 +1,5 @@
 {
-  "capital": 1085.36,
+  "capital": 1135.77,
   "open_positions": [
     {
       "ticker": "MKC",
@@ -134,9 +134,9 @@
       "entry_time": "10:13 ET",
       "entry_price": 87.4986,
       "shares": 40,
-      "stop": 87.795,
+      "stop": 87.78,
       "trail_dist": 1.11,
-      "peak": 86.685,
+      "peak": 86.67,
       "orb_width": 2.22,
       "cost": 3499.94,
       "vol_ratio": 1.88
@@ -330,9 +330,9 @@
       "entry_time": "10:33 ET",
       "entry_price": 94.28,
       "shares": 1,
-      "stop": 94.3225,
+      "stop": 94.2225,
       "trail_dist": 0.6725,
-      "peak": 93.65,
+      "peak": 93.55,
       "orb_width": 1.345,
       "cost": 94.28,
       "vol_ratio": 2.7
@@ -386,9 +386,9 @@
       "entry_time": "10:48 ET",
       "entry_price": 286.53,
       "shares": 5,
-      "stop": 288.72,
+      "stop": 288.42,
       "trail_dist": 2.76,
-      "peak": 285.96,
+      "peak": 285.66,
       "orb_width": 5.52,
       "cost": 1432.65,
       "vol_ratio": 1.22
@@ -428,9 +428,9 @@
       "entry_time": "10:53 ET",
       "entry_price": 7.7589,
       "shares": 117,
-      "stop": 7.779,
+      "stop": 7.734,
       "trail_dist": 0.049,
-      "peak": 7.73,
+      "peak": 7.685,
       "orb_width": 0.098,
       "cost": 907.79,
       "vol_ratio": 1.26
@@ -484,9 +484,9 @@
       "entry_time": "11:03 ET",
       "entry_price": 331.55,
       "shares": 1,
-      "stop": 332.74,
+      "stop": 332.36,
       "trail_dist": 1.88,
-      "peak": 330.86,
+      "peak": 330.48,
       "orb_width": 3.76,
       "cost": 331.55,
       "vol_ratio": 3.81
@@ -526,9 +526,9 @@
       "entry_time": "11:08 ET",
       "entry_price": 112.2376,
       "shares": 15,
-      "stop": 112.8237,
+      "stop": 112.7937,
       "trail_dist": 0.7837,
-      "peak": 112.04,
+      "peak": 112.01,
       "orb_width": 1.5675,
       "cost": 1683.56,
       "vol_ratio": 3.69
@@ -568,26 +568,12 @@
       "entry_time": "11:08 ET",
       "entry_price": 274.4,
       "shares": 2,
-      "stop": 279.9775,
+      "stop": 279.9225,
       "trail_dist": 6.2975,
-      "peak": 273.68,
+      "peak": 273.625,
       "orb_width": 12.595,
       "cost": 548.8,
       "vol_ratio": 1.57
-    },
-    {
-      "ticker": "AES",
-      "side": "short",
-      "entry_date": "2026-07-30",
-      "entry_time": "11:13 ET",
-      "entry_price": 14.785,
-      "shares": 51,
-      "stop": 14.8,
-      "trail_dist": 0.015,
-      "peak": 14.785,
-      "orb_width": 0.03,
-      "cost": 754.03,
-      "vol_ratio": 13.08
     },
     {
       "ticker": "DRI",
@@ -596,9 +582,9 @@
       "entry_time": "11:13 ET",
       "entry_price": 206.78,
       "shares": 2,
-      "stop": 208.425,
+      "stop": 208.285,
       "trail_dist": 1.645,
-      "peak": 206.78,
+      "peak": 206.64,
       "orb_width": 3.29,
       "cost": 413.56,
       "vol_ratio": 1.85
@@ -616,6 +602,34 @@
       "orb_width": 2.9155,
       "cost": 290.93,
       "vol_ratio": 1.22
+    },
+    {
+      "ticker": "TPL",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "11:16 ET",
+      "entry_price": 379.31,
+      "shares": 1,
+      "stop": 386.2011,
+      "trail_dist": 6.8911,
+      "peak": 379.31,
+      "orb_width": 13.7822,
+      "cost": 379.31,
+      "vol_ratio": 1.52
+    },
+    {
+      "ticker": "UHS",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "11:16 ET",
+      "entry_price": 161.77,
+      "shares": 2,
+      "stop": 163.26,
+      "trail_dist": 1.49,
+      "peak": 161.77,
+      "orb_width": 2.98,
+      "cost": 323.54,
+      "vol_ratio": 1.47
     }
   ],
   "closed_today": [
@@ -960,6 +974,25 @@
       "pnl": 0.74,
       "exit_reason": "trailing stop",
       "exit_time": "11:13 ET"
+    },
+    {
+      "ticker": "AES",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "11:13 ET",
+      "entry_price": 14.785,
+      "shares": 51,
+      "stop": 14.8,
+      "trail_dist": 0.015,
+      "peak": 14.785,
+      "orb_width": 0.03,
+      "cost": 754.03,
+      "vol_ratio": 13.08,
+      "exit_date": "2026-07-30",
+      "exit_price": 14.8,
+      "pnl": -0.77,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:16 ET"
     }
   ],
   "all_closed": [
@@ -50683,9 +50716,9 @@
       "width": 8.47
     },
     "CINF": {
-      "high": 179.42,
+      "high": 179.92,
       "low": 176.24,
-      "width": 3.18
+      "width": 3.68
     },
     "CTAS": {
       "high": 211.06,
@@ -51478,9 +51511,9 @@
       "width": 9.43
     },
     "JKHY": {
-      "high": 159.135,
+      "high": 159.06,
       "low": 156.1,
-      "width": 3.035
+      "width": 2.96
     },
     "J": {
       "high": 135.33,
@@ -51803,9 +51836,9 @@
       "width": 3.61
     },
     "NFLX": {
-      "high": 71.6295,
+      "high": 71.78,
       "low": 70.55,
-      "width": 1.0795
+      "width": 1.23
     },
     "NEM": {
       "high": 94.325,
@@ -52684,7 +52717,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 96027.42
+    "2026-07-30": 96062.05
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -104468,6 +104501,40 @@
       ],
       "portfolio_value": 96027.42,
       "note": "$96,027 | cash=$1,085 | open=44 | closed today=18 | day PnL=$-67"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "11:15 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "TPL",
+          "side": "short",
+          "price": 379.31,
+          "shares": 1,
+          "stop": 386.2,
+          "trail_dist": 6.8911
+        },
+        {
+          "ticker": "UHS",
+          "side": "short",
+          "price": 161.77,
+          "shares": 2,
+          "stop": 163.26,
+          "trail_dist": 1.49
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "AES",
+          "side": "short",
+          "exit_price": 14.8,
+          "pnl": -0.77,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96062.05,
+      "note": "$96,062 | cash=$1,136 | open=45 | closed today=19 | day PnL=$-68"
     }
   ]
 }
