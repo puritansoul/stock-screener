@@ -1,6 +1,105 @@
 {
-  "capital": 95689.19,
-  "open_positions": [],
+  "capital": 8050.19,
+  "open_positions": [
+    {
+      "ticker": "MKC",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:03 ET",
+      "entry_price": 50.19,
+      "shares": 571,
+      "stop": 50.725,
+      "trail_dist": 0.535,
+      "peak": 50.19,
+      "orb_width": 1.07,
+      "cost": 28658.49,
+      "vol_ratio": 1.71
+    },
+    {
+      "ticker": "DOW",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:03 ET",
+      "entry_price": 29.84,
+      "shares": 673,
+      "stop": 30.115,
+      "trail_dist": 0.275,
+      "peak": 29.84,
+      "orb_width": 0.55,
+      "cost": 20082.32,
+      "vol_ratio": 1.58
+    },
+    {
+      "ticker": "PNC",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:03 ET",
+      "entry_price": 247.955,
+      "shares": 56,
+      "stop": 248.7325,
+      "trail_dist": 0.7775,
+      "peak": 247.955,
+      "orb_width": 1.555,
+      "cost": 13885.48,
+      "vol_ratio": 1.42
+    },
+    {
+      "ticker": "CNP",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:03 ET",
+      "entry_price": 42.45,
+      "shares": 233,
+      "stop": 42.865,
+      "trail_dist": 0.415,
+      "peak": 42.45,
+      "orb_width": 0.83,
+      "cost": 9890.85,
+      "vol_ratio": 1.37
+    },
+    {
+      "ticker": "FE",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:03 ET",
+      "entry_price": 49.26,
+      "shares": 141,
+      "stop": 49.51,
+      "trail_dist": 0.25,
+      "peak": 49.26,
+      "orb_width": 0.5,
+      "cost": 6945.66,
+      "vol_ratio": 1.33
+    },
+    {
+      "ticker": "MTB",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:03 ET",
+      "entry_price": 248.91,
+      "shares": 19,
+      "stop": 249.6975,
+      "trail_dist": 0.7875,
+      "peak": 248.91,
+      "orb_width": 1.575,
+      "cost": 4729.29,
+      "vol_ratio": 1.27
+    },
+    {
+      "ticker": "PCG",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:03 ET",
+      "entry_price": 17.497,
+      "shares": 197,
+      "stop": 17.622,
+      "trail_dist": 0.125,
+      "peak": 17.497,
+      "orb_width": 0.25,
+      "cost": 3446.91,
+      "vol_ratio": 1.23
+    }
+  ],
   "closed_today": [],
   "all_closed": [
     {
@@ -49464,8 +49563,8 @@
     },
     "AVY": {
       "high": 187.91,
-      "low": 167.14,
-      "width": 20.77
+      "low": 180.61,
+      "width": 7.3
     },
     "AXON": {
       "high": 520.58,
@@ -50083,9 +50182,9 @@
       "width": 5.89
     },
     "ESS": {
-      "high": 296.8,
+      "high": 289.99,
       "low": 282.775,
-      "width": 14.025
+      "width": 7.215
     },
     "EL": {
       "high": 84.85,
@@ -50243,9 +50342,9 @@
       "width": 8.6411
     },
     "IT": {
-      "high": 165.65,
+      "high": 159.62,
       "low": 154.19,
-      "width": 11.46
+      "width": 5.43
     },
     "GE": {
       "high": 355.52,
@@ -50329,8 +50428,8 @@
     },
     "HAS": {
       "high": 95.18,
-      "low": 93.58,
-      "width": 1.6
+      "low": 93.57,
+      "width": 1.61
     },
     "HCA": {
       "high": 406.76,
@@ -50778,9 +50877,9 @@
       "width": 19.285
     },
     "MAA": {
-      "high": 137.38,
+      "high": 136.46,
       "low": 134.06,
-      "width": 3.32
+      "width": 2.4
     },
     "MRNA": {
       "high": 56.4997,
@@ -51453,14 +51552,19 @@
       "width": 0.57
     },
     "TYL": {
-      "high": 331.2,
+      "high": 331.25,
       "low": 314.035,
-      "width": 17.165
+      "width": 17.215
     },
     "TSN": {
       "high": 60.91,
       "low": 60.12,
       "width": 0.79
+    },
+    "USB": {
+      "high": 63.34,
+      "low": 62.79,
+      "width": 0.55
     },
     "UBER": {
       "high": 70.6,
@@ -51699,8 +51803,8 @@
     },
     "ZTS": {
       "high": 77.38,
-      "low": 75.68,
-      "width": 1.7
+      "low": 75.65,
+      "width": 1.73
     }
   },
   "nav_history": {
@@ -102587,6 +102691,72 @@
       "exits": [],
       "portfolio_value": 95689.19,
       "note": "$95,689 | cash=$95,689 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "10:03 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "MKC",
+          "side": "short",
+          "price": 50.19,
+          "shares": 571,
+          "stop": 50.72,
+          "trail_dist": 0.535
+        },
+        {
+          "ticker": "DOW",
+          "side": "short",
+          "price": 29.84,
+          "shares": 673,
+          "stop": 30.12,
+          "trail_dist": 0.275
+        },
+        {
+          "ticker": "PNC",
+          "side": "short",
+          "price": 247.96,
+          "shares": 56,
+          "stop": 248.73,
+          "trail_dist": 0.7775
+        },
+        {
+          "ticker": "CNP",
+          "side": "short",
+          "price": 42.45,
+          "shares": 233,
+          "stop": 42.87,
+          "trail_dist": 0.415
+        },
+        {
+          "ticker": "FE",
+          "side": "short",
+          "price": 49.26,
+          "shares": 141,
+          "stop": 49.51,
+          "trail_dist": 0.25
+        },
+        {
+          "ticker": "MTB",
+          "side": "short",
+          "price": 248.91,
+          "shares": 19,
+          "stop": 249.7,
+          "trail_dist": 0.7875
+        },
+        {
+          "ticker": "PCG",
+          "side": "short",
+          "price": 17.5,
+          "shares": 197,
+          "stop": 17.62,
+          "trail_dist": 0.125
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 95689.19,
+      "note": "$95,689 | cash=$8,050 | open=7 | closed today=0 | day PnL=$+0"
     }
   ]
 }
