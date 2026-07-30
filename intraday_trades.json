@@ -1,5 +1,5 @@
 {
-  "capital": 4935.06,
+  "capital": 3179.12,
   "open_positions": [
     {
       "ticker": "CNP",
@@ -274,9 +274,9 @@
       "entry_time": "12:19 ET",
       "entry_price": 639.4,
       "shares": 8,
-      "stop": 641.0425,
+      "stop": 641.23,
       "trail_dist": 4.1175,
-      "peak": 645.16,
+      "peak": 645.3475,
       "orb_width": 8.235,
       "cost": 5115.2,
       "vol_ratio": 2.99
@@ -322,20 +322,6 @@
       "orb_width": 30.135,
       "cost": 1051.78,
       "vol_ratio": 2.0
-    },
-    {
-      "ticker": "AEE",
-      "side": "short",
-      "entry_date": "2026-07-30",
-      "entry_time": "12:24 ET",
-      "entry_price": 108.19,
-      "shares": 11,
-      "stop": 108.835,
-      "trail_dist": 0.725,
-      "peak": 108.11,
-      "orb_width": 1.45,
-      "cost": 1190.09,
-      "vol_ratio": 1.85
     },
     {
       "ticker": "AVY",
@@ -428,9 +414,9 @@
       "entry_time": "12:34 ET",
       "entry_price": 88.36,
       "shares": 1,
-      "stop": 87.9325,
+      "stop": 87.9675,
       "trail_dist": 0.9775,
-      "peak": 88.91,
+      "peak": 88.945,
       "orb_width": 1.955,
       "cost": 88.36,
       "vol_ratio": 1.21
@@ -596,9 +582,9 @@
       "entry_time": "13:09 ET",
       "entry_price": 113.035,
       "shares": 6,
-      "stop": 113.095,
+      "stop": 113.23,
       "trail_dist": 0.545,
-      "peak": 113.64,
+      "peak": 113.775,
       "orb_width": 1.09,
       "cost": 678.21,
       "vol_ratio": 1.27
@@ -932,9 +918,9 @@
       "entry_time": "14:37 ET",
       "entry_price": 76.62,
       "shares": 1,
-      "stop": 76.525,
+      "stop": 76.57,
       "trail_dist": 0.49,
-      "peak": 77.015,
+      "peak": 77.06,
       "orb_width": 0.98,
       "cost": 76.62,
       "vol_ratio": 2.43
@@ -1114,9 +1100,9 @@
       "entry_time": "14:59 ET",
       "entry_price": 95.34,
       "shares": 7,
-      "stop": 94.27,
+      "stop": 94.49,
       "trail_dist": 1.18,
-      "peak": 95.45,
+      "peak": 95.67,
       "orb_width": 2.36,
       "cost": 667.38,
       "vol_ratio": 1.37
@@ -1134,6 +1120,34 @@
       "orb_width": 1.57,
       "cost": 1925.0,
       "vol_ratio": 1.48
+    },
+    {
+      "ticker": "AEE",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "15:07 ET",
+      "entry_price": 108.89,
+      "shares": 16,
+      "stop": 109.615,
+      "trail_dist": 0.725,
+      "peak": 108.89,
+      "orb_width": 1.45,
+      "cost": 1742.24,
+      "vol_ratio": 5.1
+    },
+    {
+      "ticker": "TROW",
+      "side": "long",
+      "entry_date": "2026-07-30",
+      "entry_time": "15:07 ET",
+      "entry_price": 119.67,
+      "shares": 10,
+      "stop": 118.9075,
+      "trail_dist": 0.7625,
+      "peak": 119.67,
+      "orb_width": 1.525,
+      "cost": 1196.7,
+      "vol_ratio": 1.46
     }
   ],
   "closed_today": [
@@ -2808,6 +2822,25 @@
       "pnl": -2.42,
       "exit_reason": "trailing stop",
       "exit_time": "15:04 ET"
+    },
+    {
+      "ticker": "AEE",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "12:24 ET",
+      "entry_price": 108.19,
+      "shares": 11,
+      "stop": 108.835,
+      "trail_dist": 0.725,
+      "peak": 108.11,
+      "orb_width": 1.45,
+      "cost": 1190.09,
+      "vol_ratio": 1.85,
+      "exit_date": "2026-07-30",
+      "exit_price": 108.835,
+      "pnl": -7.09,
+      "exit_reason": "trailing stop",
+      "exit_time": "15:07 ET"
     }
   ],
   "all_closed": [
@@ -52245,11 +52278,6 @@
       "low": 23.195,
       "width": 0.425
     },
-    "ATO": {
-      "high": 177.42,
-      "low": 175.85,
-      "width": 1.57
-    },
     "ADSK": {
       "high": 238.69,
       "low": 234.48,
@@ -52750,11 +52778,6 @@
       "low": 193.0475,
       "width": 3.1625
     },
-    "DG": {
-      "high": 127.92,
-      "low": 126.3873,
-      "width": 1.5327
-    },
     "DLTR": {
       "high": 128.22,
       "low": 126.9659,
@@ -52964,11 +52987,6 @@
       "high": 47.655,
       "low": 46.82,
       "width": 0.835
-    },
-    "FRT": {
-      "high": 125.61,
-      "low": 123.86,
-      "width": 1.75
     },
     "FDX": {
       "high": 311.33,
@@ -54125,11 +54143,6 @@
       "low": 346.41,
       "width": 5.075
     },
-    "SMCI": {
-      "high": 27.945,
-      "low": 26.6501,
-      "width": 1.2949
-    },
     "SYF": {
       "high": 75.73,
       "low": 74.75,
@@ -54532,7 +54545,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 95406.67
+    "2026-07-30": 95380.77
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -108360,6 +108373,40 @@
       ],
       "portfolio_value": 95406.67,
       "note": "$95,407 | cash=$4,935 | open=81 | closed today=88 | day PnL=$-387"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "15:06 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "AEE",
+          "side": "short",
+          "price": 108.89,
+          "shares": 16,
+          "stop": 109.61,
+          "trail_dist": 0.725
+        },
+        {
+          "ticker": "TROW",
+          "side": "long",
+          "price": 119.67,
+          "shares": 10,
+          "stop": 118.91,
+          "trail_dist": 0.7625
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "AEE",
+          "side": "short",
+          "exit_price": 108.83,
+          "pnl": -7.09,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95380.77,
+      "note": "$95,381 | cash=$3,179 | open=82 | closed today=89 | day PnL=$-394"
     }
   ]
 }
