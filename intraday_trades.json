@@ -1,5 +1,5 @@
 {
-  "capital": 1135.77,
+  "capital": 869.53,
   "open_positions": [
     {
       "ticker": "MKC",
@@ -120,9 +120,9 @@
       "entry_time": "10:13 ET",
       "entry_price": 118.16,
       "shares": 42,
-      "stop": 118.635,
+      "stop": 118.625,
       "trail_dist": 2.275,
-      "peak": 116.36,
+      "peak": 116.35,
       "orb_width": 4.55,
       "cost": 4962.72,
       "vol_ratio": 2.51
@@ -134,9 +134,9 @@
       "entry_time": "10:13 ET",
       "entry_price": 87.4986,
       "shares": 40,
-      "stop": 87.78,
+      "stop": 87.715,
       "trail_dist": 1.11,
-      "peak": 86.67,
+      "peak": 86.605,
       "orb_width": 2.22,
       "cost": 3499.94,
       "vol_ratio": 1.88
@@ -330,9 +330,9 @@
       "entry_time": "10:33 ET",
       "entry_price": 94.28,
       "shares": 1,
-      "stop": 94.2225,
+      "stop": 94.1825,
       "trail_dist": 0.6725,
-      "peak": 93.55,
+      "peak": 93.51,
       "orb_width": 1.345,
       "cost": 94.28,
       "vol_ratio": 2.7
@@ -386,9 +386,9 @@
       "entry_time": "10:48 ET",
       "entry_price": 286.53,
       "shares": 5,
-      "stop": 288.42,
+      "stop": 288.365,
       "trail_dist": 2.76,
-      "peak": 285.66,
+      "peak": 285.605,
       "orb_width": 5.52,
       "cost": 1432.65,
       "vol_ratio": 1.22
@@ -420,20 +420,6 @@
       "orb_width": 0.5787,
       "cost": 1282.72,
       "vol_ratio": 1.64
-    },
-    {
-      "ticker": "PSKY",
-      "side": "short",
-      "entry_date": "2026-07-30",
-      "entry_time": "10:53 ET",
-      "entry_price": 7.7589,
-      "shares": 117,
-      "stop": 7.734,
-      "trail_dist": 0.049,
-      "peak": 7.685,
-      "orb_width": 0.098,
-      "cost": 907.79,
-      "vol_ratio": 1.26
     },
     {
       "ticker": "RSG",
@@ -526,9 +512,9 @@
       "entry_time": "11:08 ET",
       "entry_price": 112.2376,
       "shares": 15,
-      "stop": 112.7937,
+      "stop": 112.7837,
       "trail_dist": 0.7837,
-      "peak": 112.01,
+      "peak": 112.0,
       "orb_width": 1.5675,
       "cost": 1683.56,
       "vol_ratio": 3.69
@@ -568,9 +554,9 @@
       "entry_time": "11:08 ET",
       "entry_price": 274.4,
       "shares": 2,
-      "stop": 279.9225,
+      "stop": 279.5775,
       "trail_dist": 6.2975,
-      "peak": 273.625,
+      "peak": 273.28,
       "orb_width": 12.595,
       "cost": 548.8,
       "vol_ratio": 1.57
@@ -582,9 +568,9 @@
       "entry_time": "11:13 ET",
       "entry_price": 206.78,
       "shares": 2,
-      "stop": 208.285,
+      "stop": 208.275,
       "trail_dist": 1.645,
-      "peak": 206.64,
+      "peak": 206.63,
       "orb_width": 3.29,
       "cost": 413.56,
       "vol_ratio": 1.85
@@ -596,9 +582,9 @@
       "entry_time": "11:13 ET",
       "entry_price": 145.465,
       "shares": 2,
-      "stop": 146.9228,
+      "stop": 146.7378,
       "trail_dist": 1.4578,
-      "peak": 145.465,
+      "peak": 145.28,
       "orb_width": 2.9155,
       "cost": 290.93,
       "vol_ratio": 1.22
@@ -624,12 +610,54 @@
       "entry_time": "11:16 ET",
       "entry_price": 161.77,
       "shares": 2,
-      "stop": 163.26,
+      "stop": 162.98,
       "trail_dist": 1.49,
-      "peak": 161.77,
+      "peak": 161.49,
       "orb_width": 2.98,
       "cost": 323.54,
       "vol_ratio": 1.47
+    },
+    {
+      "ticker": "PSKY",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "11:18 ET",
+      "entry_price": 7.6829,
+      "shares": 79,
+      "stop": 7.7319,
+      "trail_dist": 0.049,
+      "peak": 7.6829,
+      "orb_width": 0.098,
+      "cost": 606.95,
+      "vol_ratio": 2.96
+    },
+    {
+      "ticker": "FDX",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "11:18 ET",
+      "entry_price": 304.79,
+      "shares": 1,
+      "stop": 308.0375,
+      "trail_dist": 3.2475,
+      "peak": 304.79,
+      "orb_width": 6.495,
+      "cost": 304.79,
+      "vol_ratio": 1.84
+    },
+    {
+      "ticker": "ORLY",
+      "side": "long",
+      "entry_date": "2026-07-30",
+      "entry_time": "11:18 ET",
+      "entry_price": 88.79,
+      "shares": 3,
+      "stop": 87.7445,
+      "trail_dist": 1.0455,
+      "peak": 88.79,
+      "orb_width": 2.0911,
+      "cost": 266.37,
+      "vol_ratio": 1.24
     }
   ],
   "closed_today": [
@@ -993,6 +1021,25 @@
       "pnl": -0.77,
       "exit_reason": "trailing stop",
       "exit_time": "11:16 ET"
+    },
+    {
+      "ticker": "PSKY",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:53 ET",
+      "entry_price": 7.7589,
+      "shares": 117,
+      "stop": 7.724,
+      "trail_dist": 0.049,
+      "peak": 7.675,
+      "orb_width": 0.098,
+      "cost": 907.79,
+      "vol_ratio": 1.26,
+      "exit_date": "2026-07-30",
+      "exit_price": 7.724,
+      "pnl": 4.08,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:18 ET"
     }
   ],
   "all_closed": [
@@ -50281,9 +50328,9 @@
       "width": 6.0075
     },
     "GOOGL": {
-      "high": 335.54,
+      "high": 336.51,
       "low": 330.34,
-      "width": 5.2
+      "width": 6.17
     },
     "GOOG": {
       "high": 334.7,
@@ -50464,11 +50511,6 @@
       "high": 520.58,
       "low": 505.4697,
       "width": 15.1103
-    },
-    "BKR": {
-      "high": 59.58,
-      "low": 58.73,
-      "width": 0.85
     },
     "BALL": {
       "high": 66.15,
@@ -51511,9 +51553,9 @@
       "width": 9.43
     },
     "JKHY": {
-      "high": 159.06,
+      "high": 159.135,
       "low": 156.1,
-      "width": 2.96
+      "width": 3.035
     },
     "J": {
       "high": 135.33,
@@ -51836,9 +51878,9 @@
       "width": 3.61
     },
     "NFLX": {
-      "high": 71.78,
+      "high": 71.6295,
       "low": 70.55,
-      "width": 1.23
+      "width": 1.0795
     },
     "NEM": {
       "high": 94.325,
@@ -52717,7 +52759,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 96062.05
+    "2026-07-30": 96018.88
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -104535,6 +104577,48 @@
       ],
       "portfolio_value": 96062.05,
       "note": "$96,062 | cash=$1,136 | open=45 | closed today=19 | day PnL=$-68"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "11:18 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "PSKY",
+          "side": "short",
+          "price": 7.68,
+          "shares": 79,
+          "stop": 7.73,
+          "trail_dist": 0.049
+        },
+        {
+          "ticker": "FDX",
+          "side": "short",
+          "price": 304.79,
+          "shares": 1,
+          "stop": 308.04,
+          "trail_dist": 3.2475
+        },
+        {
+          "ticker": "ORLY",
+          "side": "long",
+          "price": 88.79,
+          "shares": 3,
+          "stop": 87.74,
+          "trail_dist": 1.0455
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "PSKY",
+          "side": "short",
+          "exit_price": 7.72,
+          "pnl": 4.08,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96018.88,
+      "note": "$96,019 | cash=$870 | open=47 | closed today=20 | day PnL=$-63"
     }
   ]
 }
