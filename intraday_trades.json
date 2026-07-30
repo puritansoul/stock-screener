@@ -1,5 +1,5 @@
 {
-  "capital": 981.85,
+  "capital": 484.18,
   "open_positions": [
     {
       "ticker": "CNP",
@@ -484,9 +484,9 @@
       "entry_time": "12:34 ET",
       "entry_price": 88.36,
       "shares": 1,
-      "stop": 87.8975,
+      "stop": 87.9025,
       "trail_dist": 0.9775,
-      "peak": 88.875,
+      "peak": 88.88,
       "orb_width": 1.955,
       "cost": 88.36,
       "vol_ratio": 1.21
@@ -862,9 +862,9 @@
       "entry_time": "14:07 ET",
       "entry_price": 183.37,
       "shares": 3,
-      "stop": 183.675,
+      "stop": 183.535,
       "trail_dist": 0.945,
-      "peak": 182.73,
+      "peak": 182.59,
       "orb_width": 1.89,
       "cost": 550.11,
       "vol_ratio": 1.49
@@ -1008,6 +1008,48 @@
       "orb_width": 0.45,
       "cost": 389.02,
       "vol_ratio": 1.31
+    },
+    {
+      "ticker": "STT",
+      "side": "long",
+      "entry_date": "2026-07-30",
+      "entry_time": "14:29 ET",
+      "entry_price": 181.24,
+      "shares": 1,
+      "stop": 180.3,
+      "trail_dist": 0.94,
+      "peak": 181.24,
+      "orb_width": 1.88,
+      "cost": 181.24,
+      "vol_ratio": 1.8
+    },
+    {
+      "ticker": "DLTR",
+      "side": "long",
+      "entry_date": "2026-07-30",
+      "entry_time": "14:29 ET",
+      "entry_price": 128.88,
+      "shares": 1,
+      "stop": 128.253,
+      "trail_dist": 0.627,
+      "peak": 128.88,
+      "orb_width": 1.2541,
+      "cost": 128.88,
+      "vol_ratio": 1.32
+    },
+    {
+      "ticker": "HBAN",
+      "side": "long",
+      "entry_date": "2026-07-30",
+      "entry_time": "14:29 ET",
+      "entry_price": 17.0501,
+      "shares": 11,
+      "stop": 16.9436,
+      "trail_dist": 0.1065,
+      "peak": 17.0501,
+      "orb_width": 0.213,
+      "cost": 187.55,
+      "vol_ratio": 1.28
     }
   ],
   "closed_today": [
@@ -52112,6 +52154,11 @@
       "low": 125.49,
       "width": 1.7
     },
+    "CRL": {
+      "high": 234.55,
+      "low": 227.38,
+      "width": 7.17
+    },
     "SCHW": {
       "high": 104.36,
       "low": 103.35,
@@ -52391,6 +52438,11 @@
       "high": 354.89,
       "low": 348.01,
       "width": 6.88
+    },
+    "DASH": {
+      "high": 192.82,
+      "low": 188.91,
+      "width": 3.91
     },
     "DOV": {
       "high": 202.88,
@@ -54149,7 +54201,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 95503.21
+    "2026-07-30": 95497.18
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -107557,6 +107609,40 @@
       "exits": [],
       "portfolio_value": 95503.21,
       "note": "$95,503 | cash=$982 | open=72 | closed today=75 | day PnL=$-273"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "14:29 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "STT",
+          "side": "long",
+          "price": 181.24,
+          "shares": 1,
+          "stop": 180.3,
+          "trail_dist": 0.94
+        },
+        {
+          "ticker": "DLTR",
+          "side": "long",
+          "price": 128.88,
+          "shares": 1,
+          "stop": 128.25,
+          "trail_dist": 0.627
+        },
+        {
+          "ticker": "HBAN",
+          "side": "long",
+          "price": 17.05,
+          "shares": 11,
+          "stop": 16.94,
+          "trail_dist": 0.1065
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 95497.18,
+      "note": "$95,497 | cash=$484 | open=75 | closed today=75 | day PnL=$-273"
     }
   ]
 }
