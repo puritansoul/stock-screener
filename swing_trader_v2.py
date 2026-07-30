@@ -822,18 +822,25 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
         rsi_e = pos.get("rsi2_entry", "—")
 
         cur_px = entry
+        prev_px = entry
         if tk in prices.columns:
             s = prices[tk].dropna()
             if len(s):
                 cur_px = float(s.iloc[-1])
+            if len(s) >= 2:
+                prev_px = float(s.iloc[-2])
 
         if side == "long":
             unreal = (cur_px - entry) * shares
             cur_val = cur_px * shares
+            day_d = (cur_px - prev_px) * shares
         else:
             unreal = (entry - cur_px) * shares
             cur_val = cost + unreal
+            day_d = (prev_px - cur_px) * shares
 
+        day_pct_pos = day_d / (prev_px * shares) * 100 if prev_px and shares else 0
+        day_color_pos = "#2e7d32" if day_d >= 0 else "#c62828"
         unreal_pct = unreal / cost * 100 if cost > 0 else 0
         unreal_color = "#2e7d32" if unreal >= 0 else "#c62828"
         pos_sign = "+" if unreal >= 0 else ""
@@ -848,7 +855,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
         _name = _names.get(tk, "")
         _name_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_name}</span>' if _name else ''
         open_rows += f"""
-        <tr data-ticker="{tk}" data-qty="{shares}" data-buypx="{entry:.2f}" data-side="{side}" data-server-unreal="{unreal:.2f}">
+        <tr data-ticker="{tk}" data-qty="{shares}" data-buypx="{entry:.2f}" data-side="{side}" data-prevpx="{prev_px:.2f}" data-server-unreal="{unreal:.2f}">
           <td style="font-weight:bold">{tk}{_name_html}</td>
           <td>{side_badge}</td>
           <td>${entry:,.2f}</td>
@@ -858,6 +865,8 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
           <td class="live-curval" style="text-align:right">${cur_val:,.0f}</td>
           <td class="live-unreal-d" data-sort="{unreal:.2f}" style="text-align:right;color:{unreal_color};font-weight:bold">{pos_sign}${abs(unreal):,.0f}</td>
           <td class="live-unreal-pct" data-sort="{unreal_pct:.4f}" style="text-align:right;color:{unreal_color};font-weight:bold">{unreal_pct:+.2f}%</td>
+          <td class="live-day-d" data-sort="{day_d:.2f}" style="text-align:right;color:{day_color_pos};font-weight:bold"><span data-sort="{day_d:.2f}" style="color:{day_color_pos}">{'+' if day_d >= 0 else ''}${abs(day_d):,.0f}</span></td>
+          <td class="live-day-pct" data-sort="{day_pct_pos:.4f}" style="text-align:right;color:{day_color_pos};font-weight:bold"><span data-sort="{day_pct_pos:.4f}" style="color:{day_color_pos}">{day_pct_pos:+.2f}%</span></td>
           <td>${stop:,.2f}</td>
           <td style="color:#666;font-size:12px">{rsi_e}</td>
           <td style="color:#666;font-size:12px">{edate}</td>
@@ -887,6 +896,8 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
           <td id="total-curval" style="text-align:right">${total_curval:,.0f}</td>
           <td id="total-unreal-d" data-server-total="{total_unreal:.2f}" style="text-align:right;color:{tu_color}">{tu_sign}${abs(total_unreal):,.0f}</td>
           <td id="total-unreal-pct" style="text-align:right;color:{tu_color}">{total_unreal / total_invested * 100 if total_invested else 0:+.2f}%</td>
+          <td id="total-day-d" style="text-align:right"></td>
+          <td id="total-day-pct" style="text-align:right"></td>
           <td colspan="3"></td>
         </tr>""" if open_pos else ""
 
@@ -1208,7 +1219,8 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
       <thead><tr>
         <th data-col="0">Ticker</th><th data-col="1">Side</th><th data-col="2">Entry</th><th data-col="3">Current</th>
         <th data-col="4">Shares</th><th data-col="5">$ Invested</th><th data-col="6">Current Value</th><th data-col="7">Unreal P&amp;L $</th><th data-col="8">Unreal %</th>
-        <th data-col="9">Stop</th><th data-col="10">RSI(2) at entry</th><th data-col="11">Entry Date</th>
+        <th data-col="9">Day Δ $</th><th data-col="10">Day Δ %</th>
+        <th data-col="11">Stop</th><th data-col="12">RSI(2) at entry</th><th data-col="13">Entry Date</th>
       </tr></thead>
       <tbody>{open_rows}</tbody>
       {open_totals_row}
@@ -1362,6 +1374,18 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
     }}
     const tcEl = document.getElementById('total-curval');
     if (tcEl) tcEl.textContent = '$' + sumCurval.toLocaleString('en-US', {{maximumFractionDigits:0}});
+
+    // Day Δ totals row — sum from per-row day cells
+    let sumDayD = 0;
+    document.querySelectorAll('tr[data-ticker] .live-day-d').forEach(el => {{
+      sumDayD += parseFloat(el.dataset.sort) || 0;
+    }});
+    const prevCurval = sumCurval - sumDayD;
+    const sumDayPct  = prevCurval > 0 ? sumDayD / prevCurval * 100 : 0;
+    const tdDEl = document.getElementById('total-day-d');
+    const tdPEl = document.getElementById('total-day-pct');
+    if (tdDEl) {{ tdDEl.textContent = sign(sumDayD) + fmtD(sumDayD); tdDEl.style.color = color(sumDayD); }}
+    if (tdPEl) {{ tdPEl.textContent = sign(sumDayPct) + fmtP(sumDayPct); tdPEl.style.color = color(sumDayPct); }}
   }}
 
   document.addEventListener('DOMContentLoaded', refreshSummary);
@@ -1377,7 +1401,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
         const q = await fetch(`https://finnhub.io/api/v1/quote?symbol=${{tk}}&token=${{TOKEN}}`).then(r => r.json());
         if (q && q.c) {{
           quotes[tk] = {{ price: q.c, prevClose: q.pc }};
-          applyOneRow(row, q.c);
+          applyOneRow(row, q.c, q.pc);
         }}
       }} catch(e) {{}}
       await delay(1100);
@@ -1391,14 +1415,17 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
     }}
   }}
 
-  function applyOneRow(row, price) {{
+  function applyOneRow(row, price, prevClose) {{
     const qty  = parseFloat(row.dataset.qty);
     const buy  = parseFloat(row.dataset.buypx);
     const side = row.dataset.side;
-    const priceCell   = row.querySelector('.live-price');
+    const prev = prevClose || parseFloat(row.dataset.prevpx) || buy;
+    const priceCell     = row.querySelector('.live-price');
     const unrealCellD   = row.querySelector('.live-unreal-d');
     const unrealCellPct = row.querySelector('.live-unreal-pct');
-    const curvalCell  = row.querySelector('.live-curval');
+    const curvalCell    = row.querySelector('.live-curval');
+    const dayCellD      = row.querySelector('.live-day-d');
+    const dayCellPct    = row.querySelector('.live-day-pct');
     if (priceCell) priceCell.textContent = '$' + price.toLocaleString('en-US', {{minimumFractionDigits:2, maximumFractionDigits:2}});
     const liveUnreal = side === 'long' ? (price - buy) * qty : (buy - price) * qty;
     const curVal     = buy * qty + liveUnreal;
@@ -1416,6 +1443,17 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
       unrealCellPct.textContent = `${{sign(pct)}}${{Math.abs(pct).toFixed(2)}}%`;
       unrealCellPct.style.color = color(pct);
       unrealCellPct.dataset.sort = pct.toFixed(4);
+    }}
+    const dayD   = side === 'long' ? (price - prev) * qty : (prev - price) * qty;
+    const prevVal = prev * qty;
+    const dayPct = prevVal > 0 ? dayD / prevVal * 100 : 0;
+    if (dayCellD) {{
+      dayCellD.innerHTML = `<span data-sort="${{dayD.toFixed(2)}}" style="color:${{color(dayD)}}">${{sign(dayD)}}$${{Math.abs(dayD).toLocaleString('en-US', {{maximumFractionDigits:0}})}}</span>`;
+      dayCellD.dataset.sort = dayD.toFixed(2);
+    }}
+    if (dayCellPct) {{
+      dayCellPct.innerHTML = `<span data-sort="${{dayPct.toFixed(4)}}" style="color:${{color(dayPct)}}">${{sign(dayPct)}}${{Math.abs(dayPct).toFixed(2)}}%</span>`;
+      dayCellPct.dataset.sort = dayPct.toFixed(4);
     }}
     refreshSummary();
   }}
