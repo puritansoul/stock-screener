@@ -1,5 +1,5 @@
 {
-  "capital": 670.02,
+  "capital": 872.71,
   "open_positions": [
     {
       "ticker": "MKC",
@@ -28,20 +28,6 @@
       "orb_width": 0.83,
       "cost": 9890.85,
       "vol_ratio": 1.37
-    },
-    {
-      "ticker": "PCG",
-      "side": "short",
-      "entry_date": "2026-07-30",
-      "entry_time": "10:03 ET",
-      "entry_price": 17.497,
-      "shares": 197,
-      "stop": 17.4662,
-      "trail_dist": 0.125,
-      "peak": 17.3412,
-      "orb_width": 0.25,
-      "cost": 3446.91,
-      "vol_ratio": 1.23
     },
     {
       "ticker": "MTB",
@@ -246,9 +232,9 @@
       "entry_time": "10:23 ET",
       "entry_price": 122.015,
       "shares": 2,
-      "stop": 123.08,
+      "stop": 123.025,
       "trail_dist": 1.265,
-      "peak": 121.815,
+      "peak": 121.76,
       "orb_width": 2.53,
       "cost": 244.03,
       "vol_ratio": 1.43
@@ -344,9 +330,9 @@
       "entry_time": "10:48 ET",
       "entry_price": 286.53,
       "shares": 5,
-      "stop": 288.365,
+      "stop": 288.13,
       "trail_dist": 2.76,
-      "peak": 285.605,
+      "peak": 285.37,
       "orb_width": 5.52,
       "cost": 1432.65,
       "vol_ratio": 1.22
@@ -428,9 +414,9 @@
       "entry_time": "11:03 ET",
       "entry_price": 331.55,
       "shares": 1,
-      "stop": 332.27,
+      "stop": 332.0,
       "trail_dist": 1.88,
-      "peak": 330.39,
+      "peak": 330.12,
       "orb_width": 3.76,
       "cost": 331.55,
       "vol_ratio": 3.81
@@ -540,9 +526,9 @@
       "entry_time": "11:13 ET",
       "entry_price": 145.465,
       "shares": 2,
-      "stop": 146.5228,
+      "stop": 146.1378,
       "trail_dist": 1.4578,
-      "peak": 145.065,
+      "peak": 144.68,
       "orb_width": 2.9155,
       "cost": 290.93,
       "vol_ratio": 1.22
@@ -700,6 +686,76 @@
       "orb_width": 1.07,
       "cost": 259.53,
       "vol_ratio": 1.69
+    },
+    {
+      "ticker": "KIM",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "11:38 ET",
+      "entry_price": 25.385,
+      "shares": 48,
+      "stop": 25.6675,
+      "trail_dist": 0.2825,
+      "peak": 25.385,
+      "orb_width": 0.565,
+      "cost": 1218.48,
+      "vol_ratio": 3.78
+    },
+    {
+      "ticker": "LMT",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "11:38 ET",
+      "entry_price": 559.54,
+      "shares": 1,
+      "stop": 564.4978,
+      "trail_dist": 4.9578,
+      "peak": 559.54,
+      "orb_width": 9.9157,
+      "cost": 559.54,
+      "vol_ratio": 2.05
+    },
+    {
+      "ticker": "AIG",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "11:38 ET",
+      "entry_price": 77.9,
+      "shares": 9,
+      "stop": 78.89,
+      "trail_dist": 0.99,
+      "peak": 77.9,
+      "orb_width": 1.98,
+      "cost": 701.1,
+      "vol_ratio": 1.75
+    },
+    {
+      "ticker": "PCG",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "11:38 ET",
+      "entry_price": 17.4512,
+      "shares": 28,
+      "stop": 17.5762,
+      "trail_dist": 0.125,
+      "peak": 17.4512,
+      "orb_width": 0.25,
+      "cost": 488.63,
+      "vol_ratio": 1.43
+    },
+    {
+      "ticker": "BRO",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "11:38 ET",
+      "entry_price": 70.635,
+      "shares": 4,
+      "stop": 72.075,
+      "trail_dist": 1.44,
+      "peak": 70.635,
+      "orb_width": 2.88,
+      "cost": 282.54,
+      "vol_ratio": 1.27
     }
   ],
   "closed_today": [
@@ -1158,6 +1214,25 @@
       "pnl": -6.12,
       "exit_reason": "trailing stop",
       "exit_time": "11:33 ET"
+    },
+    {
+      "ticker": "PCG",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:03 ET",
+      "entry_price": 17.497,
+      "shares": 197,
+      "stop": 17.4662,
+      "trail_dist": 0.125,
+      "peak": 17.3412,
+      "orb_width": 0.25,
+      "cost": 3446.91,
+      "vol_ratio": 1.23,
+      "exit_date": "2026-07-30",
+      "exit_price": 17.4662,
+      "pnl": 6.07,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:38 ET"
     }
   ],
   "all_closed": [
@@ -50350,11 +50425,6 @@
   ],
   "today": "2026-07-30",
   "today_orb": {
-    "MMM": {
-      "high": 178.42,
-      "low": 175.33,
-      "width": 3.09
-    },
     "AOS": {
       "high": 64.77,
       "low": 61.6908,
@@ -50409,11 +50479,6 @@
       "high": 151.7,
       "low": 150.33,
       "width": 1.37
-    },
-    "AKAM": {
-      "high": 111.35,
-      "low": 108.185,
-      "width": 3.165
     },
     "ALB": {
       "high": 118.555,
@@ -50477,8 +50542,8 @@
     },
     "AEP": {
       "high": 130.48,
-      "low": 128.395,
-      "width": 2.085
+      "low": 128.3,
+      "width": 2.18
     },
     "AXP": {
       "high": 333.6558,
@@ -50881,9 +50946,9 @@
       "width": 8.47
     },
     "CINF": {
-      "high": 179.42,
+      "high": 179.92,
       "low": 176.24,
-      "width": 3.18
+      "width": 3.68
     },
     "CTAS": {
       "high": 211.06,
@@ -51205,6 +51270,11 @@
       "low": 147.02,
       "width": 2.41
     },
+    "ETR": {
+      "high": 110.3,
+      "low": 108.115,
+      "width": 2.185
+    },
     "EOG": {
       "high": 145.53,
       "low": 143.125,
@@ -51249,6 +51319,11 @@
       "high": 388.97,
       "low": 374.92,
       "width": 14.05
+    },
+    "EVRG": {
+      "high": 84.37,
+      "low": 83.3,
+      "width": 1.07
     },
     "ES": {
       "high": 75.59,
@@ -51339,11 +51414,6 @@
       "high": 49.805,
       "low": 49.305,
       "width": 0.5
-    },
-    "FISV": {
-      "high": 54.61,
-      "low": 53.21,
-      "width": 1.4
     },
     "FLEX": {
       "high": 109.73,
@@ -51514,11 +51584,6 @@
       "high": 335.69,
       "low": 332.7276,
       "width": 2.9624
-    },
-    "HONA": {
-      "high": 204.99,
-      "low": 201.09,
-      "width": 3.9
     },
     "HON": {
       "high": 242.0,
@@ -51731,9 +51796,9 @@
       "width": 5.8525
     },
     "KLAC": {
-      "high": 186.86,
+      "high": 185.64,
       "low": 179.05,
-      "width": 7.81
+      "width": 6.59
     },
     "KHC": {
       "high": 27.0399,
@@ -51855,6 +51920,11 @@
       "low": 175.16,
       "width": 6.03
     },
+    "MAS": {
+      "high": 72.55,
+      "low": 71.055,
+      "width": 1.495
+    },
     "MA": {
       "high": 582.62,
       "low": 575.0,
@@ -51912,8 +51982,8 @@
     },
     "MU": {
       "high": 840.7697,
-      "low": 789.8,
-      "width": 50.9697
+      "low": 789.01,
+      "width": 51.7597
     },
     "MSFT": {
       "high": 451.725,
@@ -52131,9 +52201,9 @@
       "width": 7.895
     },
     "PSKY": {
-      "high": 7.878,
+      "high": 7.905,
       "low": 7.78,
-      "width": 0.098
+      "width": 0.125
     },
     "PH": {
       "high": 968.04,
@@ -52867,7 +52937,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 95846.6
+    "2026-07-30": 95886.48
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -104879,6 +104949,64 @@
       "exits": [],
       "portfolio_value": 95846.6,
       "note": "$95,847 | cash=$670 | open=50 | closed today=24 | day PnL=$-71"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "11:38 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "KIM",
+          "side": "short",
+          "price": 25.39,
+          "shares": 48,
+          "stop": 25.67,
+          "trail_dist": 0.2825
+        },
+        {
+          "ticker": "LMT",
+          "side": "short",
+          "price": 559.54,
+          "shares": 1,
+          "stop": 564.5,
+          "trail_dist": 4.9578
+        },
+        {
+          "ticker": "AIG",
+          "side": "short",
+          "price": 77.9,
+          "shares": 9,
+          "stop": 78.89,
+          "trail_dist": 0.99
+        },
+        {
+          "ticker": "PCG",
+          "side": "short",
+          "price": 17.45,
+          "shares": 28,
+          "stop": 17.58,
+          "trail_dist": 0.125
+        },
+        {
+          "ticker": "BRO",
+          "side": "short",
+          "price": 70.64,
+          "shares": 4,
+          "stop": 72.08,
+          "trail_dist": 1.44
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "PCG",
+          "side": "short",
+          "exit_price": 17.47,
+          "pnl": 6.07,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95886.48,
+      "note": "$95,886 | cash=$873 | open=54 | closed today=25 | day PnL=$-65"
     }
   ]
 }
