@@ -1,5 +1,5 @@
 {
-  "capital": 1257.89,
+  "capital": 1335.57,
   "open_positions": [
     {
       "ticker": "MKC",
@@ -8,9 +8,9 @@
       "entry_time": "10:03 ET",
       "entry_price": 50.19,
       "shares": 571,
-      "stop": 50.725,
+      "stop": 50.655,
       "trail_dist": 0.535,
-      "peak": 50.19,
+      "peak": 50.12,
       "orb_width": 1.07,
       "cost": 28658.49,
       "vol_ratio": 1.71
@@ -92,9 +92,9 @@
       "entry_time": "10:08 ET",
       "entry_price": 311.64,
       "shares": 10,
-      "stop": 309.3525,
+      "stop": 309.3725,
       "trail_dist": 3.3125,
-      "peak": 312.665,
+      "peak": 312.685,
       "orb_width": 6.625,
       "cost": 3116.4,
       "vol_ratio": 1.58
@@ -176,9 +176,9 @@
       "entry_time": "10:13 ET",
       "entry_price": 129.535,
       "shares": 19,
-      "stop": 131.135,
+      "stop": 130.865,
       "trail_dist": 1.6,
-      "peak": 129.535,
+      "peak": 129.265,
       "orb_width": 3.2,
       "cost": 2461.17,
       "vol_ratio": 1.83
@@ -198,29 +198,15 @@
       "vol_ratio": 1.55
     },
     {
-      "ticker": "TKO",
-      "side": "short",
-      "entry_date": "2026-07-30",
-      "entry_time": "10:13 ET",
-      "entry_price": 183.02,
-      "shares": 6,
-      "stop": 183.965,
-      "trail_dist": 0.945,
-      "peak": 183.02,
-      "orb_width": 1.89,
-      "cost": 1098.12,
-      "vol_ratio": 1.5
-    },
-    {
       "ticker": "GPN",
       "side": "short",
       "entry_date": "2026-07-30",
       "entry_time": "10:13 ET",
       "entry_price": 85.725,
       "shares": 11,
-      "stop": 86.5799,
+      "stop": 86.5649,
       "trail_dist": 0.8549,
-      "peak": 85.725,
+      "peak": 85.71,
       "orb_width": 1.7098,
       "cost": 942.97,
       "vol_ratio": 1.42
@@ -252,6 +238,34 @@
       "orb_width": 0.12,
       "cost": 536.02,
       "vol_ratio": 1.26
+    },
+    {
+      "ticker": "TKO",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:16 ET",
+      "entry_price": 183.105,
+      "shares": 3,
+      "stop": 184.05,
+      "trail_dist": 0.945,
+      "peak": 183.105,
+      "orb_width": 1.89,
+      "cost": 549.31,
+      "vol_ratio": 1.75
+    },
+    {
+      "ticker": "DGX",
+      "side": "long",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:16 ET",
+      "entry_price": 232.73,
+      "shares": 2,
+      "stop": 231.04,
+      "trail_dist": 1.69,
+      "peak": 232.73,
+      "orb_width": 3.38,
+      "cost": 465.46,
+      "vol_ratio": 1.34
     }
   ],
   "closed_today": [
@@ -311,6 +325,25 @@
       "pnl": -43.54,
       "exit_reason": "trailing stop",
       "exit_time": "10:13 ET"
+    },
+    {
+      "ticker": "TKO",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "10:13 ET",
+      "entry_price": 183.02,
+      "shares": 6,
+      "stop": 183.965,
+      "trail_dist": 0.945,
+      "peak": 183.02,
+      "orb_width": 1.89,
+      "cost": 1098.12,
+      "vol_ratio": 1.5,
+      "exit_date": "2026-07-30",
+      "exit_price": 183.965,
+      "pnl": -5.67,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:16 ET"
     }
   ],
   "all_closed": [
@@ -49625,8 +49658,8 @@
     },
     "AEE": {
       "high": 110.76,
-      "low": 109.34,
-      "width": 1.42
+      "low": 109.31,
+      "width": 1.45
     },
     "AEP": {
       "high": 130.48,
@@ -50084,9 +50117,9 @@
       "width": 2.25
     },
     "COHR": {
-      "high": 247.69,
+      "high": 247.79,
       "low": 239.3,
-      "width": 8.39
+      "width": 8.49
     },
     "COIN": {
       "high": 164.78,
@@ -50132,6 +50165,11 @@
       "high": 73.1,
       "low": 72.0,
       "width": 1.1
+    },
+    "CPRT": {
+      "high": 30.255,
+      "low": 29.41,
+      "width": 0.845
     },
     "GLW": {
       "high": 134.74,
@@ -50179,9 +50217,9 @@
       "width": 1.3
     },
     "CMI": {
-      "high": 633.41,
+      "high": 633.78,
       "low": 619.0843,
-      "width": 14.3257
+      "width": 14.6957
     },
     "CVS": {
       "high": 105.0,
@@ -50290,8 +50328,8 @@
     },
     "DTE": {
       "high": 144.07,
-      "low": 143.01,
-      "width": 1.06
+      "low": 143.0,
+      "width": 1.07
     },
     "DUK": {
       "high": 129.295,
@@ -50819,9 +50857,9 @@
       "width": 9.5875
     },
     "JBL": {
-      "high": 305.86,
+      "high": 306.0,
       "low": 296.57,
-      "width": 9.29
+      "width": 9.43
     },
     "JKHY": {
       "high": 159.06,
@@ -50830,8 +50868,8 @@
     },
     "J": {
       "high": 135.33,
-      "low": 132.755,
-      "width": 2.575
+      "low": 132.735,
+      "width": 2.595
     },
     "JNJ": {
       "high": 260.52,
@@ -50965,8 +51003,8 @@
     },
     "LOW": {
       "high": 214.88,
-      "low": 211.1,
-      "width": 3.78
+      "low": 211.04,
+      "width": 3.84
     },
     "LULU": {
       "high": 117.53,
@@ -50985,8 +51023,8 @@
     },
     "MTB": {
       "high": 251.095,
-      "low": 249.52,
-      "width": 1.575
+      "low": 249.48,
+      "width": 1.615
     },
     "MPC": {
       "high": 311.525,
@@ -51025,8 +51063,8 @@
     },
     "MKC": {
       "high": 51.3,
-      "low": 50.23,
-      "width": 1.07
+      "low": 50.21,
+      "width": 1.09
     },
     "MCD": {
       "high": 271.8,
@@ -51119,9 +51157,9 @@
       "width": 6.225
     },
     "MS": {
-      "high": 208.235,
+      "high": 208.275,
       "low": 205.3,
-      "width": 2.935
+      "width": 2.975
     },
     "MOS": {
       "high": 22.73,
@@ -51225,8 +51263,8 @@
     },
     "NVR": {
       "high": 6394.9399,
-      "low": 6274.2798,
-      "width": 120.6602
+      "low": 6264.9502,
+      "width": 129.9897
     },
     "NXPI": {
       "high": 251.04,
@@ -51264,9 +51302,9 @@
       "width": 1.23
     },
     "ORCL": {
-      "high": 127.06,
+      "high": 127.07,
       "low": 121.58,
-      "width": 5.48
+      "width": 5.49
     },
     "OTIS": {
       "high": 73.07,
@@ -51345,8 +51383,8 @@
     },
     "PNW": {
       "high": 102.42,
-      "low": 101.425,
-      "width": 0.995
+      "low": 101.28,
+      "width": 1.14
     },
     "PNC": {
       "high": 249.77,
@@ -51405,8 +51443,8 @@
     },
     "PHM": {
       "high": 133.205,
-      "low": 130.005,
-      "width": 3.2
+      "low": 129.76,
+      "width": 3.445
     },
     "PWR": {
       "high": 679.8,
@@ -51419,9 +51457,9 @@
       "width": 5.4
     },
     "DGX": {
-      "high": 232.28,
+      "high": 232.39,
       "low": 229.01,
-      "width": 3.27
+      "width": 3.38
     },
     "Q": {
       "high": 133.46,
@@ -51585,8 +51623,8 @@
     },
     "SO": {
       "high": 97.31,
-      "low": 94.86,
-      "width": 2.45
+      "low": 94.84,
+      "width": 2.47
     },
     "LUV": {
       "high": 45.15,
@@ -51770,8 +51808,8 @@
     },
     "USB": {
       "high": 63.34,
-      "low": 62.79,
-      "width": 0.55
+      "low": 62.78,
+      "width": 0.56
     },
     "UBER": {
       "high": 70.6,
@@ -51815,8 +51853,8 @@
     },
     "UHS": {
       "high": 165.7,
-      "low": 162.9,
-      "width": 2.8
+      "low": 162.72,
+      "width": 2.98
     },
     "VLO": {
       "high": 305.475,
@@ -51827,6 +51865,11 @@
       "high": 203.11,
       "low": 199.28,
       "width": 3.83
+    },
+    "VTR": {
+      "high": 97.605,
+      "low": 91.92,
+      "width": 5.685
     },
     "VLTO": {
       "high": 99.645,
@@ -52025,7 +52068,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 95634.04
+    "2026-07-30": 95713.04
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -103134,6 +103177,40 @@
       ],
       "portfolio_value": 95634.04,
       "note": "$95,634 | cash=$1,258 | open=18 | closed today=3 | day PnL=$-86"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "10:15 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "TKO",
+          "side": "short",
+          "price": 183.1,
+          "shares": 3,
+          "stop": 184.05,
+          "trail_dist": 0.945
+        },
+        {
+          "ticker": "DGX",
+          "side": "long",
+          "price": 232.73,
+          "shares": 2,
+          "stop": 231.04,
+          "trail_dist": 1.69
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "TKO",
+          "side": "short",
+          "exit_price": 183.97,
+          "pnl": -5.67,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95713.04,
+      "note": "$95,713 | cash=$1,336 | open=19 | closed today=4 | day PnL=$-92"
     }
   ]
 }
