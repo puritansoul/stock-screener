@@ -1740,13 +1740,45 @@ def _smoke_test():
     journal = build_journal_section(state["nav_history"], idx_returns, spy_cum)
     print(f"  build_journal_section: {len(journal)} chars — OK")
 
-    # Test build_swing_dashboard (writes HTML to disk — check it doesn't crash)
+    # Test build_swing_dashboard and verify numeric consistency across sections
     try:
         build_swing_dashboard(state, prices)
         print(f"  build_swing_dashboard — OK")
     except Exception as e:
         print(f"  build_swing_dashboard — FAILED: {e}")
         raise
+
+    import re
+    report_dir = BASE_DIR / "reports"
+    html_file = sorted(report_dir.glob("swing_v2_*.html"), reverse=True)[0]
+    html = html_file.read_text()
+
+    def extract_id(html, elem_id):
+        m = re.search(rf'id="{elem_id}"[^>]*>\$?([\d,]+)', html)
+        return int(m.group(1).replace(",", "")) if m else None
+
+    port_card  = extract_id(html, "port-value")
+    bk_match   = re.search(r'>Portfolio Value<.*?>\$([\d,]+)<', html, re.DOTALL)
+    bk_portval = int(bk_match.group(1).replace(",", "")) if bk_match else None
+    stat_match = re.search(r'Current Value</td>\s*<td[^>]*>\$([\d,]+)', html)
+    stat_portval = int(stat_match.group(1).replace(",", "")) if stat_match else None
+
+    failures = []
+    print(f"  port-value card:          ${port_card:,}" if port_card else "  port-value card: NOT FOUND")
+    print(f"  Capital Breakdown total:  ${bk_portval:,}" if bk_portval else "  Capital Breakdown total: NOT FOUND")
+    print(f"  Strategy Stats cur value: ${stat_portval:,}" if stat_portval else "  Strategy Stats cur value: NOT FOUND")
+
+    if port_card and bk_portval and port_card != bk_portval:
+        failures.append(f"MISMATCH: port-value card (${port_card:,}) != Capital Breakdown (${bk_portval:,})")
+    if port_card and stat_portval and port_card != stat_portval:
+        failures.append(f"MISMATCH: port-value card (${port_card:,}) != Strategy Stats (${stat_portval:,})")
+
+    if failures:
+        for f in failures:
+            print(f"  ❌ {f}")
+        raise AssertionError("Numeric consistency check failed — fix before deploying")
+    else:
+        print("  ✅ Portfolio value consistent across all sections")
 
     print("=== All checks passed ===")
 
