@@ -1,5 +1,5 @@
 {
-  "capital": 1252.48,
+  "capital": 1017.91,
   "open_positions": [
     {
       "ticker": "CNP",
@@ -22,9 +22,9 @@
       "entry_time": "10:08 ET",
       "entry_price": 311.64,
       "shares": 10,
-      "stop": 311.2425,
+      "stop": 311.3926,
       "trail_dist": 3.3125,
-      "peak": 314.555,
+      "peak": 314.7051,
       "orb_width": 6.625,
       "cost": 3116.4,
       "vol_ratio": 1.58
@@ -260,9 +260,9 @@
       "entry_time": "11:23 ET",
       "entry_price": 23.37,
       "shares": 11,
-      "stop": 23.591,
+      "stop": 23.575,
       "trail_dist": 0.32,
-      "peak": 23.271,
+      "peak": 23.255,
       "orb_width": 0.64,
       "cost": 257.07,
       "vol_ratio": 3.58
@@ -344,9 +344,9 @@
       "entry_time": "11:38 ET",
       "entry_price": 70.635,
       "shares": 4,
-      "stop": 71.7,
+      "stop": 71.67,
       "trail_dist": 1.44,
-      "peak": 70.26,
+      "peak": 70.23,
       "orb_width": 2.88,
       "cost": 282.54,
       "vol_ratio": 1.27
@@ -582,9 +582,9 @@
       "entry_time": "12:34 ET",
       "entry_price": 182.785,
       "shares": 2,
-      "stop": 183.05,
+      "stop": 183.01,
       "trail_dist": 0.945,
-      "peak": 182.105,
+      "peak": 182.065,
       "orb_width": 1.89,
       "cost": 365.57,
       "vol_ratio": 2.85
@@ -666,9 +666,9 @@
       "entry_time": "12:39 ET",
       "entry_price": 213.08,
       "shares": 1,
-      "stop": 214.955,
+      "stop": 214.865,
       "trail_dist": 2.375,
-      "peak": 212.58,
+      "peak": 212.49,
       "orb_width": 4.75,
       "cost": 213.08,
       "vol_ratio": 2.34
@@ -806,9 +806,9 @@
       "entry_time": "12:54 ET",
       "entry_price": 7.745,
       "shares": 56,
-      "stop": 7.7801,
+      "stop": 7.769,
       "trail_dist": 0.049,
-      "peak": 7.7311,
+      "peak": 7.72,
       "orb_width": 0.098,
       "cost": 433.72,
       "vol_ratio": 1.5
@@ -848,9 +848,9 @@
       "entry_time": "13:04 ET",
       "entry_price": 410.13,
       "shares": 5,
-      "stop": 412.195,
+      "stop": 412.0,
       "trail_dist": 3.085,
-      "peak": 409.11,
+      "peak": 408.915,
       "orb_width": 6.17,
       "cost": 2050.65,
       "vol_ratio": 3.0
@@ -904,9 +904,9 @@
       "entry_time": "13:14 ET",
       "entry_price": 112.235,
       "shares": 6,
-      "stop": 110.6525,
+      "stop": 110.8775,
       "trail_dist": 1.5825,
-      "peak": 112.235,
+      "peak": 112.46,
       "orb_width": 3.165,
       "cost": 673.41,
       "vol_ratio": 1.37
@@ -918,12 +918,26 @@
       "entry_time": "13:14 ET",
       "entry_price": 48.97,
       "shares": 10,
-      "stop": 49.22,
+      "stop": 49.185,
       "trail_dist": 0.25,
-      "peak": 48.97,
+      "peak": 48.935,
       "orb_width": 0.5,
       "cost": 489.7,
       "vol_ratio": 1.33
+    },
+    {
+      "ticker": "ERIE",
+      "side": "short",
+      "entry_date": "2026-07-30",
+      "entry_time": "13:16 ET",
+      "entry_price": 234.565,
+      "shares": 1,
+      "stop": 237.51,
+      "trail_dist": 2.945,
+      "peak": 234.565,
+      "orb_width": 5.89,
+      "cost": 234.57,
+      "vol_ratio": 1.4
     }
   ],
   "closed_today": [
@@ -51766,6 +51780,11 @@
       "low": 310.54,
       "width": 4.94
     },
+    "CNC": {
+      "high": 62.0352,
+      "low": 60.26,
+      "width": 1.7752
+    },
     "CNP": {
       "high": 43.42,
       "low": 42.59,
@@ -51780,6 +51799,11 @@
       "high": 234.55,
       "low": 227.38,
       "width": 7.17
+    },
+    "SCHW": {
+      "high": 104.36,
+      "low": 103.35,
+      "width": 1.01
     },
     "CHTR": {
       "high": 141.87,
@@ -51940,6 +51964,11 @@
       "high": 29.28,
       "low": 28.21,
       "width": 1.07
+    },
+    "COST": {
+      "high": 960.76,
+      "low": 950.51,
+      "width": 10.25
     },
     "CRH": {
       "high": 102.25,
@@ -52607,9 +52636,9 @@
       "width": 9.43
     },
     "JKHY": {
-      "high": 159.135,
+      "high": 159.06,
       "low": 156.1,
-      "width": 3.035
+      "width": 2.96
     },
     "J": {
       "high": 135.33,
@@ -52672,9 +52701,9 @@
       "width": 5.8525
     },
     "KLAC": {
-      "high": 185.64,
+      "high": 186.86,
       "low": 179.05,
-      "width": 6.59
+      "width": 7.81
     },
     "KHC": {
       "high": 27.0399,
@@ -52870,6 +52899,11 @@
       "high": 136.46,
       "low": 134.06,
       "width": 2.4
+    },
+    "MRNA": {
+      "high": 56.4997,
+      "low": 54.52,
+      "width": 1.9797
     },
     "TAP": {
       "high": 42.135,
@@ -53808,7 +53842,7 @@
     "2026-07-27": 96617.51,
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
-    "2026-07-30": 95575.75
+    "2026-07-30": 95609.78
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -106815,6 +106849,24 @@
       ],
       "portfolio_value": 95575.75,
       "note": "$95,576 | cash=$1,252 | open=66 | closed today=62 | day PnL=$-187"
+    },
+    {
+      "date": "2026-07-30",
+      "time": "13:16 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "ERIE",
+          "side": "short",
+          "price": 234.57,
+          "shares": 1,
+          "stop": 237.51,
+          "trail_dist": 2.945
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 95609.78,
+      "note": "$95,610 | cash=$1,018 | open=67 | closed today=62 | day PnL=$-187"
     }
   ]
 }
