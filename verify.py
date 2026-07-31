@@ -69,7 +69,7 @@ def verify_swing(label: str, module_name: str, html_pattern: str):
                  "stop": 368.0, "cost": 11_400.0, "entry_date": yesterday, "rsi2_entry": 3.7},
             ],
             "closed_positions": [],
-            "nav_history": {yesterday: 99_500.0, today: 100_400.0},
+            "nav_history": {yesterday: 101_000.0, today: 99_500.0},  # today is a loss day — tests sign rendering
             "inception_date": yesterday,
             "scan_results": [],
             "log": [],
@@ -129,6 +129,16 @@ def verify_swing(label: str, module_name: str, html_pattern: str):
                 )
             else:
                 print(f"  {PASS} Capital Breakdown sum = ${breakdown_sum:,}")
+
+        # Journal sign check: negative day P&L must render with a minus sign
+        # The synthetic nav_history has today < yesterday so today's row is a loss
+        neg_day_m = re.search(r'journal-table.*?<tr>.*?<td[^>]*>(-\$[\d,]+|\$[\d,]+)</td>', html, re.DOTALL)
+        if neg_day_m:
+            cell_text = neg_day_m.group(1)
+            if not cell_text.startswith("-$"):
+                failures.append(f"{label}: journal negative day P&L missing minus sign — got '{cell_text}'")
+            else:
+                print(f"  {PASS} journal negative day P&L sign: {cell_text}")
 
     except Exception as e:
         failures.append(f"{label}: EXCEPTION — {e}")

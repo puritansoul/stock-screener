@@ -287,7 +287,7 @@ def build_journal_section(nav_history: dict, idx_returns: dict, spy_cum: dict | 
         if v is None:
             return '<td style="color:#bbb;text-align:right">—</td>'
         c = "#1b5e20" if v > 0 else ("#c62828" if v < 0 else "#555")
-        return f'<td style="color:{c};text-align:right;font-weight:bold">{"+" if v>0 else ""}${abs(v):,.0f}</td>'
+        return f'<td style="color:{c};text-align:right;font-weight:bold">{"+" if v>0 else "-" if v<0 else ""}${abs(v):,.0f}</td>'
 
     def _vs(bot_pct, spx_pct):
         if bot_pct is None or spx_pct is None:
