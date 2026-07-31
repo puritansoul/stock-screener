@@ -1,6 +1,35 @@
 {
-  "capital": 95556.05,
-  "open_positions": [],
+  "capital": 46967.92,
+  "open_positions": [
+    {
+      "ticker": "MGM",
+      "side": "short",
+      "entry_date": "2026-07-31",
+      "entry_time": "10:04 ET",
+      "entry_price": 45.03,
+      "shares": 636,
+      "stop": 45.27,
+      "trail_dist": 0.24,
+      "peak": 45.03,
+      "orb_width": 0.48,
+      "cost": 28639.08,
+      "vol_ratio": 2.35
+    },
+    {
+      "ticker": "LYV",
+      "side": "short",
+      "entry_date": "2026-07-31",
+      "entry_time": "10:04 ET",
+      "entry_price": 173.47,
+      "shares": 115,
+      "stop": 179.89,
+      "trail_dist": 6.42,
+      "peak": 173.47,
+      "orb_width": 12.84,
+      "cost": 19949.05,
+      "vol_ratio": 1.37
+    }
+  ],
   "closed_today": [],
   "all_closed": [
     {
@@ -53102,9 +53131,9 @@
       "width": 0.795
     },
     "ALL": {
-      "high": 266.03,
+      "high": 266.28,
       "low": 262.59,
-      "width": 3.44
+      "width": 3.69
     },
     "GOOGL": {
       "high": 345.92,
@@ -53187,9 +53216,9 @@
       "width": 12.162
     },
     "AON": {
-      "high": 366.57,
+      "high": 364.27,
       "low": 359.98,
-      "width": 6.59
+      "width": 4.29
     },
     "APA": {
       "high": 36.69,
@@ -53250,6 +53279,11 @@
       "high": 282.205,
       "low": 280.21,
       "width": 1.995
+    },
+    "T": {
+      "high": 23.225,
+      "low": 22.915,
+      "width": 0.31
     },
     "ATO": {
       "high": 174.355,
@@ -53427,9 +53461,9 @@
       "width": 2.37
     },
     "CAH": {
-      "high": 229.955,
+      "high": 230.0,
       "low": 225.39,
-      "width": 4.565
+      "width": 4.61
     },
     "CCL": {
       "high": 27.9,
@@ -53493,8 +53527,8 @@
     },
     "CRL": {
       "high": 237.06,
-      "low": 233.61,
-      "width": 3.45
+      "low": 233.5,
+      "width": 3.56
     },
     "SCHW": {
       "high": 105.09,
@@ -53517,9 +53551,9 @@
       "width": 1.13
     },
     "CB": {
-      "high": 350.26,
+      "high": 350.34,
       "low": 347.01,
-      "width": 3.25
+      "width": 3.33
     },
     "CHD": {
       "high": 98.3,
@@ -53560,6 +53594,11 @@
       "high": 72.31,
       "low": 71.5325,
       "width": 0.7775
+    },
+    "CLX": {
+      "high": 96.25,
+      "low": 94.2,
+      "width": 2.05
     },
     "CME": {
       "high": 268.0,
@@ -53926,6 +53965,11 @@
       "low": 92.15,
       "width": 1.3
     },
+    "EXPE": {
+      "high": 295.265,
+      "low": 287.65,
+      "width": 7.615
+    },
     "EXPD": {
       "high": 168.13,
       "low": 165.77,
@@ -54111,6 +54155,11 @@
       "low": 180.35,
       "width": 2.49
     },
+    "GDDY": {
+      "high": 78.46,
+      "low": 73.1,
+      "width": 5.36
+    },
     "GS": {
       "high": 1042.98,
       "low": 1021.54,
@@ -54188,8 +54237,8 @@
     },
     "HWM": {
       "high": 284.0,
-      "low": 277.28,
-      "width": 6.72
+      "low": 279.695,
+      "width": 4.305
     },
     "HPQ": {
       "high": 26.94,
@@ -54565,6 +54614,11 @@
       "high": 77.67,
       "low": 74.88,
       "width": 2.79
+    },
+    "MU": {
+      "high": 930.88,
+      "low": 859.17,
+      "width": 71.71
     },
     "MSFT": {
       "high": 462.86,
@@ -55377,9 +55431,9 @@
       "width": 4.125
     },
     "WRB": {
-      "high": 73.17,
+      "high": 73.19,
       "low": 72.26,
-      "width": 0.91
+      "width": 0.93
     },
     "GWW": {
       "high": 1376.79,
@@ -110709,6 +110763,32 @@
       "exits": [],
       "portfolio_value": 95556.05,
       "note": "$95,556 | cash=$95,556 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-31",
+      "time": "10:03 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "MGM",
+          "side": "short",
+          "price": 45.03,
+          "shares": 636,
+          "stop": 45.27,
+          "trail_dist": 0.24
+        },
+        {
+          "ticker": "LYV",
+          "side": "short",
+          "price": 173.47,
+          "shares": 115,
+          "stop": 179.89,
+          "trail_dist": 6.42
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 95556.05,
+      "note": "$95,556 | cash=$46,968 | open=2 | closed today=0 | day PnL=$+0"
     }
   ]
 }
