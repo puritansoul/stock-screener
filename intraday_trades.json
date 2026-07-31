@@ -1,5 +1,5 @@
 {
-  "capital": 327.91,
+  "capital": 171.26,
   "open_positions": [
     {
       "ticker": "MGM",
@@ -22,9 +22,9 @@
       "entry_time": "10:04 ET",
       "entry_price": 173.47,
       "shares": 115,
-      "stop": 179.385,
+      "stop": 179.37,
       "trail_dist": 6.42,
-      "peak": 172.965,
+      "peak": 172.95,
       "orb_width": 12.84,
       "cost": 19949.05,
       "vol_ratio": 1.37
@@ -36,9 +36,9 @@
       "entry_time": "10:06 ET",
       "entry_price": 232.95,
       "shares": 60,
-      "stop": 233.86,
+      "stop": 233.55,
       "trail_dist": 1.78,
-      "peak": 232.08,
+      "peak": 231.77,
       "orb_width": 3.56,
       "cost": 13977.0,
       "vol_ratio": 1.32
@@ -78,9 +78,9 @@
       "entry_time": "10:09 ET",
       "entry_price": 31.52,
       "shares": 160,
-      "stop": 31.805,
+      "stop": 31.795,
       "trail_dist": 0.285,
-      "peak": 31.52,
+      "peak": 31.51,
       "orb_width": 0.57,
       "cost": 5043.2,
       "vol_ratio": 1.54
@@ -120,9 +120,9 @@
       "entry_time": "10:09 ET",
       "entry_price": 210.21,
       "shares": 8,
-      "stop": 211.4276,
+      "stop": 211.0875,
       "trail_dist": 1.6575,
-      "peak": 209.7701,
+      "peak": 209.43,
       "orb_width": 3.315,
       "cost": 1681.68,
       "vol_ratio": 1.28
@@ -134,9 +134,9 @@
       "entry_time": "10:09 ET",
       "entry_price": 179.59,
       "shares": 7,
-      "stop": 180.5201,
+      "stop": 180.4151,
       "trail_dist": 1.1401,
-      "peak": 179.38,
+      "peak": 179.275,
       "orb_width": 2.2802,
       "cost": 1257.13,
       "vol_ratio": 1.23
@@ -148,9 +148,9 @@
       "entry_time": "10:11 ET",
       "entry_price": 282.33,
       "shares": 3,
-      "stop": 281.3375,
+      "stop": 281.6775,
       "trail_dist": 0.9975,
-      "peak": 282.335,
+      "peak": 282.675,
       "orb_width": 1.995,
       "cost": 846.99,
       "vol_ratio": 1.5
@@ -176,9 +176,9 @@
       "entry_time": "10:14 ET",
       "entry_price": 194.8,
       "shares": 2,
-      "stop": 195.925,
+      "stop": 195.725,
       "trail_dist": 1.735,
-      "peak": 194.19,
+      "peak": 193.99,
       "orb_width": 3.47,
       "cost": 389.6,
       "vol_ratio": 2.39
@@ -204,9 +204,9 @@
       "entry_time": "10:14 ET",
       "entry_price": 148.32,
       "shares": 1,
-      "stop": 149.0134,
+      "stop": 149.0084,
       "trail_dist": 1.0534,
-      "peak": 147.96,
+      "peak": 147.955,
       "orb_width": 2.1069,
       "cost": 148.32,
       "vol_ratio": 1.49
@@ -246,12 +246,40 @@
       "entry_time": "10:14 ET",
       "entry_price": 61.02,
       "shares": 1,
-      "stop": 62.055,
+      "stop": 62.015,
       "trail_dist": 1.035,
-      "peak": 61.02,
+      "peak": 60.98,
       "orb_width": 2.07,
       "cost": 61.02,
       "vol_ratio": 1.23
+    },
+    {
+      "ticker": "MET",
+      "side": "short",
+      "entry_date": "2026-07-31",
+      "entry_time": "10:19 ET",
+      "entry_price": 96.59,
+      "shares": 1,
+      "stop": 97.0275,
+      "trail_dist": 0.4375,
+      "peak": 96.59,
+      "orb_width": 0.875,
+      "cost": 96.59,
+      "vol_ratio": 3.38
+    },
+    {
+      "ticker": "BKR",
+      "side": "short",
+      "entry_date": "2026-07-31",
+      "entry_time": "10:19 ET",
+      "entry_price": 60.065,
+      "shares": 1,
+      "stop": 60.6,
+      "trail_dist": 0.535,
+      "peak": 60.065,
+      "orb_width": 1.07,
+      "cost": 60.06,
+      "vol_ratio": 1.32
     }
   ],
   "closed_today": [],
@@ -55374,11 +55402,6 @@
       "low": 181.16,
       "width": 3.87
     },
-    "STLD": {
-      "high": 255.23,
-      "low": 250.45,
-      "width": 4.78
-    },
     "STE": {
       "high": 230.13,
       "low": 227.71,
@@ -55797,7 +55820,7 @@
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
     "2026-07-30": 95556.05,
-    "2026-07-31": 95859.67
+    "2026-07-31": 95728.2
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -111190,6 +111213,32 @@
       "exits": [],
       "portfolio_value": 95859.67,
       "note": "$95,860 | cash=$328 | open=18 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-31",
+      "time": "10:18 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "MET",
+          "side": "short",
+          "price": 96.59,
+          "shares": 1,
+          "stop": 97.03,
+          "trail_dist": 0.4375
+        },
+        {
+          "ticker": "BKR",
+          "side": "short",
+          "price": 60.06,
+          "shares": 1,
+          "stop": 60.6,
+          "trail_dist": 0.535
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 95728.2,
+      "note": "$95,728 | cash=$171 | open=20 | closed today=0 | day PnL=$+0"
     }
   ]
 }
