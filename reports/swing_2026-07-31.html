@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Swing Trader — 2026-07-31</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            margin: 0; padding: 16px 20px; color: #222; background: #f0f2f5; }
+    h1   { color: #1a237e; margin-bottom: 4px; font-size: 22px; }
+    h2   { color: #1a237e; font-size: 16px; margin: 0 0 10px 0; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    th    { background: #1a237e; color: white; padding: 8px 10px; text-align: left; white-space: nowrap; cursor:pointer; user-select:none; }
+    th:hover { background: #283593; }
+    th.sort-asc::after  { content: " ▲"; font-size:10px; }
+    th.sort-desc::after { content: " ▼"; font-size:10px; }
+    td    { padding: 6px 10px; border-bottom: 1px solid #eee; white-space: nowrap; }
+    thead { position: sticky; top: 0; z-index: 10; }
+    tr:hover td { background: #f5f5f5; transition: background 0.15s; }
+    .section { background: white; border: 1px solid #e0e0e0; border-radius: 8px;
+                padding: 18px 20px; margin: 12px 0; overflow-x: auto; }
+    .badge { background: #e3f2fd; color: #0d47a1; padding: 3px 10px;
+              border-radius: 12px; font-size: 12px; font-weight: bold; }
+    .card  { background: #f0f4ff; border: 1px solid #c5cae9; border-radius: 10px;
+              padding: 16px 24px; min-width: 160px; box-shadow: 0 2px 4px rgba(0,0,0,0.08); }
+    .card-label { font-size: 11px; color: #6c757d; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+    .card-value { font-size: 28px; font-weight: bold; color: #1a237e; line-height: 1; }
+    details summary { cursor: pointer; font-size: 16px; font-weight: bold; color: #1a237e;
+                       padding: 4px 0; user-select: none; list-style: none; }
+    details summary::before { content: "▶ "; font-size: 12px; }
+    details[open] summary::before { content: "▼ "; font-size: 12px; }
+    details summary::-webkit-details-marker { display: none; }
+    canvas { max-width: 100%; }
+  </style>
+</head>
+<body>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px">
+    <div>
+      <h1 style="margin-bottom:4px">📈 Swing Trading Bot — RSI(2) Strategy</h1>
+      <p style="margin: 6px 0 12px">
+        <span class="badge">2026-07-31</span>&nbsp;
+        <span class="badge">RSI(2) Mean Reversion</span>&nbsp;
+        <span class="badge">23 open positions</span>&nbsp;
+        <span class="badge">$100k starting capital</span>
+      </p>
+    </div>
+    <div id="price-status" style="font-size:12px;padding:6px 14px;border-radius:20px;background:#fff;border:1px solid #e0e0e0;color:#888;white-space:nowrap;align-self:center">
+      ⏸ Prices as of last run
+    </div>
+  </div>
+
+  <!-- Summary cards -->
+  <div class="section">
+    <h2>Portfolio Summary</h2>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px">
+      <div class="card">
+        <div class="card-label">Portfolio Value</div>
+        <div class="card-value" id="port-value" style="color:#1a237e">$102,557</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Total Return</div>
+        <div class="card-value" id="port-total" style="color:#2e7d32">+$2,557<br>
+          <span style="font-size:14px" id="port-total-pct">+2.56%</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label">Day P&amp;L</div>
+        <div class="card-value" id="day-pnl" style="color:#2e7d32">+$2,820<br>
+          <span style="font-size:14px" id="day-pnl-pct">+2.83%</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label">Cash</div>
+        <div class="card-value">$16,349</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Open Positions</div>
+        <div class="card-value">23</div>
+      </div>
+    </div>
+    <!-- Period return tiles -->
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px"><div style="background:#f5f5f5;border-radius:8px;padding:8px 14px;text-align:center;min-width:80px"><div style="font-size:10px;color:#999;text-transform:uppercase">1 Mo</div><div style="font-size:15px;color:#bbb">—</div></div><div style="background:#f5f5f5;border-radius:8px;padding:8px 14px;text-align:center;min-width:80px"><div style="font-size:10px;color:#999;text-transform:uppercase">3 Mo</div><div style="font-size:15px;color:#bbb">—</div></div><div style="background:#f5f5f5;border-radius:8px;padding:8px 14px;text-align:center;min-width:80px"><div style="font-size:10px;color:#999;text-transform:uppercase">6 Mo</div><div style="font-size:15px;color:#bbb">—</div></div><div style="background:#f5f5f5;border-radius:8px;padding:8px 14px;text-align:center;min-width:80px"><div style="font-size:10px;color:#999;text-transform:uppercase">1 Yr</div><div style="font-size:15px;color:#bbb">—</div></div><div style="background:#f5f5f5;border-radius:8px;padding:8px 14px;text-align:center;min-width:80px"><div style="font-size:10px;color:#999;text-transform:uppercase">3 Yr</div><div style="font-size:15px;color:#bbb">—</div></div><div style="background:#f5f5f5;border-radius:8px;padding:8px 14px;text-align:center;min-width:80px"><div style="font-size:10px;color:#999;text-transform:uppercase">All</div><div style="font-size:15px;font-weight:bold;color:#2e7d32">+2.6%</div></div></div>
+    <!-- Capital breakdown -->
+    <div style="display:flex;gap:24px;flex-wrap:wrap;margin-top:16px;margin-bottom:4px;align-items:flex-start">
+      <div style="flex:1;min-width:260px">
+        <div style="font-size:12px;font-weight:bold;color:#555;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Capital Breakdown</div>
+        <table style="width:100%;font-size:13px;border-collapse:collapse">
+          <tr>
+            <td style="padding:4px 0;color:#555">Starting Capital</td>
+            <td style="text-align:right;font-weight:bold;padding:4px 0">$100,000</td>
+            <td style="text-align:right;color:#999;font-size:11px;padding:4px 0 4px 12px">100.00%</td>
+          </tr>
+          <tr style="border-top:1px solid #eee">
+            <td style="padding:4px 0;color:#1a237e">&#9632; Cash (idle)</td>
+            <td style="text-align:right;font-weight:bold;padding:4px 0;color:#1a237e">$16,349</td>
+            <td style="text-align:right;color:#1a237e;font-size:11px;padding:4px 0 4px 12px">16.3%</td>
+          </tr>
+          <tr>
+            <td style="padding:4px 0;color:#7986cb">&#9632; Invested (cost basis)</td>
+            <td id="bk-invested" style="text-align:right;font-weight:bold;padding:4px 0;color:#7986cb">$87,235</td>
+            <td style="text-align:right;color:#7986cb;font-size:11px;padding:4px 0 4px 12px">87.2%</td>
+          </tr>
+          <tr>
+            <td style="padding:4px 0;color:#c62828">&#9632; Unrealized P&amp;L</td>
+            <td id="bk-unreal" style="text-align:right;font-weight:bold;padding:4px 0;color:#c62828">$1,028</td>
+            <td style="text-align:right;color:#c62828;font-size:11px;padding:4px 0 4px 12px">1.03%</td>
+          </tr>
+          <tr style="border-top:2px solid #c5cae9">
+            <td style="padding:5px 0;font-weight:bold">Portfolio Value</td>
+            <td style="text-align:right;font-weight:bold;padding:5px 0;color:#2e7d32">$102,557</td>
+            <td style="text-align:right;color:#2e7d32;font-size:11px;padding:5px 0 4px 12px">+2.56%</td>
+          </tr>
+          <tr>
+            <td style="padding:4px 0;color:#555;font-size:12px">Realized P&amp;L (closed)</td>
+            <td style="text-align:right;padding:4px 0;font-size:12px;color:#2e7d32">+$6,918</td>
+            <td style="text-align:right;color:#999;font-size:11px;padding:4px 0 4px 12px">+6.92%</td>
+          </tr>
+        </table>
+      </div>
+      <div style="flex:2;min-width:300px">
+        <!-- stacked bar -->
+        <div style="font-size:12px;font-weight:bold;color:#555;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Allocation</div>
+        <div style="height:32px;border-radius:6px;overflow:hidden;display:flex;background:#eee">
+          <div style="width:16.3%;background:#1a237e;height:100%;transition:width .3s" title="Cash $16,349"></div>
+          <div style="width:87.2%;background:#7986cb;height:100%;transition:width .3s" title="Invested $87,235"></div>
+          <div style="width:1.03%;background:#c62828;height:100%;transition:width .3s" title="Unrealized loss $1,028"></div>
+        </div>
+        <div style="display:flex;gap:16px;margin-top:6px;font-size:11px;color:#666;flex-wrap:wrap">
+          <span><span style="color:#1a237e;font-weight:bold">&#9632;</span> Cash 16.3%</span>
+          <span><span style="color:#7986cb;font-weight:bold">&#9632;</span> Invested 87.2%</span>
+          <span><span style="color:#c62828;font-weight:bold">&#9632;</span> Unrealized P&amp;L 1.03%</span>
+        </div>
+        <canvas id="nav-chart" height="100" style="margin-top:16px"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Open positions -->
+  <div class="section">
+    <h2>Open Positions</h2>
+    <div id="col-toggles-open" style="margin-bottom:8px;display:flex;flex-wrap:wrap;gap:6px;font-size:12px"></div>
+    <div style="overflow-x:auto">
+    <table id="open-pos-table" data-toggles="col-toggles-open" style="white-space:nowrap">
+      <thead><tr>
+        <th data-col="0">Ticker</th><th data-col="1">Side</th><th data-col="2">Entry</th><th data-col="3">Current</th>
+        <th data-col="4">Shares</th><th data-col="5">$ Invested</th><th data-col="6">Current Value</th><th data-col="7">Unreal P&amp;L $</th><th data-col="8">Unreal %</th>
+        <th data-col="9">Day Δ $</th><th data-col="10">Day Δ %</th>
+        <th data-col="11">Stop</th><th data-col="12">RSI(2) at entry</th><th data-col="13">Entry Date</th>
+      </tr></thead>
+      <tbody>
+        <tr data-ticker="GNRC" data-qty="6" data-buypx="233.94" data-side="long" data-prevpx="195.19" data-server-unreal="-240.33">
+          <td style="font-weight:bold">GNRC<span style="color:#888;font-size:11px;display:block;line-height:1.1">Generac Holdlings</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$233.94</td>
+          <td class="live-price">$193.88</td>
+          <td style="text-align:right">6</td>
+          <td style="text-align:right">$1,404</td>
+          <td class="live-curval" style="text-align:right">$1,163</td>
+          <td class="live-unreal-d" data-sort="-240.33" style="text-align:right;color:#c62828;font-weight:bold">$240</td>
+          <td class="live-unreal-pct" data-sort="-17.1219" style="text-align:right;color:#c62828;font-weight:bold">-17.12%</td>
+          <td class="live-day-d" data-sort="-7.83" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-7.83" style="color:#c62828">$8</span></td>
+          <td class="live-day-pct" data-sort="-0.6686" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-0.6686" style="color:#c62828">-0.67%</span></td>
+          <td>$174.72</td>
+          <td style="color:#666;font-size:12px">9.57</td>
+          <td style="color:#666;font-size:12px">2026-07-13</td>
+        </tr>
+        <tr data-ticker="ABT" data-qty="13" data-buypx="100.68" data-side="short" data-prevpx="108.00" data-server-unreal="-46.80">
+          <td style="font-weight:bold">ABT<span style="color:#888;font-size:11px;display:block;line-height:1.1">Abbott Laboratories</span></td>
+          <td><span style="background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">SHORT</span></td>
+          <td>$100.68</td>
+          <td class="live-price">$104.28</td>
+          <td style="text-align:right">13</td>
+          <td style="text-align:right">$1,309</td>
+          <td class="live-curval" style="text-align:right">$1,262</td>
+          <td class="live-unreal-d" data-sort="-46.80" style="text-align:right;color:#c62828;font-weight:bold">$47</td>
+          <td class="live-unreal-pct" data-sort="-3.5757" style="text-align:right;color:#c62828;font-weight:bold">-3.58%</td>
+          <td class="live-day-d" data-sort="48.36" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="48.36" style="color:#2e7d32">+$48</span></td>
+          <td class="live-day-pct" data-sort="3.4444" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="3.4444" style="color:#2e7d32">+3.44%</span></td>
+          <td>$109.28</td>
+          <td style="color:#666;font-size:12px">92.76</td>
+          <td style="color:#666;font-size:12px">2026-07-20</td>
+        </tr>
+        <tr data-ticker="HAL" data-qty="247" data-buypx="33.19" data-side="long" data-prevpx="31.19" data-server-unreal="-371.74">
+          <td style="font-weight:bold">HAL<span style="color:#888;font-size:11px;display:block;line-height:1.1">Halliburton</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$33.19</td>
+          <td class="live-price">$31.68</td>
+          <td style="text-align:right">247</td>
+          <td style="text-align:right">$8,198</td>
+          <td class="live-curval" style="text-align:right">$7,826</td>
+          <td class="live-unreal-d" data-sort="-371.74" style="text-align:right;color:#c62828;font-weight:bold">$372</td>
+          <td class="live-unreal-pct" data-sort="-4.5345" style="text-align:right;color:#c62828;font-weight:bold">-4.53%</td>
+          <td class="live-day-d" data-sort="122.26" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="122.26" style="color:#2e7d32">+$122</span></td>
+          <td class="live-day-pct" data-sort="1.5870" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="1.5870" style="color:#2e7d32">+1.59%</span></td>
+          <td>$30.77</td>
+          <td style="color:#666;font-size:12px">3.34</td>
+          <td style="color:#666;font-size:12px">2026-07-22</td>
+        </tr>
+        <tr data-ticker="EXPD" data-qty="55" data-buypx="171.34" data-side="long" data-prevpx="170.13" data-server-unreal="-180.95">
+          <td style="font-weight:bold">EXPD<span style="color:#888;font-size:11px;display:block;line-height:1.1">Expeditors International of Was</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$171.34</td>
+          <td class="live-price">$168.05</td>
+          <td style="text-align:right">55</td>
+          <td style="text-align:right">$9,424</td>
+          <td class="live-curval" style="text-align:right">$9,243</td>
+          <td class="live-unreal-d" data-sort="-180.95" style="text-align:right;color:#c62828;font-weight:bold">$181</td>
+          <td class="live-unreal-pct" data-sort="-1.9202" style="text-align:right;color:#c62828;font-weight:bold">-1.92%</td>
+          <td class="live-day-d" data-sort="-114.40" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-114.40" style="color:#c62828">$114</span></td>
+          <td class="live-day-pct" data-sort="-1.2226" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-1.2226" style="color:#c62828">-1.22%</span></td>
+          <td>$159.30</td>
+          <td style="color:#666;font-size:12px">2.58</td>
+          <td style="color:#666;font-size:12px">2026-07-28</td>
+        </tr>
+        <tr data-ticker="HUM" data-qty="19" data-buypx="381.15" data-side="long" data-prevpx="365.41" data-server-unreal="-293.46">
+          <td style="font-weight:bold">HUM<span style="color:#888;font-size:11px;display:block;line-height:1.1">Humana</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$381.15</td>
+          <td class="live-price">$365.70</td>
+          <td style="text-align:right">19</td>
+          <td style="text-align:right">$7,242</td>
+          <td class="live-curval" style="text-align:right">$6,948</td>
+          <td class="live-unreal-d" data-sort="-293.46" style="text-align:right;color:#c62828;font-weight:bold">$293</td>
+          <td class="live-unreal-pct" data-sort="-4.0522" style="text-align:right;color:#c62828;font-weight:bold">-4.05%</td>
+          <td class="live-day-d" data-sort="5.60" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="5.60" style="color:#2e7d32">+$6</span></td>
+          <td class="live-day-pct" data-sort="0.0807" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="0.0807" style="color:#2e7d32">+0.08%</span></td>
+          <td>$361.44</td>
+          <td style="color:#666;font-size:12px">4.65</td>
+          <td style="color:#666;font-size:12px">2026-07-28</td>
+        </tr>
+        <tr data-ticker="JBHT" data-qty="26" data-buypx="277.62" data-side="long" data-prevpx="276.14" data-server-unreal="-195.58">
+          <td style="font-weight:bold">JBHT<span style="color:#888;font-size:11px;display:block;line-height:1.1">J.B. Hunt Transport Services, I</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$277.62</td>
+          <td class="live-price">$270.10</td>
+          <td style="text-align:right">26</td>
+          <td style="text-align:right">$7,218</td>
+          <td class="live-curval" style="text-align:right">$7,023</td>
+          <td class="live-unreal-d" data-sort="-195.58" style="text-align:right;color:#c62828;font-weight:bold">$196</td>
+          <td class="live-unreal-pct" data-sort="-2.7096" style="text-align:right;color:#c62828;font-weight:bold">-2.71%</td>
+          <td class="live-day-d" data-sort="-157.11" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-157.11" style="color:#c62828">$157</span></td>
+          <td class="live-day-pct" data-sort="-2.1882" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-2.1882" style="color:#c62828">-2.19%</span></td>
+          <td>$259.93</td>
+          <td style="color:#666;font-size:12px">2.73</td>
+          <td style="color:#666;font-size:12px">2026-07-29</td>
+        </tr>
+        <tr data-ticker="LITE" data-qty="3" data-buypx="651.93" data-side="long" data-prevpx="602.35" data-server-unreal="173.88">
+          <td style="font-weight:bold">LITE<span style="color:#888;font-size:11px;display:block;line-height:1.1">Lumentum</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$651.93</td>
+          <td class="live-price">$709.89</td>
+          <td style="text-align:right">3</td>
+          <td style="text-align:right">$1,956</td>
+          <td class="live-curval" style="text-align:right">$2,130</td>
+          <td class="live-unreal-d" data-sort="173.88" style="text-align:right;color:#2e7d32;font-weight:bold">+$174</td>
+          <td class="live-unreal-pct" data-sort="8.8905" style="text-align:right;color:#2e7d32;font-weight:bold">+8.89%</td>
+          <td class="live-day-d" data-sort="322.62" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="322.62" style="color:#2e7d32">+$323</span></td>
+          <td class="live-day-pct" data-sort="17.8534" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="17.8534" style="color:#2e7d32">+17.85%</span></td>
+          <td>$515.76</td>
+          <td style="color:#666;font-size:12px">3.27</td>
+          <td style="color:#666;font-size:12px">2026-07-29</td>
+        </tr>
+        <tr data-ticker="CAT" data-qty="5" data-buypx="840.85" data-side="long" data-prevpx="782.71" data-server-unreal="-109.22">
+          <td style="font-weight:bold">CAT<span style="color:#888;font-size:11px;display:block;line-height:1.1">Caterpillar</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$840.85</td>
+          <td class="live-price">$819.01</td>
+          <td style="text-align:right">5</td>
+          <td style="text-align:right">$4,204</td>
+          <td class="live-curval" style="text-align:right">$4,095</td>
+          <td class="live-unreal-d" data-sort="-109.22" style="text-align:right;color:#c62828;font-weight:bold">$109</td>
+          <td class="live-unreal-pct" data-sort="-2.5980" style="text-align:right;color:#c62828;font-weight:bold">-2.60%</td>
+          <td class="live-day-d" data-sort="181.47" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="181.47" style="color:#2e7d32">+$181</span></td>
+          <td class="live-day-pct" data-sort="4.6371" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="4.6371" style="color:#2e7d32">+4.64%</span></td>
+          <td>$762.62</td>
+          <td style="color:#666;font-size:12px">3.41</td>
+          <td style="color:#666;font-size:12px">2026-07-29</td>
+        </tr>
+        <tr data-ticker="KLAC" data-qty="9" data-buypx="190.80" data-side="long" data-prevpx="170.19" data-server-unreal="-67.95">
+          <td style="font-weight:bold">KLAC<span style="color:#888;font-size:11px;display:block;line-height:1.1">KLA Corporation</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$190.80</td>
+          <td class="live-price">$183.25</td>
+          <td style="text-align:right">9</td>
+          <td style="text-align:right">$1,717</td>
+          <td class="live-curval" style="text-align:right">$1,649</td>
+          <td class="live-unreal-d" data-sort="-67.95" style="text-align:right;color:#c62828;font-weight:bold">$68</td>
+          <td class="live-unreal-pct" data-sort="-3.9570" style="text-align:right;color:#c62828;font-weight:bold">-3.96%</td>
+          <td class="live-day-d" data-sort="117.54" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="117.54" style="color:#2e7d32">+$118</span></td>
+          <td class="live-day-pct" data-sort="7.6738" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="7.6738" style="color:#2e7d32">+7.67%</span></td>
+          <td>$162.52</td>
+          <td style="color:#666;font-size:12px">4.27</td>
+          <td style="color:#666;font-size:12px">2026-07-29</td>
+        </tr>
+        <tr data-ticker="CMI" data-qty="5" data-buypx="606.00" data-side="long" data-prevpx="606.00" data-server-unreal="187.75">
+          <td style="font-weight:bold">CMI<span style="color:#888;font-size:11px;display:block;line-height:1.1">Cummins</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$606.00</td>
+          <td class="live-price">$643.55</td>
+          <td style="text-align:right">5</td>
+          <td style="text-align:right">$3,030</td>
+          <td class="live-curval" style="text-align:right">$3,218</td>
+          <td class="live-unreal-d" data-sort="187.75" style="text-align:right;color:#2e7d32;font-weight:bold">+$188</td>
+          <td class="live-unreal-pct" data-sort="6.1964" style="text-align:right;color:#2e7d32;font-weight:bold">+6.20%</td>
+          <td class="live-day-d" data-sort="187.75" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="187.75" style="color:#2e7d32">+$188</span></td>
+          <td class="live-day-pct" data-sort="6.1964" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="6.1964" style="color:#2e7d32">+6.20%</span></td>
+          <td>$560.59</td>
+          <td style="color:#666;font-size:12px">1.3</td>
+          <td style="color:#666;font-size:12px">2026-07-30</td>
+        </tr>
+        <tr data-ticker="FLEX" data-qty="11" data-buypx="103.02" data-side="long" data-prevpx="103.02" data-server-unreal="115.77">
+          <td style="font-weight:bold">FLEX<span style="color:#888;font-size:11px;display:block;line-height:1.1">Flex</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$103.02</td>
+          <td class="live-price">$113.54</td>
+          <td style="text-align:right">11</td>
+          <td style="text-align:right">$1,133</td>
+          <td class="live-curval" style="text-align:right">$1,249</td>
+          <td class="live-unreal-d" data-sort="115.77" style="text-align:right;color:#2e7d32;font-weight:bold">+$116</td>
+          <td class="live-unreal-pct" data-sort="10.2165" style="text-align:right;color:#2e7d32;font-weight:bold">+10.22%</td>
+          <td class="live-day-d" data-sort="115.78" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="115.78" style="color:#2e7d32">+$116</span></td>
+          <td class="live-day-pct" data-sort="10.2165" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="10.2165" style="color:#2e7d32">+10.22%</span></td>
+          <td>$81.40</td>
+          <td style="color:#666;font-size:12px">1.34</td>
+          <td style="color:#666;font-size:12px">2026-07-30</td>
+        </tr>
+        <tr data-ticker="GS" data-qty="2" data-buypx="980.75" data-side="long" data-prevpx="980.75" data-server-unreal="81.44">
+          <td style="font-weight:bold">GS<span style="color:#888;font-size:11px;display:block;line-height:1.1">Goldman Sachs Group (The)</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$980.75</td>
+          <td class="live-price">$1,021.47</td>
+          <td style="text-align:right">2</td>
+          <td style="text-align:right">$1,962</td>
+          <td class="live-curval" style="text-align:right">$2,043</td>
+          <td class="live-unreal-d" data-sort="81.44" style="text-align:right;color:#2e7d32;font-weight:bold">+$81</td>
+          <td class="live-unreal-pct" data-sort="4.1519" style="text-align:right;color:#2e7d32;font-weight:bold">+4.15%</td>
+          <td class="live-day-d" data-sort="81.44" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="81.44" style="color:#2e7d32">+$81</span></td>
+          <td class="live-day-pct" data-sort="4.1519" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="4.1519" style="color:#2e7d32">+4.15%</span></td>
+          <td>$872.79</td>
+          <td style="color:#666;font-size:12px">1.38</td>
+          <td style="color:#666;font-size:12px">2026-07-30</td>
+        </tr>
+        <tr data-ticker="ADM" data-qty="20" data-buypx="80.38" data-side="long" data-prevpx="80.38" data-server-unreal="-13.50">
+          <td style="font-weight:bold">ADM<span style="color:#888;font-size:11px;display:block;line-height:1.1">Archer-Daniels-Midland</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$80.38</td>
+          <td class="live-price">$79.71</td>
+          <td style="text-align:right">20</td>
+          <td style="text-align:right">$1,608</td>
+          <td class="live-curval" style="text-align:right">$1,594</td>
+          <td class="live-unreal-d" data-sort="-13.50" style="text-align:right;color:#c62828;font-weight:bold">$13</td>
+          <td class="live-unreal-pct" data-sort="-0.8398" style="text-align:right;color:#c62828;font-weight:bold">-0.84%</td>
+          <td class="live-day-d" data-sort="-13.50" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-13.50" style="color:#c62828">$13</span></td>
+          <td class="live-day-pct" data-sort="-0.8398" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-0.8398" style="color:#c62828">-0.84%</span></td>
+          <td>$74.61</td>
+          <td style="color:#666;font-size:12px">1.55</td>
+          <td style="color:#666;font-size:12px">2026-07-30</td>
+        </tr>
+        <tr data-ticker="ADI" data-qty="3" data-buypx="353.37" data-side="long" data-prevpx="353.37" data-server-unreal="48.90">
+          <td style="font-weight:bold">ADI<span style="color:#888;font-size:11px;display:block;line-height:1.1">Analog Devices</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$353.37</td>
+          <td class="live-price">$369.67</td>
+          <td style="text-align:right">3</td>
+          <td style="text-align:right">$1,060</td>
+          <td class="live-curval" style="text-align:right">$1,109</td>
+          <td class="live-unreal-d" data-sort="48.90" style="text-align:right;color:#2e7d32;font-weight:bold">+$49</td>
+          <td class="live-unreal-pct" data-sort="4.6127" style="text-align:right;color:#2e7d32;font-weight:bold">+4.61%</td>
+          <td class="live-day-d" data-sort="48.90" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="48.90" style="color:#2e7d32">+$49</span></td>
+          <td class="live-day-pct" data-sort="4.6127" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="4.6127" style="color:#2e7d32">+4.61%</span></td>
+          <td>$324.58</td>
+          <td style="color:#666;font-size:12px">1.71</td>
+          <td style="color:#666;font-size:12px">2026-07-30</td>
+        </tr>
+        <tr data-ticker="BNY" data-qty="7" data-buypx="152.50" data-side="long" data-prevpx="152.50" data-server-unreal="25.06">
+          <td style="font-weight:bold">BNY<span style="color:#888;font-size:11px;display:block;line-height:1.1">The Bank of New York Mellon Cor</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$152.50</td>
+          <td class="live-price">$156.08</td>
+          <td style="text-align:right">7</td>
+          <td style="text-align:right">$1,068</td>
+          <td class="live-curval" style="text-align:right">$1,093</td>
+          <td class="live-unreal-d" data-sort="25.06" style="text-align:right;color:#2e7d32;font-weight:bold">+$25</td>
+          <td class="live-unreal-pct" data-sort="2.3475" style="text-align:right;color:#2e7d32;font-weight:bold">+2.35%</td>
+          <td class="live-day-d" data-sort="25.06" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="25.06" style="color:#2e7d32">+$25</span></td>
+          <td class="live-day-pct" data-sort="2.3475" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="2.3475" style="color:#2e7d32">+2.35%</span></td>
+          <td>$143.96</td>
+          <td style="color:#666;font-size:12px">1.72</td>
+          <td style="color:#666;font-size:12px">2026-07-30</td>
+        </tr>
+        <tr data-ticker="ETR" data-qty="6" data-buypx="107.79" data-side="long" data-prevpx="107.79" data-server-unreal="0.87">
+          <td style="font-weight:bold">ETR<span style="color:#888;font-size:11px;display:block;line-height:1.1">Entergy Corporation</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$107.79</td>
+          <td class="live-price">$107.93</td>
+          <td style="text-align:right">6</td>
+          <td style="text-align:right">$647</td>
+          <td class="live-curval" style="text-align:right">$648</td>
+          <td class="live-unreal-d" data-sort="0.87" style="text-align:right;color:#2e7d32;font-weight:bold">+$1</td>
+          <td class="live-unreal-pct" data-sort="0.1345" style="text-align:right;color:#2e7d32;font-weight:bold">+0.13%</td>
+          <td class="live-day-d" data-sort="0.87" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="0.87" style="color:#2e7d32">+$1</span></td>
+          <td class="live-day-pct" data-sort="0.1345" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="0.1345" style="color:#2e7d32">+0.13%</span></td>
+          <td>$102.37</td>
+          <td style="color:#666;font-size:12px">2.77</td>
+          <td style="color:#666;font-size:12px">2026-07-30</td>
+        </tr>
+        <tr data-ticker="IBKR" data-qty="7" data-buypx="86.26" data-side="long" data-prevpx="86.26" data-server-unreal="29.33">
+          <td style="font-weight:bold">IBKR<span style="color:#888;font-size:11px;display:block;line-height:1.1">Interactive Brokers Group</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$86.26</td>
+          <td class="live-price">$90.45</td>
+          <td style="text-align:right">7</td>
+          <td style="text-align:right">$604</td>
+          <td class="live-curval" style="text-align:right">$633</td>
+          <td class="live-unreal-d" data-sort="29.33" style="text-align:right;color:#2e7d32;font-weight:bold">+$29</td>
+          <td class="live-unreal-pct" data-sort="4.8574" style="text-align:right;color:#2e7d32;font-weight:bold">+4.86%</td>
+          <td class="live-day-d" data-sort="29.33" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="29.33" style="color:#2e7d32">+$29</span></td>
+          <td class="live-day-pct" data-sort="4.8574" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="4.8574" style="color:#2e7d32">+4.86%</span></td>
+          <td>$79.71</td>
+          <td style="color:#666;font-size:12px">3.3</td>
+          <td style="color:#666;font-size:12px">2026-07-30</td>
+        </tr>
+        <tr data-ticker="IVZ" data-qty="17" data-buypx="28.07" data-side="long" data-prevpx="28.07" data-server-unreal="25.92">
+          <td style="font-weight:bold">IVZ<span style="color:#888;font-size:11px;display:block;line-height:1.1">Invesco Ltd</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$28.07</td>
+          <td class="live-price">$29.59</td>
+          <td style="text-align:right">17</td>
+          <td style="text-align:right">$477</td>
+          <td class="live-curval" style="text-align:right">$503</td>
+          <td class="live-unreal-d" data-sort="25.92" style="text-align:right;color:#2e7d32;font-weight:bold">+$26</td>
+          <td class="live-unreal-pct" data-sort="5.4328" style="text-align:right;color:#2e7d32;font-weight:bold">+5.43%</td>
+          <td class="live-day-d" data-sort="25.92" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="25.92" style="color:#2e7d32">+$26</span></td>
+          <td class="live-day-pct" data-sort="5.4328" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="5.4328" style="color:#2e7d32">+5.43%</span></td>
+          <td>$26.19</td>
+          <td style="color:#666;font-size:12px">4.52</td>
+          <td style="color:#666;font-size:12px">2026-07-30</td>
+        </tr>
+        <tr data-ticker="LNT" data-qty="139" data-buypx="70.89" data-side="long" data-prevpx="72.00" data-server-unreal="-93.13">
+          <td style="font-weight:bold">LNT<span style="color:#888;font-size:11px;display:block;line-height:1.1">Alliant Energy Corporation</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$70.89</td>
+          <td class="live-price">$70.22</td>
+          <td style="text-align:right">139</td>
+          <td style="text-align:right">$9,854</td>
+          <td class="live-curval" style="text-align:right">$9,761</td>
+          <td class="live-unreal-d" data-sort="-93.13" style="text-align:right;color:#c62828;font-weight:bold">$93</td>
+          <td class="live-unreal-pct" data-sort="-0.9451" style="text-align:right;color:#c62828;font-weight:bold">-0.95%</td>
+          <td class="live-day-d" data-sort="-247.42" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-247.42" style="color:#c62828">$247</span></td>
+          <td class="live-day-pct" data-sort="-2.4722" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-2.4722" style="color:#c62828">-2.47%</span></td>
+          <td>$67.02</td>
+          <td style="color:#666;font-size:12px">2.7</td>
+          <td style="color:#666;font-size:12px">2026-07-31</td>
+        </tr>
+        <tr data-ticker="EVRG" data-qty="94" data-buypx="83.25" data-side="long" data-prevpx="84.00" data-server-unreal="-43.24">
+          <td style="font-weight:bold">EVRG<span style="color:#888;font-size:11px;display:block;line-height:1.1">Evergy</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$83.25</td>
+          <td class="live-price">$82.79</td>
+          <td style="text-align:right">94</td>
+          <td style="text-align:right">$7,826</td>
+          <td class="live-curval" style="text-align:right">$7,782</td>
+          <td class="live-unreal-d" data-sort="-43.24" style="text-align:right;color:#c62828;font-weight:bold">$43</td>
+          <td class="live-unreal-pct" data-sort="-0.5526" style="text-align:right;color:#c62828;font-weight:bold">-0.55%</td>
+          <td class="live-day-d" data-sort="-113.74" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-113.74" style="color:#c62828">$114</span></td>
+          <td class="live-day-pct" data-sort="-1.4405" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-1.4405" style="color:#c62828">-1.44%</span></td>
+          <td>$80.51</td>
+          <td style="color:#666;font-size:12px">3.37</td>
+          <td style="color:#666;font-size:12px">2026-07-31</td>
+        </tr>
+        <tr data-ticker="AEP" data-qty="49" data-buypx="127.78" data-side="long" data-prevpx="129.40" data-server-unreal="-30.31">
+          <td style="font-weight:bold">AEP<span style="color:#888;font-size:11px;display:block;line-height:1.1">American Electric Power</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$127.78</td>
+          <td class="live-price">$127.16</td>
+          <td style="text-align:right">49</td>
+          <td style="text-align:right">$6,261</td>
+          <td class="live-curval" style="text-align:right">$6,231</td>
+          <td class="live-unreal-d" data-sort="-30.31" style="text-align:right;color:#c62828;font-weight:bold">$30</td>
+          <td class="live-unreal-pct" data-sort="-0.4841" style="text-align:right;color:#c62828;font-weight:bold">-0.48%</td>
+          <td class="live-day-d" data-sort="-109.69" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-109.69" style="color:#c62828">$110</span></td>
+          <td class="live-day-pct" data-sort="-1.7300" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-1.7300" style="color:#c62828">-1.73%</span></td>
+          <td>$121.94</td>
+          <td style="color:#666;font-size:12px">3.47</td>
+          <td style="color:#666;font-size:12px">2026-07-31</td>
+        </tr>
+        <tr data-ticker="DTE" data-qty="35" data-buypx="141.70" data-side="long" data-prevpx="143.52" data-server-unreal="-26.60">
+          <td style="font-weight:bold">DTE<span style="color:#888;font-size:11px;display:block;line-height:1.1">DTE Energy</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$141.70</td>
+          <td class="live-price">$140.94</td>
+          <td style="text-align:right">35</td>
+          <td style="text-align:right">$4,960</td>
+          <td class="live-curval" style="text-align:right">$4,933</td>
+          <td class="live-unreal-d" data-sort="-26.60" style="text-align:right;color:#c62828;font-weight:bold">$27</td>
+          <td class="live-unreal-pct" data-sort="-0.5363" style="text-align:right;color:#c62828;font-weight:bold">-0.54%</td>
+          <td class="live-day-d" data-sort="-90.30" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-90.30" style="color:#c62828">$90</span></td>
+          <td class="live-day-pct" data-sort="-1.7977" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-1.7977" style="color:#c62828">-1.80%</span></td>
+          <td>$135.57</td>
+          <td style="color:#666;font-size:12px">3.65</td>
+          <td style="color:#666;font-size:12px">2026-07-31</td>
+        </tr>
+        <tr data-ticker="CNC" data-qty="67" data-buypx="60.84" data-side="long" data-prevpx="61.82" data-server-unreal="-4.02">
+          <td style="font-weight:bold">CNC<span style="color:#888;font-size:11px;display:block;line-height:1.1">Centene Corporation</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
+          <td>$60.84</td>
+          <td class="live-price">$60.78</td>
+          <td style="text-align:right">67</td>
+          <td style="text-align:right">$4,076</td>
+          <td class="live-curval" style="text-align:right">$4,072</td>
+          <td class="live-unreal-d" data-sort="-4.02" style="text-align:right;color:#c62828;font-weight:bold">$4</td>
+          <td class="live-unreal-pct" data-sort="-0.0986" style="text-align:right;color:#c62828;font-weight:bold">-0.10%</td>
+          <td class="live-day-d" data-sort="-69.68" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-69.68" style="color:#c62828">$70</span></td>
+          <td class="live-day-pct" data-sort="-1.6823" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-1.6823" style="color:#c62828">-1.68%</span></td>
+          <td>$54.95</td>
+          <td style="color:#666;font-size:12px">4.48</td>
+          <td style="color:#666;font-size:12px">2026-07-31</td>
+        </tr></tbody>
+      
+        <tr style="background:#e8eaf6;font-weight:bold;border-top:2px solid #9fa8da">
+          <td colspan="5" style="text-align:right;color:#555">Totals</td>
+          <td id="total-invested" style="text-align:right">$87,235</td>
+          <td id="total-curval" style="text-align:right">$86,207</td>
+          <td id="total-unreal-d" data-server-total="-1027.90" style="text-align:right;color:#c62828">$1,028</td>
+          <td id="total-unreal-pct" style="text-align:right;color:#c62828">-1.18%</td>
+          <td id="total-day-d" style="text-align:right"></td>
+          <td id="total-day-pct" style="text-align:right"></td>
+          <td colspan="3"></td>
+        </tr>
+    </table>
+    </div>
+  </div>
+
+  
+  <div class="section">
+    <details open>
+      <summary>Today's Activity</summary>
+      <div style="margin-top:12px">
+        <details open style="margin-bottom:12px">
+          <summary style="font-size:14px;color:#1a237e">Entries (5)</summary>
+          <div style="overflow-x:auto;margin-top:8px">
+          <table id="today-entries-table" style="white-space:nowrap"><thead><tr><th>Ticker</th><th>Side</th><th>Price</th><th>Shares</th><th>Stop</th></tr></thead><tbody><tr><td style="font-weight:bold">LNT<span style="color:#888;font-size:11px;display:block;line-height:1.1">Alliant Energy Corporation</span></td><td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td><td>$70.89</td><td style="text-align:right">139</td><td>$67.02</td></tr><tr><td style="font-weight:bold">EVRG<span style="color:#888;font-size:11px;display:block;line-height:1.1">Evergy</span></td><td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td><td>$83.25</td><td style="text-align:right">94</td><td>$80.51</td></tr><tr><td style="font-weight:bold">AEP<span style="color:#888;font-size:11px;display:block;line-height:1.1">American Electric Power</span></td><td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td><td>$127.78</td><td style="text-align:right">49</td><td>$121.94</td></tr><tr><td style="font-weight:bold">DTE<span style="color:#888;font-size:11px;display:block;line-height:1.1">DTE Energy</span></td><td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td><td>$141.70</td><td style="text-align:right">35</td><td>$135.57</td></tr><tr><td style="font-weight:bold">CNC<span style="color:#888;font-size:11px;display:block;line-height:1.1">Centene Corporation</span></td><td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td><td>$60.84</td><td style="text-align:right">67</td><td>$54.95</td></tr></tbody></table>
+          </div></details>
+        <details open>
+          <summary style="font-size:14px;color:#1a237e">Exits (13)</summary>
+          <div style="overflow-x:auto;margin-top:8px">
+          <table id="today-exits-table" style="white-space:nowrap"><thead><tr><th>Ticker</th><th>Side</th><th>Exit Price</th><th>P&amp;L</th><th>Reason</th></tr></thead><tbody><tr><td style="font-weight:bold">CRWD<span style="color:#888;font-size:11px;display:block;line-height:1.1">CrowdStrike</span></td><td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td><td>$185.22</td><td style="text-align:right;color:#c62828;font-weight:bold">$-83</td><td style="color:#666;font-size:12px">RSI(2) reverted (76.8)</td></tr><tr><td style="font-weight:bold">AXP<span style="color:#888;font-size:11px;display:block;line-height:1.1">American Express</span></td><td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td><td>$337.52</td><td style="text-align:right;color:#c62828;font-weight:bold">$-50</td><td style="color:#666;font-size:12px">RSI(2) reverted (66.4)</td></tr><tr><td style="font-weight:bold">CHRW<span style="color:#888;font-size:11px;display:block;line-height:1.1">C.H. Robinson Worldwide</span></td><td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td><td>$146.92</td><td style="text-align:right;color:#c62828;font-weight:bold">$-1,346</td><td style="color:#666;font-size:12px">stop loss</td></tr><tr><td style="font-weight:bold">LRCX<span style="color:#888;font-size:11px;display:block;line-height:1.1">Lam Research Corporation</span></td><td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td><td>$297.72</td><td style="text-align:right;color:#2e7d32;font-weight:bold">$+79</td><td style="color:#666;font-size:12px">RSI(2) reverted (73.0)</td></tr><tr><td style="font-weight:bold">AKAM<span style="color:#888;font-size:11px;display:block;line-height:1.1">Akamai Technologies</span></td><td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td><td>$113.75</td><td style="text-align:right;color:#2e7d32;font-weight:bold">$+40</td><td style="color:#666;font-size:12px">RSI(2) reverted (67.1)</td></tr><tr><td style="font-weight:bold">APH<span style="color:#888;font-size:11px;display:block;line-height:1.1">Amphenol Corporation</span></td><td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td><td>$159.82</td><td style="text-align:right;color:#2e7d32;font-weight:bold">$+1,022</td><td style="color:#666;font-size:12px">RSI(2) reverted (85.9)</td></tr><tr><td style="font-weight:bold">AMD<span style="color:#888;font-size:11px;display:block;line-height:1.1">Advanced Micro Devices</span></td><td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td><td>$485.39</td><td style="text-align:right;color:#2e7d32;font-weight:bold">$+246</td><td style="color:#666;font-size:12px">RSI(2) reverted (67.2)</td></tr><tr><td style="font-weight:bold">KEYS<span style="color:#888;font-size:11px;display:block;line-height:1.1">Keysight Technologies</span></td><td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td><td>$312.69</td><td style="text-align:right;color:#2e7d32;font-weight:bold">$+98</td><td style="color:#666;font-size:12px">RSI(2) reverted (68.3)</td></tr><tr><td style="font-weight:bold">INTC<span style="color:#888;font-size:11px;display:block;line-height:1.1">Intel Corporation</span></td><td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td><td>$91.13</td><td style="text-align:right;color:#2e7d32;font-weight:bold">$+82</td><td style="color:#666;font-size:12px">RSI(2) reverted (68.6)</td></tr><tr><td style="font-weight:bold">AMAT<span style="color:#888;font-size:11px;display:block;line-height:1.1">Applied Materials</span></td><td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td><td>$501.77</td><td style="text-align:right;color:#2e7d32;font-weight:bold">$+76</td><td style="color:#666;font-size:12px">RSI(2) reverted (65.7)</td></tr><tr><td style="font-weight:bold">ANET<span style="color:#888;font-size:11px;display:block;line-height:1.1">Arista Networks</span></td><td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td><td>$171.02</td><td style="text-align:right;color:#2e7d32;font-weight:bold">$+130</td><td style="color:#666;font-size:12px">RSI(2) reverted (66.2)</td></tr><tr><td style="font-weight:bold">JBL<span style="color:#888;font-size:11px;display:block;line-height:1.1">Jabil</span></td><td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td><td>$308.52</td><td style="text-align:right;color:#2e7d32;font-weight:bold">$+43</td><td style="color:#666;font-size:12px">RSI(2) reverted (66.7)</td></tr><tr><td style="font-weight:bold">JCI<span style="color:#888;font-size:11px;display:block;line-height:1.1">Johnson Controls International</span></td><td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td><td>$143.88</td><td style="text-align:right;color:#2e7d32;font-weight:bold">$+9</td><td style="color:#666;font-size:12px">RSI(2) reverted (78.8)</td></tr></tbody></table>
+          </div></details>
+      </div>
+    </details>
+  </div>
+
+  <!-- Statistics -->
+  <div class="section">
+    <details open>
+      <summary>Strategy Statistics</summary>
+      <div style="display:flex;gap:30px;flex-wrap:wrap;margin-top:12px">
+        <table id="stats-table" style="width:auto;min-width:260px">
+          <tbody>
+    <tr><td>Starting Capital</td><td style="text-align:right;font-weight:bold">$100,000</td></tr>
+    <tr><td>Current Value</td><td style="text-align:right;font-weight:bold;color:#2e7d32">$102,557</td></tr>
+    <tr><td>Total Return</td><td style="text-align:right;font-weight:bold;color:#2e7d32">+$2,557 (+2.56%)</td></tr>
+    <tr><td>Cash Available</td><td style="text-align:right">$16,349</td></tr>
+    <tr><td>Open Positions</td><td style="text-align:right">23</td></tr>
+    <tr><td>Closed Trades</td><td style="text-align:right">97</td></tr>
+    <tr><td>Win Rate</td><td style="text-align:right">80.4%</td></tr>
+    <tr><td>Avg Win</td><td style="text-align:right;color:#2e7d32">$+122</td></tr>
+    <tr><td>Avg Loss</td><td style="text-align:right;color:#c62828">$-139</td></tr>
+    <tr><td>Profit Factor</td><td style="text-align:right">3.62x</td></tr>
+    <tr><td>Inception</td><td style="text-align:right;color:#666">2026-07-09</td></tr>
+    </tbody>
+        </table>
+        <div style="flex:1;min-width:260px">
+          <p style="color:#666;font-size:12px;line-height:1.7;margin:0">
+            <strong>Strategy:</strong> RSI(2) Mean Reversion (Larry Connors)<br>
+            <strong>Entry long:</strong> Close &gt; SMA(200) AND RSI(2) &lt; 5<br>
+            <strong>Entry short:</strong> Close &lt; SMA(200) AND RSI(2) &gt; 95 AND SPY &lt; SPY SMA(200)<br>
+            <strong>Exit long:</strong> RSI(2) &gt; 65 (or stop)<br>
+            <strong>Exit short:</strong> RSI(2) &lt; 35 (or stop)<br>
+            <strong>Stop:</strong> Entry ± 2.0× ATR(14)<br>
+            <strong>Risk:</strong> 2% of portfolio per trade<br>
+            <strong>Max positions:</strong> no cap (cash-limited)<br>
+            <strong>Universe:</strong> S&amp;P 500
+          </p>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- Closed trades -->
+  <div class="section">
+    <details>
+      <summary>Closed Trades (97 total, showing last 50)</summary>
+      <div style="overflow-x:auto">
+      <table id="closed-trades-table" style="margin-top:12px;white-space:nowrap">
+        <thead><tr>
+          <th data-col="0">Ticker</th><th data-col="1">Side</th><th data-col="2">Entry</th><th data-col="3">Exit</th>
+          <th data-col="4">P&amp;L $</th><th data-col="5">P&amp;L %</th><th data-col="6">Entry Date</th><th data-col="7">Exit Date</th><th data-col="8">Reason</th>
+        </tr></thead>
+        <tbody>
+        <tr>
+          <td style="font-weight:bold">JCI<span style="color:#888;font-size:11px;display:block;line-height:1.1">Johnson Controls International</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$139.42</td>
+          <td>$143.88</td>
+          <td data-sort="8.92" style="text-align:right;color:#2e7d32;font-weight:bold">$+9</td>
+          <td data-sort="3.1990" style="text-align:right;color:#2e7d32;font-weight:bold">+3.20%</td>
+          <td style="color:#666;font-size:12px">2026-07-30</td>
+          <td style="color:#666;font-size:12px">2026-07-31</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (78.8)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">JBL<span style="color:#888;font-size:11px;display:block;line-height:1.1">Jabil</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$287.14</td>
+          <td>$308.52</td>
+          <td data-sort="42.76" style="text-align:right;color:#2e7d32;font-weight:bold">$+43</td>
+          <td data-sort="7.4458" style="text-align:right;color:#2e7d32;font-weight:bold">+7.45%</td>
+          <td style="color:#666;font-size:12px">2026-07-30</td>
+          <td style="color:#666;font-size:12px">2026-07-31</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (66.7)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">ANET<span style="color:#888;font-size:11px;display:block;line-height:1.1">Arista Networks</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$157.97</td>
+          <td>$171.02</td>
+          <td data-sort="130.50" style="text-align:right;color:#2e7d32;font-weight:bold">$+130</td>
+          <td data-sort="8.2611" style="text-align:right;color:#2e7d32;font-weight:bold">+8.26%</td>
+          <td style="color:#666;font-size:12px">2026-07-30</td>
+          <td style="color:#666;font-size:12px">2026-07-31</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (66.2)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">AMAT<span style="color:#888;font-size:11px;display:block;line-height:1.1">Applied Materials</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$476.46</td>
+          <td>$501.77</td>
+          <td data-sort="75.93" style="text-align:right;color:#2e7d32;font-weight:bold">$+76</td>
+          <td data-sort="5.3121" style="text-align:right;color:#2e7d32;font-weight:bold">+5.31%</td>
+          <td style="color:#666;font-size:12px">2026-07-29</td>
+          <td style="color:#666;font-size:12px">2026-07-31</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (65.7)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">INTC<span style="color:#888;font-size:11px;display:block;line-height:1.1">Intel Corporation</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$86.30</td>
+          <td>$91.13</td>
+          <td data-sort="82.11" style="text-align:right;color:#2e7d32;font-weight:bold">$+82</td>
+          <td data-sort="5.5968" style="text-align:right;color:#2e7d32;font-weight:bold">+5.60%</td>
+          <td style="color:#666;font-size:12px">2026-07-29</td>
+          <td style="color:#666;font-size:12px">2026-07-31</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (68.6)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">KEYS<span style="color:#888;font-size:11px;display:block;line-height:1.1">Keysight Technologies</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$305.17</td>
+          <td>$312.69</td>
+          <td data-sort="97.76" style="text-align:right;color:#2e7d32;font-weight:bold">$+98</td>
+          <td data-sort="2.4642" style="text-align:right;color:#2e7d32;font-weight:bold">+2.46%</td>
+          <td style="color:#666;font-size:12px">2026-07-29</td>
+          <td style="color:#666;font-size:12px">2026-07-31</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (68.3)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">AMD<span style="color:#888;font-size:11px;display:block;line-height:1.1">Advanced Micro Devices</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$454.62</td>
+          <td>$485.39</td>
+          <td data-sort="246.16" style="text-align:right;color:#2e7d32;font-weight:bold">$+246</td>
+          <td data-sort="6.7683" style="text-align:right;color:#2e7d32;font-weight:bold">+6.77%</td>
+          <td style="color:#666;font-size:12px">2026-07-29</td>
+          <td style="color:#666;font-size:12px">2026-07-31</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (67.2)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">APH<span style="color:#888;font-size:11px;display:block;line-height:1.1">Amphenol Corporation</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$143.85</td>
+          <td>$159.82</td>
+          <td data-sort="1022.08" style="text-align:right;color:#2e7d32;font-weight:bold">$+1,022</td>
+          <td data-sort="11.1018" style="text-align:right;color:#2e7d32;font-weight:bold">+11.10%</td>
+          <td style="color:#666;font-size:12px">2026-07-29</td>
+          <td style="color:#666;font-size:12px">2026-07-31</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (85.9)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">AKAM<span style="color:#888;font-size:11px;display:block;line-height:1.1">Akamai Technologies</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$112.85</td>
+          <td>$113.75</td>
+          <td data-sort="39.60" style="text-align:right;color:#2e7d32;font-weight:bold">$+40</td>
+          <td data-sort="0.7975" style="text-align:right;color:#2e7d32;font-weight:bold">+0.80%</td>
+          <td style="color:#666;font-size:12px">2026-07-28</td>
+          <td style="color:#666;font-size:12px">2026-07-31</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (67.1)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">LRCX<span style="color:#888;font-size:11px;display:block;line-height:1.1">Lam Research Corporation</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$291.61</td>
+          <td>$297.72</td>
+          <td data-sort="79.43" style="text-align:right;color:#2e7d32;font-weight:bold">$+79</td>
+          <td data-sort="2.0953" style="text-align:right;color:#2e7d32;font-weight:bold">+2.10%</td>
+          <td style="color:#666;font-size:12px">2026-07-28</td>
+          <td style="color:#666;font-size:12px">2026-07-31</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (73.0)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">CHRW<span style="color:#888;font-size:11px;display:block;line-height:1.1">C.H. Robinson Worldwide</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$186.51</td>
+          <td>$146.92</td>
+          <td data-sort="-1346.06" style="text-align:right;color:#c62828;font-weight:bold">$-1,346</td>
+          <td data-sort="-21.2267" style="text-align:right;color:#c62828;font-weight:bold">-21.23%</td>
+          <td style="color:#666;font-size:12px">2026-07-27</td>
+          <td style="color:#666;font-size:12px">2026-07-31</td>
+          <td style="color:#666;font-size:12px">stop loss</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">AXP<span style="color:#888;font-size:11px;display:block;line-height:1.1">American Express</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$340.84</td>
+          <td>$337.52</td>
+          <td data-sort="-49.80" style="text-align:right;color:#c62828;font-weight:bold">$-50</td>
+          <td data-sort="-0.9741" style="text-align:right;color:#c62828;font-weight:bold">-0.97%</td>
+          <td style="color:#666;font-size:12px">2026-07-24</td>
+          <td style="color:#666;font-size:12px">2026-07-31</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (66.4)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">CRWD<span style="color:#888;font-size:11px;display:block;line-height:1.1">CrowdStrike</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$188.42</td>
+          <td>$185.22</td>
+          <td data-sort="-83.20" style="text-align:right;color:#c62828;font-weight:bold">$-83</td>
+          <td data-sort="-1.6983" style="text-align:right;color:#c62828;font-weight:bold">-1.70%</td>
+          <td style="color:#666;font-size:12px">2026-07-23</td>
+          <td style="color:#666;font-size:12px">2026-07-31</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (76.8)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">FTNT<span style="color:#888;font-size:11px;display:block;line-height:1.1">Fortinet</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$155.05</td>
+          <td>$153.22</td>
+          <td data-sort="-47.58" style="text-align:right;color:#c62828;font-weight:bold">$-48</td>
+          <td data-sort="-1.1803" style="text-align:right;color:#c62828;font-weight:bold">-1.18%</td>
+          <td style="color:#666;font-size:12px">2026-07-23</td>
+          <td style="color:#666;font-size:12px">2026-07-30</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (68.1)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">EQR<span style="color:#888;font-size:11px;display:block;line-height:1.1">Equity Residential</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$67.24</td>
+          <td>$68.09</td>
+          <td data-sort="149.60" style="text-align:right;color:#2e7d32;font-weight:bold">$+150</td>
+          <td data-sort="1.2641" style="text-align:right;color:#2e7d32;font-weight:bold">+1.26%</td>
+          <td style="color:#666;font-size:12px">2026-07-28</td>
+          <td style="color:#666;font-size:12px">2026-07-29</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (65.8)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">HSIC<span style="color:#888;font-size:11px;display:block;line-height:1.1">Henry Schein</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$84.53</td>
+          <td>$85.71</td>
+          <td data-sort="25.96" style="text-align:right;color:#2e7d32;font-weight:bold">$+26</td>
+          <td data-sort="1.3960" style="text-align:right;color:#2e7d32;font-weight:bold">+1.40%</td>
+          <td style="color:#666;font-size:12px">2026-07-24</td>
+          <td style="color:#666;font-size:12px">2026-07-29</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (70.2)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">EW<span style="color:#888;font-size:11px;display:block;line-height:1.1">Edwards Lifesciences Corporatio</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$83.82</td>
+          <td>$83.68</td>
+          <td data-sort="-6.02" style="text-align:right;color:#c62828;font-weight:bold">$-6</td>
+          <td data-sort="-0.1670" style="text-align:right;color:#c62828;font-weight:bold">-0.17%</td>
+          <td style="color:#666;font-size:12px">2026-07-24</td>
+          <td style="color:#666;font-size:12px">2026-07-29</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (66.5)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">GL<span style="color:#888;font-size:11px;display:block;line-height:1.1">Globe Life</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$171.08</td>
+          <td>$179.17</td>
+          <td data-sort="315.51" style="text-align:right;color:#2e7d32;font-weight:bold">$+316</td>
+          <td data-sort="4.7288" style="text-align:right;color:#2e7d32;font-weight:bold">+4.73%</td>
+          <td style="color:#666;font-size:12px">2026-07-24</td>
+          <td style="color:#666;font-size:12px">2026-07-29</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (78.1)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">FFIV<span style="color:#888;font-size:11px;display:block;line-height:1.1">F5</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$388.08</td>
+          <td>$407.96</td>
+          <td data-sort="119.28" style="text-align:right;color:#2e7d32;font-weight:bold">$+119</td>
+          <td data-sort="5.1227" style="text-align:right;color:#2e7d32;font-weight:bold">+5.12%</td>
+          <td style="color:#666;font-size:12px">2026-07-24</td>
+          <td style="color:#666;font-size:12px">2026-07-28</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (79.9)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">EXPE<span style="color:#888;font-size:11px;display:block;line-height:1.1">Expedia Group</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$257.61</td>
+          <td>$278.37</td>
+          <td data-sort="228.36" style="text-align:right;color:#2e7d32;font-weight:bold">$+228</td>
+          <td data-sort="8.0587" style="text-align:right;color:#2e7d32;font-weight:bold">+8.06%</td>
+          <td style="color:#666;font-size:12px">2026-07-24</td>
+          <td style="color:#666;font-size:12px">2026-07-28</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (92.8)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">DLTR<span style="color:#888;font-size:11px;display:block;line-height:1.1">Dollar Tree</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$117.65</td>
+          <td>$125.54</td>
+          <td data-sort="244.59" style="text-align:right;color:#2e7d32;font-weight:bold">$+245</td>
+          <td data-sort="6.7063" style="text-align:right;color:#2e7d32;font-weight:bold">+6.71%</td>
+          <td style="color:#666;font-size:12px">2026-07-24</td>
+          <td style="color:#666;font-size:12px">2026-07-28</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (79.8)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">GEN<span style="color:#888;font-size:11px;display:block;line-height:1.1">Gen Digital</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$25.58</td>
+          <td>$26.74</td>
+          <td data-sort="148.48" style="text-align:right;color:#2e7d32;font-weight:bold">$+148</td>
+          <td data-sort="4.5348" style="text-align:right;color:#2e7d32;font-weight:bold">+4.53%</td>
+          <td style="color:#666;font-size:12px">2026-07-23</td>
+          <td style="color:#666;font-size:12px">2026-07-28</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (84.5)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">ABNB<span style="color:#888;font-size:11px;display:block;line-height:1.1">Airbnb</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$140.05</td>
+          <td>$146.86</td>
+          <td data-sort="381.36" style="text-align:right;color:#2e7d32;font-weight:bold">$+381</td>
+          <td data-sort="4.8625" style="text-align:right;color:#2e7d32;font-weight:bold">+4.86%</td>
+          <td style="color:#666;font-size:12px">2026-07-23</td>
+          <td style="color:#666;font-size:12px">2026-07-28</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (78.9)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">CDNS<span style="color:#888;font-size:11px;display:block;line-height:1.1">Cadence Design Systems</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$330.11</td>
+          <td>$338.61</td>
+          <td data-sort="255.00" style="text-align:right;color:#2e7d32;font-weight:bold">$+255</td>
+          <td data-sort="2.5749" style="text-align:right;color:#2e7d32;font-weight:bold">+2.57%</td>
+          <td style="color:#666;font-size:12px">2026-07-20</td>
+          <td style="color:#666;font-size:12px">2026-07-28</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (71.4)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">AXON<span style="color:#888;font-size:11px;display:block;line-height:1.1">Axon Enterprise</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$541.12</td>
+          <td>$525.48</td>
+          <td data-sort="-31.28" style="text-align:right;color:#c62828;font-weight:bold">$-31</td>
+          <td data-sort="-2.8903" style="text-align:right;color:#c62828;font-weight:bold">-2.89%</td>
+          <td style="color:#666;font-size:12px">2026-07-16</td>
+          <td style="color:#666;font-size:12px">2026-07-28</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (87.8)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">LIN<span style="color:#888;font-size:11px;display:block;line-height:1.1">Linde plc</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$514.15</td>
+          <td>$512.28</td>
+          <td data-sort="-9.35" style="text-align:right;color:#c62828;font-weight:bold">$-9</td>
+          <td data-sort="-0.3637" style="text-align:right;color:#c62828;font-weight:bold">-0.36%</td>
+          <td style="color:#666;font-size:12px">2026-07-16</td>
+          <td style="color:#666;font-size:12px">2026-07-27</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (74.0)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">CAH<span style="color:#888;font-size:11px;display:block;line-height:1.1">Cardinal Health</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$224.94</td>
+          <td>$228.03</td>
+          <td data-sort="64.89" style="text-align:right;color:#2e7d32;font-weight:bold">$+65</td>
+          <td data-sort="1.3737" style="text-align:right;color:#2e7d32;font-weight:bold">+1.37%</td>
+          <td style="color:#666;font-size:12px">2026-07-16</td>
+          <td style="color:#666;font-size:12px">2026-07-27</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (72.7)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">UAL<span style="color:#888;font-size:11px;display:block;line-height:1.1">United Airlines</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$126.22</td>
+          <td>$118.27</td>
+          <td data-sort="-453.15" style="text-align:right;color:#c62828;font-weight:bold">$-453</td>
+          <td data-sort="-6.2985" style="text-align:right;color:#c62828;font-weight:bold">-6.30%</td>
+          <td style="color:#666;font-size:12px">2026-07-09</td>
+          <td style="color:#666;font-size:12px">2026-07-27</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (71.6)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">DAL<span style="color:#888;font-size:11px;display:block;line-height:1.1">Delta Air Lines</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$87.29</td>
+          <td>$85.06</td>
+          <td data-sort="-303.28" style="text-align:right;color:#c62828;font-weight:bold">$-303</td>
+          <td data-sort="-2.5547" style="text-align:right;color:#c62828;font-weight:bold">-2.55%</td>
+          <td style="color:#666;font-size:12px">2026-07-09</td>
+          <td style="color:#666;font-size:12px">2026-07-27</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (73.4)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">IQV<span style="color:#888;font-size:11px;display:block;line-height:1.1">IQVIA</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$198.52</td>
+          <td>$207.32</td>
+          <td data-sort="272.80" style="text-align:right;color:#2e7d32;font-weight:bold">$+273</td>
+          <td data-sort="4.4328" style="text-align:right;color:#2e7d32;font-weight:bold">+4.43%</td>
+          <td style="color:#666;font-size:12px">2026-07-23</td>
+          <td style="color:#666;font-size:12px">2026-07-24</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (76.8)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">CRL<span style="color:#888;font-size:11px;display:block;line-height:1.1">Charles River Laboratories Inte</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$219.40</td>
+          <td>$229.29</td>
+          <td data-sort="286.81" style="text-align:right;color:#2e7d32;font-weight:bold">$+287</td>
+          <td data-sort="4.5077" style="text-align:right;color:#2e7d32;font-weight:bold">+4.51%</td>
+          <td style="color:#666;font-size:12px">2026-07-22</td>
+          <td style="color:#666;font-size:12px">2026-07-24</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (88.6)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">CSCO<span style="color:#888;font-size:11px;display:block;line-height:1.1">Cisco Systems</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$111.77</td>
+          <td>$112.76</td>
+          <td data-sort="2.97" style="text-align:right;color:#2e7d32;font-weight:bold">$+3</td>
+          <td data-sort="0.8857" style="text-align:right;color:#2e7d32;font-weight:bold">+0.89%</td>
+          <td style="color:#666;font-size:12px">2026-07-16</td>
+          <td style="color:#666;font-size:12px">2026-07-24</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (76.8)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">LNT<span style="color:#888;font-size:11px;display:block;line-height:1.1">Alliant Energy Corporation</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$74.55</td>
+          <td>$74.42</td>
+          <td data-sort="-3.25" style="text-align:right;color:#c62828;font-weight:bold">$-3</td>
+          <td data-sort="-0.1744" style="text-align:right;color:#c62828;font-weight:bold">-0.17%</td>
+          <td style="color:#666;font-size:12px">2026-07-16</td>
+          <td style="color:#666;font-size:12px">2026-07-24</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (68.6)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">CPT<span style="color:#888;font-size:11px;display:block;line-height:1.1">Camden Property Trust</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$112.96</td>
+          <td>$112.84</td>
+          <td data-sort="-4.80" style="text-align:right;color:#c62828;font-weight:bold">$-5</td>
+          <td data-sort="-0.1062" style="text-align:right;color:#c62828;font-weight:bold">-0.11%</td>
+          <td style="color:#666;font-size:12px">2026-07-13</td>
+          <td style="color:#666;font-size:12px">2026-07-24</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (71.0)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">EW<span style="color:#888;font-size:11px;display:block;line-height:1.1">Edwards Lifesciences Corporatio</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$91.33</td>
+          <td>$83.82</td>
+          <td data-sort="-82.61" style="text-align:right;color:#c62828;font-weight:bold">$-83</td>
+          <td data-sort="-8.2229" style="text-align:right;color:#c62828;font-weight:bold">-8.22%</td>
+          <td style="color:#666;font-size:12px">2026-07-10</td>
+          <td style="color:#666;font-size:12px">2026-07-24</td>
+          <td style="color:#666;font-size:12px">stop loss</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">ARE<span style="color:#888;font-size:11px;display:block;line-height:1.1">Alexandria Real Estate Equities</span></td>
+          <td><span style="background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:4px;font-size:11px">SHORT</span></td>
+          <td>$50.22</td>
+          <td>$49.64</td>
+          <td data-sort="6.38" style="text-align:right;color:#2e7d32;font-weight:bold">$+6</td>
+          <td data-sort="1.1549" style="text-align:right;color:#2e7d32;font-weight:bold">+1.15%</td>
+          <td style="color:#666;font-size:12px">2026-07-20</td>
+          <td style="color:#666;font-size:12px">2026-07-23</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (29.0)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">FOXA<span style="color:#888;font-size:11px;display:block;line-height:1.1">Fox Corporation</span></td>
+          <td><span style="background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:4px;font-size:11px">SHORT</span></td>
+          <td>$57.62</td>
+          <td>$56.45</td>
+          <td data-sort="17.55" style="text-align:right;color:#2e7d32;font-weight:bold">$+18</td>
+          <td data-sort="2.0305" style="text-align:right;color:#2e7d32;font-weight:bold">+2.03%</td>
+          <td style="color:#666;font-size:12px">2026-07-20</td>
+          <td style="color:#666;font-size:12px">2026-07-23</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (17.5)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">FOX<span style="color:#888;font-size:11px;display:block;line-height:1.1">Fox Corporation</span></td>
+          <td><span style="background:#fce4ec;color:#880e4f;padding:2px 8px;border-radius:4px;font-size:11px">SHORT</span></td>
+          <td>$51.63</td>
+          <td>$50.63</td>
+          <td data-sort="20.00" style="text-align:right;color:#2e7d32;font-weight:bold">$+20</td>
+          <td data-sort="1.9369" style="text-align:right;color:#2e7d32;font-weight:bold">+1.94%</td>
+          <td style="color:#666;font-size:12px">2026-07-20</td>
+          <td style="color:#666;font-size:12px">2026-07-23</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (14.4)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">BKR<span style="color:#888;font-size:11px;display:block;line-height:1.1">Baker Hughes</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$55.95</td>
+          <td>$56.60</td>
+          <td data-sort="81.25" style="text-align:right;color:#2e7d32;font-weight:bold">$+81</td>
+          <td data-sort="1.1618" style="text-align:right;color:#2e7d32;font-weight:bold">+1.16%</td>
+          <td style="color:#666;font-size:12px">2026-07-20</td>
+          <td style="color:#666;font-size:12px">2026-07-23</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (71.5)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">EXC<span style="color:#888;font-size:11px;display:block;line-height:1.1">Exelon Corporation</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$45.74</td>
+          <td>$46.70</td>
+          <td data-sort="10.56" style="text-align:right;color:#2e7d32;font-weight:bold">$+11</td>
+          <td data-sort="2.0988" style="text-align:right;color:#2e7d32;font-weight:bold">+2.10%</td>
+          <td style="color:#666;font-size:12px">2026-07-16</td>
+          <td style="color:#666;font-size:12px">2026-07-23</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (80.1)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">CMS<span style="color:#888;font-size:11px;display:block;line-height:1.1">CMS Energy Corporation</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$74.02</td>
+          <td>$73.98</td>
+          <td data-sort="-0.32" style="text-align:right;color:#c62828;font-weight:bold">$-0</td>
+          <td data-sort="-0.0540" style="text-align:right;color:#c62828;font-weight:bold">-0.05%</td>
+          <td style="color:#666;font-size:12px">2026-07-16</td>
+          <td style="color:#666;font-size:12px">2026-07-23</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (74.3)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">AEP<span style="color:#888;font-size:11px;display:block;line-height:1.1">American Electric Power</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$132.50</td>
+          <td>$133.07</td>
+          <td data-sort="2.85" style="text-align:right;color:#2e7d32;font-weight:bold">$+3</td>
+          <td data-sort="0.4302" style="text-align:right;color:#2e7d32;font-weight:bold">+0.43%</td>
+          <td style="color:#666;font-size:12px">2026-07-16</td>
+          <td style="color:#666;font-size:12px">2026-07-23</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (77.3)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">DTE<span style="color:#888;font-size:11px;display:block;line-height:1.1">DTE Energy</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$146.95</td>
+          <td>$148.55</td>
+          <td data-sort="16.00" style="text-align:right;color:#2e7d32;font-weight:bold">$+16</td>
+          <td data-sort="1.0888" style="text-align:right;color:#2e7d32;font-weight:bold">+1.09%</td>
+          <td style="color:#666;font-size:12px">2026-07-16</td>
+          <td style="color:#666;font-size:12px">2026-07-23</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (75.1)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">KLAC<span style="color:#888;font-size:11px;display:block;line-height:1.1">KLA Corporation</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$212.75</td>
+          <td>$217.56</td>
+          <td data-sort="9.62" style="text-align:right;color:#2e7d32;font-weight:bold">$+10</td>
+          <td data-sort="2.2609" style="text-align:right;color:#2e7d32;font-weight:bold">+2.26%</td>
+          <td style="color:#666;font-size:12px">2026-07-20</td>
+          <td style="color:#666;font-size:12px">2026-07-22</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (65.5)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">ANET<span style="color:#888;font-size:11px;display:block;line-height:1.1">Arista Networks</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$168.61</td>
+          <td>$174.58</td>
+          <td data-sort="41.79" style="text-align:right;color:#2e7d32;font-weight:bold">$+42</td>
+          <td data-sort="3.5407" style="text-align:right;color:#2e7d32;font-weight:bold">+3.54%</td>
+          <td style="color:#666;font-size:12px">2026-07-20</td>
+          <td style="color:#666;font-size:12px">2026-07-22</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (82.8)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">AMD<span style="color:#888;font-size:11px;display:block;line-height:1.1">Advanced Micro Devices</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$495.76</td>
+          <td>$544.43</td>
+          <td data-sort="146.01" style="text-align:right;color:#2e7d32;font-weight:bold">$+146</td>
+          <td data-sort="9.8173" style="text-align:right;color:#2e7d32;font-weight:bold">+9.82%</td>
+          <td style="color:#666;font-size:12px">2026-07-20</td>
+          <td style="color:#666;font-size:12px">2026-07-22</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (87.6)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">ADI<span style="color:#888;font-size:11px;display:block;line-height:1.1">Analog Devices</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$375.36</td>
+          <td>$382.81</td>
+          <td data-sort="44.70" style="text-align:right;color:#2e7d32;font-weight:bold">$+45</td>
+          <td data-sort="1.9848" style="text-align:right;color:#2e7d32;font-weight:bold">+1.98%</td>
+          <td style="color:#666;font-size:12px">2026-07-20</td>
+          <td style="color:#666;font-size:12px">2026-07-22</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (71.1)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">INTC<span style="color:#888;font-size:11px;display:block;line-height:1.1">Intel Corporation</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$95.04</td>
+          <td>$105.45</td>
+          <td data-sort="72.87" style="text-align:right;color:#2e7d32;font-weight:bold">$+73</td>
+          <td data-sort="10.9533" style="text-align:right;color:#2e7d32;font-weight:bold">+10.95%</td>
+          <td style="color:#666;font-size:12px">2026-07-20</td>
+          <td style="color:#666;font-size:12px">2026-07-22</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (85.1)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">EME<span style="color:#888;font-size:11px;display:block;line-height:1.1">EMCOR Group</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$744.16</td>
+          <td>$760.27</td>
+          <td data-sort="64.44" style="text-align:right;color:#2e7d32;font-weight:bold">$+64</td>
+          <td data-sort="2.1649" style="text-align:right;color:#2e7d32;font-weight:bold">+2.16%</td>
+          <td style="color:#666;font-size:12px">2026-07-20</td>
+          <td style="color:#666;font-size:12px">2026-07-22</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (78.4)</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold">COHR<span style="color:#888;font-size:11px;display:block;line-height:1.1">Coherent</span></td>
+          <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px">LONG</span></td>
+          <td>$277.60</td>
+          <td>$317.22</td>
+          <td data-sort="118.86" style="text-align:right;color:#2e7d32;font-weight:bold">$+119</td>
+          <td data-sort="14.2723" style="text-align:right;color:#2e7d32;font-weight:bold">+14.27%</td>
+          <td style="color:#666;font-size:12px">2026-07-20</td>
+          <td style="color:#666;font-size:12px">2026-07-22</td>
+          <td style="color:#666;font-size:12px">RSI(2) reverted (90.4)</td>
+        </tr></tbody>
+        
+        <tr style="background:#e8f5e9;font-weight:bold;border-top:2px solid #a5d6a7">
+          <td colspan="4" style="text-align:right;color:#555">Total P&amp;L (shown)</td>
+          <td data-sort="2553.04" style="text-align:right;color:#2e7d32">+$2,553</td>
+          <td style="text-align:right;color:#2e7d32">+1.46%</td>
+          <td colspan="3"></td>
+        </tr>
+      </table>
+      </div>
+    </details>
+  </div>
+
+  <!-- Scan diagnostics -->
+  <div class="section">
+    <details>
+      <summary>Last Scan — RSI(2) Closest to Signal (top 40 of universe)</summary>
+      <p style="color:#666;font-size:12px;margin:8px 0 6px">
+        Entry fires when RSI(2) &lt; 5 (long, above SMA200) or &gt; 95 (short, below SMA200).
+        Sorted by how close to threshold. Green = signal fired today.
+      </p>
+      <table id="scan-table" style="margin-top:4px">
+        <thead><tr>
+          <th>Ticker</th><th>Status</th><th>RSI(2)</th><th>Close</th><th>SMA(200)</th>
+        </tr></thead>
+        <tbody><tr><td style="font-weight:bold">LVS<span style="color:#888;font-size:11px;display:block;line-height:1.1">Las Vegas Sands</span></td><td style="color:#555;border-left:3px solid #ccc;">below SMA200</td><td style="text-align:right;color:#880e4f;font-weight:bold">99.6</td><td style="text-align:right">$49.87</td><td style="text-align:right">$55.44</td></tr><tr><td style="font-weight:bold">BAX<span style="color:#888;font-size:11px;display:block;line-height:1.1">Baxter International</span></td><td style="color:#555;border-left:3px solid #ccc;">above SMA200</td><td style="text-align:right;color:#880e4f;font-weight:bold">99.5</td><td style="text-align:right">$26.75</td><td style="text-align:right">$19.54</td></tr><tr><td style="font-weight:bold">GRMN<span style="color:#888;font-size:11px;display:block;line-height:1.1">Garmin</span></td><td style="color:#555;border-left:3px solid #ccc;">above SMA200</td><td style="text-align:right;color:#880e4f;font-weight:bold">99.4</td><td style="text-align:right">$297.55</td><td style="text-align:right">$227.66</td></tr><tr><td style="font-weight:bold">ICE<span style="color:#888;font-size:11px;display:block;line-height:1.1">Intercontinental Exchange</span></td><td style="color:#555;border-left:3px solid #ccc;">above SMA200</td><td style="text-align:right;color:#880e4f;font-weight:bold">99.4</td><td style="text-align:right">$156.27</td><td style="text-align:right">$153.89</td></tr><tr><td style="font-weight:bold">BG<span style="color:#888;font-size:11px;display:block;line-height:1.1">Bunge</span></td><td style="color:#555;border-left:3px solid #ccc;">below SMA200</td><td style="text-align:right;color:#1b5e20;font-weight:bold">0.7</td><td style="text-align:right">$105.07</td><td style="text-align:right">$110.96</td></tr><tr><td style="font-weight:bold">IEX<span style="color:#888;font-size:11px;display:block;line-height:1.1">IDEX Corporation</span></td><td style="color:#555;border-left:3px solid #ccc;">above SMA200</td><td style="text-align:right;color:#880e4f;font-weight:bold">99.3</td><td style="text-align:right">$233.77</td><td style="text-align:right">$196.06</td></tr><tr><td style="font-weight:bold">CMG<span style="color:#888;font-size:11px;display:block;line-height:1.1">Chipotle Mexican Grill</span></td><td style="color:#555;border-left:3px solid #ccc;">above SMA200</td><td style="text-align:right;color:#880e4f;font-weight:bold">99.1</td><td style="text-align:right">$38.52</td><td style="text-align:right">$34.95</td></tr><tr><td style="font-weight:bold">CME<span style="color:#888;font-size:11px;display:block;line-height:1.1">CME Group</span></td><td style="color:#555;border-left:3px solid #ccc;">below SMA200</td><td style="text-align:right;color:#880e4f;font-weight:bold">99.0</td><td style="text-align:right">$267.22</td><td style="text-align:right">$273.79</td></tr><tr><td style="font-weight:bold">LII<span style="color:#888;font-size:11px;display:block;line-height:1.1">Lennox International</span></td><td style="color:#555;border-left:3px solid #ccc;">below SMA200</td><td style="text-align:right;color:#1b5e20;font-weight:bold">1.7</td><td style="text-align:right">$417.45</td><td style="text-align:right">$507.53</td></tr><tr><td style="font-weight:bold">CBRE<span style="color:#888;font-size:11px;display:block;line-height:1.1">CBRE Group Inc</span></td><td style="color:#555;border-left:3px solid #ccc;">above SMA200</td><td style="text-align:right;color:#880e4f;font-weight:bold">97.7</td><td style="text-align:right">$149.46</td><td style="text-align:right">$148.02</td></tr><tr><td style="font-weight:bold">LNT<span style="color:#888;font-size:11px;display:block;line-height:1.1">Alliant Energy Corporation</span></td><td style="color:#1b5e20;font-weight:bold;border-left:3px solid #1b5e20;">LONG signal</td><td style="text-align:right;color:#1b5e20;font-weight:bold">2.7</td><td style="text-align:right">$70.89</td><td style="text-align:right">$69.67</td></tr><tr><td style="font-weight:bold">EVRG<span style="color:#888;font-size:11px;display:block;line-height:1.1">Evergy</span></td><td style="color:#1b5e20;font-weight:bold;border-left:3px solid #1b5e20;">LONG signal</td><td style="text-align:right;color:#1b5e20;font-weight:bold">3.4</td><td style="text-align:right">$83.25</td><td style="text-align:right">$79.06</td></tr><tr><td style="font-weight:bold">AEP<span style="color:#888;font-size:11px;display:block;line-height:1.1">American Electric Power</span></td><td style="color:#1b5e20;font-weight:bold;border-left:3px solid #1b5e20;">LONG signal</td><td style="text-align:right;color:#1b5e20;font-weight:bold">3.5</td><td style="text-align:right">$127.78</td><td style="text-align:right">$125.1</td></tr><tr><td style="font-weight:bold">KDP<span style="color:#888;font-size:11px;display:block;line-height:1.1">Keurig Dr Pepper</span></td><td style="color:#555;border-left:3px solid #ccc;">above SMA200</td><td style="text-align:right;color:#880e4f;font-weight:bold">96.5</td><td style="text-align:right">$31.57</td><td style="text-align:right">$28.22</td></tr><tr><td style="font-weight:bold">DTE<span style="color:#888;font-size:11px;display:block;line-height:1.1">DTE Energy</span></td><td style="color:#1b5e20;font-weight:bold;border-left:3px solid #1b5e20;">LONG signal</td><td style="text-align:right;color:#1b5e20;font-weight:bold">3.7</td><td style="text-align:right">$141.7</td><td style="text-align:right">$139.83</td></tr><tr><td style="font-weight:bold">CMS<span style="color:#888;font-size:11px;display:block;line-height:1.1">CMS Energy Corporation</span></td><td style="color:#555;border-left:3px solid #ccc;">below SMA200</td><td style="text-align:right;color:#1b5e20;font-weight:bold">3.9</td><td style="text-align:right">$72.26</td><td style="text-align:right">$73.39</td></tr><tr><td style="font-weight:bold">DDOG<span style="color:#888;font-size:11px;display:block;line-height:1.1">Datadog</span></td><td style="color:#555;border-left:3px solid #ccc;">above SMA200</td><td style="text-align:right;color:#880e4f;font-weight:bold">95.9</td><td style="text-align:right">$268.56</td><td style="text-align:right">$166.74</td></tr><tr><td style="font-weight:bold">EW<span style="color:#888;font-size:11px;display:block;line-height:1.1">Edwards Lifesciences Corporatio</span></td><td style="color:#555;border-left:3px solid #ccc;">above SMA200</td><td style="text-align:right;color:#880e4f;font-weight:bold">95.8</td><td style="text-align:right">$86.92</td><td style="text-align:right">$83.61</td></tr><tr><td style="font-weight:bold">CNC<span style="color:#888;font-size:11px;display:block;line-height:1.1">Centene Corporation</span></td><td style="color:#1b5e20;font-weight:bold;border-left:3px solid #1b5e20;">LONG signal</td><td style="text-align:right;color:#1b5e20;font-weight:bold">4.5</td><td style="text-align:right">$60.84</td><td style="text-align:right">$46.47</td></tr><tr><td style="font-weight:bold">LHX<span style="color:#888;font-size:11px;display:block;line-height:1.1">L3Harris Technologies</span></td><td style="color:#555;border-left:3px solid #ccc;">below SMA200</td><td style="text-align:right;color:#1b5e20;font-weight:bold">4.7</td><td style="text-align:right">$271.9</td><td style="text-align:right">$314.47</td></tr><tr><td style="font-weight:bold">CNP<span style="color:#888;font-size:11px;display:block;line-height:1.1">CenterPoint Energy, Inc (Holdin</span></td><td style="color:#555;border-left:3px solid #ccc;">above SMA200</td><td style="text-align:right;color:#1b5e20;font-weight:bold">5.0</td><td style="text-align:right">$42.15</td><td style="text-align:right">$41.07</td></tr><tr><td style="font-weight:bold">CINF<span style="color:#888;font-size:11px;display:block;line-height:1.1">Cincinnati Financial Corporatio</span></td><td style="color:#555;border-left:3px solid #ccc;">above SMA200</td><td style="text-align:right;color:#1b5e20;font-weight:bold">5.1</td><td style="text-align:right">$174.73</td><td style="text-align:right">$163.88</td></tr><tr><td style="font-weight:bold">EXC<span style="color:#888;font-size:11px;display:block;line-height:1.1">Exelon Corporation</span></td><td style="color:#555;border-left:3px solid #ccc;">below SMA200</td><td style="text-align:right;color:#1b5e20;font-weight:bold">5.1</td><td style="text-align:right">$45.58</td><td style="text-align:right">$45.64</td></tr><tr><td style="font-weight:bold">CHRW<span style="color:#888;font-size:11px;display:block;line-height:1.1">C.H. Robinson Worldwide</span></td><td style="color:#555;border-left:3px solid #ccc;">below SMA200</td><td style="text-align:right;color:#1b5e20;font-weight:bold">6.8</td><td style="text-align:right">$146.92</td><td style="text-align:right">$170.87</td></tr><tr><td style="font-weight:bold">AEE<span style="color:#888;font-size:11px;display:block;line-height:1.1">Ameren Corporation</span></td><td style="color:#555;border-left:3px solid #ccc;">above SMA200</td><td style="text-align:right;color:#1b5e20;font-weight:bold">7.0</td><td style="text-align:right">$108.75</td><td style="text-align:right">$106.21</td></tr><tr><td style="font-weight:bold">EA<span style="color:#888;font-size:11px;display:block;line-height:1.1">Electronic Arts</span></td><td style="color:#555;border-left:3px solid #ccc;">above SMA200</td><td style="text-align:right;color:#880e4f;font-weight:bold">93.0</td><td style="text-align:right">$209.59</td><td style="text-align:right">$202.44</td></tr><tr><td style="font-weight:bold">GL<span style="color:#888;font-size:11px;display:block;line-height:1.1">Globe Life</span></td><td style="color:#555;border-left:3px solid #ccc;">above SMA200</td><td style="text-align:right;color:#880e4f;font-weight:bold">92.4</td><td style="text-align:right">$182.98</td><td style="text-align:right">$147.8</td></tr><tr><td style="font-weight:bold">DUK<span style="color:#888;font-size:11px;display:block;line-height:1.1">Duke Energy Corporation (Holdin</span></td><td style="color:#555;border-left:3px solid #ccc;">above SMA200</td><td style="text-align:right;color:#1b5e20;font-weight:bold">7.7</td><td style="text-align:right">$126.27</td><td style="text-align:right">$123.33</td></tr><tr><td style="font-weight:bold">MO<span style="color:#888;font-size:11px;display:block;line-height:1.1">Altria Group</span></td><td style="color:#555;border-left:3px solid #ccc;">above SMA200</td><td style="text-align:right;color:#1b5e20;font-weight:bold">7.8</td><td style="text-align:right">$67.94</td><td style="text-align:right">$63.92</td></tr><tr><td style="font-weight:bold">BLDR<span style="color:#888;font-size:11px;display:block;line-height:1.1">Builders FirstSource</span></td><td style="color:#555;border-left:3px solid #ccc;">below SMA200</td><td style="text-align:right;color:#1b5e20;font-weight:bold">7.9</td><td style="text-align:right">$66.01</td><td style="text-align:right">$96.05</td></tr><tr><td style="font-weight:bold">KIM<span style="color:#888;font-size:11px;display:block;line-height:1.1">Kimco Realty Corporation (HC)</span></td><td style="color:#555;border-left:3px solid #ccc;">above SMA200</td><td style="text-align:right;color:#1b5e20;font-weight:bold">8.3</td><td style="text-align:right">$25.51</td><td style="text-align:right">$22.28</td></tr><tr><td style="font-weight:bold">ATO<span style="color:#888;font-size:11px;display:block;line-height:1.1">Atmos Energy Corporation</span></td><td style="color:#555;border-left:3px solid #ccc;">below SMA200</td><td style="text-align:right;color:#1b5e20;font-weight:bold">8.7</td><td style="text-align:right">$174.26</td><td style="text-align:right">$175.06</td></tr><tr><td style="font-weight:bold">JNJ<span style="color:#888;font-size:11px;display:block;line-height:1.1">Johnson & Johnson</span></td><td style="color:#555;border-left:3px solid #ccc;">above SMA200</td><td style="text-align:right;color:#1b5e20;font-weight:bold">8.7</td><td style="text-align:right">$255.82</td><td style="text-align:right">$224.45</td></tr><tr><td style="font-weight:bold">FRT<span style="color:#888;font-size:11px;display:block;line-height:1.1">Federal Realty Investment Trust</span></td><td style="color:#555;border-left:3px solid #ccc;">above SMA200</td><td style="text-align:right;color:#1b5e20;font-weight:bold">9.1</td><td style="text-align:right">$124.09</td><td style="text-align:right">$106.7</td></tr><tr><td style="font-weight:bold">APD<span style="color:#888;font-size:11px;display:block;line-height:1.1">Air Products and Chemicals, Inc</span></td><td style="color:#555;border-left:3px solid #ccc;">above SMA200</td><td style="text-align:right;color:#880e4f;font-weight:bold">90.2</td><td style="text-align:right">$300.2</td><td style="text-align:right">$273.08</td></tr><tr><td style="font-weight:bold">AVY<span style="color:#888;font-size:11px;display:block;line-height:1.1">Avery Dennison Corporation</span></td><td style="color:#555;border-left:3px solid #ccc;">above SMA200</td><td style="text-align:right;color:#880e4f;font-weight:bold">89.9</td><td style="text-align:right">$174.82</td><td style="text-align:right">$170.84</td></tr><tr><td style="font-weight:bold">CRH<span style="color:#888;font-size:11px;display:block;line-height:1.1">CRH PLC</span></td><td style="color:#555;border-left:3px solid #ccc;">below SMA200</td><td style="text-align:right;color:#1b5e20;font-weight:bold">10.1</td><td style="text-align:right">$96.0</td><td style="text-align:right">$113.57</td></tr><tr><td style="font-weight:bold">CSX<span style="color:#888;font-size:11px;display:block;line-height:1.1">CSX Corporation</span></td><td style="color:#555;border-left:3px solid #ccc;">above SMA200</td><td style="text-align:right;color:#1b5e20;font-weight:bold">10.4</td><td style="text-align:right">$50.19</td><td style="text-align:right">$41.06</td></tr><tr><td style="font-weight:bold">ED<span style="color:#888;font-size:11px;display:block;line-height:1.1">Consolidated Edison</span></td><td style="color:#555;border-left:3px solid #ccc;">above SMA200</td><td style="text-align:right;color:#1b5e20;font-weight:bold">10.5</td><td style="text-align:right">$109.66</td><td style="text-align:right">$105.14</td></tr><tr><td style="font-weight:bold">BMY<span style="color:#888;font-size:11px;display:block;line-height:1.1">Bristol-Myers Squibb</span></td><td style="color:#555;border-left:3px solid #ccc;">above SMA200</td><td style="text-align:right;color:#880e4f;font-weight:bold">89.4</td><td style="text-align:right">$64.86</td><td style="text-align:right">$54.43</td></tr></tbody>
+      </table>
+    </details>
+  </div>
+
+  
+  <!-- Daily P&L Journal -->
+  <div class="section">
+    <details open>
+      <summary>Daily P&amp;L Journal — vs Market Indices</summary>
+      <p style="color:#888;font-size:12px;margin:8px 0 8px">
+        Day % = mark-to-market NAV change that day.&nbsp;
+        Cum % = total return since inception.&nbsp;
+        SPY Cum % = buy-and-hold SPY return over the same period.&nbsp;
+        vs S&P = your day % minus S&amp;P 500 day % (green = beat the market).
+      </p>
+      <table id="journal-table">
+        <thead>
+          <tr>
+            <th rowspan="2" style="vertical-align:bottom">Date</th>
+            <th colspan="4" style="background:#283593;text-align:center;font-size:11px">Your Portfolio</th>
+            <th colspan="5" style="background:#283593;text-align:center;font-size:11px">Benchmark</th>
+          </tr>
+          <tr>
+            <th style="text-align:right">Day P&amp;L $</th>
+            <th style="text-align:right">Day %</th>
+            <th style="text-align:right">Cum %</th>
+            <th style="text-align:right">vs SPY (cum)</th>
+            <th style="text-align:right">SPY Cum %</th>
+            <th style="text-align:right">S&amp;P 500 Day</th>
+            <th style="text-align:right">Nasdaq</th>
+            <th style="text-align:right">DOW</th>
+            <th style="text-align:right">Russell 2K</th>
+          </tr>
+        </thead>
+        <tbody><tr><td style='white-space:nowrap;font-weight:bold;color:#1a237e'>Fri, Jul 31 2026</td><td style="color:#1b5e20;text-align:right;font-weight:bold">+$2,732</td><td style="color:#1b5e20;text-align:right;font-weight:bold;">+2.74%</td><td style="color:#1b5e20;text-align:right;">+2.47%</td><td style="color:#c62828;text-align:right;">-1.36%</td><td style="color:#1b5e20;text-align:right;font-weight:bold;font-size:12px">▲ +3.83%</td><td style="color:#1b5e20;text-align:right;">+0.04%</td><td style="color:#1b5e20;text-align:right;">+0.31%</td><td style="color:#c62828;text-align:right;">-0.00%</td><td style="color:#1b5e20;text-align:right;">+0.08%</td><td style="color:#1b5e20;text-align:right;font-size:12px">▲ +2.70%</td></tr>
+<tr><td style='white-space:nowrap;font-weight:bold;color:#1a237e'>Thu, Jul 30 2026</td><td style="color:#c62828;text-align:right;font-weight:bold">$1,614</td><td style="color:#c62828;text-align:right;font-weight:bold;">-1.59%</td><td style="color:#c62828;text-align:right;">-0.26%</td><td style="color:#c62828;text-align:right;">-1.41%</td><td style="color:#1b5e20;text-align:right;font-weight:bold;font-size:12px">▲ +1.14%</td><td style="color:#1b5e20;text-align:right;">+1.66%</td><td style="color:#1b5e20;text-align:right;">+2.78%</td><td style="color:#1b5e20;text-align:right;">+1.19%</td><td style="color:#1b5e20;text-align:right;">+1.37%</td><td style="color:#c62828;text-align:right;font-size:12px">▼ -3.25%</td></tr>
+<tr><td style='white-space:nowrap;font-weight:bold;color:#1a237e'>Wed, Jul 29 2026</td><td style="color:#c62828;text-align:right;font-weight:bold">$240</td><td style="color:#c62828;text-align:right;font-weight:bold;">-0.24%</td><td style="color:#1b5e20;text-align:right;">+1.35%</td><td style="color:#c62828;text-align:right;">-3.02%</td><td style="color:#1b5e20;text-align:right;font-weight:bold;font-size:12px">▲ +4.37%</td><td style="color:#c62828;text-align:right;">-1.52%</td><td style="color:#c62828;text-align:right;">-1.74%</td><td style="color:#c62828;text-align:right;">-2.19%</td><td style="color:#c62828;text-align:right;">-1.61%</td><td style="color:#1b5e20;text-align:right;font-size:12px">▲ +1.28%</td></tr>
+<tr><td style='white-space:nowrap;font-weight:bold;color:#1a237e'>Tue, Jul 28 2026</td><td style="color:#1b5e20;text-align:right;font-weight:bold">+$641</td><td style="color:#1b5e20;text-align:right;font-weight:bold;">+0.64%</td><td style="color:#1b5e20;text-align:right;">+1.59%</td><td style="color:#c62828;text-align:right;">-1.52%</td><td style="color:#1b5e20;text-align:right;font-weight:bold;font-size:12px">▲ +3.11%</td><td style="color:#1b5e20;text-align:right;">+0.21%</td><td style="color:#c62828;text-align:right;">-0.22%</td><td style="color:#1b5e20;text-align:right;">+1.03%</td><td style="color:#1b5e20;text-align:right;">+0.20%</td><td style="color:#1b5e20;text-align:right;font-size:12px">▲ +0.43%</td></tr>
+<tr><td style='white-space:nowrap;font-weight:bold;color:#1a237e'>Mon, Jul 27 2026</td><td style="color:#1b5e20;text-align:right;font-weight:bold">+$928</td><td style="color:#1b5e20;text-align:right;font-weight:bold;">+0.93%</td><td style="color:#1b5e20;text-align:right;">+0.95%</td><td style="color:#c62828;text-align:right;">-1.73%</td><td style="color:#1b5e20;text-align:right;font-weight:bold;font-size:12px">▲ +2.68%</td><td style="color:#1b5e20;text-align:right;">+0.02%</td><td style="color:#c62828;text-align:right;">-0.17%</td><td style="color:#1b5e20;text-align:right;">+0.51%</td><td style="color:#1b5e20;text-align:right;">+0.62%</td><td style="color:#1b5e20;text-align:right;font-size:12px">▲ +0.91%</td></tr>
+<tr><td style='white-space:nowrap;font-weight:bold;color:#1a237e'>Fri, Jul 24 2026</td><td style="color:#c62828;text-align:right;font-weight:bold">$318</td><td style="color:#c62828;text-align:right;font-weight:bold;">-0.32%</td><td style="color:#1b5e20;text-align:right;">+0.02%</td><td style="color:#c62828;text-align:right;">-1.75%</td><td style="color:#1b5e20;text-align:right;font-weight:bold;font-size:12px">▲ +1.77%</td><td style="color:#1b5e20;text-align:right;">+0.05%</td><td style="color:#c62828;text-align:right;">-0.64%</td><td style="color:#1b5e20;text-align:right;">+0.46%</td><td style="color:#c62828;text-align:right;">-0.35%</td><td style="color:#c62828;text-align:right;font-size:12px">▼ -0.37%</td></tr>
+<tr><td style='white-space:nowrap;font-weight:bold;color:#1a237e'>Thu, Jul 23 2026</td><td style="color:#c62828;text-align:right;font-weight:bold">$490</td><td style="color:#c62828;text-align:right;font-weight:bold;">-0.49%</td><td style="color:#1b5e20;text-align:right;">+0.34%</td><td style="color:#c62828;text-align:right;">-1.79%</td><td style="color:#1b5e20;text-align:right;font-weight:bold;font-size:12px">▲ +2.13%</td><td style="color:#c62828;text-align:right;">-1.21%</td><td style="color:#c62828;text-align:right;">-2.15%</td><td style="color:#c62828;text-align:right;">-0.97%</td><td style="color:#c62828;text-align:right;">-0.67%</td><td style="color:#1b5e20;text-align:right;font-size:12px">▲ +0.72%</td></tr>
+<tr><td style='white-space:nowrap;font-weight:bold;color:#1a237e'>Wed, Jul 22 2026</td><td style="color:#1b5e20;text-align:right;font-weight:bold">+$1,883</td><td style="color:#1b5e20;text-align:right;font-weight:bold;">+1.90%</td><td style="color:#1b5e20;text-align:right;">+0.83%</td><td style="color:#c62828;text-align:right;">-0.59%</td><td style="color:#1b5e20;text-align:right;font-weight:bold;font-size:12px">▲ +1.42%</td><td style="color:#c62828;text-align:right;">-0.14%</td><td style="color:#c62828;text-align:right;">-0.57%</td><td style="color:#c62828;text-align:right;">-0.01%</td><td style="color:#c62828;text-align:right;">-0.92%</td><td style="color:#1b5e20;text-align:right;font-size:12px">▲ +2.04%</td></tr>
+<tr><td style='white-space:nowrap;font-weight:bold;color:#1a237e'>Tue, Jul 21 2026</td><td style="color:#1b5e20;text-align:right;font-weight:bold">+$168</td><td style="color:#1b5e20;text-align:right;font-weight:bold;">+0.17%</td><td style="color:#c62828;text-align:right;">-1.05%</td><td style="color:#c62828;text-align:right;">-0.46%</td><td style="color:#c62828;text-align:right;font-weight:bold;font-size:12px">▼ -0.59%</td><td style="color:#1b5e20;text-align:right;">+0.89%</td><td style="color:#1b5e20;text-align:right;">+1.29%</td><td style="color:#1b5e20;text-align:right;">+0.74%</td><td style="color:#1b5e20;text-align:right;">+1.53%</td><td style="color:#c62828;text-align:right;font-size:12px">▼ -0.72%</td></tr>
+<tr><td style='white-space:nowrap;font-weight:bold;color:#1a237e'>Mon, Jul 20 2026</td><td style="color:#1b5e20;text-align:right;font-weight:bold">+$554</td><td style="color:#1b5e20;text-align:right;font-weight:bold;">+0.56%</td><td style="color:#c62828;text-align:right;">-1.22%</td><td style="color:#c62828;text-align:right;">-1.33%</td><td style="color:#1b5e20;text-align:right;font-weight:bold;font-size:12px">▲ +0.11%</td><td style="color:#c62828;text-align:right;">-0.19%</td><td style="color:#c62828;text-align:right;">-0.05%</td><td style="color:#c62828;text-align:right;">-0.59%</td><td style="color:#c62828;text-align:right;">-0.67%</td><td style="color:#1b5e20;text-align:right;font-size:12px">▲ +0.76%</td></tr>
+<tr><td style='white-space:nowrap;font-weight:bold;color:#1a237e'>Thu, Jul 16 2026</td><td style="color:#1b5e20;text-align:right;font-weight:bold">+$214</td><td style="color:#1b5e20;text-align:right;font-weight:bold;">+0.22%</td><td style="color:#c62828;text-align:right;">-1.77%</td><td style="color:#c62828;text-align:right;">-0.13%</td><td style="color:#c62828;text-align:right;font-weight:bold;font-size:12px">▼ -1.64%</td><td style="color:#c62828;text-align:right;">-0.51%</td><td style="color:#c62828;text-align:right;">-1.47%</td><td style="color:#c62828;text-align:right;">-0.20%</td><td style="color:#c62828;text-align:right;">-0.06%</td><td style="color:#1b5e20;text-align:right;font-size:12px">▲ +0.73%</td></tr>
+<tr><td style='white-space:nowrap;font-weight:bold;color:#1a237e'>Wed, Jul 15 2026</td><td style="color:#c62828;text-align:right;font-weight:bold">$4,657</td><td style="color:#c62828;text-align:right;font-weight:bold;">-4.54%</td><td style="color:#c62828;text-align:right;">-1.99%</td><td style="color:#1b5e20;text-align:right;">+0.38%</td><td style="color:#c62828;text-align:right;font-weight:bold;font-size:12px">▼ -2.37%</td><td style="color:#1b5e20;text-align:right;">+0.38%</td><td style="color:#1b5e20;text-align:right;">+0.62%</td><td style="color:#1b5e20;text-align:right;">+0.29%</td><td style="color:#1b5e20;text-align:right;">+0.39%</td><td style="color:#c62828;text-align:right;font-size:12px">▼ -4.92%</td></tr>
+<tr><td style='white-space:nowrap;font-weight:bold;color:#1a237e'>Mon, Jul 13 2026</td><td style="color:#1b5e20;text-align:right;font-weight:bold">+$1,052</td><td style="color:#1b5e20;text-align:right;font-weight:bold;">+1.04%</td><td style="color:#1b5e20;text-align:right;">+2.67%</td><td style="color:#c62828;text-align:right;">-0.38%</td><td style="color:#1b5e20;text-align:right;font-weight:bold;font-size:12px">▲ +3.04%</td><td style="color:#c62828;text-align:right;">-0.79%</td><td style="color:#c62828;text-align:right;">-1.55%</td><td style="color:#c62828;text-align:right;">-0.26%</td><td style="color:#c62828;text-align:right;">-0.83%</td><td style="color:#1b5e20;text-align:right;font-size:12px">▲ +1.83%</td></tr>
+<tr><td style='white-space:nowrap;font-weight:bold;color:#1a237e'>Fri, Jul 10 2026</td><td style="color:#1b5e20;text-align:right;font-weight:bold">+$1,615</td><td style="color:#1b5e20;text-align:right;font-weight:bold;">+1.61%</td><td style="color:#1b5e20;text-align:right;">+1.61%</td><td style="color:#1b5e20;text-align:right;">+0.42%</td><td style="color:#1b5e20;text-align:right;font-weight:bold;font-size:12px">▲ +1.19%</td><td style="color:#1b5e20;text-align:right;">+0.42%</td><td style="color:#1b5e20;text-align:right;">+0.28%</td><td style="color:#1b5e20;text-align:right;">+0.28%</td><td style="color:#c62828;text-align:right;">-0.49%</td><td style="color:#1b5e20;text-align:right;font-size:12px">▲ +1.19%</td></tr>
+<tr><td style='white-space:nowrap;font-weight:bold;color:#1a237e'>Thu, Jul 09 2026</td><td style="color:#555;text-align:right;font-weight:bold">$0</td><td style="color:#555;text-align:right;font-weight:bold;">0.00%</td><td style="color:#555;text-align:right;">0.00%</td><td style="color:#555;text-align:right;">0.00%</td><td style="color:#c62828;text-align:right;font-weight:bold;font-size:12px">▼ 0.00%</td><td style="color:#1b5e20;text-align:right;">+0.81%</td><td style="color:#1b5e20;text-align:right;">+1.30%</td><td style="color:#1b5e20;text-align:right;">+0.27%</td><td style="color:#1b5e20;text-align:right;">+1.22%</td><td style="color:#c62828;text-align:right;font-size:12px">▼ -0.81%</td></tr>
+</tbody>
+      </table>
+    </details>
+  </div>
+
+  <p style="color:#bbb;font-size:11px;margin-top:16px" id="live-status">
+    swing_trader.py &nbsp;|&nbsp; Simulated trades only — not real money. &nbsp;|&nbsp;
+    Data: Yahoo Finance &nbsp;|&nbsp; Not financial advice.
+  </p>
+
+<script>
+// ── Finnhub live prices ───────────────────────────────────────────────────────
+(function() {
+  const TOKEN = 'd93d6v1r01qgqnua64j0d93d6v1r01qgqnua64jg';
+  const STARTING = 100000.0;
+  const PREV_NAV = 99736.77;
+  const delay = ms => new Promise(r => setTimeout(r, ms));
+
+  function isMarketHours() {
+    const now = new Date();
+    const et = new Date(now.toLocaleString('en-US', {timeZone: 'America/New_York'}));
+    const day = et.getDay();
+    if (day === 0 || day === 6) return false;
+    const h = et.getHours(), m = et.getMinutes();
+    const mins = h * 60 + m;
+    return mins >= 570 && mins < 960; // 9:30–4:00
+  }
+
+  function setStatus(html, color) {
+    const el = document.getElementById('price-status');
+    if (el) { el.innerHTML = html; el.style.color = color; el.style.borderColor = color === '#388e3c' ? '#a5d6a7' : '#e0e0e0'; }
+  }
+
+  const CASH = 16349.21;
+
+  function refreshSummary() {
+    // Re-sum every open-position row for a consistent single source of truth
+    const rows = document.querySelectorAll('tr[data-ticker]');
+    let sumCost = 0, sumCurval = 0, sumUnreal = 0;
+    rows.forEach(r => {
+      const qty  = parseFloat(r.dataset.qty)    || 0;
+      const buy  = parseFloat(r.dataset.buypx)  || 0;
+      const side = r.dataset.side;
+      // Use live-updated curval cell if available, else cost basis
+      const cvEl = r.querySelector('.live-curval');
+      const curval = cvEl ? (parseFloat(cvEl.textContent.replace(/[$,]/g,'')) || buy*qty) : buy*qty;
+      const unreal = side === 'long' ? curval - buy*qty : curval - buy*qty;
+      // For unrealized, read directly from the cell which applyOneRow already updated
+      const unEl = r.querySelector('.live-unreal-d');
+      const liveUnreal = unEl ? (parseFloat(unEl.dataset.sort) || 0) : 0;
+      sumCost   += buy * qty;
+      sumCurval += curval;
+      sumUnreal += liveUnreal;
+    });
+    const portVal = CASH + sumCurval;
+    const ret     = portVal - STARTING;
+    const retPct  = ret / STARTING * 100;
+    const sign    = v => v >= 0 ? '+' : '';
+    const color   = v => v >= 0 ? '#2e7d32' : '#c62828';
+    const fmtD    = v => '$' + Math.abs(v).toLocaleString('en-US', {maximumFractionDigits:0});
+    const fmtP    = v => Math.abs(v).toFixed(2) + '%';
+
+    // Portfolio Summary cards
+    const portEl = document.getElementById('port-value');
+    if (portEl) portEl.textContent = '$' + portVal.toLocaleString('en-US', {maximumFractionDigits:0});
+
+    const totalEl = document.getElementById('port-total');
+    if (totalEl) {
+      totalEl.innerHTML = `${sign(ret)}${fmtD(ret)}<br><span style="font-size:14px" id="port-total-pct">${sign(ret)}${fmtP(retPct)}</span>`;
+      totalEl.style.color = color(ret);
+    }
+
+    // Day P&L = sum of per-row day deltas (same source as the Day Δ $ totals column)
+    let dayPnl = 0;
+    document.querySelectorAll('tr[data-ticker] .live-day-d').forEach(el => {
+      dayPnl += parseFloat(el.dataset.sort) || 0;
+    });
+    const dayPct  = (portVal - dayPnl) > 0 ? dayPnl / (portVal - dayPnl) * 100 : 0;
+    const dayEl   = document.getElementById('day-pnl');
+    if (dayEl) {
+      dayEl.innerHTML = `${sign(dayPnl)}${fmtD(dayPnl)}<br><span style="font-size:14px" id="day-pnl-pct">${sign(dayPnl)}${fmtP(dayPct)}</span>`;
+      dayEl.style.color = color(dayPnl);
+    }
+
+    // Capital Breakdown
+    const bkUnreal = document.getElementById('bk-unreal');
+    if (bkUnreal) { bkUnreal.textContent = sign(sumUnreal) + fmtD(sumUnreal); bkUnreal.style.color = color(sumUnreal); }
+
+    // Open Positions totals row
+    const tuEl = document.getElementById('total-unreal-d');
+    if (tuEl) { tuEl.textContent = sign(sumUnreal) + fmtD(sumUnreal); tuEl.style.color = color(sumUnreal); }
+    const tuPct = document.getElementById('total-unreal-pct');
+    if (tuPct) {
+      const pct = sumCost > 0 ? sumUnreal / sumCost * 100 : 0;
+      tuPct.textContent = sign(pct) + fmtP(pct); tuPct.style.color = color(pct);
+    }
+    const tcEl = document.getElementById('total-curval');
+    if (tcEl) tcEl.textContent = '$' + sumCurval.toLocaleString('en-US', {maximumFractionDigits:0});
+
+    // Day Δ totals row — sum from per-row day cells
+    let sumDayD = 0;
+    document.querySelectorAll('tr[data-ticker] .live-day-d').forEach(el => {
+      sumDayD += parseFloat(el.dataset.sort) || 0;
+    });
+    const prevCurval = sumCurval - sumDayD;
+    const sumDayPct  = prevCurval > 0 ? sumDayD / prevCurval * 100 : 0;
+    const tdDEl = document.getElementById('total-day-d');
+    const tdPEl = document.getElementById('total-day-pct');
+    if (tdDEl) { tdDEl.textContent = sign(sumDayD) + fmtD(sumDayD); tdDEl.style.color = color(sumDayD); }
+    if (tdPEl) { tdPEl.textContent = sign(sumDayPct) + fmtP(sumDayPct); tdPEl.style.color = color(sumDayPct); }
+  }
+
+  document.addEventListener('DOMContentLoaded', refreshSummary);
+
+  async function fetchPrices() {
+    const rows = document.querySelectorAll('tr[data-ticker]');
+    if (!rows.length) return;
+    setStatus('⏳ Fetching prices…', '#f57c00');
+    const quotes = {};
+    for (const row of rows) {
+      const tk = row.dataset.ticker;
+      try {
+        const q = await fetch(`https://finnhub.io/api/v1/quote?symbol=${tk}&token=${TOKEN}`).then(r => r.json());
+        if (q && q.c) {
+          quotes[tk] = { price: q.c, prevClose: q.pc };
+          applyOneRow(row, q.c, q.pc);
+        }
+      } catch(e) {}
+      await delay(1100);
+    }
+    const t = new Date().toLocaleTimeString('en-US', {timeZone:'America/New_York', hour:'2-digit', minute:'2-digit'});
+    setStatus(`✅ Updated ${t} ET`, '#388e3c');
+    const el = document.getElementById('live-status');
+    if (el) {
+      el.innerHTML = `Live prices as of ${t} ET &nbsp;|&nbsp; Simulated trades only — not real money.`;
+      el.style.color = '#388e3c';
+    }
+  }
+
+  function applyOneRow(row, price, prevClose) {
+    const qty  = parseFloat(row.dataset.qty);
+    const buy  = parseFloat(row.dataset.buypx);
+    const side = row.dataset.side;
+    const prev = prevClose || parseFloat(row.dataset.prevpx) || buy;
+    const priceCell     = row.querySelector('.live-price');
+    const unrealCellD   = row.querySelector('.live-unreal-d');
+    const unrealCellPct = row.querySelector('.live-unreal-pct');
+    const curvalCell    = row.querySelector('.live-curval');
+    const dayCellD      = row.querySelector('.live-day-d');
+    const dayCellPct    = row.querySelector('.live-day-pct');
+    if (priceCell) priceCell.textContent = '$' + price.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+    const liveUnreal = side === 'long' ? (price - buy) * qty : (buy - price) * qty;
+    const curVal     = buy * qty + liveUnreal;
+    if (curvalCell) curvalCell.textContent = '$' + curVal.toLocaleString('en-US', {maximumFractionDigits:0});
+    const cost  = buy * qty;
+    const pct   = cost > 0 ? liveUnreal / cost * 100 : 0;
+    const sign  = v => v >= 0 ? '+' : '';
+    const color = v => v >= 0 ? '#2e7d32' : '#c62828';
+    if (unrealCellD) {
+      unrealCellD.textContent = `${sign(liveUnreal)}$${Math.abs(liveUnreal).toLocaleString('en-US', {maximumFractionDigits:0})}`;
+      unrealCellD.style.color = color(liveUnreal);
+      unrealCellD.dataset.sort = liveUnreal.toFixed(2);
+    }
+    if (unrealCellPct) {
+      unrealCellPct.textContent = `${sign(pct)}${Math.abs(pct).toFixed(2)}%`;
+      unrealCellPct.style.color = color(pct);
+      unrealCellPct.dataset.sort = pct.toFixed(4);
+    }
+    const dayD   = side === 'long' ? (price - prev) * qty : (prev - price) * qty;
+    const prevVal = prev * qty;
+    const dayPct = prevVal > 0 ? dayD / prevVal * 100 : 0;
+    if (dayCellD) {
+      dayCellD.innerHTML = `<span data-sort="${dayD.toFixed(2)}" style="color:${color(dayD)}">${sign(dayD)}$${Math.abs(dayD).toLocaleString('en-US', {maximumFractionDigits:0})}</span>`;
+      dayCellD.dataset.sort = dayD.toFixed(2);
+    }
+    if (dayCellPct) {
+      dayCellPct.innerHTML = `<span data-sort="${dayPct.toFixed(4)}" style="color:${color(dayPct)}">${sign(dayPct)}${Math.abs(dayPct).toFixed(2)}%</span>`;
+      dayCellPct.dataset.sort = dayPct.toFixed(4);
+    }
+    refreshSummary();
+  }
+
+  if (isMarketHours()) {
+    fetchPrices();
+    setInterval(fetchPrices, 60000);
+  }
+})();
+
+// NAV equity curve with SPY benchmark
+(function() {
+  const data = {"dates": ["2026-07-09", "2026-07-10", "2026-07-13", "2026-07-15", "2026-07-16", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31"], "values": [100000.0, 101615.45, 102667.93, 98011.16, 98225.18, 98779.23, 98947.51, 100830.42, 100340.44, 100021.97, 100949.81, 101590.61, 101350.51, 99736.77, 102468.73], "spy": [100000.0, 100421.0, 99625.0, 100381.0, 99869.0, 98670.0, 99543.0, 99408.0, 98206.0, 98255.0, 98271.0, 98477.0, 96984.0, 98595.0, 98638.0]};
+  if (!data.dates.length) return;
+  const canvas = document.getElementById('nav-chart');
+  const ctx    = canvas.getContext('2d');
+  const W = canvas.offsetWidth || 800;
+  const H = 140;
+  canvas.width  = W;
+  canvas.height = H;
+
+  const vals = data.values;
+  const spy  = data.spy || [];
+  const N    = vals.length;
+  const pad  = 20;
+
+  const allVals = [...vals, ...spy].filter(v => v != null);
+  const minV  = Math.min(...allVals);
+  const maxV  = Math.max(...allVals);
+  const range = maxV - minV || 1;
+
+  const toX = i => pad + (i / (N - 1 || 1)) * (W - 2 * pad);
+  const toY = v => H - pad - ((v - minV) / range) * (H - 2 * pad);
+
+  ctx.clearRect(0, 0, W, H);
+
+  // Drawdown shading (red area between running peak and current value)
+  const peaks = vals.map((v, i) => Math.max(...vals.slice(0, i+1)));
+  ctx.beginPath();
+  ctx.moveTo(toX(0), toY(peaks[0]));
+  peaks.forEach((p, i) => { if (i > 0) ctx.lineTo(toX(i), toY(p)); });
+  for (let i = N - 1; i >= 0; i--) { ctx.lineTo(toX(i), toY(vals[i])); }
+  ctx.closePath();
+  ctx.fillStyle = 'rgba(198, 40, 40, 0.12)';
+  ctx.fill();
+
+  // SPY line (grey dashed)
+  if (spy.length) {
+    ctx.strokeStyle = '#9e9e9e';
+    ctx.lineWidth   = 1.5;
+    ctx.setLineDash([4, 4]);
+    ctx.beginPath();
+    spy.forEach((v, i) => { if (v != null) { i === 0 ? ctx.moveTo(toX(i), toY(v)) : ctx.lineTo(toX(i), toY(v)); } });
+    ctx.stroke();
+    ctx.setLineDash([]);
+  }
+
+  // Portfolio line (solid blue)
+  ctx.strokeStyle = '#1a237e';
+  ctx.lineWidth   = 2;
+  ctx.beginPath();
+  vals.forEach((v, i) => { i === 0 ? ctx.moveTo(toX(i), toY(v)) : ctx.lineTo(toX(i), toY(v)); });
+  ctx.stroke();
+
+  // Fill under portfolio line
+  ctx.lineTo(toX(N - 1), H - pad);
+  ctx.lineTo(toX(0), H - pad);
+  ctx.closePath();
+  const grad = ctx.createLinearGradient(0, 0, 0, H);
+  grad.addColorStop(0, 'rgba(26,35,126,0.12)');
+  grad.addColorStop(1, 'rgba(26,35,126,0)');
+  ctx.fillStyle = grad;
+  ctx.fill();
+
+  // Labels
+  ctx.font = '11px sans-serif';
+  ctx.fillStyle = '#666';
+  if (data.dates.length) {
+    ctx.fillText(data.dates[0], pad, H - 4);
+    const last = data.dates[N-1];
+    ctx.fillText(last, W - pad - ctx.measureText(last).width, H - 4);
+  }
+  // Portfolio end label
+  const lastVal = '$' + vals[N-1].toLocaleString('en-US', {maximumFractionDigits:0});
+  ctx.fillStyle = vals[N-1] >= 100000.0 ? '#2e7d32' : '#c62828';
+  ctx.font = 'bold 12px sans-serif';
+  ctx.fillText(lastVal, toX(N-1) - ctx.measureText(lastVal).width - 4, toY(vals[N-1]) - 4);
+  // SPY end label
+  if (spy.length) {
+    const spyLast = 'SPY $' + spy[N-1].toLocaleString('en-US', {maximumFractionDigits:0});
+    ctx.fillStyle = '#757575';
+    ctx.font = '11px sans-serif';
+    ctx.fillText(spyLast, toX(N-1) - ctx.measureText(spyLast).width - 4, toY(spy[N-1]) + 14);
+  }
+  // Legend
+  ctx.font = '11px sans-serif';
+  ctx.fillStyle = '#1a237e'; ctx.fillRect(pad, 6, 18, 3);
+  ctx.fillStyle = '#333'; ctx.fillText('Portfolio', pad + 22, 12);
+  ctx.strokeStyle = '#9e9e9e'; ctx.setLineDash([4,4]); ctx.lineWidth = 1.5;
+  ctx.beginPath(); ctx.moveTo(pad + 90, 8); ctx.lineTo(pad + 108, 8); ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle = '#333'; ctx.fillText('SPY (buy & hold)', pad + 112, 12);
+})();
+
+// ── Sortable + hide/show columns ─────────────────────────────────────────────
+(function() {
+  document.querySelectorAll('table[id]').forEach(function(table) {
+    var id = table.id;
+    var sortCol = -1, sortAsc = true;
+    var LS_HIDE = 'colhide:' + id;
+    var hidden = new Set(JSON.parse(localStorage.getItem(LS_HIDE) || '[]'));
+
+    var setCol = function(col, show) {
+      table.querySelectorAll('tr').forEach(function(row) {
+        if (row.cells[col]) row.cells[col].style.display = show ? '' : 'none';
+      });
+    };
+    hidden.forEach(function(i) { setCol(i, false); });
+
+    // Sort on header click
+    table.querySelectorAll('thead th[data-col]').forEach(function(th) {
+      th.addEventListener('click', function() {
+        var col = parseInt(th.dataset.col);
+        sortAsc = (sortCol === col) ? !sortAsc : true;
+        sortCol = col;
+        table.querySelectorAll('thead th').forEach(function(t) { t.classList.remove('sort-asc','sort-desc'); });
+        th.classList.add(sortAsc ? 'sort-asc' : 'sort-desc');
+        var tbody = table.querySelector('tbody');
+        var rows = Array.from(tbody.querySelectorAll('tr'));
+        rows.sort(function(a, b) {
+          var aC = a.cells[col], bC = b.cells[col];
+          var aT = (aC ? aC.textContent : '').trim();
+          var bT = (bC ? bC.textContent : '').trim();
+          var aN = aC && aC.dataset.sort !== undefined ? parseFloat(aC.dataset.sort) : parseFloat(aT.replace(/[^0-9.\-]/g, ''));
+          var bN = bC && bC.dataset.sort !== undefined ? parseFloat(bC.dataset.sort) : parseFloat(bT.replace(/[^0-9.\-]/g, ''));
+          var cmp = isNaN(aN) || isNaN(bN) ? aT.localeCompare(bT) : aN - bN;
+          return sortAsc ? cmp : -cmp;
+        });
+        rows.forEach(function(r) { tbody.appendChild(r); });
+      });
+    });
+
+    // Col hide/show toggles
+    var togglesId = table.dataset.toggles;
+    var togglesDiv = togglesId ? document.getElementById(togglesId) : null;
+    if (!togglesDiv) return;
+    var ths = Array.from(table.querySelectorAll('thead th'));
+    ths.forEach(function(th, i) {
+      var btn = document.createElement('button');
+      btn.textContent = th.textContent.replace(/[▲▼]/g,'').trim();
+      var isHid = hidden.has(i);
+      btn.style.cssText = 'padding:2px 8px;border-radius:10px;border:1px solid #aaa;cursor:pointer;font-size:11px;background:' + (isHid ? '#eee' : '#e3f2fd') + ';color:' + (isHid ? '#999' : '#0d47a1') + ';text-decoration:' + (isHid ? 'line-through' : '');
+      btn.title = 'Click to hide/show column';
+      btn.addEventListener('click', function() {
+        if (hidden.has(i)) {
+          hidden.delete(i); setCol(i, true);
+          btn.style.background='#e3f2fd'; btn.style.color='#0d47a1'; btn.style.textDecoration='';
+        } else {
+          hidden.add(i); setCol(i, false);
+          btn.style.background='#eee'; btn.style.color='#999'; btn.style.textDecoration='line-through';
+        }
+        localStorage.setItem(LS_HIDE, JSON.stringify([...hidden]));
+      });
+      togglesDiv.appendChild(btn);
+    });
+  });
+})();
+
+// ── Resizable columns ─────────────────────────────────────────────────────────
+(function() {
+  document.querySelectorAll('table[id]').forEach(function(tbl) {
+    var id = tbl.id;
+    var headerRow = tbl.querySelector('thead tr:first-child');
+    if (!headerRow) return;
+    var ths = Array.from(headerRow.querySelectorAll('th'));
+    if (!ths.length) return;
+    var cg = tbl.querySelector('colgroup');
+    if (!cg) {
+      cg = document.createElement('colgroup');
+      tbl.insertBefore(cg, tbl.firstChild);
+      ths.forEach(function() { cg.appendChild(document.createElement('col')); });
+    }
+    var cols = Array.from(cg.querySelectorAll('col'));
+    ths.forEach(function(th, i) {
+      var saved = localStorage.getItem('colw:' + id + ':' + i);
+      if (saved && cols[i]) { cols[i].style.width = saved; }
+    });
+    ths.forEach(function(th, i) {
+      th.style.position = 'relative';
+      if (th.querySelector('.col-resizer')) return;
+      var rz = document.createElement('div');
+      rz.className = 'col-resizer';
+      rz.style.cssText = 'position:absolute;right:0;top:0;width:5px;height:100%;cursor:col-resize;user-select:none;background:transparent;z-index:1';
+      th.appendChild(rz);
+      rz.addEventListener('mousedown', function(e) {
+        e.preventDefault();
+        var startX = e.pageX;
+        var startW = th.offsetWidth;
+        var onMove = function(e) {
+          var w = Math.max(30, startW + e.pageX - startX);
+          if (cols[i]) cols[i].style.width = w + 'px';
+        };
+        var onUp = function(e) {
+          var w = Math.max(30, startW + e.pageX - startX);
+          localStorage.setItem('colw:' + id + ':' + i, w + 'px');
+          document.removeEventListener('mousemove', onMove);
+          document.removeEventListener('mouseup', onUp);
+        };
+        document.addEventListener('mousemove', onMove);
+        document.addEventListener('mouseup', onUp);
+      });
+    });
+  });
+})();
+
+// ── Details state persistence ─────────────────────────────────────────────────
+(function() {
+  document.querySelectorAll('details').forEach(function(el) {
+    var sumEl = el.querySelector('summary');
+    if (!sumEl) return;
+    var key = 'details:' + sumEl.textContent.trim().slice(0, 60);
+    var saved = localStorage.getItem(key);
+    if (saved !== null) { el.open = (saved === 'open'); }
+    el.addEventListener('toggle', function() {
+      localStorage.setItem(key, el.open ? 'open' : 'closed');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
