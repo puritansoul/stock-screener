@@ -25,13 +25,27 @@ def _load_json(path: Path) -> dict:
         return {}
 
 
-def _nav_value(nav_history: dict, starting: float) -> tuple[float, float]:
-    """Return (current_value, prev_value) from a nav_history dict."""
+def _report_value(html_pattern: str, starting: float) -> float:
+    """Read #port-value from the latest report HTML — always correct at render time."""
+    files = sorted((BASE_DIR / "reports").glob(html_pattern), reverse=True)
+    if not files:
+        return starting
+    import re
+    html = files[0].read_text()
+    m = re.search(r'id="port-value"[^>]*>\$?([\d,]+)', html)
+    return float(m.group(1).replace(",", "")) if m else starting
+
+
+def _nav_value(nav_history: dict, starting: float, html_pattern: str = "") -> tuple[float, float]:
+    """Return (current_value, prev_value).
+    cur  — read from the latest report HTML so it matches what the iframe shows.
+    prev — read from nav_history (yesterday's saved value for computing day delta).
+    """
+    cur = _report_value(html_pattern, starting) if html_pattern else starting
     if not nav_history:
-        return starting, starting
+        return cur, starting
     dates = sorted(nav_history.keys())
-    cur = nav_history[dates[-1]]
-    prev = nav_history[dates[-2]] if len(dates) >= 2 else starting
+    prev = nav_history[dates[-2]] if len(dates) >= 2 else nav_history[dates[-1]]
     return cur, prev
 
 
@@ -55,13 +69,14 @@ def build_cross_bot_summary() -> tuple[str, str]:
     today_str = date.today().isoformat()
 
     # Order: Factor Screener v1 → Swing v1 → Intraday v1 → V2s in same order
+    # (name, state_json_path_or_None, nav_file_or_None, bar_id, day_el_id, report_glob)
     bots = [
-        ("Screener v1",   None, BASE_DIR / "portfolio_nav.json",            "bar-screener-v1", "port-today"),
-        ("Swing v1",      _load_json(BASE_DIR / "swing_trades.json"),      None, "bar-swing-v1",    "day-pnl"),
-        ("Intraday v1",   _load_json(BASE_DIR / "intraday_trades.json"),   None, "bar-intraday-v1", "port-today"),
-        ("Screener v2",   None, BASE_DIR / "portfolio_nav_v2.json",         "bar-screener-v2", "port-today"),
-        ("Swing v2",      _load_json(BASE_DIR / "swing_trades_v2.json"),   None, "bar-swing-v2",    "day-pnl"),
-        ("Intraday v2",   _load_json(BASE_DIR / "intraday_trades_v2.json"),None, "bar-intraday-v2", "port-today"),
+        ("Screener v1",  None,                                  BASE_DIR / "portfolio_nav.json",    "bar-screener-v1", "port-today", ""),
+        ("Swing v1",     BASE_DIR / "swing_trades.json",        None,                               "bar-swing-v1",    "day-pnl",    "swing_[0-9]*.html"),
+        ("Intraday v1",  BASE_DIR / "intraday_trades.json",     None,                               "bar-intraday-v1", "port-today", "intraday_[0-9]*.html"),
+        ("Screener v2",  None,                                  BASE_DIR / "portfolio_nav_v2.json", "bar-screener-v2", "port-today", ""),
+        ("Swing v2",     BASE_DIR / "swing_trades_v2.json",     None,                               "bar-swing-v2",    "day-pnl",    "swing_v2_*.html"),
+        ("Intraday v2",  BASE_DIR / "intraday_trades_v2.json",  None,                               "bar-intraday-v2", "port-today", "intraday_v2_*.html"),
     ]
 
     total_value = 0.0
@@ -78,11 +93,12 @@ def build_cross_bot_summary() -> tuple[str, str]:
         "bar-intraday-v2": "intraday-v2",
     }
 
-    for name, state, nav_file, bar_id, day_el_id in bots:
+    for name, state_path, nav_file, bar_id, day_el_id, report_glob in bots:
+        state = _load_json(state_path) if state_path else {}
         if nav_file:
             cur, prev = _screener_nav(nav_file, STARTING_CAPITAL)
-        elif state:
-            cur, prev = _nav_value(state.get("nav_history", {}), STARTING_CAPITAL)
+        elif state_path:
+            cur, prev = _nav_value(state.get("nav_history", {}), STARTING_CAPITAL, report_glob)
         else:
             cur, prev = STARTING_CAPITAL, STARTING_CAPITAL
 

@@ -248,6 +248,39 @@ def verify_screener(label: str, html_pattern: str):
         traceback.print_exc()
 
 
+def verify_summary_bar():
+    """Summary bar static values must match each bot's latest report #port-value."""
+    print(f"\n[Summary Bar vs Reports]")
+    try:
+        import importlib
+        mod = importlib.import_module("build_consolidated")
+        importlib.reload(mod)
+
+        bots = [
+            ("Swing v1",    BASE_DIR / "swing_trades.json",       "swing_[0-9]*.html"),
+            ("Intraday v1", BASE_DIR / "intraday_trades.json",    "intraday_[0-9]*.html"),
+            ("Swing v2",    BASE_DIR / "swing_trades_v2.json",    "swing_v2_*.html"),
+            ("Intraday v2", BASE_DIR / "intraday_trades_v2.json", "intraday_v2_*.html"),
+        ]
+        for name, state_path, glob in bots:
+            files = sorted((BASE_DIR / "reports").glob(glob), reverse=True)
+            if not files:
+                print(f"  (no report for {name} — skipping)")
+                continue
+            html = files[0].read_text()
+            report_val = extract_id(html, "port-value")
+
+            state = mod._load_json(state_path) if state_path.exists() else {}
+            bar_cur, _ = mod._nav_value(state.get("nav_history", {}), mod.STARTING_CAPITAL, glob)
+            bar_val = round(bar_cur)
+
+            check("Summary Bar", f"{name} bar vs report",
+                  f"{name} bar", bar_val, f"{name} report", report_val)
+    except Exception as e:
+        failures.append(f"Summary Bar: EXCEPTION — {e}")
+        traceback.print_exc()
+
+
 # ── Main ─────────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
@@ -265,6 +298,7 @@ if __name__ == "__main__":
     verify_intraday("Intraday Trader v2", "intraday_trader_v2", "intraday_v2_*.html")
     verify_screener("Factor Screener v1", "[0-9]*-[0-9]*-[0-9]*.html")
     verify_screener("Factor Screener v2", "v2_*.html")
+    verify_summary_bar()
 
     print("\n" + "=" * 60)
     if failures:
