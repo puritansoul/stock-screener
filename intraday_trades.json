@@ -1,5 +1,5 @@
 {
-  "capital": 3007.31,
+  "capital": 1568.54,
   "open_positions": [
     {
       "ticker": "MGM",
@@ -8,9 +8,9 @@
       "entry_time": "10:04 ET",
       "entry_price": 45.03,
       "shares": 636,
-      "stop": 44.92,
+      "stop": 44.86,
       "trail_dist": 0.24,
-      "peak": 44.68,
+      "peak": 44.62,
       "orb_width": 0.48,
       "cost": 28639.08,
       "vol_ratio": 2.35
@@ -36,9 +36,9 @@
       "entry_time": "10:06 ET",
       "entry_price": 232.95,
       "shares": 60,
-      "stop": 233.995,
+      "stop": 233.86,
       "trail_dist": 1.78,
-      "peak": 232.215,
+      "peak": 232.08,
       "orb_width": 3.56,
       "cost": 13977.0,
       "vol_ratio": 1.32
@@ -106,9 +106,9 @@
       "entry_time": "10:09 ET",
       "entry_price": 110.045,
       "shares": 22,
-      "stop": 110.84,
+      "stop": 110.55,
       "trail_dist": 0.795,
-      "peak": 110.045,
+      "peak": 109.755,
       "orb_width": 1.59,
       "cost": 2420.99,
       "vol_ratio": 1.31
@@ -120,9 +120,9 @@
       "entry_time": "10:09 ET",
       "entry_price": 210.21,
       "shares": 8,
-      "stop": 211.8675,
+      "stop": 211.4276,
       "trail_dist": 1.6575,
-      "peak": 210.21,
+      "peak": 209.7701,
       "orb_width": 3.315,
       "cost": 1681.68,
       "vol_ratio": 1.28
@@ -134,12 +134,40 @@
       "entry_time": "10:09 ET",
       "entry_price": 179.59,
       "shares": 7,
-      "stop": 180.7301,
+      "stop": 180.6551,
       "trail_dist": 1.1401,
-      "peak": 179.59,
+      "peak": 179.515,
       "orb_width": 2.2802,
       "cost": 1257.13,
       "vol_ratio": 1.23
+    },
+    {
+      "ticker": "AIZ",
+      "side": "long",
+      "entry_date": "2026-07-31",
+      "entry_time": "10:11 ET",
+      "entry_price": 282.33,
+      "shares": 3,
+      "stop": 281.3325,
+      "trail_dist": 0.9975,
+      "peak": 282.33,
+      "orb_width": 1.995,
+      "cost": 846.99,
+      "vol_ratio": 1.5
+    },
+    {
+      "ticker": "WYNN",
+      "side": "short",
+      "entry_date": "2026-07-31",
+      "entry_time": "10:11 ET",
+      "entry_price": 98.63,
+      "shares": 6,
+      "stop": 99.315,
+      "trail_dist": 0.685,
+      "peak": 98.63,
+      "orb_width": 1.37,
+      "cost": 591.78,
+      "vol_ratio": 1.44
     }
   ],
   "closed_today": [],
@@ -53219,8 +53247,8 @@
     },
     "ALB": {
       "high": 118.79,
-      "low": 116.39,
-      "width": 2.4
+      "low": 116.38,
+      "width": 2.41
     },
     "ARE": {
       "high": 52.63,
@@ -53499,8 +53527,8 @@
     },
     "BA": {
       "high": 221.5,
-      "low": 215.615,
-      "width": 5.885
+      "low": 215.585,
+      "width": 5.915
     },
     "BKNG": {
       "high": 194.45,
@@ -53533,9 +53561,9 @@
       "width": 1.55
     },
     "BF-B": {
-      "high": 28.81,
+      "high": 28.82,
       "low": 28.4,
-      "width": 0.41
+      "width": 0.42
     },
     "BLDR": {
       "high": 66.71,
@@ -53707,6 +53735,11 @@
       "low": 71.5325,
       "width": 0.7775
     },
+    "CLX": {
+      "high": 96.25,
+      "low": 94.2,
+      "width": 2.05
+    },
     "CME": {
       "high": 268.0,
       "low": 265.0,
@@ -53874,8 +53907,8 @@
     },
     "DAL": {
       "high": 88.58,
-      "low": 87.6,
-      "width": 0.98
+      "low": 87.58,
+      "width": 1.0
     },
     "DVN": {
       "high": 44.65,
@@ -54224,8 +54257,8 @@
     },
     "GNRC": {
       "high": 202.895,
-      "low": 192.28,
-      "width": 10.615
+      "low": 192.0,
+      "width": 10.895
     },
     "GD": {
       "high": 383.415,
@@ -54316,6 +54349,11 @@
       "high": 324.97,
       "low": 319.01,
       "width": 5.96
+    },
+    "HD": {
+      "high": 333.9955,
+      "low": 329.37,
+      "width": 4.6255
     },
     "HONA": {
       "high": 205.54,
@@ -54516,6 +54554,11 @@
       "high": 109.8699,
       "low": 107.7301,
       "width": 2.1398
+    },
+    "KIM": {
+      "high": 25.55,
+      "low": 25.38,
+      "width": 0.17
     },
     "KMI": {
       "high": 31.98,
@@ -54863,9 +54906,9 @@
       "width": 3.1518
     },
     "NVR": {
-      "high": 6288.6802,
-      "low": 6189.7402,
-      "width": 98.9399
+      "high": 6235.0,
+      "low": 6167.9399,
+      "width": 67.0601
     },
     "NXPI": {
       "high": 251.72,
@@ -54939,8 +54982,8 @@
     },
     "PH": {
       "high": 973.17,
-      "low": 964.16,
-      "width": 9.01
+      "low": 964.1,
+      "width": 9.07
     },
     "PAYX": {
       "high": 116.105,
@@ -55304,8 +55347,8 @@
     },
     "TRGP": {
       "high": 269.61,
-      "low": 265.565,
-      "width": 4.045
+      "low": 265.12,
+      "width": 4.49
     },
     "TGT": {
       "high": 145.05,
@@ -55670,7 +55713,7 @@
     "2026-07-28": 96005.82,
     "2026-07-29": 95689.19,
     "2026-07-30": 95556.05,
-    "2026-07-31": 95759.95
+    "2026-07-31": 95766.31
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -110970,6 +111013,32 @@
       "exits": [],
       "portfolio_value": 95759.95,
       "note": "$95,760 | cash=$3,007 | open=10 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-07-31",
+      "time": "10:11 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "AIZ",
+          "side": "long",
+          "price": 282.33,
+          "shares": 3,
+          "stop": 281.33,
+          "trail_dist": 0.9975
+        },
+        {
+          "ticker": "WYNN",
+          "side": "short",
+          "price": 98.63,
+          "shares": 6,
+          "stop": 99.31,
+          "trail_dist": 0.685
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 95766.31,
+      "note": "$95,766 | cash=$1,569 | open=12 | closed today=0 | day PnL=$+0"
     }
   ]
 }
