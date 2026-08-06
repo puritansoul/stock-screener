@@ -176,9 +176,9 @@
       "entry_time": "10:54 ET",
       "entry_price": 55.5,
       "shares": 1,
-      "stop": 55.6575,
+      "stop": 55.6625,
       "trail_dist": 1.0075,
-      "peak": 56.665,
+      "peak": 56.67,
       "orb_width": 2.015,
       "cost": 55.5,
       "vol_ratio": 1.35
@@ -330,9 +330,9 @@
       "entry_time": "12:08 ET",
       "entry_price": 19.155,
       "shares": 271,
-      "stop": 19.255,
+      "stop": 19.2502,
       "trail_dist": 0.2,
-      "peak": 19.055,
+      "peak": 19.0502,
       "orb_width": 0.4,
       "cost": 5191.01,
       "vol_ratio": 22.38
@@ -428,9 +428,9 @@
       "entry_time": "13:34 ET",
       "entry_price": 47.305,
       "shares": 13,
-      "stop": 47.375,
+      "stop": 47.365,
       "trail_dist": 0.215,
-      "peak": 47.16,
+      "peak": 47.15,
       "orb_width": 0.43,
       "cost": 614.97,
       "vol_ratio": 7.61
@@ -442,9 +442,9 @@
       "entry_time": "13:39 ET",
       "entry_price": 86.54,
       "shares": 5,
-      "stop": 86.975,
+      "stop": 86.96,
       "trail_dist": 0.435,
-      "peak": 86.54,
+      "peak": 86.525,
       "orb_width": 0.87,
       "cost": 432.7,
       "vol_ratio": 6.15
@@ -540,9 +540,9 @@
       "entry_time": "15:01 ET",
       "entry_price": 115.89,
       "shares": 27,
-      "stop": 114.635,
+      "stop": 114.845,
       "trail_dist": 1.475,
-      "peak": 116.11,
+      "peak": 116.32,
       "orb_width": 2.95,
       "cost": 3129.03,
       "vol_ratio": 1.77
@@ -72693,6 +72693,11 @@
       "low": 385.62,
       "width": 3.28
     },
+    "GIS": {
+      "high": 36.27,
+      "low": 35.64,
+      "width": 0.63
+    },
     "GM": {
       "high": 89.3,
       "low": 88.33,
@@ -73028,6 +73033,11 @@
       "low": 45.45,
       "width": 0.58
     },
+    "LDOS": {
+      "high": 130.52,
+      "low": 128.045,
+      "width": 2.475
+    },
     "LEN": {
       "high": 87.15,
       "low": 85.61,
@@ -73347,6 +73357,11 @@
       "high": 214.74,
       "low": 211.18,
       "width": 3.56
+    },
+    "OMC": {
+      "high": 84.5,
+      "low": 82.78,
+      "width": 1.72
     },
     "ON": {
       "high": 78.85,
@@ -74130,7 +74145,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 95985.4
+    "2026-08-06": 96000.75
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -150265,6 +150280,15 @@
       "exits": [],
       "portfolio_value": 95985.4,
       "note": "$95,985 | cash=$5,848 | open=43 | closed today=79 | day PnL=$-308"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "15:21 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 96000.75,
+      "note": "$96,001 | cash=$5,848 | open=43 | closed today=79 | day PnL=$-308"
     }
   ]
 }
