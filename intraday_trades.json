@@ -1,5 +1,5 @@
 {
-  "capital": 1503.38,
+  "capital": 1070.68,
   "open_positions": [
     {
       "ticker": "ROL",
@@ -204,9 +204,9 @@
       "entry_time": "10:49 ET",
       "entry_price": 30.415,
       "shares": 1,
-      "stop": 30.6241,
+      "stop": 30.6841,
       "trail_dist": 0.2159,
-      "peak": 30.84,
+      "peak": 30.9,
       "orb_width": 0.4318,
       "cost": 30.42,
       "vol_ratio": 1.25
@@ -302,9 +302,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 141.05,
       "shares": 1,
-      "stop": 144.3775,
+      "stop": 144.5675,
       "trail_dist": 1.0625,
-      "peak": 145.44,
+      "peak": 145.63,
       "orb_width": 2.125,
       "cost": 141.05,
       "vol_ratio": 1.33
@@ -666,9 +666,9 @@
       "entry_time": "13:24 ET",
       "entry_price": 25.115,
       "shares": 64,
-      "stop": 24.975,
+      "stop": 24.985,
       "trail_dist": 0.165,
-      "peak": 25.14,
+      "peak": 25.15,
       "orb_width": 0.33,
       "cost": 1607.36,
       "vol_ratio": 6.41
@@ -680,9 +680,9 @@
       "entry_time": "13:27 ET",
       "entry_price": 482.04,
       "shares": 2,
-      "stop": 483.4799,
+      "stop": 483.3599,
       "trail_dist": 2.1099,
-      "peak": 481.37,
+      "peak": 481.25,
       "orb_width": 4.2199,
       "cost": 964.08,
       "vol_ratio": 2.72
@@ -714,6 +714,20 @@
       "orb_width": 0.43,
       "cost": 614.97,
       "vol_ratio": 7.61
+    },
+    {
+      "ticker": "KO",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "13:39 ET",
+      "entry_price": 86.54,
+      "shares": 5,
+      "stop": 86.975,
+      "trail_dist": 0.435,
+      "peak": 86.54,
+      "orb_width": 0.87,
+      "cost": 432.7,
+      "vol_ratio": 6.15
     }
   ],
   "closed_today": [
@@ -72577,6 +72591,11 @@
       "low": 149.4,
       "width": 2.34
     },
+    "IFF": {
+      "high": 86.92,
+      "low": 84.75,
+      "width": 2.17
+    },
     "IP": {
       "high": 42.04,
       "low": 40.77,
@@ -73347,11 +73366,6 @@
       "low": 111.8,
       "width": 2.95
     },
-    "SHW": {
-      "high": 371.53,
-      "low": 366.27,
-      "width": 5.26
-    },
     "SPG": {
       "high": 226.61,
       "low": 222.795,
@@ -73702,11 +73716,6 @@
       "low": 295.38,
       "width": 2.83
     },
-    "WMT": {
-      "high": 114.56,
-      "low": 112.62,
-      "width": 1.94
-    },
     "DIS": {
       "high": 104.2,
       "low": 102.53,
@@ -73834,7 +73843,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 96152.55
+    "2026-08-06": 96140.0
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -149379,6 +149388,24 @@
       "exits": [],
       "portfolio_value": 96152.55,
       "note": "$96,153 | cash=$1,503 | open=51 | closed today=57 | day PnL=$-292"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "13:39 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "KO",
+          "side": "short",
+          "price": 86.54,
+          "shares": 5,
+          "stop": 86.98,
+          "trail_dist": 0.435
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 96140.0,
+      "note": "$96,140 | cash=$1,071 | open=52 | closed today=57 | day PnL=$-292"
     }
   ]
 }
