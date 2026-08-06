@@ -1,5 +1,5 @@
 {
-  "capital": 5300.76,
+  "capital": 3763.27,
   "open_positions": [
     {
       "ticker": "ROL",
@@ -148,9 +148,9 @@
       "entry_time": "10:45 ET",
       "entry_price": 17.28,
       "shares": 10,
-      "stop": 17.281,
+      "stop": 17.275,
       "trail_dist": 0.54,
-      "peak": 16.741,
+      "peak": 16.735,
       "orb_width": 1.08,
       "cost": 172.8,
       "vol_ratio": 1.43
@@ -162,9 +162,9 @@
       "entry_time": "10:49 ET",
       "entry_price": 160.24,
       "shares": 1,
-      "stop": 157.68,
+      "stop": 157.64,
       "trail_dist": 1.515,
-      "peak": 156.165,
+      "peak": 156.125,
       "orb_width": 3.03,
       "cost": 160.24,
       "vol_ratio": 2.11
@@ -190,9 +190,9 @@
       "entry_time": "10:49 ET",
       "entry_price": 130.46,
       "shares": 1,
-      "stop": 130.33,
+      "stop": 130.29,
       "trail_dist": 1.27,
-      "peak": 129.06,
+      "peak": 129.02,
       "orb_width": 2.54,
       "cost": 130.46,
       "vol_ratio": 1.48
@@ -232,9 +232,9 @@
       "entry_time": "10:54 ET",
       "entry_price": 123.43,
       "shares": 1,
-      "stop": 123.2812,
+      "stop": 123.2762,
       "trail_dist": 1.7962,
-      "peak": 121.485,
+      "peak": 121.48,
       "orb_width": 3.5925,
       "cost": 123.43,
       "vol_ratio": 3.39
@@ -316,26 +316,12 @@
       "entry_time": "11:04 ET",
       "entry_price": 141.05,
       "shares": 1,
-      "stop": 144.1075,
+      "stop": 144.2675,
       "trail_dist": 1.0625,
-      "peak": 145.17,
+      "peak": 145.33,
       "orb_width": 2.125,
       "cost": 141.05,
       "vol_ratio": 1.33
-    },
-    {
-      "ticker": "PNR",
-      "side": "long",
-      "entry_date": "2026-08-06",
-      "entry_time": "11:04 ET",
-      "entry_price": 70.125,
-      "shares": 1,
-      "stop": 69.8724,
-      "trail_dist": 0.4976,
-      "peak": 70.37,
-      "orb_width": 0.9953,
-      "cost": 70.12,
-      "vol_ratio": 1.26
     },
     {
       "ticker": "PCG",
@@ -484,9 +470,9 @@
       "entry_time": "11:19 ET",
       "entry_price": 22.8601,
       "shares": 28,
-      "stop": 22.8851,
+      "stop": 22.86,
       "trail_dist": 0.13,
-      "peak": 22.7551,
+      "peak": 22.73,
       "orb_width": 0.26,
       "cost": 640.08,
       "vol_ratio": 1.32
@@ -610,9 +596,9 @@
       "entry_time": "12:08 ET",
       "entry_price": 19.155,
       "shares": 271,
-      "stop": 19.27,
+      "stop": 19.26,
       "trail_dist": 0.2,
-      "peak": 19.07,
+      "peak": 19.06,
       "orb_width": 0.4,
       "cost": 5191.01,
       "vol_ratio": 22.38
@@ -624,9 +610,9 @@
       "entry_time": "12:42 ET",
       "entry_price": 88.105,
       "shares": 92,
-      "stop": 88.67,
+      "stop": 88.63,
       "trail_dist": 0.96,
-      "peak": 87.71,
+      "peak": 87.67,
       "orb_width": 1.92,
       "cost": 8105.66,
       "vol_ratio": 2.79
@@ -666,9 +652,9 @@
       "entry_time": "12:57 ET",
       "entry_price": 92.535,
       "shares": 33,
-      "stop": 92.721,
+      "stop": 92.651,
       "trail_dist": 0.481,
-      "peak": 92.24,
+      "peak": 92.17,
       "orb_width": 0.962,
       "cost": 3053.66,
       "vol_ratio": 3.37
@@ -686,6 +672,20 @@
       "orb_width": 2.3399,
       "cost": 2177.14,
       "vol_ratio": 7.22
+    },
+    {
+      "ticker": "CMCSA",
+      "side": "long",
+      "entry_date": "2026-08-06",
+      "entry_time": "13:24 ET",
+      "entry_price": 25.115,
+      "shares": 64,
+      "stop": 24.95,
+      "trail_dist": 0.165,
+      "peak": 25.115,
+      "orb_width": 0.33,
+      "cost": 1607.36,
+      "vol_ratio": 6.41
     }
   ],
   "closed_today": [
@@ -1733,6 +1733,25 @@
       "pnl": -0.83,
       "exit_reason": "trailing stop",
       "exit_time": "13:02 ET"
+    },
+    {
+      "ticker": "PNR",
+      "side": "long",
+      "entry_date": "2026-08-06",
+      "entry_time": "11:04 ET",
+      "entry_price": 70.125,
+      "shares": 1,
+      "stop": 69.8724,
+      "trail_dist": 0.4976,
+      "peak": 70.37,
+      "orb_width": 0.9953,
+      "cost": 70.12,
+      "vol_ratio": 1.26,
+      "exit_date": "2026-08-06",
+      "exit_price": 69.8724,
+      "pnl": -0.25,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:24 ET"
     }
   ],
   "all_closed": [
@@ -73773,7 +73792,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 96198.76
+    "2026-08-06": 96191.75
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -149212,6 +149231,32 @@
       "exits": [],
       "portfolio_value": 96198.76,
       "note": "$96,199 | cash=$5,301 | open=49 | closed today=55 | day PnL=$-291"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "13:24 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "CMCSA",
+          "side": "long",
+          "price": 25.11,
+          "shares": 64,
+          "stop": 24.95,
+          "trail_dist": 0.165
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "PNR",
+          "side": "long",
+          "exit_price": 69.87,
+          "pnl": -0.25,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96191.75,
+      "note": "$96,192 | cash=$3,763 | open=49 | closed today=56 | day PnL=$-291"
     }
   ]
 }
