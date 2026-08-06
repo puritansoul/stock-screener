@@ -8,9 +8,9 @@
       "entry_time": "10:12 ET",
       "entry_price": 37.02,
       "shares": 188,
-      "stop": 36.6625,
+      "stop": 36.6475,
       "trail_dist": 0.3025,
-      "peak": 36.36,
+      "peak": 36.345,
       "orb_width": 0.605,
       "cost": 6959.76,
       "vol_ratio": 1.56
@@ -694,9 +694,9 @@
       "entry_time": "13:44 ET",
       "entry_price": 155.72,
       "shares": 3,
-      "stop": 154.9375,
+      "stop": 154.9875,
       "trail_dist": 1.4225,
-      "peak": 156.36,
+      "peak": 156.41,
       "orb_width": 2.845,
       "cost": 467.16,
       "vol_ratio": 12.24
@@ -736,9 +736,9 @@
       "entry_time": "13:59 ET",
       "entry_price": 241.94,
       "shares": 4,
-      "stop": 243.42,
+      "stop": 243.36,
       "trail_dist": 1.48,
-      "peak": 241.94,
+      "peak": 241.88,
       "orb_width": 2.9599,
       "cost": 967.76,
       "vol_ratio": 3.75
@@ -71926,6 +71926,11 @@
       "low": 102.9,
       "width": 1.41
     },
+    "CIEN": {
+      "high": 413.19,
+      "low": 390.5623,
+      "width": 22.6277
+    },
     "CI": {
       "high": 273.56,
       "low": 269.12,
@@ -72451,11 +72456,6 @@
       "low": 302.23,
       "width": 5.14
     },
-    "IT": {
-      "high": 184.36,
-      "low": 178.75,
-      "width": 5.61
-    },
     "GE": {
       "high": 388.84,
       "low": 382.93,
@@ -72535,11 +72535,6 @@
       "high": 145.04,
       "low": 143.72,
       "width": 1.32
-    },
-    "HAS": {
-      "high": 92.28,
-      "low": 90.56,
-      "width": 1.72
     },
     "HCA": {
       "high": 415.73,
@@ -72790,6 +72785,11 @@
       "high": 106.29,
       "low": 104.87,
       "width": 1.42
+    },
+    "KLAC": {
+      "high": 193.67,
+      "low": 185.77,
+      "width": 7.9
     },
     "KHC": {
       "high": 25.97,
@@ -73933,7 +73933,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 96096.49
+    "2026-08-06": 96066.49
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -149643,6 +149643,15 @@
       ],
       "portfolio_value": 96096.49,
       "note": "$96,096 | cash=$2,849 | open=53 | closed today=61 | day PnL=$-329"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "14:01 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 96066.49,
+      "note": "$96,066 | cash=$2,849 | open=53 | closed today=61 | day PnL=$-329"
     }
   ]
 }
