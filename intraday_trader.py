@@ -83,14 +83,22 @@ FORCE_CLOSE_TIME  = dt_time(15, 45)   # 3:45pm ET
 ORB_END_TIME      = dt_time(10, 0)    # 10:00am ET — ORB window ends
 MARKET_OPEN_TIME  = dt_time(9, 30)    # 9:30am ET
 
+# ── Quality filters ───────────────────────────────────────────────────────────
+SPY_REGIME_FILTER    = True   # block longs when SPY below VWAP+down; block shorts above VWAP+up
+ORB_ATR_MIN_RATIO    = 0.20   # ORB width must be >= 20% of 20-day ATR (filters tiny ranges)
+EMA20_FILTER         = True   # longs require price > 20-day EMA; shorts require price < EMA
+MAX_ENTRY_CANDIDATES = 8      # enter only the top N ranked candidates per scan cycle
+CATALYST_BONUS       = True   # award bonus score points to tickers with earnings today/tomorrow
+
 ET = ZoneInfo("America/New_York")
 
 # Universe loaded dynamically from S&P 500 at startup (cached daily in sp500_cache.json)
 INTRADAY_UNIVERSE: list[str] = []
 
-BASE_DIR      = Path(__file__).parent
-TRADES_FILE   = BASE_DIR / "intraday_trades.json"
-SP500_CACHE   = BASE_DIR / "sp500_cache.json"
+BASE_DIR         = Path(__file__).parent
+TRADES_FILE      = BASE_DIR / "intraday_trades.json"
+SP500_CACHE      = BASE_DIR / "sp500_cache.json"
+EARNINGS_CACHE   = BASE_DIR / "earnings_cache.json"
 
 WIKI_URL = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
 
@@ -126,6 +134,127 @@ def get_sp500_tickers() -> list[str]:
         except Exception:
             pass
     return []
+
+# ── SPY regime filter ─────────────────────────────────────────────────────────
+
+def fetch_spy_regime() -> dict:
+    """
+    Return {long_ok, short_ok, spy_change_pct, spy_vs_vwap, spy_vs_ema20}.
+    long_ok  = SPY is up on the day AND trading above its intraday VWAP AND above 20 EMA.
+    short_ok = SPY is down on the day AND trading below its intraday VWAP AND below 20 EMA.
+    On fetch failure, returns permissive defaults (both True) so the bot keeps running.
+    """
+    try:
+        today_date = date.today()
+        # 5-min bars for intraday VWAP
+        raw5 = yf.download("SPY", period="1d", interval="5m", auto_adjust=True, progress=False)
+        if raw5.empty:
+            return {"long_ok": True, "short_ok": True, "spy_change_pct": 0.0,
+                    "spy_vs_vwap": 0.0, "spy_vs_ema20": 0.0}
+        raw5.index = pd.DatetimeIndex(raw5.index).tz_convert(ET)
+        raw5 = raw5[raw5.index.date == today_date]
+        if raw5.empty:
+            return {"long_ok": True, "short_ok": True, "spy_change_pct": 0.0,
+                    "spy_vs_vwap": 0.0, "spy_vs_ema20": 0.0}
+
+        # Handle MultiIndex (single ticker can still come back as MultiIndex)
+        if isinstance(raw5.columns, pd.MultiIndex):
+            spy5 = raw5.xs("SPY", axis=1, level=1) if "SPY" in raw5.columns.get_level_values(1) else raw5.iloc[:, :5]
+            spy5.columns = [c[0] if isinstance(c, tuple) else c for c in spy5.columns]
+        else:
+            spy5 = raw5
+
+        open_px  = float(spy5["Open"].iloc[0])
+        cur_px   = float(spy5["Close"].iloc[-1])
+        spy_change_pct = (cur_px / open_px - 1) * 100
+
+        # Intraday VWAP = sum(typical_price * volume) / sum(volume)
+        typical = (spy5["High"] + spy5["Low"] + spy5["Close"]) / 3
+        vwap = float((typical * spy5["Volume"]).sum() / spy5["Volume"].sum()) if spy5["Volume"].sum() > 0 else cur_px
+        spy_vs_vwap = cur_px - vwap
+
+        # 20-day EMA from daily bars (already used for ATR — reuse same data)
+        raw1d = yf.download("SPY", period="30d", interval="1d", auto_adjust=True, progress=False)
+        spy_vs_ema20 = 0.0
+        if not raw1d.empty:
+            if isinstance(raw1d.columns, pd.MultiIndex):
+                spy_close_1d = raw1d["Close"].iloc[:, 0] if "Close" in raw1d.columns.get_level_values(0) else raw1d.iloc[:, 0]
+            else:
+                spy_close_1d = raw1d["Close"] if "Close" in raw1d.columns else raw1d.iloc[:, 0]
+            today_ts = pd.Timestamp(today_date)
+            spy_close_1d = spy_close_1d[spy_close_1d.index.normalize() < today_ts].dropna()
+            if len(spy_close_1d) >= 5:
+                ema20 = float(spy_close_1d.ewm(span=20, adjust=False).mean().iloc[-1])
+                spy_vs_ema20 = cur_px - ema20
+
+        long_ok  = spy_change_pct >= -0.5 and spy_vs_vwap >= 0 and spy_vs_ema20 >= 0
+        short_ok = spy_change_pct <=  0.5 and spy_vs_vwap <= 0 and spy_vs_ema20 <= 0
+
+        print(f"  SPY regime: chg={spy_change_pct:+.2f}%  vs_vwap={spy_vs_vwap:+.2f}  vs_ema20={spy_vs_ema20:+.2f}"
+              f"  → longs={'✓' if long_ok else '✗'}  shorts={'✓' if short_ok else '✗'}")
+        return {"long_ok": long_ok, "short_ok": short_ok,
+                "spy_change_pct": round(spy_change_pct, 3),
+                "spy_vs_vwap": round(spy_vs_vwap, 4),
+                "spy_vs_ema20": round(spy_vs_ema20, 4)}
+    except Exception as e:
+        print(f"  SPY regime fetch error: {e} — defaulting to permissive")
+        return {"long_ok": True, "short_ok": True, "spy_change_pct": 0.0,
+                "spy_vs_vwap": 0.0, "spy_vs_ema20": 0.0}
+
+
+# ── Earnings/catalyst filter ──────────────────────────────────────────────────
+
+def fetch_earnings_catalysts(tickers: list[str]) -> set[str]:
+    """
+    Return set of tickers that have an earnings date today or tomorrow.
+    Uses yfinance calendar; results cached per day to avoid re-fetching.
+    Only called for the small set of signal candidates, not the full universe.
+    """
+    today     = date.today()
+    tomorrow  = today + timedelta(days=1)
+    cache_key = today.isoformat()
+
+    if EARNINGS_CACHE.exists():
+        try:
+            cached = json.loads(EARNINGS_CACHE.read_text())
+            if cached.get("date") == cache_key:
+                return set(cached.get("tickers", []))
+        except Exception:
+            pass
+
+    catalyst_tickers: set[str] = set()
+    for tk in tickers:
+        try:
+            cal = yf.Ticker(tk).calendar
+            if cal is None:
+                continue
+            # yfinance returns calendar as dict with 'Earnings Date' key (list or Timestamp)
+            if isinstance(cal, dict):
+                ed = cal.get("Earnings Date") or cal.get("earnings_date")
+                if ed is None:
+                    continue
+                dates = ed if isinstance(ed, (list, tuple)) else [ed]
+            else:
+                continue
+            for d in dates:
+                try:
+                    d_date = d.date() if hasattr(d, "date") else date.fromisoformat(str(d)[:10])
+                    if d_date in (today, tomorrow):
+                        catalyst_tickers.add(tk)
+                        break
+                except Exception:
+                    continue
+        except Exception:
+            continue
+
+    try:
+        EARNINGS_CACHE.write_text(json.dumps({"date": cache_key,
+                                              "tickers": sorted(catalyst_tickers)}))
+    except Exception:
+        pass
+    print(f"  Earnings catalysts today/tomorrow: {sorted(catalyst_tickers) or 'none'}")
+    return catalyst_tickers
+
 
 # ── State ─────────────────────────────────────────────────────────────────────
 
@@ -279,15 +408,28 @@ def fetch_intraday(tickers: list[str]) -> dict[str, pd.DataFrame]:
                 # raises its own threshold, suppressing entries on exactly the days
                 # ORB works best. Also exclude today's partial daily bar (yfinance
                 # period="Nd" always appends today's incomplete row).
-                if not df1d.empty and "Volume" in df1d.columns:
-                    _today_ts = pd.Timestamp(date.today())
-                    _df1d_done = df1d[df1d.index.normalize() < _today_ts]
-                    avg_bar_vol = float(_df1d_done["Volume"].mean()) / 13.0 if not _df1d_done.empty else 0.0
+                _today_ts   = pd.Timestamp(date.today())
+                _df1d_done  = df1d[df1d.index.normalize() < _today_ts] if not df1d.empty else pd.DataFrame()
+                if not _df1d_done.empty and "Volume" in _df1d_done.columns:
+                    avg_bar_vol = float(_df1d_done["Volume"].mean()) / 13.0
                 elif "Volume" in df5.columns:
                     avg_bar_vol = float(df5["Volume"].mean()) / 13.0
                 else:
                     avg_bar_vol = 0
-                result[tk] = {"bars": df5, "avg_bar_vol": avg_bar_vol}
+
+                # 20-day ATR from completed daily bars (True Range = max of 3 ranges)
+                atr20 = 0.0
+                ema20 = 0.0
+                if len(_df1d_done) >= 5 and {"High", "Low", "Close"}.issubset(_df1d_done.columns):
+                    hi  = _df1d_done["High"]
+                    lo  = _df1d_done["Low"]
+                    pc  = _df1d_done["Close"].shift(1)
+                    tr  = pd.concat([hi - lo, (hi - pc).abs(), (lo - pc).abs()], axis=1).max(axis=1)
+                    atr20 = float(tr.iloc[-20:].mean()) if len(tr) >= 20 else float(tr.mean())
+                    ema20 = float(_df1d_done["Close"].ewm(span=20, adjust=False).mean().iloc[-1])
+
+                result[tk] = {"bars": df5, "avg_bar_vol": avg_bar_vol,
+                              "atr20": round(atr20, 4), "ema20": round(ema20, 4)}
             except Exception:
                 continue
     except Exception as e:
@@ -378,8 +520,10 @@ def check_exits(state: dict, data: dict[str, dict], force: bool = False) -> list
     state["capital"] = round(capital, 2)
     return exits
 
-def scan_entries(state: dict, data: dict[str, dict]) -> list[dict]:
-    entries = []
+def scan_entries(state: dict, data: dict[str, dict],
+                 spy_regime: dict | None = None,
+                 catalyst_tickers: set | None = None) -> list[dict]:
+    entries  = []
     open_tks = {p["ticker"] for p in state["open_positions"]}
     open_tks |= {p["ticker"] for p in state["closed_today"]}  # no re-entry same day
     slots    = MAX_POSITIONS - len(state["open_positions"])
@@ -389,12 +533,13 @@ def scan_entries(state: dict, data: dict[str, dict]) -> list[dict]:
     if slots <= 0:
         return []
 
+    regime      = spy_regime or {"long_ok": True, "short_ok": True, "spy_change_pct": 0.0}
+    catalysts   = catalyst_tickers or set()
+    spy_chg     = regime.get("spy_change_pct", 0.0)  # used for relative strength score
+
     candidates = []
-    # Iterate over all tickers that have data — same universe as diagnostics
     for tk in INTRADAY_UNIVERSE:
-        if tk in open_tks:
-            continue
-        if tk not in data:
+        if tk in open_tks or tk not in data:
             continue
         orb_data = orb.get(tk)
         if orb_data is None:
@@ -402,10 +547,11 @@ def scan_entries(state: dict, data: dict[str, dict]) -> list[dict]:
 
         bars    = data[tk]["bars"]
         avg_vol = data[tk]["avg_bar_vol"]
+        atr20   = data[tk].get("atr20", 0.0)
+        ema20   = data[tk].get("ema20", 0.0)
         if bars.empty:
             continue
 
-        # Only look at bars after ORB window
         post_orb = bars[bars.index.time >= ORB_END_TIME]
         if post_orb.empty:
             continue
@@ -414,40 +560,86 @@ def scan_entries(state: dict, data: dict[str, dict]) -> list[dict]:
         close_px = float(last_bar["Close"])
         bar_vol  = float(last_bar["Volume"]) if "Volume" in last_bar else 0
 
-        orb_hi   = orb_data["high"]
-        orb_lo   = orb_data["low"]
-        orb_w    = orb_data["width"]
+        orb_hi = orb_data["high"]
+        orb_lo = orb_data["low"]
+        orb_w  = orb_data["width"]
 
         if orb_w < 0.01:
             continue
 
-        vol_ok = (avg_vol == 0) or (bar_vol >= VOLUME_FILTER * avg_vol)
+        # ── Filter 1: ORB width vs ATR (quality gate) ─────────────────────────
+        if atr20 > 0 and orb_w < ORB_ATR_MIN_RATIO * atr20:
+            continue  # ORB too narrow relative to stock's typical daily range
+
+        vol_ratio    = bar_vol / avg_vol if avg_vol else 1.0
+        vol_ok       = (avg_vol == 0) or (vol_ratio >= VOLUME_FILTER)
         long_signal  = close_px > orb_hi and vol_ok
         short_signal = close_px < orb_lo and vol_ok
 
-        if long_signal:
-            candidates.append({"ticker": tk, "side": "long",  "close": close_px,
-                                "orb_hi": orb_hi, "orb_lo": orb_lo, "orb_w": orb_w,
-                                "vol_ratio": bar_vol / avg_vol if avg_vol else 1})
-        elif short_signal:
-            candidates.append({"ticker": tk, "side": "short", "close": close_px,
-                                "orb_hi": orb_hi, "orb_lo": orb_lo, "orb_w": orb_w,
-                                "vol_ratio": bar_vol / avg_vol if avg_vol else 1})
+        # ── Filter 2: SPY regime ──────────────────────────────────────────────
+        if SPY_REGIME_FILTER:
+            if long_signal  and not regime.get("long_ok",  True):
+                long_signal  = False
+            if short_signal and not regime.get("short_ok", True):
+                short_signal = False
 
-    # Sort by volume ratio (strongest breakouts first)
-    candidates.sort(key=lambda x: -x["vol_ratio"])
+        # ── Filter 3: 20 EMA trend ────────────────────────────────────────────
+        if EMA20_FILTER and ema20 > 0:
+            if long_signal  and close_px < ema20:
+                long_signal  = False
+            if short_signal and close_px > ema20:
+                short_signal = False
 
-    for c in candidates[:slots]:
+        if not long_signal and not short_signal:
+            continue
+
+        side = "long" if long_signal else "short"
+
+        # ── Composite ranking score ───────────────────────────────────────────
+        # 40% RVOL: relative volume vs baseline (capped at 10× to avoid domination)
+        rvol_score = min(vol_ratio / 10.0, 1.0) * 40.0
+
+        # 30% Relative strength: stock's day return vs SPY day change
+        open_bar = bars.iloc[0]
+        day_open = float(open_bar["Open"]) if "Open" in open_bar else close_px
+        stock_chg = (close_px / day_open - 1) * 100 if day_open > 0 else 0.0
+        rel_strength = stock_chg - spy_chg   # positive = outperforming SPY today
+        # normalise: cap at ±10% relative move → maps to 0–30
+        rs_score = max(0.0, min((rel_strength + 10.0) / 20.0, 1.0)) * 30.0
+        if side == "short":
+            rs_score = max(0.0, min((-rel_strength + 10.0) / 20.0, 1.0)) * 30.0
+
+        # 20% ORB quality: orb_width / atr20 (higher = more decisive opening range)
+        orb_quality = min((orb_w / atr20) if atr20 > 0 else 0.5, 1.0)
+        orb_score = orb_quality * 20.0
+
+        # 10% Catalyst bonus
+        cat_score = 10.0 if tk in catalysts else 0.0
+
+        total_score = rvol_score + rs_score + orb_score + cat_score
+
+        candidates.append({
+            "ticker": tk, "side": side, "close": close_px,
+            "orb_hi": orb_hi, "orb_lo": orb_lo, "orb_w": orb_w,
+            "vol_ratio": vol_ratio, "score": round(total_score, 2),
+            "atr20": atr20, "ema20": ema20,
+            "has_catalyst": tk in catalysts,
+        })
+
+    # Sort by composite score descending; cap at top N candidates
+    candidates.sort(key=lambda x: -x["score"])
+    if candidates:
+        print(f"  Candidates: {len(candidates)}  top scores: "
+              + " ".join(f"{c['ticker']}({c['score']:.0f})" for c in candidates[:5]))
+
+    for c in candidates[:MAX_ENTRY_CANDIDATES]:
         tk    = c["ticker"]
         side  = c["side"]
         entry = c["close"]
         orb_w = c["orb_w"]
 
         trail_dist = round(ORB_STOP_MULT * orb_w, 4)
-        if side == "long":
-            stop = entry - trail_dist
-        else:
-            stop = entry + trail_dist
+        stop = entry - trail_dist if side == "long" else entry + trail_dist
 
         per_share_risk = trail_dist
         if per_share_risk < 0.01:
@@ -464,24 +656,28 @@ def scan_entries(state: dict, data: dict[str, dict]) -> list[dict]:
         capital -= cost
         entry_time = datetime.now(ET).strftime("%H:%M ET")
         pos = {
-            "ticker":      tk,
-            "side":        side,
-            "entry_date":  date.today().isoformat(),
-            "entry_time":  entry_time,
-            "entry_price": round(entry, 4),
-            "shares":      shares,
-            "stop":        round(stop, 4),
-            "trail_dist":  trail_dist,
-            "peak":        round(entry, 4),
-            "orb_width":   round(orb_w, 4),
-            "cost":        round(cost, 2),
-            "vol_ratio":   round(c["vol_ratio"], 2),
+            "ticker":        tk,
+            "side":          side,
+            "entry_date":    date.today().isoformat(),
+            "entry_time":    entry_time,
+            "entry_price":   round(entry, 4),
+            "shares":        shares,
+            "stop":          round(stop, 4),
+            "trail_dist":    trail_dist,
+            "peak":          round(entry, 4),
+            "orb_width":     round(orb_w, 4),
+            "cost":          round(cost, 2),
+            "vol_ratio":     round(c["vol_ratio"], 2),
+            "score":         c["score"],
+            "has_catalyst":  c["has_catalyst"],
         }
         state["open_positions"].append(pos)
         open_tks.add(tk)
         entries.append({"ticker": tk, "side": side, "price": round(entry, 2), "shares": shares,
-                         "stop": round(stop, 2), "trail_dist": round(trail_dist, 4)})
-        print(f"  ENTER {side} {tk} @ ${entry:.2f}  x{shares}  stop=${stop:.2f}  trail=${trail_dist:.2f}")
+                         "stop": round(stop, 2), "trail_dist": round(trail_dist, 4),
+                         "score": c["score"]})
+        print(f"  ENTER {side} {tk} @ ${entry:.2f}  x{shares}  stop=${stop:.2f}"
+              f"  score={c['score']:.0f}  {'⚡catalyst' if c['has_catalyst'] else ''}")
 
     state["capital"] = round(capital, 2)
     return entries
@@ -707,21 +903,36 @@ def scan_diagnostics(state: dict, data: dict[str, dict]) -> list[dict]:
 
         post_orb = bars[bars.index.time >= ORB_END_TIME]
 
+        atr20 = data[tk].get("atr20", 0.0)
+        ema20 = data[tk].get("ema20", 0.0)
+        orb_atr_ok = (atr20 == 0) or (orb_w >= ORB_ATR_MIN_RATIO * atr20)
+        ema20_long_ok  = (ema20 == 0) or (close_px >= ema20)
+        ema20_short_ok = (ema20 == 0) or (close_px <= ema20)
+
         if tk in open_tks:
             status = "in position"
             note   = ""
         elif orb_w < 0.01:
             status = "orb too tight"
             note   = f"width=${orb_w:.4f}"
+        elif not orb_atr_ok:
+            status = "orb too narrow"
+            note   = f"orb={orb_w:.2f} < {ORB_ATR_MIN_RATIO:.0%}×ATR({atr20:.2f})"
         elif close_px > orb_hi and vol_ok:
-            if phase != "trading":
+            if not ema20_long_ok:
+                status = "LONG signal"
+                note   = f"⚠ blocked — below 20 EMA (${ema20:.2f})"
+            elif phase != "trading":
                 status = "LONG signal"
                 note   = f"⚠ not traded — phase={phase}"
             else:
                 status = "LONG signal"
                 note   = "✓ eligible for entry"
         elif close_px < orb_lo and vol_ok:
-            if phase != "trading":
+            if not ema20_short_ok:
+                status = "SHORT signal"
+                note   = f"⚠ blocked — above 20 EMA (${ema20:.2f})"
+            elif phase != "trading":
                 status = "SHORT signal"
                 note   = f"⚠ not traded — phase={phase}"
             else:
@@ -739,7 +950,8 @@ def scan_diagnostics(state: dict, data: dict[str, dict]) -> list[dict]:
 
         rows.append({"ticker": tk, "status": status, "close": round(close_px, 2),
                      "orb_hi": round(orb_hi, 2), "orb_lo": round(orb_lo, 2),
-                     "orb_w": round(orb_w, 2), "vol_ratio": vol_ratio, "note": note})
+                     "orb_w": round(orb_w, 2), "vol_ratio": vol_ratio,
+                     "atr20": round(atr20, 2), "ema20": round(ema20, 2), "note": note})
     return rows
 
 
@@ -771,6 +983,18 @@ def run_intraday():
     data = fetch_intraday(INTRADAY_UNIVERSE)
     print(f"  Got data for {len(data)} tickers")
 
+    # Fetch SPY regime and earnings catalysts once per trading phase scan
+    spy_regime: dict = {"long_ok": True, "short_ok": True, "spy_change_pct": 0.0}
+    catalyst_tickers: set = set()
+    if phase == "trading":
+        print("  Fetching SPY regime …")
+        spy_regime = fetch_spy_regime()
+        # Only fetch catalysts for the tickers that actually have ORB data (smaller set)
+        orb_candidates = list(state.get("today_orb", {}).keys())
+        if orb_candidates and CATALYST_BONUS:
+            print(f"  Checking earnings catalysts for {len(orb_candidates)} tickers …")
+            catalyst_tickers = fetch_earnings_catalysts(orb_candidates)
+
     if phase not in ("pre_market", "after_hours"):
         # Refresh ORB
         state["today_orb"] = compute_orb(data)
@@ -783,8 +1007,11 @@ def run_intraday():
             log_entry["exits"] = exits
 
         if phase == "trading":
-            entries = scan_entries(state, data)
+            entries = scan_entries(state, data,
+                                   spy_regime=spy_regime,
+                                   catalyst_tickers=catalyst_tickers)
             log_entry["entries"] = entries
+            log_entry["spy_regime"] = spy_regime
 
     # Mark to market and save
     portfolio_value = mark_to_market(state, data)
@@ -819,6 +1046,7 @@ def _diag_rows(diag: list[dict]) -> str:
         "inside range":       "#555",
         "orb not ready":      "#999",
         "orb too tight":      "#999",
+        "orb too narrow":     "#999",
         "no data":            "#bbb",
         "empty bars":         "#bbb",
     }
@@ -831,6 +1059,8 @@ def _diag_rows(diag: list[dict]) -> str:
         _dname = _names.get(r["ticker"], "")
         _dname_html = f'<span style="color:#888;font-size:11px;display:block;line-height:1.1">{_dname}</span>' if _dname else ''
         _dborder = "border-left:3px solid #1b5e20;" if r["status"] == "LONG signal" else ("border-left:3px solid #c62828;" if r["status"] == "SHORT signal" else "border-left:3px solid #ccc;")
+        _atr = f'${r["atr20"]:.2f}' if r.get("atr20") else "—"
+        _ema = f'${r["ema20"]:.2f}' if r.get("ema20") else "—"
         rows += (
             f'<tr><td style="font-weight:bold">{r["ticker"]}{_dname_html}</td>'
             f'<td style="color:{sc};{bold}{_dborder}">{r["status"]}</td>'
@@ -839,10 +1069,12 @@ def _diag_rows(diag: list[dict]) -> str:
             f'<td style="text-align:right">{("$"+str(r.get("orb_lo",""))) if r.get("orb_lo") else "—"}</td>'
             f'<td style="text-align:right">{("$"+str(r.get("orb_w",""))) if r.get("orb_w") else "—"}</td>'
             f'<td style="text-align:right">{(str(r["vol_ratio"])+"×") if r["vol_ratio"] else "—"}</td>'
+            f'<td style="text-align:right;color:#666">{_atr}</td>'
+            f'<td style="text-align:right;color:#666">{_ema}</td>'
             f'<td style="color:{note_color};font-size:12px">{note}</td>'
             f'</tr>'
         )
-    return rows or '<tr><td colspan="8" style="color:#999;text-align:center;padding:12px">No data yet</td></tr>'
+    return rows or '<tr><td colspan="10" style="color:#999;text-align:center;padding:12px">No data yet</td></tr>'
 
 
 def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict] | None = None):
@@ -1273,7 +1505,8 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
       <table id="scan-diag-table" style="margin-top:4px">
         <thead><tr>
           <th>Ticker</th><th>Status</th><th>Close</th>
-          <th>ORB High</th><th>ORB Low</th><th>ORB Width</th><th>Vol Ratio</th><th>Note</th>
+          <th>ORB High</th><th>ORB Low</th><th>ORB Width</th><th>Vol Ratio</th>
+          <th>ATR20</th><th>EMA20</th><th>Note</th>
         </tr></thead>
         <tbody>{_diag_rows(diag or [])}</tbody>
       </table>
