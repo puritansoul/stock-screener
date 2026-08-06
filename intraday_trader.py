@@ -253,6 +253,10 @@ def fetch_intraday(tickers: list[str]) -> dict[str, pd.DataFrame]:
         if raw5.empty:
             return result
         raw5.index = pd.DatetimeIndex(raw5.index).tz_convert(ET)
+        today_date = date.today()
+        raw5 = raw5[raw5.index.date == today_date]
+        if raw5.empty:
+            return result
 
         raw1d = yf.download(
             tickers, period="22d", interval="1d",
