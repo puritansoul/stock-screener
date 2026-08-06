@@ -1,5 +1,5 @@
 {
-  "capital": 2849.23,
+  "capital": 6545.36,
   "open_positions": [
     {
       "ticker": "ROL",
@@ -204,9 +204,9 @@
       "entry_time": "10:52 ET",
       "entry_price": 86.85,
       "shares": 5,
-      "stop": 87.1125,
+      "stop": 87.1075,
       "trail_dist": 0.9975,
-      "peak": 86.115,
+      "peak": 86.11,
       "orb_width": 1.995,
       "cost": 434.25,
       "vol_ratio": 1.94
@@ -260,9 +260,9 @@
       "entry_time": "10:54 ET",
       "entry_price": 55.5,
       "shares": 1,
-      "stop": 55.6225,
+      "stop": 55.6475,
       "trail_dist": 1.0075,
-      "peak": 56.63,
+      "peak": 56.655,
       "orb_width": 2.015,
       "cost": 55.5,
       "vol_ratio": 1.35
@@ -288,9 +288,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 141.05,
       "shares": 1,
-      "stop": 145.4475,
+      "stop": 145.5975,
       "trail_dist": 1.0625,
-      "peak": 146.51,
+      "peak": 146.66,
       "orb_width": 2.125,
       "cost": 141.05,
       "vol_ratio": 1.33
@@ -338,29 +338,15 @@
       "vol_ratio": 2.98
     },
     {
-      "ticker": "HLT",
-      "side": "short",
-      "entry_date": "2026-08-06",
-      "entry_time": "11:09 ET",
-      "entry_price": 323.325,
-      "shares": 2,
-      "stop": 323.665,
-      "trail_dist": 1.495,
-      "peak": 322.17,
-      "orb_width": 2.99,
-      "cost": 646.65,
-      "vol_ratio": 1.36
-    },
-    {
       "ticker": "NTAP",
       "side": "long",
       "entry_date": "2026-08-06",
       "entry_time": "11:14 ET",
       "entry_price": 187.69,
       "shares": 1,
-      "stop": 186.6395,
+      "stop": 186.7255,
       "trail_dist": 2.9295,
-      "peak": 189.569,
+      "peak": 189.655,
       "orb_width": 5.8589,
       "cost": 187.69,
       "vol_ratio": 1.55
@@ -590,29 +576,15 @@
       "vol_ratio": 9.32
     },
     {
-      "ticker": "CL",
-      "side": "short",
-      "entry_date": "2026-08-06",
-      "entry_time": "12:57 ET",
-      "entry_price": 92.535,
-      "shares": 33,
-      "stop": 92.641,
-      "trail_dist": 0.481,
-      "peak": 92.16,
-      "orb_width": 0.962,
-      "cost": 3053.66,
-      "vol_ratio": 3.37
-    },
-    {
       "ticker": "CMCSA",
       "side": "long",
       "entry_date": "2026-08-06",
       "entry_time": "13:24 ET",
       "entry_price": 25.115,
       "shares": 64,
-      "stop": 25.025,
+      "stop": 25.035,
       "trail_dist": 0.165,
-      "peak": 25.19,
+      "peak": 25.2,
       "orb_width": 0.33,
       "cost": 1607.36,
       "vol_ratio": 6.41
@@ -694,9 +666,9 @@
       "entry_time": "13:44 ET",
       "entry_price": 155.72,
       "shares": 3,
-      "stop": 155.2275,
+      "stop": 155.3475,
       "trail_dist": 1.4225,
-      "peak": 156.65,
+      "peak": 156.77,
       "orb_width": 2.845,
       "cost": 467.16,
       "vol_ratio": 12.24
@@ -736,9 +708,9 @@
       "entry_time": "13:59 ET",
       "entry_price": 241.94,
       "shares": 4,
-      "stop": 243.36,
+      "stop": 242.99,
       "trail_dist": 1.48,
-      "peak": 241.88,
+      "peak": 241.51,
       "orb_width": 2.9599,
       "cost": 967.76,
       "vol_ratio": 3.75
@@ -1903,6 +1875,44 @@
       "pnl": -10.07,
       "exit_reason": "trailing stop",
       "exit_time": "13:59 ET"
+    },
+    {
+      "ticker": "HLT",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "11:09 ET",
+      "entry_price": 323.325,
+      "shares": 2,
+      "stop": 323.665,
+      "trail_dist": 1.495,
+      "peak": 322.17,
+      "orb_width": 2.99,
+      "cost": 646.65,
+      "vol_ratio": 1.36,
+      "exit_date": "2026-08-06",
+      "exit_price": 323.665,
+      "pnl": -0.68,
+      "exit_reason": "trailing stop",
+      "exit_time": "14:06 ET"
+    },
+    {
+      "ticker": "CL",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "12:57 ET",
+      "entry_price": 92.535,
+      "shares": 33,
+      "stop": 92.641,
+      "trail_dist": 0.481,
+      "peak": 92.16,
+      "orb_width": 0.962,
+      "cost": 3053.66,
+      "vol_ratio": 3.37,
+      "exit_date": "2026-08-06",
+      "exit_price": 92.641,
+      "pnl": -3.5,
+      "exit_reason": "trailing stop",
+      "exit_time": "14:06 ET"
     }
   ],
   "all_closed": [
@@ -72981,11 +72991,6 @@
       "low": 76.16,
       "width": 2.29
     },
-    "MU": {
-      "high": 878.5,
-      "low": 827.0,
-      "width": 51.5
-    },
     "MSFT": {
       "high": 497.265,
       "low": 488.525,
@@ -73943,7 +73948,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 96035.02
+    "2026-08-06": 96050.61
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -149671,6 +149676,30 @@
       "exits": [],
       "portfolio_value": 96035.02,
       "note": "$96,035 | cash=$2,849 | open=53 | closed today=61 | day PnL=$-329"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "14:06 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "HLT",
+          "side": "short",
+          "exit_price": 323.67,
+          "pnl": -0.68,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "CL",
+          "side": "short",
+          "exit_price": 92.64,
+          "pnl": -3.5,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96050.61,
+      "note": "$96,051 | cash=$6,545 | open=51 | closed today=63 | day PnL=$-333"
     }
   ]
 }
