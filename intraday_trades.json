@@ -1,5 +1,5 @@
 {
-  "capital": 28084.08,
+  "capital": 20901.26,
   "open_positions": [
     {
       "ticker": "ROL",
@@ -120,9 +120,9 @@
       "entry_time": "10:17 ET",
       "entry_price": 67.63,
       "shares": 1,
-      "stop": 68.2225,
+      "stop": 68.1825,
       "trail_dist": 0.6525,
-      "peak": 67.57,
+      "peak": 67.53,
       "orb_width": 1.305,
       "cost": 67.63,
       "vol_ratio": 1.24
@@ -294,20 +294,6 @@
       "orb_width": 1.68,
       "cost": 106.02,
       "vol_ratio": 1.33
-    },
-    {
-      "ticker": "BEN",
-      "side": "short",
-      "entry_date": "2026-08-06",
-      "entry_time": "10:49 ET",
-      "entry_price": 34.44,
-      "shares": 2,
-      "stop": 34.27,
-      "trail_dist": 0.235,
-      "peak": 34.035,
-      "orb_width": 0.47,
-      "cost": 68.88,
-      "vol_ratio": 1.26
     },
     {
       "ticker": "DOW",
@@ -498,9 +484,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 141.05,
       "shares": 1,
-      "stop": 140.7325,
+      "stop": 140.8475,
       "trail_dist": 1.0625,
-      "peak": 141.795,
+      "peak": 141.91,
       "orb_width": 2.125,
       "cost": 141.05,
       "vol_ratio": 1.33
@@ -596,9 +582,9 @@
       "entry_time": "11:09 ET",
       "entry_price": 90.51,
       "shares": 12,
-      "stop": 90.455,
+      "stop": 90.4451,
       "trail_dist": 0.545,
-      "peak": 89.91,
+      "peak": 89.9001,
       "orb_width": 1.09,
       "cost": 1086.12,
       "vol_ratio": 1.45
@@ -730,20 +716,6 @@
       "vol_ratio": 2.66
     },
     {
-      "ticker": "SCHW",
-      "side": "short",
-      "entry_date": "2026-08-06",
-      "entry_time": "11:19 ET",
-      "entry_price": 107.07,
-      "shares": 14,
-      "stop": 107.32,
-      "trail_dist": 0.51,
-      "peak": 106.81,
-      "orb_width": 1.02,
-      "cost": 1498.98,
-      "vol_ratio": 2.43
-    },
-    {
       "ticker": "KEY",
       "side": "short",
       "entry_date": "2026-08-06",
@@ -792,9 +764,9 @@
       "entry_time": "11:21 ET",
       "entry_price": 93.71,
       "shares": 2,
-      "stop": 94.258,
+      "stop": 94.173,
       "trail_dist": 0.738,
-      "peak": 93.52,
+      "peak": 93.435,
       "orb_width": 1.476,
       "cost": 187.42,
       "vol_ratio": 1.84
@@ -820,9 +792,9 @@
       "entry_time": "11:34 ET",
       "entry_price": 180.1587,
       "shares": 26,
-      "stop": 180.92,
+      "stop": 180.825,
       "trail_dist": 0.825,
-      "peak": 180.095,
+      "peak": 180.0,
       "orb_width": 1.65,
       "cost": 4684.13,
       "vol_ratio": 5.32
@@ -868,6 +840,20 @@
       "orb_width": 1.15,
       "cost": 1994.64,
       "vol_ratio": 1.48
+    },
+    {
+      "ticker": "AMT",
+      "side": "long",
+      "entry_date": "2026-08-06",
+      "entry_time": "11:48 ET",
+      "entry_price": 171.52,
+      "shares": 51,
+      "stop": 169.94,
+      "trail_dist": 1.58,
+      "peak": 171.52,
+      "orb_width": 3.16,
+      "cost": 8747.52,
+      "vol_ratio": 6.31
     }
   ],
   "closed_today": [
@@ -1497,6 +1483,44 @@
       "pnl": -0.48,
       "exit_reason": "trailing stop",
       "exit_time": "11:46 ET"
+    },
+    {
+      "ticker": "BEN",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "10:49 ET",
+      "entry_price": 34.44,
+      "shares": 2,
+      "stop": 34.27,
+      "trail_dist": 0.235,
+      "peak": 34.035,
+      "orb_width": 0.47,
+      "cost": 68.88,
+      "vol_ratio": 1.26,
+      "exit_date": "2026-08-06",
+      "exit_price": 34.27,
+      "pnl": 0.34,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:48 ET"
+    },
+    {
+      "ticker": "SCHW",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "11:19 ET",
+      "entry_price": 107.07,
+      "shares": 14,
+      "stop": 107.32,
+      "trail_dist": 0.51,
+      "peak": 106.81,
+      "orb_width": 1.02,
+      "cost": 1498.98,
+      "vol_ratio": 2.43,
+      "exit_date": "2026-08-06",
+      "exit_price": 107.32,
+      "pnl": -3.5,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:48 ET"
     }
   ],
   "all_closed": [
@@ -73537,7 +73561,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 96009.94
+    "2026-08-06": 96008.72
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -148375,6 +148399,39 @@
       ],
       "portfolio_value": 96009.94,
       "note": "$96,010 | cash=$28,084 | open=62 | closed today=33 | day PnL=$-272"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "11:48 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "AMT",
+          "side": "long",
+          "price": 171.52,
+          "shares": 51,
+          "stop": 169.94,
+          "trail_dist": 1.58
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "BEN",
+          "side": "short",
+          "exit_price": 34.27,
+          "pnl": 0.34,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "SCHW",
+          "side": "short",
+          "exit_price": 107.32,
+          "pnl": -3.5,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96008.72,
+      "note": "$96,009 | cash=$20,901 | open=61 | closed today=35 | day PnL=$-276"
     }
   ]
 }
