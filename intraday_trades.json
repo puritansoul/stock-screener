@@ -1,5 +1,5 @@
 {
-  "capital": 6767.35,
+  "capital": 4772.71,
   "open_positions": [
     {
       "ticker": "ROL",
@@ -162,9 +162,9 @@
       "entry_time": "10:35 ET",
       "entry_price": 148.335,
       "shares": 1,
-      "stop": 149.47,
+      "stop": 149.4,
       "trail_dist": 1.17,
-      "peak": 148.3,
+      "peak": 148.23,
       "orb_width": 2.34,
       "cost": 148.34,
       "vol_ratio": 1.62
@@ -260,9 +260,9 @@
       "entry_time": "10:49 ET",
       "entry_price": 177.635,
       "shares": 1,
-      "stop": 178.15,
+      "stop": 178.14,
       "trail_dist": 0.98,
-      "peak": 177.17,
+      "peak": 177.16,
       "orb_width": 1.96,
       "cost": 177.63,
       "vol_ratio": 1.83
@@ -610,9 +610,9 @@
       "entry_time": "11:09 ET",
       "entry_price": 230.28,
       "shares": 19,
-      "stop": 232.735,
+      "stop": 232.685,
       "trail_dist": 3.025,
-      "peak": 229.71,
+      "peak": 229.66,
       "orb_width": 6.05,
       "cost": 4375.32,
       "vol_ratio": 2.98
@@ -624,9 +624,9 @@
       "entry_time": "11:09 ET",
       "entry_price": 235.105,
       "shares": 9,
-      "stop": 236.325,
+      "stop": 236.2237,
       "trail_dist": 2.195,
-      "peak": 234.13,
+      "peak": 234.0287,
       "orb_width": 4.39,
       "cost": 2115.94,
       "vol_ratio": 1.5
@@ -876,9 +876,9 @@
       "entry_time": "11:21 ET",
       "entry_price": 93.71,
       "shares": 2,
-      "stop": 94.288,
+      "stop": 94.278,
       "trail_dist": 0.738,
-      "peak": 93.55,
+      "peak": 93.54,
       "orb_width": 1.476,
       "cost": 187.42,
       "vol_ratio": 1.84
@@ -890,9 +890,9 @@
       "entry_time": "11:34 ET",
       "entry_price": 45.195,
       "shares": 148,
-      "stop": 45.585,
+      "stop": 45.58,
       "trail_dist": 0.435,
-      "peak": 45.15,
+      "peak": 45.145,
       "orb_width": 0.87,
       "cost": 6688.86,
       "vol_ratio": 7.51
@@ -904,9 +904,9 @@
       "entry_time": "11:34 ET",
       "entry_price": 180.1587,
       "shares": 26,
-      "stop": 180.9837,
+      "stop": 180.925,
       "trail_dist": 0.825,
-      "peak": 180.1587,
+      "peak": 180.1,
       "orb_width": 1.65,
       "cost": 4684.13,
       "vol_ratio": 5.32
@@ -918,9 +918,9 @@
       "entry_time": "11:34 ET",
       "entry_price": 61.245,
       "shares": 53,
-      "stop": 61.51,
+      "stop": 61.5,
       "trail_dist": 0.34,
-      "peak": 61.17,
+      "peak": 61.16,
       "orb_width": 0.68,
       "cost": 3245.98,
       "vol_ratio": 3.76
@@ -932,12 +932,26 @@
       "entry_time": "11:34 ET",
       "entry_price": 1180.22,
       "shares": 1,
-      "stop": 1204.66,
+      "stop": 1203.72,
       "trail_dist": 24.44,
-      "peak": 1180.22,
+      "peak": 1179.28,
       "orb_width": 48.88,
       "cost": 1180.22,
       "vol_ratio": 3.34
+    },
+    {
+      "ticker": "EVRG",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "11:39 ET",
+      "entry_price": 83.11,
+      "shares": 24,
+      "stop": 83.685,
+      "trail_dist": 0.575,
+      "peak": 83.11,
+      "orb_width": 1.15,
+      "cost": 1994.64,
+      "vol_ratio": 1.48
     }
   ],
   "closed_today": [
@@ -73493,7 +73507,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 96115.69
+    "2026-08-06": 96083.08
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -148241,6 +148255,24 @@
       ],
       "portfolio_value": 96115.69,
       "note": "$96,116 | cash=$6,767 | open=67 | closed today=27 | day PnL=$-68"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "11:38 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "EVRG",
+          "side": "short",
+          "price": 83.11,
+          "shares": 24,
+          "stop": 83.69,
+          "trail_dist": 0.575
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 96083.08,
+      "note": "$96,083 | cash=$4,773 | open=68 | closed today=27 | day PnL=$-68"
     }
   ]
 }

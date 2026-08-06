@@ -299,9 +299,12 @@ def fetch_intraday(tickers: list[str]) -> dict[str, pd.DataFrame]:
                 # avg_bar_volume: use historical daily volume / 13 as the baseline.
                 # Using today's own opening-hour bars is circular — a high-volume day
                 # raises its own threshold, suppressing entries on exactly the days
-                # ORB works best.
+                # ORB works best. Also exclude today's partial daily bar (yfinance
+                # period="Nd" always appends today's incomplete row).
                 if not df1d.empty and "Volume" in df1d.columns:
-                    avg_bar_vol = float(df1d["Volume"].mean()) / 13.0
+                    _today_ts = pd.Timestamp(date.today())
+                    _df1d_done = df1d[df1d.index.normalize() < _today_ts]
+                    avg_bar_vol = float(_df1d_done["Volume"].mean()) / 13.0 if not _df1d_done.empty else 0.0
                 elif "Volume" in df5.columns:
                     avg_bar_vol = float(df5["Volume"].mean()) / 13.0
                 else:
