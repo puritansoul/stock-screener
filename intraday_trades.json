@@ -1,5 +1,5 @@
 {
-  "capital": 1106.84,
+  "capital": 1711.12,
   "open_positions": [
     {
       "ticker": "ROL",
@@ -380,20 +380,6 @@
       "vol_ratio": 1.55
     },
     {
-      "ticker": "CTAS",
-      "side": "short",
-      "entry_date": "2026-08-06",
-      "entry_time": "11:14 ET",
-      "entry_price": 199.86,
-      "shares": 1,
-      "stop": 201.3175,
-      "trail_dist": 1.6675,
-      "peak": 199.65,
-      "orb_width": 3.335,
-      "cost": 199.86,
-      "vol_ratio": 1.45
-    },
-    {
       "ticker": "BX",
       "side": "short",
       "entry_date": "2026-08-06",
@@ -632,20 +618,6 @@
       "vol_ratio": 3.37
     },
     {
-      "ticker": "JCI",
-      "side": "long",
-      "entry_date": "2026-08-06",
-      "entry_time": "13:05 ET",
-      "entry_price": 155.51,
-      "shares": 14,
-      "stop": 154.39,
-      "trail_dist": 1.17,
-      "peak": 155.56,
-      "orb_width": 2.3399,
-      "cost": 2177.14,
-      "vol_ratio": 7.22
-    },
-    {
       "ticker": "CMCSA",
       "side": "long",
       "entry_date": "2026-08-06",
@@ -680,9 +652,9 @@
       "entry_time": "13:29 ET",
       "entry_price": 414.31,
       "shares": 2,
-      "stop": 415.77,
+      "stop": 415.76,
       "trail_dist": 1.99,
-      "peak": 413.78,
+      "peak": 413.77,
       "orb_width": 3.98,
       "cost": 828.62,
       "vol_ratio": 6.29
@@ -736,12 +708,40 @@
       "entry_time": "13:44 ET",
       "entry_price": 155.72,
       "shares": 3,
-      "stop": 154.2975,
+      "stop": 154.4175,
       "trail_dist": 1.4225,
-      "peak": 155.72,
+      "peak": 155.84,
       "orb_width": 2.845,
       "cost": 467.16,
       "vol_ratio": 12.24
+    },
+    {
+      "ticker": "TGT",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "13:47 ET",
+      "entry_price": 146.64,
+      "shares": 7,
+      "stop": 147.6238,
+      "trail_dist": 0.9838,
+      "peak": 146.64,
+      "orb_width": 1.9676,
+      "cost": 1026.48,
+      "vol_ratio": 2.99
+    },
+    {
+      "ticker": "TTD",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "13:47 ET",
+      "entry_price": 17.7829,
+      "shares": 41,
+      "stop": 18.0354,
+      "trail_dist": 0.2525,
+      "peak": 17.7829,
+      "orb_width": 0.505,
+      "cost": 729.1,
+      "vol_ratio": 1.5
     }
   ],
   "closed_today": [
@@ -1846,6 +1846,44 @@
       "pnl": -9.42,
       "exit_reason": "trailing stop",
       "exit_time": "13:42 ET"
+    },
+    {
+      "ticker": "CTAS",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "11:14 ET",
+      "entry_price": 199.86,
+      "shares": 1,
+      "stop": 201.3175,
+      "trail_dist": 1.6675,
+      "peak": 199.65,
+      "orb_width": 3.335,
+      "cost": 199.86,
+      "vol_ratio": 1.45,
+      "exit_date": "2026-08-06",
+      "exit_price": 201.3175,
+      "pnl": -1.46,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:46 ET"
+    },
+    {
+      "ticker": "JCI",
+      "side": "long",
+      "entry_date": "2026-08-06",
+      "entry_time": "13:05 ET",
+      "entry_price": 155.51,
+      "shares": 14,
+      "stop": 154.39,
+      "trail_dist": 1.17,
+      "peak": 155.56,
+      "orb_width": 2.3399,
+      "cost": 2177.14,
+      "vol_ratio": 7.22,
+      "exit_date": "2026-08-06",
+      "exit_price": 154.39,
+      "pnl": -15.68,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:46 ET"
     }
   ],
   "all_closed": [
@@ -73319,11 +73357,6 @@
       "low": 206.09,
       "width": 3.48
     },
-    "RMD": {
-      "high": 226.09,
-      "low": 222.56,
-      "width": 3.53
-    },
     "RVTY": {
       "high": 115.0,
       "low": 112.34,
@@ -73558,11 +73591,6 @@
       "high": 89.61,
       "low": 88.095,
       "width": 1.515
-    },
-    "TMO": {
-      "high": 578.48,
-      "low": 569.63,
-      "width": 8.85
     },
     "TJX": {
       "high": 161.85,
@@ -73886,7 +73914,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 96080.38
+    "2026-08-06": 96098.93
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -149493,6 +149521,47 @@
       "exits": [],
       "portfolio_value": 96080.38,
       "note": "$96,080 | cash=$1,107 | open=53 | closed today=58 | day PnL=$-301"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "13:46 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "TGT",
+          "side": "short",
+          "price": 146.64,
+          "shares": 7,
+          "stop": 147.62,
+          "trail_dist": 0.9838
+        },
+        {
+          "ticker": "TTD",
+          "side": "short",
+          "price": 17.78,
+          "shares": 41,
+          "stop": 18.04,
+          "trail_dist": 0.2525
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "CTAS",
+          "side": "short",
+          "exit_price": 201.32,
+          "pnl": -1.46,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "JCI",
+          "side": "long",
+          "exit_price": 154.39,
+          "pnl": -15.68,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96098.93,
+      "note": "$96,099 | cash=$1,711 | open=53 | closed today=60 | day PnL=$-319"
     }
   ]
 }
