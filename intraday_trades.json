@@ -1,5 +1,5 @@
 {
-  "capital": 6536.14,
+  "capital": 6767.35,
   "open_positions": [
     {
       "ticker": "ROL",
@@ -226,20 +226,6 @@
       "vol_ratio": 1.76
     },
     {
-      "ticker": "CTVA",
-      "side": "short",
-      "entry_date": "2026-08-06",
-      "entry_time": "10:42 ET",
-      "entry_price": 77.06,
-      "shares": 3,
-      "stop": 77.05,
-      "trail_dist": 0.53,
-      "peak": 76.52,
-      "orb_width": 1.06,
-      "cost": 231.18,
-      "vol_ratio": 1.37
-    },
-    {
       "ticker": "VTRS",
       "side": "short",
       "entry_date": "2026-08-06",
@@ -288,9 +274,9 @@
       "entry_time": "10:49 ET",
       "entry_price": 130.46,
       "shares": 1,
-      "stop": 131.02,
+      "stop": 130.95,
       "trail_dist": 1.27,
-      "peak": 129.75,
+      "peak": 129.68,
       "orb_width": 2.54,
       "cost": 130.46,
       "vol_ratio": 1.48
@@ -316,9 +302,9 @@
       "entry_time": "10:49 ET",
       "entry_price": 34.44,
       "shares": 2,
-      "stop": 34.295,
+      "stop": 34.27,
       "trail_dist": 0.235,
-      "peak": 34.06,
+      "peak": 34.035,
       "orb_width": 0.47,
       "cost": 68.88,
       "vol_ratio": 1.26
@@ -358,9 +344,9 @@
       "entry_time": "10:52 ET",
       "entry_price": 86.85,
       "shares": 5,
-      "stop": 87.4475,
+      "stop": 87.3175,
       "trail_dist": 0.9975,
-      "peak": 86.45,
+      "peak": 86.32,
       "orb_width": 1.995,
       "cost": 434.25,
       "vol_ratio": 1.94
@@ -484,9 +470,9 @@
       "entry_time": "10:59 ET",
       "entry_price": 146.78,
       "shares": 1,
-      "stop": 146.7475,
+      "stop": 146.4325,
       "trail_dist": 0.9225,
-      "peak": 145.825,
+      "peak": 145.51,
       "orb_width": 1.845,
       "cost": 146.78,
       "vol_ratio": 2.49
@@ -512,9 +498,9 @@
       "entry_time": "10:59 ET",
       "entry_price": 65.3825,
       "shares": 1,
-      "stop": 65.48,
+      "stop": 65.445,
       "trail_dist": 0.365,
-      "peak": 65.115,
+      "peak": 65.08,
       "orb_width": 0.73,
       "cost": 65.38,
       "vol_ratio": 1.42
@@ -806,9 +792,9 @@
       "entry_time": "11:16 ET",
       "entry_price": 358.96,
       "shares": 3,
-      "stop": 361.505,
+      "stop": 361.02,
       "trail_dist": 4.995,
-      "peak": 356.51,
+      "peak": 356.025,
       "orb_width": 9.99,
       "cost": 1076.88,
       "vol_ratio": 1.36
@@ -820,9 +806,9 @@
       "entry_time": "11:19 ET",
       "entry_price": 188.46,
       "shares": 12,
-      "stop": 188.53,
+      "stop": 188.585,
       "trail_dist": 0.71,
-      "peak": 189.24,
+      "peak": 189.295,
       "orb_width": 1.42,
       "cost": 2261.52,
       "vol_ratio": 2.66
@@ -876,9 +862,9 @@
       "entry_time": "11:19 ET",
       "entry_price": 97.975,
       "shares": 3,
-      "stop": 98.5233,
+      "stop": 98.4633,
       "trail_dist": 0.7633,
-      "peak": 97.76,
+      "peak": 97.7,
       "orb_width": 1.5266,
       "cost": 293.92,
       "vol_ratio": 1.29
@@ -904,9 +890,9 @@
       "entry_time": "11:34 ET",
       "entry_price": 45.195,
       "shares": 148,
-      "stop": 45.63,
+      "stop": 45.585,
       "trail_dist": 0.435,
-      "peak": 45.195,
+      "peak": 45.15,
       "orb_width": 0.87,
       "cost": 6688.86,
       "vol_ratio": 7.51
@@ -932,9 +918,9 @@
       "entry_time": "11:34 ET",
       "entry_price": 61.245,
       "shares": 53,
-      "stop": 61.585,
+      "stop": 61.51,
       "trail_dist": 0.34,
-      "peak": 61.245,
+      "peak": 61.17,
       "orb_width": 0.68,
       "cost": 3245.98,
       "vol_ratio": 3.76
@@ -1448,6 +1434,25 @@
       "pnl": -2.42,
       "exit_reason": "trailing stop",
       "exit_time": "11:31 ET"
+    },
+    {
+      "ticker": "CTVA",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "10:42 ET",
+      "entry_price": 77.06,
+      "shares": 3,
+      "stop": 77.05,
+      "trail_dist": 0.53,
+      "peak": 76.52,
+      "orb_width": 1.06,
+      "cost": 231.18,
+      "vol_ratio": 1.37,
+      "exit_date": "2026-08-06",
+      "exit_price": 77.05,
+      "pnl": 0.03,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:36 ET"
     }
   ],
   "all_closed": [
@@ -71681,6 +71686,11 @@
       "low": 92.2,
       "width": 1.1
     },
+    "DVN": {
+      "high": 43.2,
+      "low": 42.69,
+      "width": 0.51
+    },
     "DXCM": {
       "high": 83.67,
       "low": 82.66,
@@ -72110,6 +72120,11 @@
       "high": 52.1,
       "low": 49.1201,
       "width": 2.9799
+    },
+    "HLT": {
+      "high": 326.5,
+      "low": 323.51,
+      "width": 2.99
     },
     "HD": {
       "high": 353.55,
@@ -73136,6 +73151,11 @@
       "low": 315.5205,
       "width": 5.3595
     },
+    "TXN": {
+      "high": 280.07,
+      "low": 272.65,
+      "width": 7.42
+    },
     "TPL": {
       "high": 394.23,
       "low": 362.33,
@@ -73473,7 +73493,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 96103.22
+    "2026-08-06": 96115.69
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -148204,6 +148224,23 @@
       "exits": [],
       "portfolio_value": 96103.22,
       "note": "$96,103 | cash=$6,536 | open=68 | closed today=26 | day PnL=$-68"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "11:36 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "CTVA",
+          "side": "short",
+          "exit_price": 77.05,
+          "pnl": 0.03,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96115.69,
+      "note": "$96,116 | cash=$6,767 | open=67 | closed today=27 | day PnL=$-68"
     }
   ]
 }
