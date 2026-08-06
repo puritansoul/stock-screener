@@ -1,5 +1,5 @@
 {
-  "capital": 4772.71,
+  "capital": 18330.25,
   "open_positions": [
     {
       "ticker": "ROL",
@@ -120,9 +120,9 @@
       "entry_time": "10:17 ET",
       "entry_price": 67.63,
       "shares": 1,
-      "stop": 68.2825,
+      "stop": 68.2225,
       "trail_dist": 0.6525,
-      "peak": 67.63,
+      "peak": 67.57,
       "orb_width": 1.305,
       "cost": 67.63,
       "vol_ratio": 1.24
@@ -148,9 +148,9 @@
       "entry_time": "10:35 ET",
       "entry_price": 51.6,
       "shares": 4,
-      "stop": 52.0013,
+      "stop": 52.0413,
       "trail_dist": 0.2387,
-      "peak": 52.24,
+      "peak": 52.28,
       "orb_width": 0.4775,
       "cost": 206.4,
       "vol_ratio": 1.77
@@ -372,9 +372,9 @@
       "entry_time": "10:52 ET",
       "entry_price": 32.46,
       "shares": 7,
-      "stop": 32.46,
+      "stop": 32.48,
       "trail_dist": 0.175,
-      "peak": 32.635,
+      "peak": 32.655,
       "orb_width": 0.35,
       "cost": 227.22,
       "vol_ratio": 1.44
@@ -526,9 +526,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 141.05,
       "shares": 1,
-      "stop": 140.4475,
+      "stop": 140.5275,
       "trail_dist": 1.0625,
-      "peak": 141.51,
+      "peak": 141.59,
       "orb_width": 2.125,
       "cost": 141.05,
       "vol_ratio": 1.33
@@ -560,20 +560,6 @@
       "orb_width": 0.4119,
       "cost": 84.98,
       "vol_ratio": 1.24
-    },
-    {
-      "ticker": "AWK",
-      "side": "long",
-      "entry_date": "2026-08-06",
-      "entry_time": "11:09 ET",
-      "entry_price": 135.3,
-      "shares": 98,
-      "stop": 134.535,
-      "trail_dist": 0.765,
-      "peak": 135.3,
-      "orb_width": 1.53,
-      "cost": 13259.4,
-      "vol_ratio": 5.32
     },
     {
       "ticker": "ECHO",
@@ -638,9 +624,9 @@
       "entry_time": "11:09 ET",
       "entry_price": 408.64,
       "shares": 4,
-      "stop": 405.3367,
+      "stop": 405.5367,
       "trail_dist": 4.3633,
-      "peak": 409.7,
+      "peak": 409.9,
       "orb_width": 8.7267,
       "cost": 1634.56,
       "vol_ratio": 1.49
@@ -700,20 +686,6 @@
       "orb_width": 2.89,
       "cost": 385.37,
       "vol_ratio": 2.83
-    },
-    {
-      "ticker": "STT",
-      "side": "short",
-      "entry_date": "2026-08-06",
-      "entry_time": "11:14 ET",
-      "entry_price": 186.86,
-      "shares": 2,
-      "stop": 187.165,
-      "trail_dist": 0.695,
-      "peak": 186.47,
-      "orb_width": 1.39,
-      "cost": 373.72,
-      "vol_ratio": 5.17
     },
     {
       "ticker": "NTAP",
@@ -862,9 +834,9 @@
       "entry_time": "11:19 ET",
       "entry_price": 97.975,
       "shares": 3,
-      "stop": 98.4633,
+      "stop": 98.4333,
       "trail_dist": 0.7633,
-      "peak": 97.7,
+      "peak": 97.67,
       "orb_width": 1.5266,
       "cost": 293.92,
       "vol_ratio": 1.29
@@ -946,9 +918,9 @@
       "entry_time": "11:39 ET",
       "entry_price": 83.11,
       "shares": 24,
-      "stop": 83.685,
+      "stop": 83.545,
       "trail_dist": 0.575,
-      "peak": 83.11,
+      "peak": 82.97,
       "orb_width": 1.15,
       "cost": 1994.64,
       "vol_ratio": 1.48
@@ -1467,6 +1439,44 @@
       "pnl": 0.03,
       "exit_reason": "trailing stop",
       "exit_time": "11:36 ET"
+    },
+    {
+      "ticker": "AWK",
+      "side": "long",
+      "entry_date": "2026-08-06",
+      "entry_time": "11:09 ET",
+      "entry_price": 135.3,
+      "shares": 98,
+      "stop": 134.535,
+      "trail_dist": 0.765,
+      "peak": 135.3,
+      "orb_width": 1.53,
+      "cost": 13259.4,
+      "vol_ratio": 5.32,
+      "exit_date": "2026-08-06",
+      "exit_price": 134.535,
+      "pnl": -74.97,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:41 ET"
+    },
+    {
+      "ticker": "STT",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "11:14 ET",
+      "entry_price": 186.86,
+      "shares": 2,
+      "stop": 187.165,
+      "trail_dist": 0.695,
+      "peak": 186.47,
+      "orb_width": 1.39,
+      "cost": 373.72,
+      "vol_ratio": 5.17,
+      "exit_date": "2026-08-06",
+      "exit_price": 187.165,
+      "pnl": -0.61,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:41 ET"
     }
   ],
   "all_closed": [
@@ -73507,7 +73517,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 96083.08
+    "2026-08-06": 96049.91
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -148273,6 +148283,30 @@
       "exits": [],
       "portfolio_value": 96083.08,
       "note": "$96,083 | cash=$4,773 | open=68 | closed today=27 | day PnL=$-68"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "11:41 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "AWK",
+          "side": "long",
+          "exit_price": 134.53,
+          "pnl": -74.97,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "STT",
+          "side": "short",
+          "exit_price": 187.16,
+          "pnl": -0.61,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96049.91,
+      "note": "$96,050 | cash=$18,330 | open=66 | closed today=29 | day PnL=$-143"
     }
   ]
 }
