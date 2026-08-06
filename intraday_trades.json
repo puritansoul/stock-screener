@@ -1,5 +1,5 @@
 {
-  "capital": 7477.9,
+  "capital": 5300.76,
   "open_positions": [
     {
       "ticker": "ROL",
@@ -8,9 +8,9 @@
       "entry_time": "10:12 ET",
       "entry_price": 37.02,
       "shares": 188,
-      "stop": 36.7275,
+      "stop": 36.7125,
       "trail_dist": 0.3025,
-      "peak": 36.425,
+      "peak": 36.41,
       "orb_width": 0.605,
       "cost": 6959.76,
       "vol_ratio": 1.56
@@ -36,9 +36,9 @@
       "entry_time": "10:15 ET",
       "entry_price": 110.985,
       "shares": 15,
-      "stop": 111.65,
+      "stop": 111.605,
       "trail_dist": 0.935,
-      "peak": 110.715,
+      "peak": 110.67,
       "orb_width": 1.87,
       "cost": 1664.78,
       "vol_ratio": 1.79
@@ -50,9 +50,9 @@
       "entry_time": "10:17 ET",
       "entry_price": 24.575,
       "shares": 5,
-      "stop": 24.79,
+      "stop": 24.78,
       "trail_dist": 0.265,
-      "peak": 24.525,
+      "peak": 24.515,
       "orb_width": 0.53,
       "cost": 122.88,
       "vol_ratio": 1.36
@@ -64,9 +64,9 @@
       "entry_time": "10:17 ET",
       "entry_price": 38.04,
       "shares": 2,
-      "stop": 38.3475,
+      "stop": 38.3325,
       "trail_dist": 0.3725,
-      "peak": 37.975,
+      "peak": 37.96,
       "orb_width": 0.745,
       "cost": 76.08,
       "vol_ratio": 1.26
@@ -92,9 +92,9 @@
       "entry_time": "10:35 ET",
       "entry_price": 147.1,
       "shares": 1,
-      "stop": 147.3275,
+      "stop": 147.2675,
       "trail_dist": 1.6275,
-      "peak": 145.7,
+      "peak": 145.64,
       "orb_width": 3.255,
       "cost": 147.1,
       "vol_ratio": 2.12
@@ -302,9 +302,9 @@
       "entry_time": "10:59 ET",
       "entry_price": 83.58,
       "shares": 1,
-      "stop": 86.41,
+      "stop": 86.375,
       "trail_dist": 2.945,
-      "peak": 83.465,
+      "peak": 83.43,
       "orb_width": 5.89,
       "cost": 83.58,
       "vol_ratio": 2.24
@@ -484,9 +484,9 @@
       "entry_time": "11:19 ET",
       "entry_price": 22.8601,
       "shares": 28,
-      "stop": 22.945,
+      "stop": 22.94,
       "trail_dist": 0.13,
-      "peak": 22.815,
+      "peak": 22.81,
       "orb_width": 0.26,
       "cost": 640.08,
       "vol_ratio": 1.32
@@ -624,9 +624,9 @@
       "entry_time": "12:42 ET",
       "entry_price": 88.105,
       "shares": 92,
-      "stop": 88.92,
+      "stop": 88.845,
       "trail_dist": 0.96,
-      "peak": 87.96,
+      "peak": 87.885,
       "orb_width": 1.92,
       "cost": 8105.66,
       "vol_ratio": 2.79
@@ -652,9 +652,9 @@
       "entry_time": "12:55 ET",
       "entry_price": 179.635,
       "shares": 23,
-      "stop": 180.5037,
+      "stop": 180.3275,
       "trail_dist": 0.9075,
-      "peak": 179.5962,
+      "peak": 179.42,
       "orb_width": 1.815,
       "cost": 4131.6,
       "vol_ratio": 9.32
@@ -666,12 +666,26 @@
       "entry_time": "12:57 ET",
       "entry_price": 92.535,
       "shares": 33,
-      "stop": 92.971,
+      "stop": 92.961,
       "trail_dist": 0.481,
-      "peak": 92.49,
+      "peak": 92.48,
       "orb_width": 0.962,
       "cost": 3053.66,
       "vol_ratio": 3.37
+    },
+    {
+      "ticker": "JCI",
+      "side": "long",
+      "entry_date": "2026-08-06",
+      "entry_time": "13:05 ET",
+      "entry_price": 155.51,
+      "shares": 14,
+      "stop": 154.34,
+      "trail_dist": 1.17,
+      "peak": 155.51,
+      "orb_width": 2.3399,
+      "cost": 2177.14,
+      "vol_ratio": 7.22
     }
   ],
   "closed_today": [
@@ -73312,6 +73326,11 @@
       "low": 92.7062,
       "width": 1.5015
     },
+    "LUV": {
+      "high": 48.43,
+      "low": 48.0,
+      "width": 0.43
+    },
     "SWK": {
       "high": 103.7,
       "low": 102.39,
@@ -73754,7 +73773,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 96151.97
+    "2026-08-06": 96135.56
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -149112,6 +149131,24 @@
       ],
       "portfolio_value": 96151.97,
       "note": "$96,152 | cash=$7,478 | open=48 | closed today=55 | day PnL=$-291"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "13:04 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "JCI",
+          "side": "long",
+          "price": 155.51,
+          "shares": 14,
+          "stop": 154.34,
+          "trail_dist": 1.17
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 96135.56,
+      "note": "$96,136 | cash=$5,301 | open=49 | closed today=55 | day PnL=$-291"
     }
   ]
 }
