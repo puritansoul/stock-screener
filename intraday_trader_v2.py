@@ -193,7 +193,8 @@ def close_stale_positions(state: dict, prev_date: str) -> None:
             if isinstance(raw.columns, pd.MultiIndex):
                 close_df = raw["Close"]
             else:
-                close_df = raw
+                # Single ticker: yfinance returns a plain DataFrame — wrap it
+                close_df = raw[["Close"]].rename(columns={"Close": tickers[0]}) if len(tickers) == 1 else raw
         else:
             close_df = pd.DataFrame()
     except Exception:
@@ -727,23 +728,48 @@ def mark_to_market(state: dict, data: dict[str, dict]) -> float:
 # ── v2 helpers ────────────────────────────────────────────────────────────────
 
 def compute_premarket_gaps(tickers: list[str]) -> dict[str, float]:
-    """Return {ticker: gap_pct} using prior close vs most recent daily close."""
+    """Return {ticker: gap_pct} = (today_open - prior_close) / prior_close * 100."""
     try:
-        raw = yf.download(tickers, period="3d", interval="1d", auto_adjust=True, progress=False)
-        if raw.empty:
+        # Use 1-minute bars to get today's actual open price (first bar after 9:30)
+        raw_1m = yf.download(tickers, period="1d", interval="1m", auto_adjust=True, progress=False)
+        raw_1d = yf.download(tickers, period="5d", interval="1d", auto_adjust=True, progress=False)
+        if raw_1d.empty:
             return {}
-        close_df = raw["Close"] if isinstance(raw.columns, pd.MultiIndex) else raw
+
+        if not raw_1m.empty:
+            raw_1m.index = pd.DatetimeIndex(raw_1m.index).tz_convert(ET)
+            today_date = date.today()
+            raw_1m = raw_1m[raw_1m.index.date == today_date]
+
+        close_df = raw_1d["Close"] if isinstance(raw_1d.columns, pd.MultiIndex) else raw_1d
+        open_1m  = (raw_1m["Open"] if isinstance(raw_1m.columns, pd.MultiIndex) else raw_1m) if not raw_1m.empty else pd.DataFrame()
+
         gaps = {}
         for tk in tickers:
-            if tk not in close_df.columns:
+            try:
+                if tk not in close_df.columns:
+                    continue
+                s = close_df[tk].dropna()
+                # prior_close = last completed day's close (exclude today's partial daily bar)
+                today_ts = pd.Timestamp(date.today())
+                completed = s[s.index.normalize() < today_ts]
+                if completed.empty:
+                    continue
+                prior_close = float(completed.iloc[-1])
+                if prior_close <= 0:
+                    continue
+                # today_open = first 1-min bar open at/after 9:30 ET
+                today_open = None
+                if not open_1m.empty and tk in open_1m.columns:
+                    mkt_bars = open_1m[tk].dropna()
+                    mkt_open = mkt_bars[mkt_bars.index.time >= MARKET_OPEN_TIME]
+                    if not mkt_open.empty:
+                        today_open = float(mkt_open.iloc[0])
+                if today_open is None:
+                    continue
+                gaps[tk] = round((today_open / prior_close - 1) * 100, 3)
+            except Exception:
                 continue
-            s = close_df[tk].dropna()
-            if len(s) < 2:
-                continue
-            prior_close = float(s.iloc[-2])
-            last_close  = float(s.iloc[-1])
-            if prior_close > 0:
-                gaps[tk] = round((last_close / prior_close - 1) * 100, 3)
         return gaps
     except Exception:
         return {}

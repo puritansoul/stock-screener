@@ -173,7 +173,8 @@ def close_stale_positions(state: dict, prev_date: str) -> None:
             if isinstance(raw.columns, pd.MultiIndex):
                 close_df = raw["Close"]
             else:
-                close_df = raw
+                # Single ticker: yfinance returns a plain DataFrame — wrap it
+                close_df = raw[["Close"]].rename(columns={"Close": tickers[0]}) if len(tickers) == 1 else raw
         else:
             close_df = pd.DataFrame()
     except Exception:
