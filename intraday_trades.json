@@ -1,5 +1,5 @@
 {
-  "capital": 27900.47,
+  "capital": 28084.08,
   "open_positions": [
     {
       "ticker": "ROL",
@@ -218,9 +218,9 @@
       "entry_time": "10:42 ET",
       "entry_price": 347.69,
       "shares": 1,
-      "stop": 348.9851,
+      "stop": 348.94,
       "trail_dist": 2.025,
-      "peak": 346.9601,
+      "peak": 346.915,
       "orb_width": 4.05,
       "cost": 347.69,
       "vol_ratio": 1.76
@@ -436,20 +436,6 @@
       "vol_ratio": 1.35
     },
     {
-      "ticker": "NTRS",
-      "side": "short",
-      "entry_date": "2026-08-06",
-      "entry_time": "10:59 ET",
-      "entry_price": 184.09,
-      "shares": 1,
-      "stop": 184.5675,
-      "trail_dist": 0.8975,
-      "peak": 183.67,
-      "orb_width": 1.795,
-      "cost": 184.09,
-      "vol_ratio": 6.19
-    },
-    {
       "ticker": "DD",
       "side": "short",
       "entry_date": "2026-08-06",
@@ -512,9 +498,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 141.05,
       "shares": 1,
-      "stop": 140.5675,
+      "stop": 140.7325,
       "trail_dist": 1.0625,
-      "peak": 141.63,
+      "peak": 141.795,
       "orb_width": 2.125,
       "cost": 141.05,
       "vol_ratio": 1.33
@@ -610,9 +596,9 @@
       "entry_time": "11:09 ET",
       "entry_price": 90.51,
       "shares": 12,
-      "stop": 90.525,
+      "stop": 90.455,
       "trail_dist": 0.545,
-      "peak": 89.98,
+      "peak": 89.91,
       "orb_width": 1.09,
       "cost": 1086.12,
       "vol_ratio": 1.45
@@ -806,9 +792,9 @@
       "entry_time": "11:21 ET",
       "entry_price": 93.71,
       "shares": 2,
-      "stop": 94.278,
+      "stop": 94.258,
       "trail_dist": 0.738,
-      "peak": 93.54,
+      "peak": 93.52,
       "orb_width": 1.476,
       "cost": 187.42,
       "vol_ratio": 1.84
@@ -834,9 +820,9 @@
       "entry_time": "11:34 ET",
       "entry_price": 180.1587,
       "shares": 26,
-      "stop": 180.925,
+      "stop": 180.92,
       "trail_dist": 0.825,
-      "peak": 180.1,
+      "peak": 180.095,
       "orb_width": 1.65,
       "cost": 4684.13,
       "vol_ratio": 5.32
@@ -862,9 +848,9 @@
       "entry_time": "11:34 ET",
       "entry_price": 1180.22,
       "shares": 1,
-      "stop": 1203.56,
+      "stop": 1202.98,
       "trail_dist": 24.44,
-      "peak": 1179.12,
+      "peak": 1178.54,
       "orb_width": 48.88,
       "cost": 1180.22,
       "vol_ratio": 3.34
@@ -1492,6 +1478,25 @@
       "pnl": -1.61,
       "exit_reason": "trailing stop",
       "exit_time": "11:43 ET"
+    },
+    {
+      "ticker": "NTRS",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "10:59 ET",
+      "entry_price": 184.09,
+      "shares": 1,
+      "stop": 184.5675,
+      "trail_dist": 0.8975,
+      "peak": 183.67,
+      "orb_width": 1.795,
+      "cost": 184.09,
+      "vol_ratio": 6.19,
+      "exit_date": "2026-08-06",
+      "exit_price": 184.5675,
+      "pnl": -0.48,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:46 ET"
     }
   ],
   "all_closed": [
@@ -71120,6 +71125,11 @@
       "low": 108.185,
       "width": 1.905
     },
+    "AEP": {
+      "high": 128.2983,
+      "low": 125.75,
+      "width": 2.5483
+    },
     "AXP": {
       "high": 350.0,
       "low": 347.09,
@@ -72435,6 +72445,11 @@
       "low": 1182.0,
       "width": 48.88
     },
+    "LIN": {
+      "high": 499.18,
+      "low": 493.34,
+      "width": 5.84
+    },
     "LYV": {
       "high": 184.48,
       "low": 182.59,
@@ -73390,6 +73405,11 @@
       "low": 295.38,
       "width": 2.83
     },
+    "WMT": {
+      "high": 114.56,
+      "low": 112.62,
+      "width": 1.94
+    },
     "DIS": {
       "high": 104.2,
       "low": 102.53,
@@ -73517,7 +73537,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 96035.92
+    "2026-08-06": 96009.94
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -148338,6 +148358,23 @@
       ],
       "portfolio_value": 96035.92,
       "note": "$96,036 | cash=$27,900 | open=63 | closed today=32 | day PnL=$-272"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "11:45 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "NTRS",
+          "side": "short",
+          "exit_price": 184.57,
+          "pnl": -0.48,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96009.94,
+      "note": "$96,010 | cash=$28,084 | open=62 | closed today=33 | day PnL=$-272"
     }
   ]
 }
