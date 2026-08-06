@@ -190,9 +190,9 @@
       "entry_time": "10:45 ET",
       "entry_price": 17.28,
       "shares": 10,
-      "stop": 17.58,
+      "stop": 17.57,
       "trail_dist": 0.54,
-      "peak": 17.04,
+      "peak": 17.03,
       "orb_width": 1.08,
       "cost": 172.8,
       "vol_ratio": 1.43
@@ -274,9 +274,9 @@
       "entry_time": "10:54 ET",
       "entry_price": 123.43,
       "shares": 1,
-      "stop": 124.7162,
+      "stop": 124.5162,
       "trail_dist": 1.7962,
-      "peak": 122.92,
+      "peak": 122.72,
       "orb_width": 3.5925,
       "cost": 123.43,
       "vol_ratio": 3.39
@@ -386,9 +386,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 141.05,
       "shares": 1,
-      "stop": 141.4175,
+      "stop": 141.5075,
       "trail_dist": 1.0625,
-      "peak": 142.48,
+      "peak": 142.57,
       "orb_width": 2.125,
       "cost": 141.05,
       "vol_ratio": 1.33
@@ -71976,6 +71976,11 @@
       "low": 135.09,
       "width": 1.76
     },
+    "EQT": {
+      "high": 52.41,
+      "low": 51.45,
+      "width": 0.96
+    },
     "EFX": {
       "high": 178.44,
       "low": 175.74,
@@ -73216,6 +73221,11 @@
       "low": 104.34,
       "width": 1.91
     },
+    "STT": {
+      "high": 188.5,
+      "low": 187.11,
+      "width": 1.39
+    },
     "STLD": {
       "high": 266.21,
       "low": 261.06,
@@ -73280,11 +73290,6 @@
       "high": 149.74,
       "low": 147.7724,
       "width": 1.9676
-    },
-    "TEL": {
-      "high": 218.595,
-      "low": 215.46,
-      "width": 3.135
     },
     "TDY": {
       "high": 692.97,
@@ -73643,7 +73648,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 95999.7
+    "2026-08-06": 96009.67
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -148744,6 +148749,15 @@
       ],
       "portfolio_value": 95999.7,
       "note": "$96,000 | cash=$14,800 | open=54 | closed today=45 | day PnL=$-306"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "12:25 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 96009.67,
+      "note": "$96,010 | cash=$14,800 | open=54 | closed today=45 | day PnL=$-306"
     }
   ]
 }
