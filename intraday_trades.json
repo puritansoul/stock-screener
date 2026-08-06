@@ -372,9 +372,9 @@
       "entry_time": "11:14 ET",
       "entry_price": 187.69,
       "shares": 1,
-      "stop": 185.4105,
+      "stop": 185.8305,
       "trail_dist": 2.9295,
-      "peak": 188.34,
+      "peak": 188.76,
       "orb_width": 5.8589,
       "cost": 187.69,
       "vol_ratio": 1.55
@@ -694,9 +694,9 @@
       "entry_time": "13:42 ET",
       "entry_price": 204.94,
       "shares": 2,
-      "stop": 206.41,
+      "stop": 206.33,
       "trail_dist": 1.63,
-      "peak": 204.78,
+      "peak": 204.7,
       "orb_width": 3.26,
       "cost": 409.88,
       "vol_ratio": 3.4
@@ -708,9 +708,9 @@
       "entry_time": "13:44 ET",
       "entry_price": 155.72,
       "shares": 3,
-      "stop": 154.4175,
+      "stop": 154.7025,
       "trail_dist": 1.4225,
-      "peak": 155.84,
+      "peak": 156.125,
       "orb_width": 2.845,
       "cost": 467.16,
       "vol_ratio": 12.24
@@ -722,9 +722,9 @@
       "entry_time": "13:47 ET",
       "entry_price": 146.64,
       "shares": 7,
-      "stop": 147.6238,
+      "stop": 147.4938,
       "trail_dist": 0.9838,
-      "peak": 146.64,
+      "peak": 146.51,
       "orb_width": 1.9676,
       "cost": 1026.48,
       "vol_ratio": 2.99
@@ -736,9 +736,9 @@
       "entry_time": "13:47 ET",
       "entry_price": 17.7829,
       "shares": 41,
-      "stop": 18.0354,
+      "stop": 17.9975,
       "trail_dist": 0.2525,
-      "peak": 17.7829,
+      "peak": 17.745,
       "orb_width": 0.505,
       "cost": 729.1,
       "vol_ratio": 1.5
@@ -71902,11 +71902,6 @@
       "low": 352.13,
       "width": 4.72
     },
-    "CHD": {
-      "high": 104.31,
-      "low": 102.9,
-      "width": 1.41
-    },
     "CIEN": {
       "high": 413.19,
       "low": 390.5623,
@@ -72091,11 +72086,6 @@
       "high": 243.0,
       "low": 225.26,
       "width": 17.74
-    },
-    "DVA": {
-      "high": 188.2381,
-      "low": 183.3625,
-      "width": 4.8756
     },
     "DECK": {
       "high": 99.47,
@@ -72336,11 +72326,6 @@
       "high": 278.905,
       "low": 272.0,
       "width": 6.905
-    },
-    "FICO": {
-      "high": 1087.28,
-      "low": 1061.37,
-      "width": 25.91
     },
     "FAST": {
       "high": 50.86,
@@ -73357,6 +73342,11 @@
       "low": 206.09,
       "width": 3.48
     },
+    "RMD": {
+      "high": 226.09,
+      "low": 222.56,
+      "width": 3.53
+    },
     "RVTY": {
       "high": 115.0,
       "low": 112.34,
@@ -73592,6 +73582,11 @@
       "low": 88.095,
       "width": 1.515
     },
+    "TMO": {
+      "high": 578.48,
+      "low": 569.63,
+      "width": 8.85
+    },
     "TJX": {
       "high": 161.85,
       "low": 160.01,
@@ -73797,11 +73792,6 @@
       "low": 26.18,
       "width": 0.32
     },
-    "WM": {
-      "high": 228.07,
-      "low": 223.86,
-      "width": 4.21
-    },
     "WAT": {
       "high": 400.0,
       "low": 388.74,
@@ -73914,7 +73904,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 96098.93
+    "2026-08-06": 96106.37
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -149562,6 +149552,15 @@
       ],
       "portfolio_value": 96098.93,
       "note": "$96,099 | cash=$1,711 | open=53 | closed today=60 | day PnL=$-319"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "13:49 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 96106.37,
+      "note": "$96,106 | cash=$1,711 | open=53 | closed today=60 | day PnL=$-319"
     }
   ]
 }
