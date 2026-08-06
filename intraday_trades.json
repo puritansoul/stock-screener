@@ -1,20 +1,6 @@
 {
-  "capital": 8119.54,
+  "capital": 19871.87,
   "open_positions": [
-    {
-      "ticker": "ROL",
-      "side": "short",
-      "entry_date": "2026-08-06",
-      "entry_time": "10:12 ET",
-      "entry_price": 37.02,
-      "shares": 188,
-      "stop": 36.6475,
-      "trail_dist": 0.3025,
-      "peak": 36.345,
-      "orb_width": 0.605,
-      "cost": 6959.76,
-      "vol_ratio": 1.56
-    },
     {
       "ticker": "SO",
       "side": "short",
@@ -436,20 +422,6 @@
       "vol_ratio": 6.31
     },
     {
-      "ticker": "WY",
-      "side": "short",
-      "entry_date": "2026-08-06",
-      "entry_time": "12:03 ET",
-      "entry_price": 25.46,
-      "shares": 186,
-      "stop": 25.53,
-      "trail_dist": 0.245,
-      "peak": 25.285,
-      "orb_width": 0.49,
-      "cost": 4735.56,
-      "vol_ratio": 1.23
-    },
-    {
       "ticker": "KVUE",
       "side": "short",
       "entry_date": "2026-08-06",
@@ -638,9 +610,9 @@
       "entry_time": "13:59 ET",
       "entry_price": 241.94,
       "shares": 4,
-      "stop": 242.2475,
+      "stop": 241.9516,
       "trail_dist": 1.48,
-      "peak": 240.7675,
+      "peak": 240.4716,
       "orb_width": 2.9599,
       "cost": 967.76,
       "vol_ratio": 3.75
@@ -1938,6 +1910,44 @@
       "pnl": 0.27,
       "exit_reason": "trailing stop",
       "exit_time": "14:36 ET"
+    },
+    {
+      "ticker": "ROL",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "10:12 ET",
+      "entry_price": 37.02,
+      "shares": 188,
+      "stop": 36.6475,
+      "trail_dist": 0.3025,
+      "peak": 36.345,
+      "orb_width": 0.605,
+      "cost": 6959.76,
+      "vol_ratio": 1.56,
+      "exit_date": "2026-08-06",
+      "exit_price": 36.6475,
+      "pnl": 70.03,
+      "exit_reason": "trailing stop",
+      "exit_time": "14:39 ET"
+    },
+    {
+      "ticker": "WY",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "12:03 ET",
+      "entry_price": 25.46,
+      "shares": 186,
+      "stop": 25.53,
+      "trail_dist": 0.245,
+      "peak": 25.285,
+      "orb_width": 0.49,
+      "cost": 4735.56,
+      "vol_ratio": 1.23,
+      "exit_date": "2026-08-06",
+      "exit_price": 25.53,
+      "pnl": -13.02,
+      "exit_reason": "trailing stop",
+      "exit_time": "14:39 ET"
     }
   ],
   "all_closed": [
@@ -73978,7 +73988,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 95987.73
+    "2026-08-06": 95968.61
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -149804,6 +149814,30 @@
       ],
       "portfolio_value": 95987.73,
       "note": "$95,988 | cash=$8,120 | open=46 | closed today=68 | day PnL=$-339"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "14:38 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "ROL",
+          "side": "short",
+          "exit_price": 36.65,
+          "pnl": 70.03,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "WY",
+          "side": "short",
+          "exit_price": 25.53,
+          "pnl": -13.02,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95968.61,
+      "note": "$95,969 | cash=$19,872 | open=44 | closed today=70 | day PnL=$-282"
     }
   ]
 }
