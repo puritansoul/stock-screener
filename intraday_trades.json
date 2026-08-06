@@ -1,5 +1,5 @@
 {
-  "capital": 7424.55,
+  "capital": 8626.92,
   "open_positions": [
     {
       "ticker": "SO",
@@ -156,20 +156,6 @@
       "vol_ratio": 1.94
     },
     {
-      "ticker": "IRM",
-      "side": "short",
-      "entry_date": "2026-08-06",
-      "entry_time": "10:54 ET",
-      "entry_price": 123.43,
-      "shares": 1,
-      "stop": 123.2762,
-      "trail_dist": 1.7962,
-      "peak": 121.48,
-      "orb_width": 3.5925,
-      "cost": 123.43,
-      "vol_ratio": 3.39
-    },
-    {
       "ticker": "FITB",
       "side": "short",
       "entry_date": "2026-08-06",
@@ -288,9 +274,9 @@
       "entry_time": "11:19 ET",
       "entry_price": 22.8601,
       "shares": 28,
-      "stop": 22.825,
+      "stop": 22.81,
       "trail_dist": 0.13,
-      "peak": 22.695,
+      "peak": 22.68,
       "orb_width": 0.26,
       "cost": 640.08,
       "vol_ratio": 1.32
@@ -322,20 +308,6 @@
       "orb_width": 0.87,
       "cost": 6688.86,
       "vol_ratio": 7.51
-    },
-    {
-      "ticker": "MMM",
-      "side": "short",
-      "entry_date": "2026-08-06",
-      "entry_time": "11:34 ET",
-      "entry_price": 180.1587,
-      "shares": 26,
-      "stop": 180.295,
-      "trail_dist": 0.825,
-      "peak": 179.47,
-      "orb_width": 1.65,
-      "cost": 4684.13,
-      "vol_ratio": 5.32
     },
     {
       "ticker": "LLY",
@@ -526,9 +498,9 @@
       "entry_time": "13:47 ET",
       "entry_price": 17.7829,
       "shares": 41,
-      "stop": 17.7975,
+      "stop": 17.7775,
       "trail_dist": 0.2525,
-      "peak": 17.545,
+      "peak": 17.525,
       "orb_width": 0.505,
       "cost": 729.1,
       "vol_ratio": 1.5
@@ -554,9 +526,9 @@
       "entry_time": "14:49 ET",
       "entry_price": 183.87,
       "shares": 32,
-      "stop": 184.4675,
+      "stop": 184.4475,
       "trail_dist": 0.8975,
-      "peak": 183.57,
+      "peak": 183.55,
       "orb_width": 1.795,
       "cost": 5883.84,
       "vol_ratio": 11.91
@@ -568,9 +540,9 @@
       "entry_time": "14:49 ET",
       "entry_price": 215.59,
       "shares": 19,
-      "stop": 217.0608,
+      "stop": 216.8908,
       "trail_dist": 1.8308,
-      "peak": 215.23,
+      "peak": 215.06,
       "orb_width": 3.6615,
       "cost": 4096.21,
       "vol_ratio": 4.99
@@ -582,9 +554,9 @@
       "entry_time": "14:49 ET",
       "entry_price": 274.02,
       "shares": 10,
-      "stop": 272.55,
+      "stop": 273.13,
       "trail_dist": 2.22,
-      "peak": 274.77,
+      "peak": 275.35,
       "orb_width": 4.44,
       "cost": 2740.2,
       "vol_ratio": 1.93
@@ -596,12 +568,26 @@
       "entry_time": "15:01 ET",
       "entry_price": 115.89,
       "shares": 27,
-      "stop": 114.415,
+      "stop": 114.5,
       "trail_dist": 1.475,
-      "peak": 115.89,
+      "peak": 115.975,
       "orb_width": 2.95,
       "cost": 3129.03,
       "vol_ratio": 1.77
+    },
+    {
+      "ticker": "DVA",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "15:04 ET",
+      "entry_price": 180.09,
+      "shares": 20,
+      "stop": 182.5278,
+      "trail_dist": 2.4378,
+      "peak": 180.09,
+      "orb_width": 4.8756,
+      "cost": 3601.8,
+      "vol_ratio": 8.11
     }
   ],
   "closed_today": [
@@ -2029,6 +2015,44 @@
       "pnl": 0.17,
       "exit_reason": "trailing stop",
       "exit_time": "15:01 ET"
+    },
+    {
+      "ticker": "IRM",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "10:54 ET",
+      "entry_price": 123.43,
+      "shares": 1,
+      "stop": 123.2762,
+      "trail_dist": 1.7962,
+      "peak": 121.48,
+      "orb_width": 3.5925,
+      "cost": 123.43,
+      "vol_ratio": 3.39,
+      "exit_date": "2026-08-06",
+      "exit_price": 123.2762,
+      "pnl": 0.15,
+      "exit_reason": "trailing stop",
+      "exit_time": "15:04 ET"
+    },
+    {
+      "ticker": "MMM",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "11:34 ET",
+      "entry_price": 180.1587,
+      "shares": 26,
+      "stop": 180.295,
+      "trail_dist": 0.825,
+      "peak": 179.47,
+      "orb_width": 1.65,
+      "cost": 4684.13,
+      "vol_ratio": 5.32,
+      "exit_date": "2026-08-06",
+      "exit_price": 180.295,
+      "pnl": -3.54,
+      "exit_reason": "trailing stop",
+      "exit_time": "15:04 ET"
     }
   ],
   "all_closed": [
@@ -72587,6 +72611,11 @@
       "low": 178.75,
       "width": 5.61
     },
+    "GE": {
+      "high": 388.84,
+      "low": 382.93,
+      "width": 5.91
+    },
     "GEHC": {
       "high": 71.0,
       "low": 69.9,
@@ -72626,6 +72655,11 @@
       "high": 132.34,
       "low": 131.15,
       "width": 1.19
+    },
+    "GILD": {
+      "high": 134.48,
+      "low": 131.94,
+      "width": 2.54
     },
     "GPN": {
       "high": 87.53,
@@ -72837,11 +72871,6 @@
       "low": 123.9925,
       "width": 3.5925
     },
-    "JBHT": {
-      "high": 275.09,
-      "low": 267.895,
-      "width": 7.195
-    },
     "JBL": {
       "high": 345.24,
       "low": 334.45,
@@ -72896,6 +72925,11 @@
       "high": 112.69,
       "low": 110.32,
       "width": 2.37
+    },
+    "KIM": {
+      "high": 25.2,
+      "low": 24.67,
+      "width": 0.53
     },
     "KMI": {
       "high": 31.64,
@@ -74054,7 +74088,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 95953.15
+    "2026-08-06": 95992.59
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -150059,6 +150093,39 @@
       ],
       "portfolio_value": 95953.15,
       "note": "$95,953 | cash=$7,425 | open=43 | closed today=75 | day PnL=$-277"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "15:03 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "DVA",
+          "side": "short",
+          "price": 180.09,
+          "shares": 20,
+          "stop": 182.53,
+          "trail_dist": 2.4378
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "IRM",
+          "side": "short",
+          "exit_price": 123.28,
+          "pnl": 0.15,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "MMM",
+          "side": "short",
+          "exit_price": 180.29,
+          "pnl": -3.54,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95992.59,
+      "note": "$95,993 | cash=$8,627 | open=42 | closed today=77 | day PnL=$-280"
     }
   ]
 }
