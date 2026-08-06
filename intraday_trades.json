@@ -260,9 +260,9 @@
       "entry_time": "10:54 ET",
       "entry_price": 55.5,
       "shares": 1,
-      "stop": 55.5225,
+      "stop": 55.6225,
       "trail_dist": 1.0075,
-      "peak": 56.53,
+      "peak": 56.63,
       "orb_width": 2.015,
       "cost": 55.5,
       "vol_ratio": 1.35
@@ -610,9 +610,9 @@
       "entry_time": "13:24 ET",
       "entry_price": 25.115,
       "shares": 64,
-      "stop": 25.0149,
+      "stop": 25.025,
       "trail_dist": 0.165,
-      "peak": 25.1799,
+      "peak": 25.19,
       "orb_width": 0.33,
       "cost": 1607.36,
       "vol_ratio": 6.41
@@ -694,9 +694,9 @@
       "entry_time": "13:44 ET",
       "entry_price": 155.72,
       "shares": 3,
-      "stop": 154.9875,
+      "stop": 155.2275,
       "trail_dist": 1.4225,
-      "peak": 156.41,
+      "peak": 156.65,
       "orb_width": 2.845,
       "cost": 467.16,
       "vol_ratio": 12.24
@@ -72456,6 +72456,11 @@
       "low": 302.23,
       "width": 5.14
     },
+    "IT": {
+      "high": 184.36,
+      "low": 178.75,
+      "width": 5.61
+    },
     "GE": {
       "high": 388.84,
       "low": 382.93,
@@ -72535,6 +72540,11 @@
       "high": 145.04,
       "low": 143.72,
       "width": 1.32
+    },
+    "HAS": {
+      "high": 92.28,
+      "low": 90.56,
+      "width": 1.72
     },
     "HCA": {
       "high": 415.73,
@@ -73933,7 +73943,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 96066.49
+    "2026-08-06": 96035.02
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -149652,6 +149662,15 @@
       "exits": [],
       "portfolio_value": 96066.49,
       "note": "$96,066 | cash=$2,849 | open=53 | closed today=61 | day PnL=$-329"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "14:03 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 96035.02,
+      "note": "$96,035 | cash=$2,849 | open=53 | closed today=61 | day PnL=$-329"
     }
   ]
 }
