@@ -1,5 +1,5 @@
 {
-  "capital": 11124.64,
+  "capital": 12173.87,
   "open_positions": [
     {
       "ticker": "ROL",
@@ -8,9 +8,9 @@
       "entry_time": "10:12 ET",
       "entry_price": 37.02,
       "shares": 188,
-      "stop": 37.0525,
+      "stop": 37.0025,
       "trail_dist": 0.3025,
-      "peak": 36.75,
+      "peak": 36.7,
       "orb_width": 0.605,
       "cost": 6959.76,
       "vol_ratio": 1.56
@@ -106,9 +106,9 @@
       "entry_time": "10:17 ET",
       "entry_price": 67.63,
       "shares": 1,
-      "stop": 67.8775,
+      "stop": 67.8625,
       "trail_dist": 0.6525,
-      "peak": 67.225,
+      "peak": 67.21,
       "orb_width": 1.305,
       "cost": 67.63,
       "vol_ratio": 1.24
@@ -232,9 +232,9 @@
       "entry_time": "10:49 ET",
       "entry_price": 160.24,
       "shares": 1,
-      "stop": 158.71,
+      "stop": 158.665,
       "trail_dist": 1.515,
-      "peak": 157.195,
+      "peak": 157.15,
       "orb_width": 3.03,
       "cost": 160.24,
       "vol_ratio": 2.11
@@ -288,9 +288,9 @@
       "entry_time": "10:52 ET",
       "entry_price": 86.85,
       "shares": 5,
-      "stop": 87.2875,
+      "stop": 87.2776,
       "trail_dist": 0.9975,
-      "peak": 86.29,
+      "peak": 86.2801,
       "orb_width": 1.995,
       "cost": 434.25,
       "vol_ratio": 1.94
@@ -330,9 +330,9 @@
       "entry_time": "10:54 ET",
       "entry_price": 148.51,
       "shares": 1,
-      "stop": 149.91,
+      "stop": 149.77,
       "trail_dist": 1.91,
-      "peak": 148.0,
+      "peak": 147.86,
       "orb_width": 3.82,
       "cost": 148.51,
       "vol_ratio": 1.78
@@ -372,9 +372,9 @@
       "entry_time": "10:54 ET",
       "entry_price": 55.5,
       "shares": 1,
-      "stop": 55.2625,
+      "stop": 55.3125,
       "trail_dist": 1.0075,
-      "peak": 56.27,
+      "peak": 56.32,
       "orb_width": 2.015,
       "cost": 55.5,
       "vol_ratio": 1.35
@@ -428,9 +428,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 141.05,
       "shares": 1,
-      "stop": 141.2575,
+      "stop": 141.2975,
       "trail_dist": 1.0625,
-      "peak": 142.32,
+      "peak": 142.36,
       "orb_width": 2.125,
       "cost": 141.05,
       "vol_ratio": 1.33
@@ -694,9 +694,9 @@
       "entry_time": "11:21 ET",
       "entry_price": 93.71,
       "shares": 2,
-      "stop": 94.108,
+      "stop": 93.988,
       "trail_dist": 0.738,
-      "peak": 93.37,
+      "peak": 93.25,
       "orb_width": 1.476,
       "cost": 187.42,
       "vol_ratio": 1.84
@@ -786,32 +786,32 @@
       "vol_ratio": 6.31
     },
     {
-      "ticker": "UAL",
-      "side": "short",
-      "entry_date": "2026-08-06",
-      "entry_time": "11:58 ET",
-      "entry_price": 130.295,
-      "shares": 48,
-      "stop": 130.585,
-      "trail_dist": 0.495,
-      "peak": 130.09,
-      "orb_width": 0.99,
-      "cost": 6254.16,
-      "vol_ratio": 10.95
-    },
-    {
       "ticker": "WY",
       "side": "short",
       "entry_date": "2026-08-06",
       "entry_time": "12:03 ET",
       "entry_price": 25.46,
       "shares": 186,
-      "stop": 25.705,
+      "stop": 25.685,
       "trail_dist": 0.245,
-      "peak": 25.46,
+      "peak": 25.44,
       "orb_width": 0.49,
       "cost": 4735.56,
       "vol_ratio": 1.23
+    },
+    {
+      "ticker": "KVUE",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "12:08 ET",
+      "entry_price": 19.155,
+      "shares": 271,
+      "stop": 19.355,
+      "trail_dist": 0.2,
+      "peak": 19.155,
+      "orb_width": 0.4,
+      "cost": 5191.01,
+      "vol_ratio": 22.38
     }
   ],
   "closed_today": [
@@ -1574,6 +1574,25 @@
       "pnl": -6.96,
       "exit_reason": "trailing stop",
       "exit_time": "12:03 ET"
+    },
+    {
+      "ticker": "UAL",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "11:58 ET",
+      "entry_price": 130.295,
+      "shares": 48,
+      "stop": 130.585,
+      "trail_dist": 0.495,
+      "peak": 130.09,
+      "orb_width": 0.99,
+      "cost": 6254.16,
+      "vol_ratio": 10.95,
+      "exit_date": "2026-08-06",
+      "exit_price": 130.585,
+      "pnl": -13.92,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:08 ET"
     }
   ],
   "all_closed": [
@@ -73287,6 +73306,11 @@
       "low": 88.095,
       "width": 1.515
     },
+    "TMO": {
+      "high": 578.48,
+      "low": 569.63,
+      "width": 8.85
+    },
     "TJX": {
       "high": 161.85,
       "low": 160.01,
@@ -73609,7 +73633,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 96080.14
+    "2026-08-06": 96083.52
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -148599,6 +148623,32 @@
       "exits": [],
       "portfolio_value": 96080.14,
       "note": "$96,080 | cash=$11,125 | open=58 | closed today=40 | day PnL=$-285"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "12:08 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "KVUE",
+          "side": "short",
+          "price": 19.16,
+          "shares": 271,
+          "stop": 19.36,
+          "trail_dist": 0.2
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "UAL",
+          "side": "short",
+          "exit_price": 130.59,
+          "pnl": -13.92,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96083.52,
+      "note": "$96,084 | cash=$12,174 | open=58 | closed today=41 | day PnL=$-299"
     }
   ]
 }
