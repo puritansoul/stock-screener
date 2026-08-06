@@ -92,9 +92,9 @@
       "entry_time": "10:17 ET",
       "entry_price": 67.63,
       "shares": 1,
-      "stop": 67.8525,
+      "stop": 67.7825,
       "trail_dist": 0.6525,
-      "peak": 67.2,
+      "peak": 67.13,
       "orb_width": 1.305,
       "cost": 67.63,
       "vol_ratio": 1.24
@@ -246,9 +246,9 @@
       "entry_time": "10:54 ET",
       "entry_price": 123.43,
       "shares": 1,
-      "stop": 124.3162,
+      "stop": 124.2562,
       "trail_dist": 1.7962,
-      "peak": 122.52,
+      "peak": 122.46,
       "orb_width": 3.5925,
       "cost": 123.43,
       "vol_ratio": 3.39
@@ -288,9 +288,9 @@
       "entry_time": "10:54 ET",
       "entry_price": 104.345,
       "shares": 1,
-      "stop": 103.73,
+      "stop": 103.59,
       "trail_dist": 0.71,
-      "peak": 103.02,
+      "peak": 102.88,
       "orb_width": 1.42,
       "cost": 104.35,
       "vol_ratio": 1.39
@@ -358,9 +358,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 70.125,
       "shares": 1,
-      "stop": 69.6874,
+      "stop": 69.7024,
       "trail_dist": 0.4976,
-      "peak": 70.185,
+      "peak": 70.2,
       "orb_width": 0.9953,
       "cost": 70.12,
       "vol_ratio": 1.26
@@ -372,9 +372,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 16.995,
       "shares": 5,
-      "stop": 17.1909,
+      "stop": 17.1809,
       "trail_dist": 0.2059,
-      "peak": 16.985,
+      "peak": 16.975,
       "orb_width": 0.4119,
       "cost": 84.98,
       "vol_ratio": 1.24
@@ -72071,11 +72071,6 @@
       "low": 149.59,
       "width": 3.01
     },
-    "XOM": {
-      "high": 154.22,
-      "low": 151.84,
-      "width": 2.38
-    },
     "FFIV": {
       "high": 414.665,
       "low": 404.0,
@@ -72141,6 +72136,11 @@
       "low": 49.6,
       "width": 2.19
     },
+    "FLEX": {
+      "high": 122.35,
+      "low": 117.5576,
+      "width": 4.7924
+    },
     "F": {
       "high": 14.16,
       "low": 13.97,
@@ -72195,6 +72195,11 @@
       "high": 71.0,
       "low": 69.9,
       "width": 1.1
+    },
+    "GEV": {
+      "high": 1031.59,
+      "low": 1007.0,
+      "width": 24.59
     },
     "GEN": {
       "high": 27.66,
@@ -72350,11 +72355,6 @@
       "high": 323.91,
       "low": 319.72,
       "width": 4.19
-    },
-    "IBM": {
-      "high": 233.12,
-      "low": 228.44,
-      "width": 4.68
     },
     "IEX": {
       "high": 238.005,
@@ -72835,6 +72835,11 @@
       "high": 20.1,
       "low": 19.88,
       "width": 0.22
+    },
+    "NRG": {
+      "high": 122.97,
+      "low": 120.0,
+      "width": 2.97
     },
     "NUE": {
       "high": 274.74,
@@ -73658,7 +73663,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 95979.66
+    "2026-08-06": 96028.71
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -148825,6 +148830,15 @@
       ],
       "portfolio_value": 95979.66,
       "note": "$95,980 | cash=$18,640 | open=50 | closed today=49 | day PnL=$-317"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "12:35 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 96028.71,
+      "note": "$96,029 | cash=$18,640 | open=50 | closed today=49 | day PnL=$-317"
     }
   ]
 }
