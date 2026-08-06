@@ -1,5 +1,5 @@
 {
-  "capital": 5387.0,
+  "capital": 2773.65,
   "open_positions": [
     {
       "ticker": "SO",
@@ -22,9 +22,9 @@
       "entry_time": "10:15 ET",
       "entry_price": 110.985,
       "shares": 15,
-      "stop": 111.435,
+      "stop": 111.395,
       "trail_dist": 0.935,
-      "peak": 110.5,
+      "peak": 110.46,
       "orb_width": 1.87,
       "cost": 1664.78,
       "vol_ratio": 1.79
@@ -36,9 +36,9 @@
       "entry_time": "10:17 ET",
       "entry_price": 24.575,
       "shares": 5,
-      "stop": 24.71,
+      "stop": 24.7,
       "trail_dist": 0.265,
-      "peak": 24.445,
+      "peak": 24.435,
       "orb_width": 0.53,
       "cost": 122.88,
       "vol_ratio": 1.36
@@ -176,9 +176,9 @@
       "entry_time": "10:54 ET",
       "entry_price": 55.5,
       "shares": 1,
-      "stop": 55.8375,
+      "stop": 55.9525,
       "trail_dist": 1.0075,
-      "peak": 56.845,
+      "peak": 56.96,
       "orb_width": 2.015,
       "cost": 55.5,
       "vol_ratio": 1.35
@@ -330,9 +330,9 @@
       "entry_time": "12:08 ET",
       "entry_price": 19.155,
       "shares": 271,
-      "stop": 19.225,
+      "stop": 19.215,
       "trail_dist": 0.2,
-      "peak": 19.025,
+      "peak": 19.015,
       "orb_width": 0.4,
       "cost": 5191.01,
       "vol_ratio": 22.38
@@ -400,9 +400,9 @@
       "entry_time": "13:27 ET",
       "entry_price": 482.04,
       "shares": 2,
-      "stop": 481.2949,
+      "stop": 481.0324,
       "trail_dist": 2.1099,
-      "peak": 479.185,
+      "peak": 478.9225,
       "orb_width": 4.2199,
       "cost": 964.08,
       "vol_ratio": 2.72
@@ -428,9 +428,9 @@
       "entry_time": "13:34 ET",
       "entry_price": 47.305,
       "shares": 13,
-      "stop": 47.235,
+      "stop": 47.225,
       "trail_dist": 0.215,
-      "peak": 47.02,
+      "peak": 47.01,
       "orb_width": 0.43,
       "cost": 614.97,
       "vol_ratio": 7.61
@@ -582,12 +582,40 @@
       "entry_time": "15:38 ET",
       "entry_price": 103.015,
       "shares": 21,
-      "stop": 103.725,
+      "stop": 103.6,
       "trail_dist": 0.71,
-      "peak": 103.015,
+      "peak": 102.89,
       "orb_width": 1.42,
       "cost": 2163.31,
       "vol_ratio": 10.78
+    },
+    {
+      "ticker": "MO",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "15:42 ET",
+      "entry_price": 67.8499,
+      "shares": 23,
+      "stop": 68.2599,
+      "trail_dist": 0.41,
+      "peak": 67.8499,
+      "orb_width": 0.82,
+      "cost": 1560.55,
+      "vol_ratio": 5.82
+    },
+    {
+      "ticker": "ABNB",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "15:42 ET",
+      "entry_price": 150.4,
+      "shares": 7,
+      "stop": 151.595,
+      "trail_dist": 1.195,
+      "peak": 150.4,
+      "orb_width": 2.39,
+      "cost": 1052.8,
+      "vol_ratio": 5.48
     }
   ],
   "closed_today": [
@@ -73127,11 +73155,6 @@
       "low": 294.1881,
       "width": 9.1419
     },
-    "MAR": {
-      "high": 364.74,
-      "low": 359.84,
-      "width": 4.9
-    },
     "MRSH": {
       "high": 193.38,
       "low": 190.805,
@@ -74169,7 +74192,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 96064.2
+    "2026-08-06": 96085.7
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -150401,6 +150424,32 @@
       "exits": [],
       "portfolio_value": 96064.2,
       "note": "$96,064 | cash=$5,387 | open=42 | closed today=81 | day PnL=$-302"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "15:41 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "MO",
+          "side": "short",
+          "price": 67.85,
+          "shares": 23,
+          "stop": 68.26,
+          "trail_dist": 0.41
+        },
+        {
+          "ticker": "ABNB",
+          "side": "short",
+          "price": 150.4,
+          "shares": 7,
+          "stop": 151.59,
+          "trail_dist": 1.195
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 96085.7,
+      "note": "$96,086 | cash=$2,774 | open=44 | closed today=81 | day PnL=$-302"
     }
   ]
 }
