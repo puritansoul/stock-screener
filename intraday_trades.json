@@ -1,5 +1,5 @@
 {
-  "capital": 8626.92,
+  "capital": 10739.7,
   "open_positions": [
     {
       "ticker": "SO",
@@ -274,9 +274,9 @@
       "entry_time": "11:19 ET",
       "entry_price": 22.8601,
       "shares": 28,
-      "stop": 22.81,
+      "stop": 22.8,
       "trail_dist": 0.13,
-      "peak": 22.68,
+      "peak": 22.67,
       "orb_width": 0.26,
       "cost": 640.08,
       "vol_ratio": 1.32
@@ -294,20 +294,6 @@
       "orb_width": 7.9,
       "cost": 394.32,
       "vol_ratio": 1.31
-    },
-    {
-      "ticker": "EXC",
-      "side": "short",
-      "entry_date": "2026-08-06",
-      "entry_time": "11:34 ET",
-      "entry_price": 45.195,
-      "shares": 148,
-      "stop": 45.36,
-      "trail_dist": 0.435,
-      "peak": 44.925,
-      "orb_width": 0.87,
-      "cost": 6688.86,
-      "vol_ratio": 7.51
     },
     {
       "ticker": "LLY",
@@ -414,9 +400,9 @@
       "entry_time": "13:27 ET",
       "entry_price": 482.04,
       "shares": 2,
-      "stop": 483.0299,
+      "stop": 482.9099,
       "trail_dist": 2.1099,
-      "peak": 480.92,
+      "peak": 480.8,
       "orb_width": 4.2199,
       "cost": 964.08,
       "vol_ratio": 2.72
@@ -540,9 +526,9 @@
       "entry_time": "14:49 ET",
       "entry_price": 215.59,
       "shares": 19,
-      "stop": 216.8908,
+      "stop": 216.8708,
       "trail_dist": 1.8308,
-      "peak": 215.06,
+      "peak": 215.04,
       "orb_width": 3.6615,
       "cost": 4096.21,
       "vol_ratio": 4.99
@@ -554,9 +540,9 @@
       "entry_time": "14:49 ET",
       "entry_price": 274.02,
       "shares": 10,
-      "stop": 273.13,
+      "stop": 273.43,
       "trail_dist": 2.22,
-      "peak": 275.35,
+      "peak": 275.65,
       "orb_width": 4.44,
       "cost": 2740.2,
       "vol_ratio": 1.93
@@ -588,6 +574,20 @@
       "orb_width": 4.8756,
       "cost": 3601.8,
       "vol_ratio": 8.11
+    },
+    {
+      "ticker": "NKE",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "15:06 ET",
+      "entry_price": 42.145,
+      "shares": 108,
+      "stop": 42.355,
+      "trail_dist": 0.21,
+      "peak": 42.145,
+      "orb_width": 0.42,
+      "cost": 4551.66,
+      "vol_ratio": 2.3
     }
   ],
   "closed_today": [
@@ -2053,6 +2053,25 @@
       "pnl": -3.54,
       "exit_reason": "trailing stop",
       "exit_time": "15:04 ET"
+    },
+    {
+      "ticker": "EXC",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "11:34 ET",
+      "entry_price": 45.195,
+      "shares": 148,
+      "stop": 45.36,
+      "trail_dist": 0.435,
+      "peak": 44.925,
+      "orb_width": 0.87,
+      "cost": 6688.86,
+      "vol_ratio": 7.51,
+      "exit_date": "2026-08-06",
+      "exit_price": 45.36,
+      "pnl": -24.42,
+      "exit_reason": "trailing stop",
+      "exit_time": "15:06 ET"
     }
   ],
   "all_closed": [
@@ -71771,11 +71790,6 @@
       "low": 98.93,
       "width": 1.46
     },
-    "ADM": {
-      "high": 79.37,
-      "low": 77.99,
-      "width": 1.38
-    },
     "ARES": {
       "high": 139.96,
       "low": 137.69,
@@ -72871,6 +72885,11 @@
       "low": 123.9925,
       "width": 3.5925
     },
+    "JBHT": {
+      "high": 275.09,
+      "low": 267.895,
+      "width": 7.195
+    },
     "JBL": {
       "high": 345.24,
       "low": 334.45,
@@ -73016,11 +73035,6 @@
       "low": 115.2,
       "width": 1.695
     },
-    "LOW": {
-      "high": 220.06,
-      "low": 217.29,
-      "width": 2.77
-    },
     "LULU": {
       "high": 125.38,
       "low": 122.01,
@@ -73105,11 +73119,6 @@
       "high": 595.31,
       "low": 585.995,
       "width": 9.315
-    },
-    "MET": {
-      "high": 100.93,
-      "low": 98.13,
-      "width": 2.8
     },
     "MTD": {
       "high": 1423.14,
@@ -74088,7 +74097,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 95992.59
+    "2026-08-06": 95956.11
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -150126,6 +150135,32 @@
       ],
       "portfolio_value": 95992.59,
       "note": "$95,993 | cash=$8,627 | open=42 | closed today=77 | day PnL=$-280"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "15:06 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "NKE",
+          "side": "short",
+          "price": 42.15,
+          "shares": 108,
+          "stop": 42.36,
+          "trail_dist": 0.21
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "EXC",
+          "side": "short",
+          "exit_price": 45.36,
+          "pnl": -24.42,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95956.11,
+      "note": "$95,956 | cash=$10,740 | open=42 | closed today=78 | day PnL=$-305"
     }
   ]
 }
