@@ -1,5 +1,5 @@
 {
-  "capital": 6545.36,
+  "capital": 6576.05,
   "open_positions": [
     {
       "ticker": "ROL",
@@ -184,29 +184,15 @@
       "vol_ratio": 1.48
     },
     {
-      "ticker": "DOW",
-      "side": "long",
-      "entry_date": "2026-08-06",
-      "entry_time": "10:49 ET",
-      "entry_price": 30.415,
-      "shares": 1,
-      "stop": 30.6841,
-      "trail_dist": 0.2159,
-      "peak": 30.9,
-      "orb_width": 0.4318,
-      "cost": 30.42,
-      "vol_ratio": 1.25
-    },
-    {
       "ticker": "IBKR",
       "side": "short",
       "entry_date": "2026-08-06",
       "entry_time": "10:52 ET",
       "entry_price": 86.85,
       "shares": 5,
-      "stop": 87.1075,
+      "stop": 87.0975,
       "trail_dist": 0.9975,
-      "peak": 86.11,
+      "peak": 86.1,
       "orb_width": 1.995,
       "cost": 434.25,
       "vol_ratio": 1.94
@@ -260,9 +246,9 @@
       "entry_time": "10:54 ET",
       "entry_price": 55.5,
       "shares": 1,
-      "stop": 55.6475,
+      "stop": 55.6575,
       "trail_dist": 1.0075,
-      "peak": 56.655,
+      "peak": 56.665,
       "orb_width": 2.015,
       "cost": 55.5,
       "vol_ratio": 1.35
@@ -694,9 +680,9 @@
       "entry_time": "13:47 ET",
       "entry_price": 17.7829,
       "shares": 41,
-      "stop": 17.9925,
+      "stop": 17.9026,
       "trail_dist": 0.2525,
-      "peak": 17.74,
+      "peak": 17.6501,
       "orb_width": 0.505,
       "cost": 729.1,
       "vol_ratio": 1.5
@@ -708,9 +694,9 @@
       "entry_time": "13:59 ET",
       "entry_price": 241.94,
       "shares": 4,
-      "stop": 242.99,
+      "stop": 242.78,
       "trail_dist": 1.48,
-      "peak": 241.51,
+      "peak": 241.3,
       "orb_width": 2.9599,
       "cost": 967.76,
       "vol_ratio": 3.75
@@ -1913,6 +1899,25 @@
       "pnl": -3.5,
       "exit_reason": "trailing stop",
       "exit_time": "14:06 ET"
+    },
+    {
+      "ticker": "DOW",
+      "side": "long",
+      "entry_date": "2026-08-06",
+      "entry_time": "10:49 ET",
+      "entry_price": 30.415,
+      "shares": 1,
+      "stop": 30.6841,
+      "trail_dist": 0.2159,
+      "peak": 30.9,
+      "orb_width": 0.4318,
+      "cost": 30.42,
+      "vol_ratio": 1.25,
+      "exit_date": "2026-08-06",
+      "exit_price": 30.6841,
+      "pnl": 0.27,
+      "exit_reason": "trailing stop",
+      "exit_time": "14:09 ET"
     }
   ],
   "all_closed": [
@@ -72991,6 +72996,11 @@
       "low": 76.16,
       "width": 2.29
     },
+    "MU": {
+      "high": 878.5,
+      "low": 827.0,
+      "width": 51.5
+    },
     "MSFT": {
       "high": 497.265,
       "low": 488.525,
@@ -73948,7 +73958,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 96050.61
+    "2026-08-06": 96017.45
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -149700,6 +149710,23 @@
       ],
       "portfolio_value": 96050.61,
       "note": "$96,051 | cash=$6,545 | open=51 | closed today=63 | day PnL=$-333"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "14:08 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "DOW",
+          "side": "long",
+          "exit_price": 30.68,
+          "pnl": 0.27,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96017.45,
+      "note": "$96,017 | cash=$6,576 | open=50 | closed today=64 | day PnL=$-332"
     }
   ]
 }
