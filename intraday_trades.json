@@ -1,5 +1,5 @@
 {
-  "capital": 15014.23,
+  "capital": 15130.12,
   "open_positions": [
     {
       "ticker": "ROL",
@@ -70,20 +70,6 @@
       "orb_width": 6.48,
       "cost": 390.97,
       "vol_ratio": 1.52
-    },
-    {
-      "ticker": "INCY",
-      "side": "short",
-      "entry_date": "2026-08-06",
-      "entry_time": "10:17 ET",
-      "entry_price": 116.56,
-      "shares": 1,
-      "stop": 117.23,
-      "trail_dist": 1.42,
-      "peak": 115.81,
-      "orb_width": 2.84,
-      "cost": 116.56,
-      "vol_ratio": 1.69
     },
     {
       "ticker": "KIM",
@@ -218,9 +204,9 @@
       "entry_time": "10:42 ET",
       "entry_price": 347.69,
       "shares": 1,
-      "stop": 348.94,
+      "stop": 348.735,
       "trail_dist": 2.025,
-      "peak": 346.915,
+      "peak": 346.71,
       "orb_width": 4.05,
       "cost": 347.69,
       "vol_ratio": 1.76
@@ -246,9 +232,9 @@
       "entry_time": "10:49 ET",
       "entry_price": 160.24,
       "shares": 1,
-      "stop": 159.06,
+      "stop": 158.985,
       "trail_dist": 1.515,
-      "peak": 157.545,
+      "peak": 157.47,
       "orb_width": 3.03,
       "cost": 160.24,
       "vol_ratio": 2.11
@@ -302,9 +288,9 @@
       "entry_time": "10:49 ET",
       "entry_price": 30.415,
       "shares": 1,
-      "stop": 30.4541,
+      "stop": 30.4641,
       "trail_dist": 0.2159,
-      "peak": 30.67,
+      "peak": 30.68,
       "orb_width": 0.4318,
       "cost": 30.42,
       "vol_ratio": 1.25
@@ -456,9 +442,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 141.05,
       "shares": 1,
-      "stop": 140.9475,
+      "stop": 140.9725,
       "trail_dist": 1.0625,
-      "peak": 142.01,
+      "peak": 142.035,
       "orb_width": 2.125,
       "cost": 141.05,
       "vol_ratio": 1.33
@@ -652,9 +638,9 @@
       "entry_time": "11:16 ET",
       "entry_price": 1160.97,
       "shares": 1,
-      "stop": 1161.9251,
+      "stop": 1161.445,
       "trail_dist": 4.435,
-      "peak": 1157.4901,
+      "peak": 1157.01,
       "orb_width": 8.87,
       "cost": 1160.97,
       "vol_ratio": 1.54
@@ -680,9 +666,9 @@
       "entry_time": "11:19 ET",
       "entry_price": 188.46,
       "shares": 12,
-      "stop": 188.585,
+      "stop": 188.62,
       "trail_dist": 0.71,
-      "peak": 189.295,
+      "peak": 189.33,
       "orb_width": 1.42,
       "cost": 2261.52,
       "vol_ratio": 2.66
@@ -834,9 +820,9 @@
       "entry_time": "11:58 ET",
       "entry_price": 130.295,
       "shares": 48,
-      "stop": 130.79,
+      "stop": 130.68,
       "trail_dist": 0.495,
-      "peak": 130.295,
+      "peak": 130.185,
       "orb_width": 0.99,
       "cost": 6254.16,
       "vol_ratio": 10.95
@@ -1545,6 +1531,25 @@
       "pnl": 0.0,
       "exit_reason": "trailing stop",
       "exit_time": "11:53 ET"
+    },
+    {
+      "ticker": "INCY",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "10:17 ET",
+      "entry_price": 116.56,
+      "shares": 1,
+      "stop": 117.23,
+      "trail_dist": 1.42,
+      "peak": 115.81,
+      "orb_width": 2.84,
+      "cost": 116.56,
+      "vol_ratio": 1.69,
+      "exit_date": "2026-08-06",
+      "exit_price": 117.23,
+      "pnl": -0.67,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:01 ET"
     }
   ],
   "all_closed": [
@@ -71058,6 +71063,11 @@
       "low": 62.55,
       "width": 0.914
     },
+    "ABT": {
+      "high": 107.99,
+      "low": 106.31,
+      "width": 1.68
+    },
     "ABBV": {
       "high": 249.95,
       "low": 244.955,
@@ -72348,6 +72358,11 @@
       "low": 30.26,
       "width": 0.6332
     },
+    "IQV": {
+      "high": 236.8,
+      "low": 230.75,
+      "width": 6.05
+    },
     "IRM": {
       "high": 127.585,
       "low": 123.9925,
@@ -72402,6 +72417,11 @@
       "high": 23.29,
       "low": 23.03,
       "width": 0.26
+    },
+    "KEYS": {
+      "high": 337.97,
+      "low": 330.11,
+      "width": 7.86
     },
     "KMB": {
       "high": 112.69,
@@ -72622,11 +72642,6 @@
       "high": 137.0,
       "low": 133.665,
       "width": 3.335
-    },
-    "MRNA": {
-      "high": 58.99,
-      "low": 55.8767,
-      "width": 3.1133
     },
     "TAP": {
       "high": 44.5,
@@ -73570,7 +73585,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 96126.04
+    "2026-08-06": 96118.47
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -148501,6 +148516,23 @@
       "exits": [],
       "portfolio_value": 96126.04,
       "note": "$96,126 | cash=$15,014 | open=60 | closed today=37 | day PnL=$-276"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "12:00 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "INCY",
+          "side": "short",
+          "exit_price": 117.23,
+          "pnl": -0.67,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96118.47,
+      "note": "$96,118 | cash=$15,130 | open=59 | closed today=38 | day PnL=$-277"
     }
   ]
 }
