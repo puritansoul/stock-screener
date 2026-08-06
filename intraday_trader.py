@@ -274,18 +274,15 @@ def fetch_intraday(tickers: list[str]) -> dict[str, pd.DataFrame]:
                     df1d = raw1d.dropna(how="all") if not raw1d.empty else pd.DataFrame()
                 if df5.empty:
                     continue
-                # avg_bar_volume: use opening-hour bars (9:30–10:30) as the baseline.
-                # Comparing a breakout bar to full-day avg penalises afternoon bars when
-                # volume naturally fades — opening-hour avg is the correct reference for ORB.
-                if "Volume" in df5.columns:
-                    orb_bars = df5.between_time("09:30", "10:30")
-                    if len(orb_bars) >= 3:
-                        avg_bar_vol = float(orb_bars["Volume"].mean())
-                    elif not df1d.empty and "Volume" in df1d.columns:
-                        # fallback: daily vol / 13 bars in first hour
-                        avg_bar_vol = float(df1d["Volume"].iloc[:-1].mean()) / 13.0
-                    else:
-                        avg_bar_vol = float(df5["Volume"].mean())
+                # avg_bar_volume: use historical daily volume / 13 as the baseline.
+                # Using today's own opening-hour bars is circular — a high-volume day
+                # raises its own threshold, suppressing entries on exactly the days
+                # ORB works best.
+                if not df1d.empty and "Volume" in df1d.columns:
+                    # exclude today's incomplete daily bar (iloc[:-1])
+                    avg_bar_vol = float(df1d["Volume"].iloc[:-1].mean()) / 13.0
+                elif "Volume" in df5.columns:
+                    avg_bar_vol = float(df5["Volume"].mean()) / 13.0
                 else:
                     avg_bar_vol = 0
                 result[tk] = {"bars": df5, "avg_bar_vol": avg_bar_vol}
