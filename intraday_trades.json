@@ -1,5 +1,5 @@
 {
-  "capital": 13178.18,
+  "capital": 14800.33,
   "open_positions": [
     {
       "ticker": "ROL",
@@ -190,9 +190,9 @@
       "entry_time": "10:45 ET",
       "entry_price": 17.28,
       "shares": 10,
-      "stop": 17.595,
+      "stop": 17.58,
       "trail_dist": 0.54,
-      "peak": 17.055,
+      "peak": 17.04,
       "orb_width": 1.08,
       "cost": 172.8,
       "vol_ratio": 1.43
@@ -372,9 +372,9 @@
       "entry_time": "10:59 ET",
       "entry_price": 65.3825,
       "shares": 1,
-      "stop": 65.165,
+      "stop": 65.145,
       "trail_dist": 0.365,
-      "peak": 64.8,
+      "peak": 64.78,
       "orb_width": 0.73,
       "cost": 65.38,
       "vol_ratio": 1.42
@@ -386,9 +386,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 141.05,
       "shares": 1,
-      "stop": 141.4075,
+      "stop": 141.4175,
       "trail_dist": 1.0625,
-      "peak": 142.47,
+      "peak": 142.48,
       "orb_width": 2.125,
       "cost": 141.05,
       "vol_ratio": 1.33
@@ -462,20 +462,6 @@
       "orb_width": 4.39,
       "cost": 2115.94,
       "vol_ratio": 1.5
-    },
-    {
-      "ticker": "SNPS",
-      "side": "long",
-      "entry_date": "2026-08-06",
-      "entry_time": "11:09 ET",
-      "entry_price": 408.64,
-      "shares": 4,
-      "stop": 405.5367,
-      "trail_dist": 4.3633,
-      "peak": 409.9,
-      "orb_width": 8.7267,
-      "cost": 1634.56,
-      "vol_ratio": 1.49
     },
     {
       "ticker": "IR",
@@ -1608,6 +1594,25 @@
       "pnl": 0.95,
       "exit_reason": "trailing stop",
       "exit_time": "12:13 ET"
+    },
+    {
+      "ticker": "SNPS",
+      "side": "long",
+      "entry_date": "2026-08-06",
+      "entry_time": "11:09 ET",
+      "entry_price": 408.64,
+      "shares": 4,
+      "stop": 405.5367,
+      "trail_dist": 4.3633,
+      "peak": 409.9,
+      "orb_width": 8.7267,
+      "cost": 1634.56,
+      "vol_ratio": 1.49,
+      "exit_date": "2026-08-06",
+      "exit_price": 405.5367,
+      "pnl": -12.41,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:23 ET"
     }
   ],
   "all_closed": [
@@ -71971,11 +71976,6 @@
       "low": 135.09,
       "width": 1.76
     },
-    "EQT": {
-      "high": 52.41,
-      "low": 51.45,
-      "width": 0.96
-    },
     "EFX": {
       "high": 178.44,
       "low": 175.74,
@@ -73216,11 +73216,6 @@
       "low": 104.34,
       "width": 1.91
     },
-    "STT": {
-      "high": 188.5,
-      "low": 187.11,
-      "width": 1.39
-    },
     "STLD": {
       "high": 266.21,
       "low": 261.06,
@@ -73648,7 +73643,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 96047.43
+    "2026-08-06": 95999.7
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -148732,6 +148727,23 @@
       "exits": [],
       "portfolio_value": 96047.43,
       "note": "$96,047 | cash=$13,178 | open=55 | closed today=44 | day PnL=$-294"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "12:22 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "SNPS",
+          "side": "long",
+          "exit_price": 405.54,
+          "pnl": -12.41,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95999.7,
+      "note": "$96,000 | cash=$14,800 | open=54 | closed today=45 | day PnL=$-306"
     }
   ]
 }
