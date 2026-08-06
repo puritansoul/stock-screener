@@ -409,6 +409,7 @@ def scan_entries(state: dict, data: dict[str, dict],
         return []
     entries = []
     open_tks = {p["ticker"] for p in state["open_positions"]}
+    open_tks |= {p["ticker"] for p in state["closed_today"]}  # no re-entry same day
     slots    = MAX_POSITIONS - len(state["open_positions"])
     capital  = state["capital"]
     orb      = state["today_orb"]
