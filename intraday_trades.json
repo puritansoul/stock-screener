@@ -1,5 +1,5 @@
 {
-  "capital": 2799.19,
+  "capital": 1970.57,
   "open_positions": [
     {
       "ticker": "ROL",
@@ -162,9 +162,9 @@
       "entry_time": "10:49 ET",
       "entry_price": 160.24,
       "shares": 1,
-      "stop": 157.64,
+      "stop": 157.545,
       "trail_dist": 1.515,
-      "peak": 156.125,
+      "peak": 156.03,
       "orb_width": 3.03,
       "cost": 160.24,
       "vol_ratio": 2.11
@@ -260,9 +260,9 @@
       "entry_time": "10:54 ET",
       "entry_price": 57.4,
       "shares": 2,
-      "stop": 57.37,
+      "stop": 57.33,
       "trail_dist": 0.375,
-      "peak": 56.995,
+      "peak": 56.955,
       "orb_width": 0.75,
       "cost": 114.8,
       "vol_ratio": 1.49
@@ -470,9 +470,9 @@
       "entry_time": "11:19 ET",
       "entry_price": 22.8601,
       "shares": 28,
-      "stop": 22.86,
+      "stop": 22.84,
       "trail_dist": 0.13,
-      "peak": 22.73,
+      "peak": 22.71,
       "orb_width": 0.26,
       "cost": 640.08,
       "vol_ratio": 1.32
@@ -610,9 +610,9 @@
       "entry_time": "12:42 ET",
       "entry_price": 88.105,
       "shares": 92,
-      "stop": 88.625,
+      "stop": 88.565,
       "trail_dist": 0.96,
-      "peak": 87.665,
+      "peak": 87.605,
       "orb_width": 1.92,
       "cost": 8105.66,
       "vol_ratio": 2.79
@@ -652,9 +652,9 @@
       "entry_time": "12:57 ET",
       "entry_price": 92.535,
       "shares": 33,
-      "stop": 92.651,
+      "stop": 92.641,
       "trail_dist": 0.481,
-      "peak": 92.17,
+      "peak": 92.16,
       "orb_width": 0.962,
       "cost": 3053.66,
       "vol_ratio": 3.37
@@ -694,12 +694,26 @@
       "entry_time": "13:27 ET",
       "entry_price": 482.04,
       "shares": 2,
-      "stop": 484.1499,
+      "stop": 483.93,
       "trail_dist": 2.1099,
-      "peak": 482.04,
+      "peak": 481.8201,
       "orb_width": 4.2199,
       "cost": 964.08,
       "vol_ratio": 2.72
+    },
+    {
+      "ticker": "SNA",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "13:29 ET",
+      "entry_price": 414.31,
+      "shares": 2,
+      "stop": 416.3,
+      "trail_dist": 1.99,
+      "peak": 414.31,
+      "orb_width": 3.98,
+      "cost": 828.62,
+      "vol_ratio": 6.29
     }
   ],
   "closed_today": [
@@ -71534,6 +71548,11 @@
       "low": 3053.1699,
       "width": 41.8301
     },
+    "AVB": {
+      "high": 191.69,
+      "low": 187.92,
+      "width": 3.77
+    },
     "AVY": {
       "high": 176.93,
       "low": 173.53,
@@ -72219,11 +72238,6 @@
       "low": 1061.37,
       "width": 25.91
     },
-    "FAST": {
-      "high": 50.86,
-      "low": 50.38,
-      "width": 0.48
-    },
     "FRT": {
       "high": 122.0,
       "low": 120.305,
@@ -72723,11 +72737,6 @@
       "high": 588.488,
       "low": 578.97,
       "width": 9.518
-    },
-    "L": {
-      "high": 116.895,
-      "low": 115.2,
-      "width": 1.695
     },
     "LOW": {
       "high": 220.06,
@@ -73801,7 +73810,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 96192.96
+    "2026-08-06": 96209.81
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -149284,6 +149293,24 @@
       "exits": [],
       "portfolio_value": 96192.96,
       "note": "$96,193 | cash=$2,799 | open=50 | closed today=56 | day PnL=$-291"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "13:29 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "SNA",
+          "side": "short",
+          "price": 414.31,
+          "shares": 2,
+          "stop": 416.3,
+          "trail_dist": 1.99
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 96209.81,
+      "note": "$96,210 | cash=$1,971 | open=51 | closed today=56 | day PnL=$-291"
     }
   ]
 }
