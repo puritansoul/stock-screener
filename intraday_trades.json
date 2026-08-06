@@ -1,5 +1,5 @@
 {
-  "capital": 7550.31,
+  "capital": 5440.85,
   "open_positions": [
     {
       "ticker": "SO",
@@ -246,9 +246,9 @@
       "entry_time": "11:14 ET",
       "entry_price": 187.69,
       "shares": 1,
-      "stop": 188.5305,
+      "stop": 188.7105,
       "trail_dist": 2.9295,
-      "peak": 191.46,
+      "peak": 191.64,
       "orb_width": 5.8589,
       "cost": 187.69,
       "vol_ratio": 1.55
@@ -400,9 +400,9 @@
       "entry_time": "13:27 ET",
       "entry_price": 482.04,
       "shares": 2,
-      "stop": 482.6699,
+      "stop": 481.9949,
       "trail_dist": 2.1099,
-      "peak": 480.56,
+      "peak": 479.885,
       "orb_width": 4.2199,
       "cost": 964.08,
       "vol_ratio": 2.72
@@ -470,9 +470,9 @@
       "entry_time": "13:44 ET",
       "entry_price": 155.72,
       "shares": 3,
-      "stop": 155.3475,
+      "stop": 155.3775,
       "trail_dist": 1.4225,
-      "peak": 156.77,
+      "peak": 156.8,
       "orb_width": 2.845,
       "cost": 467.16,
       "vol_ratio": 12.24
@@ -540,9 +540,9 @@
       "entry_time": "14:49 ET",
       "entry_price": 274.02,
       "shares": 10,
-      "stop": 273.485,
+      "stop": 273.6,
       "trail_dist": 2.22,
-      "peak": 275.705,
+      "peak": 275.82,
       "orb_width": 4.44,
       "cost": 2740.2,
       "vol_ratio": 1.93
@@ -554,9 +554,9 @@
       "entry_time": "15:01 ET",
       "entry_price": 115.89,
       "shares": 27,
-      "stop": 114.5,
+      "stop": 114.525,
       "trail_dist": 1.475,
-      "peak": 115.975,
+      "peak": 116.0,
       "orb_width": 2.95,
       "cost": 3129.03,
       "vol_ratio": 1.77
@@ -596,12 +596,26 @@
       "entry_time": "15:09 ET",
       "entry_price": 77.79,
       "shares": 41,
-      "stop": 78.88,
+      "stop": 78.82,
       "trail_dist": 1.1,
-      "peak": 77.78,
+      "peak": 77.72,
       "orb_width": 2.2,
       "cost": 3189.39,
       "vol_ratio": 14.83
+    },
+    {
+      "ticker": "NXPI",
+      "side": "long",
+      "entry_date": "2026-08-06",
+      "entry_time": "15:14 ET",
+      "entry_price": 234.385,
+      "shares": 9,
+      "stop": 231.255,
+      "trail_dist": 3.13,
+      "peak": 234.385,
+      "orb_width": 6.26,
+      "cost": 2109.46,
+      "vol_ratio": 7.97
     }
   ],
   "closed_today": [
@@ -71854,6 +71868,11 @@
       "low": 3053.1699,
       "width": 41.8301
     },
+    "AVB": {
+      "high": 191.69,
+      "low": 187.92,
+      "width": 3.77
+    },
     "AVY": {
       "high": 176.93,
       "low": 173.53,
@@ -72329,11 +72348,6 @@
       "low": 187.91,
       "width": 2.2
     },
-    "DLR": {
-      "high": 196.505,
-      "low": 193.615,
-      "width": 2.89
-    },
     "DG": {
       "high": 128.14,
       "low": 125.68,
@@ -72353,11 +72367,6 @@
       "high": 364.66,
       "low": 357.09,
       "width": 7.57
-    },
-    "DASH": {
-      "high": 218.03,
-      "low": 207.31,
-      "width": 10.72
     },
     "DOV": {
       "high": 213.99,
@@ -72438,11 +72447,6 @@
       "high": 108.195,
       "low": 106.67,
       "width": 1.525
-    },
-    "EOG": {
-      "high": 136.85,
-      "low": 135.09,
-      "width": 1.76
     },
     "EQT": {
       "high": 52.41,
@@ -72603,11 +72607,6 @@
       "high": 162.73,
       "low": 158.93,
       "width": 3.8
-    },
-    "FTV": {
-      "high": 61.95,
-      "low": 61.27,
-      "width": 0.68
     },
     "FOXA": {
       "high": 62.055,
@@ -73644,11 +73643,6 @@
       "low": 222.795,
       "width": 3.815
     },
-    "SWKS": {
-      "high": 67.74,
-      "low": 66.12,
-      "width": 1.62
-    },
     "SJM": {
       "high": 120.99,
       "low": 118.35,
@@ -74121,7 +74115,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 95952.35
+    "2026-08-06": 95976.22
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -150212,6 +150206,24 @@
       "exits": [],
       "portfolio_value": 95952.35,
       "note": "$95,952 | cash=$7,550 | open=43 | closed today=78 | day PnL=$-305"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "15:13 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "NXPI",
+          "side": "long",
+          "price": 234.38,
+          "shares": 9,
+          "stop": 231.25,
+          "trail_dist": 3.13
+        }
+      ],
+      "exits": [],
+      "portfolio_value": 95976.22,
+      "note": "$95,976 | cash=$5,441 | open=44 | closed today=78 | day PnL=$-305"
     }
   ]
 }
