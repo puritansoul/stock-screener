@@ -1,5 +1,5 @@
 {
-  "capital": 1970.57,
+  "capital": 1503.38,
   "open_positions": [
     {
       "ticker": "ROL",
@@ -204,9 +204,9 @@
       "entry_time": "10:49 ET",
       "entry_price": 30.415,
       "shares": 1,
-      "stop": 30.6201,
+      "stop": 30.6241,
       "trail_dist": 0.2159,
-      "peak": 30.836,
+      "peak": 30.84,
       "orb_width": 0.4318,
       "cost": 30.42,
       "vol_ratio": 1.25
@@ -238,20 +238,6 @@
       "orb_width": 3.5925,
       "cost": 123.43,
       "vol_ratio": 3.39
-    },
-    {
-      "ticker": "CHRW",
-      "side": "short",
-      "entry_date": "2026-08-06",
-      "entry_time": "10:54 ET",
-      "entry_price": 148.51,
-      "shares": 1,
-      "stop": 149.24,
-      "trail_dist": 1.91,
-      "peak": 147.33,
-      "orb_width": 3.82,
-      "cost": 148.51,
-      "vol_ratio": 1.78
     },
     {
       "ticker": "FITB",
@@ -302,9 +288,9 @@
       "entry_time": "10:59 ET",
       "entry_price": 83.58,
       "shares": 1,
-      "stop": 85.97,
+      "stop": 85.885,
       "trail_dist": 2.945,
-      "peak": 83.025,
+      "peak": 82.94,
       "orb_width": 5.89,
       "cost": 83.58,
       "vol_ratio": 2.24
@@ -526,9 +512,9 @@
       "entry_time": "11:34 ET",
       "entry_price": 180.1587,
       "shares": 26,
-      "stop": 180.385,
+      "stop": 180.295,
       "trail_dist": 0.825,
-      "peak": 179.56,
+      "peak": 179.47,
       "orb_width": 1.65,
       "cost": 4684.13,
       "vol_ratio": 5.32
@@ -680,9 +666,9 @@
       "entry_time": "13:24 ET",
       "entry_price": 25.115,
       "shares": 64,
-      "stop": 24.955,
+      "stop": 24.96,
       "trail_dist": 0.165,
-      "peak": 25.12,
+      "peak": 25.125,
       "orb_width": 0.33,
       "cost": 1607.36,
       "vol_ratio": 6.41
@@ -708,12 +694,26 @@
       "entry_time": "13:29 ET",
       "entry_price": 414.31,
       "shares": 2,
-      "stop": 416.17,
+      "stop": 415.89,
       "trail_dist": 1.99,
-      "peak": 414.18,
+      "peak": 413.9,
       "orb_width": 3.98,
       "cost": 828.62,
       "vol_ratio": 6.29
+    },
+    {
+      "ticker": "LUV",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "13:34 ET",
+      "entry_price": 47.305,
+      "shares": 13,
+      "stop": 47.52,
+      "trail_dist": 0.215,
+      "peak": 47.305,
+      "orb_width": 0.43,
+      "cost": 614.97,
+      "vol_ratio": 7.61
     }
   ],
   "closed_today": [
@@ -1780,6 +1780,25 @@
       "pnl": -0.25,
       "exit_reason": "trailing stop",
       "exit_time": "13:24 ET"
+    },
+    {
+      "ticker": "CHRW",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "10:54 ET",
+      "entry_price": 148.51,
+      "shares": 1,
+      "stop": 149.24,
+      "trail_dist": 1.91,
+      "peak": 147.33,
+      "orb_width": 3.82,
+      "cost": 148.51,
+      "vol_ratio": 1.78,
+      "exit_date": "2026-08-06",
+      "exit_price": 149.24,
+      "pnl": -0.73,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:34 ET"
     }
   ],
   "all_closed": [
@@ -72058,6 +72077,11 @@
       "low": 207.31,
       "width": 10.72
     },
+    "DOV": {
+      "high": 213.99,
+      "low": 210.95,
+      "width": 3.04
+    },
     "DOW": {
       "high": 30.1518,
       "low": 29.72,
@@ -72267,6 +72291,11 @@
       "high": 58.3,
       "low": 57.55,
       "width": 0.75
+    },
+    "FSLR": {
+      "high": 248.3495,
+      "low": 233.46,
+      "width": 14.8895
     },
     "FE": {
       "high": 48.16,
@@ -73173,6 +73202,11 @@
       "low": 137.375,
       "width": 2.125
     },
+    "PSA": {
+      "high": 330.77,
+      "low": 325.155,
+      "width": 5.615
+    },
     "PHM": {
       "high": 132.81,
       "low": 130.0,
@@ -73222,11 +73256,6 @@
       "high": 80.7,
       "low": 78.5,
       "width": 2.2
-    },
-    "REGN": {
-      "high": 780.95,
-      "low": 770.5925,
-      "width": 10.3575
     },
     "RF": {
       "high": 32.16,
@@ -73805,7 +73834,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 96192.89
+    "2026-08-06": 96163.4
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -149315,6 +149344,32 @@
       "exits": [],
       "portfolio_value": 96192.89,
       "note": "$96,193 | cash=$1,971 | open=51 | closed today=56 | day PnL=$-291"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "13:34 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "LUV",
+          "side": "short",
+          "price": 47.31,
+          "shares": 13,
+          "stop": 47.52,
+          "trail_dist": 0.215
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "CHRW",
+          "side": "short",
+          "exit_price": 149.24,
+          "pnl": -0.73,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96163.4,
+      "note": "$96,163 | cash=$1,503 | open=51 | closed today=57 | day PnL=$-292"
     }
   ]
 }
