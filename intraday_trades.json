@@ -1,5 +1,5 @@
 {
-  "capital": 1711.12,
+  "capital": 2849.23,
   "open_positions": [
     {
       "ticker": "ROL",
@@ -338,20 +338,6 @@
       "vol_ratio": 2.98
     },
     {
-      "ticker": "CAH",
-      "side": "short",
-      "entry_date": "2026-08-06",
-      "entry_time": "11:09 ET",
-      "entry_price": 235.105,
-      "shares": 9,
-      "stop": 236.2237,
-      "trail_dist": 2.195,
-      "peak": 234.0287,
-      "orb_width": 4.39,
-      "cost": 2115.94,
-      "vol_ratio": 1.5
-    },
-    {
       "ticker": "HLT",
       "side": "short",
       "entry_date": "2026-08-06",
@@ -372,9 +358,9 @@
       "entry_time": "11:14 ET",
       "entry_price": 187.69,
       "shares": 1,
-      "stop": 186.4305,
+      "stop": 186.6395,
       "trail_dist": 2.9295,
-      "peak": 189.36,
+      "peak": 189.569,
       "orb_width": 5.8589,
       "cost": 187.69,
       "vol_ratio": 1.55
@@ -708,9 +694,9 @@
       "entry_time": "13:44 ET",
       "entry_price": 155.72,
       "shares": 3,
-      "stop": 154.7825,
+      "stop": 154.9375,
       "trail_dist": 1.4225,
-      "peak": 156.205,
+      "peak": 156.36,
       "orb_width": 2.845,
       "cost": 467.16,
       "vol_ratio": 12.24
@@ -736,12 +722,26 @@
       "entry_time": "13:47 ET",
       "entry_price": 17.7829,
       "shares": 41,
-      "stop": 17.9975,
+      "stop": 17.9925,
       "trail_dist": 0.2525,
-      "peak": 17.745,
+      "peak": 17.74,
       "orb_width": 0.505,
       "cost": 729.1,
       "vol_ratio": 1.5
+    },
+    {
+      "ticker": "HON",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "13:59 ET",
+      "entry_price": 241.94,
+      "shares": 4,
+      "stop": 243.42,
+      "trail_dist": 1.48,
+      "peak": 241.94,
+      "orb_width": 2.9599,
+      "cost": 967.76,
+      "vol_ratio": 3.75
     }
   ],
   "closed_today": [
@@ -1884,6 +1884,25 @@
       "pnl": -15.68,
       "exit_reason": "trailing stop",
       "exit_time": "13:46 ET"
+    },
+    {
+      "ticker": "CAH",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "11:09 ET",
+      "entry_price": 235.105,
+      "shares": 9,
+      "stop": 236.2237,
+      "trail_dist": 2.195,
+      "peak": 234.0287,
+      "orb_width": 4.39,
+      "cost": 2115.94,
+      "vol_ratio": 1.5,
+      "exit_date": "2026-08-06",
+      "exit_price": 236.2237,
+      "pnl": -10.07,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:59 ET"
     }
   ],
   "all_closed": [
@@ -71732,6 +71751,11 @@
       "low": 158.9,
       "width": 1.09
     },
+    "BA": {
+      "high": 240.37,
+      "low": 237.88,
+      "width": 2.49
+    },
     "BKNG": {
       "high": 211.82,
       "low": 207.0,
@@ -71901,11 +71925,6 @@
       "high": 104.31,
       "low": 102.9,
       "width": 1.41
-    },
-    "CIEN": {
-      "high": 413.19,
-      "low": 390.5623,
-      "width": 22.6277
     },
     "CI": {
       "high": 273.56,
@@ -72771,11 +72790,6 @@
       "high": 106.29,
       "low": 104.87,
       "width": 1.42
-    },
-    "KLAC": {
-      "high": 193.67,
-      "low": 185.77,
-      "width": 7.9
     },
     "KHC": {
       "high": 25.97,
@@ -73919,7 +73933,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 96121.34
+    "2026-08-06": 96096.49
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -149603,6 +149617,32 @@
       "exits": [],
       "portfolio_value": 96121.34,
       "note": "$96,121 | cash=$1,711 | open=53 | closed today=60 | day PnL=$-319"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "13:58 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "HON",
+          "side": "short",
+          "price": 241.94,
+          "shares": 4,
+          "stop": 243.42,
+          "trail_dist": 1.48
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "CAH",
+          "side": "short",
+          "exit_price": 236.22,
+          "pnl": -10.07,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96096.49,
+      "note": "$96,096 | cash=$2,849 | open=53 | closed today=61 | day PnL=$-329"
     }
   ]
 }
