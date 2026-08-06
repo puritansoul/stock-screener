@@ -1,5 +1,5 @@
 {
-  "capital": 10422.95,
+  "capital": 7424.55,
   "open_positions": [
     {
       "ticker": "SO",
@@ -142,20 +142,6 @@
       "vol_ratio": 2.11
     },
     {
-      "ticker": "GILD",
-      "side": "short",
-      "entry_date": "2026-08-06",
-      "entry_time": "10:49 ET",
-      "entry_price": 130.46,
-      "shares": 1,
-      "stop": 130.29,
-      "trail_dist": 1.27,
-      "peak": 129.02,
-      "orb_width": 2.54,
-      "cost": 130.46,
-      "vol_ratio": 1.48
-    },
-    {
       "ticker": "IBKR",
       "side": "short",
       "entry_date": "2026-08-06",
@@ -274,9 +260,9 @@
       "entry_time": "11:14 ET",
       "entry_price": 187.69,
       "shares": 1,
-      "stop": 188.0305,
+      "stop": 188.2505,
       "trail_dist": 2.9295,
-      "peak": 190.96,
+      "peak": 191.18,
       "orb_width": 5.8589,
       "cost": 187.69,
       "vol_ratio": 1.55
@@ -540,9 +526,9 @@
       "entry_time": "13:47 ET",
       "entry_price": 17.7829,
       "shares": 41,
-      "stop": 17.8325,
+      "stop": 17.7975,
       "trail_dist": 0.2525,
-      "peak": 17.58,
+      "peak": 17.545,
       "orb_width": 0.505,
       "cost": 729.1,
       "vol_ratio": 1.5
@@ -568,9 +554,9 @@
       "entry_time": "14:49 ET",
       "entry_price": 183.87,
       "shares": 32,
-      "stop": 184.5375,
+      "stop": 184.4675,
       "trail_dist": 0.8975,
-      "peak": 183.64,
+      "peak": 183.57,
       "orb_width": 1.795,
       "cost": 5883.84,
       "vol_ratio": 11.91
@@ -582,9 +568,9 @@
       "entry_time": "14:49 ET",
       "entry_price": 215.59,
       "shares": 19,
-      "stop": 217.2755,
+      "stop": 217.0608,
       "trail_dist": 1.8308,
-      "peak": 215.4447,
+      "peak": 215.23,
       "orb_width": 3.6615,
       "cost": 4096.21,
       "vol_ratio": 4.99
@@ -602,6 +588,20 @@
       "orb_width": 4.44,
       "cost": 2740.2,
       "vol_ratio": 1.93
+    },
+    {
+      "ticker": "NOW",
+      "side": "long",
+      "entry_date": "2026-08-06",
+      "entry_time": "15:01 ET",
+      "entry_price": 115.89,
+      "shares": 27,
+      "stop": 114.415,
+      "trail_dist": 1.475,
+      "peak": 115.89,
+      "orb_width": 2.95,
+      "cost": 3129.03,
+      "vol_ratio": 1.77
     }
   ],
   "closed_today": [
@@ -2010,6 +2010,25 @@
       "pnl": 5.36,
       "exit_reason": "trailing stop",
       "exit_time": "14:56 ET"
+    },
+    {
+      "ticker": "GILD",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "10:49 ET",
+      "entry_price": 130.46,
+      "shares": 1,
+      "stop": 130.29,
+      "trail_dist": 1.27,
+      "peak": 129.02,
+      "orb_width": 2.54,
+      "cost": 130.46,
+      "vol_ratio": 1.48,
+      "exit_date": "2026-08-06",
+      "exit_price": 130.29,
+      "pnl": 0.17,
+      "exit_reason": "trailing stop",
+      "exit_time": "15:01 ET"
     }
   ],
   "all_closed": [
@@ -72058,6 +72077,11 @@
       "low": 119.9,
       "width": 1.97
     },
+    "C": {
+      "high": 139.26,
+      "low": 136.07,
+      "width": 3.19
+    },
     "CFG": {
       "high": 74.48,
       "low": 73.55,
@@ -72563,11 +72587,6 @@
       "low": 178.75,
       "width": 5.61
     },
-    "GE": {
-      "high": 388.84,
-      "low": 382.93,
-      "width": 5.91
-    },
     "GEHC": {
       "high": 71.0,
       "low": 69.9,
@@ -72607,11 +72626,6 @@
       "high": 132.34,
       "low": 131.15,
       "width": 1.19
-    },
-    "GILD": {
-      "high": 134.48,
-      "low": 131.94,
-      "width": 2.54
     },
     "GPN": {
       "high": 87.53,
@@ -72882,11 +72896,6 @@
       "high": 112.69,
       "low": 110.32,
       "width": 2.37
-    },
-    "KIM": {
-      "high": 25.2,
-      "low": 24.67,
-      "width": 0.53
     },
     "KMI": {
       "high": 31.64,
@@ -73548,6 +73557,11 @@
       "low": 767.69,
       "width": 71.31
     },
+    "SRE": {
+      "high": 85.81,
+      "low": 84.3,
+      "width": 1.51
+    },
     "NOW": {
       "high": 114.75,
       "low": 111.8,
@@ -73818,6 +73832,11 @@
       "low": 406.66,
       "width": 10.31
     },
+    "UHS": {
+      "high": 175.0,
+      "low": 172.01,
+      "width": 2.99
+    },
     "VLO": {
       "high": 308.44,
       "low": 297.86,
@@ -74035,7 +74054,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 95946.5
+    "2026-08-06": 95953.15
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -150014,6 +150033,32 @@
       "exits": [],
       "portfolio_value": 95946.5,
       "note": "$95,946 | cash=$10,423 | open=43 | closed today=74 | day PnL=$-277"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "15:01 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "NOW",
+          "side": "long",
+          "price": 115.89,
+          "shares": 27,
+          "stop": 114.41,
+          "trail_dist": 1.475
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "GILD",
+          "side": "short",
+          "exit_price": 130.29,
+          "pnl": 0.17,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95953.15,
+      "note": "$95,953 | cash=$7,425 | open=43 | closed today=75 | day PnL=$-277"
     }
   ]
 }
