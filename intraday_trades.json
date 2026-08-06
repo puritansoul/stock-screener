@@ -1,5 +1,5 @@
 {
-  "capital": 12173.87,
+  "capital": 12611.41,
   "open_positions": [
     {
       "ticker": "ROL",
@@ -126,20 +126,6 @@
       "orb_width": 3.255,
       "cost": 147.1,
       "vol_ratio": 2.12
-    },
-    {
-      "ticker": "SLB",
-      "side": "long",
-      "entry_date": "2026-08-06",
-      "entry_time": "10:35 ET",
-      "entry_price": 51.6,
-      "shares": 4,
-      "stop": 52.1863,
-      "trail_dist": 0.2387,
-      "peak": 52.425,
-      "orb_width": 0.4775,
-      "cost": 206.4,
-      "vol_ratio": 1.77
     },
     {
       "ticker": "ICE",
@@ -296,20 +282,6 @@
       "vol_ratio": 1.94
     },
     {
-      "ticker": "HAL",
-      "side": "long",
-      "entry_date": "2026-08-06",
-      "entry_time": "10:52 ET",
-      "entry_price": 32.46,
-      "shares": 7,
-      "stop": 32.685,
-      "trail_dist": 0.175,
-      "peak": 32.86,
-      "orb_width": 0.35,
-      "cost": 227.22,
-      "vol_ratio": 1.44
-    },
-    {
       "ticker": "IRM",
       "side": "short",
       "entry_date": "2026-08-06",
@@ -330,9 +302,9 @@
       "entry_time": "10:54 ET",
       "entry_price": 148.51,
       "shares": 1,
-      "stop": 149.77,
+      "stop": 149.75,
       "trail_dist": 1.91,
-      "peak": 147.86,
+      "peak": 147.84,
       "orb_width": 3.82,
       "cost": 148.51,
       "vol_ratio": 1.78
@@ -694,9 +666,9 @@
       "entry_time": "11:21 ET",
       "entry_price": 93.71,
       "shares": 2,
-      "stop": 93.988,
+      "stop": 93.963,
       "trail_dist": 0.738,
-      "peak": 93.25,
+      "peak": 93.225,
       "orb_width": 1.476,
       "cost": 187.42,
       "vol_ratio": 1.84
@@ -806,9 +778,9 @@
       "entry_time": "12:08 ET",
       "entry_price": 19.155,
       "shares": 271,
-      "stop": 19.355,
+      "stop": 19.335,
       "trail_dist": 0.2,
-      "peak": 19.155,
+      "peak": 19.135,
       "orb_width": 0.4,
       "cost": 5191.01,
       "vol_ratio": 22.38
@@ -1593,6 +1565,44 @@
       "pnl": -13.92,
       "exit_reason": "trailing stop",
       "exit_time": "12:08 ET"
+    },
+    {
+      "ticker": "SLB",
+      "side": "long",
+      "entry_date": "2026-08-06",
+      "entry_time": "10:35 ET",
+      "entry_price": 51.6,
+      "shares": 4,
+      "stop": 52.1863,
+      "trail_dist": 0.2387,
+      "peak": 52.425,
+      "orb_width": 0.4775,
+      "cost": 206.4,
+      "vol_ratio": 1.77,
+      "exit_date": "2026-08-06",
+      "exit_price": 52.1863,
+      "pnl": 2.35,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:10 ET"
+    },
+    {
+      "ticker": "HAL",
+      "side": "long",
+      "entry_date": "2026-08-06",
+      "entry_time": "10:52 ET",
+      "entry_price": 32.46,
+      "shares": 7,
+      "stop": 32.685,
+      "trail_dist": 0.175,
+      "peak": 32.86,
+      "orb_width": 0.35,
+      "cost": 227.22,
+      "vol_ratio": 1.44,
+      "exit_date": "2026-08-06",
+      "exit_price": 32.685,
+      "pnl": 1.58,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:10 ET"
     }
   ],
   "all_closed": [
@@ -73633,7 +73643,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 96083.52
+    "2026-08-06": 96098.63
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -148649,6 +148659,30 @@
       ],
       "portfolio_value": 96083.52,
       "note": "$96,084 | cash=$12,174 | open=58 | closed today=41 | day PnL=$-299"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "12:10 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "SLB",
+          "side": "long",
+          "exit_price": 52.19,
+          "pnl": 2.35,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "HAL",
+          "side": "long",
+          "exit_price": 32.69,
+          "pnl": 1.58,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96098.63,
+      "note": "$96,099 | cash=$12,611 | open=56 | closed today=43 | day PnL=$-295"
     }
   ]
 }
