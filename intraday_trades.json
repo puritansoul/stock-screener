@@ -1,5 +1,5 @@
 {
-  "capital": 10276.54,
+  "capital": 10422.95,
   "open_positions": [
     {
       "ticker": "SO",
@@ -226,20 +226,6 @@
       "vol_ratio": 2.24
     },
     {
-      "ticker": "PTC",
-      "side": "long",
-      "entry_date": "2026-08-06",
-      "entry_time": "11:04 ET",
-      "entry_price": 141.05,
-      "shares": 1,
-      "stop": 146.4075,
-      "trail_dist": 1.0625,
-      "peak": 147.47,
-      "orb_width": 2.125,
-      "cost": 141.05,
-      "vol_ratio": 1.33
-    },
-    {
       "ticker": "PCG",
       "side": "short",
       "entry_date": "2026-08-06",
@@ -288,9 +274,9 @@
       "entry_time": "11:14 ET",
       "entry_price": 187.69,
       "shares": 1,
-      "stop": 187.0405,
+      "stop": 187.6705,
       "trail_dist": 2.9295,
-      "peak": 189.97,
+      "peak": 190.6,
       "orb_width": 5.8589,
       "cost": 187.69,
       "vol_ratio": 1.55
@@ -610,9 +596,9 @@
       "entry_time": "14:49 ET",
       "entry_price": 274.02,
       "shares": 10,
-      "stop": 272.06,
+      "stop": 272.55,
       "trail_dist": 2.22,
-      "peak": 274.28,
+      "peak": 274.77,
       "orb_width": 4.44,
       "cost": 2740.2,
       "vol_ratio": 1.93
@@ -2005,6 +1991,25 @@
       "pnl": -4.58,
       "exit_reason": "trailing stop",
       "exit_time": "14:54 ET"
+    },
+    {
+      "ticker": "PTC",
+      "side": "long",
+      "entry_date": "2026-08-06",
+      "entry_time": "11:04 ET",
+      "entry_price": 141.05,
+      "shares": 1,
+      "stop": 146.4075,
+      "trail_dist": 1.0625,
+      "peak": 147.47,
+      "orb_width": 2.125,
+      "cost": 141.05,
+      "vol_ratio": 1.33,
+      "exit_date": "2026-08-06",
+      "exit_price": 146.4075,
+      "pnl": 5.36,
+      "exit_reason": "trailing stop",
+      "exit_time": "14:56 ET"
     }
   ],
   "all_closed": [
@@ -71928,6 +71933,11 @@
       "low": 220.0172,
       "width": 1.9428
     },
+    "CAH": {
+      "high": 244.87,
+      "low": 240.48,
+      "width": 4.39
+    },
     "CCL": {
       "high": 29.56,
       "low": 29.25,
@@ -72133,6 +72143,11 @@
       "low": 73.86,
       "width": 1.27
     },
+    "CPRT": {
+      "high": 29.075,
+      "low": 28.61,
+      "width": 0.465
+    },
     "GLW": {
       "high": 160.39,
       "low": 150.73,
@@ -72267,6 +72282,11 @@
       "high": 364.66,
       "low": 357.09,
       "width": 7.57
+    },
+    "DASH": {
+      "high": 218.03,
+      "low": 207.31,
+      "width": 10.72
     },
     "DOV": {
       "high": 213.99,
@@ -72513,11 +72533,6 @@
       "low": 158.93,
       "width": 3.8
     },
-    "FTV": {
-      "high": 61.95,
-      "low": 61.27,
-      "width": 0.68
-    },
     "FOXA": {
       "high": 62.055,
       "low": 59.42,
@@ -72732,6 +72747,11 @@
       "high": 591.8,
       "low": 574.985,
       "width": 16.815
+    },
+    "ITW": {
+      "high": 300.53,
+      "low": 296.78,
+      "width": 3.75
     },
     "INCY": {
       "high": 120.0,
@@ -73132,6 +73152,11 @@
       "high": 95.12,
       "low": 94.23,
       "width": 0.89
+    },
+    "NTAP": {
+      "high": 185.9599,
+      "low": 180.101,
+      "width": 5.8589
     },
     "NFLX": {
       "high": 75.2,
@@ -74020,7 +74045,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 95963.36
+    "2026-08-06": 95950.9
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -149973,6 +149998,23 @@
       ],
       "portfolio_value": 95963.36,
       "note": "$95,963 | cash=$10,277 | open=44 | closed today=73 | day PnL=$-283"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "14:56 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "PTC",
+          "side": "long",
+          "exit_price": 146.41,
+          "pnl": 5.36,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95950.9,
+      "note": "$95,951 | cash=$10,423 | open=43 | closed today=74 | day PnL=$-277"
     }
   ]
 }
