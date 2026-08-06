@@ -1,5 +1,5 @@
 {
-  "capital": 9254.64,
+  "capital": 10276.54,
   "open_positions": [
     {
       "ticker": "SO",
@@ -498,9 +498,9 @@
       "entry_time": "13:34 ET",
       "entry_price": 47.305,
       "shares": 13,
-      "stop": 47.455,
+      "stop": 47.43,
       "trail_dist": 0.215,
-      "peak": 47.24,
+      "peak": 47.215,
       "orb_width": 0.43,
       "cost": 614.97,
       "vol_ratio": 7.61
@@ -548,20 +548,6 @@
       "vol_ratio": 12.24
     },
     {
-      "ticker": "TGT",
-      "side": "short",
-      "entry_date": "2026-08-06",
-      "entry_time": "13:47 ET",
-      "entry_price": 146.64,
-      "shares": 7,
-      "stop": 147.2939,
-      "trail_dist": 0.9838,
-      "peak": 146.3101,
-      "orb_width": 1.9676,
-      "cost": 1026.48,
-      "vol_ratio": 2.99
-    },
-    {
       "ticker": "TTD",
       "side": "short",
       "entry_date": "2026-08-06",
@@ -596,9 +582,9 @@
       "entry_time": "14:49 ET",
       "entry_price": 183.87,
       "shares": 32,
-      "stop": 184.7475,
+      "stop": 184.5375,
       "trail_dist": 0.8975,
-      "peak": 183.85,
+      "peak": 183.64,
       "orb_width": 1.795,
       "cost": 5883.84,
       "vol_ratio": 11.91
@@ -610,9 +596,9 @@
       "entry_time": "14:49 ET",
       "entry_price": 215.59,
       "shares": 19,
-      "stop": 217.4208,
+      "stop": 217.3408,
       "trail_dist": 1.8308,
-      "peak": 215.59,
+      "peak": 215.51,
       "orb_width": 3.6615,
       "cost": 4096.21,
       "vol_ratio": 4.99
@@ -624,9 +610,9 @@
       "entry_time": "14:49 ET",
       "entry_price": 274.02,
       "shares": 10,
-      "stop": 271.955,
+      "stop": 272.06,
       "trail_dist": 2.22,
-      "peak": 274.175,
+      "peak": 274.28,
       "orb_width": 4.44,
       "cost": 2740.2,
       "vol_ratio": 1.93
@@ -2000,6 +1986,25 @@
       "pnl": 2.76,
       "exit_reason": "trailing stop",
       "exit_time": "14:51 ET"
+    },
+    {
+      "ticker": "TGT",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "13:47 ET",
+      "entry_price": 146.64,
+      "shares": 7,
+      "stop": 147.2939,
+      "trail_dist": 0.9838,
+      "peak": 146.3101,
+      "orb_width": 1.9676,
+      "cost": 1026.48,
+      "vol_ratio": 2.99,
+      "exit_date": "2026-08-06",
+      "exit_price": 147.2939,
+      "pnl": -4.58,
+      "exit_reason": "trailing stop",
+      "exit_time": "14:54 ET"
     }
   ],
   "all_closed": [
@@ -71923,11 +71928,6 @@
       "low": 220.0172,
       "width": 1.9428
     },
-    "CAH": {
-      "high": 244.87,
-      "low": 240.48,
-      "width": 4.39
-    },
     "CCL": {
       "high": 29.56,
       "low": 29.25,
@@ -72133,11 +72133,6 @@
       "low": 73.86,
       "width": 1.27
     },
-    "CPRT": {
-      "high": 29.075,
-      "low": 28.61,
-      "width": 0.465
-    },
     "GLW": {
       "high": 160.39,
       "low": 150.73,
@@ -72272,11 +72267,6 @@
       "high": 364.66,
       "low": 357.09,
       "width": 7.57
-    },
-    "DASH": {
-      "high": 218.03,
-      "low": 207.31,
-      "width": 10.72
     },
     "DOV": {
       "high": 213.99,
@@ -72743,11 +72733,6 @@
       "low": 574.985,
       "width": 16.815
     },
-    "ITW": {
-      "high": 300.53,
-      "low": 296.78,
-      "width": 3.75
-    },
     "INCY": {
       "high": 120.0,
       "low": 117.16,
@@ -73147,11 +73132,6 @@
       "high": 95.12,
       "low": 94.23,
       "width": 0.89
-    },
-    "NTAP": {
-      "high": 185.9599,
-      "low": 180.101,
-      "width": 5.8589
     },
     "NFLX": {
       "high": 75.2,
@@ -74040,7 +74020,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 95939.51
+    "2026-08-06": 95963.36
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -149976,6 +149956,23 @@
       ],
       "portfolio_value": 95939.51,
       "note": "$95,940 | cash=$9,255 | open=45 | closed today=72 | day PnL=$-278"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "14:53 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "TGT",
+          "side": "short",
+          "exit_price": 147.29,
+          "pnl": -4.58,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95963.36,
+      "note": "$95,963 | cash=$10,277 | open=44 | closed today=73 | day PnL=$-283"
     }
   ]
 }
