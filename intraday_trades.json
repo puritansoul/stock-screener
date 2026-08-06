@@ -1,5 +1,5 @@
 {
-  "capital": 14800.33,
+  "capital": 14947.6,
   "open_positions": [
     {
       "ticker": "ROL",
@@ -126,20 +126,6 @@
       "orb_width": 3.255,
       "cost": 147.1,
       "vol_ratio": 2.12
-    },
-    {
-      "ticker": "ICE",
-      "side": "short",
-      "entry_date": "2026-08-06",
-      "entry_time": "10:35 ET",
-      "entry_price": 148.335,
-      "shares": 1,
-      "stop": 149.4,
-      "trail_dist": 1.17,
-      "peak": 148.23,
-      "orb_width": 2.34,
-      "cost": 148.34,
-      "vol_ratio": 1.62
     },
     {
       "ticker": "WRB",
@@ -386,9 +372,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 141.05,
       "shares": 1,
-      "stop": 141.5575,
+      "stop": 141.6175,
       "trail_dist": 1.0625,
-      "peak": 142.62,
+      "peak": 142.68,
       "orb_width": 2.125,
       "cost": 141.05,
       "vol_ratio": 1.33
@@ -1613,6 +1599,25 @@
       "pnl": -12.41,
       "exit_reason": "trailing stop",
       "exit_time": "12:23 ET"
+    },
+    {
+      "ticker": "ICE",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "10:35 ET",
+      "entry_price": 148.335,
+      "shares": 1,
+      "stop": 149.4,
+      "trail_dist": 1.17,
+      "peak": 148.23,
+      "orb_width": 2.34,
+      "cost": 148.34,
+      "vol_ratio": 1.62,
+      "exit_date": "2026-08-06",
+      "exit_price": 149.4,
+      "pnl": -1.06,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:30 ET"
     }
   ],
   "all_closed": [
@@ -71166,11 +71171,6 @@
       "low": 139.29,
       "width": 2.505
     },
-    "APD": {
-      "high": 298.2,
-      "low": 295.67,
-      "width": 2.53
-    },
     "ABNB": {
       "high": 153.78,
       "low": 151.39,
@@ -71855,11 +71855,6 @@
       "high": 83.67,
       "low": 82.66,
       "width": 1.01
-    },
-    "FANG": {
-      "high": 190.11,
-      "low": 187.91,
-      "width": 2.2
     },
     "DLR": {
       "high": 196.505,
@@ -72605,11 +72600,6 @@
       "high": 254.0,
       "low": 251.29,
       "width": 2.71
-    },
-    "MPC": {
-      "high": 303.33,
-      "low": 294.1881,
-      "width": 9.1419
     },
     "MAR": {
       "high": 364.74,
@@ -73653,7 +73643,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 95983.2
+    "2026-08-06": 95991.59
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -148772,6 +148762,23 @@
       "exits": [],
       "portfolio_value": 95983.2,
       "note": "$95,983 | cash=$14,800 | open=54 | closed today=45 | day PnL=$-306"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "12:30 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "ICE",
+          "side": "short",
+          "exit_price": 149.4,
+          "pnl": -1.06,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95991.59,
+      "note": "$95,992 | cash=$14,948 | open=53 | closed today=46 | day PnL=$-307"
     }
   ]
 }
