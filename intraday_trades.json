@@ -1,5 +1,5 @@
 {
-  "capital": 5847.95,
+  "capital": 6815.66,
   "open_positions": [
     {
       "ticker": "SO",
@@ -148,9 +148,9 @@
       "entry_time": "10:52 ET",
       "entry_price": 86.85,
       "shares": 5,
-      "stop": 87.0975,
+      "stop": 87.0675,
       "trail_dist": 0.9975,
-      "peak": 86.1,
+      "peak": 86.07,
       "orb_width": 1.995,
       "cost": 434.25,
       "vol_ratio": 1.94
@@ -176,9 +176,9 @@
       "entry_time": "10:54 ET",
       "entry_price": 55.5,
       "shares": 1,
-      "stop": 55.6625,
+      "stop": 55.7325,
       "trail_dist": 1.0075,
-      "peak": 56.67,
+      "peak": 56.74,
       "orb_width": 2.015,
       "cost": 55.5,
       "vol_ratio": 1.35
@@ -330,9 +330,9 @@
       "entry_time": "12:08 ET",
       "entry_price": 19.155,
       "shares": 271,
-      "stop": 19.2502,
+      "stop": 19.235,
       "trail_dist": 0.2,
-      "peak": 19.0502,
+      "peak": 19.035,
       "orb_width": 0.4,
       "cost": 5191.01,
       "vol_ratio": 22.38
@@ -428,9 +428,9 @@
       "entry_time": "13:34 ET",
       "entry_price": 47.305,
       "shares": 13,
-      "stop": 47.365,
+      "stop": 47.325,
       "trail_dist": 0.215,
-      "peak": 47.15,
+      "peak": 47.11,
       "orb_width": 0.43,
       "cost": 614.97,
       "vol_ratio": 7.61
@@ -442,9 +442,9 @@
       "entry_time": "13:39 ET",
       "entry_price": 86.54,
       "shares": 5,
-      "stop": 86.96,
+      "stop": 86.9,
       "trail_dist": 0.435,
-      "peak": 86.525,
+      "peak": 86.465,
       "orb_width": 0.87,
       "cost": 432.7,
       "vol_ratio": 6.15
@@ -456,9 +456,9 @@
       "entry_time": "13:44 ET",
       "entry_price": 155.72,
       "shares": 3,
-      "stop": 155.3775,
+      "stop": 155.5,
       "trail_dist": 1.4225,
-      "peak": 156.8,
+      "peak": 156.9225,
       "orb_width": 2.845,
       "cost": 467.16,
       "vol_ratio": 12.24
@@ -470,26 +470,12 @@
       "entry_time": "13:47 ET",
       "entry_price": 17.7829,
       "shares": 41,
-      "stop": 17.6525,
+      "stop": 17.6475,
       "trail_dist": 0.2525,
-      "peak": 17.4,
+      "peak": 17.395,
       "orb_width": 0.505,
       "cost": 729.1,
       "vol_ratio": 1.5
-    },
-    {
-      "ticker": "HON",
-      "side": "short",
-      "entry_date": "2026-08-06",
-      "entry_time": "13:59 ET",
-      "entry_price": 241.94,
-      "shares": 4,
-      "stop": 241.9516,
-      "trail_dist": 1.48,
-      "peak": 240.4716,
-      "orb_width": 2.9599,
-      "cost": 967.76,
-      "vol_ratio": 3.75
     },
     {
       "ticker": "NTRS",
@@ -554,9 +540,9 @@
       "entry_time": "15:04 ET",
       "entry_price": 180.09,
       "shares": 20,
-      "stop": 182.4778,
+      "stop": 182.2578,
       "trail_dist": 2.4378,
-      "peak": 180.04,
+      "peak": 179.82,
       "orb_width": 4.8756,
       "cost": 3601.8,
       "vol_ratio": 8.11
@@ -568,9 +554,9 @@
       "entry_time": "15:06 ET",
       "entry_price": 42.145,
       "shares": 108,
-      "stop": 42.265,
+      "stop": 42.25,
       "trail_dist": 0.21,
-      "peak": 42.055,
+      "peak": 42.04,
       "orb_width": 0.42,
       "cost": 4551.66,
       "vol_ratio": 2.3
@@ -582,9 +568,9 @@
       "entry_time": "15:09 ET",
       "entry_price": 77.79,
       "shares": 41,
-      "stop": 78.82,
+      "stop": 78.78,
       "trail_dist": 1.1,
-      "peak": 77.72,
+      "peak": 77.68,
       "orb_width": 2.2,
       "cost": 3189.39,
       "vol_ratio": 14.83
@@ -2105,6 +2091,25 @@
       "pnl": -2.78,
       "exit_reason": "trailing stop",
       "exit_time": "15:16 ET"
+    },
+    {
+      "ticker": "HON",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "13:59 ET",
+      "entry_price": 241.94,
+      "shares": 4,
+      "stop": 241.9516,
+      "trail_dist": 1.48,
+      "peak": 240.4716,
+      "orb_width": 2.9599,
+      "cost": 967.76,
+      "vol_ratio": 3.75,
+      "exit_date": "2026-08-06",
+      "exit_price": 241.9516,
+      "pnl": -0.05,
+      "exit_reason": "trailing stop",
+      "exit_time": "15:24 ET"
     }
   ],
   "all_closed": [
@@ -72018,11 +72023,6 @@
       "low": 333.0,
       "width": 6.67
     },
-    "CPT": {
-      "high": 113.15,
-      "low": 111.28,
-      "width": 1.87
-    },
     "COF": {
       "high": 221.96,
       "low": 220.0172,
@@ -74145,7 +74145,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 96000.75
+    "2026-08-06": 96017.69
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -150289,6 +150289,23 @@
       "exits": [],
       "portfolio_value": 96000.75,
       "note": "$96,001 | cash=$5,848 | open=43 | closed today=79 | day PnL=$-308"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "15:23 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "HON",
+          "side": "short",
+          "exit_price": 241.95,
+          "pnl": -0.05,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96017.69,
+      "note": "$96,018 | cash=$6,816 | open=42 | closed today=80 | day PnL=$-308"
     }
   ]
 }
