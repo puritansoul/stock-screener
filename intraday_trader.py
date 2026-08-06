@@ -279,8 +279,7 @@ def fetch_intraday(tickers: list[str]) -> dict[str, pd.DataFrame]:
                 # raises its own threshold, suppressing entries on exactly the days
                 # ORB works best.
                 if not df1d.empty and "Volume" in df1d.columns:
-                    # exclude today's incomplete daily bar (iloc[:-1])
-                    avg_bar_vol = float(df1d["Volume"].iloc[:-1].mean()) / 13.0
+                    avg_bar_vol = float(df1d["Volume"].mean()) / 13.0
                 elif "Volume" in df5.columns:
                     avg_bar_vol = float(df5["Volume"].mean()) / 13.0
                 else:
@@ -338,27 +337,26 @@ def check_exits(state: dict, data: dict[str, dict], force: bool = False) -> list
             reason  = "force close 3:45pm"
             exit_px = cur_px
         elif side == "long":
-            # Advance trail stop to highest point seen
-            new_stop = round(bar_hi - trail_dist, 4)
-            if new_stop > stop:
-                pos["stop"] = new_stop
-                pos["peak"] = round(bar_hi, 4)
-                stop = new_stop
+            # Check exit against the stop that was in place at bar open,
+            # then advance the trail only if no exit triggered this bar.
             if bar_lo <= stop:
                 reason, exit_px = "trailing stop", stop
             else:
+                new_stop = round(bar_hi - trail_dist, 4)
+                if new_stop > stop:
+                    pos["stop"] = new_stop
+                    pos["peak"] = round(bar_hi, 4)
                 still_open.append(pos)
                 continue
         else:
-            # Short: trail stop downward as price falls
-            new_stop = round(bar_lo + trail_dist, 4)
-            if new_stop < stop:
-                pos["stop"] = new_stop
-                pos["peak"] = round(bar_lo, 4)
-                stop = new_stop
+            # Short: same — check exit first, then trail down.
             if bar_hi >= stop:
                 reason, exit_px = "trailing stop", stop
             else:
+                new_stop = round(bar_lo + trail_dist, 4)
+                if new_stop < stop:
+                    pos["stop"] = new_stop
+                    pos["peak"] = round(bar_lo, 4)
                 still_open.append(pos)
                 continue
 

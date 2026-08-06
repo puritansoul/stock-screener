@@ -63763,3 +63763,252 @@ hint: have locally. This is usually caused by another repository pushing to
 hint: the same ref. If you want to integrate the remote changes, use
 hint: 'git pull' before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2026-08-06 11:11:35 ET — running
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+$BLK: possibly delisted; no price data found  (period=1d)
+$MPC: possibly delisted; no price data found  (period=1d)
+$SBAC: possibly delisted; no price data found  (period=1d)
+$SRE: possibly delisted; no price data found  (period=1d)
+$CEG: possibly delisted; no price data found  (period=1d)
+$MRVL: possibly delisted; no price data found  (period=1d)
+$FAST: possibly delisted; no price data found  (period=1d)
+$EXC: possibly delisted; no price data found  (period=1d)
+$EXPD: possibly delisted; no price data found  (period=1d)
+$APO: possibly delisted; no price data found  (period=1d)
+$TEL: possibly delisted; no price data found  (period=1d)
+$AMGN: possibly delisted; no price data found  (period=1d)
+
+13 Failed downloads:
+['BLK', 'MPC', 'SBAC', 'SRE', 'CEG', 'MRVL', 'FAST', 'EXC', 'EXPD', 'APO', 'TEL', 'AMGN']: possibly delisted; no price data found  (period=1d)
+['WELL']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-08-06 11:11 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 490 tickers
+  ORB computed for 490 tickers
+  EXIT long SWK @ $103.20  PnL: $-1  (trailing stop)
+  ENTER short DLR @ $192.68  x2  stop=$194.13  trail=$1.45
+
+  Portfolio: $96,259  (-3,741 / -3.74%)
+  Cash: $1,363  |  Open: 57  |  Today PnL: $+63
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-06.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 9ba0a08] intraday: 2026-08-06 11:12 ET local [skip ci]
+ 11 files changed, 123899 insertions(+), 58752 deletions(-)
+ create mode 100644 reports/intraday_2026-08-03.html
+ create mode 100644 reports/intraday_2026-08-04.html
+ create mode 100644 reports/intraday_2026-08-05.html
+ create mode 100644 reports/intraday_2026-08-06.html
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   7e3b1e6..9ba0a08  main -> main
+2026-08-06 11:14:05 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+$CPT: possibly delisted; no price data found  (period=1d)
+$AWK: possibly delisted; no price data found  (period=1d)
+$GS: possibly delisted; no price data found  (period=1d)
+$SYY: possibly delisted; no price data found  (period=1d)
+$VEEV: possibly delisted; no price data found  (period=1d)
+$VICI: possibly delisted; no price data found  (period=1d)
+
+6 Failed downloads:
+['CPT', 'AWK', 'GS', 'SYY', 'VEEV', 'VICI']: possibly delisted; no price data found  (period=1d)
+
+1 Failed download:
+['LH']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-08-06 11:14 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 497 tickers
+  ORB computed for 497 tickers
+  EXIT short OKE @ $87.31  PnL: $-0  (trailing stop)
+  ENTER short STT @ $186.86  x2  stop=$187.56  trail=$0.69
+  ENTER long NTAP @ $187.69  x1  stop=$184.76  trail=$2.93
+  ENTER short CTAS @ $199.86  x1  stop=$201.53  trail=$1.67
+  ENTER short BX @ $133.87  x1  stop=$135.02  trail=$1.15
+  ENTER short ED @ $108.06  x1  stop=$108.86  trail=$0.81
+
+  Portfolio: $96,273  (-3,727 / -3.73%)
+  Cash: $447  |  Open: 61  |  Today PnL: $+63
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-06.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main f423943] intraday: 2026-08-06 11:14 ET local [skip ci]
+ 4 files changed, 563 insertions(+), 351 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   1fc7279..f423943  main -> main
+2026-08-06 11:16:32 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+   f423943..bd7df98  main       -> origin/main
+Updating f423943..bd7df98
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-08-06 11:16 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+  EXIT short BIIB @ $203.66  PnL: $+18  (trailing stop)
+  EXIT long APH @ $172.00  PnL: $-24  (trailing stop)
+  ENTER short URI @ $1160.97  x1  stop=$1165.40  trail=$4.43
+  ENTER short HUM @ $358.96  x3  stop=$363.95  trail=$5.00
+
+  Portfolio: $96,237  (-3,763 / -3.76%)
+  Cash: $3,567  |  Open: 61  |  Today PnL: $+57
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-06.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main b24ec2f] intraday: 2026-08-06 11:16 ET local [skip ci]
+ 4 files changed, 459 insertions(+), 350 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   bd7df98..b24ec2f  main -> main
+2026-08-06 11:18:59 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-08-06 11:19 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+  EXIT short LUV @ $47.56  PnL: $+6  (trailing stop)
+  EXIT short BA @ $233.74  PnL: $-2  (trailing stop)
+  ENTER long TKO @ $188.46  x12  stop=$187.75  trail=$0.71
+  ENTER short SCHW @ $107.07  x14  stop=$107.58  trail=$0.51
+  ENTER short LUV @ $47.38  x24  stop=$47.60  trail=$0.21
+  ENTER short LHX @ $287.91  x2  stop=$289.12  trail=$1.21
+  ENTER short KEY @ $22.86  x28  stop=$22.99  trail=$0.13
+  ENTER long KLAC @ $197.16  x2  stop=$193.21  trail=$3.95
+  ENTER short CRH @ $97.97  x3  stop=$98.74  trail=$0.76
+
+  Portfolio: $96,182  (-3,818 / -3.82%)
+  Cash: $808  |  Open: 66  |  Today PnL: $+62
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-06.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 5c12292] intraday: 2026-08-06 11:19 ET local [skip ci]
+ 4 files changed, 591 insertions(+), 347 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   bfdc2dc..5c12292  main -> main
+2026-08-06 11:21:26 ET — running
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+5 Failed downloads:
+['HUM', 'DVA', 'MNST', 'MU', 'AMP']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-08-06 11:21 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+  ENTER short MNST @ $93.71  x2  stop=$94.45  trail=$0.74
+
+  Portfolio: $96,156  (-3,844 / -3.84%)
+  Cash: $621  |  Open: 67  |  Today PnL: $+62
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-06.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	reports/swing_2026-08-06.html
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+To https://github.com/puritansoul/stock-screener.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/puritansoul/stock-screener.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2026-08-06 11:23:50 ET — running
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-08-06 11:23 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+
+  Portfolio: $96,162  (-3,838 / -3.84%)
+  Cash: $621  |  Open: 67  |  Today PnL: $+62
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-06.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	reports/swing_2026-08-06.html
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+To https://github.com/puritansoul/stock-screener.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/puritansoul/stock-screener.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2026-08-06 11:26:14 ET — running
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-08-06 11:26 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  ORB computed for 503 tickers
+
+  Portfolio: $96,152  (-3,848 / -3.85%)
+  Cash: $621  |  Open: 67  |  Today PnL: $+62
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-06.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	reports/swing_2026-08-06.html
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+To https://github.com/puritansoul/stock-screener.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/puritansoul/stock-screener.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
