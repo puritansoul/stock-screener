@@ -1,5 +1,5 @@
 {
-  "capital": 1070.68,
+  "capital": 1574.0,
   "open_positions": [
     {
       "ticker": "ROL",
@@ -112,20 +112,6 @@
       "orb_width": 1.625,
       "cost": 2937.65,
       "vol_ratio": 1.65
-    },
-    {
-      "ticker": "VRSK",
-      "side": "short",
-      "entry_date": "2026-08-06",
-      "entry_time": "10:40 ET",
-      "entry_price": 184.525,
-      "shares": 5,
-      "stop": 186.41,
-      "trail_dist": 2.41,
-      "peak": 184.0,
-      "orb_width": 4.82,
-      "cost": 922.62,
-      "vol_ratio": 1.42
     },
     {
       "ticker": "WST",
@@ -260,9 +246,9 @@
       "entry_time": "10:54 ET",
       "entry_price": 104.345,
       "shares": 1,
-      "stop": 103.21,
+      "stop": 103.07,
       "trail_dist": 0.71,
-      "peak": 102.5,
+      "peak": 102.36,
       "orb_width": 1.42,
       "cost": 104.35,
       "vol_ratio": 1.39
@@ -274,9 +260,9 @@
       "entry_time": "10:54 ET",
       "entry_price": 55.5,
       "shares": 1,
-      "stop": 55.3125,
+      "stop": 55.3825,
       "trail_dist": 1.0075,
-      "peak": 56.32,
+      "peak": 56.39,
       "orb_width": 2.015,
       "cost": 55.5,
       "vol_ratio": 1.35
@@ -302,9 +288,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 141.05,
       "shares": 1,
-      "stop": 144.5675,
+      "stop": 145.2575,
       "trail_dist": 1.0625,
-      "peak": 145.63,
+      "peak": 146.32,
       "orb_width": 2.125,
       "cost": 141.05,
       "vol_ratio": 1.33
@@ -666,9 +652,9 @@
       "entry_time": "13:24 ET",
       "entry_price": 25.115,
       "shares": 64,
-      "stop": 24.985,
+      "stop": 24.995,
       "trail_dist": 0.165,
-      "peak": 25.15,
+      "peak": 25.16,
       "orb_width": 0.33,
       "cost": 1607.36,
       "vol_ratio": 6.41
@@ -694,9 +680,9 @@
       "entry_time": "13:29 ET",
       "entry_price": 414.31,
       "shares": 2,
-      "stop": 415.89,
+      "stop": 415.77,
       "trail_dist": 1.99,
-      "peak": 413.9,
+      "peak": 413.78,
       "orb_width": 3.98,
       "cost": 828.62,
       "vol_ratio": 6.29
@@ -728,6 +714,20 @@
       "orb_width": 0.87,
       "cost": 432.7,
       "vol_ratio": 6.15
+    },
+    {
+      "ticker": "BIIB",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "13:42 ET",
+      "entry_price": 204.94,
+      "shares": 2,
+      "stop": 206.57,
+      "trail_dist": 1.63,
+      "peak": 204.94,
+      "orb_width": 3.26,
+      "cost": 409.88,
+      "vol_ratio": 3.4
     }
   ],
   "closed_today": [
@@ -1813,6 +1813,25 @@
       "pnl": -0.73,
       "exit_reason": "trailing stop",
       "exit_time": "13:34 ET"
+    },
+    {
+      "ticker": "VRSK",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "10:40 ET",
+      "entry_price": 184.525,
+      "shares": 5,
+      "stop": 186.41,
+      "trail_dist": 2.41,
+      "peak": 184.0,
+      "orb_width": 4.82,
+      "cost": 922.62,
+      "vol_ratio": 1.42,
+      "exit_date": "2026-08-06",
+      "exit_price": 186.41,
+      "pnl": -9.42,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:42 ET"
     }
   ],
   "all_closed": [
@@ -72976,11 +72995,6 @@
       "low": 103.1,
       "width": 2.42
     },
-    "NWSA": {
-      "high": 30.88,
-      "low": 29.14,
-      "width": 1.74
-    },
     "NWS": {
       "high": 35.31,
       "low": 33.72,
@@ -73366,6 +73380,11 @@
       "low": 111.8,
       "width": 2.95
     },
+    "SHW": {
+      "high": 371.53,
+      "low": 366.27,
+      "width": 5.26
+    },
     "SPG": {
       "high": 226.61,
       "low": 222.795,
@@ -73586,11 +73605,6 @@
       "low": 64.38,
       "width": 0.64
     },
-    "UBER": {
-      "high": 69.355,
-      "low": 68.17,
-      "width": 1.185
-    },
     "UDR": {
       "high": 38.87,
       "low": 38.125,
@@ -73715,6 +73729,11 @@
       "high": 298.21,
       "low": 295.38,
       "width": 2.83
+    },
+    "WMT": {
+      "high": 114.56,
+      "low": 112.62,
+      "width": 1.94
     },
     "DIS": {
       "high": 104.2,
@@ -73843,7 +73862,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 96140.0
+    "2026-08-06": 96092.26
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -149406,6 +149425,32 @@
       "exits": [],
       "portfolio_value": 96140.0,
       "note": "$96,140 | cash=$1,071 | open=52 | closed today=57 | day PnL=$-292"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "13:41 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "BIIB",
+          "side": "short",
+          "price": 204.94,
+          "shares": 2,
+          "stop": 206.57,
+          "trail_dist": 1.63
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "VRSK",
+          "side": "short",
+          "exit_price": 186.41,
+          "pnl": -9.42,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 96092.26,
+      "note": "$96,092 | cash=$1,574 | open=52 | closed today=58 | day PnL=$-301"
     }
   ]
 }
