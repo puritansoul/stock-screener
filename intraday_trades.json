@@ -106,9 +106,9 @@
       "entry_time": "10:17 ET",
       "entry_price": 67.63,
       "shares": 1,
-      "stop": 67.9125,
+      "stop": 67.8775,
       "trail_dist": 0.6525,
-      "peak": 67.26,
+      "peak": 67.225,
       "orb_width": 1.305,
       "cost": 67.63,
       "vol_ratio": 1.24
@@ -232,9 +232,9 @@
       "entry_time": "10:49 ET",
       "entry_price": 160.24,
       "shares": 1,
-      "stop": 158.76,
+      "stop": 158.71,
       "trail_dist": 1.515,
-      "peak": 157.245,
+      "peak": 157.195,
       "orb_width": 3.03,
       "cost": 160.24,
       "vol_ratio": 2.11
@@ -372,9 +372,9 @@
       "entry_time": "10:54 ET",
       "entry_price": 55.5,
       "shares": 1,
-      "stop": 55.2475,
+      "stop": 55.2625,
       "trail_dist": 1.0075,
-      "peak": 56.255,
+      "peak": 56.27,
       "orb_width": 2.015,
       "cost": 55.5,
       "vol_ratio": 1.35
@@ -428,9 +428,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 141.05,
       "shares": 1,
-      "stop": 141.1975,
+      "stop": 141.2575,
       "trail_dist": 1.0625,
-      "peak": 142.26,
+      "peak": 142.32,
       "orb_width": 2.125,
       "cost": 141.05,
       "vol_ratio": 1.33
@@ -71077,6 +71077,11 @@
   ],
   "today": "2026-08-06",
   "today_orb": {
+    "MMM": {
+      "high": 183.5,
+      "low": 181.85,
+      "width": 1.65
+    },
     "AOS": {
       "high": 63.464,
       "low": 62.55,
@@ -73282,11 +73287,6 @@
       "low": 88.095,
       "width": 1.515
     },
-    "TMO": {
-      "high": 578.48,
-      "low": 569.63,
-      "width": 8.85
-    },
     "TJX": {
       "high": 161.85,
       "low": 160.01,
@@ -73609,7 +73609,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 96058.6
+    "2026-08-06": 96080.14
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -148590,6 +148590,15 @@
       ],
       "portfolio_value": 96058.6,
       "note": "$96,059 | cash=$11,125 | open=58 | closed today=40 | day PnL=$-285"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "12:05 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 96080.14,
+      "note": "$96,080 | cash=$11,125 | open=58 | closed today=40 | day PnL=$-285"
     }
   ]
 }
