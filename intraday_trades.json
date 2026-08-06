@@ -1,5 +1,5 @@
 {
-  "capital": 7257.24,
+  "capital": 9254.64,
   "open_positions": [
     {
       "ticker": "SO",
@@ -288,9 +288,9 @@
       "entry_time": "11:14 ET",
       "entry_price": 187.69,
       "shares": 1,
-      "stop": 186.9305,
+      "stop": 187.0405,
       "trail_dist": 2.9295,
-      "peak": 189.86,
+      "peak": 189.97,
       "orb_width": 5.8589,
       "cost": 187.69,
       "vol_ratio": 1.55
@@ -378,20 +378,6 @@
       "orb_width": 48.88,
       "cost": 1180.22,
       "vol_ratio": 3.34
-    },
-    {
-      "ticker": "EVRG",
-      "side": "short",
-      "entry_date": "2026-08-06",
-      "entry_time": "11:39 ET",
-      "entry_price": 83.11,
-      "shares": 24,
-      "stop": 82.995,
-      "trail_dist": 0.575,
-      "peak": 82.42,
-      "orb_width": 1.15,
-      "cost": 1994.64,
-      "vol_ratio": 1.48
     },
     {
       "ticker": "AMT",
@@ -512,9 +498,9 @@
       "entry_time": "13:34 ET",
       "entry_price": 47.305,
       "shares": 13,
-      "stop": 47.5,
+      "stop": 47.455,
       "trail_dist": 0.215,
-      "peak": 47.285,
+      "peak": 47.24,
       "orb_width": 0.43,
       "cost": 614.97,
       "vol_ratio": 7.61
@@ -610,9 +596,9 @@
       "entry_time": "14:49 ET",
       "entry_price": 183.87,
       "shares": 32,
-      "stop": 184.7675,
+      "stop": 184.7475,
       "trail_dist": 0.8975,
-      "peak": 183.87,
+      "peak": 183.85,
       "orb_width": 1.795,
       "cost": 5883.84,
       "vol_ratio": 11.91
@@ -638,9 +624,9 @@
       "entry_time": "14:49 ET",
       "entry_price": 274.02,
       "shares": 10,
-      "stop": 271.8,
+      "stop": 271.955,
       "trail_dist": 2.22,
-      "peak": 274.02,
+      "peak": 274.175,
       "orb_width": 4.44,
       "cost": 2740.2,
       "vol_ratio": 1.93
@@ -1995,6 +1981,25 @@
       "pnl": 1.28,
       "exit_reason": "trailing stop",
       "exit_time": "14:49 ET"
+    },
+    {
+      "ticker": "EVRG",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "11:39 ET",
+      "entry_price": 83.11,
+      "shares": 24,
+      "stop": 82.995,
+      "trail_dist": 0.575,
+      "peak": 82.42,
+      "orb_width": 1.15,
+      "cost": 1994.64,
+      "vol_ratio": 1.48,
+      "exit_date": "2026-08-06",
+      "exit_price": 82.995,
+      "pnl": 2.76,
+      "exit_reason": "trailing stop",
+      "exit_time": "14:51 ET"
     }
   ],
   "all_closed": [
@@ -72653,6 +72658,11 @@
       "low": 88.9552,
       "width": 1.3648
     },
+    "HSY": {
+      "high": 182.87,
+      "low": 180.17,
+      "width": 2.7
+    },
     "HPE": {
       "high": 52.1,
       "low": 49.1201,
@@ -74030,7 +74040,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 95943.47
+    "2026-08-06": 95939.51
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -149949,6 +149959,23 @@
       ],
       "portfolio_value": 95943.47,
       "note": "$95,943 | cash=$7,257 | open=46 | closed today=71 | day PnL=$-281"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "14:51 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "EVRG",
+          "side": "short",
+          "exit_price": 83.0,
+          "pnl": 2.76,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95939.51,
+      "note": "$95,940 | cash=$9,255 | open=45 | closed today=72 | day PnL=$-278"
     }
   ]
 }
