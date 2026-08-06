@@ -41,12 +41,12 @@
           <div class="stat-grid">
             <div class="stat">
               <div class="stat-label">Portfolio Value</div>
-              <div class="stat-val" style="color:#1a237e">$100,000</div>
+              <div class="stat-val" style="color:#1a237e">$103,815</div>
             </div>
             <div class="stat">
               <div class="stat-label">Total Return</div>
-              <div class="stat-val" style="color:#2e7d32">+$0<br>
-                <span style="font-size:13px">+0.00%</span>
+              <div class="stat-val" style="color:#2e7d32">+$3,815<br>
+                <span style="font-size:13px">+3.82%</span>
               </div>
             </div>
             <div class="stat">
@@ -59,18 +59,18 @@
             </div>
             <div class="stat">
               <div class="stat-label">Win Rate</div>
-              <div class="stat-val">77.4%</div>
+              <div class="stat-val">77.5%</div>
             </div>
             <div class="stat">
               <div class="stat-label">Closed Trades</div>
-              <div class="stat-val">115</div>
+              <div class="stat-val">120</div>
             </div>
           </div>
           <canvas id="swing-chart" style="width:100%;margin:12px 0"></canvas>
           <div style="font-size:11px;color:#999;margin-bottom:12px">
-            Inception: 2026-07-09 &nbsp;|&nbsp; Last run: 2026-08-05
+            Inception: 2026-07-09 &nbsp;|&nbsp; Last run: 2026-08-06
           </div>
-          <a href="reports/swing_v2_2026-08-06.html" class="btn" style="background:#1a237e">Open Dashboard →</a>
+          <a href="reports/swing_v2_2026-08-05.html" class="btn" style="background:#1a237e">Open Dashboard →</a>
         </div>
     
         <div class="bot-card" style="border-top:4px solid #e65100">
@@ -127,8 +127,8 @@
 <script>
 
 (function() {
-  const dates = ["2026-07-09", "2026-07-10", "2026-07-13", "2026-07-15", "2026-07-16", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-03", "2026-08-04", "2026-08-05"];
-  const vals  = [100000.0, 101615.45, 102667.93, 98011.16, 98225.18, 98779.23, 98947.51, 100830.42, 100340.44, 100021.97, 100949.81, 101590.61, 101350.51, 99736.77, 102468.73, 102861.24, 103191.97, 103798.43];
+  const dates = ["2026-07-09", "2026-07-10", "2026-07-13", "2026-07-15", "2026-07-16", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06"];
+  const vals  = [100000.0, 101615.45, 102667.93, 98011.16, 98225.18, 98779.23, 98947.51, 100830.42, 100340.44, 100021.97, 100949.81, 101590.61, 101350.51, 99736.77, 102468.73, 102861.24, 103191.97, 103798.43, 103815.13];
   const N = vals.length;
   if (N < 2) return;
   const canvas = document.getElementById('swing-chart');
