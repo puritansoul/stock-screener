@@ -1,5 +1,5 @@
 {
-  "capital": 19871.87,
+  "capital": 7257.24,
   "open_positions": [
     {
       "ticker": "SO",
@@ -198,20 +198,6 @@
       "vol_ratio": 1.49
     },
     {
-      "ticker": "KKR",
-      "side": "short",
-      "entry_date": "2026-08-06",
-      "entry_time": "10:54 ET",
-      "entry_price": 104.345,
-      "shares": 1,
-      "stop": 103.07,
-      "trail_dist": 0.71,
-      "peak": 102.36,
-      "orb_width": 1.42,
-      "cost": 104.35,
-      "vol_ratio": 1.39
-    },
-    {
       "ticker": "CTSH",
       "side": "long",
       "entry_date": "2026-08-06",
@@ -302,9 +288,9 @@
       "entry_time": "11:14 ET",
       "entry_price": 187.69,
       "shares": 1,
-      "stop": 186.9105,
+      "stop": 186.9305,
       "trail_dist": 2.9295,
-      "peak": 189.84,
+      "peak": 189.86,
       "orb_width": 5.8589,
       "cost": 187.69,
       "vol_ratio": 1.55
@@ -428,9 +414,9 @@
       "entry_time": "12:08 ET",
       "entry_price": 19.155,
       "shares": 271,
-      "stop": 19.26,
+      "stop": 19.255,
       "trail_dist": 0.2,
-      "peak": 19.06,
+      "peak": 19.055,
       "orb_width": 0.4,
       "cost": 5191.01,
       "vol_ratio": 22.38
@@ -526,9 +512,9 @@
       "entry_time": "13:34 ET",
       "entry_price": 47.305,
       "shares": 13,
-      "stop": 47.51,
+      "stop": 47.5,
       "trail_dist": 0.215,
-      "peak": 47.295,
+      "peak": 47.285,
       "orb_width": 0.43,
       "cost": 614.97,
       "vol_ratio": 7.61
@@ -616,6 +602,48 @@
       "orb_width": 2.9599,
       "cost": 967.76,
       "vol_ratio": 3.75
+    },
+    {
+      "ticker": "NTRS",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "14:49 ET",
+      "entry_price": 183.87,
+      "shares": 32,
+      "stop": 184.7675,
+      "trail_dist": 0.8975,
+      "peak": 183.87,
+      "orb_width": 1.795,
+      "cost": 5883.84,
+      "vol_ratio": 11.91
+    },
+    {
+      "ticker": "MS",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "14:49 ET",
+      "entry_price": 215.59,
+      "shares": 19,
+      "stop": 217.4208,
+      "trail_dist": 1.8308,
+      "peak": 215.59,
+      "orb_width": 3.6615,
+      "cost": 4096.21,
+      "vol_ratio": 4.99
+    },
+    {
+      "ticker": "CI",
+      "side": "long",
+      "entry_date": "2026-08-06",
+      "entry_time": "14:49 ET",
+      "entry_price": 274.02,
+      "shares": 10,
+      "stop": 271.8,
+      "trail_dist": 2.22,
+      "peak": 274.02,
+      "orb_width": 4.44,
+      "cost": 2740.2,
+      "vol_ratio": 1.93
     }
   ],
   "closed_today": [
@@ -1948,6 +1976,25 @@
       "pnl": -13.02,
       "exit_reason": "trailing stop",
       "exit_time": "14:39 ET"
+    },
+    {
+      "ticker": "KKR",
+      "side": "short",
+      "entry_date": "2026-08-06",
+      "entry_time": "10:54 ET",
+      "entry_price": 104.345,
+      "shares": 1,
+      "stop": 103.07,
+      "trail_dist": 0.71,
+      "peak": 102.36,
+      "orb_width": 1.42,
+      "cost": 104.35,
+      "vol_ratio": 1.39,
+      "exit_date": "2026-08-06",
+      "exit_price": 103.07,
+      "pnl": 1.28,
+      "exit_reason": "trailing stop",
+      "exit_time": "14:49 ET"
     }
   ],
   "all_closed": [
@@ -72606,11 +72653,6 @@
       "low": 88.9552,
       "width": 1.3648
     },
-    "HSY": {
-      "high": 182.87,
-      "low": 180.17,
-      "width": 2.7
-    },
     "HPE": {
       "high": 52.1,
       "low": 49.1201,
@@ -73015,6 +73057,11 @@
       "high": 1423.14,
       "low": 1402.965,
       "width": 20.175
+    },
+    "MGM": {
+      "high": 45.17,
+      "low": 44.355,
+      "width": 0.815
     },
     "MCHP": {
       "high": 78.45,
@@ -73983,7 +74030,7 @@
     "2026-08-03": 95233.81,
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
-    "2026-08-06": 95971.43
+    "2026-08-06": 95943.47
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -149860,6 +149907,48 @@
       "exits": [],
       "portfolio_value": 95971.43,
       "note": "$95,971 | cash=$19,872 | open=44 | closed today=70 | day PnL=$-282"
+    },
+    {
+      "date": "2026-08-06",
+      "time": "14:48 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "NTRS",
+          "side": "short",
+          "price": 183.87,
+          "shares": 32,
+          "stop": 184.77,
+          "trail_dist": 0.8975
+        },
+        {
+          "ticker": "MS",
+          "side": "short",
+          "price": 215.59,
+          "shares": 19,
+          "stop": 217.42,
+          "trail_dist": 1.8308
+        },
+        {
+          "ticker": "CI",
+          "side": "long",
+          "price": 274.02,
+          "shares": 10,
+          "stop": 271.8,
+          "trail_dist": 2.22
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "KKR",
+          "side": "short",
+          "exit_price": 103.07,
+          "pnl": 1.28,
+          "reason": "trailing stop"
+        }
+      ],
+      "portfolio_value": 95943.47,
+      "note": "$95,943 | cash=$7,257 | open=46 | closed today=71 | day PnL=$-281"
     }
   ]
 }
