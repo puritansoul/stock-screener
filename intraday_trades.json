@@ -74533,11 +74533,6 @@
       "low": 175.0,
       "width": 4.625
     },
-    "WYNN": {
-      "high": 102.75,
-      "low": 100.11,
-      "width": 2.64
-    },
     "XEL": {
       "high": 76.91,
       "low": 76.09,
@@ -74591,7 +74586,7 @@
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
-    "2026-08-07": 100326.21
+    "2026-08-07": 100346.4
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -152445,6 +152440,22 @@
       },
       "portfolio_value": 100326.21,
       "note": "$100,326 | cash=$2,992 | open=10 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-07",
+      "time": "13:00 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.11,
+        "spy_vs_vwap": -0.2351,
+        "spy_vs_ema20": 21.4455
+      },
+      "portfolio_value": 100346.4,
+      "note": "$100,346 | cash=$2,992 | open=10 | closed today=0 | day PnL=$+0"
     }
   ]
 }
