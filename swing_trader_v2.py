@@ -622,9 +622,12 @@ def run_swing_trader():
         long_signal  = close > sma200 and rsi2 < RSI_LONG_ENTRY
         short_signal = shorts_allowed and close < sma200 and rsi2 > RSI_SHORT_ENTRY
         trend = "above SMA200" if close > sma200 else "below SMA200"
-        status = ("LONG signal" if long_signal else
-                  "SHORT signal" if short_signal else
-                  f"{trend}")
+        if long_signal:
+            status = "LONG signal" if entries_gate else f"LONG signal (VIX {vix_level:.1f} < {VIX_MIN_ENTRY:.0f} — gate closed)"
+        elif short_signal:
+            status = "SHORT signal" if entries_gate else f"SHORT signal (VIX {vix_level:.1f} < {VIX_MIN_ENTRY:.0f} — gate closed)"
+        else:
+            status = trend
         all_scan.append({"ticker": tk, "rsi2": round(rsi2, 1), "close": round(close, 2),
                           "sma200": round(sma200, 2), "status": status})
         if long_signal and entries_gate:
