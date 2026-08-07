@@ -1,5 +1,5 @@
 {
-  "capital": 2992.47,
+  "capital": 5458.34,
   "open_positions": [
     {
       "ticker": "UHS",
@@ -114,22 +114,6 @@
       "has_catalyst": false
     },
     {
-      "ticker": "NEE",
-      "side": "long",
-      "entry_date": "2026-08-07",
-      "entry_time": "11:21 ET",
-      "entry_price": 84.76,
-      "shares": 29,
-      "stop": 85.03,
-      "trail_dist": 0.32,
-      "peak": 85.35,
-      "orb_width": 0.64,
-      "cost": 2458.04,
-      "vol_ratio": 1.26,
-      "score": 31.22,
-      "has_catalyst": false
-    },
-    {
       "ticker": "PODD",
       "side": "long",
       "entry_date": "2026-08-07",
@@ -162,7 +146,29 @@
       "has_catalyst": false
     }
   ],
-  "closed_today": [],
+  "closed_today": [
+    {
+      "ticker": "NEE",
+      "side": "long",
+      "entry_date": "2026-08-07",
+      "entry_time": "11:21 ET",
+      "entry_price": 84.76,
+      "shares": 29,
+      "stop": 85.03,
+      "trail_dist": 0.32,
+      "peak": 85.35,
+      "orb_width": 0.64,
+      "cost": 2458.04,
+      "vol_ratio": 1.26,
+      "score": 31.22,
+      "has_catalyst": false,
+      "exit_date": "2026-08-07",
+      "exit_price": 85.03,
+      "pnl": 7.83,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:28 ET"
+    }
+  ],
   "all_closed": [
     {
       "ticker": "SNOW",
@@ -73698,6 +73704,11 @@
       "low": 94.31,
       "width": 1.32
     },
+    "NTAP": {
+      "high": 192.7903,
+      "low": 188.7704,
+      "width": 4.0199
+    },
     "NFLX": {
       "high": 74.01,
       "low": 73.15,
@@ -74586,7 +74597,7 @@
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
-    "2026-08-07": 100370.45
+    "2026-08-07": 100395.52
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -152616,6 +152627,30 @@
       },
       "portfolio_value": 100370.45,
       "note": "$100,370 | cash=$2,992 | open=10 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-07",
+      "time": "13:27 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "NEE",
+          "side": "long",
+          "exit_price": 85.03,
+          "pnl": 7.83,
+          "reason": "trailing stop"
+        }
+      ],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.118,
+        "spy_vs_vwap": -0.173,
+        "spy_vs_ema20": 21.5098
+      },
+      "portfolio_value": 100395.52,
+      "note": "$100,396 | cash=$5,458 | open=9 | closed today=1 | day PnL=$+8"
     }
   ]
 }
