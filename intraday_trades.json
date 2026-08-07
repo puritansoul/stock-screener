@@ -72299,11 +72299,6 @@
       "low": 137.78,
       "width": 2.77
     },
-    "ANET": {
-      "high": 198.0,
-      "low": 191.96,
-      "width": 6.04
-    },
     "AJG": {
       "high": 250.2,
       "low": 246.29,
@@ -74194,11 +74189,6 @@
       "low": 332.5401,
       "width": 7.4599
     },
-    "SMCI": {
-      "high": 30.42,
-      "low": 29.82,
-      "width": 0.6
-    },
     "SYF": {
       "high": 78.79,
       "low": 77.6,
@@ -74607,7 +74597,7 @@
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
-    "2026-08-07": 100532.17
+    "2026-08-07": 100580.81
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -153221,6 +153211,22 @@
       },
       "portfolio_value": 100532.17,
       "note": "$100,532 | cash=$13,783 | open=7 | closed today=3 | day PnL=$-17"
+    },
+    {
+      "date": "2026-08-07",
+      "time": "14:54 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.044,
+        "spy_vs_vwap": -0.682,
+        "spy_vs_ema20": 20.9397
+      },
+      "portfolio_value": 100580.81,
+      "note": "$100,581 | cash=$13,783 | open=7 | closed today=3 | day PnL=$-17"
     }
   ]
 }
