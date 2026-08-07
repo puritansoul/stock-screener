@@ -1,103 +1,6 @@
 {
-  "capital": 28639.84,
-  "open_positions": [
-    {
-      "ticker": "UHS",
-      "side": "long",
-      "entry_date": "2026-08-07",
-      "entry_time": "11:19 ET",
-      "entry_price": 171.73,
-      "shares": 174,
-      "stop": 172.1759,
-      "trail_dist": 1.4091,
-      "peak": 173.585,
-      "orb_width": 2.8183,
-      "cost": 29881.02,
-      "vol_ratio": 15.0,
-      "score": 67.53,
-      "has_catalyst": false
-    },
-    {
-      "ticker": "GRMN",
-      "side": "long",
-      "entry_date": "2026-08-07",
-      "entry_time": "11:19 ET",
-      "entry_price": 309.13,
-      "shares": 68,
-      "stop": 310.4775,
-      "trail_dist": 1.8075,
-      "peak": 312.285,
-      "orb_width": 3.615,
-      "cost": 21020.84,
-      "vol_ratio": 10.21,
-      "score": 66.76,
-      "has_catalyst": false
-    },
-    {
-      "ticker": "COO",
-      "side": "long",
-      "entry_date": "2026-08-07",
-      "entry_time": "11:19 ET",
-      "entry_price": 74.07,
-      "shares": 139,
-      "stop": 73.815,
-      "trail_dist": 0.545,
-      "peak": 74.36,
-      "orb_width": 1.09,
-      "cost": 10295.73,
-      "vol_ratio": 4.79,
-      "score": 46.01,
-      "has_catalyst": false
-    },
-    {
-      "ticker": "TECH",
-      "side": "long",
-      "entry_date": "2026-08-07",
-      "entry_time": "11:19 ET",
-      "entry_price": 72.22,
-      "shares": 70,
-      "stop": 72.1675,
-      "trail_dist": 0.0775,
-      "peak": 72.245,
-      "orb_width": 0.155,
-      "cost": 5055.4,
-      "vol_ratio": 1.9,
-      "score": 31.78,
-      "has_catalyst": false
-    },
-    {
-      "ticker": "CMCSA",
-      "side": "long",
-      "entry_date": "2026-08-07",
-      "entry_time": "11:21 ET",
-      "entry_price": 25.325,
-      "shares": 141,
-      "stop": 25.3525,
-      "trail_dist": 0.1375,
-      "peak": 25.49,
-      "orb_width": 0.275,
-      "cost": 3570.83,
-      "vol_ratio": 1.57,
-      "score": 32.88,
-      "has_catalyst": false
-    },
-    {
-      "ticker": "PODD",
-      "side": "long",
-      "entry_date": "2026-08-07",
-      "entry_time": "11:43 ET",
-      "entry_price": 139.715,
-      "shares": 12,
-      "stop": 140.5275,
-      "trail_dist": 1.2925,
-      "peak": 141.82,
-      "orb_width": 2.585,
-      "cost": 1676.58,
-      "vol_ratio": 5.38,
-      "score": 46.89,
-      "has_catalyst": false
-    }
-  ],
+  "capital": 100701.13,
+  "open_positions": [],
   "closed_today": [
     {
       "ticker": "NEE",
@@ -182,6 +85,132 @@
       "pnl": 157.41,
       "exit_reason": "trailing stop",
       "exit_time": "15:04 ET"
+    },
+    {
+      "ticker": "UHS",
+      "side": "long",
+      "entry_date": "2026-08-07",
+      "entry_time": "11:19 ET",
+      "entry_price": 171.73,
+      "shares": 174,
+      "stop": 172.1759,
+      "trail_dist": 1.4091,
+      "peak": 173.585,
+      "orb_width": 2.8183,
+      "cost": 29881.02,
+      "vol_ratio": 15.0,
+      "score": 67.53,
+      "has_catalyst": false,
+      "exit_date": "2026-08-07",
+      "exit_price": 173.34,
+      "pnl": 280.14,
+      "exit_reason": "force close 3:45pm",
+      "exit_time": "15:46 ET"
+    },
+    {
+      "ticker": "GRMN",
+      "side": "long",
+      "entry_date": "2026-08-07",
+      "entry_time": "11:19 ET",
+      "entry_price": 309.13,
+      "shares": 68,
+      "stop": 310.4775,
+      "trail_dist": 1.8075,
+      "peak": 312.285,
+      "orb_width": 3.615,
+      "cost": 21020.84,
+      "vol_ratio": 10.21,
+      "score": 66.76,
+      "has_catalyst": false,
+      "exit_date": "2026-08-07",
+      "exit_price": 312.04,
+      "pnl": 197.88,
+      "exit_reason": "force close 3:45pm",
+      "exit_time": "15:46 ET"
+    },
+    {
+      "ticker": "COO",
+      "side": "long",
+      "entry_date": "2026-08-07",
+      "entry_time": "11:19 ET",
+      "entry_price": 74.07,
+      "shares": 139,
+      "stop": 73.815,
+      "trail_dist": 0.545,
+      "peak": 74.36,
+      "orb_width": 1.09,
+      "cost": 10295.73,
+      "vol_ratio": 4.79,
+      "score": 46.01,
+      "has_catalyst": false,
+      "exit_date": "2026-08-07",
+      "exit_price": 74.4,
+      "pnl": 45.87,
+      "exit_reason": "force close 3:45pm",
+      "exit_time": "15:46 ET"
+    },
+    {
+      "ticker": "TECH",
+      "side": "long",
+      "entry_date": "2026-08-07",
+      "entry_time": "11:19 ET",
+      "entry_price": 72.22,
+      "shares": 70,
+      "stop": 72.1675,
+      "trail_dist": 0.0775,
+      "peak": 72.245,
+      "orb_width": 0.155,
+      "cost": 5055.4,
+      "vol_ratio": 1.9,
+      "score": 31.78,
+      "has_catalyst": false,
+      "exit_date": "2026-08-07",
+      "exit_price": 72.23,
+      "pnl": 0.7,
+      "exit_reason": "force close 3:45pm",
+      "exit_time": "15:46 ET"
+    },
+    {
+      "ticker": "CMCSA",
+      "side": "long",
+      "entry_date": "2026-08-07",
+      "entry_time": "11:21 ET",
+      "entry_price": 25.325,
+      "shares": 141,
+      "stop": 25.3525,
+      "trail_dist": 0.1375,
+      "peak": 25.49,
+      "orb_width": 0.275,
+      "cost": 3570.83,
+      "vol_ratio": 1.57,
+      "score": 32.88,
+      "has_catalyst": false,
+      "exit_date": "2026-08-07",
+      "exit_price": 25.385,
+      "pnl": 8.46,
+      "exit_reason": "force close 3:45pm",
+      "exit_time": "15:46 ET"
+    },
+    {
+      "ticker": "PODD",
+      "side": "long",
+      "entry_date": "2026-08-07",
+      "entry_time": "11:43 ET",
+      "entry_price": 139.715,
+      "shares": 12,
+      "stop": 140.5275,
+      "trail_dist": 1.2925,
+      "peak": 141.82,
+      "orb_width": 2.585,
+      "cost": 1676.58,
+      "vol_ratio": 5.38,
+      "score": 46.89,
+      "has_catalyst": false,
+      "exit_date": "2026-08-07",
+      "exit_price": 142.035,
+      "pnl": 27.84,
+      "exit_reason": "force close 3:45pm",
+      "exit_time": "15:46 ET"
     }
   ],
   "all_closed": [
@@ -73650,9 +73679,9 @@
       "width": 3.04
     },
     "MU": {
-      "high": 900.0,
+      "high": 904.65,
       "low": 863.0,
-      "width": 37.0
+      "width": 41.65
     },
     "MSFT": {
       "high": 505.18,
@@ -74612,7 +74641,7 @@
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
-    "2026-08-07": 100734.09
+    "2026-08-07": 100701.13
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -153522,6 +153551,58 @@
       },
       "portfolio_value": 100734.09,
       "note": "$100,734 | cash=$28,640 | open=6 | closed today=4 | day PnL=$+140"
+    },
+    {
+      "date": "2026-08-07",
+      "time": "15:45 ET",
+      "phase": "force_close",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "UHS",
+          "side": "long",
+          "exit_price": 173.34,
+          "pnl": 280.14,
+          "reason": "force close 3:45pm"
+        },
+        {
+          "ticker": "GRMN",
+          "side": "long",
+          "exit_price": 312.04,
+          "pnl": 197.88,
+          "reason": "force close 3:45pm"
+        },
+        {
+          "ticker": "COO",
+          "side": "long",
+          "exit_price": 74.4,
+          "pnl": 45.87,
+          "reason": "force close 3:45pm"
+        },
+        {
+          "ticker": "TECH",
+          "side": "long",
+          "exit_price": 72.23,
+          "pnl": 0.7,
+          "reason": "force close 3:45pm"
+        },
+        {
+          "ticker": "CMCSA",
+          "side": "long",
+          "exit_price": 25.39,
+          "pnl": 8.46,
+          "reason": "force close 3:45pm"
+        },
+        {
+          "ticker": "PODD",
+          "side": "long",
+          "exit_price": 142.04,
+          "pnl": 27.84,
+          "reason": "force close 3:45pm"
+        }
+      ],
+      "portfolio_value": 100701.13,
+      "note": "$100,701 | cash=$100,701 | open=0 | closed today=10 | day PnL=$+701"
     }
   ]
 }
