@@ -56,18 +56,18 @@
     <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px">
       <div class="card">
         <div class="card-label">Portfolio Value</div>
-        <div class="card-value" id="port-value" style="color:#1a237e">$103,635</div>
+        <div class="card-value" id="port-value" style="color:#1a237e">$103,617</div>
       </div>
       <div class="card">
         <div class="card-label">Total Return</div>
-        <div class="card-value" id="port-total" style="color:#2e7d32">+$3,635<br>
-          <span style="font-size:14px" id="port-total-pct">+3.63%</span>
+        <div class="card-value" id="port-total" style="color:#2e7d32">+$3,617<br>
+          <span style="font-size:14px" id="port-total-pct">+3.62%</span>
         </div>
       </div>
       <div class="card">
         <div class="card-label">Day P&amp;L</div>
-        <div class="card-value" id="day-pnl" style="color:#c62828">$180<br>
-          <span style="font-size:14px" id="day-pnl-pct">0.17%</span>
+        <div class="card-value" id="day-pnl" style="color:#c62828">$198<br>
+          <span style="font-size:14px" id="day-pnl-pct">0.19%</span>
         </div>
       </div>
       <div class="card">
@@ -103,13 +103,13 @@
           </tr>
           <tr>
             <td style="padding:4px 0;color:#c62828">&#9632; Unrealized P&amp;L</td>
-            <td id="bk-unreal" style="text-align:right;font-weight:bold;padding:4px 0;color:#c62828">$565</td>
-            <td style="text-align:right;color:#c62828;font-size:11px;padding:4px 0 4px 12px">0.57%</td>
+            <td id="bk-unreal" style="text-align:right;font-weight:bold;padding:4px 0;color:#c62828">$583</td>
+            <td style="text-align:right;color:#c62828;font-size:11px;padding:4px 0 4px 12px">0.58%</td>
           </tr>
           <tr style="border-top:2px solid #c5cae9">
             <td style="padding:5px 0;font-weight:bold">Portfolio Value</td>
-            <td style="text-align:right;font-weight:bold;padding:5px 0;color:#2e7d32">$103,635</td>
-            <td style="text-align:right;color:#2e7d32;font-size:11px;padding:5px 0 4px 12px">+3.63%</td>
+            <td style="text-align:right;font-weight:bold;padding:5px 0;color:#2e7d32">$103,617</td>
+            <td style="text-align:right;color:#2e7d32;font-size:11px;padding:5px 0 4px 12px">+3.62%</td>
           </tr>
           <tr>
             <td style="padding:4px 0;color:#555;font-size:12px">Realized P&amp;L (closed)</td>
@@ -124,12 +124,12 @@
         <div style="height:32px;border-radius:6px;overflow:hidden;display:flex;background:#eee">
           <div style="width:12.9%;background:#1a237e;height:100%;transition:width .3s" title="Cash $12,918"></div>
           <div style="width:91.3%;background:#7986cb;height:100%;transition:width .3s" title="Invested $91,283"></div>
-          <div style="width:0.57%;background:#c62828;height:100%;transition:width .3s" title="Unrealized loss $565"></div>
+          <div style="width:0.58%;background:#c62828;height:100%;transition:width .3s" title="Unrealized loss $583"></div>
         </div>
         <div style="display:flex;gap:16px;margin-top:6px;font-size:11px;color:#666;flex-wrap:wrap">
           <span><span style="color:#1a237e;font-weight:bold">&#9632;</span> Cash 12.9%</span>
           <span><span style="color:#7986cb;font-weight:bold">&#9632;</span> Invested 91.3%</span>
-          <span><span style="color:#c62828;font-weight:bold">&#9632;</span> Unrealized P&amp;L 0.57%</span>
+          <span><span style="color:#c62828;font-weight:bold">&#9632;</span> Unrealized P&amp;L 0.58%</span>
         </div>
         <canvas id="nav-chart" height="100" style="margin-top:16px"></canvas>
       </div>
@@ -149,338 +149,338 @@
         <th data-col="11">Stop</th><th data-col="12">RSI(2) at entry</th><th data-col="13">Entry Date</th>
       </tr></thead>
       <tbody>
-        <tr data-ticker="ADM" data-qty="20" data-buypx="80.38" data-side="long" data-prevpx="77.58" data-server-unreal="-57.00">
+        <tr data-ticker="ADM" data-qty="20" data-buypx="80.38" data-side="long" data-prevpx="77.58" data-server-unreal="-58.10">
           <td style="font-weight:bold">ADM<span style="color:#888;font-size:11px;display:block;line-height:1.1">Archer-Daniels-Midland</span></td>
           <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
           <td>$80.38</td>
-          <td class="live-price">$77.53</td>
+          <td class="live-price">$77.47</td>
           <td style="text-align:right">20</td>
           <td style="text-align:right">$1,608</td>
-          <td class="live-curval" style="text-align:right">$1,551</td>
-          <td class="live-unreal-d" data-sort="-57.00" style="text-align:right;color:#c62828;font-weight:bold">$57</td>
-          <td class="live-unreal-pct" data-sort="-3.5457" style="text-align:right;color:#c62828;font-weight:bold">-3.55%</td>
-          <td class="live-day-d" data-sort="-1.00" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-1.00" style="color:#c62828">$1</span></td>
-          <td class="live-day-pct" data-sort="-0.0645" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-0.0645" style="color:#c62828">-0.06%</span></td>
+          <td class="live-curval" style="text-align:right">$1,549</td>
+          <td class="live-unreal-d" data-sort="-58.10" style="text-align:right;color:#c62828;font-weight:bold">$58</td>
+          <td class="live-unreal-pct" data-sort="-3.6141" style="text-align:right;color:#c62828;font-weight:bold">-3.61%</td>
+          <td class="live-day-d" data-sort="-2.10" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-2.10" style="color:#c62828">$2</span></td>
+          <td class="live-day-pct" data-sort="-0.1353" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-0.1353" style="color:#c62828">-0.14%</span></td>
           <td>$74.61</td>
           <td style="color:#666;font-size:12px">1.55</td>
           <td style="color:#666;font-size:12px">Jul 30, 2026</td>
         </tr>
-        <tr data-ticker="IBKR" data-qty="7" data-buypx="86.26" data-side="long" data-prevpx="88.74" data-server-unreal="4.76">
+        <tr data-ticker="IBKR" data-qty="7" data-buypx="86.26" data-side="long" data-prevpx="88.74" data-server-unreal="4.59">
           <td style="font-weight:bold">IBKR<span style="color:#888;font-size:11px;display:block;line-height:1.1">Interactive Brokers Group</span></td>
           <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
           <td>$86.26</td>
-          <td class="live-price">$86.94</td>
+          <td class="live-price">$86.92</td>
           <td style="text-align:right">7</td>
           <td style="text-align:right">$604</td>
-          <td class="live-curval" style="text-align:right">$609</td>
-          <td class="live-unreal-d" data-sort="4.76" style="text-align:right;color:#2e7d32;font-weight:bold">+$5</td>
-          <td class="live-unreal-pct" data-sort="0.7883" style="text-align:right;color:#2e7d32;font-weight:bold">+0.79%</td>
-          <td class="live-day-d" data-sort="-12.60" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-12.60" style="color:#c62828">$13</span></td>
-          <td class="live-day-pct" data-sort="-2.0284" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-2.0284" style="color:#c62828">-2.03%</span></td>
+          <td class="live-curval" style="text-align:right">$608</td>
+          <td class="live-unreal-d" data-sort="4.59" style="text-align:right;color:#2e7d32;font-weight:bold">+$5</td>
+          <td class="live-unreal-pct" data-sort="0.7593" style="text-align:right;color:#2e7d32;font-weight:bold">+0.76%</td>
+          <td class="live-day-d" data-sort="-12.77" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-12.77" style="color:#c62828">$13</span></td>
+          <td class="live-day-pct" data-sort="-2.0566" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-2.0566" style="color:#c62828">-2.06%</span></td>
           <td>$79.71</td>
           <td style="color:#666;font-size:12px">3.3</td>
           <td style="color:#666;font-size:12px">Jul 30, 2026</td>
         </tr>
-        <tr data-ticker="LNT" data-qty="139" data-buypx="70.89" data-side="long" data-prevpx="70.20" data-server-unreal="-158.46">
+        <tr data-ticker="LNT" data-qty="139" data-buypx="70.89" data-side="long" data-prevpx="70.20" data-server-unreal="-164.02">
           <td style="font-weight:bold">LNT<span style="color:#888;font-size:11px;display:block;line-height:1.1">Alliant Energy Corporation</span></td>
           <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
           <td>$70.89</td>
-          <td class="live-price">$69.75</td>
+          <td class="live-price">$69.71</td>
           <td style="text-align:right">139</td>
           <td style="text-align:right">$9,854</td>
-          <td class="live-curval" style="text-align:right">$9,695</td>
-          <td class="live-unreal-d" data-sort="-158.46" style="text-align:right;color:#c62828;font-weight:bold">$158</td>
-          <td class="live-unreal-pct" data-sort="-1.6081" style="text-align:right;color:#c62828;font-weight:bold">-1.61%</td>
-          <td class="live-day-d" data-sort="-62.55" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-62.55" style="color:#c62828">$63</span></td>
-          <td class="live-day-pct" data-sort="-0.6410" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-0.6410" style="color:#c62828">-0.64%</span></td>
+          <td class="live-curval" style="text-align:right">$9,690</td>
+          <td class="live-unreal-d" data-sort="-164.02" style="text-align:right;color:#c62828;font-weight:bold">$164</td>
+          <td class="live-unreal-pct" data-sort="-1.6646" style="text-align:right;color:#c62828;font-weight:bold">-1.66%</td>
+          <td class="live-day-d" data-sort="-68.11" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-68.11" style="color:#c62828">$68</span></td>
+          <td class="live-day-pct" data-sort="-0.6980" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-0.6980" style="color:#c62828">-0.70%</span></td>
           <td>$67.02</td>
           <td style="color:#666;font-size:12px">2.7</td>
           <td style="color:#666;font-size:12px">Jul 31, 2026</td>
         </tr>
-        <tr data-ticker="AEP" data-qty="49" data-buypx="127.78" data-side="long" data-prevpx="126.47" data-server-unreal="-77.91">
+        <tr data-ticker="AEP" data-qty="49" data-buypx="127.78" data-side="long" data-prevpx="126.47" data-server-unreal="-84.28">
           <td style="font-weight:bold">AEP<span style="color:#888;font-size:11px;display:block;line-height:1.1">American Electric Power</span></td>
           <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
           <td>$127.78</td>
-          <td class="live-price">$126.19</td>
+          <td class="live-price">$126.06</td>
           <td style="text-align:right">49</td>
           <td style="text-align:right">$6,261</td>
-          <td class="live-curval" style="text-align:right">$6,183</td>
-          <td class="live-unreal-d" data-sort="-77.91" style="text-align:right;color:#c62828;font-weight:bold">$78</td>
-          <td class="live-unreal-pct" data-sort="-1.2443" style="text-align:right;color:#c62828;font-weight:bold">-1.24%</td>
-          <td class="live-day-d" data-sort="-13.72" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-13.72" style="color:#c62828">$14</span></td>
-          <td class="live-day-pct" data-sort="-0.2214" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-0.2214" style="color:#c62828">-0.22%</span></td>
+          <td class="live-curval" style="text-align:right">$6,177</td>
+          <td class="live-unreal-d" data-sort="-84.28" style="text-align:right;color:#c62828;font-weight:bold">$84</td>
+          <td class="live-unreal-pct" data-sort="-1.3461" style="text-align:right;color:#c62828;font-weight:bold">-1.35%</td>
+          <td class="live-day-d" data-sort="-20.09" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-20.09" style="color:#c62828">$20</span></td>
+          <td class="live-day-pct" data-sort="-0.3242" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-0.3242" style="color:#c62828">-0.32%</span></td>
           <td>$121.94</td>
           <td style="color:#666;font-size:12px">3.47</td>
           <td style="color:#666;font-size:12px">Jul 31, 2026</td>
         </tr>
-        <tr data-ticker="DTE" data-qty="35" data-buypx="141.70" data-side="long" data-prevpx="139.66" data-server-unreal="-23.45">
+        <tr data-ticker="DTE" data-qty="35" data-buypx="141.70" data-side="long" data-prevpx="139.66" data-server-unreal="-27.83">
           <td style="font-weight:bold">DTE<span style="color:#888;font-size:11px;display:block;line-height:1.1">DTE Energy</span></td>
           <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
           <td>$141.70</td>
-          <td class="live-price">$141.03</td>
+          <td class="live-price">$140.90</td>
           <td style="text-align:right">35</td>
           <td style="text-align:right">$4,960</td>
-          <td class="live-curval" style="text-align:right">$4,936</td>
-          <td class="live-unreal-d" data-sort="-23.45" style="text-align:right;color:#c62828;font-weight:bold">$23</td>
-          <td class="live-unreal-pct" data-sort="-0.4728" style="text-align:right;color:#c62828;font-weight:bold">-0.47%</td>
-          <td class="live-day-d" data-sort="47.95" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="47.95" style="color:#2e7d32">+$48</span></td>
-          <td class="live-day-pct" data-sort="0.9810" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="0.9810" style="color:#2e7d32">+0.98%</span></td>
+          <td class="live-curval" style="text-align:right">$4,932</td>
+          <td class="live-unreal-d" data-sort="-27.83" style="text-align:right;color:#c62828;font-weight:bold">$28</td>
+          <td class="live-unreal-pct" data-sort="-0.5610" style="text-align:right;color:#c62828;font-weight:bold">-0.56%</td>
+          <td class="live-day-d" data-sort="43.57" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="43.57" style="color:#2e7d32">+$44</span></td>
+          <td class="live-day-pct" data-sort="0.8914" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="0.8914" style="color:#2e7d32">+0.89%</span></td>
           <td>$135.57</td>
           <td style="color:#666;font-size:12px">3.65</td>
           <td style="color:#666;font-size:12px">Jul 31, 2026</td>
         </tr>
-        <tr data-ticker="AAPL" data-qty="15" data-buypx="308.91" data-side="long" data-prevpx="311.00" data-server-unreal="49.12">
+        <tr data-ticker="AAPL" data-qty="15" data-buypx="308.91" data-side="long" data-prevpx="311.00" data-server-unreal="49.65">
           <td style="font-weight:bold">AAPL<span style="color:#888;font-size:11px;display:block;line-height:1.1">Apple</span></td>
           <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
           <td>$308.91</td>
-          <td class="live-price">$312.18</td>
+          <td class="live-price">$312.22</td>
           <td style="text-align:right">15</td>
           <td style="text-align:right">$4,634</td>
           <td class="live-curval" style="text-align:right">$4,683</td>
-          <td class="live-unreal-d" data-sort="49.12" style="text-align:right;color:#2e7d32;font-weight:bold">+$49</td>
-          <td class="live-unreal-pct" data-sort="1.0602" style="text-align:right;color:#2e7d32;font-weight:bold">+1.06%</td>
-          <td class="live-day-d" data-sort="17.77" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="17.77" style="color:#2e7d32">+$18</span></td>
-          <td class="live-day-pct" data-sort="0.3810" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="0.3810" style="color:#2e7d32">+0.38%</span></td>
+          <td class="live-unreal-d" data-sort="49.65" style="text-align:right;color:#2e7d32;font-weight:bold">+$50</td>
+          <td class="live-unreal-pct" data-sort="1.0715" style="text-align:right;color:#2e7d32;font-weight:bold">+1.07%</td>
+          <td class="live-day-d" data-sort="18.30" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="18.30" style="color:#2e7d32">+$18</span></td>
+          <td class="live-day-pct" data-sort="0.3923" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="0.3923" style="color:#2e7d32">+0.39%</span></td>
           <td>$286.75</td>
           <td style="color:#666;font-size:12px">3.53</td>
           <td style="color:#666;font-size:12px">Aug 3, 2026</td>
         </tr>
-        <tr data-ticker="ES" data-qty="42" data-buypx="71.59" data-side="long" data-prevpx="72.47" data-server-unreal="51.45">
+        <tr data-ticker="ES" data-qty="42" data-buypx="71.59" data-side="long" data-prevpx="72.47" data-server-unreal="50.82">
           <td style="font-weight:bold">ES<span style="color:#888;font-size:11px;display:block;line-height:1.1">Eversource Energy (D/B/A)</span></td>
           <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
           <td>$71.59</td>
-          <td class="live-price">$72.82</td>
+          <td class="live-price">$72.80</td>
           <td style="text-align:right">42</td>
           <td style="text-align:right">$3,007</td>
           <td class="live-curval" style="text-align:right">$3,058</td>
-          <td class="live-unreal-d" data-sort="51.45" style="text-align:right;color:#2e7d32;font-weight:bold">+$51</td>
-          <td class="live-unreal-pct" data-sort="1.7111" style="text-align:right;color:#2e7d32;font-weight:bold">+1.71%</td>
-          <td class="live-day-d" data-sort="14.49" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="14.49" style="color:#2e7d32">+$14</span></td>
-          <td class="live-day-pct" data-sort="0.4761" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="0.4761" style="color:#2e7d32">+0.48%</span></td>
+          <td class="live-unreal-d" data-sort="50.82" style="text-align:right;color:#2e7d32;font-weight:bold">+$51</td>
+          <td class="live-unreal-pct" data-sort="1.6902" style="text-align:right;color:#2e7d32;font-weight:bold">+1.69%</td>
+          <td class="live-day-d" data-sort="13.86" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="13.86" style="color:#2e7d32">+$14</span></td>
+          <td class="live-day-pct" data-sort="0.4554" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="0.4554" style="color:#2e7d32">+0.46%</span></td>
           <td>$69.17</td>
           <td style="color:#666;font-size:12px">3.69</td>
           <td style="color:#666;font-size:12px">Aug 3, 2026</td>
         </tr>
-        <tr data-ticker="CNP" data-qty="58" data-buypx="42.04" data-side="long" data-prevpx="40.65" data-server-unreal="-62.35">
+        <tr data-ticker="CNP" data-qty="58" data-buypx="42.04" data-side="long" data-prevpx="40.65" data-server-unreal="-65.25">
           <td style="font-weight:bold">CNP<span style="color:#888;font-size:11px;display:block;line-height:1.1">CenterPoint Energy, Inc (Holdin</span></td>
           <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
           <td>$42.04</td>
-          <td class="live-price">$40.97</td>
+          <td class="live-price">$40.92</td>
           <td style="text-align:right">58</td>
           <td style="text-align:right">$2,438</td>
-          <td class="live-curval" style="text-align:right">$2,376</td>
-          <td class="live-unreal-d" data-sort="-62.35" style="text-align:right;color:#c62828;font-weight:bold">$62</td>
-          <td class="live-unreal-pct" data-sort="-2.5571" style="text-align:right;color:#c62828;font-weight:bold">-2.56%</td>
-          <td class="live-day-d" data-sort="18.27" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="18.27" style="color:#2e7d32">+$18</span></td>
-          <td class="live-day-pct" data-sort="0.7749" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="0.7749" style="color:#2e7d32">+0.77%</span></td>
+          <td class="live-curval" style="text-align:right">$2,373</td>
+          <td class="live-unreal-d" data-sort="-65.25" style="text-align:right;color:#c62828;font-weight:bold">$65</td>
+          <td class="live-unreal-pct" data-sort="-2.6760" style="text-align:right;color:#c62828;font-weight:bold">-2.68%</td>
+          <td class="live-day-d" data-sort="15.37" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="15.37" style="color:#2e7d32">+$15</span></td>
+          <td class="live-day-pct" data-sort="0.6519" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="0.6519" style="color:#2e7d32">+0.65%</span></td>
           <td>$40.10</td>
           <td style="color:#666;font-size:12px">4.38</td>
           <td style="color:#666;font-size:12px">Aug 3, 2026</td>
         </tr>
-        <tr data-ticker="CTVA" data-qty="24" data-buypx="78.71" data-side="long" data-prevpx="78.67" data-server-unreal="-40.32">
+        <tr data-ticker="CTVA" data-qty="24" data-buypx="78.71" data-side="long" data-prevpx="78.67" data-server-unreal="-38.88">
           <td style="font-weight:bold">CTVA<span style="color:#888;font-size:11px;display:block;line-height:1.1">Corteva</span></td>
           <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
           <td>$78.71</td>
-          <td class="live-price">$77.03</td>
+          <td class="live-price">$77.09</td>
           <td style="text-align:right">24</td>
           <td style="text-align:right">$1,889</td>
-          <td class="live-curval" style="text-align:right">$1,849</td>
-          <td class="live-unreal-d" data-sort="-40.32" style="text-align:right;color:#c62828;font-weight:bold">$40</td>
-          <td class="live-unreal-pct" data-sort="-2.1344" style="text-align:right;color:#c62828;font-weight:bold">-2.13%</td>
-          <td class="live-day-d" data-sort="-39.36" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-39.36" style="color:#c62828">$39</span></td>
-          <td class="live-day-pct" data-sort="-2.0847" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-2.0847" style="color:#c62828">-2.08%</span></td>
+          <td class="live-curval" style="text-align:right">$1,850</td>
+          <td class="live-unreal-d" data-sort="-38.88" style="text-align:right;color:#c62828;font-weight:bold">$39</td>
+          <td class="live-unreal-pct" data-sort="-2.0582" style="text-align:right;color:#c62828;font-weight:bold">-2.06%</td>
+          <td class="live-day-d" data-sort="-37.92" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-37.92" style="color:#c62828">$38</span></td>
+          <td class="live-day-pct" data-sort="-2.0084" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-2.0084" style="color:#c62828">-2.01%</span></td>
           <td>$71.36</td>
           <td style="color:#666;font-size:12px">4.99</td>
           <td style="color:#666;font-size:12px">Aug 3, 2026</td>
         </tr>
-        <tr data-ticker="DUK" data-qty="46" data-buypx="124.28" data-side="long" data-prevpx="123.34" data-server-unreal="46.00">
+        <tr data-ticker="DUK" data-qty="46" data-buypx="124.28" data-side="long" data-prevpx="123.34" data-server-unreal="40.48">
           <td style="font-weight:bold">DUK<span style="color:#888;font-size:11px;display:block;line-height:1.1">Duke Energy Corporation (Holdin</span></td>
           <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
           <td>$124.28</td>
-          <td class="live-price">$125.28</td>
+          <td class="live-price">$125.16</td>
           <td style="text-align:right">46</td>
           <td style="text-align:right">$5,717</td>
-          <td class="live-curval" style="text-align:right">$5,763</td>
-          <td class="live-unreal-d" data-sort="46.00" style="text-align:right;color:#2e7d32;font-weight:bold">+$46</td>
-          <td class="live-unreal-pct" data-sort="0.8046" style="text-align:right;color:#2e7d32;font-weight:bold">+0.80%</td>
-          <td class="live-day-d" data-sort="89.24" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="89.24" style="color:#2e7d32">+$89</span></td>
-          <td class="live-day-pct" data-sort="1.5729" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="1.5729" style="color:#2e7d32">+1.57%</span></td>
+          <td class="live-curval" style="text-align:right">$5,757</td>
+          <td class="live-unreal-d" data-sort="40.48" style="text-align:right;color:#2e7d32;font-weight:bold">+$40</td>
+          <td class="live-unreal-pct" data-sort="0.7081" style="text-align:right;color:#2e7d32;font-weight:bold">+0.71%</td>
+          <td class="live-day-d" data-sort="83.72" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="83.72" style="color:#2e7d32">+$84</span></td>
+          <td class="live-day-pct" data-sort="1.4756" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="1.4756" style="color:#2e7d32">+1.48%</span></td>
           <td>$119.10</td>
           <td style="color:#666;font-size:12px">2.69</td>
           <td style="color:#666;font-size:12px">Aug 4, 2026</td>
         </tr>
-        <tr data-ticker="D" data-qty="68" data-buypx="68.75" data-side="long" data-prevpx="68.27" data-server-unreal="-74.54">
+        <tr data-ticker="D" data-qty="68" data-buypx="68.75" data-side="long" data-prevpx="68.27" data-server-unreal="-75.14">
           <td style="font-weight:bold">D<span style="color:#888;font-size:11px;display:block;line-height:1.1">Dominion Energy</span></td>
           <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
           <td>$68.75</td>
-          <td class="live-price">$67.65</td>
+          <td class="live-price">$67.64</td>
           <td style="text-align:right">68</td>
           <td style="text-align:right">$4,675</td>
           <td class="live-curval" style="text-align:right">$4,600</td>
-          <td class="live-unreal-d" data-sort="-74.54" style="text-align:right;color:#c62828;font-weight:bold">$75</td>
-          <td class="live-unreal-pct" data-sort="-1.5945" style="text-align:right;color:#c62828;font-weight:bold">-1.59%</td>
-          <td class="live-day-d" data-sort="-41.90" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-41.90" style="color:#c62828">$42</span></td>
-          <td class="live-day-pct" data-sort="-0.9026" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-0.9026" style="color:#c62828">-0.90%</span></td>
+          <td class="live-unreal-d" data-sort="-75.14" style="text-align:right;color:#c62828;font-weight:bold">$75</td>
+          <td class="live-unreal-pct" data-sort="-1.6073" style="text-align:right;color:#c62828;font-weight:bold">-1.61%</td>
+          <td class="live-day-d" data-sort="-42.50" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-42.50" style="color:#c62828">$42</span></td>
+          <td class="live-day-pct" data-sort="-0.9155" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-0.9155" style="color:#c62828">-0.92%</span></td>
           <td>$66.61</td>
           <td style="color:#666;font-size:12px">3.05</td>
           <td style="color:#666;font-size:12px">Aug 4, 2026</td>
         </tr>
-        <tr data-ticker="ABBV" data-qty="8" data-buypx="245.10" data-side="long" data-prevpx="246.20" data-server-unreal="-0.88">
+        <tr data-ticker="ABBV" data-qty="8" data-buypx="245.10" data-side="long" data-prevpx="246.20" data-server-unreal="-3.00">
           <td style="font-weight:bold">ABBV<span style="color:#888;font-size:11px;display:block;line-height:1.1">AbbVie</span></td>
           <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
           <td>$245.10</td>
-          <td class="live-price">$244.99</td>
+          <td class="live-price">$244.73</td>
           <td style="text-align:right">8</td>
           <td style="text-align:right">$1,961</td>
-          <td class="live-curval" style="text-align:right">$1,960</td>
-          <td class="live-unreal-d" data-sort="-0.88" style="text-align:right;color:#c62828;font-weight:bold">$1</td>
-          <td class="live-unreal-pct" data-sort="-0.0449" style="text-align:right;color:#c62828;font-weight:bold">-0.04%</td>
-          <td class="live-day-d" data-sort="-9.68" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-9.68" style="color:#c62828">$10</span></td>
-          <td class="live-day-pct" data-sort="-0.4915" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-0.4915" style="color:#c62828">-0.49%</span></td>
+          <td class="live-curval" style="text-align:right">$1,958</td>
+          <td class="live-unreal-d" data-sort="-3.00" style="text-align:right;color:#c62828;font-weight:bold">$3</td>
+          <td class="live-unreal-pct" data-sort="-0.1530" style="text-align:right;color:#c62828;font-weight:bold">-0.15%</td>
+          <td class="live-day-d" data-sort="-11.80" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-11.80" style="color:#c62828">$12</span></td>
+          <td class="live-day-pct" data-sort="-0.5991" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-0.5991" style="color:#c62828">-0.60%</span></td>
           <td>$231.08</td>
           <td style="color:#666;font-size:12px">4.32</td>
           <td style="color:#666;font-size:12px">Aug 4, 2026</td>
         </tr>
-        <tr data-ticker="KIM" data-qty="251" data-buypx="25.01" data-side="long" data-prevpx="24.87" data-server-unreal="-96.64">
+        <tr data-ticker="KIM" data-qty="251" data-buypx="25.01" data-side="long" data-prevpx="24.87" data-server-unreal="-93.00">
           <td style="font-weight:bold">KIM<span style="color:#888;font-size:11px;display:block;line-height:1.1">Kimco Realty Corporation (HC)</span></td>
           <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
           <td>$25.01</td>
-          <td class="live-price">$24.62</td>
+          <td class="live-price">$24.64</td>
           <td style="text-align:right">251</td>
           <td style="text-align:right">$6,278</td>
-          <td class="live-curval" style="text-align:right">$6,181</td>
-          <td class="live-unreal-d" data-sort="-96.64" style="text-align:right;color:#c62828;font-weight:bold">$97</td>
-          <td class="live-unreal-pct" data-sort="-1.5394" style="text-align:right;color:#c62828;font-weight:bold">-1.54%</td>
-          <td class="live-day-d" data-sort="-61.50" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-61.50" style="color:#c62828">$61</span></td>
-          <td class="live-day-pct" data-sort="-0.9851" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-0.9851" style="color:#c62828">-0.99%</span></td>
+          <td class="live-curval" style="text-align:right">$6,185</td>
+          <td class="live-unreal-d" data-sort="-93.00" style="text-align:right;color:#c62828;font-weight:bold">$93</td>
+          <td class="live-unreal-pct" data-sort="-1.4814" style="text-align:right;color:#c62828;font-weight:bold">-1.48%</td>
+          <td class="live-day-d" data-sort="-57.86" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-57.86" style="color:#c62828">$58</span></td>
+          <td class="live-day-pct" data-sort="-0.9268" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-0.9268" style="color:#c62828">-0.93%</span></td>
           <td>$24.04</td>
           <td style="color:#666;font-size:12px">1.4</td>
           <td style="color:#666;font-size:12px">Aug 5, 2026</td>
         </tr>
-        <tr data-ticker="DVA" data-qty="25" data-buypx="188.69" data-side="long" data-prevpx="188.69" data-server-unreal="-185.00">
+        <tr data-ticker="DVA" data-qty="25" data-buypx="188.69" data-side="long" data-prevpx="188.69" data-server-unreal="-184.75">
           <td style="font-weight:bold">DVA<span style="color:#888;font-size:11px;display:block;line-height:1.1">DaVita</span></td>
           <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
           <td>$188.69</td>
-          <td class="live-price">$181.29</td>
+          <td class="live-price">$181.30</td>
           <td style="text-align:right">25</td>
           <td style="text-align:right">$4,717</td>
-          <td class="live-curval" style="text-align:right">$4,532</td>
-          <td class="live-unreal-d" data-sort="-185.00" style="text-align:right;color:#c62828;font-weight:bold">$185</td>
-          <td class="live-unreal-pct" data-sort="-3.9218" style="text-align:right;color:#c62828;font-weight:bold">-3.92%</td>
-          <td class="live-day-d" data-sort="-185.00" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-185.00" style="color:#c62828">$185</span></td>
-          <td class="live-day-pct" data-sort="-3.9218" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-3.9218" style="color:#c62828">-3.92%</span></td>
+          <td class="live-curval" style="text-align:right">$4,533</td>
+          <td class="live-unreal-d" data-sort="-184.75" style="text-align:right;color:#c62828;font-weight:bold">$185</td>
+          <td class="live-unreal-pct" data-sort="-3.9165" style="text-align:right;color:#c62828;font-weight:bold">-3.92%</td>
+          <td class="live-day-d" data-sort="-184.75" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-184.75" style="color:#c62828">$185</span></td>
+          <td class="live-day-pct" data-sort="-3.9165" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-3.9165" style="color:#c62828">-3.92%</span></td>
           <td>$155.94</td>
           <td style="color:#666;font-size:12px">0.61</td>
           <td style="color:#666;font-size:12px">Aug 6, 2026</td>
         </tr>
-        <tr data-ticker="EIX" data-qty="75" data-buypx="68.32" data-side="long" data-prevpx="68.32" data-server-unreal="42.75">
+        <tr data-ticker="EIX" data-qty="75" data-buypx="68.32" data-side="long" data-prevpx="68.32" data-server-unreal="37.13">
           <td style="font-weight:bold">EIX<span style="color:#888;font-size:11px;display:block;line-height:1.1">Edison International</span></td>
           <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
           <td>$68.32</td>
-          <td class="live-price">$68.89</td>
+          <td class="live-price">$68.82</td>
           <td style="text-align:right">75</td>
           <td style="text-align:right">$5,124</td>
-          <td class="live-curval" style="text-align:right">$5,167</td>
-          <td class="live-unreal-d" data-sort="42.75" style="text-align:right;color:#2e7d32;font-weight:bold">+$43</td>
-          <td class="live-unreal-pct" data-sort="0.8343" style="text-align:right;color:#2e7d32;font-weight:bold">+0.83%</td>
-          <td class="live-day-d" data-sort="42.75" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="42.75" style="color:#2e7d32">+$43</span></td>
-          <td class="live-day-pct" data-sort="0.8343" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="0.8343" style="color:#2e7d32">+0.83%</span></td>
+          <td class="live-curval" style="text-align:right">$5,161</td>
+          <td class="live-unreal-d" data-sort="37.13" style="text-align:right;color:#2e7d32;font-weight:bold">+$37</td>
+          <td class="live-unreal-pct" data-sort="0.7245" style="text-align:right;color:#2e7d32;font-weight:bold">+0.72%</td>
+          <td class="live-day-d" data-sort="37.13" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="37.13" style="color:#2e7d32">+$37</span></td>
+          <td class="live-day-pct" data-sort="0.7245" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="0.7245" style="color:#2e7d32">+0.72%</span></td>
           <td>$58.50</td>
           <td style="color:#666;font-size:12px">0.69</td>
           <td style="color:#666;font-size:12px">Aug 6, 2026</td>
         </tr>
-        <tr data-ticker="CVS" data-qty="51" data-buypx="99.12" data-side="long" data-prevpx="99.12" data-server-unreal="-180.54">
+        <tr data-ticker="CVS" data-qty="51" data-buypx="99.12" data-side="long" data-prevpx="99.12" data-server-unreal="-176.97">
           <td style="font-weight:bold">CVS<span style="color:#888;font-size:11px;display:block;line-height:1.1">CVS Health Corporation</span></td>
           <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
           <td>$99.12</td>
-          <td class="live-price">$95.58</td>
+          <td class="live-price">$95.65</td>
           <td style="text-align:right">51</td>
           <td style="text-align:right">$5,055</td>
-          <td class="live-curval" style="text-align:right">$4,875</td>
-          <td class="live-unreal-d" data-sort="-180.54" style="text-align:right;color:#c62828;font-weight:bold">$181</td>
-          <td class="live-unreal-pct" data-sort="-3.5714" style="text-align:right;color:#c62828;font-weight:bold">-3.57%</td>
-          <td class="live-day-d" data-sort="-180.54" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-180.54" style="color:#c62828">$181</span></td>
-          <td class="live-day-pct" data-sort="-3.5714" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-3.5714" style="color:#c62828">-3.57%</span></td>
+          <td class="live-curval" style="text-align:right">$4,878</td>
+          <td class="live-unreal-d" data-sort="-176.97" style="text-align:right;color:#c62828;font-weight:bold">$177</td>
+          <td class="live-unreal-pct" data-sort="-3.5008" style="text-align:right;color:#c62828;font-weight:bold">-3.50%</td>
+          <td class="live-day-d" data-sort="-176.97" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-176.97" style="color:#c62828">$177</span></td>
+          <td class="live-day-pct" data-sort="-3.5008" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-3.5008" style="color:#c62828">-3.50%</span></td>
           <td>$92.62</td>
           <td style="color:#666;font-size:12px">4.37</td>
           <td style="color:#666;font-size:12px">Aug 6, 2026</td>
         </tr>
-        <tr data-ticker="CTAS" data-qty="20" data-buypx="201.40" data-side="long" data-prevpx="201.40" data-server-unreal="34.60">
+        <tr data-ticker="CTAS" data-qty="20" data-buypx="201.40" data-side="long" data-prevpx="201.40" data-server-unreal="32.70">
           <td style="font-weight:bold">CTAS<span style="color:#888;font-size:11px;display:block;line-height:1.1">Cintas Corporation</span></td>
           <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
           <td>$201.40</td>
-          <td class="live-price">$203.13</td>
+          <td class="live-price">$203.04</td>
           <td style="text-align:right">20</td>
           <td style="text-align:right">$4,028</td>
-          <td class="live-curval" style="text-align:right">$4,063</td>
-          <td class="live-unreal-d" data-sort="34.60" style="text-align:right;color:#2e7d32;font-weight:bold">+$35</td>
-          <td class="live-unreal-pct" data-sort="0.8590" style="text-align:right;color:#2e7d32;font-weight:bold">+0.86%</td>
-          <td class="live-day-d" data-sort="34.60" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="34.60" style="color:#2e7d32">+$35</span></td>
-          <td class="live-day-pct" data-sort="0.8590" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="0.8590" style="color:#2e7d32">+0.86%</span></td>
+          <td class="live-curval" style="text-align:right">$4,061</td>
+          <td class="live-unreal-d" data-sort="32.70" style="text-align:right;color:#2e7d32;font-weight:bold">+$33</td>
+          <td class="live-unreal-pct" data-sort="0.8118" style="text-align:right;color:#2e7d32;font-weight:bold">+0.81%</td>
+          <td class="live-day-d" data-sort="32.70" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="32.70" style="color:#2e7d32">+$33</span></td>
+          <td class="live-day-pct" data-sort="0.8118" style="text-align:right;color:#2e7d32;font-weight:bold"><span data-sort="0.8118" style="color:#2e7d32">+0.81%</span></td>
           <td>$188.86</td>
           <td style="color:#666;font-size:12px">4.62</td>
           <td style="color:#666;font-size:12px">Aug 6, 2026</td>
         </tr>
-        <tr data-ticker="FRT" data-qty="53" data-buypx="117.91" data-side="long" data-prevpx="121.83" data-server-unreal="47.70">
+        <tr data-ticker="FRT" data-qty="53" data-buypx="117.91" data-side="long" data-prevpx="121.83" data-server-unreal="54.06">
           <td style="font-weight:bold">FRT<span style="color:#888;font-size:11px;display:block;line-height:1.1">Federal Realty Investment Trust</span></td>
           <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
           <td>$117.91</td>
-          <td class="live-price">$118.81</td>
+          <td class="live-price">$118.93</td>
           <td style="text-align:right">53</td>
           <td style="text-align:right">$6,249</td>
-          <td class="live-curval" style="text-align:right">$6,297</td>
-          <td class="live-unreal-d" data-sort="47.70" style="text-align:right;color:#2e7d32;font-weight:bold">+$48</td>
-          <td class="live-unreal-pct" data-sort="0.7633" style="text-align:right;color:#2e7d32;font-weight:bold">+0.76%</td>
-          <td class="live-day-d" data-sort="-160.06" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-160.06" style="color:#c62828">$160</span></td>
-          <td class="live-day-pct" data-sort="-2.4789" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-2.4789" style="color:#c62828">-2.48%</span></td>
+          <td class="live-curval" style="text-align:right">$6,303</td>
+          <td class="live-unreal-d" data-sort="54.06" style="text-align:right;color:#2e7d32;font-weight:bold">+$54</td>
+          <td class="live-unreal-pct" data-sort="0.8651" style="text-align:right;color:#2e7d32;font-weight:bold">+0.87%</td>
+          <td class="live-day-d" data-sort="-153.70" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-153.70" style="color:#c62828">$154</span></td>
+          <td class="live-day-pct" data-sort="-2.3804" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-2.3804" style="color:#c62828">-2.38%</span></td>
           <td>$112.09</td>
           <td style="color:#666;font-size:12px">0.14</td>
           <td style="color:#666;font-size:12px">Aug 7, 2026</td>
         </tr>
-        <tr data-ticker="F" data-qty="364" data-buypx="13.79" data-side="long" data-prevpx="14.13" data-server-unreal="87.36">
+        <tr data-ticker="F" data-qty="364" data-buypx="13.79" data-side="long" data-prevpx="14.13" data-server-unreal="91.00">
           <td style="font-weight:bold">F<span style="color:#888;font-size:11px;display:block;line-height:1.1">Ford Motor</span></td>
           <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
           <td>$13.79</td>
-          <td class="live-price">$14.03</td>
+          <td class="live-price">$14.04</td>
           <td style="text-align:right">364</td>
           <td style="text-align:right">$5,020</td>
-          <td class="live-curval" style="text-align:right">$5,107</td>
-          <td class="live-unreal-d" data-sort="87.36" style="text-align:right;color:#2e7d32;font-weight:bold">+$87</td>
-          <td class="live-unreal-pct" data-sort="1.7404" style="text-align:right;color:#2e7d32;font-weight:bold">+1.74%</td>
-          <td class="live-day-d" data-sort="-36.40" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-36.40" style="color:#c62828">$36</span></td>
-          <td class="live-day-pct" data-sort="-0.7077" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-0.7077" style="color:#c62828">-0.71%</span></td>
+          <td class="live-curval" style="text-align:right">$5,111</td>
+          <td class="live-unreal-d" data-sort="91.00" style="text-align:right;color:#2e7d32;font-weight:bold">+$91</td>
+          <td class="live-unreal-pct" data-sort="1.8129" style="text-align:right;color:#2e7d32;font-weight:bold">+1.81%</td>
+          <td class="live-day-d" data-sort="-32.76" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-32.76" style="color:#c62828">$33</span></td>
+          <td class="live-day-pct" data-sort="-0.6369" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-0.6369" style="color:#c62828">-0.64%</span></td>
           <td>$12.77</td>
           <td style="color:#666;font-size:12px">1.77</td>
           <td style="color:#666;font-size:12px">Aug 7, 2026</td>
         </tr>
-        <tr data-ticker="FE" data-qty="84" data-buypx="47.37" data-side="long" data-prevpx="47.79" data-server-unreal="18.90">
+        <tr data-ticker="FE" data-qty="84" data-buypx="47.37" data-side="long" data-prevpx="47.79" data-server-unreal="15.96">
           <td style="font-weight:bold">FE<span style="color:#888;font-size:11px;display:block;line-height:1.1">FirstEnergy</span></td>
           <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
           <td>$47.37</td>
-          <td class="live-price">$47.60</td>
+          <td class="live-price">$47.56</td>
           <td style="text-align:right">84</td>
           <td style="text-align:right">$3,979</td>
-          <td class="live-curval" style="text-align:right">$3,998</td>
-          <td class="live-unreal-d" data-sort="18.90" style="text-align:right;color:#2e7d32;font-weight:bold">+$19</td>
-          <td class="live-unreal-pct" data-sort="0.4750" style="text-align:right;color:#2e7d32;font-weight:bold">+0.47%</td>
-          <td class="live-day-d" data-sort="-16.38" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-16.38" style="color:#c62828">$16</span></td>
-          <td class="live-day-pct" data-sort="-0.4080" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-0.4080" style="color:#c62828">-0.41%</span></td>
+          <td class="live-curval" style="text-align:right">$3,995</td>
+          <td class="live-unreal-d" data-sort="15.96" style="text-align:right;color:#2e7d32;font-weight:bold">+$16</td>
+          <td class="live-unreal-pct" data-sort="0.4011" style="text-align:right;color:#2e7d32;font-weight:bold">+0.40%</td>
+          <td class="live-day-d" data-sort="-19.32" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-19.32" style="color:#c62828">$19</span></td>
+          <td class="live-day-pct" data-sort="-0.4813" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-0.4813" style="color:#c62828">-0.48%</span></td>
           <td>$45.53</td>
           <td style="color:#666;font-size:12px">2.47</td>
           <td style="color:#666;font-size:12px">Aug 7, 2026</td>
         </tr>
-        <tr data-ticker="HST" data-qty="138" data-buypx="23.38" data-side="long" data-prevpx="25.13" data-server-unreal="8.97">
+        <tr data-ticker="HST" data-qty="138" data-buypx="23.38" data-side="long" data-prevpx="25.13" data-server-unreal="11.73">
           <td style="font-weight:bold">HST<span style="color:#888;font-size:11px;display:block;line-height:1.1">Host Hotels & Resorts</span></td>
           <td><span style="background:#e8f5e9;color:#1b5e20;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:bold">LONG</span></td>
           <td>$23.38</td>
-          <td class="live-price">$23.44</td>
+          <td class="live-price">$23.47</td>
           <td style="text-align:right">138</td>
           <td style="text-align:right">$3,226</td>
-          <td class="live-curval" style="text-align:right">$3,235</td>
-          <td class="live-unreal-d" data-sort="8.97" style="text-align:right;color:#2e7d32;font-weight:bold">+$9</td>
-          <td class="live-unreal-pct" data-sort="0.2780" style="text-align:right;color:#2e7d32;font-weight:bold">+0.28%</td>
-          <td class="live-day-d" data-sort="-232.53" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-232.53" style="color:#c62828">$233</span></td>
-          <td class="live-day-pct" data-sort="-6.7051" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-6.7051" style="color:#c62828">-6.71%</span></td>
+          <td class="live-curval" style="text-align:right">$3,238</td>
+          <td class="live-unreal-d" data-sort="11.73" style="text-align:right;color:#2e7d32;font-weight:bold">+$12</td>
+          <td class="live-unreal-pct" data-sort="0.3636" style="text-align:right;color:#2e7d32;font-weight:bold">+0.36%</td>
+          <td class="live-day-d" data-sort="-229.77" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-229.77" style="color:#c62828">$230</span></td>
+          <td class="live-day-pct" data-sort="-6.6255" style="text-align:right;color:#c62828;font-weight:bold"><span data-sort="-6.6255" style="color:#c62828">-6.63%</span></td>
           <td>$21.84</td>
           <td style="color:#666;font-size:12px">4.54</td>
           <td style="color:#666;font-size:12px">Aug 7, 2026</td>
@@ -489,9 +489,9 @@
         <tr style="background:#e8eaf6;font-weight:bold;border-top:2px solid #9fa8da">
           <td colspan="5" style="text-align:right;color:#555">Totals</td>
           <td id="total-invested" style="text-align:right">$91,283</td>
-          <td id="total-curval" style="text-align:right">$90,717</td>
-          <td id="total-unreal-d" data-server-total="-565.47" style="text-align:right;color:#c62828">$565</td>
-          <td id="total-unreal-pct" style="text-align:right;color:#c62828">-0.62%</td>
+          <td id="total-curval" style="text-align:right">$90,699</td>
+          <td id="total-unreal-d" data-server-total="-583.10" style="text-align:right;color:#c62828">$583</td>
+          <td id="total-unreal-pct" style="text-align:right;color:#c62828">-0.64%</td>
           <td id="total-day-d" style="text-align:right"></td>
           <td id="total-day-pct" style="text-align:right"></td>
           <td colspan="3"></td>
@@ -519,8 +519,8 @@
         <table id="stats-table" style="width:auto;min-width:260px">
           <tbody>
     <tr><td>Starting Capital</td><td style="text-align:right;font-weight:bold">$100,000</td></tr>
-    <tr><td>Current Value</td><td style="text-align:right;font-weight:bold;color:#2e7d32">$103,635</td></tr>
-    <tr><td>Total Return</td><td style="text-align:right;font-weight:bold;color:#2e7d32">+$3,635 (+3.63%)</td></tr>
+    <tr><td>Current Value</td><td style="text-align:right;font-weight:bold;color:#2e7d32">$103,617</td></tr>
+    <tr><td>Total Return</td><td style="text-align:right;font-weight:bold;color:#2e7d32">+$3,617 (+3.62%)</td></tr>
     <tr><td>Cash Available</td><td style="text-align:right">$12,918</td></tr>
     <tr><td>Open Positions</td><td style="text-align:right">21</td></tr>
     <tr><td>Closed Trades</td><td style="text-align:right">123</td></tr>
@@ -1168,7 +1168,7 @@
             <th style="text-align:right">Russell 2K</th>
           </tr>
         </thead>
-        <tbody><tr><td style='white-space:nowrap;font-weight:bold;color:#1a237e'>Aug 7, 2026</td><td style="color:#c62828;text-align:right;font-weight:bold">-$821</td><td style="color:#c62828;text-align:right;font-weight:bold;">-0.79%</td><td style="color:#1b5e20;text-align:right;">+2.99%</td><td style="color:#1b5e20;text-align:right;">+2.68%</td><td style="color:#1b5e20;text-align:right;font-weight:bold;font-size:12px">▲ +0.31%</td><td style="color:#1b5e20;text-align:right;">+0.47%</td><td style="color:#1b5e20;text-align:right;">+0.99%</td><td style="color:#1b5e20;text-align:right;">+0.15%</td><td style="color:#1b5e20;text-align:right;">+0.88%</td><td style="color:#c62828;text-align:right;font-size:12px">▼ -1.26%</td></tr>
+        <tbody><tr><td style='white-space:nowrap;font-weight:bold;color:#1a237e'>Aug 7, 2026</td><td style="color:#c62828;text-align:right;font-weight:bold">-$821</td><td style="color:#c62828;text-align:right;font-weight:bold;">-0.79%</td><td style="color:#1b5e20;text-align:right;">+2.99%</td><td style="color:#1b5e20;text-align:right;">+2.67%</td><td style="color:#1b5e20;text-align:right;font-weight:bold;font-size:12px">▲ +0.32%</td><td style="color:#1b5e20;text-align:right;">+0.46%</td><td style="color:#1b5e20;text-align:right;">+0.99%</td><td style="color:#1b5e20;text-align:right;">+0.14%</td><td style="color:#1b5e20;text-align:right;">+0.93%</td><td style="color:#c62828;text-align:right;font-size:12px">▼ -1.25%</td></tr>
 <tr><td style='white-space:nowrap;font-weight:bold;color:#1a237e'>Aug 6, 2026</td><td style="color:#1b5e20;text-align:right;font-weight:bold">+$17</td><td style="color:#1b5e20;text-align:right;font-weight:bold;">+0.02%</td><td style="color:#1b5e20;text-align:right;">+3.81%</td><td style="color:#1b5e20;text-align:right;">+2.21%</td><td style="color:#1b5e20;text-align:right;font-weight:bold;font-size:12px">▲ +1.61%</td><td style="color:#c62828;text-align:right;">-0.18%</td><td style="color:#c62828;text-align:right;">-0.06%</td><td style="color:#c62828;text-align:right;">-0.85%</td><td style="color:#c62828;text-align:right;">-0.58%</td><td style="color:#1b5e20;text-align:right;font-size:12px">▲ +0.19%</td></tr>
 <tr><td style='white-space:nowrap;font-weight:bold;color:#1a237e'>Aug 5, 2026</td><td style="color:#1b5e20;text-align:right;font-weight:bold">+$606</td><td style="color:#1b5e20;text-align:right;font-weight:bold;">+0.59%</td><td style="color:#1b5e20;text-align:right;">+3.80%</td><td style="color:#1b5e20;text-align:right;">+2.38%</td><td style="color:#1b5e20;text-align:right;font-weight:bold;font-size:12px">▲ +1.41%</td><td style="color:#c62828;text-align:right;">-0.17%</td><td style="color:#c62828;text-align:right;">-0.83%</td><td style="color:#1b5e20;text-align:right;">+0.49%</td><td style="color:#c62828;text-align:right;">-0.59%</td><td style="color:#1b5e20;text-align:right;font-size:12px">▲ +0.76%</td></tr>
 <tr><td style='white-space:nowrap;font-weight:bold;color:#1a237e'>Aug 4, 2026</td><td style="color:#1b5e20;text-align:right;font-weight:bold">+$331</td><td style="color:#1b5e20;text-align:right;font-weight:bold;">+0.32%</td><td style="color:#1b5e20;text-align:right;">+3.19%</td><td style="color:#1b5e20;text-align:right;">+2.56%</td><td style="color:#1b5e20;text-align:right;font-weight:bold;font-size:12px">▲ +0.64%</td><td style="color:#1b5e20;text-align:right;">+1.79%</td><td style="color:#1b5e20;text-align:right;">+2.59%</td><td style="color:#1b5e20;text-align:right;">+1.71%</td><td style="color:#1b5e20;text-align:right;">+1.85%</td><td style="color:#c62828;text-align:right;font-size:12px">▼ -1.47%</td></tr>
@@ -1378,7 +1378,7 @@
 
 // NAV equity curve with SPY benchmark
 (function() {
-  const data = {"dates": ["2026-07-09", "2026-07-10", "2026-07-13", "2026-07-15", "2026-07-16", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07"], "values": [100000.0, 101615.45, 102667.93, 98011.16, 98225.18, 98779.23, 98947.51, 100830.42, 100340.44, 100021.97, 100949.81, 101590.61, 101350.51, 99736.77, 102468.73, 102861.24, 103191.97, 103798.43, 103815.13, 102994.39], "spy": [100000.0, 100421.0, 99625.0, 100381.0, 99869.0, 98670.0, 99543.0, 99408.0, 98206.0, 98255.0, 98271.0, 98477.0, 96984.0, 98595.0, 99285.0, 100754.0, 102557.0, 102385.0, 102205.0, 102684.0]};
+  const data = {"dates": ["2026-07-09", "2026-07-10", "2026-07-13", "2026-07-15", "2026-07-16", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07"], "values": [100000.0, 101615.45, 102667.93, 98011.16, 98225.18, 98779.23, 98947.51, 100830.42, 100340.44, 100021.97, 100949.81, 101590.61, 101350.51, 99736.77, 102468.73, 102861.24, 103191.97, 103798.43, 103815.13, 102994.39], "spy": [100000.0, 100421.0, 99625.0, 100381.0, 99869.0, 98670.0, 99543.0, 99408.0, 98206.0, 98255.0, 98271.0, 98477.0, 96984.0, 98595.0, 99285.0, 100754.0, 102557.0, 102385.0, 102205.0, 102673.0]};
   if (!data.dates.length) return;
   const canvas = document.getElementById('nav-chart');
   const ctx    = canvas.getContext('2d');
