@@ -24,9 +24,9 @@
       "entry_time": "11:19 ET",
       "entry_price": 309.13,
       "shares": 68,
-      "stop": 309.0225,
+      "stop": 309.0825,
       "trail_dist": 1.8075,
-      "peak": 310.83,
+      "peak": 310.89,
       "orb_width": 3.615,
       "cost": 21020.84,
       "vol_ratio": 10.21,
@@ -72164,6 +72164,11 @@
       "low": 266.2,
       "width": 6.17
     },
+    "GOOGL": {
+      "high": 358.9,
+      "low": 354.74,
+      "width": 4.16
+    },
     "GOOG": {
       "high": 357.55,
       "low": 353.5,
@@ -72416,8 +72421,8 @@
     },
     "BKNG": {
       "high": 213.47,
-      "low": 207.6225,
-      "width": 5.8475
+      "low": 207.185,
+      "width": 6.285
     },
     "BSX": {
       "high": 49.665,
@@ -73404,6 +73409,11 @@
       "low": 152.64,
       "width": 2.0
     },
+    "JPM": {
+      "high": 355.89,
+      "low": 353.33,
+      "width": 2.56
+    },
     "KVUE": {
       "high": 19.2,
       "low": 18.865,
@@ -73586,8 +73596,8 @@
     },
     "MCD": {
       "high": 275.9,
-      "low": 274.29,
-      "width": 1.61
+      "low": 274.08,
+      "width": 1.82
     },
     "MCK": {
       "high": 876.92,
@@ -73636,8 +73646,8 @@
     },
     "MSFT": {
       "high": 505.18,
-      "low": 499.61,
-      "width": 5.57
+      "low": 499.12,
+      "width": 6.06
     },
     "MAA": {
       "high": 134.035,
@@ -74592,7 +74602,7 @@
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
-    "2026-08-07": 100516.72
+    "2026-08-07": 100588.15
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -153118,6 +153128,22 @@
       },
       "portfolio_value": 100516.72,
       "note": "$100,517 | cash=$12,547 | open=8 | closed today=2 | day PnL=$-16"
+    },
+    {
+      "date": "2026-08-07",
+      "time": "14:42 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.036,
+        "spy_vs_vwap": -0.762,
+        "spy_vs_ema20": 20.8798
+      },
+      "portfolio_value": 100588.15,
+      "note": "$100,588 | cash=$12,547 | open=8 | closed today=2 | day PnL=$-16"
     }
   ]
 }
