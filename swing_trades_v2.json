@@ -1,6 +1,67 @@
 {
-  "capital": 101270.46,
-  "open_positions": [],
+  "capital": 33222.35,
+  "open_positions": [
+    {
+      "ticker": "FRT",
+      "side": "long",
+      "entry_date": "2026-08-07",
+      "entry_price": 117.91,
+      "shares": 171,
+      "stop": 112.0891,
+      "cost": 20162.61,
+      "rsi2_entry": 0.14
+    },
+    {
+      "ticker": "KIM",
+      "side": "long",
+      "entry_date": "2026-08-07",
+      "entry_price": 24.43,
+      "shares": 664,
+      "stop": 22.9736,
+      "cost": 16221.52,
+      "rsi2_entry": 0.29
+    },
+    {
+      "ticker": "DVA",
+      "side": "long",
+      "entry_date": "2026-08-07",
+      "entry_price": 180.67,
+      "shares": 20,
+      "stop": 133.2342,
+      "cost": 3613.4,
+      "rsi2_entry": 0.44
+    },
+    {
+      "ticker": "F",
+      "side": "long",
+      "entry_date": "2026-08-07",
+      "entry_price": 13.79,
+      "shares": 888,
+      "stop": 12.7741,
+      "cost": 12245.52,
+      "rsi2_entry": 1.77
+    },
+    {
+      "ticker": "CVS",
+      "side": "long",
+      "entry_date": "2026-08-07",
+      "entry_price": 96.22,
+      "shares": 78,
+      "stop": 86.9486,
+      "cost": 7505.16,
+      "rsi2_entry": 2.27
+    },
+    {
+      "ticker": "HST",
+      "side": "long",
+      "entry_date": "2026-08-07",
+      "entry_price": 23.38,
+      "shares": 355,
+      "stop": 21.8362,
+      "cost": 8299.9,
+      "rsi2_entry": 4.54
+    }
+  ],
   "closed_positions": [
     {
       "ticker": "AKAM",
@@ -654,6 +715,60 @@
         "VIX: 15.0  (VIX 15.0 < 20.0 \u2014 no entries)",
         "Portfolio: $101,270  |  Cash: $101,270  |  Open: 0  |  Exits: 0  |  Entries: 0"
       ]
+    },
+    {
+      "date": "2026-08-07",
+      "run_at": "2026-08-07 18:25 UTC",
+      "entries": [
+        {
+          "ticker": "FRT",
+          "side": "long",
+          "price": 117.91,
+          "shares": 171,
+          "stop": 112.09
+        },
+        {
+          "ticker": "KIM",
+          "side": "long",
+          "price": 24.43,
+          "shares": 664,
+          "stop": 22.97
+        },
+        {
+          "ticker": "DVA",
+          "side": "long",
+          "price": 180.67,
+          "shares": 20,
+          "stop": 133.23
+        },
+        {
+          "ticker": "F",
+          "side": "long",
+          "price": 13.79,
+          "shares": 888,
+          "stop": 12.77
+        },
+        {
+          "ticker": "CVS",
+          "side": "long",
+          "price": 96.22,
+          "shares": 78,
+          "stop": 86.95
+        },
+        {
+          "ticker": "HST",
+          "side": "long",
+          "price": 23.38,
+          "shares": 355,
+          "stop": 21.84
+        }
+      ],
+      "exits": [],
+      "notes": [
+        "SPY regime: BULL (longs only)",
+        "VIX: 14.9  (entries allowed)",
+        "Portfolio: $101,270  |  Cash: $33,222  |  Open: 6  |  Exits: 0  |  Entries: 6"
+      ]
     }
   ],
   "last_scan": [
@@ -662,28 +777,28 @@
       "rsi2": 0.1,
       "close": 117.91,
       "sma200": 107.38,
-      "status": "LONG signal (VIX 15.0 < 20 \u2014 gate closed)"
+      "status": "LONG signal"
     },
     {
       "ticker": "KIM",
       "rsi2": 0.3,
       "close": 24.43,
       "sma200": 22.39,
-      "status": "LONG signal (VIX 15.0 < 20 \u2014 gate closed)"
+      "status": "LONG signal"
     },
     {
       "ticker": "DVA",
       "rsi2": 0.4,
       "close": 180.67,
       "sma200": 158.29,
-      "status": "LONG signal (VIX 15.0 < 20 \u2014 gate closed)"
+      "status": "LONG signal"
     },
     {
       "ticker": "EIX",
       "rsi2": 0.4,
       "close": 67.23,
       "sma200": 65.99,
-      "status": "LONG signal (VIX 15.0 < 20 \u2014 gate closed)"
+      "status": "above SMA200 (sector ETF below SMA200)"
     },
     {
       "ticker": "CMS",
@@ -718,7 +833,7 @@
       "rsi2": 1.8,
       "close": 13.79,
       "sma200": 13.21,
-      "status": "LONG signal (VIX 15.0 < 20 \u2014 gate closed)"
+      "status": "LONG signal"
     },
     {
       "ticker": "AVGO",
@@ -746,14 +861,14 @@
       "rsi2": 2.3,
       "close": 96.22,
       "sma200": 83.85,
-      "status": "LONG signal (VIX 15.0 < 20 \u2014 gate closed)"
+      "status": "LONG signal"
     },
     {
       "ticker": "FE",
       "rsi2": 2.5,
       "close": 47.37,
       "sma200": 46.96,
-      "status": "LONG signal (VIX 15.0 < 20 \u2014 gate closed)"
+      "status": "above SMA200 (sector ETF below SMA200)"
     },
     {
       "ticker": "ALLE",
@@ -830,7 +945,7 @@
       "rsi2": 4.5,
       "close": 23.38,
       "sma200": 19.51,
-      "status": "LONG signal (VIX 15.0 < 20 \u2014 gate closed)"
+      "status": "LONG signal"
     },
     {
       "ticker": "ALL",
