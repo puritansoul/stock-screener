@@ -102,7 +102,7 @@ BASE_DIR    = Path(__file__).parent
 TRADES_FILE = BASE_DIR / "swing_trades_v2.json"
 
 # ── v2 enhancements ───────────────────────────────────────────────────────────
-VIX_MIN_ENTRY     = 13.0     # only enter when VIX >= 13
+VIX_MAX_ENTRY     = 35.0     # block entries in full panic/crash (VIX >= 35)
 EARNINGS_BLACKOUT = 3        # skip entry within 3 calendar days of next earnings
 TIME_EXIT_DAYS    = 7        # force-exit if held 7+ calendar days
 SECTOR_ETFS = {
@@ -606,11 +606,11 @@ def run_swing_trader():
         f"SPY regime: {'BEAR (shorts allowed)' if shorts_allowed else 'BULL (longs only)'}"
     )
 
-    # v2: VIX gate and sector ETF filter
+    # v2: VIX ceiling and sector ETF filter
     vix_level = fetch_vix()
-    entries_gate = vix_level >= VIX_MIN_ENTRY or vix_level == 0.0  # 0.0 = fetch failed, allow
+    entries_gate = (vix_level < VIX_MAX_ENTRY or vix_level == 0.0)  # 0.0 = fetch failed, allow
     log_entry["notes"].append(
-        f"VIX: {vix_level:.1f}  ({'entries allowed' if entries_gate else f'VIX {vix_level:.1f} < {VIX_MIN_ENTRY} — no entries'})"
+        f"VIX: {vix_level:.1f}  ({'entries allowed' if entries_gate else f'VIX {vix_level:.1f} >= {VIX_MAX_ENTRY:.0f} — panic block'})"
     )
     sector_above_sma200 = fetch_sector_sma200() if entries_gate else {}
 
@@ -630,9 +630,9 @@ def run_swing_trader():
         short_signal = shorts_allowed and close < sma200 and rsi2 > RSI_SHORT_ENTRY
         trend = "above SMA200" if close > sma200 else "below SMA200"
         if long_signal:
-            status = "LONG signal" if entries_gate else f"LONG signal (VIX {vix_level:.1f} < {VIX_MIN_ENTRY:.0f} — gate closed)"
+            status = "LONG signal" if entries_gate else f"LONG signal (VIX {vix_level:.1f} >= {VIX_MAX_ENTRY:.0f} — panic block)"
         elif short_signal:
-            status = "SHORT signal" if entries_gate else f"SHORT signal (VIX {vix_level:.1f} < {VIX_MIN_ENTRY:.0f} — gate closed)"
+            status = "SHORT signal" if entries_gate else f"SHORT signal (VIX {vix_level:.1f} >= {VIX_MAX_ENTRY:.0f} — panic block)"
         else:
             status = trend
         all_scan.append({"ticker": tk, "rsi2": round(rsi2, 1), "close": round(close, 2),
@@ -1259,7 +1259,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
             <strong>Risk:</strong> {RISK_PER_TRADE:.0%} of portfolio per trade<br>
             <strong>Max positions:</strong> no cap (cash-limited)<br>
             <strong>Universe:</strong> S&amp;P 500<br>
-            <strong>v2 filters:</strong> VIX ≥ {VIX_MIN_ENTRY:.0f} entry gate · earnings blackout {EARNINGS_BLACKOUT}d ·
+            <strong>v2 filters:</strong> VIX &lt; {VIX_MAX_ENTRY:.0f} panic ceiling · earnings blackout {EARNINGS_BLACKOUT}d ·
             ATR position tiers · {TIME_EXIT_DAYS}d time exit · sector ETF SMA200 filter (longs)
           </p>
         </div>

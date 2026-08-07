@@ -69318,3 +69318,983 @@ From https://github.com/puritansoul/stock-screener
  * branch            main       -> FETCH_HEAD
    77e1140..7a9b144  main       -> origin/main
 Updating 77e1140..7a9b144
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-08-07 12:55 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.15%  vs_vwap=+0.10  vs_ema20=+21.78  → longs=✓  shorts=✗
+  Checking earnings catalysts for 501 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,370  (+370 / +0.37%)
+  Cash: $2,992  |  Open: 10  |  Today PnL: $+0
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	reports/swing_2026-08-07.html
+U	reports/swing_v2_2026-08-07.html
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+To https://github.com/puritansoul/stock-screener.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/puritansoul/stock-screener.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2026-08-07 12:57:45 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-08-07 12:57 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.14%  vs_vwap=+0.02  vs_ema20=+21.70  → longs=✓  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,326  (+326 / +0.33%)
+  Cash: $2,992  |  Open: 10  |  Today PnL: $+0
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 2db63b5] intraday: 2026-08-07 12:58 ET local [skip ci]
+ 4 files changed, 83 insertions(+), 67 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   2d55e04..2db63b5  main -> main
+2026-08-07 13:00:13 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+   2db63b5..3fb607a  main       -> origin/main
+Updating 2db63b5..3fb607a
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+1 Failed download:
+['WYNN']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['URI']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-08-07 13:00 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 502 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.11%  vs_vwap=-0.24  vs_ema20=+21.45  → longs=✗  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 501 tickers
+
+  Portfolio: $100,346  (+346 / +0.35%)
+  Cash: $2,992  |  Open: 10  |  Today PnL: $+0
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 8866c26] intraday: 2026-08-07 13:00 ET local [skip ci]
+ 4 files changed, 63 insertions(+), 52 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   3fb607a..8866c26  main -> main
+2026-08-07 13:02:45 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+1 Failed download:
+['CMG']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-08-07 13:02 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 502 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.15%  vs_vwap=+0.07  vs_ema20=+21.75  → longs=✓  shorts=✗
+  Checking earnings catalysts for 501 tickers …
+  ORB computed for 501 tickers
+
+  Portfolio: $100,319  (+319 / +0.32%)
+  Cash: $2,992  |  Open: 10  |  Today PnL: $+0
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main b407794] intraday: 2026-08-07 13:03 ET local [skip ci]
+ 4 files changed, 71 insertions(+), 55 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   8866c26..b407794  main -> main
+2026-08-07 13:05:15 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-08-07 13:05 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.15%  vs_vwap=+0.09  vs_ema20=+21.77  → longs=✓  shorts=✗
+  Checking earnings catalysts for 501 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,310  (+310 / +0.31%)
+  Cash: $2,992  |  Open: 10  |  Today PnL: $+0
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 3ff4e42] intraday: 2026-08-07 13:05 ET local [skip ci]
+ 4 files changed, 69 insertions(+), 48 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   b407794..3ff4e42  main -> main
+2026-08-07 13:07:45 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+1 Failed download:
+['PYPL']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-08-07 13:07 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.15%  vs_vwap=+0.08  vs_ema20=+21.76  → longs=✓  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,325  (+325 / +0.33%)
+  Cash: $2,992  |  Open: 10  |  Today PnL: $+0
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main d9ab746] intraday: 2026-08-07 13:08 ET local [skip ci]
+ 4 files changed, 71 insertions(+), 55 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   3ff4e42..d9ab746  main -> main
+2026-08-07 13:10:19 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-08-07 13:10 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.15%  vs_vwap=+0.10  vs_ema20=+21.78  → longs=✓  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,308  (+308 / +0.31%)
+  Cash: $2,992  |  Open: 10  |  Today PnL: $+0
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 5c95e93] intraday: 2026-08-07 13:10 ET local [skip ci]
+ 4 files changed, 72 insertions(+), 56 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   d9ab746..5c95e93  main -> main
+2026-08-07 13:12:47 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+1 Failed download:
+['VST']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-08-07 13:12 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 502 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.14%  vs_vwap=-0.02  vs_ema20=+21.66  → longs=✗  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 501 tickers
+
+  Portfolio: $100,349  (+349 / +0.35%)
+  Cash: $2,992  |  Open: 10  |  Today PnL: $+0
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main f7d7fe3] intraday: 2026-08-07 13:13 ET local [skip ci]
+ 4 files changed, 72 insertions(+), 61 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   5c95e93..f7d7fe3  main -> main
+2026-08-07 13:15:15 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+   f7d7fe3..2bda19d  main       -> origin/main
+Updating f7d7fe3..2bda19d
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+1 Failed download:
+['RJF']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-08-07 13:15 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 502 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.14%  vs_vwap=-0.03  vs_ema20=+21.66  → longs=✗  shorts=✗
+  Checking earnings catalysts for 501 tickers …
+  ORB computed for 501 tickers
+
+  Portfolio: $100,338  (+338 / +0.34%)
+  Cash: $2,992  |  Open: 10  |  Today PnL: $+0
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 0ad7a9f] intraday: 2026-08-07 13:15 ET local [skip ci]
+ 4 files changed, 76 insertions(+), 60 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   2bda19d..0ad7a9f  main -> main
+2026-08-07 13:17:46 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+1 Failed download:
+['ADSK']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-08-07 13:17 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 502 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.15%  vs_vwap=+0.07  vs_ema20=+21.75  → longs=✓  shorts=✗
+  Checking earnings catalysts for 501 tickers …
+  ORB computed for 501 tickers
+
+  Portfolio: $100,351  (+351 / +0.35%)
+  Cash: $2,992  |  Open: 10  |  Today PnL: $+0
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 4e149b4] intraday: 2026-08-07 13:18 ET local [skip ci]
+ 4 files changed, 80 insertions(+), 64 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   0ad7a9f..4e149b4  main -> main
+2026-08-07 13:20:16 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-08-07 13:20 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.18%  vs_vwap=+0.29  vs_ema20=+21.97  → longs=✓  shorts=✗
+  Checking earnings catalysts for 501 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,327  (+327 / +0.33%)
+  Cash: $2,992  |  Open: 10  |  Today PnL: $+0
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 83472b9] intraday: 2026-08-07 13:20 ET local [skip ci]
+ 4 files changed, 75 insertions(+), 54 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   4e149b4..83472b9  main -> main
+2026-08-07 13:22:45 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+1 Failed download:
+['TROW']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-08-07 13:22 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.16%  vs_vwap=+0.15  vs_ema20=+21.83  → longs=✓  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,352  (+352 / +0.35%)
+  Cash: $2,992  |  Open: 10  |  Today PnL: $+0
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 0682bd9] intraday: 2026-08-07 13:23 ET local [skip ci]
+ 4 files changed, 72 insertions(+), 56 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   83472b9..0682bd9  main -> main
+2026-08-07 13:25:15 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+1 Failed download:
+['NTAP']: TypeError("'NoneType' object is not subscriptable")
+
+4 Failed downloads:
+['TROW', 'TSN', 'URI', 'ADP']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-08-07 13:25 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 502 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.12%  vs_vwap=-0.17  vs_ema20=+21.51  → longs=✗  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 501 tickers
+
+  Portfolio: $100,370  (+370 / +0.37%)
+  Cash: $2,992  |  Open: 10  |  Today PnL: $+0
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main f5e00c3] intraday: 2026-08-07 13:25 ET local [skip ci]
+ 4 files changed, 68 insertions(+), 57 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   0682bd9..f5e00c3  main -> main
+2026-08-07 13:27:45 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-08-07 13:27 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.12%  vs_vwap=-0.17  vs_ema20=+21.51  → longs=✗  shorts=✗
+  Checking earnings catalysts for 501 tickers …
+  ORB computed for 502 tickers
+  EXIT long NEE @ $85.03  PnL: $+8  (trailing stop)
+
+  Portfolio: $100,396  (+396 / +0.40%)
+  Cash: $5,458  |  Open: 9  |  Today PnL: $+8
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main d2f369d] intraday: 2026-08-07 13:28 ET local [skip ci]
+ 4 files changed, 123 insertions(+), 95 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   f5e00c3..d2f369d  main -> main
+2026-08-07 13:30:16 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+1 Failed download:
+['CSX']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-08-07 13:30 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.15%  vs_vwap=+0.09  vs_ema20=+21.77  → longs=✓  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,422  (+422 / +0.42%)
+  Cash: $5,458  |  Open: 9  |  Today PnL: $+8
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main d386e3e] intraday: 2026-08-07 13:30 ET local [skip ci]
+ 4 files changed, 65 insertions(+), 49 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   d2f369d..d386e3e  main -> main
+2026-08-07 13:32:45 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-08-07 13:32 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.10%  vs_vwap=-0.31  vs_ema20=+21.37  → longs=✗  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,442  (+442 / +0.44%)
+  Cash: $5,458  |  Open: 9  |  Today PnL: $+8
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main b68a87b] intraday: 2026-08-07 13:33 ET local [skip ci]
+ 4 files changed, 65 insertions(+), 49 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   d386e3e..b68a87b  main -> main
+2026-08-07 13:35:14 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+2 Failed downloads:
+['SOLV', 'TSLA']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-08-07 13:35 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.13%  vs_vwap=-0.09  vs_ema20=+21.59  → longs=✗  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,397  (+397 / +0.40%)
+  Cash: $5,458  |  Open: 9  |  Today PnL: $+8
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 6e496d0] intraday: 2026-08-07 13:35 ET local [skip ci]
+ 4 files changed, 61 insertions(+), 45 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   b68a87b..6e496d0  main -> main
+2026-08-07 13:37:44 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+1 Failed download:
+['STLD']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-08-07 13:37 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.13%  vs_vwap=-0.10  vs_ema20=+21.58  → longs=✗  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,391  (+391 / +0.39%)
+  Cash: $5,458  |  Open: 9  |  Today PnL: $+8
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main afa91f0] intraday: 2026-08-07 13:38 ET local [skip ci]
+ 4 files changed, 66 insertions(+), 50 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   6e496d0..afa91f0  main -> main
+2026-08-07 13:40:13 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-08-07 13:40 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.17%  vs_vwap=+0.22  vs_ema20=+21.90  → longs=✓  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,433  (+433 / +0.43%)
+  Cash: $5,458  |  Open: 9  |  Today PnL: $+8
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 4d8b217] intraday: 2026-08-07 13:40 ET local [skip ci]
+ 4 files changed, 69 insertions(+), 53 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   afa91f0..4d8b217  main -> main
+2026-08-07 13:42:43 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-08-07 13:42 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.15%  vs_vwap=+0.05  vs_ema20=+21.73  → longs=✓  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,445  (+445 / +0.45%)
+  Cash: $5,458  |  Open: 9  |  Today PnL: $+8
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 30a0e0d] intraday: 2026-08-07 13:43 ET local [skip ci]
+ 4 files changed, 70 insertions(+), 54 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   4d8b217..30a0e0d  main -> main
+2026-08-07 13:45:14 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-08-07 13:45 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.16%  vs_vwap=+0.15  vs_ema20=+21.83  → longs=✓  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,455  (+455 / +0.45%)
+  Cash: $5,458  |  Open: 9  |  Today PnL: $+8
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 61b77f9] intraday: 2026-08-07 13:45 ET local [skip ci]
+ 4 files changed, 69 insertions(+), 53 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   30a0e0d..61b77f9  main -> main
+2026-08-07 13:47:42 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+1 Failed download:
+['HSIC']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-08-07 13:47 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.17%  vs_vwap=+0.26  vs_ema20=+21.94  → longs=✓  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,463  (+463 / +0.46%)
+  Cash: $5,458  |  Open: 9  |  Today PnL: $+8
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 822d074] intraday: 2026-08-07 13:48 ET local [skip ci]
+ 4 files changed, 67 insertions(+), 51 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   61b77f9..822d074  main -> main
+2026-08-07 13:50:10 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+   822d074..c89b8f7  main       -> origin/main
+Updating 822d074..c89b8f7
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-08-07 13:50 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.18%  vs_vwap=+0.32  vs_ema20=+22.00  → longs=✓  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,454  (+454 / +0.45%)
+  Cash: $5,458  |  Open: 9  |  Today PnL: $+8
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 13a3ecd] intraday: 2026-08-07 13:50 ET local [skip ci]
+ 4 files changed, 59 insertions(+), 43 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   c89b8f7..13a3ecd  main -> main
+2026-08-07 13:52:38 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-08-07 13:52 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.13%  vs_vwap=-0.07  vs_ema20=+21.61  → longs=✗  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,471  (+471 / +0.47%)
+  Cash: $5,458  |  Open: 9  |  Today PnL: $+8
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 97c07dd] intraday: 2026-08-07 13:53 ET local [skip ci]
+ 4 files changed, 66 insertions(+), 50 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   13a3ecd..97c07dd  main -> main
+2026-08-07 13:55:11 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+2 Failed downloads:
+['MRSH', 'LIN']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-08-07 13:55 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.16%  vs_vwap=+0.18  vs_ema20=+21.87  → longs=✓  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,458  (+458 / +0.46%)
+  Cash: $5,458  |  Open: 9  |  Today PnL: $+8
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 220935b] intraday: 2026-08-07 13:55 ET local [skip ci]
+ 4 files changed, 68 insertions(+), 52 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   97c07dd..220935b  main -> main
+2026-08-07 13:57:40 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-08-07 13:57 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.17%  vs_vwap=+0.26  vs_ema20=+21.95  → longs=✓  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,442  (+442 / +0.44%)
+  Cash: $5,458  |  Open: 9  |  Today PnL: $+8
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 21d7815] intraday: 2026-08-07 13:58 ET local [skip ci]
+ 4 files changed, 71 insertions(+), 55 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   220935b..21d7815  main -> main
+2026-08-07 14:00:08 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-08-07 14:00 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.15%  vs_vwap=+0.08  vs_ema20=+21.77  → longs=✓  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,453  (+453 / +0.45%)
+  Cash: $5,458  |  Open: 9  |  Today PnL: $+8
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 4cf6941] intraday: 2026-08-07 14:00 ET local [skip ci]
+ 4 files changed, 67 insertions(+), 51 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   21d7815..4cf6941  main -> main
+2026-08-07 14:02:36 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-08-07 14:02 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.15%  vs_vwap=+0.09  vs_ema20=+21.78  → longs=✓  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,546  (+546 / +0.55%)
+  Cash: $5,458  |  Open: 9  |  Today PnL: $+8
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 1bfb5ef] intraday: 2026-08-07 14:03 ET local [skip ci]
+ 4 files changed, 71 insertions(+), 55 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   4cf6941..1bfb5ef  main -> main
+2026-08-07 14:05:05 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-08-07 14:05 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.13%  vs_vwap=-0.11  vs_ema20=+21.58  → longs=✗  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,537  (+537 / +0.54%)
+  Cash: $5,458  |  Open: 9  |  Today PnL: $+8
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 8c9f63d] intraday: 2026-08-07 14:05 ET local [skip ci]
+ 4 files changed, 72 insertions(+), 56 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   1bfb5ef..8c9f63d  main -> main
+2026-08-07 14:07:35 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-08-07 14:07 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.13%  vs_vwap=-0.07  vs_ema20=+21.62  → longs=✗  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,551  (+551 / +0.55%)
+  Cash: $5,458  |  Open: 9  |  Today PnL: $+8
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 40e7b20] intraday: 2026-08-07 14:08 ET local [skip ci]
+ 4 files changed, 80 insertions(+), 64 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   8c9f63d..40e7b20  main -> main
+2026-08-07 14:10:03 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+   40e7b20..1980dc9  main       -> origin/main
+Updating 40e7b20..1980dc9
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-08-07 14:10 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.13%  vs_vwap=-0.05  vs_ema20=+21.63  → longs=✗  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,563  (+563 / +0.56%)
+  Cash: $5,458  |  Open: 9  |  Today PnL: $+8
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 7170009] intraday: 2026-08-07 14:10 ET local [skip ci]
+ 4 files changed, 79 insertions(+), 63 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   1980dc9..7170009  main -> main
+2026-08-07 14:12:30 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-08-07 14:12 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.10%  vs_vwap=-0.30  vs_ema20=+21.38  → longs=✗  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,563  (+563 / +0.56%)
+  Cash: $5,458  |  Open: 9  |  Today PnL: $+8
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 6284ba2] intraday: 2026-08-07 14:12 ET local [skip ci]
+ 3 files changed, 67 insertions(+), 51 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   7170009..6284ba2  main -> main
+2026-08-07 14:14:58 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-08-07 14:14 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.06%  vs_vwap=-0.60  vs_ema20=+21.08  → longs=✗  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,583  (+583 / +0.58%)
+  Cash: $5,458  |  Open: 9  |  Today PnL: $+8
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 37dfae5] intraday: 2026-08-07 14:15 ET local [skip ci]
+ 4 files changed, 92 insertions(+), 76 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   6284ba2..37dfae5  main -> main
+2026-08-07 14:17:25 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-08-07 14:17 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.08%  vs_vwap=-0.48  vs_ema20=+21.19  → longs=✗  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,599  (+599 / +0.60%)
+  Cash: $5,458  |  Open: 9  |  Today PnL: $+8
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main bc7e44f] intraday: 2026-08-07 14:17 ET local [skip ci]
+ 4 files changed, 77 insertions(+), 61 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   37dfae5..bc7e44f  main -> main
+2026-08-07 14:19:52 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Intraday Trader — 2026-08-07 14:19 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.10%  vs_vwap=-0.32  vs_ema20=+21.35  → longs=✗  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $100,559  (+559 / +0.56%)
+  Cash: $5,458  |  Open: 9  |  Today PnL: $+8
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 6347ab1] intraday: 2026-08-07 14:20 ET local [skip ci]
+ 4 files changed, 71 insertions(+), 55 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   bc7e44f..6347ab1  main -> main
+2026-08-07 14:22:19 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+2 Failed downloads:
+['SPGI', 'MTB']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-08-07 14:22 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 501 tickers
+  Fetching SPY regime …
+  SPY regime: chg=+0.10%  vs_vwap=-0.31  vs_ema20=+21.36  → longs=✗  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 500 tickers
+
+  Portfolio: $100,561  (+561 / +0.56%)
+  Cash: $5,458  |  Open: 9  |  Today PnL: $+8
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-07.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 891d2ee] intraday: 2026-08-07 14:22 ET local [skip ci]
+ 4 files changed, 62 insertions(+), 56 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   6347ab1..891d2ee  main -> main
+2026-08-07 14:24:47 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 61f6575] intraday: 2026-08-07 14:25 ET local [skip ci]
+ 4 files changed, 75 insertions(+), 49 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   94005fe..61f6575  main -> main
+2026-08-07 14:27:14 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+   61f6575..62028b6  main       -> origin/main
+Updating 61f6575..62028b6
