@@ -104,9 +104,9 @@
       "entry_time": "11:21 ET",
       "entry_price": 25.325,
       "shares": 141,
-      "stop": 25.3025,
+      "stop": 25.3375,
       "trail_dist": 0.1375,
-      "peak": 25.44,
+      "peak": 25.475,
       "orb_width": 0.275,
       "cost": 3570.83,
       "vol_ratio": 1.57,
@@ -74597,7 +74597,7 @@
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
-    "2026-08-07": 100454.85
+    "2026-08-07": 100462.66
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -152763,6 +152763,22 @@
       },
       "portfolio_value": 100454.85,
       "note": "$100,455 | cash=$5,458 | open=9 | closed today=1 | day PnL=$+8"
+    },
+    {
+      "date": "2026-08-07",
+      "time": "13:47 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.174,
+        "spy_vs_vwap": 0.2552,
+        "spy_vs_ema20": 21.9397
+      },
+      "portfolio_value": 100462.66,
+      "note": "$100,463 | cash=$5,458 | open=9 | closed today=1 | day PnL=$+8"
     }
   ]
 }
