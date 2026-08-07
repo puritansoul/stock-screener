@@ -72824,11 +72824,6 @@
       "low": 184.795,
       "width": 2.885
     },
-    "DLR": {
-      "high": 194.55,
-      "low": 193.475,
-      "width": 1.075
-    },
     "DG": {
       "high": 127.9812,
       "low": 125.555,
@@ -74612,7 +74607,7 @@
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
-    "2026-08-07": 100571.03
+    "2026-08-07": 100557.21
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -153314,6 +153309,22 @@
       },
       "portfolio_value": 100571.03,
       "note": "$100,571 | cash=$28,640 | open=6 | closed today=4 | day PnL=$+140"
+    },
+    {
+      "date": "2026-08-07",
+      "time": "15:13 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.247,
+        "spy_vs_vwap": 0.8746,
+        "spy_vs_ema20": 22.5048
+      },
+      "portfolio_value": 100557.21,
+      "note": "$100,557 | cash=$28,640 | open=6 | closed today=4 | day PnL=$+140"
     }
   ]
 }
