@@ -8,9 +8,9 @@
       "entry_time": "11:19 ET",
       "entry_price": 171.73,
       "shares": 174,
-      "stop": 171.9209,
+      "stop": 171.9309,
       "trail_dist": 1.4091,
-      "peak": 173.33,
+      "peak": 173.34,
       "orb_width": 2.8183,
       "cost": 29881.02,
       "vol_ratio": 15.0,
@@ -24,9 +24,9 @@
       "entry_time": "11:19 ET",
       "entry_price": 309.13,
       "shares": 68,
-      "stop": 309.9775,
+      "stop": 310.0025,
       "trail_dist": 1.8075,
-      "peak": 311.785,
+      "peak": 311.81,
       "orb_width": 3.615,
       "cost": 21020.84,
       "vol_ratio": 10.21,
@@ -40,9 +40,9 @@
       "entry_time": "11:19 ET",
       "entry_price": 74.07,
       "shares": 139,
-      "stop": 73.755,
+      "stop": 73.76,
       "trail_dist": 0.545,
-      "peak": 74.3,
+      "peak": 74.305,
       "orb_width": 1.09,
       "cost": 10295.73,
       "vol_ratio": 4.79,
@@ -88,9 +88,9 @@
       "entry_time": "11:43 ET",
       "entry_price": 139.715,
       "shares": 12,
-      "stop": 140.2275,
+      "stop": 140.3675,
       "trail_dist": 1.2925,
-      "peak": 141.52,
+      "peak": 141.66,
       "orb_width": 2.585,
       "cost": 1676.58,
       "vol_ratio": 5.38,
@@ -72251,8 +72251,8 @@
     },
     "ADI": {
       "high": 391.3,
-      "low": 385.07,
-      "width": 6.23
+      "low": 387.455,
+      "width": 3.845
     },
     "AON": {
       "high": 357.965,
@@ -72836,8 +72836,8 @@
     },
     "DLTR": {
       "high": 130.0,
-      "low": 128.0101,
-      "width": 1.9899
+      "low": 128.25,
+      "width": 1.75
     },
     "D": {
       "high": 66.5,
@@ -73083,6 +73083,11 @@
       "high": 126.11,
       "low": 122.02,
       "width": 4.09
+    },
+    "F": {
+      "high": 13.9,
+      "low": 13.77,
+      "width": 0.13
     },
     "FTNT": {
       "high": 165.5,
@@ -73621,8 +73626,8 @@
     },
     "META": {
       "high": 597.0,
-      "low": 587.53,
-      "width": 9.47
+      "low": 585.62,
+      "width": 11.38
     },
     "MET": {
       "high": 99.49,
@@ -73641,8 +73646,8 @@
     },
     "MCHP": {
       "high": 83.99,
-      "low": 80.95,
-      "width": 3.04
+      "low": 80.68,
+      "width": 3.31
     },
     "MU": {
       "high": 900.0,
@@ -74607,7 +74612,7 @@
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
-    "2026-08-07": 100659.36
+    "2026-08-07": 100664.85
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -153437,6 +153442,22 @@
       },
       "portfolio_value": 100659.36,
       "note": "$100,659 | cash=$28,640 | open=6 | closed today=4 | day PnL=$+140"
+    },
+    {
+      "date": "2026-08-07",
+      "time": "15:33 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.246,
+        "spy_vs_vwap": 0.8178,
+        "spy_vs_ema20": 22.4997
+      },
+      "portfolio_value": 100664.85,
+      "note": "$100,665 | cash=$28,640 | open=6 | closed today=4 | day PnL=$+140"
     }
   ]
 }
