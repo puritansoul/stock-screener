@@ -1,5 +1,5 @@
 {
-  "capital": 13782.91,
+  "capital": 28639.84,
   "open_positions": [
     {
       "ticker": "UHS",
@@ -24,29 +24,13 @@
       "entry_time": "11:19 ET",
       "entry_price": 309.13,
       "shares": 68,
-      "stop": 309.2825,
+      "stop": 309.5975,
       "trail_dist": 1.8075,
-      "peak": 311.09,
+      "peak": 311.405,
       "orb_width": 3.615,
       "cost": 21020.84,
       "vol_ratio": 10.21,
       "score": 66.76,
-      "has_catalyst": false
-    },
-    {
-      "ticker": "APA",
-      "side": "long",
-      "entry_date": "2026-08-07",
-      "entry_time": "11:19 ET",
-      "entry_price": 37.12,
-      "shares": 396,
-      "stop": 37.5175,
-      "trail_dist": 0.3825,
-      "peak": 37.9,
-      "orb_width": 0.765,
-      "cost": 14699.52,
-      "vol_ratio": 6.25,
-      "score": 54.38,
       "has_catalyst": false
     },
     {
@@ -88,9 +72,9 @@
       "entry_time": "11:21 ET",
       "entry_price": 25.325,
       "shares": 141,
-      "stop": 25.3425,
+      "stop": 25.3525,
       "trail_dist": 0.1375,
-      "peak": 25.48,
+      "peak": 25.49,
       "orb_width": 0.275,
       "cost": 3570.83,
       "vol_ratio": 1.57,
@@ -177,6 +161,27 @@
       "pnl": -1.65,
       "exit_reason": "trailing stop",
       "exit_time": "14:49 ET"
+    },
+    {
+      "ticker": "APA",
+      "side": "long",
+      "entry_date": "2026-08-07",
+      "entry_time": "11:19 ET",
+      "entry_price": 37.12,
+      "shares": 396,
+      "stop": 37.5175,
+      "trail_dist": 0.3825,
+      "peak": 37.9,
+      "orb_width": 0.765,
+      "cost": 14699.52,
+      "vol_ratio": 6.25,
+      "score": 54.38,
+      "has_catalyst": false,
+      "exit_date": "2026-08-07",
+      "exit_price": 37.5175,
+      "pnl": 157.41,
+      "exit_reason": "trailing stop",
+      "exit_time": "15:04 ET"
     }
   ],
   "all_closed": [
@@ -72131,8 +72136,8 @@
     },
     "ABNB": {
       "high": 176.1987,
-      "low": 164.82,
-      "width": 11.3787
+      "low": 163.45,
+      "width": 12.7487
     },
     "AKAM": {
       "high": 121.9999,
@@ -72299,6 +72304,11 @@
       "low": 137.78,
       "width": 2.77
     },
+    "ANET": {
+      "high": 198.0,
+      "low": 191.96,
+      "width": 6.04
+    },
     "AJG": {
       "high": 250.2,
       "low": 246.29,
@@ -72421,8 +72431,8 @@
     },
     "BKNG": {
       "high": 213.47,
-      "low": 207.6225,
-      "width": 5.8475
+      "low": 207.185,
+      "width": 6.285
     },
     "BSX": {
       "high": 49.665,
@@ -72656,8 +72666,8 @@
     },
     "COIN": {
       "high": 151.45,
-      "low": 145.58,
-      "width": 5.87
+      "low": 145.57,
+      "width": 5.88
     },
     "CL": {
       "high": 92.836,
@@ -73456,8 +73466,8 @@
     },
     "KLAC": {
       "high": 201.82,
-      "low": 196.3701,
-      "width": 5.4499
+      "low": 196.37,
+      "width": 5.45
     },
     "KHC": {
       "high": 25.22,
@@ -73671,8 +73681,8 @@
     },
     "MPWR": {
       "high": 1417.09,
-      "low": 1385.97,
-      "width": 31.12
+      "low": 1385.42,
+      "width": 31.6699
     },
     "MNST": {
       "high": 93.69,
@@ -73710,9 +73720,9 @@
       "width": 1.32
     },
     "NTAP": {
-      "high": 192.7903,
+      "high": 194.175,
       "low": 188.7704,
-      "width": 4.0199
+      "width": 5.4046
     },
     "NFLX": {
       "high": 74.01,
@@ -74189,6 +74199,11 @@
       "low": 332.5401,
       "width": 7.4599
     },
+    "SMCI": {
+      "high": 30.42,
+      "low": 29.82,
+      "width": 0.6
+    },
     "SYF": {
       "high": 78.79,
       "low": 77.6,
@@ -74597,7 +74612,7 @@
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
-    "2026-08-07": 100580.81
+    "2026-08-07": 100552.64
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -153227,6 +153242,30 @@
       },
       "portfolio_value": 100580.81,
       "note": "$100,581 | cash=$13,783 | open=7 | closed today=3 | day PnL=$-17"
+    },
+    {
+      "date": "2026-08-07",
+      "time": "15:04 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "APA",
+          "side": "long",
+          "exit_price": 37.52,
+          "pnl": 157.41,
+          "reason": "trailing stop"
+        }
+      ],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.136,
+        "spy_vs_vwap": 0.0415,
+        "spy_vs_ema20": 21.6498
+      },
+      "portfolio_value": 100552.64,
+      "note": "$100,553 | cash=$28,640 | open=6 | closed today=4 | day PnL=$+140"
     }
   ]
 }
