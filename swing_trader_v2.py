@@ -102,7 +102,7 @@ BASE_DIR    = Path(__file__).parent
 TRADES_FILE = BASE_DIR / "swing_trades_v2.json"
 
 # ── v2 enhancements ───────────────────────────────────────────────────────────
-VIX_MIN_ENTRY     = 20.0     # only enter when VIX >= 20
+VIX_MIN_ENTRY     = 13.0     # only enter when VIX >= 13
 EARNINGS_BLACKOUT = 3        # skip entry within 3 calendar days of next earnings
 TIME_EXIT_DAYS    = 7        # force-exit if held 7+ calendar days
 SECTOR_ETFS = {
