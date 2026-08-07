@@ -674,6 +674,13 @@ def update_nav(
     return new_nav, daily_ret
 
 
+def _fmt_date(d: str) -> str:
+    try:
+        return date.fromisoformat(str(d)[:10]).strftime("%b %-d, %Y")
+    except Exception:
+        return str(d)
+
+
 def compute_period_return(nav_history: dict, today: date, days: int) -> str:
     """Return formatted period return, or '—' if insufficient history."""
     dates  = sorted(nav_history.keys())
@@ -1049,7 +1056,7 @@ def save_html_report(
         pos       = positions.get(tk, {}) if in_portfolio else {}
         qty       = pos.get("shares", 0)
         buy_px    = pos.get("price")
-        buy_dt    = pos.get("date", "—")
+        buy_dt    = _fmt_date(pos.get("date", "—"))
 
         # $ invested = shares × buy_price
         cur_px_val = row.get("price")
