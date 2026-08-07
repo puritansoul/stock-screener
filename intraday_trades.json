@@ -1,5 +1,5 @@
 {
-  "capital": 12547.16,
+  "capital": 13782.91,
   "open_positions": [
     {
       "ticker": "UHS",
@@ -112,22 +112,6 @@
       "vol_ratio": 5.38,
       "score": 46.89,
       "has_catalyst": false
-    },
-    {
-      "ticker": "FTV",
-      "side": "long",
-      "entry_date": "2026-08-07",
-      "entry_time": "12:48 ET",
-      "entry_price": 61.87,
-      "shares": 20,
-      "stop": 61.7875,
-      "trail_dist": 0.3825,
-      "peak": 62.17,
-      "orb_width": 0.765,
-      "cost": 1237.4,
-      "vol_ratio": 6.09,
-      "score": 52.03,
-      "has_catalyst": false
     }
   ],
   "closed_today": [
@@ -172,6 +156,27 @@
       "pnl": -23.36,
       "exit_reason": "trailing stop",
       "exit_time": "14:37 ET"
+    },
+    {
+      "ticker": "FTV",
+      "side": "long",
+      "entry_date": "2026-08-07",
+      "entry_time": "12:48 ET",
+      "entry_price": 61.87,
+      "shares": 20,
+      "stop": 61.7875,
+      "trail_dist": 0.3825,
+      "peak": 62.17,
+      "orb_width": 0.765,
+      "cost": 1237.4,
+      "vol_ratio": 6.09,
+      "score": 52.03,
+      "has_catalyst": false,
+      "exit_date": "2026-08-07",
+      "exit_price": 61.7875,
+      "pnl": -1.65,
+      "exit_reason": "trailing stop",
+      "exit_time": "14:49 ET"
     }
   ],
   "all_closed": [
@@ -72241,8 +72246,8 @@
     },
     "ADI": {
       "high": 391.3,
-      "low": 385.07,
-      "width": 6.23
+      "low": 387.455,
+      "width": 3.845
     },
     "AON": {
       "high": 357.965,
@@ -72421,8 +72426,8 @@
     },
     "BKNG": {
       "high": 213.47,
-      "low": 207.185,
-      "width": 6.285
+      "low": 207.6225,
+      "width": 5.8475
     },
     "BSX": {
       "high": 49.665,
@@ -72530,9 +72535,9 @@
       "width": 2.82
     },
     "CDW": {
-      "high": 141.155,
+      "high": 141.715,
       "low": 137.975,
-      "width": 3.18
+      "width": 3.74
     },
     "COR": {
       "high": 328.99,
@@ -72771,8 +72776,8 @@
     },
     "DDOG": {
       "high": 248.35,
-      "low": 234.0,
-      "width": 14.35
+      "low": 233.21,
+      "width": 15.14
     },
     "DVA": {
       "high": 181.94,
@@ -73420,9 +73425,9 @@
       "width": 0.335
     },
     "KDP": {
-      "high": 29.77,
+      "high": 30.0,
       "low": 29.45,
-      "width": 0.32
+      "width": 0.55
     },
     "KEY": {
       "high": 22.64,
@@ -74291,8 +74296,8 @@
     },
     "TTD": {
       "high": 13.75,
-      "low": 13.01,
-      "width": 0.74
+      "low": 12.83,
+      "width": 0.92
     },
     "TSCO": {
       "high": 34.21,
@@ -74541,8 +74546,8 @@
     },
     "WDAY": {
       "high": 179.625,
-      "low": 174.3,
-      "width": 5.325
+      "low": 175.0,
+      "width": 4.625
     },
     "WYNN": {
       "high": 102.75,
@@ -74602,7 +74607,7 @@
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
-    "2026-08-07": 100520.2
+    "2026-08-07": 100485.19
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -153176,6 +153181,30 @@
       },
       "portfolio_value": 100520.2,
       "note": "$100,520 | cash=$12,547 | open=8 | closed today=2 | day PnL=$-16"
+    },
+    {
+      "date": "2026-08-07",
+      "time": "14:49 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "FTV",
+          "side": "long",
+          "exit_price": 61.79,
+          "pnl": -1.65,
+          "reason": "trailing stop"
+        }
+      ],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.034,
+        "spy_vs_vwap": -0.7671,
+        "spy_vs_ema20": 20.8598
+      },
+      "portfolio_value": 100485.19,
+      "note": "$100,485 | cash=$13,783 | open=7 | closed today=3 | day PnL=$-17"
     }
   ]
 }
