@@ -268,6 +268,13 @@ def fetch_spy_cumulative(nav_history: dict) -> dict:
         return {}
 
 
+def _fmt_date(d: str) -> str:
+    try:
+        return date.fromisoformat(str(d)[:10]).strftime("%b %-d, %Y")
+    except Exception:
+        return str(d)
+
+
 def build_journal_section(nav_history: dict, idx_returns: dict, spy_cum: dict | None = None) -> str:
     """Build an HTML journal table of daily P&L vs index returns."""
     if not nav_history:
@@ -322,7 +329,7 @@ def build_journal_section(nav_history: dict, idx_returns: dict, spy_cum: dict | 
         dow = idx.get("DOW")
         rut = idx.get("Russell 2K")
 
-        day_label = date.fromisoformat(d).strftime("%a, %b %d %Y") if d else d
+        day_label = date.fromisoformat(d).strftime("%b %-d, %Y") if d else d
         rows += f"<tr><td style='white-space:nowrap;font-weight:bold;color:#1a237e'>{day_label}</td>"
         rows += _dc(pnl)
         rows += _pc(day_pct, bold=True)
@@ -669,7 +676,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
         entry = pos["entry_price"]
         shares= pos["shares"]
         stop  = pos["stop"]
-        edate = pos["entry_date"]
+        edate = _fmt_date(pos["entry_date"])
         cost  = pos["cost"]
         rsi_e = pos.get("rsi2_entry", "—")
 
@@ -763,8 +770,8 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
         entry = pos["entry_price"]
         exit_p= pos.get("exit_price", entry)
         pnl   = pos.get("pnl", 0)
-        edate = pos["entry_date"]
-        xdate = pos.get("exit_date", "—")
+        edate = _fmt_date(pos["entry_date"])
+        xdate = _fmt_date(pos.get("exit_date", "—"))
         reason= pos.get("exit_reason", "—")
         cost  = pos["cost"]
         pnl_pct = pnl / cost * 100 if cost > 0 else 0

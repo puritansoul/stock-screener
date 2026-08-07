@@ -662,6 +662,13 @@ def fetch_spy_cumulative(nav_history: dict) -> dict:
         return {}
 
 
+def _fmt_date(d: str) -> str:
+    try:
+        return date.fromisoformat(str(d)[:10]).strftime("%b %-d, %Y")
+    except Exception:
+        return str(d)
+
+
 def build_journal_section(nav_history: dict, idx_returns: dict, spy_cum: dict | None = None) -> str:
     """Build an HTML journal table of daily P&L vs index returns."""
     if not nav_history:
@@ -716,7 +723,7 @@ def build_journal_section(nav_history: dict, idx_returns: dict, spy_cum: dict | 
         dow = idx.get("DOW")
         rut = idx.get("Russell 2K")
 
-        day_label = date.fromisoformat(d).strftime("%a, %b %d %Y") if d else d
+        day_label = date.fromisoformat(d).strftime("%b %-d, %Y") if d else d
         rows += f"<tr><td style='white-space:nowrap;font-weight:bold;color:#e65100'>{day_label}</td>"
         rows += _dc(pnl)
         rows += _pc(day_pct, bold=True)
@@ -1281,7 +1288,7 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
           <td class="live-unreal-d" data-sort="{unreal:.2f}" style="text-align:right;color:{uc};font-weight:bold">{'+' if unreal >= 0 else ''}${abs(unreal):,.0f}</td>
           <td class="live-unreal-pct" data-sort="{unreal_pct:.4f}" style="text-align:right;color:{uc};font-weight:bold">{unreal_pct:+.2f}%</td>
           <td style="color:#1b5e20">${peak:,.2f}</td><td style="color:#c62828">${stop:,.2f}</td>
-          <td style="color:#666;font-size:12px">{pos.get('entry_date','—')}</td>
+          <td style="color:#666;font-size:12px">{_fmt_date(pos.get('entry_date','—'))}</td>
           <td style="color:#666;font-size:12px">{pos.get('entry_time','—')}</td>
         </tr>"""
     # Portfolio value = cash + current market value of all open positions
@@ -1333,7 +1340,7 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
           <td>${entry:,.2f}</td><td>${exit_p:,.2f}</td>
           <td data-sort="{pnl:.2f}" style="text-align:right;color:{pnl_c};font-weight:bold">${pnl:+,.0f}</td>
           <td data-sort="{pnl_pct:.4f}" style="text-align:right;color:{pnl_c};font-weight:bold">{pnl_pct:+.2f}%</td>
-          <td style="color:#666;font-size:12px">{pos.get('entry_date','—')}</td>
+          <td style="color:#666;font-size:12px">{_fmt_date(pos.get('entry_date','—'))}</td>
           <td style="color:#666;font-size:12px">{pos.get('entry_time','—')}</td>
           <td style="color:#666;font-size:12px">{pos.get('exit_time','—')}</td>
           <td style="color:#666;font-size:12px">{reason}</td>
@@ -1363,7 +1370,7 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
           <td>${entry:,.2f}</td><td>${exit_p:,.2f}</td>
           <td data-sort="{pnl:.2f}" style="text-align:right;color:{pnl_c};font-weight:bold">${pnl:+,.0f}</td>
           <td data-sort="{hist_pnl_pct:.4f}" style="text-align:right;color:{pnl_c};font-weight:bold">{hist_pnl_pct:+.2f}%</td>
-          <td style="color:#666;font-size:12px">{pos.get('entry_date','—')}</td>
+          <td style="color:#666;font-size:12px">{_fmt_date(pos.get('entry_date','—'))}</td>
           <td style="color:#666;font-size:12px">{pos.get('exit_time','—')}</td>
           <td style="color:#666;font-size:12px">{pos.get('exit_reason','—')}</td>
         </tr>"""
