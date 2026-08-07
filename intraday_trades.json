@@ -73666,13 +73666,13 @@
     },
     "MPWR": {
       "high": 1417.09,
-      "low": 1385.42,
-      "width": 31.6699
+      "low": 1385.97,
+      "width": 31.12
     },
     "MNST": {
-      "high": 93.69,
+      "high": 93.9,
       "low": 91.0,
-      "width": 2.69
+      "width": 2.9
     },
     "MCO": {
       "high": 477.38,
@@ -74161,8 +74161,8 @@
     },
     "SBUX": {
       "high": 105.04,
-      "low": 103.7205,
-      "width": 1.3195
+      "low": 103.67,
+      "width": 1.37
     },
     "STT": {
       "high": 184.4,
@@ -74597,7 +74597,7 @@
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
-    "2026-08-07": 100457.8
+    "2026-08-07": 100441.9
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -152827,6 +152827,22 @@
       },
       "portfolio_value": 100457.8,
       "note": "$100,458 | cash=$5,458 | open=9 | closed today=1 | day PnL=$+8"
+    },
+    {
+      "date": "2026-08-07",
+      "time": "13:57 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.175,
+        "spy_vs_vwap": 0.2601,
+        "spy_vs_ema20": 21.9463
+      },
+      "portfolio_value": 100441.9,
+      "note": "$100,442 | cash=$5,458 | open=9 | closed today=1 | day PnL=$+8"
     }
   ]
 }
