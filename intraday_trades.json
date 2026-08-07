@@ -73698,11 +73698,6 @@
       "low": 94.31,
       "width": 1.32
     },
-    "NTAP": {
-      "high": 192.7903,
-      "low": 188.7704,
-      "width": 4.0199
-    },
     "NFLX": {
       "high": 74.01,
       "low": 73.15,
@@ -74591,7 +74586,7 @@
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
-    "2026-08-07": 100351.62
+    "2026-08-07": 100370.45
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -152605,6 +152600,22 @@
       },
       "portfolio_value": 100351.62,
       "note": "$100,352 | cash=$2,992 | open=10 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-07",
+      "time": "13:25 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.118,
+        "spy_vs_vwap": -0.174,
+        "spy_vs_ema20": 21.5098
+      },
+      "portfolio_value": 100370.45,
+      "note": "$100,370 | cash=$2,992 | open=10 | closed today=0 | day PnL=$+0"
     }
   ]
 }
