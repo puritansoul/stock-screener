@@ -1,5 +1,5 @@
 {
-  "capital": 4229.87,
+  "capital": 2992.47,
   "open_positions": [
     {
       "ticker": "UHS",
@@ -40,9 +40,9 @@
       "entry_time": "11:19 ET",
       "entry_price": 37.12,
       "shares": 396,
-      "stop": 37.3775,
+      "stop": 37.4057,
       "trail_dist": 0.3825,
-      "peak": 37.76,
+      "peak": 37.7882,
       "orb_width": 0.765,
       "cost": 14699.52,
       "vol_ratio": 6.25,
@@ -56,9 +56,9 @@
       "entry_time": "11:19 ET",
       "entry_price": 74.07,
       "shares": 139,
-      "stop": 73.675,
+      "stop": 73.705,
       "trail_dist": 0.545,
-      "peak": 74.22,
+      "peak": 74.25,
       "orb_width": 1.09,
       "cost": 10295.73,
       "vol_ratio": 4.79,
@@ -104,9 +104,9 @@
       "entry_time": "11:21 ET",
       "entry_price": 25.325,
       "shares": 141,
-      "stop": 25.2475,
+      "stop": 25.2525,
       "trail_dist": 0.1375,
-      "peak": 25.385,
+      "peak": 25.39,
       "orb_width": 0.275,
       "cost": 3570.83,
       "vol_ratio": 1.57,
@@ -143,6 +143,22 @@
       "cost": 1676.58,
       "vol_ratio": 5.38,
       "score": 46.89,
+      "has_catalyst": false
+    },
+    {
+      "ticker": "FTV",
+      "side": "long",
+      "entry_date": "2026-08-07",
+      "entry_time": "12:48 ET",
+      "entry_price": 61.87,
+      "shares": 20,
+      "stop": 61.4875,
+      "trail_dist": 0.3825,
+      "peak": 61.87,
+      "orb_width": 0.765,
+      "cost": 1237.4,
+      "vol_ratio": 6.09,
+      "score": 52.03,
       "has_catalyst": false
     }
   ],
@@ -72522,11 +72538,6 @@
       "low": 40.33,
       "width": 0.52
     },
-    "CF": {
-      "high": 114.58,
-      "low": 111.8868,
-      "width": 2.6932
-    },
     "CRL": {
       "high": 264.47,
       "low": 261.14,
@@ -74522,6 +74533,11 @@
       "low": 100.11,
       "width": 2.64
     },
+    "XEL": {
+      "high": 76.91,
+      "low": 76.09,
+      "width": 0.82
+    },
     "XYL": {
       "high": 121.54,
       "low": 120.0601,
@@ -74570,7 +74586,7 @@
     "2026-08-04": 96332.85,
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
-    "2026-08-07": 100402.55
+    "2026-08-07": 100358.08
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -152334,6 +152350,32 @@
       },
       "portfolio_value": 100402.55,
       "note": "$100,403 | cash=$4,230 | open=9 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-07",
+      "time": "12:47 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "FTV",
+          "side": "long",
+          "price": 61.87,
+          "shares": 20,
+          "stop": 61.49,
+          "trail_dist": 0.3825,
+          "score": 52.03
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.197,
+        "spy_vs_vwap": 0.4407,
+        "spy_vs_ema20": 22.1197
+      },
+      "portfolio_value": 100358.08,
+      "note": "$100,358 | cash=$2,992 | open=10 | closed today=0 | day PnL=$+0"
     }
   ]
 }
