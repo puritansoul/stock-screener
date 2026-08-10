@@ -1,22 +1,6 @@
 {
-  "capital": 45409.95,
+  "capital": 66366.57,
   "open_positions": [
-    {
-      "ticker": "MNST",
-      "side": "long",
-      "entry_date": "2026-08-10",
-      "entry_time": "10:47 ET",
-      "entry_price": 92.565,
-      "shares": 228,
-      "stop": 91.915,
-      "trail_dist": 0.935,
-      "peak": 92.85,
-      "orb_width": 1.87,
-      "cost": 21104.82,
-      "vol_ratio": 6.3,
-      "score": 53.63,
-      "has_catalyst": false
-    },
     {
       "ticker": "SCHW",
       "side": "long",
@@ -40,9 +24,9 @@
       "entry_time": "11:24 ET",
       "entry_price": 88.7,
       "shares": 218,
-      "stop": 87.9875,
+      "stop": 87.9975,
       "trail_dist": 0.7125,
-      "peak": 88.7,
+      "peak": 88.71,
       "orb_width": 1.425,
       "cost": 19336.6,
       "vol_ratio": 8.02,
@@ -71,6 +55,27 @@
       "pnl": -35.28,
       "exit_reason": "trailing stop",
       "exit_time": "11:17 ET"
+    },
+    {
+      "ticker": "MNST",
+      "side": "long",
+      "entry_date": "2026-08-10",
+      "entry_time": "10:47 ET",
+      "entry_price": 92.565,
+      "shares": 228,
+      "stop": 91.915,
+      "trail_dist": 0.935,
+      "peak": 92.85,
+      "orb_width": 1.87,
+      "cost": 21104.82,
+      "vol_ratio": 6.3,
+      "score": 53.63,
+      "has_catalyst": false,
+      "exit_date": "2026-08-10",
+      "exit_price": 91.915,
+      "pnl": -148.2,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:27 ET"
     }
   ],
   "all_closed": [
@@ -74717,7 +74722,7 @@
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
     "2026-08-07": 100701.13,
-    "2026-08-10": 100580.99
+    "2026-08-10": 100551.23
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -154469,6 +154474,30 @@
       },
       "portfolio_value": 100580.99,
       "note": "$100,581 | cash=$45,410 | open=3 | closed today=1 | day PnL=$-35"
+    },
+    {
+      "date": "2026-08-10",
+      "time": "11:26 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "MNST",
+          "side": "long",
+          "exit_price": 91.92,
+          "pnl": -148.2,
+          "reason": "trailing stop"
+        }
+      ],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.131,
+        "spy_vs_vwap": -0.1082,
+        "spy_vs_ema20": 20.3603
+      },
+      "portfolio_value": 100551.23,
+      "note": "$100,551 | cash=$66,367 | open=2 | closed today=2 | day PnL=$-183"
     }
   ]
 }
