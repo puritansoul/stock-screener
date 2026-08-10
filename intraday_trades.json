@@ -72968,6 +72968,11 @@
       "low": 209.33,
       "width": 2.16
     },
+    "DOW": {
+      "high": 29.9,
+      "low": 29.545,
+      "width": 0.355
+    },
     "DHI": {
       "high": 150.03,
       "low": 146.0,
@@ -74722,7 +74727,7 @@
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
     "2026-08-07": 100701.13,
-    "2026-08-10": 100504.37
+    "2026-08-10": 100516.36
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -155114,6 +155119,22 @@
       },
       "portfolio_value": 100504.37,
       "note": "$100,504 | cash=$81,142 | open=1 | closed today=3 | day PnL=$-223"
+    },
+    {
+      "date": "2026-08-10",
+      "time": "13:29 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.069,
+        "spy_vs_vwap": -0.4055,
+        "spy_vs_ema20": 19.8753
+      },
+      "portfolio_value": 100516.36,
+      "note": "$100,516 | cash=$81,142 | open=1 | closed today=3 | day PnL=$-223"
     }
   ]
 }
