@@ -72808,11 +72808,6 @@
       "low": 268.36,
       "width": 5.41
     },
-    "COO": {
-      "high": 76.6,
-      "low": 74.2,
-      "width": 2.4
-    },
     "CPRT": {
       "high": 29.54,
       "low": 29.255,
@@ -74722,7 +74717,7 @@
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
     "2026-08-07": 100701.13,
-    "2026-08-10": 100496.15
+    "2026-08-10": 100505.13
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -154658,6 +154653,22 @@
       },
       "portfolio_value": 100496.15,
       "note": "$100,496 | cash=$66,367 | open=2 | closed today=2 | day PnL=$-183"
+    },
+    {
+      "date": "2026-08-10",
+      "time": "12:09 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.177,
+        "spy_vs_vwap": 0.2323,
+        "spy_vs_ema20": 20.7153
+      },
+      "portfolio_value": 100505.13,
+      "note": "$100,505 | cash=$66,367 | open=2 | closed today=2 | day PnL=$-183"
     }
   ]
 }
