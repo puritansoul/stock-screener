@@ -62,41 +62,49 @@ def _nav_series(raw, starting: float):
 
 # ── data loading ─────────────────────────────────────────────────────────────
 
-def load_bots() -> list[dict]:
+def load_bots():
     """Return list of bot dicts with all data needed for the dashboard."""
+    import importlib
+    bc = importlib.import_module("build_consolidated")
+    importlib.reload(bc)
+
     bots = []
 
+    # cur + day_pnl come from the same HTML reports the horizontal bar uses —
+    # data-pnl attribute, no text parsing, always in sync with each dashboard.
     configs = [
-        # (label, color, state_file, nav_key, closed_key, is_screener)
-        ("Screener v1", "#1565c0", "portfolio_nav.json",    None,            None,          True),
-        ("Swing v1",    "#6a1b9a", "swing_trades.json",     "nav_history",   "closed_positions", False),
-        ("Intraday v1", "#00695c", "intraday_trades.json",  "nav_history",   "all_closed",  False),
-        ("Screener v2", "#0277bd", "portfolio_nav_v2.json", None,            None,          True),
-        ("Swing v2",    "#ad1457", "swing_trades_v2.json",  "nav_history",   "closed_positions", False),
-        ("Intraday v2", "#00838f", "intraday_trades_v2.json","nav_history",  "all_closed",  False),
+        # (label, color, nav_file_or_None, report_glob, state_file, closed_key)
+        ("Screener v1", "#1565c0", BASE_DIR / "portfolio_nav.json",    "",                        "portfolio_nav.json",     None),
+        ("Swing v1",    "#6a1b9a", None,                               "swing_[0-9]*.html",       "swing_trades.json",      "closed_positions"),
+        ("Intraday v1", "#00695c", None,                               "intraday_[0-9]*.html",    "intraday_trades.json",   "all_closed"),
+        ("Screener v2", "#0277bd", BASE_DIR / "portfolio_nav_v2.json", "",                        "portfolio_nav_v2.json",  None),
+        ("Swing v2",    "#ad1457", None,                               "swing_v2_*.html",         "swing_trades_v2.json",   "closed_positions"),
+        ("Intraday v2", "#00838f", None,                               "intraday_v2_*.html",      "intraday_trades_v2.json","all_closed"),
     ]
 
-    for label, color, state_file, nav_key, closed_key, is_screener in configs:
-        raw  = _load(state_file)
-        nav  = {}
-        if is_screener:
-            nav = _nav_series(raw, STARTING)
-        elif nav_key and isinstance(raw, dict):
-            nav = _nav_series(raw.get(nav_key, {}), STARTING)
+    for label, color, nav_file, report_glob, state_file, closed_key in configs:
+        # cur + day_pnl: authoritative source same as horizontal bar
+        if nav_file:
+            cur, day_pnl = bc._screener_nav(nav_file, STARTING)
+        else:
+            cur, day_pnl = bc._report_values(report_glob, STARTING)
+
+        # nav_history: used only for sparklines and equity curve
+        raw = _load(state_file)
+        if nav_file:
+            nav = _nav_series(raw, STARTING)        # screener: raw file is nav
+        else:
+            nav = _nav_series(raw.get("nav_history", {}), STARTING) if isinstance(raw, dict) else {}
+
+        # Patch today's nav point to match the authoritative cur value
+        nav[TODAY] = cur
 
         closed = []
         if closed_key and isinstance(raw, dict):
             closed = raw.get(closed_key, [])
 
-        dates  = sorted(nav.keys())
-        cur    = nav[dates[-1]] if dates else STARTING
-        prev   = nav[dates[-2]] if len(dates) >= 2 else STARTING
-        start  = nav[dates[0]]  if dates else STARTING
-
-        # peak for drawdown
-        peak   = max(nav.values()) if nav else STARTING
-
-        day_pnl   = cur - prev
+        peak      = max(nav.values()) if nav else STARTING
+        prev      = cur - day_pnl
         day_pct   = day_pnl / prev * 100 if prev else 0
         total_ret = (cur - STARTING) / STARTING * 100
 
