@@ -1,5 +1,5 @@
 {
-  "capital": 49395.93,
+  "capital": 34581.45,
   "open_positions": [
     {
       "ticker": "HSY",
@@ -24,13 +24,29 @@
       "entry_time": "10:47 ET",
       "entry_price": 92.565,
       "shares": 228,
-      "stop": 91.63,
+      "stop": 91.705,
       "trail_dist": 0.935,
-      "peak": 92.565,
+      "peak": 92.64,
       "orb_width": 1.87,
       "cost": 21104.82,
       "vol_ratio": 6.3,
       "score": 53.63,
+      "has_catalyst": false
+    },
+    {
+      "ticker": "SCHW",
+      "side": "long",
+      "entry_date": "2026-08-10",
+      "entry_time": "10:49 ET",
+      "entry_price": 108.93,
+      "shares": 136,
+      "stop": 108.25,
+      "trail_dist": 0.68,
+      "peak": 108.93,
+      "orb_width": 1.36,
+      "cost": 14814.48,
+      "vol_ratio": 9.08,
+      "score": 62.83,
       "has_catalyst": false
     }
   ],
@@ -74679,7 +74695,7 @@
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
     "2026-08-07": 100701.13,
-    "2026-08-10": 100768.36
+    "2026-08-10": 100740.25
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -154163,6 +154179,32 @@
       },
       "portfolio_value": 100768.36,
       "note": "$100,768 | cash=$49,396 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-10",
+      "time": "10:49 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "SCHW",
+          "side": "long",
+          "price": 108.93,
+          "shares": 136,
+          "stop": 108.25,
+          "trail_dist": 0.68,
+          "score": 62.83
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.305,
+        "spy_vs_vwap": 1.2885,
+        "spy_vs_ema20": 21.7053
+      },
+      "portfolio_value": 100740.25,
+      "note": "$100,740 | cash=$34,581 | open=3 | closed today=0 | day PnL=$+0"
     }
   ]
 }
