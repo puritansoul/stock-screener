@@ -72750,8 +72750,8 @@
     },
     "CME": {
       "high": 265.86,
-      "low": 262.01,
-      "width": 3.85
+      "low": 262.2,
+      "width": 3.66
     },
     "CMS": {
       "high": 70.67,
@@ -73254,9 +73254,9 @@
       "width": 1.04
     },
     "GEV": {
-      "high": 1001.0,
+      "high": 1004.96,
       "low": 984.43,
-      "width": 16.57
+      "width": 20.53
     },
     "GEN": {
       "high": 29.505,
@@ -74727,7 +74727,7 @@
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
     "2026-08-07": 100701.13,
-    "2026-08-10": 100493.47
+    "2026-08-10": 100496.74
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -154751,6 +154751,22 @@
       },
       "portfolio_value": 100493.47,
       "note": "$100,493 | cash=$81,142 | open=1 | closed today=3 | day PnL=$-223"
+    },
+    {
+      "date": "2026-08-10",
+      "time": "12:21 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.119,
+        "spy_vs_vwap": -0.2194,
+        "spy_vs_ema20": 20.2653
+      },
+      "portfolio_value": 100496.74,
+      "note": "$100,497 | cash=$81,142 | open=1 | closed today=3 | day PnL=$-223"
     }
   ]
 }
