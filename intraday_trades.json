@@ -72955,8 +72955,8 @@
     },
     "DPZ": {
       "high": 352.255,
-      "low": 342.51,
-      "width": 9.745
+      "low": 342.695,
+      "width": 9.56
     },
     "DASH": {
       "high": 215.99,
@@ -73589,9 +73589,9 @@
       "width": 0.43
     },
     "KR": {
-      "high": 56.98,
-      "low": 56.53,
-      "width": 0.45
+      "high": 57.04,
+      "low": 56.4,
+      "width": 0.64
     },
     "LHX": {
       "high": 290.76,
@@ -74727,7 +74727,7 @@
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
     "2026-08-07": 100701.13,
-    "2026-08-10": 100545.79
+    "2026-08-10": 100543.61
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -155615,6 +155615,22 @@
       },
       "portfolio_value": 100545.79,
       "note": "$100,546 | cash=$81,142 | open=1 | closed today=3 | day PnL=$-223"
+    },
+    {
+      "date": "2026-08-10",
+      "time": "15:02 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.081,
+        "spy_vs_vwap": -0.1366,
+        "spy_vs_ema20": 19.9699
+      },
+      "portfolio_value": 100543.61,
+      "note": "$100,544 | cash=$81,142 | open=1 | closed today=3 | day PnL=$-223"
     }
   ]
 }
