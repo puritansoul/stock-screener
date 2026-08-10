@@ -267,12 +267,12 @@ def verify_summary_bar():
         importlib.reload(mod)
 
         bots = [
-            ("Swing v1",    BASE_DIR / "swing_trades.json",       "swing_[0-9]*.html"),
-            ("Intraday v1", BASE_DIR / "intraday_trades.json",    "intraday_[0-9]*.html"),
-            ("Swing v2",    BASE_DIR / "swing_trades_v2.json",    "swing_v2_*.html"),
-            ("Intraday v2", BASE_DIR / "intraday_trades_v2.json", "intraday_v2_*.html"),
+            ("Swing v1",    "swing_[0-9]*.html"),
+            ("Intraday v1", "intraday_[0-9]*.html"),
+            ("Swing v2",    "swing_v2_*.html"),
+            ("Intraday v2", "intraday_v2_*.html"),
         ]
-        for name, state_path, glob in bots:
+        for name, glob in bots:
             files = sorted((BASE_DIR / "reports").glob(glob), reverse=True)
             if not files:
                 print(f"  (no report for {name} — skipping)")
@@ -280,8 +280,7 @@ def verify_summary_bar():
             html = files[0].read_text()
             report_val = extract_id(html, "port-value")
 
-            state = mod._load_json(state_path) if state_path.exists() else {}
-            bar_cur, _ = mod._nav_value(state.get("nav_history", {}), mod.STARTING_CAPITAL, glob)
+            bar_cur, _ = mod._report_values(glob, mod.STARTING_CAPITAL)
             bar_val = round(bar_cur)
 
             check("Summary Bar", f"{name} bar vs report",

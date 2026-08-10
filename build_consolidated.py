@@ -25,39 +25,50 @@ def _load_json(path: Path) -> dict:
         return {}
 
 
-def _report_value(html_pattern: str, starting: float) -> float:
-    """Read #port-value from the latest report HTML — always correct at render time."""
+def _report_values(html_pattern: str, starting: float) -> tuple[float, float]:
+    """Read #port-value and day P&L directly from latest report HTML.
+    Returns (cur_value, day_pnl). Both come from the same HTML the iframe shows,
+    so the bar is always in sync with the dashboard.
+    Day P&L is read from #day-pnl (swing) or #port-today (intraday/screener).
+    """
+    import re
     files = sorted((BASE_DIR / "reports").glob(html_pattern), reverse=True)
     if not files:
-        return starting
-    import re
+        return starting, 0.0
     html = files[0].read_text()
+
+    # Portfolio value
     m = re.search(r'id="port-value"[^>]*>\$?([\d,]+)', html)
-    return float(m.group(1).replace(",", "")) if m else starting
+    cur = float(m.group(1).replace(",", "")) if m else starting
 
+    # Day P&L — try #day-pnl first (swing), then #port-today (intraday/screener)
+    day_pnl = 0.0
+    for el_id in ("day-pnl", "port-today"):
+        m2 = re.search(rf'id="{el_id}"[^>]*>([^<]+)', html)
+        if m2:
+            txt = m2.group(1).strip()
+            sign = -1 if txt.lstrip().startswith("-") else 1
+            digits = re.sub(r"[^0-9.]", "", txt)
+            if digits:
+                day_pnl = sign * float(digits)
+                break
 
-def _nav_value(nav_history: dict, starting: float, html_pattern: str = "") -> tuple[float, float]:
-    """Return (current_value, prev_value).
-    cur  — read from the latest report HTML so it matches what the iframe shows.
-    prev — read from nav_history (yesterday's saved value for computing day delta).
-    """
-    cur = _report_value(html_pattern, starting) if html_pattern else starting
-    if not nav_history:
-        return cur, starting
-    dates = sorted(nav_history.keys())
-    prev = nav_history[dates[-2]] if len(dates) >= 2 else nav_history[dates[-1]]
-    return cur, prev
+    return cur, day_pnl
 
 
 def _screener_nav(nav_file: Path, starting: float) -> tuple[float, float]:
-    """portfolio_nav stores NAV units (1.0 = starting), convert to $."""
+    """portfolio_nav stores NAV units (1.0 = starting), convert to $.
+    Returns (cur_value, day_pnl).
+    """
     d = _load_json(nav_file)
     if not d:
-        return starting, starting
+        return starting, 0.0
     dates = sorted(d.keys())
     cur_nav  = d[dates[-1]]
-    prev_nav = d[dates[-2]] if len(dates) >= 2 else 1.0
-    return cur_nav * starting, prev_nav * starting
+    prev_nav = d[dates[-2]] if len(dates) >= 2 else cur_nav
+    cur  = cur_nav  * starting
+    prev = prev_nav * starting
+    return cur, cur - prev
 
 
 def build_cross_bot_summary() -> tuple[str, str]:
@@ -69,18 +80,18 @@ def build_cross_bot_summary() -> tuple[str, str]:
     today_str = date.today().isoformat()
 
     # Order: Factor Screener v1 → Swing v1 → Intraday v1 → V2s in same order
-    # (name, state_json_path_or_None, nav_file_or_None, bar_id, day_el_id, report_glob)
+    # (name, nav_file_or_None, bar_id, report_glob)
     bots = [
-        ("Screener v1",  None,                                  BASE_DIR / "portfolio_nav.json",    "bar-screener-v1", "port-today", ""),
-        ("Swing v1",     BASE_DIR / "swing_trades.json",        None,                               "bar-swing-v1",    "day-pnl",    "swing_[0-9]*.html"),
-        ("Intraday v1",  BASE_DIR / "intraday_trades.json",     None,                               "bar-intraday-v1", "port-today", "intraday_[0-9]*.html"),
-        ("Screener v2",  None,                                  BASE_DIR / "portfolio_nav_v2.json", "bar-screener-v2", "port-today", ""),
-        ("Swing v2",     BASE_DIR / "swing_trades_v2.json",     None,                               "bar-swing-v2",    "day-pnl",    "swing_v2_*.html"),
-        ("Intraday v2",  BASE_DIR / "intraday_trades_v2.json",  None,                               "bar-intraday-v2", "port-today", "intraday_v2_*.html"),
+        ("Screener v1",  BASE_DIR / "portfolio_nav.json",    "bar-screener-v1", ""),
+        ("Swing v1",     None,                               "bar-swing-v1",    "swing_[0-9]*.html"),
+        ("Intraday v1",  None,                               "bar-intraday-v1", "intraday_[0-9]*.html"),
+        ("Screener v2",  BASE_DIR / "portfolio_nav_v2.json", "bar-screener-v2", ""),
+        ("Swing v2",     None,                               "bar-swing-v2",    "swing_v2_*.html"),
+        ("Intraday v2",  None,                               "bar-intraday-v2", "intraday_v2_*.html"),
     ]
 
     total_value = 0.0
-    total_prev  = 0.0
+    total_day   = 0.0
     rows_html   = ""
 
     # Map each bot's iframe id (for live JS sync)
@@ -93,18 +104,17 @@ def build_cross_bot_summary() -> tuple[str, str]:
         "bar-intraday-v2": "intraday-v2",
     }
 
-    for name, state_path, nav_file, bar_id, day_el_id, report_glob in bots:
-        state = _load_json(state_path) if state_path else {}
+    for name, nav_file, bar_id, report_glob in bots:
         if nav_file:
-            cur, prev = _screener_nav(nav_file, STARTING_CAPITAL)
-        elif state_path:
-            cur, prev = _nav_value(state.get("nav_history", {}), STARTING_CAPITAL, report_glob)
+            cur, day_d = _screener_nav(nav_file, STARTING_CAPITAL)
+        elif report_glob:
+            cur, day_d = _report_values(report_glob, STARTING_CAPITAL)
         else:
-            cur, prev = STARTING_CAPITAL, STARTING_CAPITAL
+            cur, day_d = STARTING_CAPITAL, 0.0
 
         total_value += cur
-        total_prev  += prev
-        day_d  = cur - prev
+        total_day   += day_d
+        prev   = cur - day_d
         day_p  = day_d / prev * 100 if prev else 0
         ret_d  = cur - STARTING_CAPITAL
         ret_p  = ret_d / STARTING_CAPITAL * 100
@@ -112,14 +122,15 @@ def build_cross_bot_summary() -> tuple[str, str]:
         rc = "#2e7d32" if ret_d >= 0 else "#c62828"
         ds = "+" if day_d >= 0 else "-"
         rs = "+" if ret_d >= 0 else "-"
-        rows_html += f"""<div id="{bar_id}" data-day-el="{day_el_id}" style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
+        rows_html += f"""<div id="{bar_id}" style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
           <span style="font-size:11px;color:rgba(255,255,255,.6);min-width:72px">{name}</span>
           <span id="{bar_id}-val" style="font-weight:bold;color:white">${cur:,.0f}</span>
           <span id="{bar_id}-day" style="color:{dc};font-size:12px">{ds}${abs(day_d):,.0f} ({ds}{abs(day_p):.1f}%)</span>
           <span id="{bar_id}-ret" style="color:{rc};font-size:12px">{rs}{abs(ret_p):.1f}% all-time</span>
         </div>"""
 
-    total_day_d = total_value - total_prev
+    total_day_d = total_day
+    total_prev  = total_value - total_day
     total_day_p = total_day_d / total_prev * 100 if total_prev else 0
     total_ret_d = total_value - STARTING_CAPITAL * 6
     total_ret_p = total_ret_d / (STARTING_CAPITAL * 6) * 100
