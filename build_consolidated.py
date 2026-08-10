@@ -43,16 +43,24 @@ def _report_values(html_pattern: str, starting: float) -> tuple[float, float]:
 
     # Day P&L — extract the leading signed dollar amount: e.g. "+$942" or "$-155" or "$243"
     # Elements may contain extra text like "(+0.90%)" after a <br> — match only the first $ amount.
+    # Also detect sign from: red color style (#c62828), percentage portion "(-1.44%)", or explicit "-".
     day_pnl = 0.0
     for el_id in ("day-pnl", "port-today"):
-        m2 = re.search(rf'id="{el_id}"[^>]*>(.*?)(?:<br|</)', html, re.DOTALL)
+        m2 = re.search(rf'id="{el_id}"([^>]*?)>(.*?)(?:<br|</)', html, re.DOTALL)
         if m2:
-            txt = m2.group(1).strip()
+            attrs = m2.group(1)
+            txt = m2.group(2).strip()
             # Match optional sign then $digits
-            # Handles: "+$942", "$-155", "$243", "-$276"
+            # Handles: "+$942", "$-155", "$243", "-$276", "$196"
             m3 = re.search(r'([+-]?)\s*\$\s*([+-]?)\s*([\d,]+)', txt)
             if m3:
-                neg = m3.group(1) == "-" or m3.group(2) == "-" or txt.lstrip().startswith("-")
+                explicit_neg = (m3.group(1) == "-" or m3.group(2) == "-"
+                                or txt.lstrip().startswith("-"))
+                # Fallback: red color style means loss
+                color_neg = "#c62828" in attrs
+                # Fallback: percentage sign indicates negative, e.g. "(-1.44%)"
+                pct_neg = bool(re.search(r'\(\s*-', txt))
+                neg = explicit_neg or color_neg or pct_neg
                 day_pnl = (-1 if neg else 1) * float(m3.group(3).replace(",", ""))
                 break
 
