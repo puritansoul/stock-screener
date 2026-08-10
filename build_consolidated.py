@@ -37,20 +37,23 @@ def _report_values(html_pattern: str, starting: float) -> tuple[float, float]:
         return starting, 0.0
     html = files[0].read_text()
 
-    # Portfolio value
+    # Portfolio value — extract first $NNN,NNN after the id
     m = re.search(r'id="port-value"[^>]*>\$?([\d,]+)', html)
     cur = float(m.group(1).replace(",", "")) if m else starting
 
-    # Day P&L — try #day-pnl first (swing), then #port-today (intraday/screener)
+    # Day P&L — extract the leading signed dollar amount: e.g. "+$942" or "$-155" or "$243"
+    # Elements may contain extra text like "(+0.90%)" after a <br> — match only the first $ amount.
     day_pnl = 0.0
     for el_id in ("day-pnl", "port-today"):
-        m2 = re.search(rf'id="{el_id}"[^>]*>([^<]+)', html)
+        m2 = re.search(rf'id="{el_id}"[^>]*>(.*?)(?:<br|</)', html, re.DOTALL)
         if m2:
             txt = m2.group(1).strip()
-            sign = -1 if txt.lstrip().startswith("-") else 1
-            digits = re.sub(r"[^0-9.]", "", txt)
-            if digits:
-                day_pnl = sign * float(digits)
+            # Match optional sign then $digits
+            # Handles: "+$942", "$-155", "$243", "-$276"
+            m3 = re.search(r'([+-]?)\s*\$\s*([+-]?)\s*([\d,]+)', txt)
+            if m3:
+                neg = m3.group(1) == "-" or m3.group(2) == "-" or txt.lstrip().startswith("-")
+                day_pnl = (-1 if neg else 1) * float(m3.group(3).replace(",", ""))
                 break
 
     return cur, day_pnl
