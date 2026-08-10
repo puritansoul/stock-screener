@@ -1,6 +1,23 @@
 {
-  "capital": 100701.13,
-  "open_positions": [],
+  "capital": 70500.75,
+  "open_positions": [
+    {
+      "ticker": "HSY",
+      "side": "long",
+      "entry_date": "2026-08-10",
+      "entry_time": "10:29 ET",
+      "entry_price": 181.93,
+      "shares": 166,
+      "stop": 181.0975,
+      "trail_dist": 0.8325,
+      "peak": 181.93,
+      "orb_width": 1.665,
+      "cost": 30200.38,
+      "vol_ratio": 11.61,
+      "score": 65.35,
+      "has_catalyst": false
+    }
+  ],
   "closed_today": [],
   "all_closed": [
     {
@@ -72514,8 +72531,8 @@
     },
     "CDNS": {
       "high": 341.985,
-      "low": 337.56,
-      "width": 4.425
+      "low": 337.49,
+      "width": 4.495
     },
     "CPT": {
       "high": 111.5,
@@ -72669,8 +72686,8 @@
     },
     "CME": {
       "high": 265.86,
-      "low": 262.01,
-      "width": 3.85
+      "low": 262.2,
+      "width": 3.66
     },
     "CMS": {
       "high": 70.67,
@@ -72874,8 +72891,8 @@
     },
     "DPZ": {
       "high": 352.255,
-      "low": 342.695,
-      "width": 9.56
+      "low": 342.51,
+      "width": 9.745
     },
     "DASH": {
       "high": 215.99,
@@ -73202,11 +73219,6 @@
       "low": 86.38,
       "width": 1.125
     },
-    "GPC": {
-      "high": 134.0,
-      "low": 131.96,
-      "width": 2.04
-    },
     "GILD": {
       "high": 134.29,
       "low": 131.61,
@@ -73344,8 +73356,8 @@
     },
     "IDXX": {
       "high": 589.15,
-      "low": 580.215,
-      "width": 8.935
+      "low": 581.67,
+      "width": 7.48
     },
     "ITW": {
       "high": 296.7043,
@@ -73488,9 +73500,9 @@
       "width": 0.41
     },
     "KMI": {
-      "high": 31.11,
+      "high": 31.12,
       "low": 30.935,
-      "width": 0.175
+      "width": 0.185
     },
     "KKR": {
       "high": 102.51,
@@ -73707,6 +73719,11 @@
       "low": 41.7,
       "width": 1.02
     },
+    "MDLZ": {
+      "high": 62.235,
+      "low": 61.366,
+      "width": 0.869
+    },
     "MPWR": {
       "high": 1428.3025,
       "low": 1383.2205,
@@ -73881,11 +73898,6 @@
       "high": 133.23,
       "low": 132.245,
       "width": 0.985
-    },
-    "PKG": {
-      "high": 254.87,
-      "low": 251.575,
-      "width": 3.295
     },
     "PLTR": {
       "high": 177.38,
@@ -153977,6 +153989,32 @@
       },
       "portfolio_value": 100701.13,
       "note": "$100,701 | cash=$100,701 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-10",
+      "time": "10:29 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "HSY",
+          "side": "long",
+          "price": 181.93,
+          "shares": 166,
+          "stop": 181.1,
+          "trail_dist": 0.8325,
+          "score": 65.35
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.239,
+        "spy_vs_vwap": 1.0564,
+        "spy_vs_ema20": 21.1953
+      },
+      "portfolio_value": 100701.13,
+      "note": "$100,701 | cash=$70,501 | open=1 | closed today=0 | day PnL=$+0"
     }
   ]
 }
