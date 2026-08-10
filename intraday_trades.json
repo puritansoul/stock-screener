@@ -72693,11 +72693,6 @@
       "low": 188.88,
       "width": 3.3
     },
-    "CMG": {
-      "high": 32.74,
-      "low": 32.26,
-      "width": 0.48
-    },
     "CB": {
       "high": 351.25,
       "low": 348.43,
@@ -73007,11 +73002,6 @@
       "high": 91.57,
       "low": 89.3,
       "width": 2.27
-    },
-    "ECL": {
-      "high": 284.25,
-      "low": 281.79,
-      "width": 2.46
     },
     "EIX": {
       "high": 68.25,
@@ -74727,7 +74717,7 @@
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
     "2026-08-07": 100701.13,
-    "2026-08-10": 100527.28
+    "2026-08-10": 100525.15
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -155391,6 +155381,22 @@
       },
       "portfolio_value": 100527.28,
       "note": "$100,527 | cash=$81,142 | open=1 | closed today=3 | day PnL=$-223"
+    },
+    {
+      "date": "2026-08-10",
+      "time": "14:11 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.048,
+        "spy_vs_vwap": -0.5054,
+        "spy_vs_ema20": 19.7153
+      },
+      "portfolio_value": 100525.15,
+      "note": "$100,525 | cash=$81,142 | open=1 | closed today=3 | day PnL=$-223"
     }
   ]
 }
