@@ -72765,8 +72765,8 @@
     },
     "CTSH": {
       "high": 57.7,
-      "low": 56.5,
-      "width": 1.2
+      "low": 56.495,
+      "width": 1.205
     },
     "COHR": {
       "high": 378.495,
@@ -74727,7 +74727,7 @@
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
     "2026-08-07": 100701.13,
-    "2026-08-10": 100535.98
+    "2026-08-10": 100546.88
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -155647,6 +155647,22 @@
       },
       "portfolio_value": 100535.98,
       "note": "$100,536 | cash=$81,142 | open=1 | closed today=3 | day PnL=$-223"
+    },
+    {
+      "date": "2026-08-10",
+      "time": "15:07 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.085,
+        "spy_vs_vwap": -0.0994,
+        "spy_vs_ema20": 20.0052
+      },
+      "portfolio_value": 100546.88,
+      "note": "$100,547 | cash=$81,142 | open=1 | closed today=3 | day PnL=$-223"
     }
   ]
 }
