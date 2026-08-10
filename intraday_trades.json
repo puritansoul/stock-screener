@@ -8,9 +8,9 @@
       "entry_time": "11:24 ET",
       "entry_price": 88.7,
       "shares": 218,
-      "stop": 88.2076,
+      "stop": 88.2077,
       "trail_dist": 0.7125,
-      "peak": 88.9201,
+      "peak": 88.9202,
       "orb_width": 1.425,
       "cost": 19336.6,
       "vol_ratio": 8.02,
@@ -73243,15 +73243,20 @@
       "low": 182.62,
       "width": 5.0199
     },
+    "GE": {
+      "high": 372.26,
+      "low": 369.09,
+      "width": 3.17
+    },
     "GEHC": {
       "high": 72.27,
       "low": 71.23,
       "width": 1.04
     },
     "GEV": {
-      "high": 1001.0,
+      "high": 1004.96,
       "low": 984.43,
-      "width": 16.57
+      "width": 20.53
     },
     "GEN": {
       "high": 29.505,
@@ -73420,8 +73425,8 @@
     },
     "IDXX": {
       "high": 589.15,
-      "low": 581.67,
-      "width": 7.48
+      "low": 580.215,
+      "width": 8.935
     },
     "ITW": {
       "high": 296.7043,
@@ -73564,9 +73569,9 @@
       "width": 0.41
     },
     "KMI": {
-      "high": 31.12,
+      "high": 31.11,
       "low": 30.935,
-      "width": 0.185
+      "width": 0.175
     },
     "KKR": {
       "high": 102.51,
@@ -74208,6 +74213,11 @@
       "low": 1194.0101,
       "width": 59.7299
     },
+    "SBAC": {
+      "high": 183.0,
+      "low": 180.17,
+      "width": 2.83
+    },
     "SLB": {
       "high": 51.84,
       "low": 50.67,
@@ -74717,7 +74727,7 @@
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
     "2026-08-07": 100701.13,
-    "2026-08-10": 100508.73
+    "2026-08-10": 100526.21
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -154933,6 +154943,22 @@
       },
       "portfolio_value": 100508.73,
       "note": "$100,509 | cash=$81,142 | open=1 | closed today=3 | day PnL=$-223"
+    },
+    {
+      "date": "2026-08-10",
+      "time": "12:51 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.03,
+        "spy_vs_vwap": -1.2263,
+        "spy_vs_ema20": 19.1153
+      },
+      "portfolio_value": 100526.21,
+      "note": "$100,526 | cash=$81,142 | open=1 | closed today=3 | day PnL=$-223"
     }
   ]
 }
