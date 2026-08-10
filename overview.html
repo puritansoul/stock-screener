@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trading Overview — 2026-08-10</title>
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+       background: #f5f6fa; color: #212121; font-size: 13px; }
+.page { max-width: 1200px; margin: 0 auto; padding: 16px; }
+
+/* header */
+.header { display:flex; align-items:center; justify-content:space-between;
+          margin-bottom: 16px; }
+.header h1 { font-size: 20px; font-weight: 700; color: #1a237e; }
+.header .date { font-size: 12px; color: #888; }
+
+/* total bar */
+.total-bar { background:#1a237e; color:white; border-radius:10px;
+             padding:14px 20px; display:flex; gap:32px; align-items:center;
+             margin-bottom:16px; flex-wrap:wrap; }
+.total-bar .tb-label { font-size:11px; color:rgba(255,255,255,.55);
+                        text-transform:uppercase; letter-spacing:.5px; }
+.total-bar .tb-val   { font-size:22px; font-weight:700; }
+.total-bar .tb-item  { display:flex; flex-direction:column; gap:2px; }
+
+/* bot cards */
+.bot-cards-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px;
+                  margin-bottom:16px; }
+@media(max-width:700px){ .bot-cards-grid { grid-template-columns:repeat(2,1fr); } }
+.bot-card { background:white; border-radius:10px; padding:12px 14px;
+            box-shadow:0 1px 4px rgba(0,0,0,.08); }
+.bot-card-header { display:flex; justify-content:space-between; margin-bottom:4px; }
+.bot-label { font-weight:700; font-size:12px; }
+.bot-dd    { font-size:11px; }
+.bot-value { font-size:20px; font-weight:700; color:#212121; }
+.bot-day   { font-size:12px; font-weight:600; }
+.bot-pct   { font-size:11px; margin-left:2px; }
+.bot-ret   { font-size:11px; }
+.spark     { margin-top:6px; }
+
+/* section titles */
+.section-title { font-size:13px; font-weight:700; color:#37474f;
+                 text-transform:uppercase; letter-spacing:.5px;
+                 margin-bottom:8px; margin-top:4px; }
+
+/* heatmap */
+.heatmap-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:8px;
+                margin-bottom:16px; }
+@media(max-width:700px){ .heatmap-grid { grid-template-columns:repeat(3,1fr); } }
+.hm-cell  { border-radius:8px; padding:10px 12px; color:white;
+             box-shadow:0 1px 3px rgba(0,0,0,.15); }
+.hm-name  { font-size:11px; font-weight:600; opacity:.85; }
+.hm-pct   { font-size:16px; font-weight:700; margin:2px 0; }
+.hm-abs   { font-size:11px; opacity:.85; }
+
+/* equity curve */
+.chart-wrap { background:white; border-radius:10px; padding:12px 16px;
+              box-shadow:0 1px 4px rgba(0,0,0,.08); margin-bottom:16px;
+              overflow-x:auto; }
+
+/* calendar */
+.cal-wrap { background:white; border-radius:10px; padding:12px 16px;
+            box-shadow:0 1px 4px rgba(0,0,0,.08); margin-bottom:16px;
+            display:flex; align-items:flex-start; gap:4px; overflow-x:auto; }
+.cal-dow-col { display:flex; flex-direction:column; gap:2px; padding-top:20px; }
+.cal-dow  { height:12px; width:14px; font-size:9px; color:#aaa; line-height:12px;
+            text-align:center; }
+.cal-cols { display:flex; gap:2px; }
+.cal-col  { display:flex; flex-direction:column; gap:2px; }
+.cal-month-lbl { height:16px; font-size:10px; color:#888; white-space:nowrap; }
+.cal-cell { width:12px; height:12px; border-radius:2px; cursor:default; }
+.cal-empty  { background:transparent; }
+.cal-nodata { background:#eeeeee; }
+.cal-legend { display:flex; flex-direction:column; align-items:center;
+              gap:4px; padding-top:20px; margin-left:8px; }
+.cal-legend-bar { width:10px; height:60px;
+  background:linear-gradient(to bottom, #e53935, #eeeeee 50%, #43a047); border-radius:4px; }
+
+/* drawdown */
+.dd-wrap { background:white; border-radius:10px; padding:12px 16px;
+           box-shadow:0 1px 4px rgba(0,0,0,.08); margin-bottom:16px; }
+.dd-row   { display:flex; align-items:center; gap:10px; padding:5px 0;
+             border-bottom:1px solid #f5f5f5; }
+.dd-row:last-child { border-bottom:none; }
+.dd-label { width:90px; font-weight:600; font-size:12px; flex-shrink:0; }
+.dd-track { flex:1; height:10px; background:#f5f5f5; border-radius:5px; overflow:hidden; }
+.dd-fill  { height:100%; border-radius:5px; transition:width .3s; }
+.dd-val   { width:48px; text-align:right; font-weight:700; font-size:12px; flex-shrink:0; }
+.dd-peak  { font-size:11px; color:#999; flex-shrink:0; }
+
+/* scorecard + tables */
+.data-table { width:100%; border-collapse:collapse; font-size:12px; }
+.data-table th { background:#f5f5f5; padding:6px 10px; text-align:left;
+                 font-weight:600; color:#555; border-bottom:2px solid #e0e0e0; }
+.data-table td { padding:6px 10px; border-bottom:1px solid #f0f0f0; }
+.data-table tr:hover td { background:#fafafa; }
+.section-wrap { background:white; border-radius:10px; padding:14px 16px;
+                box-shadow:0 1px 4px rgba(0,0,0,.08); margin-bottom:16px;
+                overflow-x:auto; }
+
+/* gainers/losers */
+.gl-wrap  { display:grid; grid-template-columns:1fr 1fr; gap:12px;
+             margin-bottom:16px; }
+@media(max-width:600px){ .gl-wrap { grid-template-columns:1fr; } }
+.gl-half  { background:white; border-radius:10px; padding:14px 16px;
+             box-shadow:0 1px 4px rgba(0,0,0,.08); overflow-x:auto; }
+.gl-table { width:100%; border-collapse:collapse; font-size:12px; }
+.gl-table th { background:#f9f9f9; padding:5px 8px; font-weight:600;
+               color:#555; border-bottom:2px solid #e0e0e0; text-align:left; }
+.gl-table td { padding:5px 8px; border-bottom:1px solid #f0f0f0; }
+
+/* two-column layout */
+.two-col { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px; }
+@media(max-width:700px){ .two-col { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <h1>Trading Overview</h1>
+    <span class="date">August 10, 2026</span>
+  </div>
+
+  
+    <div class="total-bar">
+      <div class="tb-item">
+        <span class="tb-label">Portfolio</span>
+        <span class="tb-val">$756,310</span>
+      </div>
+      <div class="tb-item">
+        <span class="tb-label">Today</span>
+        <span class="tb-val" style="color:#90caf9">+$3,447
+          <span style="font-size:14px">(+0.46%)</span>
+        </span>
+      </div>
+      <div class="tb-item">
+        <span class="tb-label">All-time</span>
+        <span class="tb-val" style="color:#90caf9">+$156,310
+          <span style="font-size:14px">(+26.05%)</span>
+        </span>
+      </div>
+      <div class="tb-item" style="margin-left:auto">
+        <span class="tb-label">Best today</span>
+        <span style="font-size:14px;font-weight:600;color:#a5d6a7">Screener v1 +9.56%</span>
+      </div>
+      <div class="tb-item">
+        <span class="tb-label">Worst today</span>
+        <span style="font-size:14px;font-weight:600;color:#ef9a9a">Screener v2 7.53%</span>
+      </div>
+    </div>
+  <div class="bot-cards-grid">
+        <div class="bot-card">
+          <div class="bot-card-header">
+            <span class="bot-label" style="color:#1565c0">Screener v1</span>
+            <span class="bot-dd" style="color:#2e7d32">DD 0.0%</span>
+          </div>
+          <div class="bot-value">$186,487</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:2px">
+            <div>
+              <span class="bot-day" style="color:#2e7d32">+$16,272 today</span>
+              <span class="bot-pct" style="color:#2e7d32">(+9.56%)</span>
+            </div>
+            <span class="bot-ret" style="color:#2e7d32">+86.49% all-time</span>
+          </div>
+          <div class="spark"><svg width="80" height="28" viewBox="0 0 80 28"><polygon points="0,28 0.0,26.0 6.2,26.0 12.3,25.0 18.5,23.8 24.6,23.6 30.8,22.5 36.9,22.1 43.1,22.1 49.2,21.1 55.4,17.7 61.5,14.9 67.7,14.9 73.8,8.0 80.0,2.0 80,28" fill="#1565c030"/><polyline points="0.0,26.0 6.2,26.0 12.3,25.0 18.5,23.8 24.6,23.6 30.8,22.5 36.9,22.1 43.1,22.1 49.2,21.1 55.4,17.7 61.5,14.9 67.7,14.9 73.8,8.0 80.0,2.0" fill="none" stroke="#1565c0" stroke-width="1.5"/></svg></div>
+        </div>
+        <div class="bot-card">
+          <div class="bot-card-header">
+            <span class="bot-label" style="color:#6a1b9a">Swing v1</span>
+            <span class="bot-dd" style="color:#f57f17">DD -0.4%</span>
+          </div>
+          <div class="bot-value">$103,401</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:2px">
+            <div>
+              <span class="bot-day" style="color:#2e7d32">+$406 today</span>
+              <span class="bot-pct" style="color:#2e7d32">(+0.39%)</span>
+            </div>
+            <span class="bot-ret" style="color:#2e7d32">+3.40% all-time</span>
+          </div>
+          <div class="spark"><svg width="80" height="28" viewBox="0 0 80 28"><polygon points="0,28 0.0,19.6 6.2,22.4 12.3,24.3 18.5,18.9 24.6,15.1 30.8,16.5 36.9,26.0 43.1,9.9 49.2,7.6 55.4,5.7 61.5,2.1 67.7,2.0 73.8,6.8 80.0,4.4 80,28" fill="#6a1b9a30"/><polyline points="0.0,19.6 6.2,22.4 12.3,24.3 18.5,18.9 24.6,15.1 30.8,16.5 36.9,26.0 43.1,9.9 49.2,7.6 55.4,5.7 61.5,2.1 67.7,2.0 73.8,6.8 80.0,4.4" fill="none" stroke="#6a1b9a" stroke-width="1.5"/></svg></div>
+        </div>
+        <div class="bot-card">
+          <div class="bot-card-header">
+            <span class="bot-label" style="color:#00695c">Intraday v1</span>
+            <span class="bot-dd" style="color:#f57f17">DD -0.2%</span>
+          </div>
+          <div class="bot-value">$100,546</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:2px">
+            <div>
+              <span class="bot-day" style="color:#c62828">$155 today</span>
+              <span class="bot-pct" style="color:#c62828">(0.15%)</span>
+            </div>
+            <span class="bot-ret" style="color:#2e7d32">+0.55% all-time</span>
+          </div>
+          <div class="spark"><svg width="80" height="28" viewBox="0 0 80 28"><polygon points="0,28 0.0,13.6 6.2,14.6 12.3,22.8 18.5,19.9 24.6,22.6 30.8,24.0 36.9,24.6 43.1,25.2 49.2,26.0 55.4,21.2 61.5,21.7 67.7,5.1 73.8,2.0 80.0,2.7 80,28" fill="#00695c30"/><polyline points="0.0,13.6 6.2,14.6 12.3,22.8 18.5,19.9 24.6,22.6 30.8,24.0 36.9,24.6 43.1,25.2 49.2,26.0 55.4,21.2 61.5,21.7 67.7,5.1 73.8,2.0 80.0,2.7" fill="none" stroke="#00695c" stroke-width="1.5"/></svg></div>
+        </div>
+        <div class="bot-card">
+          <div class="bot-card-header">
+            <span class="bot-label" style="color:#0277bd">Screener v2</span>
+            <span class="bot-dd" style="color:#c62828">DD -7.5%</span>
+          </div>
+          <div class="bot-value">$164,294</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:2px">
+            <div>
+              <span class="bot-day" style="color:#c62828">$13,387 today</span>
+              <span class="bot-pct" style="color:#c62828">(7.53%)</span>
+            </div>
+            <span class="bot-ret" style="color:#2e7d32">+64.29% all-time</span>
+          </div>
+          <div class="spark"><svg width="80" height="28" viewBox="0 0 80 28"><polygon points="0,28 0.0,22.3 6.2,22.3 12.3,22.3 18.5,24.3 24.6,26.0 30.8,24.3 36.9,23.8 43.1,23.8 49.2,22.2 55.4,19.7 61.5,18.5 67.7,16.7 73.8,2.0 80.0,5.6 80,28" fill="#0277bd30"/><polyline points="0.0,22.3 6.2,22.3 12.3,22.3 18.5,24.3 24.6,26.0 30.8,24.3 36.9,23.8 43.1,23.8 49.2,22.2 55.4,19.7 61.5,18.5 67.7,16.7 73.8,2.0 80.0,5.6" fill="none" stroke="#0277bd" stroke-width="1.5"/></svg></div>
+        </div>
+        <div class="bot-card">
+          <div class="bot-card-header">
+            <span class="bot-label" style="color:#ad1457">Swing v2</span>
+            <span class="bot-dd" style="color:#2e7d32">DD 0.0%</span>
+          </div>
+          <div class="bot-value">$101,582</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:2px">
+            <div>
+              <span class="bot-day" style="color:#2e7d32">+$312 today</span>
+              <span class="bot-pct" style="color:#2e7d32">(+0.31%)</span>
+            </div>
+            <span class="bot-ret" style="color:#2e7d32">+1.58% all-time</span>
+          </div>
+          <div class="spark"><svg width="80" height="28" viewBox="0 0 80 28"><polygon points="0,28 0.0,10.6 6.2,10.6 12.3,10.6 18.5,10.6 24.6,10.6 30.8,10.6 36.9,26.0 43.1,9.2 49.2,6.9 55.4,7.9 61.5,3.7 67.7,3.7 73.8,3.7 80.0,2.0 80,28" fill="#ad145730"/><polyline points="0.0,10.6 6.2,10.6 12.3,10.6 18.5,10.6 24.6,10.6 30.8,10.6 36.9,26.0 43.1,9.2 49.2,6.9 55.4,7.9 61.5,3.7 67.7,3.7 73.8,3.7 80.0,2.0" fill="none" stroke="#ad1457" stroke-width="1.5"/></svg></div>
+        </div>
+        <div class="bot-card">
+          <div class="bot-card-header">
+            <span class="bot-label" style="color:#00838f">Intraday v2</span>
+            <span class="bot-dd" style="color:#2e7d32">DD 0.0%</span>
+          </div>
+          <div class="bot-value">$100,000</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:2px">
+            <div>
+              <span class="bot-day" style="color:#2e7d32">+$0 today</span>
+              <span class="bot-pct" style="color:#2e7d32">(+0.00%)</span>
+            </div>
+            <span class="bot-ret" style="color:#2e7d32">+0.00% all-time</span>
+          </div>
+          <div class="spark"><svg width="80" height="28" viewBox="0 0 80 28"><polygon points="0,28 0.0,2.0 6.2,24.6 12.3,26.0 18.5,26.0 24.6,26.0 30.8,26.0 36.9,26.0 43.1,26.0 49.2,26.0 55.4,26.0 61.5,26.0 67.7,26.0 73.8,2.0 80.0,2.0 80,28" fill="#00838f30"/><polyline points="0.0,2.0 6.2,24.6 12.3,26.0 18.5,26.0 24.6,26.0 30.8,26.0 36.9,26.0 43.1,26.0 49.2,26.0 55.4,26.0 61.5,26.0 67.7,26.0 73.8,2.0 80.0,2.0" fill="none" stroke="#00838f" stroke-width="1.5"/></svg></div>
+        </div></div>
+
+  <div class="two-col">
+    <div><div class="section-wrap"><div class="section-title">Drawdown from Peak</div><div class="dd-wrap">
+        <div class="dd-row">
+          <span class="dd-label" style="color:#1565c0">Screener v1</span>
+          <div class="dd-track">
+            <div class="dd-fill" style="width:0.0%;background:#43a047"></div>
+          </div>
+          <span class="dd-val" style="color:#43a047">0.0%</span>
+          <span class="dd-peak">peak $186,487</span>
+        </div>
+        <div class="dd-row">
+          <span class="dd-label" style="color:#6a1b9a">Swing v1</span>
+          <div class="dd-track">
+            <div class="dd-fill" style="width:2.0%;background:#c62828"></div>
+          </div>
+          <span class="dd-val" style="color:#c62828">-0.4%</span>
+          <span class="dd-peak">peak $103,815</span>
+        </div>
+        <div class="dd-row">
+          <span class="dd-label" style="color:#00695c">Intraday v1</span>
+          <div class="dd-track">
+            <div class="dd-fill" style="width:0.8%;background:#e53935"></div>
+          </div>
+          <span class="dd-val" style="color:#e53935">-0.2%</span>
+          <span class="dd-peak">peak $100,701</span>
+        </div>
+        <div class="dd-row">
+          <span class="dd-label" style="color:#0277bd">Screener v2</span>
+          <div class="dd-track">
+            <div class="dd-fill" style="width:37.7%;background:#7f0000"></div>
+          </div>
+          <span class="dd-val" style="color:#7f0000">-7.5%</span>
+          <span class="dd-peak">peak $177,681</span>
+        </div>
+        <div class="dd-row">
+          <span class="dd-label" style="color:#ad1457">Swing v2</span>
+          <div class="dd-track">
+            <div class="dd-fill" style="width:0.0%;background:#43a047"></div>
+          </div>
+          <span class="dd-val" style="color:#43a047">0.0%</span>
+          <span class="dd-peak">peak $101,582</span>
+        </div>
+        <div class="dd-row">
+          <span class="dd-label" style="color:#00838f">Intraday v2</span>
+          <div class="dd-track">
+            <div class="dd-fill" style="width:0.0%;background:#43a047"></div>
+          </div>
+          <span class="dd-val" style="color:#43a047">0.0%</span>
+          <span class="dd-peak">peak $100,000</span>
+        </div></div></div></div>
+    <div><div class="section-title">Today's Performance</div><div class="heatmap-grid">
+        <div class="hm-cell" style="background:#1b5e20">
+          <div class="hm-name">Screener v1</div>
+          <div class="hm-pct">+9.56%</div>
+          <div class="hm-abs">+$16,272</div>
+        </div>
+        <div class="hm-cell" style="background:#388e3c">
+          <div class="hm-name">Swing v1</div>
+          <div class="hm-pct">+0.39%</div>
+          <div class="hm-abs">+$406</div>
+        </div>
+        <div class="hm-cell" style="background:#e53935">
+          <div class="hm-name">Intraday v1</div>
+          <div class="hm-pct">0.15%</div>
+          <div class="hm-abs">$155</div>
+        </div>
+        <div class="hm-cell" style="background:#7f0000">
+          <div class="hm-name">Screener v2</div>
+          <div class="hm-pct">7.53%</div>
+          <div class="hm-abs">$13,387</div>
+        </div>
+        <div class="hm-cell" style="background:#388e3c">
+          <div class="hm-name">Swing v2</div>
+          <div class="hm-pct">+0.31%</div>
+          <div class="hm-abs">+$312</div>
+        </div>
+        <div class="hm-cell" style="background:#43a047">
+          <div class="hm-name">Intraday v2</div>
+          <div class="hm-pct">+0.00%</div>
+          <div class="hm-abs">+$0</div>
+        </div></div></div>
+  </div>
+
+  <div class="section-title">Equity Curves</div><div class="chart-wrap"><svg width="100%" viewBox="0 0 900 240" style="display:block;max-width:900px"><rect x="52" y="4" width="14" height="3" fill="#1565c0" rx="1"/><text x="70" y="11" font-size="10" fill="#555">Screener v1</text><rect x="192" y="4" width="14" height="3" fill="#6a1b9a" rx="1"/><text x="210" y="11" font-size="10" fill="#555">Swing v1</text><rect x="332" y="4" width="14" height="3" fill="#00695c" rx="1"/><text x="350" y="11" font-size="10" fill="#555">Intraday v1</text><rect x="472" y="4" width="14" height="3" fill="#0277bd" rx="1"/><text x="490" y="11" font-size="10" fill="#555">Screener v2</text><rect x="612" y="4" width="14" height="3" fill="#ad1457" rx="1"/><text x="630" y="11" font-size="10" fill="#555">Swing v2</text><rect x="752" y="4" width="14" height="3" fill="#00838f" rx="1"/><text x="770" y="11" font-size="10" fill="#555">Intraday v2</text><line x1="52" y1="184.0" x2="888" y2="184.0" stroke="#e0e0e0" stroke-width="0.5"/><text x="48" y="188.0" text-anchor="end" font-size="10" fill="#888">$89k</text><line x1="52" y1="128.6" x2="888" y2="128.6" stroke="#e0e0e0" stroke-width="0.5"/><text x="48" y="132.6" text-anchor="end" font-size="10" fill="#888">$122k</text><line x1="52" y1="73.1" x2="888" y2="73.1" stroke="#e0e0e0" stroke-width="0.5"/><text x="48" y="77.1" text-anchor="end" font-size="10" fill="#888">$154k</text><line x1="52" y1="16.0" x2="888" y2="16.0" stroke="#e0e0e0" stroke-width="0.5"/><text x="48" y="20.0" text-anchor="end" font-size="10" fill="#888">$187k</text><text x="52.0" y="198" text-anchor="middle" font-size="10" fill="#888">07-01</text><text x="182.6" y="198" text-anchor="middle" font-size="10" fill="#888">07-07</text><text x="313.2" y="198" text-anchor="middle" font-size="10" fill="#888">07-13</text><text x="443.9" y="198" text-anchor="middle" font-size="10" fill="#888">07-20</text><text x="574.5" y="198" text-anchor="middle" font-size="10" fill="#888">07-25</text><text x="705.1" y="198" text-anchor="middle" font-size="10" fill="#888">07-31</text><text x="835.8" y="198" text-anchor="middle" font-size="10" fill="#888">08-06</text><line x1="52" y1="165.8" x2="888" y2="165.8" stroke="#bdbdbd" stroke-width="1" stroke-dasharray="4,3"/><polyline points="52.0,165.8 78.1,164.1 104.2,165.8 130.4,165.8 156.5,167.0 182.6,161.7 208.8,163.1 234.9,158.0 261.0,156.6 287.1,156.6 313.2,159.2 339.4,157.9 365.5,159.8 391.6,145.6 417.8,145.4 470.0,137.7 496.1,133.2 522.2,133.0 548.4,128.6 574.5,128.6 600.6,124.0 626.8,118.5 652.9,117.6 679.0,112.4 705.1,110.2 731.2,110.2 757.4,105.7 783.5,89.7 809.6,76.5 835.8,76.7 861.9,44.4 888.0,16.3" fill="none" stroke="#1565c0" stroke-width="2" stroke-linejoin="round"/><circle cx="888.0" cy="16.3" r="3" fill="#1565c0"/><polyline points="234.9,165.8 261.0,163.0 313.2,161.2 365.5,169.3 391.6,168.9 443.9,167.9 470.0,167.6 496.1,164.4 522.2,165.2 548.4,165.8 600.6,164.2 626.8,163.1 652.9,163.5 679.0,166.3 705.1,161.6 757.4,160.9 783.5,160.3 809.6,159.3 835.8,159.2 861.9,160.6 888.0,159.9" fill="none" stroke="#6a1b9a" stroke-width="2" stroke-linejoin="round"/><circle cx="888.0" cy="159.9" r="3" fill="#6a1b9a"/><polyline points="234.9,165.9 261.0,165.9 313.2,166.3 339.4,166.6 365.5,166.7 391.6,166.9 417.8,167.2 443.9,167.1 470.0,168.1 496.1,169.2 522.2,169.6 548.4,172.8 600.6,171.7 626.8,172.7 652.9,173.3 679.0,173.5 705.1,173.7 757.4,174.1 783.5,172.2 809.6,172.4 835.8,165.8 861.9,164.6 888.0,164.9" fill="none" stroke="#00695c" stroke-width="2" stroke-linejoin="round"/><circle cx="888.0" cy="164.9" r="3" fill="#00695c"/><polyline points="496.1,159.6 522.2,156.7 548.4,160.1 574.5,160.1 600.6,160.1 626.8,173.3 652.9,183.8 679.0,173.1 705.1,169.8 731.2,169.8 757.4,160.0 783.5,143.8 809.6,136.1 835.8,124.8 861.9,31.5 888.0,54.7" fill="none" stroke="#0277bd" stroke-width="2" stroke-linejoin="round"/><circle cx="888.0" cy="54.7" r="3" fill="#0277bd"/><polyline points="496.1,165.8 522.2,165.8 548.4,165.8 600.6,165.8 626.8,165.8 652.9,165.8 679.0,170.7 705.1,165.4 757.4,164.6 783.5,165.0 809.6,163.6 835.8,163.6 861.9,163.6 888.0,163.1" fill="none" stroke="#ad1457" stroke-width="2" stroke-linejoin="round"/><circle cx="888.0" cy="163.1" r="3" fill="#ad1457"/><polyline points="470.0,165.8 496.1,165.8 522.2,166.1 548.4,166.1 600.6,166.1 626.8,166.1 652.9,166.1 679.0,166.1 705.1,166.1 757.4,166.1 783.5,166.1 809.6,166.1 835.8,166.1 861.9,165.8 888.0,165.8" fill="none" stroke="#00838f" stroke-width="2" stroke-linejoin="round"/><circle cx="888.0" cy="165.8" r="3" fill="#00838f"/></svg></div>
+  
+    <div class="section-title">60-Day P&amp;L Calendar <span style="font-size:11px;font-weight:normal;color:#888">(combined all bots)</span></div>
+    <div class="cal-wrap">
+      <div class="cal-dow-col"><div class="cal-dow">M</div><div class="cal-dow">T</div><div class="cal-dow">W</div><div class="cal-dow">T</div><div class="cal-dow">F</div><div class="cal-dow">S</div><div class="cal-dow">S</div></div>
+      <div class="cal-cols"><div class="cal-col"><div class="cal-month-lbl">Jun</div><div class="cal-cell cal-empty"></div><div class="cal-cell cal-empty"></div><div class="cal-cell cal-empty"></div><div class="cal-cell cal-empty"></div><div class="cal-cell cal-nodata" title="No data"></div><div class="cal-cell cal-nodata" title="No data"></div><div class="cal-cell cal-nodata" title="No data"></div></div><div class="cal-col"><div class="cal-month-lbl"></div><div class="cal-cell cal-nodata" title="No data"></div><div class="cal-cell cal-nodata" title="No data"></div><div class="cal-cell cal-nodata" title="No data"></div><div class="cal-cell cal-nodata" title="No data"></div><div class="cal-cell cal-nodata" title="No data"></div><div class="cal-cell cal-nodata" title="No data"></div><div class="cal-cell cal-nodata" title="No data"></div></div><div class="cal-col"><div class="cal-month-lbl"></div><div class="cal-cell cal-nodata" title="No data"></div><div class="cal-cell cal-nodata" title="No data"></div><div class="cal-cell cal-nodata" title="No data"></div><div class="cal-cell cal-nodata" title="No data"></div><div class="cal-cell cal-nodata" title="No data"></div><div class="cal-cell cal-nodata" title="No data"></div><div class="cal-cell cal-nodata" title="No data"></div></div><div class="cal-col"><div class="cal-month-lbl"></div><div class="cal-cell cal-nodata" title="No data"></div><div class="cal-cell cal-nodata" title="No data"></div><div class="cal-cell cal-nodata" title="No data"></div><div class="cal-cell" style="background:rgb(197,200,197)" title="2026-07-02: +$1,015"></div><div class="cal-cell" style="background:rgb(200,197,197)" title="2026-07-03: $1,015"></div><div class="cal-cell" style="background:rgb(200,200,200)" title="2026-07-04: +$0"></div><div class="cal-cell cal-nodata" title="No data"></div></div><div class="cal-col"><div class="cal-month-lbl">Jul</div><div class="cal-cell" style="background:rgb(200,198,198)" title="2026-07-06: $669"></div><div class="cal-cell" style="background:rgb(193,202,193)" title="2026-07-07: +$3,076"></div><div class="cal-cell" style="background:rgb(200,198,198)" title="2026-07-08: $856"></div><div class="cal-cell" style="background:rgb(193,202,193)" title="2026-07-09: +$3,002"></div><div class="cal-cell" style="background:rgb(195,201,195)" title="2026-07-10: +$2,419"></div><div class="cal-cell" style="background:rgb(200,200,200)" title="2026-07-11: +$0"></div><div class="cal-cell cal-nodata" title="No data"></div></div><div class="cal-col"><div class="cal-month-lbl"></div><div class="cal-cell" style="background:rgb(200,198,198)" title="2026-07-13: $677"></div><div class="cal-cell" style="background:rgb(198,200,198)" title="2026-07-14: +$506"></div><div class="cal-cell" style="background:rgb(204,188,188)" title="2026-07-15: $5,765"></div><div class="cal-cell" style="background:rgb(182,206,182)" title="2026-07-16: +$8,323"></div><div class="cal-cell" style="background:rgb(200,199,199)" title="2026-07-17: $84"></div><div class="cal-cell cal-nodata" title="No data"></div><div class="cal-cell cal-nodata" title="No data"></div></div><div class="cal-col"><div class="cal-month-lbl"></div><div class="cal-cell" style="background:rgb(198,200,198)" title="2026-07-20: +$636"></div><div class="cal-cell" style="background:rgb(191,203,191)" title="2026-07-21: +$4,078"></div><div class="cal-cell" style="background:rgb(192,202,192)" title="2026-07-22: +$3,820"></div><div class="cal-cell" style="background:rgb(198,200,198)" title="2026-07-23: +$840"></div><div class="cal-cell" style="background:rgb(201,196,196)" title="2026-07-24: $1,625"></div><div class="cal-cell" style="background:rgb(200,200,200)" title="2026-07-25: +$0"></div><div class="cal-cell cal-nodata" title="No data"></div></div><div class="cal-col"><div class="cal-month-lbl"></div><div class="cal-cell" style="background:rgb(191,203,191)" title="2026-07-27: +$4,281"></div><div class="cal-cell" style="background:rgb(203,190,190)" title="2026-07-28: $4,408"></div><div class="cal-cell" style="background:rgb(204,187,187)" title="2026-07-29: $6,118"></div><div class="cal-cell" style="background:rgb(190,203,190)" title="2026-07-30: +$4,638"></div><div class="cal-cell" style="background:rgb(181,206,181)" title="2026-07-31: +$8,858"></div><div class="cal-cell" style="background:rgb(200,200,200)" title="2026-08-01: +$0"></div><div class="cal-cell cal-nodata" title="No data"></div></div><div class="cal-col"><div class="cal-month-lbl">Aug</div><div class="cal-cell" style="background:rgb(181,206,181)" title="2026-08-03: +$8,882"></div><div class="cal-cell" style="background:rgb(159,215,159)" title="2026-08-04: +$19,851"></div><div class="cal-cell" style="background:rgb(172,210,172)" title="2026-08-05: +$13,399"></div><div class="cal-cell" style="background:rgb(178,207,178)" title="2026-08-06: +$10,220"></div><div class="cal-cell" style="background:rgb(50,255,50)" title="2026-08-07: +$72,671"></div><div class="cal-cell cal-nodata" title="No data"></div><div class="cal-cell cal-nodata" title="No data"></div></div><div class="cal-col"><div class="cal-month-lbl"></div><div class="cal-cell" style="background:rgb(192,202,192)" title="2026-08-10: +$3,447"></div><div class="cal-cell cal-empty"></div><div class="cal-cell cal-empty"></div><div class="cal-cell cal-empty"></div><div class="cal-cell cal-empty"></div><div class="cal-cell cal-empty"></div><div class="cal-cell cal-empty"></div></div></div>
+      <div class="cal-legend">
+        <span style="color:#888;font-size:11px">Loss</span>
+        <div class="cal-legend-bar"></div>
+        <span style="color:#888;font-size:11px">Gain</span>
+      </div>
+    </div>
+  
+    <div class="gl-wrap">
+      <div class="gl-half">
+        <div class="section-title" style="color:#2e7d32">Top Trades (All-time)</div>
+        <table class="gl-table"><thead><tr><th>Ticker</th><th>Bot</th><th>Closed</th><th>P&amp;L</th><th>Reason</th></tr></thead><tbody><tr style="background:#f1f8e9"><td><strong>APH</strong></td><td style="color:#6a1b9a;font-size:11px">Swing v1</td><td>2026-07-31</td><td style="color:#2e7d32;font-weight:bold">+$1,022</td><td style="font-size:11px;color:#666">RSI(2) reverted (85.9)</td></tr><tr style="background:#f1f8e9"><td><strong>SW</strong></td><td style="color:#6a1b9a;font-size:11px">Swing v1</td><td>2026-07-13</td><td style="color:#2e7d32;font-weight:bold">+$1,021</td><td style="font-size:11px;color:#666">SMA5 cross above</td></tr><tr style="background:#f1f8e9"><td><strong>RL</strong></td><td style="color:#6a1b9a;font-size:11px">Swing v1</td><td>2026-07-13</td><td style="color:#2e7d32;font-weight:bold">+$611</td><td style="font-size:11px;color:#666">SMA5 cross above</td></tr></tbody></table>
+      </div>
+      <div class="gl-half">
+        <div class="section-title" style="color:#c62828">Worst Trades (All-time)</div>
+        <table class="gl-table"><thead><tr><th>Ticker</th><th>Bot</th><th>Closed</th><th>P&amp;L</th><th>Reason</th></tr></thead><tbody><tr style="background:#fce4ec"><td><strong>CHRW</strong></td><td style="color:#6a1b9a;font-size:11px">Swing v1</td><td>2026-07-31</td><td style="color:#c62828;font-weight:bold">$1,346</td><td style="font-size:11px;color:#666">stop loss</td></tr><tr style="background:#fce4ec"><td><strong>UAL</strong></td><td style="color:#6a1b9a;font-size:11px">Swing v1</td><td>2026-07-27</td><td style="color:#c62828;font-weight:bold">$453</td><td style="font-size:11px;color:#666">RSI(2) reverted (71.6)</td></tr><tr style="background:#fce4ec"><td><strong>TRGP</strong></td><td style="color:#00695c;font-size:11px">Intraday v1</td><td>2026-07-21</td><td style="color:#c62828;font-weight:bold">$354</td><td style="font-size:11px;color:#666">trailing stop</td></tr></tbody></table>
+      </div>
+    </div>
+
+  <div class="section-wrap">
+    <div class="section-title">Strategy Scorecard</div>
+    <table class="data-table">
+      <thead><tr>
+        <th>Bot</th><th>Trades</th><th>Win Rate</th>
+        <th>Avg Win</th><th>Avg Loss</th>
+        <th title="Gross profit / gross loss">Profit Factor</th>
+        <th title="Expected $ per trade">Expectancy</th>
+      </tr></thead>
+      <tbody><tr><td style="color:#1565c0;font-weight:600">Screener v1</td><td>0</td><td style="color:#f57f17">0.0%</td><td style="color:#2e7d32">+$0</td><td style="color:#c62828">+$0</td><td style="color:#2e7d32">∞</td><td style="color:#c62828;font-weight:bold">+$0.00</td></tr><tr><td style="color:#6a1b9a;font-weight:600">Swing v1</td><td>125</td><td style="color:#2e7d32">77.6%</td><td style="color:#2e7d32">+$119</td><td style="color:#c62828">$140</td><td style="color:#2e7d32">2.95</td><td style="color:#2e7d32;font-weight:bold">+$61.01</td></tr><tr><td style="color:#00695c;font-weight:600">Intraday v1</td><td>3794</td><td style="color:#f57f17">43.0%</td><td style="color:#2e7d32">+$8</td><td style="color:#c62828">$7</td><td style="color:#c62828">0.81</td><td style="color:#c62828;font-weight:bold">$0.80</td></tr><tr><td style="color:#0277bd;font-weight:600">Screener v2</td><td>0</td><td style="color:#f57f17">0.0%</td><td style="color:#2e7d32">+$0</td><td style="color:#c62828">+$0</td><td style="color:#2e7d32">∞</td><td style="color:#c62828;font-weight:bold">+$0.00</td></tr><tr><td style="color:#ad1457;font-weight:600">Swing v2</td><td>9</td><td style="color:#2e7d32">77.8%</td><td style="color:#2e7d32">+$231</td><td style="color:#c62828">$173</td><td style="color:#2e7d32">4.68</td><td style="color:#2e7d32;font-weight:bold">+$141.16</td></tr><tr><td style="color:#00838f;font-weight:600">Intraday v2</td><td>1</td><td style="color:#f57f17">0.0%</td><td style="color:#2e7d32">+$0</td><td style="color:#c62828">$188</td><td style="color:#c62828">0.00</td><td style="color:#c62828;font-weight:bold">$187.68</td></tr></tbody>
+    </table></div>
+  <div class="section-wrap">
+    <div class="section-title">Recent Closed Trades</div>
+    <table class="data-table">
+      <thead><tr>
+        <th>Ticker</th><th>Bot</th><th>Entry</th><th>Exit</th>
+        <th>Hold</th><th>P&amp;L</th><th>Reason</th>
+      </tr></thead>
+      <tbody><tr><td><strong>AAPL</strong></td><td style="color:#6a1b9a;font-size:11px">Swing v1</td><td style="font-size:11px">2026-08-03</td><td style="font-size:11px">2026-08-10</td><td style="color:#666;font-size:11px">7d</td><td style="color:#2e7d32;font-weight:bold">+$66</td><td style="font-size:11px;color:#666">RSI(2) reverted (70.0)</td></tr><tr><td><strong>DUK</strong></td><td style="color:#6a1b9a;font-size:11px">Swing v1</td><td style="font-size:11px">2026-08-04</td><td style="font-size:11px">2026-08-10</td><td style="color:#666;font-size:11px">6d</td><td style="color:#2e7d32;font-weight:bold">+$26</td><td style="font-size:11px;color:#666">RSI(2) reverted (76.4)</td></tr><tr><td><strong>UHS</strong></td><td style="color:#00695c;font-size:11px">Intraday v1</td><td style="font-size:11px">2026-08-07</td><td style="font-size:11px">2026-08-07</td><td style="color:#666;font-size:11px">0d</td><td style="color:#2e7d32;font-weight:bold">+$280</td><td style="font-size:11px;color:#666">force close 3:45pm</td></tr><tr><td><strong>GRMN</strong></td><td style="color:#00695c;font-size:11px">Intraday v1</td><td style="font-size:11px">2026-08-07</td><td style="font-size:11px">2026-08-07</td><td style="color:#666;font-size:11px">0d</td><td style="color:#2e7d32;font-weight:bold">+$198</td><td style="font-size:11px;color:#666">force close 3:45pm</td></tr><tr><td><strong>COO</strong></td><td style="color:#00695c;font-size:11px">Intraday v1</td><td style="font-size:11px">2026-08-07</td><td style="font-size:11px">2026-08-07</td><td style="color:#666;font-size:11px">0d</td><td style="color:#2e7d32;font-weight:bold">+$46</td><td style="font-size:11px;color:#666">force close 3:45pm</td></tr><tr><td><strong>TECH</strong></td><td style="color:#00695c;font-size:11px">Intraday v1</td><td style="font-size:11px">2026-08-07</td><td style="font-size:11px">2026-08-07</td><td style="color:#666;font-size:11px">0d</td><td style="color:#2e7d32;font-weight:bold">+$1</td><td style="font-size:11px;color:#666">force close 3:45pm</td></tr><tr><td><strong>CMCSA</strong></td><td style="color:#00695c;font-size:11px">Intraday v1</td><td style="font-size:11px">2026-08-07</td><td style="font-size:11px">2026-08-07</td><td style="color:#666;font-size:11px">0d</td><td style="color:#2e7d32;font-weight:bold">+$8</td><td style="font-size:11px;color:#666">force close 3:45pm</td></tr><tr><td><strong>PODD</strong></td><td style="color:#00695c;font-size:11px">Intraday v1</td><td style="font-size:11px">2026-08-07</td><td style="font-size:11px">2026-08-07</td><td style="color:#666;font-size:11px">0d</td><td style="color:#2e7d32;font-weight:bold">+$28</td><td style="font-size:11px;color:#666">force close 3:45pm</td></tr><tr><td><strong>APA</strong></td><td style="color:#00695c;font-size:11px">Intraday v1</td><td style="font-size:11px">2026-08-07</td><td style="font-size:11px">2026-08-07</td><td style="color:#666;font-size:11px">0d</td><td style="color:#2e7d32;font-weight:bold">+$157</td><td style="font-size:11px;color:#666">trailing stop</td></tr><tr><td><strong>FTV</strong></td><td style="color:#00695c;font-size:11px">Intraday v1</td><td style="font-size:11px">2026-08-07</td><td style="font-size:11px">2026-08-07</td><td style="color:#666;font-size:11px">0d</td><td style="color:#c62828;font-weight:bold">$2</td><td style="font-size:11px;color:#666">trailing stop</td></tr></tbody>
+    </table></div>
+</div>
+</body>
+</html>

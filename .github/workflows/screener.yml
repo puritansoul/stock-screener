@@ -68,6 +68,7 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           [ -f consolidated.html ] && git add -f consolidated.html
+          [ -f overview.html ] && git add -f overview.html
           git add -f reports/ portfolio_state.json portfolio_nav.json index.html
           git diff --cached --quiet && echo "Nothing to commit" || \
             git commit -m "screener: $(date -u '+%Y-%m-%d %H:%M') [skip ci]"

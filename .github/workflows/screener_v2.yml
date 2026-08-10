@@ -67,6 +67,7 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           [ -f consolidated.html ] && git add -f consolidated.html
+          [ -f overview.html ] && git add -f overview.html
           [ -f screener_v2_index.html ] && git add -f screener_v2_index.html
           git add -f portfolio_state_v2.json portfolio_nav_v2.json 2>/dev/null || true
           find reports -name 'v2_*.html' 2>/dev/null | xargs -r git add -f

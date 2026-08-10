@@ -63,7 +63,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          for f in swing_trades.json swing_index.html trading_hub.html consolidated.html; do
+          for f in swing_trades.json swing_index.html trading_hub.html consolidated.html overview.html; do
             [ -f "$f" ] && git add -f "$f"
           done
           find reports -name 'swing_*.html' 2>/dev/null | xargs -r git add -f

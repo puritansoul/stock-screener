@@ -171,6 +171,15 @@ def build_cross_bot_summary() -> tuple[str, str]:
 
 
 def build_consolidated():
+    # Build the overview page first so it's fresh
+    try:
+        import build_overview
+        import importlib
+        importlib.reload(build_overview)
+        build_overview.build_overview()
+    except Exception as e:
+        print(f"Warning: overview build failed — {e}")
+
     today_str = date.today().isoformat()
 
     # v1 screener: dated files that aren't swing_/intraday_/v2_/paper_
@@ -236,7 +245,9 @@ def build_consolidated():
 <body>
   {summary_html}
   <div id="tabs">
-    <div class="tab active"    data-frame="screener">📊 Factor Screener</div>
+    <div class="tab active"    data-frame="overview">🏠 Overview</div>
+    <div class="tab-sep"></div>
+    <div class="tab"           data-frame="screener">📊 Factor Screener</div>
     <div class="tab"           data-frame="swing">📈 Swing Trader</div>
     <div class="tab"           data-frame="intraday">⚡ Intraday Trader</div>
     <div class="tab-sep"></div>
@@ -245,7 +256,8 @@ def build_consolidated():
     <div class="tab tab-v2"   data-frame="intraday-v2">⚡ Intraday v2</div>
   </div>
   <div id="frames">
-    <iframe id="screener"    class="active" src="{screener_url}"></iframe>
+    <iframe id="overview"    class="active" src="overview.html"></iframe>
+    <iframe id="screener"    src="{screener_url}"></iframe>
     <iframe id="swing"       src="{swing_url}"></iframe>
     <iframe id="intraday"    src="{intraday_url}"></iframe>
     <iframe id="screener-v2" src="{screener_v2_url}"></iframe>
