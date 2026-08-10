@@ -73458,11 +73458,6 @@
       "low": 88.0,
       "width": 1.74
     },
-    "ICE": {
-      "high": 151.145,
-      "low": 149.75,
-      "width": 1.395
-    },
     "IFF": {
       "high": 85.47,
       "low": 83.93,
@@ -73822,11 +73817,6 @@
       "high": 469.99,
       "low": 457.83,
       "width": 12.16
-    },
-    "MSCI": {
-      "high": 568.26,
-      "low": 558.56,
-      "width": 9.7
     },
     "NDAQ": {
       "high": 95.635,
@@ -74727,7 +74717,7 @@
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
     "2026-08-07": 100701.13,
-    "2026-08-10": 100528.35
+    "2026-08-10": 100535.98
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -155487,6 +155477,22 @@
       },
       "portfolio_value": 100528.35,
       "note": "$100,528 | cash=$81,142 | open=1 | closed today=3 | day PnL=$-223"
+    },
+    {
+      "date": "2026-08-10",
+      "time": "14:26 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.005,
+        "spy_vs_vwap": -0.8731,
+        "spy_vs_ema20": 19.3053
+      },
+      "portfolio_value": 100535.98,
+      "note": "$100,536 | cash=$81,142 | open=1 | closed today=3 | day PnL=$-223"
     }
   ]
 }
