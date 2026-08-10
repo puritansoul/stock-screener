@@ -74248,6 +74248,11 @@
       "low": 218.765,
       "width": 4.6533
     },
+    "SWKS": {
+      "high": 70.75,
+      "low": 69.32,
+      "width": 1.43
+    },
     "SJM": {
       "high": 119.21,
       "low": 118.01,
@@ -74722,7 +74727,7 @@
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
     "2026-08-07": 100701.13,
-    "2026-08-10": 100513.09
+    "2026-08-10": 100521.81
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -155210,6 +155215,22 @@
       },
       "portfolio_value": 100513.09,
       "note": "$100,513 | cash=$81,142 | open=1 | closed today=3 | day PnL=$-223"
+    },
+    {
+      "date": "2026-08-10",
+      "time": "13:44 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.008,
+        "spy_vs_vwap": -0.8608,
+        "spy_vs_ema20": 19.4053
+      },
+      "portfolio_value": 100521.81,
+      "note": "$100,522 | cash=$81,142 | open=1 | closed today=3 | day PnL=$-223"
     }
   ]
 }
