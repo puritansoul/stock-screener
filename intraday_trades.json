@@ -40,9 +40,9 @@
       "entry_time": "10:49 ET",
       "entry_price": 108.93,
       "shares": 136,
-      "stop": 108.295,
+      "stop": 108.33,
       "trail_dist": 0.68,
-      "peak": 108.975,
+      "peak": 109.01,
       "orb_width": 1.36,
       "cost": 14814.48,
       "vol_ratio": 9.08,
@@ -72536,6 +72536,11 @@
       "low": 70.63,
       "width": 0.61
     },
+    "BF-B": {
+      "high": 28.6,
+      "low": 28.02,
+      "width": 0.58
+    },
     "BLDR": {
       "high": 73.83,
       "low": 71.8,
@@ -74690,7 +74695,7 @@
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
     "2026-08-07": 100701.13,
-    "2026-08-10": 100639.83
+    "2026-08-10": 100645.11
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -154344,6 +154349,22 @@
       },
       "portfolio_value": 100639.83,
       "note": "$100,640 | cash=$34,581 | open=3 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-10",
+      "time": "11:14 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.151,
+        "spy_vs_vwap": 0.0573,
+        "spy_vs_ema20": 20.5153
+      },
+      "portfolio_value": 100645.11,
+      "note": "$100,645 | cash=$34,581 | open=3 | closed today=0 | day PnL=$+0"
     }
   ]
 }
