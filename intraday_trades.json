@@ -1,22 +1,6 @@
 {
-  "capital": 66366.57,
+  "capital": 81141.61,
   "open_positions": [
-    {
-      "ticker": "SCHW",
-      "side": "long",
-      "entry_date": "2026-08-10",
-      "entry_time": "10:49 ET",
-      "entry_price": 108.93,
-      "shares": 136,
-      "stop": 108.64,
-      "trail_dist": 0.68,
-      "peak": 109.32,
-      "orb_width": 1.36,
-      "cost": 14814.48,
-      "vol_ratio": 9.08,
-      "score": 62.83,
-      "has_catalyst": false
-    },
     {
       "ticker": "MDT",
       "side": "long",
@@ -76,6 +60,27 @@
       "pnl": -148.2,
       "exit_reason": "trailing stop",
       "exit_time": "11:27 ET"
+    },
+    {
+      "ticker": "SCHW",
+      "side": "long",
+      "entry_date": "2026-08-10",
+      "entry_time": "10:49 ET",
+      "entry_price": 108.93,
+      "shares": 136,
+      "stop": 108.64,
+      "trail_dist": 0.68,
+      "peak": 109.32,
+      "orb_width": 1.36,
+      "cost": 14814.48,
+      "vol_ratio": 9.08,
+      "score": 62.83,
+      "has_catalyst": false,
+      "exit_date": "2026-08-10",
+      "exit_price": 108.64,
+      "pnl": -39.44,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:17 ET"
     }
   ],
   "all_closed": [
@@ -73584,9 +73589,9 @@
       "width": 0.43
     },
     "KR": {
-      "high": 56.98,
-      "low": 56.53,
-      "width": 0.45
+      "high": 57.04,
+      "low": 56.4,
+      "width": 0.64
     },
     "LHX": {
       "high": 290.76,
@@ -74722,7 +74727,7 @@
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
     "2026-08-07": 100701.13,
-    "2026-08-10": 100515.25
+    "2026-08-10": 100486.93
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -154706,6 +154711,30 @@
       },
       "portfolio_value": 100515.25,
       "note": "$100,515 | cash=$66,367 | open=2 | closed today=2 | day PnL=$-183"
+    },
+    {
+      "date": "2026-08-10",
+      "time": "12:16 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "SCHW",
+          "side": "long",
+          "exit_price": 108.64,
+          "pnl": -39.44,
+          "reason": "trailing stop"
+        }
+      ],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.142,
+        "spy_vs_vwap": -0.0411,
+        "spy_vs_ema20": 20.4453
+      },
+      "portfolio_value": 100486.93,
+      "note": "$100,487 | cash=$81,142 | open=1 | closed today=3 | day PnL=$-223"
     }
   ]
 }
