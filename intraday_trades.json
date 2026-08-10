@@ -74051,6 +74051,11 @@
       "low": 74.41,
       "width": 1.09
     },
+    "PTC": {
+      "high": 150.385,
+      "low": 146.09,
+      "width": 4.295
+    },
     "PSA": {
       "high": 327.0,
       "low": 321.1,
@@ -74690,7 +74695,7 @@
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
     "2026-08-07": 100701.13,
-    "2026-08-10": 100713.31
+    "2026-08-10": 100738.91
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -154232,6 +154237,22 @@
       },
       "portfolio_value": 100713.31,
       "note": "$100,713 | cash=$34,581 | open=3 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-10",
+      "time": "10:56 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.162,
+        "spy_vs_vwap": 0.1404,
+        "spy_vs_ema20": 20.5953
+      },
+      "portfolio_value": 100738.91,
+      "note": "$100,739 | cash=$34,581 | open=3 | closed today=0 | day PnL=$+0"
     }
   ]
 }
