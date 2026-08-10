@@ -1,5 +1,5 @@
 {
-  "capital": 70500.75,
+  "capital": 49395.93,
   "open_positions": [
     {
       "ticker": "HSY",
@@ -8,13 +8,29 @@
       "entry_time": "10:29 ET",
       "entry_price": 181.93,
       "shares": 166,
-      "stop": 181.6275,
+      "stop": 181.7175,
       "trail_dist": 0.8325,
-      "peak": 182.46,
+      "peak": 182.55,
       "orb_width": 1.665,
       "cost": 30200.38,
       "vol_ratio": 11.61,
       "score": 65.35,
+      "has_catalyst": false
+    },
+    {
+      "ticker": "MNST",
+      "side": "long",
+      "entry_date": "2026-08-10",
+      "entry_time": "10:47 ET",
+      "entry_price": 92.565,
+      "shares": 228,
+      "stop": 91.63,
+      "trail_dist": 0.935,
+      "peak": 92.565,
+      "orb_width": 1.87,
+      "cost": 21104.82,
+      "vol_ratio": 6.3,
+      "score": 53.63,
       "has_catalyst": false
     }
   ],
@@ -74663,7 +74679,7 @@
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
     "2026-08-07": 100701.13,
-    "2026-08-10": 100773.71
+    "2026-08-10": 100768.36
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -154121,6 +154137,32 @@
       },
       "portfolio_value": 100773.71,
       "note": "$100,774 | cash=$70,501 | open=1 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-10",
+      "time": "10:46 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "MNST",
+          "side": "long",
+          "price": 92.57,
+          "shares": 228,
+          "stop": 91.63,
+          "trail_dist": 0.935,
+          "score": 53.63
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.294,
+        "spy_vs_vwap": 1.2852,
+        "spy_vs_ema20": 21.6153
+      },
+      "portfolio_value": 100768.36,
+      "note": "$100,768 | cash=$49,396 | open=2 | closed today=0 | day PnL=$+0"
     }
   ]
 }
