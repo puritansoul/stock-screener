@@ -897,7 +897,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
     day_pnl    = round(portfolio_value - prev_nav, 2)
     day_pct    = round(day_pnl / prev_nav * 100, 2) if prev_nav else 0
     day_pnl_color = "#2e7d32" if day_pnl >= 0 else "#c62828"
-    day_pnl_sign  = "+" if day_pnl >= 0 else ""
+    day_pnl_sign  = "+" if day_pnl >= 0 else "-"
 
     open_totals_row = f"""
         <tr style="background:#e8eaf6;font-weight:bold;border-top:2px solid #9fa8da">

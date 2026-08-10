@@ -947,9 +947,9 @@ def save_html_report(
         if _prev_val > 0:
             _port_day_raw = (current_value - _prev_val) / _prev_val
     port_day_color = "#2e7d32" if _port_day_raw >= 0 else "#c62828"
-    port_day_sign  = "+" if _port_day_raw >= 0 else ""
+    port_day_sign  = "+" if _port_day_raw >= 0 else "-"
     port_day_d     = _port_day_raw * current_value
-    port_day_str   = f'{port_day_sign}${abs(port_day_d):,.0f} ({port_day_sign}{_port_day_raw:.2%})'
+    port_day_str   = f'{port_day_sign}${abs(port_day_d):,.0f} ({port_day_sign}{abs(_port_day_raw):.2%})'
 
     # ── Rebalance section ──────────────────────────────────────────────────────
     trade_html = ""
