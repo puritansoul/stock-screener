@@ -1,22 +1,6 @@
 {
-  "capital": 34581.45,
+  "capital": 64746.55,
   "open_positions": [
-    {
-      "ticker": "HSY",
-      "side": "long",
-      "entry_date": "2026-08-10",
-      "entry_time": "10:29 ET",
-      "entry_price": 181.93,
-      "shares": 166,
-      "stop": 181.7175,
-      "trail_dist": 0.8325,
-      "peak": 182.55,
-      "orb_width": 1.665,
-      "cost": 30200.38,
-      "vol_ratio": 11.61,
-      "score": 65.35,
-      "has_catalyst": false
-    },
     {
       "ticker": "MNST",
       "side": "long",
@@ -40,9 +24,9 @@
       "entry_time": "10:49 ET",
       "entry_price": 108.93,
       "shares": 136,
-      "stop": 108.33,
+      "stop": 108.44,
       "trail_dist": 0.68,
-      "peak": 109.01,
+      "peak": 109.12,
       "orb_width": 1.36,
       "cost": 14814.48,
       "vol_ratio": 9.08,
@@ -50,7 +34,29 @@
       "has_catalyst": false
     }
   ],
-  "closed_today": [],
+  "closed_today": [
+    {
+      "ticker": "HSY",
+      "side": "long",
+      "entry_date": "2026-08-10",
+      "entry_time": "10:29 ET",
+      "entry_price": 181.93,
+      "shares": 166,
+      "stop": 181.7175,
+      "trail_dist": 0.8325,
+      "peak": 182.55,
+      "orb_width": 1.665,
+      "cost": 30200.38,
+      "vol_ratio": 11.61,
+      "score": 65.35,
+      "has_catalyst": false,
+      "exit_date": "2026-08-10",
+      "exit_price": 181.7175,
+      "pnl": -35.28,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:17 ET"
+    }
+  ],
   "all_closed": [
     {
       "ticker": "SNOW",
@@ -74695,7 +74701,7 @@
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
     "2026-08-07": 100701.13,
-    "2026-08-10": 100645.11
+    "2026-08-10": 100592.51
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -154365,6 +154371,30 @@
       },
       "portfolio_value": 100645.11,
       "note": "$100,645 | cash=$34,581 | open=3 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-10",
+      "time": "11:16 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "HSY",
+          "side": "long",
+          "exit_price": 181.72,
+          "pnl": -35.28,
+          "reason": "trailing stop"
+        }
+      ],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.178,
+        "spy_vs_vwap": 0.2586,
+        "spy_vs_ema20": 20.7203
+      },
+      "portfolio_value": 100592.51,
+      "note": "$100,593 | cash=$64,747 | open=2 | closed today=1 | day PnL=$-35"
     }
   ]
 }
