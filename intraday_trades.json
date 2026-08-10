@@ -1,5 +1,5 @@
 {
-  "capital": 64746.55,
+  "capital": 45409.95,
   "open_positions": [
     {
       "ticker": "MNST",
@@ -24,13 +24,29 @@
       "entry_time": "10:49 ET",
       "entry_price": 108.93,
       "shares": 136,
-      "stop": 108.58,
+      "stop": 108.64,
       "trail_dist": 0.68,
-      "peak": 109.26,
+      "peak": 109.32,
       "orb_width": 1.36,
       "cost": 14814.48,
       "vol_ratio": 9.08,
       "score": 62.83,
+      "has_catalyst": false
+    },
+    {
+      "ticker": "MDT",
+      "side": "long",
+      "entry_date": "2026-08-10",
+      "entry_time": "11:24 ET",
+      "entry_price": 88.7,
+      "shares": 218,
+      "stop": 87.9875,
+      "trail_dist": 0.7125,
+      "peak": 88.7,
+      "orb_width": 1.425,
+      "cost": 19336.6,
+      "vol_ratio": 8.02,
+      "score": 59.49,
       "has_catalyst": false
     }
   ],
@@ -74701,7 +74717,7 @@
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
     "2026-08-07": 100701.13,
-    "2026-08-10": 100634.35
+    "2026-08-10": 100580.99
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -154427,6 +154443,32 @@
       },
       "portfolio_value": 100634.35,
       "note": "$100,634 | cash=$64,747 | open=2 | closed today=1 | day PnL=$-35"
+    },
+    {
+      "date": "2026-08-10",
+      "time": "11:24 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "MDT",
+          "side": "long",
+          "price": 88.7,
+          "shares": 218,
+          "stop": 87.99,
+          "trail_dist": 0.7125,
+          "score": 59.49
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.168,
+        "spy_vs_vwap": 0.1772,
+        "spy_vs_ema20": 20.6453
+      },
+      "portfolio_value": 100580.99,
+      "note": "$100,581 | cash=$45,410 | open=3 | closed today=1 | day PnL=$-35"
     }
   ]
 }
