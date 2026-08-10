@@ -1,23 +1,6 @@
 {
-  "capital": 81141.61,
-  "open_positions": [
-    {
-      "ticker": "MDT",
-      "side": "long",
-      "entry_date": "2026-08-10",
-      "entry_time": "11:24 ET",
-      "entry_price": 88.7,
-      "shares": 218,
-      "stop": 88.3974,
-      "trail_dist": 0.7125,
-      "peak": 89.1099,
-      "orb_width": 1.425,
-      "cost": 19336.6,
-      "vol_ratio": 8.02,
-      "score": 59.49,
-      "has_catalyst": false
-    }
-  ],
+  "capital": 100545.79,
+  "open_positions": [],
   "closed_today": [
     {
       "ticker": "HSY",
@@ -81,6 +64,27 @@
       "pnl": -39.44,
       "exit_reason": "trailing stop",
       "exit_time": "12:17 ET"
+    },
+    {
+      "ticker": "MDT",
+      "side": "long",
+      "entry_date": "2026-08-10",
+      "entry_time": "11:24 ET",
+      "entry_price": 88.7,
+      "shares": 218,
+      "stop": 88.3974,
+      "trail_dist": 0.7125,
+      "peak": 89.1099,
+      "orb_width": 1.425,
+      "cost": 19336.6,
+      "vol_ratio": 8.02,
+      "score": 59.49,
+      "has_catalyst": false,
+      "exit_date": "2026-08-10",
+      "exit_price": 89.01,
+      "pnl": 67.58,
+      "exit_reason": "force close 3:45pm",
+      "exit_time": "15:46 ET"
     }
   ],
   "all_closed": [
@@ -74503,11 +74507,6 @@
       "low": 408.6,
       "width": 4.47
     },
-    "UHS": {
-      "high": 174.38,
-      "low": 171.265,
-      "width": 3.115
-    },
     "VLO": {
       "high": 310.275,
       "low": 301.3466,
@@ -74727,7 +74726,7 @@
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
     "2026-08-07": 100701.13,
-    "2026-08-10": 100539.25
+    "2026-08-10": 100545.79
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -155887,6 +155886,23 @@
       },
       "portfolio_value": 100539.25,
       "note": "$100,539 | cash=$81,142 | open=1 | closed today=3 | day PnL=$-223"
+    },
+    {
+      "date": "2026-08-10",
+      "time": "15:46 ET",
+      "phase": "force_close",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "MDT",
+          "side": "long",
+          "exit_price": 89.01,
+          "pnl": 67.58,
+          "reason": "force close 3:45pm"
+        }
+      ],
+      "portfolio_value": 100545.79,
+      "note": "$100,546 | cash=$100,546 | open=0 | closed today=4 | day PnL=$-155"
     }
   ]
 }
