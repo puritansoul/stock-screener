@@ -1239,7 +1239,7 @@ def save_html_report(
       </div>
       <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px;box-shadow:0 2px 4px rgba(0,0,0,0.08)">
         <div style="font-size:11px;color:#6c757d;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Today</div>
-        <div id="port-today" class="card-value" style="color:{port_day_color}">{port_day_str}</div>
+        <div id="port-today" class="card-value" data-pnl="{port_day_d:.2f}" style="color:{port_day_color}">{port_day_str}</div>
       </div>
       <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px;box-shadow:0 2px 4px rgba(0,0,0,0.08)">
         <div style="font-size:11px;color:#6c757d;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Total Return</div>

@@ -1150,7 +1150,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
       </div>
       <div class="card">
         <div class="card-label">Day P&amp;L</div>
-        <div class="card-value" id="day-pnl" style="color:{day_pnl_color}">{day_pnl_sign}${abs(day_pnl):,.0f}<br>
+        <div class="card-value" id="day-pnl" data-pnl="{day_pnl:.2f}" style="color:{day_pnl_color}">{day_pnl_sign}${abs(day_pnl):,.0f}<br>
           <span style="font-size:14px" id="day-pnl-pct">{day_pnl_sign}{abs(day_pct):.2f}%</span>
         </div>
       </div>
