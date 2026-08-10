@@ -72536,11 +72536,6 @@
       "low": 70.63,
       "width": 0.61
     },
-    "BF-B": {
-      "high": 28.6,
-      "low": 28.02,
-      "width": 0.58
-    },
     "BLDR": {
       "high": 73.83,
       "low": 71.8,
@@ -74695,7 +74690,7 @@
     "2026-08-05": 96205.8,
     "2026-08-06": 100000.0,
     "2026-08-07": 100701.13,
-    "2026-08-10": 100652.61
+    "2026-08-10": 100639.83
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -154333,6 +154328,22 @@
       },
       "portfolio_value": 100652.61,
       "note": "$100,653 | cash=$34,581 | open=3 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-10",
+      "time": "11:11 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.149,
+        "spy_vs_vwap": 0.0374,
+        "spy_vs_ema20": 20.4953
+      },
+      "portfolio_value": 100639.83,
+      "note": "$100,640 | cash=$34,581 | open=3 | closed today=0 | day PnL=$+0"
     }
   ]
 }
