@@ -1,23 +1,6 @@
 {
-  "capital": 79253.47,
-  "open_positions": [
-    {
-      "ticker": "TSCO",
-      "side": "long",
-      "entry_date": "2026-08-11",
-      "entry_time": "10:36 ET",
-      "entry_price": 36.335,
-      "shares": 582,
-      "stop": 35.6725,
-      "trail_dist": 0.6625,
-      "peak": 36.335,
-      "orb_width": 1.325,
-      "cost": 21146.97,
-      "vol_ratio": 2.17,
-      "score": 51.87,
-      "has_catalyst": false
-    }
-  ],
+  "capital": 100014.87,
+  "open_positions": [],
   "closed_today": [
     {
       "ticker": "ANET",
@@ -39,6 +22,27 @@
       "pnl": -145.35,
       "exit_reason": "trailing stop",
       "exit_time": "11:50 ET"
+    },
+    {
+      "ticker": "TSCO",
+      "side": "long",
+      "entry_date": "2026-08-11",
+      "entry_time": "10:36 ET",
+      "entry_price": 36.335,
+      "shares": 582,
+      "stop": 35.6725,
+      "trail_dist": 0.6625,
+      "peak": 36.335,
+      "orb_width": 1.325,
+      "cost": 21146.97,
+      "vol_ratio": 2.17,
+      "score": 51.87,
+      "has_catalyst": false,
+      "exit_date": "2026-08-11",
+      "exit_price": 35.6725,
+      "pnl": -385.58,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:49 ET"
     }
   ],
   "all_closed": [
@@ -72307,8 +72311,8 @@
     },
     "ALGN": {
       "high": 178.19,
-      "low": 174.67,
-      "width": 3.52
+      "low": 175.27,
+      "width": 2.92
     },
     "ALLE": {
       "high": 168.28,
@@ -72767,8 +72771,8 @@
     },
     "CTAS": {
       "high": 205.7,
-      "low": 202.09,
-      "width": 3.61
+      "low": 202.2089,
+      "width": 3.4911
     },
     "CSCO": {
       "high": 123.16,
@@ -72997,8 +73001,8 @@
     },
     "DPZ": {
       "high": 355.745,
-      "low": 344.38,
-      "width": 11.365
+      "low": 344.99,
+      "width": 10.755
     },
     "DASH": {
       "high": 210.525,
@@ -73382,8 +73386,8 @@
     },
     "HSIC": {
       "high": 89.98,
-      "low": 88.06,
-      "width": 1.92
+      "low": 88.515,
+      "width": 1.465
     },
     "HSY": {
       "high": 183.32,
@@ -73677,8 +73681,8 @@
     },
     "LIN": {
       "high": 495.96,
-      "low": 491.03,
-      "width": 4.93
+      "low": 491.1,
+      "width": 4.86
     },
     "LYV": {
       "high": 185.49,
@@ -73872,13 +73876,13 @@
     },
     "NDAQ": {
       "high": 96.0,
-      "low": 95.24,
-      "width": 0.76
+      "low": 95.35,
+      "width": 0.65
     },
     "NTAP": {
-      "high": 198.61,
+      "high": 198.46,
       "low": 194.21,
-      "width": 4.4
+      "width": 4.25
     },
     "NFLX": {
       "high": 76.89,
@@ -73917,8 +73921,8 @@
     },
     "NDSN": {
       "high": 312.87,
-      "low": 309.12,
-      "width": 3.75
+      "low": 309.99,
+      "width": 2.88
     },
     "NSC": {
       "high": 336.72,
@@ -73967,8 +73971,8 @@
     },
     "ORLY": {
       "high": 93.69,
-      "low": 91.68,
-      "width": 2.01
+      "low": 91.7,
+      "width": 1.99
     },
     "OXY": {
       "high": 59.21,
@@ -74039,11 +74043,6 @@
       "high": 120.71,
       "low": 119.42,
       "width": 1.29
-    },
-    "PYPL": {
-      "high": 59.4001,
-      "low": 58.55,
-      "width": 0.8501
     },
     "PNR": {
       "high": 67.32,
@@ -74770,7 +74769,7 @@
     "2026-08-06": 100000.0,
     "2026-08-07": 100701.13,
     "2026-08-10": 100545.79,
-    "2026-08-11": 100030.87
+    "2026-08-11": 100014.87
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -156276,6 +156275,30 @@
       },
       "portfolio_value": 100030.87,
       "note": "$100,031 | cash=$79,253 | open=1 | closed today=1 | day PnL=$-145"
+    },
+    {
+      "date": "2026-08-11",
+      "time": "13:48 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "TSCO",
+          "side": "long",
+          "exit_price": 35.67,
+          "pnl": -385.58,
+          "reason": "trailing stop"
+        }
+      ],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.418,
+        "spy_vs_vwap": -1.2259,
+        "spy_vs_ema20": 15.8352
+      },
+      "portfolio_value": 100014.87,
+      "note": "$100,015 | cash=$100,015 | open=0 | closed today=2 | day PnL=$-531"
     }
   ]
 }
