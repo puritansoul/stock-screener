@@ -1,22 +1,6 @@
 {
-  "capital": 49369.51,
+  "capital": 79253.47,
   "open_positions": [
-    {
-      "ticker": "ANET",
-      "side": "long",
-      "entry_date": "2026-08-11",
-      "entry_time": "10:07 ET",
-      "entry_price": 196.27,
-      "shares": 153,
-      "stop": 195.32,
-      "trail_dist": 2.69,
-      "peak": 198.01,
-      "orb_width": 5.38,
-      "cost": 30029.31,
-      "vol_ratio": 4.97,
-      "score": 46.36,
-      "has_catalyst": false
-    },
     {
       "ticker": "TSCO",
       "side": "long",
@@ -34,7 +18,29 @@
       "has_catalyst": false
     }
   ],
-  "closed_today": [],
+  "closed_today": [
+    {
+      "ticker": "ANET",
+      "side": "long",
+      "entry_date": "2026-08-11",
+      "entry_time": "10:07 ET",
+      "entry_price": 196.27,
+      "shares": 153,
+      "stop": 195.32,
+      "trail_dist": 2.69,
+      "peak": 198.01,
+      "orb_width": 5.38,
+      "cost": 30029.31,
+      "vol_ratio": 4.97,
+      "score": 46.36,
+      "has_catalyst": false,
+      "exit_date": "2026-08-11",
+      "exit_price": 195.32,
+      "pnl": -145.35,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:50 ET"
+    }
+  ],
   "all_closed": [
     {
       "ticker": "SNOW",
@@ -74764,7 +74770,7 @@
     "2026-08-06": 100000.0,
     "2026-08-07": 100701.13,
     "2026-08-10": 100545.79,
-    "2026-08-11": 100633.0
+    "2026-08-11": 100164.73
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -156230,6 +156236,30 @@
       },
       "portfolio_value": 100633.0,
       "note": "$100,633 | cash=$49,370 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-11",
+      "time": "11:48 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "ANET",
+          "side": "long",
+          "exit_price": 195.32,
+          "pnl": -145.35,
+          "reason": "trailing stop"
+        }
+      ],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.329,
+        "spy_vs_vwap": -1.2585,
+        "spy_vs_ema20": 16.5252
+      },
+      "portfolio_value": 100164.73,
+      "note": "$100,165 | cash=$79,253 | open=1 | closed today=1 | day PnL=$-145"
     }
   ]
 }
