@@ -73,29 +73,38 @@ def load_bots():
     # cur + day_pnl come from the same HTML reports the horizontal bar uses —
     # data-pnl attribute, no text parsing, always in sync with each dashboard.
     configs = [
-        # (label, color, report_glob, state_file, closed_key)
-        # All bots use _report_values — reads data-pnl from HTML, same as horizontal bar
-        ("Screener v1", "#1565c0", "[0-9]*.html",          "portfolio_nav.json",     None,              "portfolio_nav.json"),
-        ("Swing v1",    "#6a1b9a", "swing_[0-9]*.html",    "swing_trades.json",      "closed_positions", None),
-        ("Intraday v1", "#00695c", "intraday_[0-9]*.html", "intraday_trades.json",   "all_closed",       None),
-        ("Screener v2", "#0277bd", "v2_*.html",            "portfolio_nav_v2.json",  None,              "portfolio_nav_v2.json"),
-        ("Swing v2",    "#ad1457", "swing_v2_*.html",      "swing_trades_v2.json",   "closed_positions", None),
-        ("Intraday v2", "#00838f", "intraday_v2_*.html",   "intraday_trades_v2.json","all_closed",       None),
+        # (label, color, nav_file, report_glob, state_file, closed_key)
+        # Screeners: nav_file is portfolio_nav.json (always current, updated each run)
+        # Traders:   report_glob reads data-pnl from HTML (written each run)
+        ("Screener v1", "#1565c0", BASE_DIR/"portfolio_nav.json",    "",                    "portfolio_nav.json",     None),
+        ("Swing v1",    "#6a1b9a", None,                             "swing_[0-9]*.html",   "swing_trades.json",      "closed_positions"),
+        ("Intraday v1", "#00695c", None,                             "intraday_[0-9]*.html","intraday_trades.json",   "all_closed"),
+        ("Screener v2", "#0277bd", BASE_DIR/"portfolio_nav_v2.json", "",                    "portfolio_nav_v2.json",  None),
+        ("Swing v2",    "#ad1457", None,                             "swing_v2_*.html",     "swing_trades_v2.json",   "closed_positions"),
+        ("Intraday v2", "#00838f", None,                             "intraday_v2_*.html",  "intraday_trades_v2.json","all_closed"),
     ]
 
-    for label, color, report_glob, state_file, closed_key, screener_nav_file in configs:
-        # cur + day_pnl: always from HTML report data-pnl — same source as horizontal bar
-        cur, day_pnl = bc._report_values(report_glob, STARTING)
+    for label, color, nav_file, report_glob, state_file, closed_key in configs:
+        # cur + day_pnl: screeners from portfolio_nav.json (always fresh),
+        # traders from HTML report data-pnl attribute
+        if nav_file:
+            cur, day_pnl = bc._screener_nav(nav_file, STARTING)
+        else:
+            cur, day_pnl = bc._report_values(report_glob, STARTING)
 
-        # nav_history: only for sparklines and equity curve
+        # nav_history for sparklines and equity curve
         raw = _load(state_file)
-        if screener_nav_file:
-            nav = _nav_series(raw, STARTING)        # portfolio_nav.json is {date: nav_unit}
+        if nav_file:
+            nav = _nav_series(raw, STARTING)        # portfolio_nav.json: {date: nav_unit}
         else:
             nav = _nav_series(raw.get("nav_history", {}), STARTING) if isinstance(raw, dict) else {}
 
-        # Patch today's nav point to match the authoritative cur value
-        nav[TODAY] = cur
+        # Patch today's nav point only if cur is plausible (within 30% of last known nav).
+        # Screener reports can be stale mid-day, which would corrupt the equity curve.
+        if nav:
+            last_nav = nav[max(nav.keys())]
+            if abs(cur - last_nav) / last_nav < 0.30:
+                nav[TODAY] = cur
 
         closed = []
         if closed_key and isinstance(raw, dict):
