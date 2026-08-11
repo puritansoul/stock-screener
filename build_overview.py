@@ -680,7 +680,6 @@ def build_overview():
     </div>"""
 
     cards     = section_bot_cards(bots)
-    heatmap   = section_heatmap(bots)
     equity    = section_equity_curve(bots)
     calendar  = section_calendar(bots)
     gl        = section_gainers_losers(bots)
@@ -705,16 +704,11 @@ def build_overview():
 
   {total_bar}
   {cards}
-
-  <div class="two-col">
-    <div><div class="section-wrap">{drawdown}</div></div>
-    <div>{heatmap}</div>
-  </div>
-
+  <div class="section-wrap">{drawdown}</div>
   {equity}
   {calendar}
-  {gl}
 
+  {gl}
   <div class="section-wrap">{scorecard}</div>
   <div class="section-wrap">{recent}</div>
 </div>

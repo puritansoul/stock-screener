@@ -75155,3 +75155,38 @@ hint: Fix them up in the work tree, and then use 'git add/rm <file>'
 hint: as appropriate to mark resolution and make a commit.
 fatal: Exiting because of an unresolved conflict.
 Everything up-to-date
+2026-08-11 09:28:35 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+   b0b7c23..1a25c64  main       -> origin/main
+warning: fetch updated the current branch head.
+fast-forwarding your working tree from
+commit b0b7c2361fc1f8493ba38d533cd75b6018b58466.
+error: Your local changes to the following files would be overwritten by merge:
+	build_overview.py
+	overview.html
+Please commit your changes or stash them before you merge.
+Aborting
+fatal: Cannot fast-forward your working tree.
+After making sure that you saved anything precious from
+$ git diff b0b7c2361fc1f8493ba38d533cd75b6018b58466
+output, run
+$ git reset --hard
+to recover.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Overview → /Users/vishalgupta/claude/stock-screener/overview.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main df315f8] intraday: 2026-08-11 09:28 ET local [skip ci]
+ 4 files changed, 1131 insertions(+), 2620 deletions(-)
+ create mode 100644 reports/intraday_2026-08-11.html
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   f3d20bb..df315f8  main -> main
+2026-08-11 09:30:50 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+   df315f8..d2691d7  main       -> origin/main
+Updating df315f8..d2691d7
