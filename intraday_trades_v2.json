@@ -152,8 +152,8 @@
     },
     "AEP": {
       "high": 125.82,
-      "low": 124.87,
-      "width": 0.95
+      "low": 124.91,
+      "width": 0.91
     },
     "AXP": {
       "high": 345.99,
@@ -186,9 +186,9 @@
       "width": 3.3
     },
     "AMGN": {
-      "high": 416.03,
+      "high": 416.0,
       "low": 410.505,
-      "width": 5.525
+      "width": 5.495
     },
     "APH": {
       "high": 167.8899,
@@ -657,8 +657,8 @@
     },
     "CPRT": {
       "high": 30.64,
-      "low": 29.6,
-      "width": 1.04
+      "low": 29.64,
+      "width": 1.0
     },
     "GLW": {
       "high": 166.24,
@@ -842,8 +842,8 @@
     },
     "ECHO": {
       "high": 93.0,
-      "low": 91.35,
-      "width": 1.65
+      "low": 91.38,
+      "width": 1.62
     },
     "ECL": {
       "high": 276.35,
@@ -941,9 +941,9 @@
       "width": 0.295
     },
     "EXE": {
-      "high": 95.69,
+      "high": 95.6022,
       "low": 94.42,
-      "width": 1.27
+      "width": 1.1822
     },
     "EXPE": {
       "high": 330.28,
@@ -1026,9 +1026,9 @@
       "width": 0.47
     },
     "FISV": {
-      "high": 55.77,
+      "high": 55.75,
       "low": 54.25,
-      "width": 1.52
+      "width": 1.5
     },
     "FLEX": {
       "high": 126.0,
@@ -1255,6 +1255,11 @@
       "low": 234.71,
       "width": 4.44
     },
+    "IEX": {
+      "high": 241.52,
+      "low": 236.985,
+      "width": 4.535
+    },
     "IDXX": {
       "high": 568.78,
       "low": 559.15,
@@ -1266,19 +1271,19 @@
       "width": 2.915
     },
     "INCY": {
-      "high": 119.17,
+      "high": 119.16,
       "low": 117.56,
-      "width": 1.61
+      "width": 1.6
     },
     "IR": {
-      "high": 84.435,
+      "high": 84.27,
       "low": 83.6327,
-      "width": 0.8023
+      "width": 0.6373
     },
     "PODD": {
-      "high": 146.98,
+      "high": 146.975,
       "low": 144.98,
-      "width": 2.0
+      "width": 1.995
     },
     "INTC": {
       "high": 105.94,
@@ -1416,9 +1421,9 @@
       "width": 4.39
     },
     "KHC": {
-      "high": 25.36,
+      "high": 25.35,
       "low": 25.175,
-      "width": 0.185
+      "width": 0.175
     },
     "KR": {
       "high": 57.3,
@@ -1437,8 +1442,8 @@
     },
     "LRCX": {
       "high": 342.0,
-      "low": 331.0006,
-      "width": 10.9994
+      "low": 331.39,
+      "width": 10.61
     },
     "LVS": {
       "high": 46.16,
@@ -1611,9 +1616,9 @@
       "width": 1.175
     },
     "MRNA": {
-      "high": 63.0,
+      "high": 62.94,
       "low": 60.82,
-      "width": 2.18
+      "width": 2.12
     },
     "TAP": {
       "high": 42.33,
@@ -1771,14 +1776,14 @@
       "width": 1.99
     },
     "OMC": {
-      "high": 88.55,
+      "high": 88.215,
       "low": 87.095,
-      "width": 1.455
+      "width": 1.12
     },
     "ON": {
       "high": 83.2,
-      "low": 81.52,
-      "width": 1.68
+      "low": 81.63,
+      "width": 1.57
     },
     "OKE": {
       "high": 94.4,
@@ -2306,9 +2311,9 @@
       "width": 0.31
     },
     "ULTA": {
-      "high": 517.525,
+      "high": 517.0,
       "low": 511.0,
-      "width": 6.525
+      "width": 6.0
     },
     "UNP": {
       "high": 300.37,
@@ -3943,6 +3948,20 @@
     {
       "date": "2026-08-14",
       "time": "14:10 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "note": "$100,000 | cash=$100,000 | open=0 | closed today=0 | day PnL=$+0",
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": true,
+        "spy_change_pct": 0.0
+      },
+      "portfolio_value": 100000.0
+    },
+    {
+      "date": "2026-08-14",
+      "time": "15:23 ET",
       "phase": "trading",
       "entries": [],
       "exits": [],
