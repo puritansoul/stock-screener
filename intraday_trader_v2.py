@@ -844,8 +844,10 @@ def fetch_spy_regime() -> dict:
                 ema20 = float(spy_close_1d.ewm(span=20, adjust=False).mean().iloc[-1])
                 spy_vs_ema20 = cur_px - ema20
 
-        long_ok  = spy_change_pct >= -0.5 and spy_vs_vwap >= 0 and spy_vs_ema20 >= 0
-        short_ok = spy_change_pct <=  0.5 and spy_vs_vwap <= 0 and spy_vs_ema20 <= 0
+        # Longs OK if: day change not cratering AND (above VWAP OR firmly above 20d EMA)
+        # Shorts OK if: day change not surging AND (below VWAP OR firmly below 20d EMA)
+        long_ok  = spy_change_pct >= -0.5 and (spy_vs_vwap >= 0 or spy_vs_ema20 >= 5)
+        short_ok = spy_change_pct <=  0.5 and (spy_vs_vwap <= 0 or spy_vs_ema20 <= -5)
 
         print(f"  SPY regime: chg={spy_change_pct:+.2f}%  vs_vwap={spy_vs_vwap:+.2f}  vs_ema20={spy_vs_ema20:+.2f}"
               f"  → longs={'✓' if long_ok else '✗'}  shorts={'✓' if short_ok else '✗'}")
