@@ -70,7 +70,7 @@
           <div style="font-size:11px;color:#999;margin-bottom:12px">
             Inception: 2026-07-09 &nbsp;|&nbsp; Last run: 2026-08-17
           </div>
-          <a href="reports/swing_v2_2026-08-14.html" class="btn" style="background:#1a237e">Open Dashboard →</a>
+          <a href="reports/swing_v2_2026-08-17.html" class="btn" style="background:#1a237e">Open Dashboard →</a>
         </div>
     
         <div class="bot-card" style="border-top:4px solid #e65100">
@@ -78,12 +78,12 @@
           <div class="stat-grid">
             <div class="stat">
               <div class="stat-label">Portfolio Value</div>
-              <div class="stat-val" style="color:#1a237e">$100,000</div>
+              <div class="stat-val" style="color:#1a237e">$100,015</div>
             </div>
             <div class="stat">
               <div class="stat-label">Total Return</div>
-              <div class="stat-val" style="color:#2e7d32">+$0<br>
-                <span style="font-size:13px">+0.00%</span>
+              <div class="stat-val" style="color:#2e7d32">+$15<br>
+                <span style="font-size:13px">+0.01%</span>
               </div>
             </div>
             <div class="stat">
@@ -100,7 +100,7 @@
             </div>
             <div class="stat">
               <div class="stat-label">Closed Trades</div>
-              <div class="stat-val">3800</div>
+              <div class="stat-val">3815</div>
             </div>
           </div>
           <canvas id="intraday-chart" style="width:100%;margin:12px 0"></canvas>
@@ -161,8 +161,8 @@
 })();
 
 (function() {
-  const dates = ["2026-07-09", "2026-07-10", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-10", "2026-08-11"];
-  const vals  = [99940.86, 99940.86, 99718.02, 99519.7, 99469.14, 99371.82, 99204.19, 99285.85, 98691.24, 98061.41, 97836.48, 95966.69, 96617.51, 96005.82, 95689.19, 95556.05, 95419.91, 95233.81, 96332.85, 96205.8, 100000.0, 100701.13, 100545.79, 100014.87];
+  const dates = ["2026-07-09", "2026-07-10", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-10", "2026-08-11", "2026-08-17"];
+  const vals  = [99940.86, 99940.86, 99718.02, 99519.7, 99469.14, 99371.82, 99204.19, 99285.85, 98691.24, 98061.41, 97836.48, 95966.69, 96617.51, 96005.82, 95689.19, 95556.05, 95419.91, 95233.81, 96332.85, 96205.8, 100000.0, 100701.13, 100545.79, 100014.87, 100014.87];
   const N = vals.length;
   if (N < 2) return;
   const canvas = document.getElementById('intraday-chart');
