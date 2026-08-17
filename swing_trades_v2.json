@@ -1437,6 +1437,17 @@
         "VIX: 15.0  (entries allowed)",
         "Portfolio: $101,973  |  Cash: $53,512  |  Open: 8  |  Exits: 2  |  Entries: 1"
       ]
+    },
+    {
+      "date": "2026-08-17",
+      "run_at": "2026-08-17 16:58 UTC",
+      "entries": [],
+      "exits": [],
+      "notes": [
+        "SPY regime: BULL (longs only)",
+        "VIX: 15.1  (entries allowed)",
+        "Portfolio: $101,973  |  Cash: $53,512  |  Open: 8  |  Exits: 0  |  Entries: 0"
+      ]
     }
   ],
   "last_scan": [
@@ -1588,13 +1599,6 @@
       "status": "above SMA200"
     },
     {
-      "ticker": "AVGO",
-      "rsi2": 4.6,
-      "close": 392.99,
-      "sma200": 368.25,
-      "status": "LONG signal"
-    },
-    {
       "ticker": "LDOS",
       "rsi2": 94.8,
       "close": 143.83,
@@ -1718,6 +1722,13 @@
       "rsi2": 91.8,
       "close": 296.14,
       "sma200": 280.85,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "KO",
+      "rsi2": 91.8,
+      "close": 87.71,
+      "sma200": 76.31,
       "status": "above SMA200"
     }
   ]
