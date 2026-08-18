@@ -2262,7 +2262,8 @@
     "2026-08-12": 102739.62,
     "2026-08-13": 103443.26,
     "2026-08-14": 104363.13,
-    "2026-08-17": 104574.3
+    "2026-08-17": 104574.3,
+    "2026-08-18": 104574.3
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -5290,6 +5291,16 @@
         "SPY regime: BULL (longs only)",
         "Portfolio: $104,574  |  Cash: $52,098  |  Open: 9  |  Exits: 0  |  Entries: 0"
       ]
+    },
+    {
+      "date": "2026-08-18",
+      "run_at": "2026-08-18 14:48 UTC",
+      "entries": [],
+      "exits": [],
+      "notes": [
+        "SPY regime: BULL (longs only)",
+        "Portfolio: $104,574  |  Cash: $52,098  |  Open: 9  |  Exits: 0  |  Entries: 0"
+      ]
     }
   ],
   "last_scan": [
@@ -5310,15 +5321,8 @@
     {
       "ticker": "COF",
       "rsi2": 98.1,
-      "close": 227.34,
-      "sma200": 206.61,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "CFG",
-      "rsi2": 98.1,
-      "close": 74.73,
-      "sma200": 61.79,
+      "close": 226.54,
+      "sma200": 205.89,
       "status": "above SMA200"
     },
     {
@@ -5399,18 +5403,18 @@
       "status": "above SMA200"
     },
     {
+      "ticker": "CFG",
+      "rsi2": 96.5,
+      "close": 74.73,
+      "sma200": 61.68,
+      "status": "above SMA200"
+    },
+    {
       "ticker": "STZ",
       "rsi2": 96.4,
       "close": 139.18,
       "sma200": 143.03,
       "status": "below SMA200"
-    },
-    {
-      "ticker": "FOX",
-      "rsi2": 96.4,
-      "close": 61.41,
-      "sma200": 56.64,
-      "status": "above SMA200"
     },
     {
       "ticker": "AMD",
@@ -5424,6 +5428,13 @@
       "rsi2": 96.1,
       "close": 200.0,
       "sma200": 175.54,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "FOX",
+      "rsi2": 96.1,
+      "close": 61.41,
+      "sma200": 56.63,
       "status": "above SMA200"
     },
     {
@@ -5453,6 +5464,13 @@
       "close": 31.61,
       "sma200": 35.11,
       "status": "below SMA200"
+    },
+    {
+      "ticker": "MRSH",
+      "rsi2": 5.4,
+      "close": 187.82,
+      "sma200": 175.52,
+      "status": "above SMA200"
     },
     {
       "ticker": "DLR",
@@ -5564,13 +5582,6 @@
       "rsi2": 91.8,
       "close": 296.14,
       "sma200": 280.85,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "KO",
-      "rsi2": 91.8,
-      "close": 87.71,
-      "sma200": 76.31,
       "status": "above SMA200"
     }
   ]
