@@ -1600,7 +1600,7 @@ def save_html_report(
     return day >= 1 && day <= 5 && mins >= 570 && mins < 960; // 9:30–4:00
   }};
   if (isMarketHours()) {{
-    setInterval(runFetch, 60000);
+    // background auto-refresh disabled — prices update on hard refresh only
   }}
 }})();
 
