@@ -73,8 +73,10 @@ jobs:
           find reports -name 'v2_*.html' 2>/dev/null | xargs -r git add -f
           git diff --cached --quiet && echo "Nothing to commit" || \
             git commit -m "screener-v2: $(date -u '+%Y-%m-%d %H:%M') [skip ci]"
+          git stash 2>/dev/null || true
           for i in 1 2 3; do
             git pull --rebase -X theirs origin main && git push && break
             echo "Push attempt $i failed, retrying..."
             sleep 5
           done
+          git stash pop 2>/dev/null || true

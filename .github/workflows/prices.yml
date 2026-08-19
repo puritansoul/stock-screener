@@ -70,8 +70,10 @@ jobs:
           git add -f reports/ portfolio_nav.json portfolio_state.json index.html
           git diff --cached --quiet && echo "No changes" || \
             git commit -m "prices: $(date -u '+%Y-%m-%d %H:%M') [skip ci]"
+          git stash 2>/dev/null || true
           for i in 1 2 3; do
             git pull --rebase -X theirs origin main && git push && break
             echo "Push attempt $i failed, retrying..."
             sleep 5
           done
+          git stash pop 2>/dev/null || true
