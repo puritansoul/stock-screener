@@ -1474,7 +1474,7 @@ def build_swing_dashboard(state: dict, prices: pd.DataFrame):
 
   if (isMarketHours()) {{
     fetchPrices();
-    setInterval(fetchPrices, 60000);
+    // background auto-refresh disabled — prices update on hard refresh only
   }}
 }})();
 

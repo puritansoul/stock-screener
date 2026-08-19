@@ -102641,3 +102641,63 @@ From https://github.com/puritansoul/stock-screener
  * branch            main       -> FETCH_HEAD
    2e9d1ac..cb0e45e  main       -> origin/main
 Updating 2e9d1ac..cb0e45e
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+1 Failed download:
+['BNY']: TypeError("'NoneType' object is not subscriptable")
+
+2 Failed downloads:
+['KEYS', 'EW']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-08-19 14:33 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 502 tickers
+  Fetching SPY regime …
+  SPY regime: chg=-0.08%  vs_vwap=-0.77  vs_ema20=+6.21  → longs=✗  shorts=✗
+  Checking earnings catalysts for 503 tickers …
+  ORB computed for 502 tickers
+
+  Portfolio: $99,649  (-351 / -0.35%)
+  Cash: $55,474  |  Open: 3  |  Today PnL: $+128
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-19.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Overview → /Users/vishalgupta/claude/stock-screener/overview.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U	overview.html
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+Everything up-to-date
+2026-08-19 14:36:06 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+1 Failed download:
+['IDXX']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-08-19 14:36 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=-0.07%  vs_vwap=-0.65  vs_ema20=+6.33  → longs=✗  shorts=✗
+  Checking earnings catalysts for 502 tickers …
+  ORB computed for 503 tickers
+
+  Portfolio: $99,635  (-365 / -0.37%)
+  Cash: $55,474  |  Open: 3  |  Today PnL: $+128
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-19.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Overview → /Users/vishalgupta/claude/stock-screener/overview.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main c19a58d] intraday: 2026-08-19 14:36 ET local [skip ci]
+ 4 files changed, 64 insertions(+), 43 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+   1ec9677..8ef1daf  main       -> origin/main

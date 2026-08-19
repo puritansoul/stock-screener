@@ -1688,7 +1688,7 @@ def build_intraday_dashboard(state: dict, data: dict[str, dict], diag: list[dict
 
   if (isMarketHours()) {{
     fetchPrices();
-    setInterval(fetchPrices, 30000);  // every 30s for intraday
+    // background auto-refresh disabled — prices update on hard refresh only
   }}
 }})();
 

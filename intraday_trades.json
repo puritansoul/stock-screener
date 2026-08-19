@@ -1,5 +1,5 @@
 {
-  "capital": 55473.99,
+  "capital": 67416.09,
   "open_positions": [
     {
       "ticker": "BR",
@@ -24,29 +24,13 @@
       "entry_time": "12:22 ET",
       "entry_price": 87.58,
       "shares": 197,
-      "stop": 87.145,
+      "stop": 87.15,
       "trail_dist": 0.99,
-      "peak": 88.135,
+      "peak": 88.14,
       "orb_width": 1.98,
       "cost": 17253.26,
       "vol_ratio": 2.02,
       "score": 35.26,
-      "has_catalyst": false
-    },
-    {
-      "ticker": "KKR",
-      "side": "long",
-      "entry_date": "2026-08-19",
-      "entry_time": "12:32 ET",
-      "entry_price": 111.71,
-      "shares": 108,
-      "stop": 110.575,
-      "trail_dist": 1.305,
-      "peak": 111.88,
-      "orb_width": 2.61,
-      "cost": 12064.68,
-      "vol_ratio": 1.36,
-      "score": 34.76,
       "has_catalyst": false
     }
   ],
@@ -134,6 +118,27 @@
       "pnl": 1.12,
       "exit_reason": "trailing stop",
       "exit_time": "13:24 ET"
+    },
+    {
+      "ticker": "KKR",
+      "side": "long",
+      "entry_date": "2026-08-19",
+      "entry_time": "12:32 ET",
+      "entry_price": 111.71,
+      "shares": 108,
+      "stop": 110.575,
+      "trail_dist": 1.305,
+      "peak": 111.88,
+      "orb_width": 2.61,
+      "cost": 12064.68,
+      "vol_ratio": 1.36,
+      "score": 34.76,
+      "has_catalyst": false,
+      "exit_date": "2026-08-19",
+      "exit_price": 110.575,
+      "pnl": -122.58,
+      "exit_reason": "trailing stop",
+      "exit_time": "14:48 ET"
     }
   ],
   "all_closed": [
@@ -74984,9 +74989,9 @@
       "width": 4.71
     },
     "TDY": {
-      "high": 667.62,
+      "high": 668.32,
       "low": 657.1,
-      "width": 10.52
+      "width": 11.22
     },
     "TER": {
       "high": 405.185,
@@ -75351,7 +75356,7 @@
     "2026-08-11": 100014.87,
     "2026-08-17": 100014.87,
     "2026-08-18": 99439.32,
-    "2026-08-19": 99634.71
+    "2026-08-19": 99614.47
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -161425,6 +161430,142 @@
       },
       "portfolio_value": 99634.71,
       "note": "$99,635 | cash=$55,474 | open=3 | closed today=4 | day PnL=$+128"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "14:38 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.08,
+        "spy_vs_vwap": -0.7583,
+        "spy_vs_ema20": 6.2242
+      },
+      "portfolio_value": 99674.42,
+      "note": "$99,674 | cash=$55,474 | open=3 | closed today=4 | day PnL=$+128"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "14:41 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.055,
+        "spy_vs_vwap": -0.5551,
+        "spy_vs_ema20": 6.4242
+      },
+      "portfolio_value": 99669.31,
+      "note": "$99,669 | cash=$55,474 | open=3 | closed today=4 | day PnL=$+128"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "14:43 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.058,
+        "spy_vs_vwap": -0.5817,
+        "spy_vs_ema20": 6.3942
+      },
+      "portfolio_value": 99640.16,
+      "note": "$99,640 | cash=$55,474 | open=3 | closed today=4 | day PnL=$+128"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "14:46 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.083,
+        "spy_vs_vwap": -0.7706,
+        "spy_vs_ema20": 6.2042
+      },
+      "portfolio_value": 99609.81,
+      "note": "$99,610 | cash=$55,474 | open=3 | closed today=4 | day PnL=$+128"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "14:48 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "KKR",
+          "side": "long",
+          "exit_price": 110.58,
+          "pnl": -122.58,
+          "reason": "trailing stop"
+        }
+      ],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.093,
+        "spy_vs_vwap": -0.8485,
+        "spy_vs_ema20": 6.1242
+      },
+      "portfolio_value": 99600.8,
+      "note": "$99,601 | cash=$67,416 | open=2 | closed today=5 | day PnL=$+6"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "14:50 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.073,
+        "spy_vs_vwap": -0.6863,
+        "spy_vs_ema20": 6.2842
+      },
+      "portfolio_value": 99605.32,
+      "note": "$99,605 | cash=$67,416 | open=2 | closed today=5 | day PnL=$+6"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "14:53 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.1,
+        "spy_vs_vwap": -0.8907,
+        "spy_vs_ema20": 6.0742
+      },
+      "portfolio_value": 99610.1,
+      "note": "$99,610 | cash=$67,416 | open=2 | closed today=5 | day PnL=$+6"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "14:55 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.091,
+        "spy_vs_vwap": -0.8187,
+        "spy_vs_ema20": 6.1442
+      },
+      "portfolio_value": 99614.47,
+      "note": "$99,614 | cash=$67,416 | open=2 | closed today=5 | day PnL=$+6"
     }
   ]
 }
