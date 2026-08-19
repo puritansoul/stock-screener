@@ -91580,3 +91580,36 @@ hint: have locally. This is usually caused by another repository pushing to
 hint: the same ref. If you want to integrate the remote changes, use
 hint: 'git pull' before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2026-08-17 12:54:19 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+4 Failed downloads:
+['REG', 'BLDR', 'PKG', 'KIM']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-08-17 12:54 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 499 tickers
+  Fetching SPY regime …
+  SPY regime: chg=-0.17%  vs_vwap=-0.58  vs_ema20=+13.03  → longs=✗  shorts=✗
+  Checking earnings catalysts for 503 tickers …
+  ORB computed for 498 tickers
+
+  Portfolio: $100,015  (+15 / +0.01%)
+  Cash: $100,015  |  Open: 0  |  Today PnL: $-531
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-17.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Overview → /Users/vishalgupta/claude/stock-screener/overview.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main 2bd6d03] intraday: 2026-08-17 12:54 ET local [skip ci]
+ 4 files changed, 117 insertions(+), 2164 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   2d16e90..2bd6d03  main -> main
+2026-08-17 12:56:54 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+   7a8a8ea..4d57d32  main       -> origin/main
+Updating 7a8a8ea..4d57d32

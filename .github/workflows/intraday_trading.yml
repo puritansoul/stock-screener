@@ -68,7 +68,10 @@ jobs:
         run: |
           python - <<'PYEOF'
           from pathlib import Path
-          reports = sorted(Path("reports").glob("intraday_*.html"), reverse=True)
+          reports = sorted(
+              (r for r in Path("reports").glob("intraday_*.html")
+               if not r.name.startswith("intraday_v2_")),
+              reverse=True)
           if not reports:
               exit(0)
           latest = reports[0].name
