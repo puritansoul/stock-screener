@@ -24,9 +24,9 @@
       "entry_time": "12:22 ET",
       "entry_price": 87.58,
       "shares": 197,
-      "stop": 87.15,
+      "stop": 87.17,
       "trail_dist": 0.99,
-      "peak": 88.14,
+      "peak": 88.16,
       "orb_width": 1.98,
       "cost": 17253.26,
       "vol_ratio": 2.02,
@@ -74228,11 +74228,6 @@
       "low": 44.84,
       "width": 1.16
     },
-    "LDOS": {
-      "high": 145.94,
-      "low": 142.52,
-      "width": 3.42
-    },
     "LEN": {
       "high": 89.51,
       "low": 87.22,
@@ -74567,11 +74562,6 @@
       "high": 97.8994,
       "low": 97.12,
       "width": 0.7794
-    },
-    "ORCL": {
-      "high": 143.97,
-      "low": 139.17,
-      "width": 4.8
     },
     "OTIS": {
       "high": 71.985,
@@ -74989,9 +74979,9 @@
       "width": 4.71
     },
     "TDY": {
-      "high": 668.32,
+      "high": 667.62,
       "low": 657.1,
-      "width": 11.22
+      "width": 10.52
     },
     "TER": {
       "high": 405.185,
@@ -75356,7 +75346,7 @@
     "2026-08-11": 100014.87,
     "2026-08-17": 100014.87,
     "2026-08-18": 99439.32,
-    "2026-08-19": 99614.47
+    "2026-08-19": 99644.05
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -161566,6 +161556,22 @@
       },
       "portfolio_value": 99614.47,
       "note": "$99,614 | cash=$67,416 | open=2 | closed today=5 | day PnL=$+6"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "14:58 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.095,
+        "spy_vs_vwap": -0.5511,
+        "spy_vs_ema20": 6.113
+      },
+      "portfolio_value": 99644.05,
+      "note": "$99,644 | cash=$67,416 | open=2 | closed today=5 | day PnL=$+6"
     }
   ]
 }
