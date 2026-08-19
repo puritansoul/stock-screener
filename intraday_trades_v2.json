@@ -595,11 +595,6 @@
       "low": 88.59,
       "width": 1.52
     },
-    "CTSH": {
-      "high": 59.85,
-      "low": 57.78,
-      "width": 2.07
-    },
     "COHR": {
       "high": 312.0,
       "low": 292.21,
@@ -2110,6 +2105,11 @@
       "low": 92.07,
       "width": 0.85
     },
+    "LUV": {
+      "high": 42.735,
+      "low": 42.17,
+      "width": 0.565
+    },
     "SWK": {
       "high": 100.64,
       "low": 99.11,
@@ -2196,9 +2196,9 @@
       "width": 4.71
     },
     "TDY": {
-      "high": 668.32,
+      "high": 667.62,
       "low": 657.1,
-      "width": 11.22
+      "width": 10.52
     },
     "TER": {
       "high": 405.185,
@@ -4172,6 +4172,22 @@
         "spy_change_pct": -0.074,
         "spy_vs_vwap": -0.7073,
         "spy_vs_ema20": 6.2742
+      },
+      "portfolio_value": 100000.0,
+      "note": "$100,000 | cash=$100,000 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "14:58 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": -0.075,
+        "spy_vs_vwap": -0.6922,
+        "spy_vs_ema20": 6.2643
       },
       "portfolio_value": 100000.0,
       "note": "$100,000 | cash=$100,000 | open=0 | closed today=0 | day PnL=$+0"
