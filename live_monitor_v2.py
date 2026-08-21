@@ -2004,10 +2004,22 @@ def run():
     # 7. High-conviction alerts: top 5% NOT in current holdings
     alert_tickers = [t for t in top5pct if t not in set(holdings)]
 
-    # 8. Update NAV
+    # 8. Update NAV — store actual portfolio dollar value (shares × price)
     print("[6] Updating portfolio NAV …")
     prev_prices = state.get("prev_prices", {})
-    today_nav, daily_ret = update_nav(nav, today, holdings, weights, prices, prev_prices)
+    try:
+        _latest_px = prices.iloc[-1]
+        port_dollar_value = sum(
+            positions_map.get(t, {}).get("shares", 0) * float(_latest_px[t])
+            for t in holdings
+            if t in _latest_px.index and pd.notna(_latest_px[t])
+        )
+    except Exception:
+        port_dollar_value = 0.0
+    if port_dollar_value > 0:
+        nav[today.isoformat()] = port_dollar_value
+    else:
+        today_nav, daily_ret = update_nav(nav, today, holdings, weights, prices, prev_prices)
     # Save today's prices for tomorrow
     try:
         state["prev_prices"] = {t: float(prices.iloc[-1][t])
@@ -2144,9 +2156,22 @@ def run_prices_only():
         last = prices.iloc[-1]
         scores["price"] = scores.index.map(lambda t: last.get(t, scores.at[t, "price"] if t in scores.index else None))
 
-    # Update NAV
+    # Update NAV — store actual portfolio dollar value (shares × price)
     prev_prices = state.get("prev_prices", {})
-    today_nav, daily_ret = update_nav(nav, today, holdings, weights, prices, prev_prices)
+    positions_map_po = state.get("positions", {})
+    try:
+        _latest_px = prices.iloc[-1]
+        port_dollar_value = sum(
+            positions_map_po.get(t, {}).get("shares", 0) * float(_latest_px[t])
+            for t in holdings
+            if t in _latest_px.index and pd.notna(_latest_px[t])
+        )
+    except Exception:
+        port_dollar_value = 0.0
+    if port_dollar_value > 0:
+        nav[today.isoformat()] = port_dollar_value
+    else:
+        today_nav, daily_ret = update_nav(nav, today, holdings, weights, prices, prev_prices)
     save_nav(nav)
 
     # Rebuild report
