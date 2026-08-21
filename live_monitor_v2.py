@@ -928,9 +928,9 @@ def save_html_report(
             positions.get(t, {}).get("shares", 0) * float(_latest[t])
             for t in positions
             if t in _latest.index and pd.notna(_latest[t])
-        ) or (today_nav * PORTFOLIO_VALUE)
+        ) or (today_nav if today_nav > 1000 else PORTFOLIO_VALUE)
     else:
-        current_value = today_nav * PORTFOLIO_VALUE
+        current_value = today_nav if today_nav > 1000 else PORTFOLIO_VALUE
     gain_loss     = current_value - cost_basis
     gain_loss_pct = gain_loss / cost_basis * 100 if cost_basis else 0
     gain_color    = "#2e7d32" if gain_loss >= 0 else "#c62828"
@@ -2058,7 +2058,8 @@ def run():
     )
 
     # 10. Console summary
-    print(f"\n  NAV: ${today_nav * PORTFOLIO_VALUE:,.0f}  (daily: {daily_ret:+.2%})")
+    _nav_val = nav.get(today.isoformat(), 0)
+    print(f"\n  NAV: ${_nav_val:,.0f}")
     print(f"  Holdings: {len(holdings)}  |  High-conviction alerts: {len(alert_tickers)}")
     if alert_tickers:
         print(f"  Alerts: {', '.join(alert_tickers)}")
@@ -2081,7 +2082,7 @@ def run():
                f"{len(alert_tickers)} new picks outside portfolio: {', '.join(alert_tickers[:3])}")
     else:
         notify("Factor Screener ✓",
-               f"Daily: {daily_ret:+.2%} | Next rebalance: {_next_rebalance_date(today)}")
+               f"Next rebalance: {_next_rebalance_date(today)}")
 
     print(f"\n  Report: {report_path}")
     open_report(report_path)
