@@ -1318,7 +1318,7 @@ def save_html_report(
     document.getElementById('port-total').innerHTML =
       `<span style="color:${{col(totalRet)}}">${{sgn(totalRet)}}$${{fmtI(totalRet)}} (${{sgn(totalRetP)}}${{Math.abs(totalRetP*100).toFixed(2)}}%)</span>`;
 
-    // Period tiles
+    // Today tile only — period tiles (1m/3m/etc) are rendered server-side from NAV history and never overwritten
     const tileCol = n => n >= 0 ? '#2ca02c' : '#d62728';
     const tileSgn = n => n >= 0 ? '+' : '';
     const fmtTile = pct => `<span style="color:${{tileCol(pct)}};font-weight:bold">${{tileSgn(pct)}}${{(pct*100).toFixed(2)}}%</span>`;
@@ -1326,15 +1326,6 @@ def save_html_report(
 
     const prevTotalForDay = totalValue - totalDayChg;
     setTile('tile-today', prevTotalForDay > 0 ? totalDayChg / prevTotalForDay : 0);
-    setTile('tile-inception', PORTFOLIO_BASE > 0 ? (totalValue - PORTFOLIO_BASE) / PORTFOLIO_BASE : 0);
-
-    const navDates  = Object.keys(NAV_HISTORY).sort();
-    [['tile-1m',30],['tile-3m',91],['tile-6m',182],['tile-1y',365],['tile-3y',1095],['tile-5y',1825]].forEach(([id,days]) => {{
-      const target = new Date(); target.setDate(target.getDate() - days);
-      const tStr   = target.toISOString().slice(0,10);
-      const past   = navDates.filter(d => d <= tStr);
-      if (past.length) setTile(id, (totalValue / NAV_HISTORY[past[past.length-1]]) - 1);
-    }});
   }}
 
   // Run once immediately with stale data so cards are never blank/wrong

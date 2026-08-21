@@ -1,6 +1,39 @@
 {
-  "capital": 100099.67,
-  "open_positions": [],
+  "capital": 49119.18,
+  "open_positions": [
+    {
+      "ticker": "GOOGL",
+      "side": "long",
+      "entry_date": "2026-08-21",
+      "entry_time": "10:58 ET",
+      "entry_price": 344.23,
+      "shares": 87,
+      "stop": 343.095,
+      "trail_dist": 1.135,
+      "peak": 344.23,
+      "orb_width": 2.27,
+      "cost": 29948.01,
+      "vol_ratio": 2.93,
+      "score": 32.15,
+      "has_catalyst": false
+    },
+    {
+      "ticker": "AES",
+      "side": "long",
+      "entry_date": "2026-08-21",
+      "entry_time": "10:58 ET",
+      "entry_price": 14.77,
+      "shares": 1424,
+      "stop": 14.76,
+      "trail_dist": 0.01,
+      "peak": 14.77,
+      "orb_width": 0.02,
+      "cost": 21032.48,
+      "vol_ratio": 1.51,
+      "score": 29.35,
+      "has_catalyst": false
+    }
+  ],
   "closed_today": [],
   "all_closed": [
     {
@@ -164815,6 +164848,41 @@
       },
       "portfolio_value": 100099.67,
       "note": "$100,100 | cash=$100,100 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-21",
+      "time": "10:58 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "GOOGL",
+          "side": "long",
+          "price": 344.23,
+          "shares": 87,
+          "stop": 343.1,
+          "trail_dist": 1.135,
+          "score": 32.15
+        },
+        {
+          "ticker": "AES",
+          "side": "long",
+          "price": 14.77,
+          "shares": 1424,
+          "stop": 14.76,
+          "trail_dist": 0.01,
+          "score": 29.35
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": -0.067,
+        "spy_vs_vwap": 0.5796,
+        "spy_vs_ema20": 1.7902
+      },
+      "portfolio_value": 100099.67,
+      "note": "$100,100 | cash=$49,119 | open=2 | closed today=0 | day PnL=$+0"
     }
   ]
 }

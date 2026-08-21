@@ -1374,13 +1374,7 @@ def save_html_report(
     setTile('tile-today', prevTotalForDay > 0 ? totalDayChg / prevTotalForDay : 0);
     setTile('tile-inception', PORTFOLIO_BASE > 0 ? (totalValue - PORTFOLIO_BASE) / PORTFOLIO_BASE : 0);
 
-    const navDates  = Object.keys(NAV_HISTORY).sort();
-    [['tile-1m',30],['tile-3m',91],['tile-6m',182],['tile-1y',365],['tile-3y',1095],['tile-5y',1825]].forEach(([id,days]) => {{
-      const target = new Date(); target.setDate(target.getDate() - days);
-      const tStr   = target.toISOString().slice(0,10);
-      const past   = navDates.filter(d => d <= tStr);
-      if (past.length) setTile(id, (totalValue / NAV_HISTORY[past[past.length-1]]) - 1);
-    }});
+    // Period tiles (1m/3m/etc) are rendered server-side and never overwritten by JS
   }}
 
   // Run once immediately with stale data so cards are never blank/wrong
