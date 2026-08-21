@@ -1,22 +1,6 @@
 {
-  "capital": 46913.08,
+  "capital": 67945.56,
   "open_positions": [
-    {
-      "ticker": "AES",
-      "side": "long",
-      "entry_date": "2026-08-21",
-      "entry_time": "10:58 ET",
-      "entry_price": 14.77,
-      "shares": 1424,
-      "stop": 14.77,
-      "trail_dist": 0.01,
-      "peak": 14.78,
-      "orb_width": 0.02,
-      "cost": 21032.48,
-      "vol_ratio": 1.51,
-      "score": 29.35,
-      "has_catalyst": false
-    },
     {
       "ticker": "SYF",
       "side": "long",
@@ -24,9 +8,9 @@
       "entry_time": "11:03 ET",
       "entry_price": 79.255,
       "shares": 185,
-      "stop": 78.695,
+      "stop": 78.755,
       "trail_dist": 0.665,
-      "peak": 79.36,
+      "peak": 79.42,
       "orb_width": 1.33,
       "cost": 14662.17,
       "vol_ratio": 1.76,
@@ -87,6 +71,27 @@
       "pnl": -20.45,
       "exit_reason": "trailing stop",
       "exit_time": "11:13 ET"
+    },
+    {
+      "ticker": "AES",
+      "side": "long",
+      "entry_date": "2026-08-21",
+      "entry_time": "10:58 ET",
+      "entry_price": 14.77,
+      "shares": 1424,
+      "stop": 14.77,
+      "trail_dist": 0.01,
+      "peak": 14.78,
+      "orb_width": 0.02,
+      "cost": 21032.48,
+      "vol_ratio": 1.51,
+      "score": 29.35,
+      "has_catalyst": false,
+      "exit_date": "2026-08-21",
+      "exit_price": 14.77,
+      "pnl": 0.0,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:36 ET"
     }
   ],
   "all_closed": [
@@ -73154,6 +73159,11 @@
       "low": 113.4501,
       "width": 1.4286
     },
+    "ABBV": {
+      "high": 264.4,
+      "low": 260.101,
+      "width": 4.299
+    },
     "ACN": {
       "high": 183.02,
       "low": 180.02,
@@ -73398,6 +73408,11 @@
       "high": 2999.0,
       "low": 2940.0,
       "width": 59.0
+    },
+    "AVY": {
+      "high": 183.85,
+      "low": 181.6,
+      "width": 2.25
     },
     "AXON": {
       "high": 625.0,
@@ -74599,6 +74614,11 @@
       "low": 884.81,
       "width": 37.9287
     },
+    "LYB": {
+      "high": 68.57,
+      "low": 67.91,
+      "width": 0.66
+    },
     "MTB": {
       "high": 241.53,
       "low": 239.64,
@@ -74633,6 +74653,11 @@
       "high": 74.21,
       "low": 72.765,
       "width": 1.445
+    },
+    "MA": {
+      "high": 578.1,
+      "low": 573.0401,
+      "width": 5.0599
     },
     "MKC": {
       "high": 55.67,
@@ -74793,6 +74818,11 @@
       "high": 42.38,
       "low": 41.41,
       "width": 0.97
+    },
+    "NDSN": {
+      "high": 338.4,
+      "low": 333.8,
+      "width": 4.6
     },
     "NSC": {
       "high": 350.48,
@@ -75279,6 +75309,11 @@
       "low": 302.92,
       "width": 5.02
     },
+    "TGT": {
+      "high": 163.045,
+      "low": 160.23,
+      "width": 2.815
+    },
     "TEL": {
       "high": 203.5,
       "low": 200.2,
@@ -75600,9 +75635,9 @@
       "width": 1.37
     },
     "XYL": {
-      "high": 114.49,
+      "high": 114.73,
       "low": 113.5,
-      "width": 0.99
+      "width": 1.23
     },
     "YUM": {
       "high": 152.665,
@@ -75654,7 +75689,7 @@
     "2026-08-18": 99439.32,
     "2026-08-19": 99486.79,
     "2026-08-20": 100099.67,
-    "2026-08-21": 100016.43
+    "2026-08-21": 100015.72
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -165040,6 +165075,30 @@
       },
       "portfolio_value": 100016.43,
       "note": "$100,016 | cash=$46,913 | open=4 | closed today=1 | day PnL=$-20"
+    },
+    {
+      "date": "2026-08-21",
+      "time": "11:35 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "AES",
+          "side": "long",
+          "exit_price": 14.77,
+          "pnl": 0.0,
+          "reason": "trailing stop"
+        }
+      ],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.066,
+        "spy_vs_vwap": 1.1552,
+        "spy_vs_ema20": 2.8051
+      },
+      "portfolio_value": 100015.72,
+      "note": "$100,016 | cash=$67,946 | open=3 | closed today=2 | day PnL=$-20"
     }
   ]
 }
