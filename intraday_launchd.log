@@ -103054,3 +103054,40 @@ Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
 From https://github.com/puritansoul/stock-screener
  * branch            main       -> FETCH_HEAD
    58991ed..3394408  main       -> origin/main
+To https://github.com/puritansoul/stock-screener.git
+   3394408..1b03fa1  main -> main
+2026-08-19 15:00:49 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+   12fd5ee..3d4d7d0  main       -> origin/main
+Updating 12fd5ee..3d4d7d0
+/Users/vishalgupta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+2 Failed downloads:
+['NTRS', 'COIN']: TypeError("'NoneType' object is not subscriptable")
+Intraday Trader — 2026-08-19 15:00 ET  phase=trading  universe=503
+  Fetching 5-min bars for 503 tickers …
+  Got data for 503 tickers
+  Fetching SPY regime …
+  SPY regime: chg=-0.07%  vs_vwap=-0.69  vs_ema20=+6.27  → longs=✗  shorts=✗
+  Checking earnings catalysts for 501 tickers …
+  ORB computed for 503 tickers
+
+  Portfolio: $99,641  (-359 / -0.36%)
+  Cash: $67,416  |  Open: 2  |  Today PnL: $+6
+  Dashboard → /Users/vishalgupta/claude/stock-screener/reports/intraday_2026-08-19.html
+Hub → /Users/vishalgupta/claude/stock-screener/trading_hub.html
+Overview → /Users/vishalgupta/claude/stock-screener/overview.html
+Consolidated → /Users/vishalgupta/claude/stock-screener/consolidated.html
+[main df5b288] intraday: 2026-08-19 15:01 ET local [skip ci]
+ 4 files changed, 58 insertions(+), 32 deletions(-)
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+To https://github.com/puritansoul/stock-screener.git
+   3d4d7d0..df5b288  main -> main
+2026-08-19 15:03:25 ET — running
+From https://github.com/puritansoul/stock-screener
+ * branch            main       -> FETCH_HEAD
+   df5b288..09ba688  main       -> origin/main
+Updating df5b288..09ba688

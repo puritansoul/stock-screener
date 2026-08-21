@@ -1,5 +1,5 @@
 {
-  "capital": 99415.4,
+  "capital": 100099.67,
   "open_positions": [],
   "closed_today": [],
   "all_closed": [
@@ -72672,48 +72672,6 @@
       "exit_time": "15:45 ET"
     },
     {
-      "ticker": "BR",
-      "side": "long",
-      "entry_date": "2026-08-19",
-      "entry_time": "11:04 ET",
-      "entry_price": 175.9,
-      "shares": 84,
-      "stop": 175.5825,
-      "trail_dist": 1.925,
-      "peak": 177.5075,
-      "orb_width": 3.85,
-      "cost": 14775.6,
-      "vol_ratio": 2.09,
-      "score": 37.46,
-      "has_catalyst": false,
-      "exit_date": "2026-08-19",
-      "exit_price": 175.9,
-      "pnl": 0.0,
-      "exit_reason": "missed force-close \u2014 closed at prior day EOD",
-      "exit_time": "EOD"
-    },
-    {
-      "ticker": "OMC",
-      "side": "long",
-      "entry_date": "2026-08-19",
-      "entry_time": "12:22 ET",
-      "entry_price": 87.58,
-      "shares": 197,
-      "stop": 87.2,
-      "trail_dist": 0.99,
-      "peak": 88.19,
-      "orb_width": 1.98,
-      "cost": 17253.26,
-      "vol_ratio": 2.02,
-      "score": 35.26,
-      "has_catalyst": false,
-      "exit_date": "2026-08-19",
-      "exit_price": 87.43,
-      "pnl": -29.55,
-      "exit_reason": "missed force-close \u2014 closed at prior day EOD",
-      "exit_time": "EOD"
-    },
-    {
       "ticker": "MRNA",
       "side": "long",
       "entry_date": "2026-08-19",
@@ -72817,14 +72775,287 @@
       "pnl": -122.58,
       "exit_reason": "trailing stop",
       "exit_time": "14:48 ET"
+    },
+    {
+      "ticker": "BR",
+      "side": "long",
+      "entry_date": "2026-08-19",
+      "entry_time": "11:04 ET",
+      "entry_price": 175.9,
+      "shares": 84,
+      "stop": 175.5825,
+      "trail_dist": 1.925,
+      "peak": 177.5075,
+      "orb_width": 3.85,
+      "cost": 14775.6,
+      "vol_ratio": 2.09,
+      "score": 37.46,
+      "has_catalyst": false,
+      "exit_date": "2026-08-19",
+      "exit_price": 176.445,
+      "pnl": 45.78,
+      "exit_reason": "force close 3:45pm",
+      "exit_time": "15:45 ET"
+    },
+    {
+      "ticker": "OMC",
+      "side": "long",
+      "entry_date": "2026-08-19",
+      "entry_time": "12:22 ET",
+      "entry_price": 87.58,
+      "shares": 197,
+      "stop": 87.23,
+      "trail_dist": 0.99,
+      "peak": 88.22,
+      "orb_width": 1.98,
+      "cost": 17253.26,
+      "vol_ratio": 2.02,
+      "score": 35.26,
+      "has_catalyst": false,
+      "exit_date": "2026-08-19",
+      "exit_price": 87.56,
+      "pnl": -3.94,
+      "exit_reason": "force close 3:45pm",
+      "exit_time": "15:45 ET"
+    },
+    {
+      "ticker": "PLTR",
+      "side": "long",
+      "entry_date": "2026-08-20",
+      "entry_time": "12:47 ET",
+      "entry_price": 176.37,
+      "shares": 84,
+      "stop": 174.5,
+      "trail_dist": 1.93,
+      "peak": 176.43,
+      "orb_width": 3.86,
+      "cost": 14815.08,
+      "vol_ratio": 3.83,
+      "score": 39.8,
+      "has_catalyst": false,
+      "exit_date": "2026-08-20",
+      "exit_price": 174.5,
+      "pnl": -157.08,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:16 ET"
+    },
+    {
+      "ticker": "MU",
+      "side": "long",
+      "entry_date": "2026-08-20",
+      "entry_time": "11:14 ET",
+      "entry_price": 958.3969,
+      "shares": 21,
+      "stop": 948.6525,
+      "trail_dist": 12.765,
+      "peak": 961.4175,
+      "orb_width": 25.53,
+      "cost": 20126.34,
+      "vol_ratio": 3.73,
+      "score": 40.32,
+      "has_catalyst": false,
+      "exit_date": "2026-08-20",
+      "exit_price": 948.6525,
+      "pnl": -204.63,
+      "exit_reason": "trailing stop",
+      "exit_time": "14:08 ET"
+    },
+    {
+      "ticker": "CDW",
+      "side": "short",
+      "entry_date": "2026-08-20",
+      "entry_time": "15:03 ET",
+      "entry_price": 136.55,
+      "shares": 42,
+      "stop": 135.9,
+      "trail_dist": 1.35,
+      "peak": 134.55,
+      "orb_width": 2.7,
+      "cost": 5735.1,
+      "vol_ratio": 2.65,
+      "score": 33.36,
+      "has_catalyst": false,
+      "exit_date": "2026-08-20",
+      "exit_price": 135.9,
+      "pnl": 27.3,
+      "exit_reason": "trailing stop",
+      "exit_time": "15:38 ET"
+    },
+    {
+      "ticker": "NDSN",
+      "side": "long",
+      "entry_date": "2026-08-20",
+      "entry_time": "10:40 ET",
+      "entry_price": 328.04,
+      "shares": 90,
+      "stop": 327.51,
+      "trail_dist": 9.185,
+      "peak": 336.695,
+      "orb_width": 18.37,
+      "cost": 29523.6,
+      "vol_ratio": 1.3,
+      "score": 45.72,
+      "has_catalyst": false,
+      "exit_date": "2026-08-20",
+      "exit_price": 335.58,
+      "pnl": 678.6,
+      "exit_reason": "force close 3:45pm",
+      "exit_time": "15:45 ET"
+    },
+    {
+      "ticker": "MPC",
+      "side": "short",
+      "entry_date": "2026-08-20",
+      "entry_time": "14:03 ET",
+      "entry_price": 360.6925,
+      "shares": 41,
+      "stop": 359.5825,
+      "trail_dist": 2.8725,
+      "peak": 356.71,
+      "orb_width": 5.745,
+      "cost": 14788.39,
+      "vol_ratio": 6.01,
+      "score": 49.78,
+      "has_catalyst": false,
+      "exit_date": "2026-08-20",
+      "exit_price": 357.95,
+      "pnl": 112.44,
+      "exit_reason": "force close 3:45pm",
+      "exit_time": "15:45 ET"
+    },
+    {
+      "ticker": "TDG",
+      "side": "short",
+      "entry_date": "2026-08-20",
+      "entry_time": "14:08 ET",
+      "entry_price": 1191.42,
+      "shares": 13,
+      "stop": 1187.6875,
+      "trail_dist": 5.6875,
+      "peak": 1182.0,
+      "orb_width": 11.375,
+      "cost": 15488.46,
+      "vol_ratio": 7.41,
+      "score": 57.63,
+      "has_catalyst": false,
+      "exit_date": "2026-08-20",
+      "exit_price": 1182.4399,
+      "pnl": 116.74,
+      "exit_reason": "force close 3:45pm",
+      "exit_time": "15:45 ET"
+    },
+    {
+      "ticker": "PFG",
+      "side": "short",
+      "entry_date": "2026-08-20",
+      "entry_time": "15:03 ET",
+      "entry_price": 110.68,
+      "shares": 106,
+      "stop": 110.6231,
+      "trail_dist": 0.2925,
+      "peak": 110.3306,
+      "orb_width": 0.585,
+      "cost": 11732.08,
+      "vol_ratio": 6.86,
+      "score": 52.75,
+      "has_catalyst": false,
+      "exit_date": "2026-08-20",
+      "exit_price": 110.38,
+      "pnl": 31.8,
+      "exit_reason": "force close 3:45pm",
+      "exit_time": "15:45 ET"
+    },
+    {
+      "ticker": "KMI",
+      "side": "short",
+      "entry_date": "2026-08-20",
+      "entry_time": "15:03 ET",
+      "entry_price": 31.6025,
+      "shares": 261,
+      "stop": 31.715,
+      "trail_dist": 0.19,
+      "peak": 31.525,
+      "orb_width": 0.38,
+      "cost": 8248.25,
+      "vol_ratio": 5.88,
+      "score": 50.8,
+      "has_catalyst": false,
+      "exit_date": "2026-08-20",
+      "exit_price": 31.64,
+      "pnl": -9.79,
+      "exit_reason": "force close 3:45pm",
+      "exit_time": "15:45 ET"
+    },
+    {
+      "ticker": "BAC",
+      "side": "short",
+      "entry_date": "2026-08-20",
+      "entry_time": "15:33 ET",
+      "entry_price": 62.1299,
+      "shares": 65,
+      "stop": 62.295,
+      "trail_dist": 0.225,
+      "peak": 62.07,
+      "orb_width": 0.45,
+      "cost": 4038.44,
+      "vol_ratio": 6.15,
+      "score": 50.95,
+      "has_catalyst": false,
+      "exit_date": "2026-08-20",
+      "exit_price": 62.075,
+      "pnl": 3.57,
+      "exit_reason": "force close 3:45pm",
+      "exit_time": "15:45 ET"
+    },
+    {
+      "ticker": "MTD",
+      "side": "short",
+      "entry_date": "2026-08-20",
+      "entry_time": "15:38 ET",
+      "entry_price": 1394.16,
+      "shares": 3,
+      "stop": 1407.1599,
+      "trail_dist": 13.5299,
+      "peak": 1393.63,
+      "orb_width": 27.0598,
+      "cost": 4182.48,
+      "vol_ratio": 1.24,
+      "score": 35.91,
+      "has_catalyst": false,
+      "exit_date": "2026-08-20",
+      "exit_price": 1390.285,
+      "pnl": 11.62,
+      "exit_reason": "force close 3:45pm",
+      "exit_time": "15:45 ET"
+    },
+    {
+      "ticker": "SYK",
+      "side": "short",
+      "entry_date": "2026-08-20",
+      "entry_time": "15:43 ET",
+      "entry_price": 329.1,
+      "shares": 10,
+      "stop": 331.6675,
+      "trail_dist": 2.5675,
+      "peak": 329.1,
+      "orb_width": 5.135,
+      "cost": 3291.0,
+      "vol_ratio": 9.2,
+      "score": 65.31,
+      "has_catalyst": false,
+      "exit_date": "2026-08-20",
+      "exit_price": 328.87,
+      "pnl": 2.3,
+      "exit_reason": "force close 3:45pm",
+      "exit_time": "15:45 ET"
     }
   ],
   "today": "2026-08-21",
   "today_orb": {
     "MMM": {
-      "high": 179.93,
+      "high": 179.94,
       "low": 178.02,
-      "width": 1.91
+      "width": 1.92
     },
     "AOS": {
       "high": 63.08,
@@ -72972,14 +73203,14 @@
       "width": 0.8799
     },
     "AMP": {
-      "high": 559.85,
+      "high": 559.86,
       "low": 551.46,
-      "width": 8.39
+      "width": 8.4
     },
     "AME": {
-      "high": 240.613,
+      "high": 240.74,
       "low": 237.4,
-      "width": 3.213
+      "width": 3.34
     },
     "AMGN": {
       "high": 436.7,
@@ -73057,9 +73288,9 @@
       "width": 2.905
     },
     "AIZ": {
-      "high": 284.885,
+      "high": 284.94,
       "low": 282.915,
-      "width": 1.97
+      "width": 2.025
     },
     "T": {
       "high": 25.48,
@@ -73102,9 +73333,9 @@
       "width": 1.14
     },
     "BALL": {
-      "high": 63.41,
+      "high": 63.42,
       "low": 62.78,
-      "width": 0.63
+      "width": 0.64
     },
     "BAC": {
       "high": 62.52,
@@ -73188,8 +73419,8 @@
     },
     "BR": {
       "high": 181.1285,
-      "low": 178.32,
-      "width": 2.8085
+      "low": 178.22,
+      "width": 2.9085
     },
     "BRO": {
       "high": 72.345,
@@ -73197,19 +73428,19 @@
       "width": 1.015
     },
     "BF-B": {
-      "high": 28.25,
+      "high": 28.255,
       "low": 28.015,
-      "width": 0.235
+      "width": 0.24
     },
     "BLDR": {
-      "high": 70.8289,
+      "high": 70.85,
       "low": 69.76,
-      "width": 1.0689
+      "width": 1.09
     },
     "BG": {
       "high": 118.74,
-      "low": 117.41,
-      "width": 1.33
+      "low": 117.37,
+      "width": 1.37
     },
     "BXP": {
       "high": 68.165,
@@ -73237,14 +73468,14 @@
       "width": 4.27
     },
     "CAH": {
-      "high": 230.925,
+      "high": 231.08,
       "low": 228.65,
-      "width": 2.275
+      "width": 2.43
     },
     "CCL": {
       "high": 25.82,
-      "low": 25.56,
-      "width": 0.26
+      "low": 25.555,
+      "width": 0.265
     },
     "CARR": {
       "high": 61.24,
@@ -73253,8 +73484,8 @@
     },
     "CVNA": {
       "high": 72.059,
-      "low": 70.025,
-      "width": 2.034
+      "low": 70.01,
+      "width": 2.049
     },
     "CASY": {
       "high": 839.78,
@@ -73307,9 +73538,9 @@
       "width": 2.71
     },
     "SCHW": {
-      "high": 111.6,
+      "high": 111.615,
       "low": 110.165,
-      "width": 1.435
+      "width": 1.45
     },
     "CHTR": {
       "high": 150.88,
@@ -73322,9 +73553,9 @@
       "width": 1.899
     },
     "CMG": {
-      "high": 35.93,
+      "high": 35.935,
       "low": 35.4,
-      "width": 0.53
+      "width": 0.535
     },
     "CB": {
       "high": 345.4418,
@@ -73338,8 +73569,8 @@
     },
     "CIEN": {
       "high": 403.72,
-      "low": 391.6,
-      "width": 12.12
+      "low": 391.45,
+      "width": 12.27
     },
     "CI": {
       "high": 278.0,
@@ -73683,8 +73914,8 @@
     },
     "EFX": {
       "high": 196.28,
-      "low": 192.995,
-      "width": 3.285
+      "low": 192.99,
+      "width": 3.29
     },
     "EQIX": {
       "high": 1098.35,
@@ -73862,9 +74093,9 @@
       "width": 3.36
     },
     "IT": {
-      "high": 193.29,
+      "high": 193.34,
       "low": 189.61,
-      "width": 3.68
+      "width": 3.73
     },
     "GE": {
       "high": 349.4,
@@ -73922,9 +74153,9 @@
       "width": 2.15
     },
     "GL": {
-      "high": 172.13,
+      "high": 172.2,
       "low": 169.815,
-      "width": 2.315
+      "width": 2.385
     },
     "GDDY": {
       "high": 97.47,
@@ -74107,9 +74338,9 @@
       "width": 9.71
     },
     "IVZ": {
-      "high": 32.31,
+      "high": 32.32,
       "low": 31.845,
-      "width": 0.465
+      "width": 0.475
     },
     "INVH": {
       "high": 30.35,
@@ -74133,8 +74364,8 @@
     },
     "JBL": {
       "high": 321.4842,
-      "low": 316.065,
-      "width": 5.4192
+      "low": 315.6,
+      "width": 5.8842
     },
     "JKHY": {
       "high": 165.45,
@@ -74178,8 +74409,8 @@
     },
     "KEYS": {
       "high": 322.73,
-      "low": 313.64,
-      "width": 9.09
+      "low": 313.0,
+      "width": 9.73
     },
     "KMB": {
       "high": 109.04,
@@ -74248,8 +74479,8 @@
     },
     "LII": {
       "high": 410.54,
-      "low": 405.56,
-      "width": 4.98
+      "low": 405.01,
+      "width": 5.53
     },
     "LLY": {
       "high": 1253.4,
@@ -74337,9 +74568,9 @@
       "width": 5.0599
     },
     "MKC": {
-      "high": 55.64,
+      "high": 55.67,
       "low": 54.9,
-      "width": 0.74
+      "width": 0.77
     },
     "MCD": {
       "high": 269.45,
@@ -74408,8 +74639,8 @@
     },
     "TAP": {
       "high": 42.86,
-      "low": 42.3,
-      "width": 0.56
+      "low": 42.26,
+      "width": 0.6
     },
     "MDLZ": {
       "high": 64.4,
@@ -74502,9 +74733,9 @@
       "width": 4.6
     },
     "NSC": {
-      "high": 350.47,
+      "high": 350.48,
       "low": 347.455,
-      "width": 3.015
+      "width": 3.025
     },
     "NTRS": {
       "high": 186.0478,
@@ -74523,8 +74754,8 @@
     },
     "NRG": {
       "high": 117.23,
-      "low": 114.34,
-      "width": 2.89
+      "low": 114.29,
+      "width": 2.94
     },
     "NUE": {
       "high": 250.83,
@@ -74573,8 +74804,8 @@
     },
     "OKE": {
       "high": 95.34,
-      "low": 94.45,
-      "width": 0.89
+      "low": 94.42,
+      "width": 0.92
     },
     "ORCL": {
       "high": 147.645,
@@ -74583,8 +74814,8 @@
     },
     "OTIS": {
       "high": 72.67,
-      "low": 71.57,
-      "width": 1.1
+      "low": 71.53,
+      "width": 1.14
     },
     "PCAR": {
       "high": 130.96,
@@ -74697,9 +74928,9 @@
       "width": 0.955
     },
     "PRU": {
-      "high": 122.49,
+      "high": 122.515,
       "low": 121.32,
-      "width": 1.17
+      "width": 1.195
     },
     "PEG": {
       "high": 74.97,
@@ -74743,13 +74974,13 @@
     },
     "RL": {
       "high": 380.0,
-      "low": 375.0,
-      "width": 5.0
+      "low": 374.93,
+      "width": 5.07
     },
     "RJF": {
-      "high": 175.805,
+      "high": 175.91,
       "low": 173.63,
-      "width": 2.175
+      "width": 2.28
     },
     "RDDT": {
       "high": 154.42,
@@ -74858,8 +75089,8 @@
     },
     "SRE": {
       "high": 87.83,
-      "low": 86.23,
-      "width": 1.6
+      "low": 86.22,
+      "width": 1.61
     },
     "NOW": {
       "high": 131.02,
@@ -74987,9 +75218,9 @@
       "width": 5.02
     },
     "TGT": {
-      "high": 163.02,
+      "high": 163.045,
       "low": 160.23,
-      "width": 2.79
+      "width": 2.815
     },
     "TEL": {
       "high": 203.5,
@@ -75052,9 +75283,9 @@
       "width": 0.55
     },
     "TT": {
-      "high": 456.825,
+      "high": 456.8425,
       "low": 452.27,
-      "width": 4.555
+      "width": 4.5725
     },
     "TDG": {
       "high": 1202.3101,
@@ -75078,8 +75309,8 @@
     },
     "TYL": {
       "high": 347.425,
-      "low": 342.28,
-      "width": 5.145
+      "low": 342.27,
+      "width": 5.155
     },
     "TSN": {
       "high": 58.4,
@@ -75132,9 +75363,9 @@
       "width": 5.69
     },
     "UHS": {
-      "high": 174.725,
+      "high": 174.73,
       "low": 172.3475,
-      "width": 2.3775
+      "width": 2.3825
     },
     "VLO": {
       "high": 347.99,
@@ -75207,9 +75438,9 @@
       "width": 0.545
     },
     "VMC": {
-      "high": 274.6,
+      "high": 274.64,
       "low": 270.9602,
-      "width": 3.6398
+      "width": 3.6798
     },
     "WRB": {
       "high": 69.66,
@@ -75262,9 +75493,9 @@
       "width": 0.76
     },
     "WELL": {
-      "high": 238.8,
+      "high": 238.89,
       "low": 236.54,
-      "width": 2.26
+      "width": 2.35
     },
     "WST": {
       "high": 359.18,
@@ -75312,14 +75543,14 @@
       "width": 1.37
     },
     "XYL": {
-      "high": 114.73,
+      "high": 114.49,
       "low": 113.5,
-      "width": 1.23
+      "width": 0.99
     },
     "YUM": {
       "high": 152.665,
-      "low": 150.21,
-      "width": 2.455
+      "low": 150.19,
+      "width": 2.475
     },
     "ZBRA": {
       "high": 362.275,
@@ -75364,9 +75595,9 @@
     "2026-08-11": 100014.87,
     "2026-08-17": 100014.87,
     "2026-08-18": 99439.32,
-    "2026-08-19": 99425.76,
-    "2026-08-20": 99415.4,
-    "2026-08-21": 99415.4
+    "2026-08-19": 99486.79,
+    "2026-08-20": 100099.67,
+    "2026-08-21": 100099.67
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -161611,6 +161842,214 @@
     },
     {
       "date": "2026-08-19",
+      "time": "15:03 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.103,
+        "spy_vs_vwap": -0.9003,
+        "spy_vs_ema20": 6.0542
+      },
+      "portfolio_value": 99646.31,
+      "note": "$99,646 | cash=$67,416 | open=2 | closed today=5 | day PnL=$+6"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "15:05 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.107,
+        "spy_vs_vwap": -0.9363,
+        "spy_vs_ema20": 6.0192
+      },
+      "portfolio_value": 99645.08,
+      "note": "$99,645 | cash=$67,416 | open=2 | closed today=5 | day PnL=$+6"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "15:08 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.07,
+        "spy_vs_vwap": -0.6462,
+        "spy_vs_ema20": 6.3042
+      },
+      "portfolio_value": 99638.36,
+      "note": "$99,638 | cash=$67,416 | open=2 | closed today=5 | day PnL=$+6"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "15:10 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.067,
+        "spy_vs_vwap": -0.6185,
+        "spy_vs_ema20": 6.3292
+      },
+      "portfolio_value": 99643.94,
+      "note": "$99,644 | cash=$67,416 | open=2 | closed today=5 | day PnL=$+6"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "15:13 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.07,
+        "spy_vs_vwap": -0.643,
+        "spy_vs_ema20": 6.3042
+      },
+      "portfolio_value": 99641.24,
+      "note": "$99,641 | cash=$67,416 | open=2 | closed today=5 | day PnL=$+6"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "15:15 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.076,
+        "spy_vs_vwap": -0.3901,
+        "spy_vs_ema20": 6.2592
+      },
+      "portfolio_value": 99621.63,
+      "note": "$99,622 | cash=$67,416 | open=2 | closed today=5 | day PnL=$+6"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "15:18 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.086,
+        "spy_vs_vwap": -0.7573,
+        "spy_vs_ema20": 6.1842
+      },
+      "portfolio_value": 99638.23,
+      "note": "$99,638 | cash=$67,416 | open=2 | closed today=5 | day PnL=$+6"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "15:20 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.048,
+        "spy_vs_vwap": -0.4631,
+        "spy_vs_ema20": 6.4742
+      },
+      "portfolio_value": 99599.93,
+      "note": "$99,600 | cash=$67,416 | open=2 | closed today=5 | day PnL=$+6"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "15:23 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.067,
+        "spy_vs_vwap": -0.3107,
+        "spy_vs_ema20": 6.3292
+      },
+      "portfolio_value": 99572.88,
+      "note": "$99,573 | cash=$67,416 | open=2 | closed today=5 | day PnL=$+6"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "15:25 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.06,
+        "spy_vs_vwap": -0.5437,
+        "spy_vs_ema20": 6.3843
+      },
+      "portfolio_value": 99524.24,
+      "note": "$99,524 | cash=$67,416 | open=2 | closed today=5 | day PnL=$+6"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "15:28 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.06,
+        "spy_vs_vwap": -0.5403,
+        "spy_vs_ema20": 6.3842
+      },
+      "portfolio_value": 99525.69,
+      "note": "$99,526 | cash=$67,416 | open=2 | closed today=5 | day PnL=$+6"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "15:30 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.053,
+        "spy_vs_vwap": -0.4777,
+        "spy_vs_ema20": 6.4392
+      },
+      "portfolio_value": 99527.35,
+      "note": "$99,527 | cash=$67,416 | open=2 | closed today=5 | day PnL=$+6"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "15:32 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.009,
+        "spy_vs_vwap": -0.1445,
+        "spy_vs_ema20": 6.7742
+      },
+      "portfolio_value": 99528.67,
+      "note": "$99,529 | cash=$67,416 | open=2 | closed today=5 | day PnL=$+6"
+    },
+    {
+      "date": "2026-08-19",
       "time": "15:35 ET",
       "phase": "trading",
       "entries": [],
@@ -161618,37 +162057,399 @@
       "spy_regime": {
         "long_ok": false,
         "short_ok": false,
-        "spy_change_pct": -0.082,
-        "spy_vs_vwap": -0.4108,
-        "spy_vs_ema20": 6.2117
+        "spy_change_pct": -0.078,
+        "spy_vs_vwap": -0.6686,
+        "spy_vs_ema20": 6.2442
       },
-      "portfolio_value": 99514.33,
-      "note": "$99,514 | cash=$67,416 | open=2 | closed today=5 | day PnL=$+6"
+      "portfolio_value": 99494.53,
+      "note": "$99,495 | cash=$67,416 | open=2 | closed today=5 | day PnL=$+6"
     },
     {
       "date": "2026-08-19",
-      "time": "16:28 ET",
-      "phase": "after_hours",
-      "entries": [],
-      "exits": [],
-      "portfolio_value": 99425.76,
-      "note": "$99,426 | cash=$67,416 | open=2 | closed today=5 | day PnL=$+6"
-    },
-    {
-      "date": "2026-08-20",
-      "time": "10:06 ET",
+      "time": "15:37 ET",
       "phase": "trading",
       "entries": [],
       "exits": [],
       "spy_regime": {
         "long_ok": false,
         "short_ok": false,
-        "spy_change_pct": 0.035,
-        "spy_vs_vwap": -0.6313,
-        "spy_vs_ema20": 2.0083
+        "spy_change_pct": -0.132,
+        "spy_vs_vwap": -1.0796,
+        "spy_vs_ema20": 5.8242
       },
-      "portfolio_value": 99415.4,
-      "note": "$99,415 | cash=$99,415 | open=0 | closed today=0 | day PnL=$+0"
+      "portfolio_value": 99498.98,
+      "note": "$99,499 | cash=$67,416 | open=2 | closed today=5 | day PnL=$+6"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "15:40 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.143,
+        "spy_vs_vwap": -1.1509,
+        "spy_vs_ema20": 5.7442
+      },
+      "portfolio_value": 99472.67,
+      "note": "$99,473 | cash=$67,416 | open=2 | closed today=5 | day PnL=$+6"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "15:42 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.156,
+        "spy_vs_vwap": -1.2485,
+        "spy_vs_ema20": 5.6442
+      },
+      "portfolio_value": 99482.31,
+      "note": "$99,482 | cash=$67,416 | open=2 | closed today=5 | day PnL=$+6"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "15:45 ET",
+      "phase": "force_close",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "BR",
+          "side": "long",
+          "exit_price": 176.45,
+          "pnl": 45.78,
+          "reason": "force close 3:45pm"
+        },
+        {
+          "ticker": "OMC",
+          "side": "long",
+          "exit_price": 87.56,
+          "pnl": -3.94,
+          "reason": "force close 3:45pm"
+        }
+      ],
+      "portfolio_value": 99486.79,
+      "note": "$99,487 | cash=$99,487 | open=0 | closed today=7 | day PnL=$+47"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "15:47 ET",
+      "phase": "force_close",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 99486.79,
+      "note": "$99,487 | cash=$99,487 | open=0 | closed today=7 | day PnL=$+47"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "15:50 ET",
+      "phase": "force_close",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 99486.79,
+      "note": "$99,487 | cash=$99,487 | open=0 | closed today=7 | day PnL=$+47"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "15:52 ET",
+      "phase": "force_close",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 99486.79,
+      "note": "$99,487 | cash=$99,487 | open=0 | closed today=7 | day PnL=$+47"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "15:54 ET",
+      "phase": "force_close",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 99486.79,
+      "note": "$99,487 | cash=$99,487 | open=0 | closed today=7 | day PnL=$+47"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "15:57 ET",
+      "phase": "force_close",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 99486.79,
+      "note": "$99,487 | cash=$99,487 | open=0 | closed today=7 | day PnL=$+47"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "15:59 ET",
+      "phase": "force_close",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 99486.79,
+      "note": "$99,487 | cash=$99,487 | open=0 | closed today=7 | day PnL=$+47"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "16:02 ET",
+      "phase": "after_hours",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 99486.79,
+      "note": "$99,487 | cash=$99,487 | open=0 | closed today=7 | day PnL=$+47"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "16:04 ET",
+      "phase": "after_hours",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 99486.79,
+      "note": "$99,487 | cash=$99,487 | open=0 | closed today=7 | day PnL=$+47"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "09:49 ET",
+      "phase": "orb_window",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 99486.79,
+      "note": "$99,487 | cash=$99,487 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "10:15 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.097,
+        "spy_vs_vwap": 0.0194,
+        "spy_vs_ema20": 2.4784
+      },
+      "portfolio_value": 99486.79,
+      "note": "$99,487 | cash=$99,487 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "10:29 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.014,
+        "spy_vs_vwap": -0.6062,
+        "spy_vs_ema20": 1.8484
+      },
+      "portfolio_value": 99486.79,
+      "note": "$99,487 | cash=$99,487 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "10:32 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.049,
+        "spy_vs_vwap": -0.3323,
+        "spy_vs_ema20": 2.1145
+      },
+      "portfolio_value": 99486.79,
+      "note": "$99,487 | cash=$99,487 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "10:34 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.027,
+        "spy_vs_vwap": -0.027,
+        "spy_vs_ema20": 1.9483
+      },
+      "portfolio_value": 99486.79,
+      "note": "$99,487 | cash=$99,487 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "10:37 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.108,
+        "spy_vs_vwap": 0.1391,
+        "spy_vs_ema20": 2.5683
+      },
+      "portfolio_value": 99486.79,
+      "note": "$99,487 | cash=$99,487 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "10:39 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "NDSN",
+          "side": "long",
+          "price": 328.04,
+          "shares": 90,
+          "stop": 318.86,
+          "trail_dist": 9.185,
+          "score": 45.72
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.132,
+        "spy_vs_vwap": 0.3174,
+        "spy_vs_ema20": 2.7483
+      },
+      "portfolio_value": 99486.79,
+      "note": "$99,487 | cash=$69,963 | open=1 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "10:42 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.108,
+        "spy_vs_vwap": 0.534,
+        "spy_vs_ema20": 2.5683
+      },
+      "portfolio_value": 99510.19,
+      "note": "$99,510 | cash=$69,963 | open=1 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "10:44 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.157,
+        "spy_vs_vwap": 0.8962,
+        "spy_vs_ema20": 2.9383
+      },
+      "portfolio_value": 99524.59,
+      "note": "$99,525 | cash=$69,963 | open=1 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "10:47 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.175,
+        "spy_vs_vwap": 1.0204,
+        "spy_vs_ema20": 3.0783
+      },
+      "portfolio_value": 99505.24,
+      "note": "$99,505 | cash=$69,963 | open=1 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "10:49 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.115,
+        "spy_vs_vwap": 0.5585,
+        "spy_vs_ema20": 2.6184
+      },
+      "portfolio_value": 99458.89,
+      "note": "$99,459 | cash=$69,963 | open=1 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "10:52 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.117,
+        "spy_vs_vwap": 0.5743,
+        "spy_vs_ema20": 2.6383
+      },
+      "portfolio_value": 99541.69,
+      "note": "$99,542 | cash=$69,963 | open=1 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "10:54 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.106,
+        "spy_vs_vwap": 0.4809,
+        "spy_vs_ema20": 2.5484
+      },
+      "portfolio_value": 99654.41,
+      "note": "$99,654 | cash=$69,963 | open=1 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "10:56 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.115,
+        "spy_vs_vwap": 0.5493,
+        "spy_vs_ema20": 2.6184
+      },
+      "portfolio_value": 99623.59,
+      "note": "$99,624 | cash=$69,963 | open=1 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "10:59 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.155,
+        "spy_vs_vwap": 0.8557,
+        "spy_vs_ema20": 2.9234
+      },
+      "portfolio_value": 99643.39,
+      "note": "$99,643 | cash=$69,963 | open=1 | closed today=0 | day PnL=$+0"
     },
     {
       "date": "2026-08-20",
@@ -161659,12 +162460,294 @@
       "spy_regime": {
         "long_ok": true,
         "short_ok": false,
-        "spy_change_pct": 0.228,
-        "spy_vs_vwap": 0.9458,
-        "spy_vs_ema20": 3.4884
+        "spy_change_pct": 0.27,
+        "spy_vs_vwap": 1.2759,
+        "spy_vs_ema20": 3.8084
       },
-      "portfolio_value": 99415.4,
-      "note": "$99,415 | cash=$99,415 | open=0 | closed today=0 | day PnL=$+0"
+      "portfolio_value": 99665.89,
+      "note": "$99,666 | cash=$69,963 | open=1 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "11:04 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.262,
+        "spy_vs_vwap": 1.6217,
+        "spy_vs_ema20": 3.7483
+      },
+      "portfolio_value": 99700.09,
+      "note": "$99,700 | cash=$69,963 | open=1 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "11:06 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.169,
+        "spy_vs_vwap": 0.4491,
+        "spy_vs_ema20": 3.0334
+      },
+      "portfolio_value": 99733.39,
+      "note": "$99,733 | cash=$69,963 | open=1 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "11:09 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.086,
+        "spy_vs_vwap": 0.2479,
+        "spy_vs_ema20": 2.3984
+      },
+      "portfolio_value": 99728.89,
+      "note": "$99,729 | cash=$69,963 | open=1 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "11:11 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.044,
+        "spy_vs_vwap": -0.0704,
+        "spy_vs_ema20": 2.0783
+      },
+      "portfolio_value": 99845.89,
+      "note": "$99,846 | cash=$69,963 | open=1 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "11:14 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "MU",
+          "side": "long",
+          "price": 958.4,
+          "shares": 21,
+          "stop": 945.63,
+          "trail_dist": 12.765,
+          "score": 40.32
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.108,
+        "spy_vs_vwap": 0.0005,
+        "spy_vs_ema20": 2.5683
+      },
+      "portfolio_value": 99819.78,
+      "note": "$99,820 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "11:16 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.074,
+        "spy_vs_vwap": 0.16,
+        "spy_vs_ema20": 2.3084
+      },
+      "portfolio_value": 99805.69,
+      "note": "$99,806 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "11:19 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.134,
+        "spy_vs_vwap": 0.6099,
+        "spy_vs_ema20": 2.7683
+      },
+      "portfolio_value": 99801.14,
+      "note": "$99,801 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "11:21 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.034,
+        "spy_vs_vwap": -0.1618,
+        "spy_vs_ema20": 1.9989
+      },
+      "portfolio_value": 99827.95,
+      "note": "$99,828 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "11:23 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.029,
+        "spy_vs_vwap": -0.2028,
+        "spy_vs_ema20": 1.9583
+      },
+      "portfolio_value": 99831.08,
+      "note": "$99,831 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "11:26 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.035,
+        "spy_vs_vwap": -0.1513,
+        "spy_vs_ema20": 2.0083
+      },
+      "portfolio_value": 99846.95,
+      "note": "$99,847 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "11:28 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.072,
+        "spy_vs_vwap": 0.1264,
+        "spy_vs_ema20": 2.2884
+      },
+      "portfolio_value": 99930.69,
+      "note": "$99,931 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "11:31 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.069,
+        "spy_vs_vwap": 0.1044,
+        "spy_vs_ema20": 2.2683
+      },
+      "portfolio_value": 99978.07,
+      "note": "$99,978 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "11:33 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.007,
+        "spy_vs_vwap": -0.4887,
+        "spy_vs_ema20": 1.7884
+      },
+      "portfolio_value": 99913.48,
+      "note": "$99,913 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "11:36 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.02,
+        "spy_vs_vwap": -0.6858,
+        "spy_vs_ema20": 1.5884
+      },
+      "portfolio_value": 99870.25,
+      "note": "$99,870 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "11:38 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.048,
+        "spy_vs_vwap": -0.8943,
+        "spy_vs_ema20": 1.3733
+      },
+      "portfolio_value": 99857.35,
+      "note": "$99,857 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "11:41 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.062,
+        "spy_vs_vwap": -1.0078,
+        "spy_vs_ema20": 1.2633
+      },
+      "portfolio_value": 99851.89,
+      "note": "$99,852 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "11:43 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.061,
+        "spy_vs_vwap": -1.001,
+        "spy_vs_ema20": 1.2683
+      },
+      "portfolio_value": 99777.22,
+      "note": "$99,777 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
     },
     {
       "date": "2026-08-20",
@@ -161675,16 +162758,240 @@
       "spy_regime": {
         "long_ok": false,
         "short_ok": false,
-        "spy_change_pct": -0.052,
-        "spy_vs_vwap": -1.1077,
-        "spy_vs_ema20": 1.3382
+        "spy_change_pct": -0.09,
+        "spy_vs_vwap": -1.2173,
+        "spy_vs_ema20": 1.0484
       },
-      "portfolio_value": 99415.4,
-      "note": "$99,415 | cash=$99,415 | open=0 | closed today=0 | day PnL=$+0"
+      "portfolio_value": 99725.04,
+      "note": "$99,725 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
     },
     {
       "date": "2026-08-20",
-      "time": "12:21 ET",
+      "time": "11:48 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.043,
+        "spy_vs_vwap": -1.0379,
+        "spy_vs_ema20": 1.4084
+      },
+      "portfolio_value": 99801.07,
+      "note": "$99,801 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "11:50 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.051,
+        "spy_vs_vwap": -1.0929,
+        "spy_vs_ema20": 1.3457
+      },
+      "portfolio_value": 99727.99,
+      "note": "$99,728 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "11:53 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.029,
+        "spy_vs_vwap": -0.7389,
+        "spy_vs_ema20": 1.5183
+      },
+      "portfolio_value": 99758.96,
+      "note": "$99,759 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "11:55 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.003,
+        "spy_vs_vwap": -0.5367,
+        "spy_vs_ema20": 1.7184
+      },
+      "portfolio_value": 99833.95,
+      "note": "$99,834 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "11:58 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.018,
+        "spy_vs_vwap": -0.4476,
+        "spy_vs_ema20": 1.6034
+      },
+      "portfolio_value": 99796.69,
+      "note": "$99,797 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "12:00 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.035,
+        "spy_vs_vwap": -0.5808,
+        "spy_vs_ema20": 1.4684
+      },
+      "portfolio_value": 99757.33,
+      "note": "$99,757 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "12:03 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.007,
+        "spy_vs_vwap": -0.261,
+        "spy_vs_ema20": 1.7884
+      },
+      "portfolio_value": 99755.74,
+      "note": "$99,756 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "12:05 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.05,
+        "spy_vs_vwap": -0.6938,
+        "spy_vs_ema20": 1.3534
+      },
+      "portfolio_value": 99687.72,
+      "note": "$99,688 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "12:07 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.038,
+        "spy_vs_vwap": -0.5979,
+        "spy_vs_ema20": 1.4483
+      },
+      "portfolio_value": 99626.44,
+      "note": "$99,626 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "12:10 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.023,
+        "spy_vs_vwap": -0.4876,
+        "spy_vs_ema20": 1.5584
+      },
+      "portfolio_value": 99637.43,
+      "note": "$99,637 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "12:12 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.036,
+        "spy_vs_vwap": -0.8974,
+        "spy_vs_ema20": 1.4651
+      },
+      "portfolio_value": 99737.49,
+      "note": "$99,737 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "12:15 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.05,
+        "spy_vs_vwap": -0.6863,
+        "spy_vs_ema20": 1.3584
+      },
+      "portfolio_value": 99709.1,
+      "note": "$99,709 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "12:17 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.048,
+        "spy_vs_vwap": -0.6751,
+        "spy_vs_ema20": 1.3684
+      },
+      "portfolio_value": 99741.52,
+      "note": "$99,742 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "12:20 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.063,
+        "spy_vs_vwap": -0.7842,
+        "spy_vs_ema20": 1.2583
+      },
+      "portfolio_value": 99737.53,
+      "note": "$99,738 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "12:22 ET",
       "phase": "trading",
       "entries": [],
       "exits": [],
@@ -161692,27 +162999,429 @@
         "long_ok": false,
         "short_ok": false,
         "spy_change_pct": -0.047,
-        "spy_vs_vwap": -0.9533,
+        "spy_vs_vwap": -0.6616,
         "spy_vs_ema20": 1.3783
       },
-      "portfolio_value": 99415.4,
-      "note": "$99,415 | cash=$99,415 | open=0 | closed today=0 | day PnL=$+0"
+      "portfolio_value": 99708.86,
+      "note": "$99,709 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
     },
     {
       "date": "2026-08-20",
-      "time": "12:58 ET",
+      "time": "12:25 ET",
       "phase": "trading",
       "entries": [],
       "exits": [],
       "spy_regime": {
         "long_ok": false,
         "short_ok": false,
+        "spy_change_pct": -0.008,
+        "spy_vs_vwap": -0.6517,
+        "spy_vs_ema20": 1.6784
+      },
+      "portfolio_value": 99699.66,
+      "note": "$99,700 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "12:27 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.021,
+        "spy_vs_vwap": -0.3859,
+        "spy_vs_ema20": 1.5783
+      },
+      "portfolio_value": 99631.06,
+      "note": "$99,631 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "12:29 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.046,
+        "spy_vs_vwap": -0.5755,
+        "spy_vs_ema20": 1.3883
+      },
+      "portfolio_value": 99662.75,
+      "note": "$99,663 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "12:32 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.062,
+        "spy_vs_vwap": -0.7,
+        "spy_vs_ema20": 1.2633
+      },
+      "portfolio_value": 99624.91,
+      "note": "$99,625 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "12:34 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.01,
+        "spy_vs_vwap": -0.1495,
+        "spy_vs_ema20": 1.8142
+      },
+      "portfolio_value": 99637.78,
+      "note": "$99,638 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "12:37 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.04,
+        "spy_vs_vwap": 0.0853,
+        "spy_vs_ema20": 2.0484
+      },
+      "portfolio_value": 99660.71,
+      "note": "$99,661 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "12:39 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.044,
+        "spy_vs_vwap": 0.1153,
+        "spy_vs_ema20": 2.0785
+      },
+      "portfolio_value": 99657.42,
+      "note": "$99,657 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "12:42 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.056,
+        "spy_vs_vwap": 0.2049,
+        "spy_vs_ema20": 2.1684
+      },
+      "portfolio_value": 99714.1,
+      "note": "$99,714 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "12:44 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.087,
+        "spy_vs_vwap": 0.4391,
+        "spy_vs_ema20": 2.4034
+      },
+      "portfolio_value": 99667.01,
+      "note": "$99,667 | cash=$49,837 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "12:47 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "PLTR",
+          "side": "long",
+          "price": 176.37,
+          "shares": 84,
+          "stop": 174.44,
+          "trail_dist": 1.93,
+          "score": 39.8
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.081,
+        "spy_vs_vwap": 0.3938,
+        "spy_vs_ema20": 2.3584
+      },
+      "portfolio_value": 99677.11,
+      "note": "$99,677 | cash=$35,022 | open=3 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "12:49 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.059,
+        "spy_vs_vwap": 0.2231,
+        "spy_vs_ema20": 2.1883
+      },
+      "portfolio_value": 99700.54,
+      "note": "$99,701 | cash=$35,022 | open=3 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "12:51 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.035,
+        "spy_vs_vwap": 0.0431,
+        "spy_vs_ema20": 2.0083
+      },
+      "portfolio_value": 99719.98,
+      "note": "$99,720 | cash=$35,022 | open=3 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "12:54 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.021,
+        "spy_vs_vwap": -0.0669,
+        "spy_vs_ema20": 1.8984
+      },
+      "portfolio_value": 99680.47,
+      "note": "$99,680 | cash=$35,022 | open=3 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "12:56 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.022,
+        "spy_vs_vwap": -0.0568,
+        "spy_vs_ema20": 1.9084
+      },
+      "portfolio_value": 99681.39,
+      "note": "$99,681 | cash=$35,022 | open=3 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "12:59 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
         "spy_change_pct": 0.063,
-        "spy_vs_vwap": -0.085,
+        "spy_vs_vwap": 0.2531,
         "spy_vs_ema20": 2.2184
       },
-      "portfolio_value": 99415.4,
-      "note": "$99,415 | cash=$99,415 | open=0 | closed today=0 | day PnL=$+0"
+      "portfolio_value": 99724.33,
+      "note": "$99,724 | cash=$35,022 | open=3 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "13:01 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.021,
+        "spy_vs_vwap": -0.0671,
+        "spy_vs_ema20": 1.8984
+      },
+      "portfolio_value": 99689.11,
+      "note": "$99,689 | cash=$35,022 | open=3 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "13:04 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.009,
+        "spy_vs_vwap": -0.1571,
+        "spy_vs_ema20": 1.8084
+      },
+      "portfolio_value": 99694.98,
+      "note": "$99,695 | cash=$35,022 | open=3 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "13:06 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.026,
+        "spy_vs_vwap": -0.4268,
+        "spy_vs_ema20": 1.5384
+      },
+      "portfolio_value": 99652.84,
+      "note": "$99,653 | cash=$35,022 | open=3 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "13:09 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.031,
+        "spy_vs_vwap": -0.4663,
+        "spy_vs_ema20": 1.4983
+      },
+      "portfolio_value": 99689.01,
+      "note": "$99,689 | cash=$35,022 | open=3 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "13:11 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.032,
+        "spy_vs_vwap": -0.4706,
+        "spy_vs_ema20": 1.4934
+      },
+      "portfolio_value": 99771.61,
+      "note": "$99,772 | cash=$35,022 | open=3 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "13:14 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.048,
+        "spy_vs_vwap": -0.595,
+        "spy_vs_ema20": 1.3684
+      },
+      "portfolio_value": 99696.27,
+      "note": "$99,696 | cash=$35,022 | open=3 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "13:16 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "PLTR",
+          "side": "long",
+          "exit_price": 174.5,
+          "pnl": -157.08,
+          "reason": "trailing stop"
+        }
+      ],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.108,
+        "spy_vs_vwap": -1.0535,
+        "spy_vs_ema20": 0.9084
+      },
+      "portfolio_value": 99622.75,
+      "note": "$99,623 | cash=$49,680 | open=2 | closed today=1 | day PnL=$-157"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "13:18 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.115,
+        "spy_vs_vwap": -1.1001,
+        "spy_vs_ema20": 0.8584
+      },
+      "portfolio_value": 99569.32,
+      "note": "$99,569 | cash=$49,680 | open=2 | closed today=1 | day PnL=$-157"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "13:21 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.128,
+        "spy_vs_vwap": -1.1976,
+        "spy_vs_ema20": 0.7583
+      },
+      "portfolio_value": 99663.31,
+      "note": "$99,663 | cash=$49,680 | open=2 | closed today=1 | day PnL=$-157"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "13:23 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.096,
+        "spy_vs_vwap": -0.9499,
+        "spy_vs_ema20": 1.0033
+      },
+      "portfolio_value": 99659.88,
+      "note": "$99,660 | cash=$49,680 | open=2 | closed today=1 | day PnL=$-157"
     },
     {
       "date": "2026-08-20",
@@ -161723,16 +163432,1137 @@
       "spy_regime": {
         "long_ok": false,
         "short_ok": false,
-        "spy_change_pct": -0.132,
-        "spy_vs_vwap": -1.4812,
-        "spy_vs_ema20": 0.7284
+        "spy_change_pct": -0.133,
+        "spy_vs_vwap": -1.2332,
+        "spy_vs_ema20": 0.7184
       },
-      "portfolio_value": 99415.4,
-      "note": "$99,415 | cash=$99,415 | open=0 | closed today=0 | day PnL=$+0"
+      "portfolio_value": 99553.57,
+      "note": "$99,554 | cash=$49,680 | open=2 | closed today=1 | day PnL=$-157"
     },
     {
       "date": "2026-08-20",
-      "time": "13:54 ET",
+      "time": "13:28 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.151,
+        "spy_vs_vwap": -1.3717,
+        "spy_vs_ema20": 0.5783
+      },
+      "portfolio_value": 99540.06,
+      "note": "$99,540 | cash=$49,680 | open=2 | closed today=1 | day PnL=$-157"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "13:31 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.142,
+        "spy_vs_vwap": -1.2992,
+        "spy_vs_ema20": 0.6484
+      },
+      "portfolio_value": 99560.35,
+      "note": "$99,560 | cash=$49,680 | open=2 | closed today=1 | day PnL=$-157"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "13:33 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.165,
+        "spy_vs_vwap": -1.4668,
+        "spy_vs_ema20": 0.4784
+      },
+      "portfolio_value": 99496.9,
+      "note": "$99,497 | cash=$49,680 | open=2 | closed today=1 | day PnL=$-157"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "13:36 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.187,
+        "spy_vs_vwap": -1.6402,
+        "spy_vs_ema20": 0.3034
+      },
+      "portfolio_value": 99463.45,
+      "note": "$99,463 | cash=$49,680 | open=2 | closed today=1 | day PnL=$-157"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "13:38 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.184,
+        "spy_vs_vwap": -1.6117,
+        "spy_vs_ema20": 0.3283
+      },
+      "portfolio_value": 99464.02,
+      "note": "$99,464 | cash=$49,680 | open=2 | closed today=1 | day PnL=$-157"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "13:41 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.206,
+        "spy_vs_vwap": -1.7783,
+        "spy_vs_ema20": 0.1584
+      },
+      "portfolio_value": 99434.59,
+      "note": "$99,435 | cash=$49,680 | open=2 | closed today=1 | day PnL=$-157"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "13:43 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.215,
+        "spy_vs_vwap": -1.8456,
+        "spy_vs_ema20": 0.0884
+      },
+      "portfolio_value": 99359.47,
+      "note": "$99,359 | cash=$49,680 | open=2 | closed today=1 | day PnL=$-157"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "13:46 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.18,
+        "spy_vs_vwap": -1.5727,
+        "spy_vs_ema20": 0.3584
+      },
+      "portfolio_value": 99463.87,
+      "note": "$99,464 | cash=$49,680 | open=2 | closed today=1 | day PnL=$-157"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "13:48 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.159,
+        "spy_vs_vwap": -1.4105,
+        "spy_vs_ema20": 0.5183
+      },
+      "portfolio_value": 99465.94,
+      "note": "$99,466 | cash=$49,680 | open=2 | closed today=1 | day PnL=$-157"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "13:51 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.134,
+        "spy_vs_vwap": -1.213,
+        "spy_vs_ema20": 0.7135
+      },
+      "portfolio_value": 99465.37,
+      "note": "$99,465 | cash=$49,680 | open=2 | closed today=1 | day PnL=$-157"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "13:53 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.142,
+        "spy_vs_vwap": -1.2769,
+        "spy_vs_ema20": 0.6484
+      },
+      "portfolio_value": 99504.89,
+      "note": "$99,505 | cash=$49,680 | open=2 | closed today=1 | day PnL=$-157"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "13:56 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.158,
+        "spy_vs_vwap": -1.3943,
+        "spy_vs_ema20": 0.5284
+      },
+      "portfolio_value": 99479.16,
+      "note": "$99,479 | cash=$49,680 | open=2 | closed today=1 | day PnL=$-157"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "13:58 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.171,
+        "spy_vs_vwap": -1.4971,
+        "spy_vs_ema20": 0.4248
+      },
+      "portfolio_value": 99506.56,
+      "note": "$99,507 | cash=$49,680 | open=2 | closed today=1 | day PnL=$-157"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "14:01 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.213,
+        "spy_vs_vwap": -1.8103,
+        "spy_vs_ema20": 0.1084
+      },
+      "portfolio_value": 99485.11,
+      "note": "$99,485 | cash=$49,680 | open=2 | closed today=1 | day PnL=$-157"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "14:03 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "MPC",
+          "side": "short",
+          "price": 360.69,
+          "shares": 41,
+          "stop": 363.57,
+          "trail_dist": 2.8725,
+          "score": 49.78
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.248,
+        "spy_vs_vwap": -2.0767,
+        "spy_vs_ema20": -0.1616
+      },
+      "portfolio_value": 99485.5,
+      "note": "$99,486 | cash=$34,891 | open=3 | closed today=1 | day PnL=$-157"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "14:05 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.269,
+        "spy_vs_vwap": -2.2303,
+        "spy_vs_ema20": -0.3216
+      },
+      "portfolio_value": 99380.21,
+      "note": "$99,380 | cash=$34,891 | open=3 | closed today=1 | day PnL=$-157"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "14:08 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "TDG",
+          "side": "short",
+          "price": 1191.42,
+          "shares": 13,
+          "stop": 1197.11,
+          "trail_dist": 5.6875,
+          "score": 57.63
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "MU",
+          "side": "long",
+          "exit_price": 948.65,
+          "pnl": -204.63,
+          "reason": "trailing stop"
+        }
+      ],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.309,
+        "spy_vs_vwap": -2.5365,
+        "spy_vs_ema20": -0.6316
+      },
+      "portfolio_value": 99344.77,
+      "note": "$99,345 | cash=$39,325 | open=3 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "14:10 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.324,
+        "spy_vs_vwap": -2.6382,
+        "spy_vs_ema20": -0.7417
+      },
+      "portfolio_value": 99340.53,
+      "note": "$99,341 | cash=$39,325 | open=3 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "14:13 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.306,
+        "spy_vs_vwap": -2.4934,
+        "spy_vs_ema20": -0.6016
+      },
+      "portfolio_value": 99355.55,
+      "note": "$99,356 | cash=$39,325 | open=3 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "14:15 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.351,
+        "spy_vs_vwap": -2.835,
+        "spy_vs_ema20": -0.9516
+      },
+      "portfolio_value": 99376.65,
+      "note": "$99,377 | cash=$39,325 | open=3 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "14:18 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.315,
+        "spy_vs_vwap": -2.553,
+        "spy_vs_ema20": -0.6767
+      },
+      "portfolio_value": 99382.47,
+      "note": "$99,382 | cash=$39,325 | open=3 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "14:20 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.282,
+        "spy_vs_vwap": -2.29,
+        "spy_vs_ema20": -0.4217
+      },
+      "portfolio_value": 99428.33,
+      "note": "$99,428 | cash=$39,325 | open=3 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "14:33 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.347,
+        "spy_vs_vwap": -2.7727,
+        "spy_vs_ema20": -0.9217
+      },
+      "portfolio_value": 99392.26,
+      "note": "$99,392 | cash=$39,325 | open=3 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "14:36 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.326,
+        "spy_vs_vwap": -2.6063,
+        "spy_vs_ema20": -0.7616
+      },
+      "portfolio_value": 99348.21,
+      "note": "$99,348 | cash=$39,325 | open=3 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "14:38 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.32,
+        "spy_vs_vwap": -2.553,
+        "spy_vs_ema20": -0.7116
+      },
+      "portfolio_value": 99404.5,
+      "note": "$99,405 | cash=$39,325 | open=3 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "14:40 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.343,
+        "spy_vs_vwap": -2.7267,
+        "spy_vs_ema20": -0.8916
+      },
+      "portfolio_value": 99454.43,
+      "note": "$99,454 | cash=$39,325 | open=3 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "14:43 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.319,
+        "spy_vs_vwap": -2.5397,
+        "spy_vs_ema20": -0.7066
+      },
+      "portfolio_value": 99471.32,
+      "note": "$99,471 | cash=$39,325 | open=3 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "14:45 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.32,
+        "spy_vs_vwap": -2.5415,
+        "spy_vs_ema20": -0.7127
+      },
+      "portfolio_value": 99558.09,
+      "note": "$99,558 | cash=$39,325 | open=3 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "14:48 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.285,
+        "spy_vs_vwap": -2.2675,
+        "spy_vs_ema20": -0.4416
+      },
+      "portfolio_value": 99559.59,
+      "note": "$99,560 | cash=$39,325 | open=3 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "14:50 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.303,
+        "spy_vs_vwap": -2.3999,
+        "spy_vs_ema20": -0.5816
+      },
+      "portfolio_value": 99511.22,
+      "note": "$99,511 | cash=$39,325 | open=3 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "14:53 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.304,
+        "spy_vs_vwap": -2.4053,
+        "spy_vs_ema20": -0.5916
+      },
+      "portfolio_value": 99580.68,
+      "note": "$99,581 | cash=$39,325 | open=3 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "14:55 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.309,
+        "spy_vs_vwap": -2.4362,
+        "spy_vs_ema20": -0.6316
+      },
+      "portfolio_value": 99578.74,
+      "note": "$99,579 | cash=$39,325 | open=3 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "14:58 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.333,
+        "spy_vs_vwap": -2.6118,
+        "spy_vs_ema20": -0.8117
+      },
+      "portfolio_value": 99701.39,
+      "note": "$99,701 | cash=$39,325 | open=3 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "15:00 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.349,
+        "spy_vs_vwap": -2.7269,
+        "spy_vs_ema20": -0.9317
+      },
+      "portfolio_value": 99788.02,
+      "note": "$99,788 | cash=$39,325 | open=3 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "15:03 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "PFG",
+          "side": "short",
+          "price": 110.68,
+          "shares": 106,
+          "stop": 110.97,
+          "trail_dist": 0.2925,
+          "score": 52.75
+        },
+        {
+          "ticker": "KMI",
+          "side": "short",
+          "price": 31.6,
+          "shares": 261,
+          "stop": 31.79,
+          "trail_dist": 0.19,
+          "score": 50.8
+        },
+        {
+          "ticker": "CDW",
+          "side": "short",
+          "price": 136.55,
+          "shares": 42,
+          "stop": 137.9,
+          "trail_dist": 1.35,
+          "score": 33.36
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.332,
+        "spy_vs_vwap": -2.5909,
+        "spy_vs_ema20": -0.8017
+      },
+      "portfolio_value": 99754.66,
+      "note": "$99,755 | cash=$13,609 | open=6 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "15:05 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.323,
+        "spy_vs_vwap": -2.5195,
+        "spy_vs_ema20": -0.7367
+      },
+      "portfolio_value": 99894.36,
+      "note": "$99,894 | cash=$13,609 | open=6 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "15:07 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.302,
+        "spy_vs_vwap": -2.3516,
+        "spy_vs_ema20": -0.5716
+      },
+      "portfolio_value": 99832.21,
+      "note": "$99,832 | cash=$13,609 | open=6 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "15:10 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.321,
+        "spy_vs_vwap": -2.4942,
+        "spy_vs_ema20": -0.7216
+      },
+      "portfolio_value": 99890.96,
+      "note": "$99,891 | cash=$13,609 | open=6 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "15:12 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.321,
+        "spy_vs_vwap": -1.9361,
+        "spy_vs_ema20": -0.7216
+      },
+      "portfolio_value": 99885.74,
+      "note": "$99,886 | cash=$13,609 | open=6 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "15:15 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.291,
+        "spy_vs_vwap": -1.704,
+        "spy_vs_ema20": -0.4917
+      },
+      "portfolio_value": 99914.08,
+      "note": "$99,914 | cash=$13,609 | open=6 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "15:17 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.322,
+        "spy_vs_vwap": -1.9347,
+        "spy_vs_ema20": -0.7266
+      },
+      "portfolio_value": 99954.69,
+      "note": "$99,955 | cash=$13,609 | open=6 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "15:20 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.354,
+        "spy_vs_vwap": -2.1766,
+        "spy_vs_ema20": -0.9716
+      },
+      "portfolio_value": 99960.55,
+      "note": "$99,961 | cash=$13,609 | open=6 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "15:22 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.311,
+        "spy_vs_vwap": -1.842,
+        "spy_vs_ema20": -0.6416
+      },
+      "portfolio_value": 100081.97,
+      "note": "$100,082 | cash=$13,609 | open=6 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "15:25 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.296,
+        "spy_vs_vwap": -1.7293,
+        "spy_vs_ema20": -0.5318
+      },
+      "portfolio_value": 100134.2,
+      "note": "$100,134 | cash=$13,609 | open=6 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "15:27 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.313,
+        "spy_vs_vwap": -1.8547,
+        "spy_vs_ema20": -0.6616
+      },
+      "portfolio_value": 100113.38,
+      "note": "$100,113 | cash=$13,609 | open=6 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "15:30 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.337,
+        "spy_vs_vwap": -2.032,
+        "spy_vs_ema20": -0.8416
+      },
+      "portfolio_value": 100199.29,
+      "note": "$100,199 | cash=$13,609 | open=6 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "15:32 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "BAC",
+          "side": "short",
+          "price": 62.13,
+          "shares": 65,
+          "stop": 62.35,
+          "trail_dist": 0.225,
+          "score": 50.95
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.343,
+        "spy_vs_vwap": -2.0757,
+        "spy_vs_ema20": -0.8916
+      },
+      "portfolio_value": 100156.95,
+      "note": "$100,157 | cash=$9,571 | open=7 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "15:35 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.363,
+        "spy_vs_vwap": -2.2147,
+        "spy_vs_ema20": -1.0417
+      },
+      "portfolio_value": 100024.96,
+      "note": "$100,025 | cash=$9,571 | open=7 | closed today=2 | day PnL=$-362"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "15:37 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "MTD",
+          "side": "short",
+          "price": 1394.16,
+          "shares": 3,
+          "stop": 1407.69,
+          "trail_dist": 13.5299,
+          "score": 35.91
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "CDW",
+          "side": "short",
+          "exit_price": 135.9,
+          "pnl": 27.3,
+          "reason": "trailing stop"
+        }
+      ],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.332,
+        "spy_vs_vwap": -1.9721,
+        "spy_vs_ema20": -0.8067
+      },
+      "portfolio_value": 100068.92,
+      "note": "$100,069 | cash=$11,151 | open=7 | closed today=3 | day PnL=$-334"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "15:40 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.332,
+        "spy_vs_vwap": -1.9609,
+        "spy_vs_ema20": -0.8017
+      },
+      "portfolio_value": 100071.07,
+      "note": "$100,071 | cash=$11,151 | open=7 | closed today=3 | day PnL=$-334"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "15:42 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "SYK",
+          "side": "short",
+          "price": 329.1,
+          "shares": 10,
+          "stop": 331.67,
+          "trail_dist": 2.5675,
+          "score": 65.31
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.356,
+        "spy_vs_vwap": -2.1429,
+        "spy_vs_ema20": -0.9917
+      },
+      "portfolio_value": 100043.39,
+      "note": "$100,043 | cash=$7,860 | open=8 | closed today=3 | day PnL=$-334"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "15:45 ET",
+      "phase": "force_close",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "NDSN",
+          "side": "long",
+          "exit_price": 335.58,
+          "pnl": 678.6,
+          "reason": "force close 3:45pm"
+        },
+        {
+          "ticker": "MPC",
+          "side": "short",
+          "exit_price": 357.95,
+          "pnl": 112.44,
+          "reason": "force close 3:45pm"
+        },
+        {
+          "ticker": "TDG",
+          "side": "short",
+          "exit_price": 1182.44,
+          "pnl": 116.74,
+          "reason": "force close 3:45pm"
+        },
+        {
+          "ticker": "PFG",
+          "side": "short",
+          "exit_price": 110.38,
+          "pnl": 31.8,
+          "reason": "force close 3:45pm"
+        },
+        {
+          "ticker": "KMI",
+          "side": "short",
+          "exit_price": 31.64,
+          "pnl": -9.79,
+          "reason": "force close 3:45pm"
+        },
+        {
+          "ticker": "BAC",
+          "side": "short",
+          "exit_price": 62.08,
+          "pnl": 3.57,
+          "reason": "force close 3:45pm"
+        },
+        {
+          "ticker": "MTD",
+          "side": "short",
+          "exit_price": 1390.29,
+          "pnl": 11.62,
+          "reason": "force close 3:45pm"
+        },
+        {
+          "ticker": "SYK",
+          "side": "short",
+          "exit_price": 328.87,
+          "pnl": 2.3,
+          "reason": "force close 3:45pm"
+        }
+      ],
+      "portfolio_value": 100099.67,
+      "note": "$100,100 | cash=$100,100 | open=0 | closed today=11 | day PnL=$+613"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "15:47 ET",
+      "phase": "force_close",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 100099.67,
+      "note": "$100,100 | cash=$100,100 | open=0 | closed today=11 | day PnL=$+613"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "15:49 ET",
+      "phase": "force_close",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 100099.67,
+      "note": "$100,100 | cash=$100,100 | open=0 | closed today=11 | day PnL=$+613"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "15:52 ET",
+      "phase": "force_close",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 100099.67,
+      "note": "$100,100 | cash=$100,100 | open=0 | closed today=11 | day PnL=$+613"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "15:54 ET",
+      "phase": "force_close",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 100099.67,
+      "note": "$100,100 | cash=$100,100 | open=0 | closed today=11 | day PnL=$+613"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "15:57 ET",
+      "phase": "force_close",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 100099.67,
+      "note": "$100,100 | cash=$100,100 | open=0 | closed today=11 | day PnL=$+613"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "15:59 ET",
+      "phase": "force_close",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 100099.67,
+      "note": "$100,100 | cash=$100,100 | open=0 | closed today=11 | day PnL=$+613"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "16:02 ET",
+      "phase": "after_hours",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 100099.67,
+      "note": "$100,100 | cash=$100,100 | open=0 | closed today=11 | day PnL=$+613"
+    },
+    {
+      "date": "2026-08-20",
+      "time": "16:04 ET",
+      "phase": "after_hours",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 100099.67,
+      "note": "$100,100 | cash=$100,100 | open=0 | closed today=11 | day PnL=$+613"
+    },
+    {
+      "date": "2026-08-21",
+      "time": "09:37 ET",
+      "phase": "orb_window",
+      "entries": [],
+      "exits": [],
+      "portfolio_value": 100099.67,
+      "note": "$100,100 | cash=$100,100 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-21",
+      "time": "10:08 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": -0.104,
+        "spy_vs_vwap": 0.1846,
+        "spy_vs_ema20": 1.5051
+      },
+      "portfolio_value": 100099.67,
+      "note": "$100,100 | cash=$100,100 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-21",
+      "time": "10:10 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": -0.1,
+        "spy_vs_vwap": 0.2114,
+        "spy_vs_ema20": 1.535
+      },
+      "portfolio_value": 100099.67,
+      "note": "$100,100 | cash=$100,100 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-21",
+      "time": "10:13 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.182,
+        "spy_vs_vwap": -0.4138,
+        "spy_vs_ema20": 0.9051
+      },
+      "portfolio_value": 100099.67,
+      "note": "$100,100 | cash=$100,100 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-21",
+      "time": "10:16 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.174,
+        "spy_vs_vwap": -0.3347,
+        "spy_vs_ema20": 0.97
+      },
+      "portfolio_value": 100099.67,
+      "note": "$100,100 | cash=$100,100 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-21",
+      "time": "10:18 ET",
       "phase": "trading",
       "entries": [],
       "exits": [],
@@ -161740,84 +164570,155 @@
         "long_ok": false,
         "short_ok": false,
         "spy_change_pct": -0.163,
-        "spy_vs_vwap": -1.5896,
-        "spy_vs_ema20": 0.4884
+        "spy_vs_vwap": -0.2486,
+        "spy_vs_ema20": 1.0501
       },
-      "portfolio_value": 99415.4,
-      "note": "$99,415 | cash=$99,415 | open=0 | closed today=0 | day PnL=$+0"
-    },
-    {
-      "date": "2026-08-20",
-      "time": "14:22 ET",
-      "phase": "trading",
-      "entries": [],
-      "exits": [],
-      "spy_regime": {
-        "long_ok": false,
-        "short_ok": true,
-        "spy_change_pct": -0.289,
-        "spy_vs_vwap": -2.344,
-        "spy_vs_ema20": -0.4766
-      },
-      "portfolio_value": 99415.4,
-      "note": "$99,415 | cash=$99,415 | open=0 | closed today=0 | day PnL=$+0"
-    },
-    {
-      "date": "2026-08-20",
-      "time": "15:08 ET",
-      "phase": "trading",
-      "entries": [],
-      "exits": [],
-      "spy_regime": {
-        "long_ok": false,
-        "short_ok": true,
-        "spy_change_pct": -0.307,
-        "spy_vs_vwap": -2.386,
-        "spy_vs_ema20": -0.6117
-      },
-      "portfolio_value": 99415.4,
-      "note": "$99,415 | cash=$99,415 | open=0 | closed today=0 | day PnL=$+0"
-    },
-    {
-      "date": "2026-08-20",
-      "time": "15:42 ET",
-      "phase": "trading",
-      "entries": [],
-      "exits": [],
-      "spy_regime": {
-        "long_ok": false,
-        "short_ok": true,
-        "spy_change_pct": -0.36,
-        "spy_vs_vwap": -2.173,
-        "spy_vs_ema20": -1.0216
-      },
-      "portfolio_value": 99415.4,
-      "note": "$99,415 | cash=$99,415 | open=0 | closed today=0 | day PnL=$+0"
-    },
-    {
-      "date": "2026-08-20",
-      "time": "16:28 ET",
-      "phase": "after_hours",
-      "entries": [],
-      "exits": [],
-      "portfolio_value": 99415.4,
-      "note": "$99,415 | cash=$99,415 | open=0 | closed today=0 | day PnL=$+0"
+      "portfolio_value": 100099.67,
+      "note": "$100,100 | cash=$100,100 | open=0 | closed today=0 | day PnL=$+0"
     },
     {
       "date": "2026-08-21",
-      "time": "10:04 ET",
+      "time": "10:21 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.2,
+        "spy_vs_vwap": -0.4495,
+        "spy_vs_ema20": 0.7701
+      },
+      "portfolio_value": 100099.67,
+      "note": "$100,100 | cash=$100,100 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-21",
+      "time": "10:23 ET",
       "phase": "trading",
       "entries": [],
       "exits": [],
       "spy_regime": {
         "long_ok": true,
         "short_ok": false,
-        "spy_change_pct": -0.109,
-        "spy_vs_vwap": 0.1539,
-        "spy_vs_ema20": 1.4651
+        "spy_change_pct": -0.11,
+        "spy_vs_vwap": 0.1834,
+        "spy_vs_ema20": 1.4551
       },
-      "portfolio_value": 99415.4,
-      "note": "$99,415 | cash=$99,415 | open=0 | closed today=0 | day PnL=$+0"
+      "portfolio_value": 100099.67,
+      "note": "$100,100 | cash=$100,100 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-21",
+      "time": "10:26 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": -0.134,
+        "spy_vs_vwap": 0.0238,
+        "spy_vs_ema20": 1.2701
+      },
+      "portfolio_value": 100099.67,
+      "note": "$100,100 | cash=$100,100 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-21",
+      "time": "10:28 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.14,
+        "spy_vs_vwap": -0.015,
+        "spy_vs_ema20": 1.23
+      },
+      "portfolio_value": 100099.67,
+      "note": "$100,100 | cash=$100,100 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-21",
+      "time": "10:31 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.17,
+        "spy_vs_vwap": -0.2391,
+        "spy_vs_ema20": 1.0001
+      },
+      "portfolio_value": 100099.67,
+      "note": "$100,100 | cash=$100,100 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-21",
+      "time": "10:33 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.172,
+        "spy_vs_vwap": -0.2564,
+        "spy_vs_ema20": 0.0
+      },
+      "portfolio_value": 100099.67,
+      "note": "$100,100 | cash=$100,100 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-21",
+      "time": "10:35 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.228,
+        "spy_vs_vwap": -0.6764,
+        "spy_vs_ema20": 0.5501
+      },
+      "portfolio_value": 100099.67,
+      "note": "$100,100 | cash=$100,100 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-21",
+      "time": "10:38 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.215,
+        "spy_vs_vwap": -0.5681,
+        "spy_vs_ema20": 0.6501
+      },
+      "portfolio_value": 100099.67,
+      "note": "$100,100 | cash=$100,100 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-21",
+      "time": "10:40 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": -0.21,
+        "spy_vs_vwap": -0.5127,
+        "spy_vs_ema20": 0.6951
+      },
+      "portfolio_value": 100099.67,
+      "note": "$100,100 | cash=$100,100 | open=0 | closed today=0 | day PnL=$+0"
     }
   ]
 }
