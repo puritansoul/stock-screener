@@ -1,5 +1,5 @@
 {
-  "capital": 49119.18,
+  "capital": 24261.72,
   "open_positions": [
     {
       "ticker": "GOOGL",
@@ -8,9 +8,9 @@
       "entry_time": "10:58 ET",
       "entry_price": 344.23,
       "shares": 87,
-      "stop": 343.67,
+      "stop": 343.995,
       "trail_dist": 1.135,
-      "peak": 344.805,
+      "peak": 345.13,
       "orb_width": 2.27,
       "cost": 29948.01,
       "vol_ratio": 2.93,
@@ -31,6 +31,38 @@
       "cost": 21032.48,
       "vol_ratio": 1.51,
       "score": 29.35,
+      "has_catalyst": false
+    },
+    {
+      "ticker": "SYF",
+      "side": "long",
+      "entry_date": "2026-08-21",
+      "entry_time": "11:03 ET",
+      "entry_price": 79.255,
+      "shares": 185,
+      "stop": 78.59,
+      "trail_dist": 0.665,
+      "peak": 79.255,
+      "orb_width": 1.33,
+      "cost": 14662.17,
+      "vol_ratio": 1.76,
+      "score": 38.84,
+      "has_catalyst": false
+    },
+    {
+      "ticker": "MSFT",
+      "side": "long",
+      "entry_date": "2026-08-21",
+      "entry_time": "11:03 ET",
+      "entry_price": 485.49,
+      "shares": 21,
+      "stop": 482.465,
+      "trail_dist": 3.025,
+      "peak": 485.49,
+      "orb_width": 6.05,
+      "cost": 10195.29,
+      "vol_ratio": 2.46,
+      "score": 34.77,
       "has_catalyst": false
     }
   ],
@@ -75630,7 +75662,7 @@
     "2026-08-18": 99439.32,
     "2026-08-19": 99486.79,
     "2026-08-20": 100099.67,
-    "2026-08-21": 100149.7
+    "2026-08-21": 100110.64
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -164899,6 +164931,41 @@
       },
       "portfolio_value": 100149.7,
       "note": "$100,150 | cash=$49,119 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-21",
+      "time": "11:03 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "SYF",
+          "side": "long",
+          "price": 79.25,
+          "shares": 185,
+          "stop": 78.59,
+          "trail_dist": 0.665,
+          "score": 38.84
+        },
+        {
+          "ticker": "MSFT",
+          "side": "long",
+          "price": 485.49,
+          "shares": 21,
+          "stop": 482.46,
+          "trail_dist": 3.025,
+          "score": 34.77
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": -0.015,
+        "spy_vs_vwap": 0.9101,
+        "spy_vs_ema20": 2.1851
+      },
+      "portfolio_value": 100110.64,
+      "note": "$100,111 | cash=$24,262 | open=4 | closed today=0 | day PnL=$+0"
     }
   ]
 }
