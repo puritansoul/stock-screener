@@ -1,22 +1,6 @@
 {
-  "capital": 16985.52,
+  "capital": 46913.08,
   "open_positions": [
-    {
-      "ticker": "GOOGL",
-      "side": "long",
-      "entry_date": "2026-08-21",
-      "entry_time": "10:58 ET",
-      "entry_price": 344.23,
-      "shares": 87,
-      "stop": 343.995,
-      "trail_dist": 1.135,
-      "peak": 345.13,
-      "orb_width": 2.27,
-      "cost": 29948.01,
-      "vol_ratio": 2.93,
-      "score": 32.15,
-      "has_catalyst": false
-    },
     {
       "ticker": "AES",
       "side": "long",
@@ -82,7 +66,29 @@
       "has_catalyst": false
     }
   ],
-  "closed_today": [],
+  "closed_today": [
+    {
+      "ticker": "GOOGL",
+      "side": "long",
+      "entry_date": "2026-08-21",
+      "entry_time": "10:58 ET",
+      "entry_price": 344.23,
+      "shares": 87,
+      "stop": 343.995,
+      "trail_dist": 1.135,
+      "peak": 345.13,
+      "orb_width": 2.27,
+      "cost": 29948.01,
+      "vol_ratio": 2.93,
+      "score": 32.15,
+      "has_catalyst": false,
+      "exit_date": "2026-08-21",
+      "exit_price": 343.995,
+      "pnl": -20.45,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:13 ET"
+    }
+  ],
   "all_closed": [
     {
       "ticker": "SNOW",
@@ -73148,11 +73154,6 @@
       "low": 113.4501,
       "width": 1.4286
     },
-    "ABBV": {
-      "high": 264.4,
-      "low": 260.101,
-      "width": 4.299
-    },
     "ACN": {
       "high": 183.02,
       "low": 180.02,
@@ -73397,11 +73398,6 @@
       "high": 2999.0,
       "low": 2940.0,
       "width": 59.0
-    },
-    "AVY": {
-      "high": 183.85,
-      "low": 181.6,
-      "width": 2.25
     },
     "AXON": {
       "high": 625.0,
@@ -74603,11 +74599,6 @@
       "low": 884.81,
       "width": 37.9287
     },
-    "LYB": {
-      "high": 68.57,
-      "low": 67.91,
-      "width": 0.66
-    },
     "MTB": {
       "high": 241.53,
       "low": 239.64,
@@ -74642,11 +74633,6 @@
       "high": 74.21,
       "low": 72.765,
       "width": 1.445
-    },
-    "MA": {
-      "high": 578.1,
-      "low": 573.0401,
-      "width": 5.0599
     },
     "MKC": {
       "high": 55.67,
@@ -74807,11 +74793,6 @@
       "high": 42.38,
       "low": 41.41,
       "width": 0.97
-    },
-    "NDSN": {
-      "high": 338.4,
-      "low": 333.8,
-      "width": 4.6
     },
     "NSC": {
       "high": 350.48,
@@ -75298,11 +75279,6 @@
       "low": 302.92,
       "width": 5.02
     },
-    "TGT": {
-      "high": 163.045,
-      "low": 160.23,
-      "width": 2.815
-    },
     "TEL": {
       "high": 203.5,
       "low": 200.2,
@@ -75678,7 +75654,7 @@
     "2026-08-18": 99439.32,
     "2026-08-19": 99486.79,
     "2026-08-20": 100099.67,
-    "2026-08-21": 100058.94
+    "2026-08-21": 100016.43
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -165040,6 +165016,30 @@
       },
       "portfolio_value": 100058.94,
       "note": "$100,059 | cash=$16,986 | open=5 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-21",
+      "time": "11:13 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "GOOGL",
+          "side": "long",
+          "exit_price": 344.0,
+          "pnl": -20.45,
+          "reason": "trailing stop"
+        }
+      ],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": -0.012,
+        "spy_vs_vwap": 0.8597,
+        "spy_vs_ema20": 2.2101
+      },
+      "portfolio_value": 100016.43,
+      "note": "$100,016 | cash=$46,913 | open=4 | closed today=1 | day PnL=$-20"
     }
   ]
 }
