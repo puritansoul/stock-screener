@@ -1,5 +1,5 @@
 {
-  "capital": 24261.72,
+  "capital": 16985.52,
   "open_positions": [
     {
       "ticker": "GOOGL",
@@ -24,9 +24,9 @@
       "entry_time": "10:58 ET",
       "entry_price": 14.77,
       "shares": 1424,
-      "stop": 14.76,
+      "stop": 14.765,
       "trail_dist": 0.01,
-      "peak": 14.77,
+      "peak": 14.775,
       "orb_width": 0.02,
       "cost": 21032.48,
       "vol_ratio": 1.51,
@@ -40,9 +40,9 @@
       "entry_time": "11:03 ET",
       "entry_price": 79.255,
       "shares": 185,
-      "stop": 78.69,
+      "stop": 78.695,
       "trail_dist": 0.665,
-      "peak": 79.355,
+      "peak": 79.36,
       "orb_width": 1.33,
       "cost": 14662.17,
       "vol_ratio": 1.76,
@@ -56,13 +56,29 @@
       "entry_time": "11:03 ET",
       "entry_price": 485.49,
       "shares": 21,
-      "stop": 482.965,
+      "stop": 483.335,
       "trail_dist": 3.025,
-      "peak": 485.99,
+      "peak": 486.36,
       "orb_width": 6.05,
       "cost": 10195.29,
       "vol_ratio": 2.46,
       "score": 34.77,
+      "has_catalyst": false
+    },
+    {
+      "ticker": "TSLA",
+      "side": "long",
+      "entry_date": "2026-08-21",
+      "entry_time": "11:08 ET",
+      "entry_price": 363.81,
+      "shares": 20,
+      "stop": 359.8208,
+      "trail_dist": 3.9892,
+      "peak": 363.81,
+      "orb_width": 7.9784,
+      "cost": 7276.2,
+      "vol_ratio": 8.05,
+      "score": 66.99,
       "has_catalyst": false
     }
   ],
@@ -73652,11 +73668,6 @@
       "low": 202.61,
       "width": 1.36
     },
-    "CSCO": {
-      "high": 112.0,
-      "low": 110.54,
-      "width": 1.46
-    },
     "C": {
       "high": 132.19,
       "low": 130.51,
@@ -74877,6 +74888,11 @@
       "low": 142.6,
       "width": 5.045
     },
+    "OTIS": {
+      "high": 72.67,
+      "low": 71.53,
+      "width": 1.14
+    },
     "PCAR": {
       "high": 130.96,
       "low": 129.37,
@@ -75657,7 +75673,7 @@
     "2026-08-18": 99439.32,
     "2026-08-19": 99486.79,
     "2026-08-20": 100099.67,
-    "2026-08-21": 100167.67
+    "2026-08-21": 100148.21
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -164977,6 +164993,32 @@
       },
       "portfolio_value": 100167.67,
       "note": "$100,168 | cash=$24,262 | open=4 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-08-21",
+      "time": "11:08 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "TSLA",
+          "side": "long",
+          "price": 363.81,
+          "shares": 20,
+          "stop": 359.82,
+          "trail_dist": 3.9892,
+          "score": 66.99
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.02,
+        "spy_vs_vwap": 1.104,
+        "spy_vs_ema20": 2.4501
+      },
+      "portfolio_value": 100148.21,
+      "note": "$100,148 | cash=$16,986 | open=5 | closed today=0 | day PnL=$+0"
     }
   ]
 }
