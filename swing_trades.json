@@ -2941,7 +2941,8 @@
     "2026-08-25": 103613.24,
     "2026-08-26": 102979.85,
     "2026-08-27": 104149.11,
-    "2026-08-28": 104829.25
+    "2026-08-28": 104829.25,
+    "2026-08-31": 104829.25
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -6712,6 +6713,16 @@
         "SPY regime: BULL (longs only)",
         "Portfolio: $104,829  |  Cash: $30,638  |  Open: 20  |  Exits: 5  |  Entries: 2"
       ]
+    },
+    {
+      "date": "2026-08-31",
+      "run_at": "2026-08-31 19:59 UTC",
+      "entries": [],
+      "exits": [],
+      "notes": [
+        "SPY regime: BULL (longs only)",
+        "Portfolio: $104,829  |  Cash: $30,638  |  Open: 20  |  Exits: 0  |  Entries: 0"
+      ]
     }
   ],
   "last_scan": [
@@ -6798,20 +6809,6 @@
       "close": 67.21,
       "sma200": 91.31,
       "status": "below SMA200"
-    },
-    {
-      "ticker": "LLY",
-      "rsi2": 4.4,
-      "close": 1176.1,
-      "sma200": 1055.61,
-      "status": "LONG signal"
-    },
-    {
-      "ticker": "CASY",
-      "rsi2": 4.5,
-      "close": 763.38,
-      "sma200": 719.6,
-      "status": "LONG signal"
     },
     {
       "ticker": "ADSK",
@@ -6994,6 +6991,20 @@
       "close": 105.79,
       "sma200": 105.79,
       "status": "below SMA200"
+    },
+    {
+      "ticker": "CLX",
+      "rsi2": 8.1,
+      "close": 103.63,
+      "sma200": 101.25,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "AMCR",
+      "rsi2": 8.5,
+      "close": 46.52,
+      "sma200": 41.97,
+      "status": "above SMA200"
     }
   ]
 }
