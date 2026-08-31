@@ -1,36 +1,6 @@
 {
-  "capital": 30662.39,
+  "capital": 36973.57,
   "open_positions": [
-    {
-      "ticker": "KLAC",
-      "side": "long",
-      "entry_date": "2026-08-24",
-      "entry_price": 183.99,
-      "shares": 12,
-      "stop": 163.8286,
-      "cost": 2207.88,
-      "rsi2_entry": 4.1
-    },
-    {
-      "ticker": "JBL",
-      "side": "long",
-      "entry_date": "2026-08-24",
-      "entry_price": 313.21,
-      "shares": 4,
-      "stop": 265.8974,
-      "cost": 1252.84,
-      "rsi2_entry": 4.25
-    },
-    {
-      "ticker": "BKR",
-      "side": "long",
-      "entry_date": "2026-08-24",
-      "entry_price": 62.34,
-      "shares": 46,
-      "stop": 59.0255,
-      "cost": 2867.64,
-      "rsi2_entry": 4.65
-    },
     {
       "ticker": "HWM",
       "side": "long",
@@ -1070,6 +1040,48 @@
       "exit_price": 775.0399780273438,
       "pnl": 30.42,
       "exit_reason": "RSI(2) reverted (71.0)"
+    },
+    {
+      "ticker": "KLAC",
+      "side": "long",
+      "entry_date": "2026-08-24",
+      "entry_price": 183.99,
+      "shares": 12,
+      "stop": 163.8286,
+      "cost": 2207.88,
+      "rsi2_entry": 4.1,
+      "exit_date": "2026-08-31",
+      "exit_price": 183.77000427246094,
+      "pnl": -2.64,
+      "exit_reason": "time exit (7d)"
+    },
+    {
+      "ticker": "JBL",
+      "side": "long",
+      "entry_date": "2026-08-24",
+      "entry_price": 313.21,
+      "shares": 4,
+      "stop": 265.8974,
+      "cost": 1252.84,
+      "rsi2_entry": 4.25,
+      "exit_date": "2026-08-31",
+      "exit_price": 312.2200012207031,
+      "pnl": -3.96,
+      "exit_reason": "time exit (7d)"
+    },
+    {
+      "ticker": "BKR",
+      "side": "long",
+      "entry_date": "2026-08-24",
+      "entry_price": 62.34,
+      "shares": 46,
+      "stop": 59.0255,
+      "cost": 2867.64,
+      "rsi2_entry": 4.65,
+      "exit_date": "2026-08-31",
+      "exit_price": 62.11000061035156,
+      "pnl": -10.58,
+      "exit_reason": "time exit (7d)"
     }
   ],
   "nav_history": {
@@ -1100,7 +1112,8 @@
     "2026-08-25": 100798.43,
     "2026-08-26": 100306.49,
     "2026-08-27": 101423.24,
-    "2026-08-28": 101318.82
+    "2026-08-28": 101318.82,
+    "2026-08-31": 101318.82
   },
   "inception_date": "2026-07-22",
   "log": [
@@ -2900,6 +2913,39 @@
         "VIX: 14.4  (entries allowed)",
         "Portfolio: $101,319  |  Cash: $30,662  |  Open: 13  |  Exits: 5  |  Entries: 2"
       ]
+    },
+    {
+      "date": "2026-08-31",
+      "run_at": "2026-08-31 20:07 UTC",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "KLAC",
+          "side": "long",
+          "exit_price": 183.77000427246094,
+          "pnl": -2.64,
+          "reason": "time exit (7d)"
+        },
+        {
+          "ticker": "JBL",
+          "side": "long",
+          "exit_price": 312.2200012207031,
+          "pnl": -3.96,
+          "reason": "time exit (7d)"
+        },
+        {
+          "ticker": "BKR",
+          "side": "long",
+          "exit_price": 62.11000061035156,
+          "pnl": -10.58,
+          "reason": "time exit (7d)"
+        }
+      ],
+      "notes": [
+        "SPY regime: BULL (longs only)",
+        "VIX: 14.9  (entries allowed)",
+        "Portfolio: $101,319  |  Cash: $36,974  |  Open: 10  |  Exits: 3  |  Entries: 0"
+      ]
     }
   ],
   "last_scan": [
@@ -2986,20 +3032,6 @@
       "close": 67.21,
       "sma200": 91.31,
       "status": "below SMA200"
-    },
-    {
-      "ticker": "LLY",
-      "rsi2": 4.4,
-      "close": 1176.1,
-      "sma200": 1055.61,
-      "status": "LONG signal"
-    },
-    {
-      "ticker": "CASY",
-      "rsi2": 4.5,
-      "close": 763.38,
-      "sma200": 719.6,
-      "status": "LONG signal"
     },
     {
       "ticker": "ADSK",
@@ -3182,6 +3214,20 @@
       "close": 105.79,
       "sma200": 105.79,
       "status": "below SMA200"
+    },
+    {
+      "ticker": "CLX",
+      "rsi2": 8.1,
+      "close": 103.63,
+      "sma200": 101.25,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "AMCR",
+      "rsi2": 8.5,
+      "close": 46.52,
+      "sma200": 41.97,
+      "status": "above SMA200"
     }
   ]
 }
