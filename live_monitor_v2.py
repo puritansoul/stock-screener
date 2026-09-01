@@ -822,7 +822,10 @@ def save_html_report(
     _names = get_company_names(_all_tks)
     positions    = positions or {}
     prev_prices  = prev_prices or {}
-    cost_basis      = sum(v.get("shares", 0) * v.get("price", 0) for v in positions.values()) or PORTFOLIO_VALUE
+    _nav_dates  = sorted(nav_history.keys())
+    cost_basis  = (nav_history.get(inception_date)
+                   or (nav_history[_nav_dates[0]] if _nav_dates else None)
+                   or PORTFOLIO_VALUE)
     nav_json        = json.dumps(nav_history)
     inception_days  = (today - date.fromisoformat(inception_date)).days if inception_date else 0
 
