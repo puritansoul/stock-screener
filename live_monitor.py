@@ -1900,10 +1900,14 @@ def run():
     current = state.get("holdings", [])
     first_run = len(current) == 0
 
+    # Use actual portfolio value from latest NAV so rebalance preserves prior gains
+    _nav_sorted = sorted(nav.keys())
+    actual_nav  = nav[_nav_sorted[-1]] if _nav_sorted else PORTFOLIO_VALUE
+
     if is_rebalance or first_run:
         if target:  # only update if we actually scored something
             target_weights = compute_weights(target, scores, prices)
-            trades = compute_trades(target, current, target_weights, scores, PORTFOLIO_VALUE) if not first_run else None
+            trades = compute_trades(target, current, target_weights, scores, actual_nav) if not first_run else None
             state["holdings"]       = target
             state["last_rebalance"] = today.isoformat()
             current                 = target
@@ -1913,7 +1917,7 @@ def run():
             for tk in target:
                 px = float(last_prices[tk]) if tk in last_prices.index and pd.notna(last_prices[tk]) else None
                 w  = target_weights.get(tk, 0.0)
-                shares = int(PORTFOLIO_VALUE * w / px) if px and px > 0 else 0
+                shares = int(actual_nav * w / px) if px and px > 0 else 0
                 # Only overwrite if ticker is new or being resized at rebalance
                 if tk not in positions or is_rebalance:
                     positions[tk] = {
@@ -1941,7 +1945,7 @@ def run():
         if tk not in positions_map:
             px = float(last_prices[tk]) if tk in last_prices.index and pd.notna(last_prices[tk]) else None
             w  = weights.get(tk, 0.0)
-            shares = int(PORTFOLIO_VALUE * w / px) if px and px > 0 else 0
+            shares = int(actual_nav * w / px) if px and px > 0 else 0
             positions_map[tk] = {
                 "price":  round(px, 4) if px else None,
                 "date":   state.get("last_rebalance", today.isoformat()),
