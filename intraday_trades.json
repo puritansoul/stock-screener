@@ -8,9 +8,9 @@
       "entry_time": "12:37 ET",
       "entry_price": 87.965,
       "shares": 342,
-      "stop": 88.3825,
+      "stop": 88.373,
       "trail_dist": 0.4325,
-      "peak": 87.95,
+      "peak": 87.9405,
       "orb_width": 0.865,
       "cost": 30084.03,
       "vol_ratio": 3.87,
@@ -24,9 +24,9 @@
       "entry_time": "12:37 ET",
       "entry_price": 74.805,
       "shares": 282,
-      "stop": 74.9975,
+      "stop": 74.8775,
       "trail_dist": 0.5575,
-      "peak": 74.44,
+      "peak": 74.32,
       "orb_width": 1.115,
       "cost": 21095.01,
       "vol_ratio": 3.68,
@@ -200,9 +200,9 @@
       "entry_time": "14:33 ET",
       "entry_price": 290.585,
       "shares": 1,
-      "stop": 291.97,
+      "stop": 291.75,
       "trail_dist": 2.81,
-      "peak": 289.16,
+      "peak": 288.94,
       "orb_width": 5.62,
       "cost": 290.58,
       "vol_ratio": 9.47,
@@ -280,9 +280,9 @@
       "entry_time": "15:27 ET",
       "entry_price": 75.73,
       "shares": 1,
-      "stop": 76.2025,
+      "stop": 76.1725,
       "trail_dist": 0.4725,
-      "peak": 75.73,
+      "peak": 75.7,
       "orb_width": 0.945,
       "cost": 75.73,
       "vol_ratio": 6.82,
@@ -74938,6 +74938,11 @@
       "low": 154.3,
       "width": 2.35
     },
+    "LNT": {
+      "high": 68.56,
+      "low": 67.82,
+      "width": 0.74
+    },
     "ALL": {
       "high": 261.79,
       "low": 258.76,
@@ -75073,6 +75078,11 @@
       "low": 137.19,
       "width": 3.355
     },
+    "ANET": {
+      "high": 196.5,
+      "low": 189.26,
+      "width": 7.24
+    },
     "AJG": {
       "high": 266.99,
       "low": 260.04,
@@ -75112,11 +75122,6 @@
       "high": 175.97,
       "low": 173.66,
       "width": 2.31
-    },
-    "AXON": {
-      "high": 558.97,
-      "low": 532.0801,
-      "width": 26.8899
     },
     "BKR": {
       "high": 64.05,
@@ -75453,6 +75458,11 @@
       "low": 107.16,
       "width": 1.12
     },
+    "STZ": {
+      "high": 131.79,
+      "low": 130.34,
+      "width": 1.45
+    },
     "CEG": {
       "high": 273.89,
       "low": 268.002,
@@ -75637,11 +75647,6 @@
       "high": 134.035,
       "low": 132.25,
       "width": 1.785
-    },
-    "ETN": {
-      "high": 401.0,
-      "low": 391.0,
-      "width": 10.0
     },
     "EBAY": {
       "high": 105.21,
@@ -76380,8 +76385,8 @@
     },
     "META": {
       "high": 568.25,
-      "low": 556.47,
-      "width": 11.78
+      "low": 556.3,
+      "width": 11.95
     },
     "MET": {
       "high": 96.21,
@@ -76612,11 +76617,6 @@
       "high": 234.2,
       "low": 230.93,
       "width": 3.27
-    },
-    "PLTR": {
-      "high": 185.5499,
-      "low": 181.3,
-      "width": 4.2499
     },
     "PANW": {
       "high": 375.92,
@@ -77093,11 +77093,6 @@
       "low": 49.42,
       "width": 0.75
     },
-    "TYL": {
-      "high": 374.23,
-      "low": 367.76,
-      "width": 6.47
-    },
     "TSN": {
       "high": 55.03,
       "low": 54.6619,
@@ -77390,7 +77385,7 @@
     "2026-08-27": 100695.04,
     "2026-08-28": 100646.3,
     "2026-08-31": 100420.08,
-    "2026-09-01": 100617.28
+    "2026-09-01": 100698.72
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -185785,6 +185780,22 @@
       },
       "portfolio_value": 100617.28,
       "note": "$100,617 | cash=$405 | open=18 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-01",
+      "time": "15:29 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.085,
+        "spy_vs_vwap": -0.8534,
+        "spy_vs_ema20": -4.0763
+      },
+      "portfolio_value": 100698.72,
+      "note": "$100,699 | cash=$405 | open=18 | closed today=0 | day PnL=$+0"
     }
   ]
 }
