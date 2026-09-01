@@ -2001,10 +2001,18 @@ def run():
             }
     state["positions"] = positions_map
 
+    # Track uninvested cash from integer share rounding — preserve it across days
+    if is_rebalance or first_run:
+        _total_inv = sum(
+            p.get("shares", 0) * (p.get("price") or 0.0)
+            for p in positions_map.values()
+        )
+        state["cash"] = max(0.0, actual_nav - _total_inv)
+
     # 7. High-conviction alerts: top 5% NOT in current holdings
     alert_tickers = [t for t in top5pct if t not in set(holdings)]
 
-    # 8. Update NAV — store actual portfolio dollar value (shares × price)
+    # 8. Update NAV — store actual portfolio dollar value (shares × price) + uninvested cash
     print("[6] Updating portfolio NAV …")
     prev_prices = state.get("prev_prices", {})
     try:
@@ -2013,7 +2021,7 @@ def run():
             positions_map.get(t, {}).get("shares", 0) * float(_latest_px[t])
             for t in holdings
             if t in _latest_px.index and pd.notna(_latest_px[t])
-        )
+        ) + state.get("cash", 0.0)
     except Exception:
         port_dollar_value = 0.0
     if port_dollar_value > 0:
@@ -2157,7 +2165,7 @@ def run_prices_only():
         last = prices.iloc[-1]
         scores["price"] = scores.index.map(lambda t: last.get(t, scores.at[t, "price"] if t in scores.index else None))
 
-    # Update NAV — store actual portfolio dollar value (shares × price)
+    # Update NAV — store actual portfolio dollar value (shares × price) + uninvested cash
     prev_prices = state.get("prev_prices", {})
     positions_map_po = state.get("positions", {})
     try:
@@ -2166,7 +2174,7 @@ def run_prices_only():
             positions_map_po.get(t, {}).get("shares", 0) * float(_latest_px[t])
             for t in holdings
             if t in _latest_px.index and pd.notna(_latest_px[t])
-        )
+        ) + state.get("cash", 0.0)
     except Exception:
         port_dollar_value = 0.0
     if port_dollar_value > 0:
