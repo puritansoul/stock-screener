@@ -762,6 +762,8 @@ def save_html_report(
     positions: dict | None = None,
     prev_prices: dict | None = None,
     prices_df: pd.DataFrame | None = None,
+    inception_nav: float | None = None,
+    cash_buffer: float = 0.0,
 ) -> str:
     global _names
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
@@ -777,7 +779,8 @@ def save_html_report(
     positions    = positions or {}
     prev_prices  = prev_prices or {}
     _nav_dates  = sorted(nav_history.keys())
-    cost_basis  = (nav_history.get(inception_date)
+    cost_basis  = (inception_nav
+                   or nav_history.get(inception_date)
                    or (nav_history[_nav_dates[0]] if _nav_dates else None)
                    or PORTFOLIO_VALUE)
     nav_json        = json.dumps(nav_history)
@@ -1272,6 +1275,7 @@ def save_html_report(
 // ── Live price refresh ────────────────────────────────────────────────────────
 (function() {{
   const PORTFOLIO_BASE = {cost_basis:.2f};
+  const CASH_BUFFER    = {cash_buffer:.2f};
   const NAV_HISTORY = {nav_json};
 
   const rows = Array.from(document.querySelectorAll('tr[data-ticker]'));
@@ -1305,12 +1309,12 @@ def save_html_report(
   const livePrevVal = {{}};  // tk -> qty * prevClose, populated as quotes arrive
 
   function updateSummaryCards() {{
-    const totalValue  = Object.values(liveVal).reduce((s,v) => s+v, 0);
-    const totalCost   = Object.values(staleCost).reduce((s,v) => s+v, 0);
+    const posVal      = Object.values(liveVal).reduce((s,v) => s+v, 0);
+    const totalValue  = posVal + CASH_BUFFER;  // positions + uninvested cash
     const totalDayChg = Object.values(livePrevVal).reduce((s,v) => s+v, 0);
 
-    const totalRet  = totalValue - totalCost;
-    const totalRetP = totalCost > 0 ? totalRet / totalCost : 0;
+    const totalRet  = totalValue - PORTFOLIO_BASE;
+    const totalRetP = PORTFOLIO_BASE > 0 ? totalRet / PORTFOLIO_BASE : 0;
     const prevTotal = totalValue - totalDayChg;
     const dayPct    = prevTotal > 0 ? totalDayChg / prevTotal : 0;
 
@@ -1904,6 +1908,10 @@ def run():
     _nav_sorted = sorted(nav.keys())
     actual_nav  = nav[_nav_sorted[-1]] if _nav_sorted else PORTFOLIO_VALUE
 
+    # Set inception_nav once on first run — never overwrite it after that
+    if first_run and not state.get("inception_nav"):
+        state["inception_nav"] = actual_nav if actual_nav > 1000 else PORTFOLIO_VALUE
+
     if is_rebalance or first_run:
         if target:  # only update if we actually scored something
             target_weights = compute_weights(target, scores, prices)
@@ -2016,6 +2024,8 @@ def run():
         positions=state.get("positions", {}),
         prev_prices=prev_prices,
         prices_df=prices,
+        inception_nav=state.get("inception_nav"),
+        cash_buffer=state.get("cash", 0.0),
     )
 
     # 10. Console summary
@@ -2159,6 +2169,8 @@ def run_prices_only():
         positions=positions,
         prev_prices=prev_prices,
         prices_df=prices,
+        inception_nav=state.get("inception_nav"),
+        cash_buffer=state.get("cash", 0.0),
     )
     print(f"Prices-only refresh done — {now.strftime('%H:%M UTC')} → {report_path}")
 
