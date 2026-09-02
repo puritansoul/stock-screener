@@ -1,5 +1,5 @@
 {
-  "capital": 60971.97,
+  "capital": 42694.63,
   "open_positions": [
     {
       "ticker": "OTIS",
@@ -79,6 +79,22 @@
       "cost": 2557.65,
       "vol_ratio": 1.59,
       "score": 31.12,
+      "has_catalyst": false
+    },
+    {
+      "ticker": "MDLZ",
+      "side": "long",
+      "entry_date": "2026-09-02",
+      "entry_time": "12:10 ET",
+      "entry_price": 62.38,
+      "shares": 293,
+      "stop": 62.12,
+      "trail_dist": 0.26,
+      "peak": 62.38,
+      "orb_width": 0.52,
+      "cost": 18277.34,
+      "vol_ratio": 4.27,
+      "score": 43.13,
       "has_catalyst": false
     }
   ],
@@ -77703,7 +77719,7 @@
     "2026-08-28": 100646.3,
     "2026-08-31": 100420.08,
     "2026-09-01": 100698.9,
-    "2026-09-02": 100191.07
+    "2026-09-02": 100207.82
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -187305,6 +187321,32 @@
       },
       "portfolio_value": 100191.07,
       "note": "$100,191 | cash=$60,972 | open=5 | closed today=5 | day PnL=$-373"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "12:09 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "MDLZ",
+          "side": "long",
+          "price": 62.38,
+          "shares": 293,
+          "stop": 62.12,
+          "trail_dist": 0.26,
+          "score": 43.13
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.432,
+        "spy_vs_vwap": 1.4746,
+        "spy_vs_ema20": 1.1541
+      },
+      "portfolio_value": 100207.82,
+      "note": "$100,208 | cash=$42,695 | open=6 | closed today=5 | day PnL=$-373"
     }
   ]
 }
