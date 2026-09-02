@@ -1,5 +1,5 @@
 {
-  "capital": 10314.61,
+  "capital": 15403.32,
   "open_positions": [
     {
       "ticker": "OTIS",
@@ -31,22 +31,6 @@
       "cost": 7149.84,
       "vol_ratio": 4.01,
       "score": 44.62,
-      "has_catalyst": false
-    },
-    {
-      "ticker": "CPRT",
-      "side": "long",
-      "entry_date": "2026-09-02",
-      "entry_time": "11:04 ET",
-      "entry_price": 32.455,
-      "shares": 158,
-      "stop": 32.207,
-      "trail_dist": 0.263,
-      "peak": 32.47,
-      "orb_width": 0.526,
-      "cost": 5127.89,
-      "vol_ratio": 4.22,
-      "score": 41.64,
       "has_catalyst": false
     },
     {
@@ -88,9 +72,9 @@
       "entry_time": "12:10 ET",
       "entry_price": 62.38,
       "shares": 293,
-      "stop": 62.285,
+      "stop": 62.375,
       "trail_dist": 0.26,
-      "peak": 62.545,
+      "peak": 62.635,
       "orb_width": 0.52,
       "cost": 18277.34,
       "vol_ratio": 4.27,
@@ -120,9 +104,9 @@
       "entry_time": "12:58 ET",
       "entry_price": 101.35,
       "shares": 88,
-      "stop": 100.08,
+      "stop": 100.13,
       "trail_dist": 1.27,
-      "peak": 101.35,
+      "peak": 101.4,
       "orb_width": 2.54,
       "cost": 8918.8,
       "vol_ratio": 20.92,
@@ -136,9 +120,9 @@
       "entry_time": "12:58 ET",
       "entry_price": 19.0638,
       "shares": 330,
-      "stop": 18.985,
+      "stop": 18.995,
       "trail_dist": 0.1,
-      "peak": 19.085,
+      "peak": 19.095,
       "orb_width": 0.2,
       "cost": 6291.05,
       "vol_ratio": 5.81,
@@ -267,6 +251,27 @@
       "pnl": -51.17,
       "exit_reason": "trailing stop",
       "exit_time": "12:02 ET"
+    },
+    {
+      "ticker": "CPRT",
+      "side": "long",
+      "entry_date": "2026-09-02",
+      "entry_time": "11:04 ET",
+      "entry_price": 32.455,
+      "shares": 158,
+      "stop": 32.207,
+      "trail_dist": 0.263,
+      "peak": 32.47,
+      "orb_width": 0.526,
+      "cost": 5127.89,
+      "vol_ratio": 4.22,
+      "score": 41.64,
+      "has_catalyst": false,
+      "exit_date": "2026-09-02",
+      "exit_price": 32.207,
+      "pnl": -39.18,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:31 ET"
     }
   ],
   "all_closed": [
@@ -77783,7 +77788,7 @@
     "2026-08-28": 100646.3,
     "2026-08-31": 100420.08,
     "2026-09-01": 100698.9,
-    "2026-09-02": 100297.1
+    "2026-09-02": 100261.31
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -187817,6 +187822,30 @@
       },
       "portfolio_value": 100297.1,
       "note": "$100,297 | cash=$10,315 | open=10 | closed today=5 | day PnL=$-373"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "13:29 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "CPRT",
+          "side": "long",
+          "exit_price": 32.21,
+          "pnl": -39.18,
+          "reason": "trailing stop"
+        }
+      ],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.306,
+        "spy_vs_vwap": 0.3964,
+        "spy_vs_ema20": 0.1941
+      },
+      "portfolio_value": 100261.31,
+      "note": "$100,261 | cash=$15,403 | open=9 | closed today=6 | day PnL=$-412"
     }
   ]
 }
