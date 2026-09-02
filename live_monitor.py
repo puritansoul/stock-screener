@@ -773,6 +773,7 @@ def save_html_report(
     prices_df: pd.DataFrame | None = None,
     inception_nav: float | None = None,
     cash_buffer: float = 0.0,
+    last_rebalance: str | None = None,
 ) -> str:
     global _names
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
@@ -1188,6 +1189,7 @@ def save_html_report(
     <h2>Portfolio Performance</h2>
     <p style="color:#666;font-size:12px;margin:-4px 0 14px">
       Inception: {inception_date or today.isoformat()} &nbsp;|&nbsp; Starting value: ${cost_basis:,.0f}
+      {f'&nbsp;|&nbsp; Last rebalance: <b>{_fmt_date(last_rebalance)}</b>' if last_rebalance else ''}
     </p>
     <div style="display:flex;align-items:stretch;gap:16px;margin-bottom:20px;flex-wrap:wrap">
       <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px;box-shadow:0 2px 4px rgba(0,0,0,0.08)">
@@ -2053,6 +2055,7 @@ def run():
         prices_df=prices,
         inception_nav=state.get("inception_nav"),
         cash_buffer=state.get("cash", 0.0),
+        last_rebalance=state.get("last_rebalance"),
     )
 
     # 10. Console summary
@@ -2198,6 +2201,7 @@ def run_prices_only():
         prices_df=prices,
         inception_nav=state.get("inception_nav"),
         cash_buffer=state.get("cash", 0.0),
+        last_rebalance=state.get("last_rebalance"),
     )
     print(f"Prices-only refresh done — {now.strftime('%H:%M UTC')} → {report_path}")
 

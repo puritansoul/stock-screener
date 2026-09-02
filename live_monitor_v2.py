@@ -819,6 +819,7 @@ def save_html_report(
     prices_df: pd.DataFrame | None = None,
     inception_nav: float | None = None,
     cash_buffer: float = 0.0,
+    last_rebalance: str | None = None,
 ) -> str:
     global _names
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
@@ -986,17 +987,22 @@ def save_html_report(
             for t in trades["hold"]
         )
         trade_html = f"""
-        <div style="background:#fff3e0;border:2px solid #e65100;border-radius:8px;padding:20px;margin:20px 0">
-          <h2 style="color:#e65100;margin-top:0">⚡ Quarterly Rebalance Required</h2>
-          <p>Portfolio value: <b>{nav_str}</b> &nbsp;|&nbsp; {n_target} holdings &nbsp;|&nbsp;
-          Allocation: Score × Inverse-Volatility (63-day), capped {MIN_POSITION_PCT:.0%}–{MAX_POSITION_PCT:.0%}</p>
-          <table border="1" cellpadding="8" cellspacing="0" style="border-collapse:collapse;width:100%;font-family:monospace;font-size:13px">
-            <tr style="background:#263238;color:white"><th>Action</th><th>Ticker</th><th>Allocation</th><th>Shares</th><th>Value</th><th>Price</th></tr>
-            {buy_rows}{sell_rows}{hold_rows}
-          </table>
-          <p style="color:#777;font-size:12px;margin-bottom:0">⚠️ Share counts are estimates at last close. Use limit orders at or near the open.
-          HOLD rows need resizing to match the new allocation — don't just leave existing sizes unchanged.</p>
-        </div>"""
+        <details open style="background:#fff3e0;border:2px solid #e65100;border-radius:8px;margin:20px 0">
+          <summary style="padding:14px 20px;cursor:pointer;outline:none;list-style:none;display:flex;align-items:center;gap:10px">
+            <span style="color:#e65100;font-size:17px;font-weight:bold">⚡ Quarterly Rebalance Required</span>
+            <span style="color:#aaa;font-size:12px;font-weight:normal">▾ collapse</span>
+          </summary>
+          <div style="padding:0 20px 20px 20px">
+            <p>Portfolio value: <b>{nav_str}</b> &nbsp;|&nbsp; {n_target} holdings &nbsp;|&nbsp;
+            Allocation: Score × Inverse-Volatility (63-day), capped {MIN_POSITION_PCT:.0%}–{MAX_POSITION_PCT:.0%}</p>
+            <table border="1" cellpadding="8" cellspacing="0" style="border-collapse:collapse;width:100%;font-family:monospace;font-size:13px">
+              <tr style="background:#263238;color:white"><th>Action</th><th>Ticker</th><th>Allocation</th><th>Shares</th><th>Value</th><th>Price</th></tr>
+              {buy_rows}{sell_rows}{hold_rows}
+            </table>
+            <p style="color:#777;font-size:12px;margin-bottom:0">⚠️ Share counts are estimates at last close. Use limit orders at or near the open.
+            HOLD rows need resizing to match the new allocation — don't just leave existing sizes unchanged.</p>
+          </div>
+        </details>"""
 
     # ── High-conviction alert section ─────────────────────────────────────────
     alert_html = ""
@@ -1245,6 +1251,7 @@ def save_html_report(
     <h2>Portfolio Performance</h2>
     <p style="color:#666;font-size:12px;margin:-4px 0 14px">
       Inception: {inception_date or today.isoformat()} &nbsp;|&nbsp; Starting value: ${cost_basis:,.0f}
+      {f'&nbsp;|&nbsp; Last rebalance: <b>{_fmt_date(last_rebalance)}</b>' if last_rebalance else ''}
     </p>
     <div style="display:flex;align-items:stretch;gap:16px;margin-bottom:20px;flex-wrap:wrap">
       <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px;box-shadow:0 2px 4px rgba(0,0,0,0.08)">
@@ -2090,6 +2097,7 @@ def run():
         prices_df=prices,
         inception_nav=state.get("inception_nav"),
         cash_buffer=state.get("cash", 0.0),
+        last_rebalance=state.get("last_rebalance"),
     )
 
     # 10. Console summary
@@ -2235,6 +2243,7 @@ def run_prices_only():
         prices_df=prices,
         inception_nav=state.get("inception_nav"),
         cash_buffer=state.get("cash", 0.0),
+        last_rebalance=state.get("last_rebalance"),
     )
     print(f"Prices-only refresh done — {now.strftime('%H:%M UTC')} → {report_path}")
 
