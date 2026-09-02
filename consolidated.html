@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Trading Dashboard — 2026-09-01</title>
+  <title>Trading Dashboard — 2026-09-02</title>
   <style>
     *, *::before, *:: after { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f0f2f5; }
@@ -32,9 +32,9 @@
   <div id="summary-bar" style="background:#0d1b6e;border-bottom:1px solid rgba(255,255,255,.1);padding:4px 16px;display:flex;align-items:center;gap:0;overflow-x:auto;white-space:nowrap;font-size:12px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
   <div style="display:flex;gap:12px;align-items:center;padding:4px 16px 4px 0;border-right:1px solid rgba(255,255,255,.25);margin-right:4px">
     <span style="font-size:11px;font-weight:bold;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px">All Bots</span>
-    <span id="bar-total-val" style="font-weight:bold;color:white;font-size:14px">$21,369,335,772</span>
-    <span id="bar-total-day" style="color:#ef9a9a">-$73,792 today (-0.0%)</span>
-    <span id="bar-total-ret" style="color:#90caf9">+3561456.0% all-time</span>
+    <span id="bar-total-val" style="font-weight:bold;color:white;font-size:14px">$21,369,442,874</span>
+    <span id="bar-total-day" style="color:#90caf9">+$37,178 today (+0.0%)</span>
+    <span id="bar-total-ret" style="color:#90caf9">+3561473.8% all-time</span>
   </div>
   <div id="bar-screener-v1" style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
           <span style="font-size:11px;color:rgba(255,255,255,.6);min-width:72px">Screener v1</span>
@@ -43,13 +43,13 @@
           <span id="bar-screener-v1-ret" style="color:#2e7d32;font-size:12px">+10470756.1% all-time</span>
         </div><div id="bar-swing-v1" style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
           <span style="font-size:11px;color:rgba(255,255,255,.6);min-width:72px">Swing v1</span>
-          <span id="bar-swing-v1-val" style="font-weight:bold;color:white">$102,704</span>
-          <span id="bar-swing-v1-day" style="color:#c62828;font-size:12px">-$2,125 (-2.0%)</span>
-          <span id="bar-swing-v1-ret" style="color:#2e7d32;font-size:12px">+2.7% all-time</span>
+          <span id="bar-swing-v1-val" style="font-weight:bold;color:white">$119,549</span>
+          <span id="bar-swing-v1-day" style="color:#2e7d32;font-size:12px">+$18,548 (+18.4%)</span>
+          <span id="bar-swing-v1-ret" style="color:#2e7d32;font-size:12px">+19.5% all-time</span>
         </div><div id="bar-intraday-v1" style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
           <span style="font-size:11px;color:rgba(255,255,255,.6);min-width:72px">Intraday v1</span>
           <span id="bar-intraday-v1-val" style="font-weight:bold;color:white">$100,699</span>
-          <span id="bar-intraday-v1-day" style="color:#2e7d32;font-size:12px">+$279 (+0.3%)</span>
+          <span id="bar-intraday-v1-day" style="color:#2e7d32;font-size:12px">+$0 (+0.0%)</span>
           <span id="bar-intraday-v1-ret" style="color:#2e7d32;font-size:12px">+0.7% all-time</span>
         </div><div id="bar-screener-v2" style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
           <span style="font-size:11px;color:rgba(255,255,255,.6);min-width:72px">Screener v2</span>
@@ -58,16 +58,16 @@
           <span id="bar-screener-v2-ret" style="color:#2e7d32;font-size:12px">+10897977.0% all-time</span>
         </div><div id="bar-swing-v2" style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
           <span style="font-size:11px;color:rgba(255,255,255,.6);min-width:72px">Swing v2</span>
-          <span id="bar-swing-v2-val" style="font-weight:bold;color:white">$99,277</span>
-          <span id="bar-swing-v2-day" style="color:#c62828;font-size:12px">-$2,042 (-2.0%)</span>
-          <span id="bar-swing-v2-ret" style="color:#c62828;font-size:12px">-0.7% all-time</span>
+          <span id="bar-swing-v2-val" style="font-weight:bold;color:white">$119,549</span>
+          <span id="bar-swing-v2-day" style="color:#2e7d32;font-size:12px">+$18,548 (+18.4%)</span>
+          <span id="bar-swing-v2-ret" style="color:#2e7d32;font-size:12px">+19.5% all-time</span>
         </div><div id="bar-intraday-v2" style="display:flex;gap:18px;align-items:center;padding:4px 12px;border-right:1px solid rgba(255,255,255,.15)">
           <span style="font-size:11px;color:rgba(255,255,255,.6);min-width:72px">Intraday v2</span>
           <span id="bar-intraday-v2-val" style="font-weight:bold;color:white">$100,000</span>
           <span id="bar-intraday-v2-day" style="color:#2e7d32;font-size:12px">+$0 (+0.0%)</span>
           <span id="bar-intraday-v2-ret" style="color:#2e7d32;font-size:12px">+0.0% all-time</span>
         </div>
-  <div id="summary-stale" style="margin-left:auto;padding-left:16px;font-size:11px;color:rgba(255,255,255,.4)">as of last run · 2026-09-01</div>
+  <div id="summary-stale" style="margin-left:auto;padding-left:16px;font-size:11px;color:rgba(255,255,255,.4)">as of last run · 2026-09-02</div>
 </div>
   <div id="tabs">
     <div class="tab active"    data-frame="overview">🏠 Overview</div>
@@ -84,7 +84,7 @@
     <iframe id="overview"    class="active" src="overview.html"></iframe>
     <iframe id="screener"    src="reports/2026-09-01.html"></iframe>
     <iframe id="swing"       src="reports/swing_2026-09-01.html"></iframe>
-    <iframe id="intraday"    src="reports/intraday_2026-09-01.html"></iframe>
+    <iframe id="intraday"    src="reports/intraday_2026-09-02.html"></iframe>
     <iframe id="screener-v2" src="reports/v2_2026-09-01.html"></iframe>
     <iframe id="swing-v2"    src="reports/swing_v2_2026-09-01.html"></iframe>
     <iframe id="intraday-v2" src="reports/intraday_v2_2026-09-01.html"></iframe>
