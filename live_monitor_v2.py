@@ -704,6 +704,15 @@ def compute_period_return(nav_history: dict, today: date, days: int) -> str:
     return f'<span style="color:{color};font-weight:bold">{sign}{ret:.2%}</span>'
 
 
+def _fmt_inception_return(current_nav: float, inception_nav: float) -> str:
+    if not inception_nav or inception_nav == 0:
+        return "—"
+    ret   = (current_nav / inception_nav) - 1
+    color = "#2ca02c" if ret >= 0 else "#d62728"
+    sign  = "+" if ret >= 0 else ""
+    return f'<span style="color:{color};font-weight:bold">{sign}{ret:.2%}</span>'
+
+
 def compute_daily_return(nav_history: dict, today: date) -> str:
     dates = sorted(nav_history.keys())
     if len(dates) < 2:
@@ -912,8 +921,7 @@ def save_html_report(
         ("1 Year",       compute_period_return(nav_history, today, 365)),
         ("3 Years",      compute_period_return(nav_history, today, 365*3)),
         ("5 Years",      compute_period_return(nav_history, today, 365*5)),
-        ("Since Inception", compute_period_return(nav_history, today,
-            (today - date.fromisoformat(inception_date)).days if inception_date else 0)),
+        ("Since Inception", _fmt_inception_return(today_nav, cost_basis)),
     ]
     tile_ids = {
         "Today": "tile-today", "1 Month": "tile-1m", "3 Months": "tile-3m",

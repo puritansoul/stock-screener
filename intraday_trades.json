@@ -1,7 +1,163 @@
 {
-  "capital": 100698.9,
-  "open_positions": [],
-  "closed_today": [],
+  "capital": 8591.4,
+  "open_positions": [
+    {
+      "ticker": "CVNA",
+      "side": "long",
+      "entry_date": "2026-09-02",
+      "entry_time": "10:46 ET",
+      "entry_price": 74.42,
+      "shares": 405,
+      "stop": 73.8625,
+      "trail_dist": 1.1875,
+      "peak": 75.05,
+      "orb_width": 2.375,
+      "cost": 30140.1,
+      "vol_ratio": 1.46,
+      "score": 35.32,
+      "has_catalyst": false
+    },
+    {
+      "ticker": "OTIS",
+      "side": "long",
+      "entry_date": "2026-09-02",
+      "entry_time": "10:59 ET",
+      "entry_price": 71.05,
+      "shares": 297,
+      "stop": 70.685,
+      "trail_dist": 0.365,
+      "peak": 71.05,
+      "orb_width": 0.73,
+      "cost": 21101.85,
+      "vol_ratio": 3.37,
+      "score": 38.57,
+      "has_catalyst": false
+    },
+    {
+      "ticker": "LYV",
+      "side": "long",
+      "entry_date": "2026-09-02",
+      "entry_time": "11:04 ET",
+      "entry_price": 179.93,
+      "shares": 82,
+      "stop": 178.67,
+      "trail_dist": 1.26,
+      "peak": 179.93,
+      "orb_width": 2.52,
+      "cost": 14754.26,
+      "vol_ratio": 11.68,
+      "score": 66.48,
+      "has_catalyst": false
+    },
+    {
+      "ticker": "KEY",
+      "side": "long",
+      "entry_date": "2026-09-02",
+      "entry_time": "11:04 ET",
+      "entry_price": 21.865,
+      "shares": 476,
+      "stop": 21.7575,
+      "trail_dist": 0.1075,
+      "peak": 21.865,
+      "orb_width": 0.215,
+      "cost": 10407.74,
+      "vol_ratio": 6.46,
+      "score": 53.89,
+      "has_catalyst": false
+    },
+    {
+      "ticker": "META",
+      "side": "long",
+      "entry_date": "2026-09-02",
+      "entry_time": "11:04 ET",
+      "entry_price": 595.82,
+      "shares": 12,
+      "stop": 587.4487,
+      "trail_dist": 8.5592,
+      "peak": 596.0079,
+      "orb_width": 17.1183,
+      "cost": 7149.84,
+      "vol_ratio": 4.01,
+      "score": 44.62,
+      "has_catalyst": false
+    },
+    {
+      "ticker": "CPRT",
+      "side": "long",
+      "entry_date": "2026-09-02",
+      "entry_time": "11:04 ET",
+      "entry_price": 32.455,
+      "shares": 158,
+      "stop": 32.202,
+      "trail_dist": 0.263,
+      "peak": 32.465,
+      "orb_width": 0.526,
+      "cost": 5127.89,
+      "vol_ratio": 4.22,
+      "score": 41.64,
+      "has_catalyst": false
+    },
+    {
+      "ticker": "V",
+      "side": "long",
+      "entry_date": "2026-09-02",
+      "entry_time": "11:23 ET",
+      "entry_price": 379.6271,
+      "shares": 9,
+      "stop": 377.4381,
+      "trail_dist": 2.189,
+      "peak": 379.6271,
+      "orb_width": 4.3779,
+      "cost": 3416.64,
+      "vol_ratio": 5.98,
+      "score": 50.48,
+      "has_catalyst": false
+    }
+  ],
+  "closed_today": [
+    {
+      "ticker": "AES",
+      "side": "long",
+      "entry_date": "2026-09-02",
+      "entry_time": "11:04 ET",
+      "entry_price": 14.7936,
+      "shares": 243,
+      "stop": 14.79,
+      "trail_dist": 0.01,
+      "peak": 14.8,
+      "orb_width": 0.02,
+      "cost": 3594.84,
+      "vol_ratio": 3.03,
+      "score": 36.93,
+      "has_catalyst": false,
+      "exit_date": "2026-09-02",
+      "exit_price": 14.79,
+      "pnl": -0.87,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:13 ET"
+    },
+    {
+      "ticker": "MS",
+      "side": "long",
+      "entry_date": "2026-09-02",
+      "entry_time": "11:06 ET",
+      "entry_price": 215.125,
+      "shares": 11,
+      "stop": 214.37,
+      "trail_dist": 0.87,
+      "peak": 215.24,
+      "orb_width": 1.74,
+      "cost": 2366.38,
+      "vol_ratio": 1.53,
+      "score": 32.74,
+      "has_catalyst": false,
+      "exit_date": "2026-09-02",
+      "exit_price": 214.37,
+      "pnl": -8.3,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:13 ET"
+    }
+  ],
   "all_closed": [
     {
       "ticker": "SNOW",
@@ -74978,6 +75134,11 @@
       "low": 109.0,
       "width": 2.35
     },
+    "ABBV": {
+      "high": 262.97,
+      "low": 258.94,
+      "width": 4.03
+    },
     "ACN": {
       "high": 190.045,
       "low": 185.44,
@@ -74999,9 +75160,9 @@
       "width": 0.02
     },
     "AFL": {
-      "high": 116.93,
+      "high": 116.96,
       "low": 115.95,
-      "width": 0.98
+      "width": 1.01
     },
     "A": {
       "high": 152.72,
@@ -75029,9 +75190,9 @@
       "width": 3.235
     },
     "ARE": {
-      "high": 51.94,
+      "high": 52.01,
       "low": 51.12,
-      "width": 0.82
+      "width": 0.89
     },
     "ALGN": {
       "high": 159.31,
@@ -75098,6 +75259,11 @@
       "low": 76.12,
       "width": 0.55
     },
+    "AMT": {
+      "high": 176.385,
+      "low": 172.3,
+      "width": 4.085
+    },
     "AWK": {
       "high": 137.235,
       "low": 136.22,
@@ -75139,9 +75305,9 @@
       "width": 0.8287
     },
     "APO": {
-      "high": 132.77,
+      "high": 132.78,
       "low": 130.7752,
-      "width": 1.9948
+      "width": 2.0048
     },
     "AAPL": {
       "high": 328.4,
@@ -75247,6 +75413,11 @@
       "high": 26.01,
       "low": 25.48,
       "width": 0.53
+    },
+    "BDX": {
+      "high": 191.755,
+      "low": 187.43,
+      "width": 4.325
     },
     "BRK-B": {
       "high": 505.8299,
@@ -75359,9 +75530,9 @@
       "width": 1.51
     },
     "COF": {
-      "high": 216.73,
+      "high": 216.74,
       "low": 211.73,
-      "width": 5.0
+      "width": 5.01
     },
     "CAH": {
       "high": 244.39,
@@ -75489,9 +75660,9 @@
       "width": 1.88
     },
     "C": {
-      "high": 134.24,
+      "high": 134.28,
       "low": 132.695,
-      "width": 1.545
+      "width": 1.585
     },
     "CFG": {
       "high": 69.22,
@@ -75525,8 +75696,8 @@
     },
     "COHR": {
       "high": 271.06,
-      "low": 263.7,
-      "width": 7.36
+      "low": 263.67,
+      "width": 7.39
     },
     "COIN": {
       "high": 178.46,
@@ -75545,8 +75716,8 @@
     },
     "FIX": {
       "high": 1561.9998,
-      "low": 1521.8508,
-      "width": 40.1489
+      "low": 1521.54,
+      "width": 40.4597
     },
     "COP": {
       "high": 136.45,
@@ -75555,8 +75726,8 @@
     },
     "ED": {
       "high": 107.77,
-      "low": 106.39,
-      "width": 1.38
+      "low": 106.3875,
+      "width": 1.3825
     },
     "STZ": {
       "high": 132.31,
@@ -75785,8 +75956,8 @@
     },
     "EME": {
       "high": 736.24,
-      "low": 725.02,
-      "width": 11.22
+      "low": 725.0,
+      "width": 11.24
     },
     "EMR": {
       "high": 148.235,
@@ -75837,6 +76008,11 @@
       "high": 382.08,
       "low": 378.86,
       "width": 3.22
+    },
+    "EVRG": {
+      "high": 81.685,
+      "low": 80.445,
+      "width": 1.24
     },
     "ES": {
       "high": 70.47,
@@ -75905,8 +76081,8 @@
     },
     "FDXF": {
       "high": 129.39,
-      "low": 126.18,
-      "width": 3.21
+      "low": 126.15,
+      "width": 3.24
     },
     "FERG": {
       "high": 219.61,
@@ -76064,9 +76240,9 @@
       "width": 0.5481
     },
     "HIG": {
-      "high": 137.83,
+      "high": 137.85,
       "low": 137.045,
-      "width": 0.785
+      "width": 0.805
     },
     "HAS": {
       "high": 94.215,
@@ -76155,13 +76331,13 @@
     },
     "HII": {
       "high": 292.72,
-      "low": 287.58,
-      "width": 5.14
+      "low": 287.28,
+      "width": 5.44
     },
     "IBM": {
-      "high": 231.54,
+      "high": 231.6,
       "low": 229.1,
-      "width": 2.44
+      "width": 2.5
     },
     "IEX": {
       "high": 223.6987,
@@ -76209,9 +76385,9 @@
       "width": 1.94
     },
     "IFF": {
-      "high": 87.425,
+      "high": 87.47,
       "low": 86.06,
-      "width": 1.365
+      "width": 1.41
     },
     "IP": {
       "high": 37.36,
@@ -76239,9 +76415,9 @@
       "width": 0.395
     },
     "IQV": {
-      "high": 264.38,
+      "high": 264.4,
       "low": 257.18,
-      "width": 7.2
+      "width": 7.22
     },
     "IRM": {
       "high": 115.7622,
@@ -76264,9 +76440,9 @@
       "width": 3.3
     },
     "J": {
-      "high": 146.4457,
+      "high": 146.49,
       "low": 145.3,
-      "width": 1.1457
+      "width": 1.19
     },
     "JNJ": {
       "high": 281.07,
@@ -76489,9 +76665,9 @@
       "width": 17.1183
     },
     "MET": {
-      "high": 96.0,
+      "high": 96.0025,
       "low": 94.79,
-      "width": 1.21
+      "width": 1.2125
     },
     "MTD": {
       "high": 1398.13,
@@ -76522,6 +76698,11 @@
       "high": 129.68,
       "low": 127.8,
       "width": 1.88
+    },
+    "MRNA": {
+      "high": 156.4151,
+      "low": 149.04,
+      "width": 7.3751
     },
     "TAP": {
       "high": 40.31,
@@ -76598,6 +76779,11 @@
       "low": 34.36,
       "width": 0.565
     },
+    "NEE": {
+      "high": 83.0457,
+      "low": 82.05,
+      "width": 0.9957
+    },
     "NKE": {
       "high": 38.73,
       "low": 38.01,
@@ -76613,6 +76799,11 @@
       "low": 314.14,
       "width": 2.58
     },
+    "NSC": {
+      "high": 333.89,
+      "low": 327.88,
+      "width": 6.01
+    },
     "NTRS": {
       "high": 184.41,
       "low": 183.25,
@@ -76620,8 +76811,8 @@
     },
     "NOC": {
       "high": 535.86,
-      "low": 525.0,
-      "width": 10.86
+      "low": 524.13,
+      "width": 11.73
     },
     "NCLH": {
       "high": 15.8,
@@ -76750,8 +76941,8 @@
     },
     "PCG": {
       "high": 13.57,
-      "low": 12.6309,
-      "width": 0.9391
+      "low": 12.63,
+      "width": 0.94
     },
     "PM": {
       "high": 188.79,
@@ -76803,6 +76994,11 @@
       "low": 136.9005,
       "width": 1.6695
     },
+    "PRU": {
+      "high": 119.345,
+      "low": 117.4,
+      "width": 1.945
+    },
     "PEG": {
       "high": 73.49,
       "low": 72.7,
@@ -76825,8 +77021,8 @@
     },
     "PWR": {
       "high": 612.17,
-      "low": 597.94,
-      "width": 14.23
+      "low": 597.875,
+      "width": 14.295
     },
     "QCOM": {
       "high": 169.39,
@@ -76854,9 +77050,9 @@
       "width": 3.605
     },
     "RDDT": {
-      "high": 152.63,
+      "high": 152.64,
       "low": 143.47,
-      "width": 9.16
+      "width": 9.17
     },
     "RTX": {
       "high": 206.88,
@@ -76879,9 +77075,9 @@
       "width": 17.38
     },
     "RF": {
-      "high": 29.75,
+      "high": 29.755,
       "low": 29.4,
-      "width": 0.35
+      "width": 0.355
     },
     "RSG": {
       "high": 223.385,
@@ -76960,8 +77156,8 @@
     },
     "SRE": {
       "high": 84.14,
-      "low": 82.57,
-      "width": 1.57
+      "low": 82.56,
+      "width": 1.58
     },
     "NOW": {
       "high": 142.6,
@@ -77003,11 +77199,6 @@
       "low": 91.12,
       "width": 1.585
     },
-    "SO": {
-      "high": 88.16,
-      "low": 87.13,
-      "width": 1.03
-    },
     "LUV": {
       "high": 38.62,
       "low": 38.2,
@@ -77022,6 +77213,11 @@
       "high": 106.77,
       "low": 105.625,
       "width": 1.145
+    },
+    "STT": {
+      "high": 190.34,
+      "low": 187.58,
+      "width": 2.76
     },
     "STLD": {
       "high": 243.85,
@@ -77047,6 +77243,11 @@
       "high": 78.72,
       "low": 77.13,
       "width": 1.59
+    },
+    "SNPS": {
+      "high": 415.59,
+      "low": 410.54,
+      "width": 5.05
     },
     "SYY": {
       "high": 82.73,
@@ -77164,9 +77365,9 @@
       "width": 0.905
     },
     "TFC": {
-      "high": 50.455,
+      "high": 50.46,
       "low": 49.83,
-      "width": 0.625
+      "width": 0.63
     },
     "TYL": {
       "high": 381.61,
@@ -77237,11 +77438,6 @@
       "high": 281.98,
       "low": 277.23,
       "width": 4.75
-    },
-    "VTR": {
-      "high": 92.38,
-      "low": 91.135,
-      "width": 1.245
     },
     "VLTO": {
       "high": 98.17,
@@ -77359,9 +77555,9 @@
       "width": 3.65
     },
     "WST": {
-      "high": 345.125,
+      "high": 345.47,
       "low": 338.85,
-      "width": 6.275
+      "width": 6.62
     },
     "WDC": {
       "high": 456.98,
@@ -77374,14 +77570,14 @@
       "width": 0.245
     },
     "WSM": {
-      "high": 223.045,
+      "high": 223.39,
       "low": 220.71,
-      "width": 2.335
+      "width": 2.68
     },
     "WMB": {
       "high": 75.24,
-      "low": 73.64,
-      "width": 1.6
+      "low": 73.63,
+      "width": 1.61
     },
     "WTW": {
       "high": 340.46,
@@ -77466,7 +77662,7 @@
     "2026-08-28": 100646.3,
     "2026-08-31": 100420.08,
     "2026-09-01": 100698.9,
-    "2026-09-02": 100698.9
+    "2026-09-02": 100701.6
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -186198,6 +186394,587 @@
       "exits": [],
       "portfolio_value": 100698.9,
       "note": "$100,699 | cash=$100,699 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "10:13 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.227,
+        "spy_vs_vwap": 1.4872,
+        "spy_vs_ema20": -0.4059
+      },
+      "portfolio_value": 100698.9,
+      "note": "$100,699 | cash=$100,699 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "10:17 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.275,
+        "spy_vs_vwap": 1.7847,
+        "spy_vs_ema20": -0.0359
+      },
+      "portfolio_value": 100698.9,
+      "note": "$100,699 | cash=$100,699 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "10:19 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.315,
+        "spy_vs_vwap": 2.0008,
+        "spy_vs_ema20": 0.264
+      },
+      "portfolio_value": 100698.9,
+      "note": "$100,699 | cash=$100,699 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "10:21 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.378,
+        "spy_vs_vwap": 2.3572,
+        "spy_vs_ema20": 0.7441
+      },
+      "portfolio_value": 100698.9,
+      "note": "$100,699 | cash=$100,699 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "10:24 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.362,
+        "spy_vs_vwap": 2.1418,
+        "spy_vs_ema20": 0.6241
+      },
+      "portfolio_value": 100698.9,
+      "note": "$100,699 | cash=$100,699 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "10:26 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.399,
+        "spy_vs_vwap": 2.3489,
+        "spy_vs_ema20": 0.9041
+      },
+      "portfolio_value": 100698.9,
+      "note": "$100,699 | cash=$100,699 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "10:29 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.379,
+        "spy_vs_vwap": 2.1607,
+        "spy_vs_ema20": 0.7541
+      },
+      "portfolio_value": 100698.9,
+      "note": "$100,699 | cash=$100,699 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "10:31 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.375,
+        "spy_vs_vwap": 2.0742,
+        "spy_vs_ema20": 0.7207
+      },
+      "portfolio_value": 100698.9,
+      "note": "$100,699 | cash=$100,699 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "10:34 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.384,
+        "spy_vs_vwap": 2.1002,
+        "spy_vs_ema20": 0.7941
+      },
+      "portfolio_value": 100698.9,
+      "note": "$100,699 | cash=$100,699 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "10:36 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.43,
+        "spy_vs_vwap": 2.3812,
+        "spy_vs_ema20": 1.1441
+      },
+      "portfolio_value": 100698.9,
+      "note": "$100,699 | cash=$100,699 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "10:39 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.405,
+        "spy_vs_vwap": 2.1373,
+        "spy_vs_ema20": 0.9541
+      },
+      "portfolio_value": 100698.9,
+      "note": "$100,699 | cash=$100,699 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "10:41 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.46,
+        "spy_vs_vwap": 2.4855,
+        "spy_vs_ema20": 1.3741
+      },
+      "portfolio_value": 100698.9,
+      "note": "$100,699 | cash=$100,699 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "10:44 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.506,
+        "spy_vs_vwap": 2.7843,
+        "spy_vs_ema20": 1.7241
+      },
+      "portfolio_value": 100698.9,
+      "note": "$100,699 | cash=$100,699 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "10:46 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "CVNA",
+          "side": "long",
+          "price": 74.42,
+          "shares": 405,
+          "stop": 73.23,
+          "trail_dist": 1.1875,
+          "score": 35.32
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.453,
+        "spy_vs_vwap": 2.3231,
+        "spy_vs_ema20": 1.3151
+      },
+      "portfolio_value": 100698.9,
+      "note": "$100,699 | cash=$70,559 | open=1 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "10:48 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.421,
+        "spy_vs_vwap": 2.0395,
+        "spy_vs_ema20": 1.074
+      },
+      "portfolio_value": 100751.55,
+      "note": "$100,752 | cash=$70,559 | open=1 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "10:51 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.405,
+        "spy_vs_vwap": 1.8815,
+        "spy_vs_ema20": 0.9541
+      },
+      "portfolio_value": 100733.32,
+      "note": "$100,733 | cash=$70,559 | open=1 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "10:53 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.391,
+        "spy_vs_vwap": 1.7238,
+        "spy_vs_ema20": 0.8491
+      },
+      "portfolio_value": 100763.7,
+      "note": "$100,764 | cash=$70,559 | open=1 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "10:56 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.39,
+        "spy_vs_vwap": 1.6964,
+        "spy_vs_ema20": 0.8341
+      },
+      "portfolio_value": 100751.55,
+      "note": "$100,752 | cash=$70,559 | open=1 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "10:58 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "OTIS",
+          "side": "long",
+          "price": 71.05,
+          "shares": 297,
+          "stop": 70.69,
+          "trail_dist": 0.365,
+          "score": 38.57
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.369,
+        "spy_vs_vwap": 1.5004,
+        "spy_vs_ema20": 0.6741
+      },
+      "portfolio_value": 100832.55,
+      "note": "$100,833 | cash=$49,457 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "11:01 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.376,
+        "spy_vs_vwap": 1.5433,
+        "spy_vs_ema20": 0.7341
+      },
+      "portfolio_value": 100787.05,
+      "note": "$100,787 | cash=$49,457 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "11:03 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "LYV",
+          "side": "long",
+          "price": 179.93,
+          "shares": 82,
+          "stop": 178.67,
+          "trail_dist": 1.26,
+          "score": 66.48
+        },
+        {
+          "ticker": "KEY",
+          "side": "long",
+          "price": 21.86,
+          "shares": 476,
+          "stop": 21.76,
+          "trail_dist": 0.1075,
+          "score": 53.89
+        },
+        {
+          "ticker": "META",
+          "side": "long",
+          "price": 595.82,
+          "shares": 12,
+          "stop": 587.26,
+          "trail_dist": 8.5592,
+          "score": 44.62
+        },
+        {
+          "ticker": "CPRT",
+          "side": "long",
+          "price": 32.46,
+          "shares": 158,
+          "stop": 32.19,
+          "trail_dist": 0.263,
+          "score": 41.64
+        },
+        {
+          "ticker": "AES",
+          "side": "long",
+          "price": 14.79,
+          "shares": 243,
+          "stop": 14.78,
+          "trail_dist": 0.01,
+          "score": 36.93
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.418,
+        "spy_vs_vwap": 1.8322,
+        "spy_vs_ema20": 1.0541
+      },
+      "portfolio_value": 100846.59,
+      "note": "$100,847 | cash=$8,422 | open=7 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "11:06 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "MS",
+          "side": "long",
+          "price": 215.12,
+          "shares": 11,
+          "stop": 214.25,
+          "trail_dist": 0.87,
+          "score": 32.74
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.403,
+        "spy_vs_vwap": 1.6989,
+        "spy_vs_ema20": 0.9341
+      },
+      "portfolio_value": 100854.86,
+      "note": "$100,855 | cash=$6,056 | open=8 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "11:08 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.37,
+        "spy_vs_vwap": 1.429,
+        "spy_vs_ema20": 0.6841
+      },
+      "portfolio_value": 100700.08,
+      "note": "$100,700 | cash=$6,056 | open=8 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "11:10 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.371,
+        "spy_vs_vwap": 1.4046,
+        "spy_vs_ema20": 0.6941
+      },
+      "portfolio_value": 100663.83,
+      "note": "$100,664 | cash=$6,056 | open=8 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "11:13 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "AES",
+          "side": "long",
+          "exit_price": 14.79,
+          "pnl": -0.87,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "MS",
+          "side": "long",
+          "exit_price": 214.37,
+          "pnl": -8.3,
+          "reason": "trailing stop"
+        }
+      ],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.375,
+        "spy_vs_vwap": 1.4224,
+        "spy_vs_ema20": 0.7241
+      },
+      "portfolio_value": 100706.73,
+      "note": "$100,707 | cash=$12,008 | open=6 | closed today=2 | day PnL=$-9"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "11:15 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.421,
+        "spy_vs_vwap": 1.7459,
+        "spy_vs_ema20": 1.074
+      },
+      "portfolio_value": 100696.67,
+      "note": "$100,697 | cash=$12,008 | open=6 | closed today=2 | day PnL=$-9"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "11:18 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.422,
+        "spy_vs_vwap": 1.7408,
+        "spy_vs_ema20": 1.0841
+      },
+      "portfolio_value": 100706.93,
+      "note": "$100,707 | cash=$12,008 | open=6 | closed today=2 | day PnL=$-9"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "11:20 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.458,
+        "spy_vs_vwap": 1.985,
+        "spy_vs_ema20": 1.3541
+      },
+      "portfolio_value": 100705.62,
+      "note": "$100,706 | cash=$12,008 | open=6 | closed today=2 | day PnL=$-9"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "11:23 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "V",
+          "side": "long",
+          "price": 379.63,
+          "shares": 9,
+          "stop": 377.44,
+          "trail_dist": 2.189,
+          "score": 50.48
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.455,
+        "spy_vs_vwap": 1.952,
+        "spy_vs_ema20": 1.3341
+      },
+      "portfolio_value": 100671.92,
+      "note": "$100,672 | cash=$8,591 | open=7 | closed today=2 | day PnL=$-9"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "11:25 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.48,
+        "spy_vs_vwap": 2.1227,
+        "spy_vs_ema20": 1.5241
+      },
+      "portfolio_value": 100701.6,
+      "note": "$100,702 | cash=$8,591 | open=7 | closed today=2 | day PnL=$-9"
     }
   ]
 }
