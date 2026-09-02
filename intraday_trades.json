@@ -1,22 +1,6 @@
 {
-  "capital": 8591.4,
+  "capital": 60971.97,
   "open_positions": [
-    {
-      "ticker": "CVNA",
-      "side": "long",
-      "entry_date": "2026-09-02",
-      "entry_time": "10:46 ET",
-      "entry_price": 74.42,
-      "shares": 405,
-      "stop": 73.8625,
-      "trail_dist": 1.1875,
-      "peak": 75.05,
-      "orb_width": 2.375,
-      "cost": 30140.1,
-      "vol_ratio": 1.46,
-      "score": 35.32,
-      "has_catalyst": false
-    },
     {
       "ticker": "OTIS",
       "side": "long",
@@ -31,38 +15,6 @@
       "cost": 21101.85,
       "vol_ratio": 3.37,
       "score": 38.57,
-      "has_catalyst": false
-    },
-    {
-      "ticker": "LYV",
-      "side": "long",
-      "entry_date": "2026-09-02",
-      "entry_time": "11:04 ET",
-      "entry_price": 179.93,
-      "shares": 82,
-      "stop": 178.67,
-      "trail_dist": 1.26,
-      "peak": 179.93,
-      "orb_width": 2.52,
-      "cost": 14754.26,
-      "vol_ratio": 11.68,
-      "score": 66.48,
-      "has_catalyst": false
-    },
-    {
-      "ticker": "KEY",
-      "side": "long",
-      "entry_date": "2026-09-02",
-      "entry_time": "11:04 ET",
-      "entry_price": 21.865,
-      "shares": 476,
-      "stop": 21.7575,
-      "trail_dist": 0.1075,
-      "peak": 21.865,
-      "orb_width": 0.215,
-      "cost": 10407.74,
-      "vol_ratio": 6.46,
-      "score": 53.89,
       "has_catalyst": false
     },
     {
@@ -88,9 +40,9 @@
       "entry_time": "11:04 ET",
       "entry_price": 32.455,
       "shares": 158,
-      "stop": 32.202,
+      "stop": 32.207,
       "trail_dist": 0.263,
-      "peak": 32.465,
+      "peak": 32.47,
       "orb_width": 0.526,
       "cost": 5127.89,
       "vol_ratio": 4.22,
@@ -104,13 +56,29 @@
       "entry_time": "11:23 ET",
       "entry_price": 379.6271,
       "shares": 9,
-      "stop": 377.4381,
+      "stop": 377.561,
       "trail_dist": 2.189,
-      "peak": 379.6271,
+      "peak": 379.75,
       "orb_width": 4.3779,
       "cost": 3416.64,
       "vol_ratio": 5.98,
       "score": 50.48,
+      "has_catalyst": false
+    },
+    {
+      "ticker": "IR",
+      "side": "long",
+      "entry_date": "2026-09-02",
+      "entry_time": "11:42 ET",
+      "entry_price": 75.225,
+      "shares": 34,
+      "stop": 74.725,
+      "trail_dist": 0.54,
+      "peak": 75.265,
+      "orb_width": 1.08,
+      "cost": 2557.65,
+      "vol_ratio": 1.59,
+      "score": 31.12,
       "has_catalyst": false
     }
   ],
@@ -156,6 +124,69 @@
       "pnl": -8.3,
       "exit_reason": "trailing stop",
       "exit_time": "11:13 ET"
+    },
+    {
+      "ticker": "CVNA",
+      "side": "long",
+      "entry_date": "2026-09-02",
+      "entry_time": "10:46 ET",
+      "entry_price": 74.42,
+      "shares": 405,
+      "stop": 73.8625,
+      "trail_dist": 1.1875,
+      "peak": 75.05,
+      "orb_width": 2.375,
+      "cost": 30140.1,
+      "vol_ratio": 1.46,
+      "score": 35.32,
+      "has_catalyst": false,
+      "exit_date": "2026-09-02",
+      "exit_price": 73.8625,
+      "pnl": -225.79,
+      "exit_reason": "trailing stop",
+      "exit_time": "11:55 ET"
+    },
+    {
+      "ticker": "LYV",
+      "side": "long",
+      "entry_date": "2026-09-02",
+      "entry_time": "11:04 ET",
+      "entry_price": 179.93,
+      "shares": 82,
+      "stop": 178.87,
+      "trail_dist": 1.26,
+      "peak": 180.13,
+      "orb_width": 2.52,
+      "cost": 14754.26,
+      "vol_ratio": 11.68,
+      "score": 66.48,
+      "has_catalyst": false,
+      "exit_date": "2026-09-02",
+      "exit_price": 178.87,
+      "pnl": -86.92,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:02 ET"
+    },
+    {
+      "ticker": "KEY",
+      "side": "long",
+      "entry_date": "2026-09-02",
+      "entry_time": "11:04 ET",
+      "entry_price": 21.865,
+      "shares": 476,
+      "stop": 21.7575,
+      "trail_dist": 0.1075,
+      "peak": 21.865,
+      "orb_width": 0.215,
+      "cost": 10407.74,
+      "vol_ratio": 6.46,
+      "score": 53.89,
+      "has_catalyst": false,
+      "exit_date": "2026-09-02",
+      "exit_price": 21.7575,
+      "pnl": -51.17,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:02 ET"
     }
   ],
   "all_closed": [
@@ -77672,7 +77703,7 @@
     "2026-08-28": 100646.3,
     "2026-08-31": 100420.08,
     "2026-09-01": 100698.9,
-    "2026-09-02": 100712.53
+    "2026-09-02": 100191.07
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -187001,6 +187032,279 @@
       },
       "portfolio_value": 100712.53,
       "note": "$100,713 | cash=$8,591 | open=7 | closed today=2 | day PnL=$-9"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "11:30 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.497,
+        "spy_vs_vwap": 2.2134,
+        "spy_vs_ema20": 1.6541
+      },
+      "portfolio_value": 100737.14,
+      "note": "$100,737 | cash=$8,591 | open=7 | closed today=2 | day PnL=$-9"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "11:32 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.498,
+        "spy_vs_vwap": 2.1751,
+        "spy_vs_ema20": 1.6641
+      },
+      "portfolio_value": 100743.58,
+      "note": "$100,744 | cash=$8,591 | open=7 | closed today=2 | day PnL=$-9"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "11:35 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.458,
+        "spy_vs_vwap": 1.8542,
+        "spy_vs_ema20": 1.3541
+      },
+      "portfolio_value": 100662.08,
+      "note": "$100,662 | cash=$8,591 | open=7 | closed today=2 | day PnL=$-9"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "11:37 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.478,
+        "spy_vs_vwap": 1.9807,
+        "spy_vs_ema20": 1.509
+      },
+      "portfolio_value": 100582.65,
+      "note": "$100,583 | cash=$8,591 | open=7 | closed today=2 | day PnL=$-9"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "11:40 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.455,
+        "spy_vs_vwap": 1.7901,
+        "spy_vs_ema20": 1.3341
+      },
+      "portfolio_value": 100517.71,
+      "note": "$100,518 | cash=$8,591 | open=7 | closed today=2 | day PnL=$-9"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "11:42 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "IR",
+          "side": "long",
+          "price": 75.22,
+          "shares": 34,
+          "stop": 74.68,
+          "trail_dist": 0.54,
+          "score": 31.12
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.439,
+        "spy_vs_vwap": 1.6553,
+        "spy_vs_ema20": 1.2141
+      },
+      "portfolio_value": 100527.87,
+      "note": "$100,528 | cash=$6,034 | open=8 | closed today=2 | day PnL=$-9"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "11:44 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.387,
+        "spy_vs_vwap": 1.2469,
+        "spy_vs_ema20": 0.8141
+      },
+      "portfolio_value": 100414.93,
+      "note": "$100,415 | cash=$6,034 | open=8 | closed today=2 | day PnL=$-9"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "11:47 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.378,
+        "spy_vs_vwap": 1.1571,
+        "spy_vs_ema20": 0.7441
+      },
+      "portfolio_value": 100282.68,
+      "note": "$100,283 | cash=$6,034 | open=8 | closed today=2 | day PnL=$-9"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "11:49 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.356,
+        "spy_vs_vwap": 0.9799,
+        "spy_vs_ema20": 0.5791
+      },
+      "portfolio_value": 100353.94,
+      "note": "$100,354 | cash=$6,034 | open=8 | closed today=2 | day PnL=$-9"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "11:54 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "CVNA",
+          "side": "long",
+          "exit_price": 73.86,
+          "pnl": -225.79,
+          "reason": "trailing stop"
+        }
+      ],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.371,
+        "spy_vs_vwap": 1.073,
+        "spy_vs_ema20": 0.6941
+      },
+      "portfolio_value": 100279.19,
+      "note": "$100,279 | cash=$35,948 | open=7 | closed today=3 | day PnL=$-235"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "11:57 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.371,
+        "spy_vs_vwap": 1.0658,
+        "spy_vs_ema20": 0.6941
+      },
+      "portfolio_value": 100255.49,
+      "note": "$100,255 | cash=$35,948 | open=7 | closed today=3 | day PnL=$-235"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "11:59 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.446,
+        "spy_vs_vwap": 1.6227,
+        "spy_vs_ema20": 1.264
+      },
+      "portfolio_value": 100272.79,
+      "note": "$100,273 | cash=$35,948 | open=7 | closed today=3 | day PnL=$-235"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "12:02 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "LYV",
+          "side": "long",
+          "exit_price": 178.87,
+          "pnl": -86.92,
+          "reason": "trailing stop"
+        },
+        {
+          "ticker": "KEY",
+          "side": "long",
+          "exit_price": 21.76,
+          "pnl": -51.17,
+          "reason": "trailing stop"
+        }
+      ],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.43,
+        "spy_vs_vwap": 1.4885,
+        "spy_vs_ema20": 1.1441
+      },
+      "portfolio_value": 100207.82,
+      "note": "$100,208 | cash=$60,972 | open=5 | closed today=5 | day PnL=$-373"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "12:04 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.445,
+        "spy_vs_vwap": 1.5914,
+        "spy_vs_ema20": 1.2541
+      },
+      "portfolio_value": 100203.19,
+      "note": "$100,203 | cash=$60,972 | open=5 | closed today=5 | day PnL=$-373"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "12:07 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.443,
+        "spy_vs_vwap": 1.5752,
+        "spy_vs_ema20": 1.2441
+      },
+      "portfolio_value": 100191.07,
+      "note": "$100,191 | cash=$60,972 | open=5 | closed today=5 | day PnL=$-373"
     }
   ]
 }

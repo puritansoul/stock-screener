@@ -1982,13 +1982,16 @@ def run():
                 px = float(last_prices[tk]) if tk in last_prices.index and pd.notna(last_prices[tk]) else None
                 w  = target_weights.get(tk, 0.0)
                 shares = int(actual_nav * w / px) if px and px > 0 else 0
-                # Only overwrite if ticker is new or being resized at rebalance
-                if tk not in positions or is_rebalance:
+                if tk not in positions:
+                    # New position — record entry price and date
                     positions[tk] = {
                         "price":  round(px, 4) if px else None,
                         "date":   today.isoformat(),
                         "shares": shares,
                     }
+                else:
+                    # Existing position — preserve original purchase date/price, only resize shares
+                    positions[tk] = {**positions[tk], "shares": shares}
             # Remove positions that were sold (not in new target)
             target_set = set(target)
             positions  = {k: v for k, v in positions.items() if k in target_set}
