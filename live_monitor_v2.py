@@ -2020,11 +2020,13 @@ def run():
             }
     state["positions"] = positions_map
 
-    # Track uninvested cash from integer share rounding — preserve it across days
+    # Track uninvested cash from integer share rounding — use current market prices,
+    # not stored purchase prices (which are historical cost basis after our purchase-date fix)
     if is_rebalance or first_run:
         _total_inv = sum(
-            p.get("shares", 0) * (p.get("price") or 0.0)
-            for p in positions_map.values()
+            positions_map.get(tk, {}).get("shares", 0) * float(last_prices[tk])
+            for tk in holdings
+            if tk in last_prices.index and pd.notna(last_prices[tk])
         )
         state["cash"] = max(0.0, actual_nav - _total_inv)
 
