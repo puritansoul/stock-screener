@@ -1204,6 +1204,10 @@ def save_html_report(
           {gain_sign}${abs(gain_loss):,.0f} <span style="font-size:16px">({gain_sign}{gain_loss_pct:.2f}%)</span>
         </div>
       </div>
+      <div style="background:#f5f5f5;border:1px solid #e0e0e0;border-radius:10px;padding:16px 24px;min-width:140px;box-shadow:0 2px 4px rgba(0,0,0,0.06)">
+        <div style="font-size:11px;color:#9e9e9e;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Uninvested Cash</div>
+        <div class="card-value" style="color:#616161">${cash_buffer:,.0f}</div>
+      </div>
     </div>
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:4px">
       <div style="font-size:12px;color:#666;font-weight:bold">Portfolio</div>
