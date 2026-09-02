@@ -807,53 +807,37 @@ def save_html_report(
     except Exception:
         pass
 
-    # ── Equity curve: actual shares × prices, normalized to $100k at inception ──
-    # This replaces NAV-multiplier chart which drifts due to using target weights not actual shares
-    equity_curve_json = "{}"
-    spy_curve_json    = "{}"
+    # ── NAV curve: true daily portfolio values from tracked history ─────────────
+    nav_curve_json = "{}"
+    spy_curve_json = "{}"
     try:
-        if prices_df is not None and not prices_df.empty and positions and inception_date:
-            _inc = date.fromisoformat(inception_date)
-            _price_rows = prices_df[prices_df.index.normalize() >= pd.Timestamp(_inc)]
-            if not _price_rows.empty:
-                _port_series = {}
-                for _dt, _row in _price_rows.iterrows():
-                    _d = str(_dt.date())
-                    _val = sum(
-                        positions[t]["shares"] * float(_row[t])
-                        for t in positions
-                        if t in _row.index and pd.notna(_row[t])
-                    )
-                    if _val > 0:
-                        _port_series[_d] = _val
-                if _port_series:
-                    _first_d = sorted(_port_series.keys())[0]
-                    _anchor = _port_series[_first_d]
-                    equity_curve_json = json.dumps(
-                        {d: round(100_000 * v / _anchor, 2) for d, v in _port_series.items()}
-                    )
-                # SPY curve normalized to same $100k at inception
-                _bench_dict_local = {}
-                try:
-                    _bench_dict_local = json.loads(bench_json)
-                except Exception:
-                    pass
-                _spy_raw = _bench_dict_local.get("SPY", {})
-                if _spy_raw and _port_series:
-                    _spy_dates = sorted(_spy_raw.keys())
-                    _spy_anchor_d = _spy_dates[0]
+        _nav_sorted_d = sorted(nav_history.keys())
+        if len(_nav_sorted_d) >= 2:
+            nav_curve_json = json.dumps({d: round(nav_history[d], 2) for d in _nav_sorted_d})
+            # SPY normalized to start at same dollar value as first NAV entry
+            _bench_dict_local = {}
+            try:
+                _bench_dict_local = json.loads(bench_json)
+            except Exception:
+                pass
+            _spy_raw = _bench_dict_local.get("SPY", {})
+            if _spy_raw:
+                _spy_dates   = sorted(_spy_raw.keys())
+                _nav_start_d = _nav_sorted_d[0]
+                _nav_start_v = nav_history[_nav_start_d]
+                _spy_anc_d   = _spy_dates[0]
+                for _sd in _spy_dates:
+                    if _sd <= _nav_start_d:
+                        _spy_anc_d = _sd
+                _spy_anc_px = _spy_raw[_spy_anc_d]
+                _spy_c = {}
+                for _d in _nav_sorted_d:
+                    _best = _spy_dates[0]
                     for _sd in _spy_dates:
-                        if _sd <= _first_d:
-                            _spy_anchor_d = _sd
-                    _spy_anchor_px = _spy_raw[_spy_anchor_d]
-                    _spy_curve = {}
-                    for _d in sorted(_port_series.keys()):
-                        _best = _spy_dates[0]
-                        for _sd in _spy_dates:
-                            if _sd <= _d:
-                                _best = _sd
-                        _spy_curve[_d] = round(100_000 * _spy_raw[_best] / _spy_anchor_px, 2)
-                    spy_curve_json = json.dumps(_spy_curve)
+                        if _sd <= _d:
+                            _best = _sd
+                    _spy_c[_d] = round(_nav_start_v * _spy_raw[_best] / _spy_anc_px, 2)
+                spy_curve_json = json.dumps(_spy_c)
     except Exception:
         pass
     # Always use yesterday's closing price for Day Delta
@@ -940,17 +924,22 @@ def save_html_report(
             for t in trades["hold"]
         )
         trade_html = f"""
-        <div style="background:#fff3e0;border:2px solid #e65100;border-radius:8px;padding:20px;margin:20px 0">
-          <h2 style="color:#e65100;margin-top:0">⚡ Quarterly Rebalance Required</h2>
-          <p>Portfolio value: <b>{nav_str}</b> &nbsp;|&nbsp; {n_target} holdings &nbsp;|&nbsp;
-          Allocation: Score × Inverse-Volatility (63-day), capped {MIN_POSITION_PCT:.0%}–{MAX_POSITION_PCT:.0%}</p>
-          <table border="1" cellpadding="8" cellspacing="0" style="border-collapse:collapse;width:100%;font-family:monospace;font-size:13px">
-            <tr style="background:#263238;color:white"><th>Action</th><th>Ticker</th><th>Allocation</th><th>Shares</th><th>Value</th><th>Price</th></tr>
-            {buy_rows}{sell_rows}{hold_rows}
-          </table>
-          <p style="color:#777;font-size:12px;margin-bottom:0">⚠️ Share counts are estimates at last close. Use limit orders at or near the open.
-          HOLD rows need resizing to match the new allocation — don't just leave existing sizes unchanged.</p>
-        </div>"""
+        <details open style="background:#fff3e0;border:2px solid #e65100;border-radius:8px;margin:20px 0">
+          <summary style="padding:14px 20px;cursor:pointer;outline:none;list-style:none;display:flex;align-items:center;gap:10px">
+            <span style="color:#e65100;font-size:17px;font-weight:bold">⚡ Quarterly Rebalance Required</span>
+            <span style="color:#aaa;font-size:12px;font-weight:normal">▾ collapse</span>
+          </summary>
+          <div style="padding:0 20px 20px 20px">
+            <p>Portfolio value: <b>{nav_str}</b> &nbsp;|&nbsp; {n_target} holdings &nbsp;|&nbsp;
+            Allocation: Score × Inverse-Volatility (63-day), capped {MIN_POSITION_PCT:.0%}–{MAX_POSITION_PCT:.0%}</p>
+            <table border="1" cellpadding="8" cellspacing="0" style="border-collapse:collapse;width:100%;font-family:monospace;font-size:13px">
+              <tr style="background:#263238;color:white"><th>Action</th><th>Ticker</th><th>Allocation</th><th>Shares</th><th>Value</th><th>Price</th></tr>
+              {buy_rows}{sell_rows}{hold_rows}
+            </table>
+            <p style="color:#777;font-size:12px;margin-bottom:0">⚠️ Share counts are estimates at last close. Use limit orders at or near the open.
+            HOLD rows need resizing to match the new allocation — don't just leave existing sizes unchanged.</p>
+          </div>
+        </details>"""
 
     # ── High-conviction alert section ─────────────────────────────────────────
     alert_html = ""
@@ -1230,7 +1219,7 @@ def save_html_report(
       <div style="font-size:12px;color:#666;font-weight:bold;margin:6px 0 4px" id="bench-label"></div>
       <div class="card-row" id="bench-cards"></div>
     </div>
-    <canvas id="nav-chart" height="80" style="margin-top:12px"></canvas>
+    <canvas id="nav-chart" height="240" style="margin-top:12px;width:100%"></canvas>
   </div>
 
   {trade_html}
@@ -1610,17 +1599,17 @@ def save_html_report(
   }}
 }})();
 
-// ── Equity curve: $100k invested at inception, actual shares × prices ─────────
+// ── NAV chart: true daily portfolio value ─────────────────────────────────────
 (function() {{
-  const portCurve = {equity_curve_json};
+  const portCurve = {nav_curve_json};
   const spyCurve  = {spy_curve_json};
   const dates = Object.keys(portCurve).sort();
   if (dates.length < 2) return;
   const canvas = document.getElementById('nav-chart');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
-  const W = canvas.offsetWidth || 800;
-  const H = 140;
+  const W = canvas.offsetWidth || 900;
+  const H = 240;
   canvas.width  = W;
   canvas.height = H;
 
@@ -1629,30 +1618,46 @@ def save_html_report(
   const hasSpy  = spyVals.some(v => v != null);
 
   const allV = [...vals, ...(hasSpy ? spyVals.filter(v => v != null) : [])];
-  const minV = Math.min(...allV), maxV = Math.max(...allV);
+  const minV = Math.min(...allV) * 0.998, maxV = Math.max(...allV) * 1.002;
   const range = maxV - minV || 1;
-  const pad = 20;
+  const yPad = 68, rPad = 20, tPad = 28, bPad = 24;
   const N = vals.length;
-  const toX = i => pad + (i / (N - 1 || 1)) * (W - 2 * pad);
-  const toY = v => H - pad - ((v - minV) / range) * (H - 2 * pad);
+  const toX = i => yPad + (i / (N - 1 || 1)) * (W - yPad - rPad);
+  const toY = v => tPad + ((maxV - v) / range) * (H - tPad - bPad);
 
   ctx.clearRect(0, 0, W, H);
 
-  // Drawdown shading (red area between running peak and current value)
+  // Y-axis grid lines + labels
+  const fmtDollar = v => '$' + Math.round(v/1000) + 'k';
+  const rawStep = range / 5;
+  const mag = Math.pow(10, Math.floor(Math.log10(rawStep)));
+  const niceStep = Math.ceil(rawStep / mag) * mag;
+  const tickStart = Math.ceil(minV / niceStep) * niceStep;
+  ctx.font = '10px sans-serif'; ctx.fillStyle = '#999'; ctx.textAlign = 'right';
+  for (let tv = tickStart; tv <= maxV; tv += niceStep) {{
+    const y = toY(tv);
+    if (y < tPad - 2 || y > H - bPad + 2) continue;
+    ctx.strokeStyle = '#e8e8e8'; ctx.lineWidth = 0.8;
+    ctx.beginPath(); ctx.moveTo(yPad, y); ctx.lineTo(W - rPad, y); ctx.stroke();
+    ctx.fillStyle = '#999'; ctx.fillText(fmtDollar(tv), yPad - 6, y + 3);
+  }}
+  ctx.textAlign = 'left';
+
+  // Drawdown shading
   const peaks = vals.map((v, i) => Math.max(...vals.slice(0, i+1)));
   ctx.beginPath();
   ctx.moveTo(toX(0), toY(peaks[0]));
   peaks.forEach((p, i) => {{ if (i > 0) ctx.lineTo(toX(i), toY(p)); }});
   for (let i = N - 1; i >= 0; i--) {{ ctx.lineTo(toX(i), toY(vals[i])); }}
   ctx.closePath();
-  ctx.fillStyle = 'rgba(198, 40, 40, 0.12)';
+  ctx.fillStyle = 'rgba(198, 40, 40, 0.10)';
   ctx.fill();
 
   // SPY line (grey dashed)
   if (hasSpy) {{
-    ctx.strokeStyle = '#9e9e9e';
+    ctx.strokeStyle = '#bdbdbd';
     ctx.lineWidth = 1.5;
-    ctx.setLineDash([4, 4]);
+    ctx.setLineDash([5, 4]);
     ctx.beginPath();
     let moved = false;
     spyVals.forEach((v, i) => {{
@@ -1664,47 +1669,51 @@ def save_html_report(
     ctx.setLineDash([]);
   }}
 
-  // Portfolio line
-  ctx.strokeStyle = '#1a237e';
-  ctx.lineWidth = 2;
+  // Portfolio fill + line
+  ctx.beginPath();
+  vals.forEach((v, i) => i === 0 ? ctx.moveTo(toX(i), toY(v)) : ctx.lineTo(toX(i), toY(v)));
+  ctx.lineTo(toX(N-1), H - bPad); ctx.lineTo(toX(0), H - bPad); ctx.closePath();
+  const grad = ctx.createLinearGradient(0, tPad, 0, H);
+  grad.addColorStop(0, 'rgba(26,35,126,0.15)'); grad.addColorStop(1, 'rgba(26,35,126,0.01)');
+  ctx.fillStyle = grad; ctx.fill();
+
+  ctx.strokeStyle = '#1a237e'; ctx.lineWidth = 2;
   ctx.beginPath();
   vals.forEach((v, i) => i === 0 ? ctx.moveTo(toX(i), toY(v)) : ctx.lineTo(toX(i), toY(v)));
   ctx.stroke();
 
-  // Fill under portfolio
-  ctx.lineTo(toX(N - 1), H - pad); ctx.lineTo(toX(0), H - pad); ctx.closePath();
-  const grad = ctx.createLinearGradient(0, 0, 0, H);
-  grad.addColorStop(0, 'rgba(26,35,126,0.12)'); grad.addColorStop(1, 'rgba(26,35,126,0)');
-  ctx.fillStyle = grad; ctx.fill();
-
   // Date labels
-  ctx.font = '11px sans-serif'; ctx.fillStyle = '#666';
-  ctx.fillText(dates[0], pad, H - 4);
+  ctx.font = '11px sans-serif'; ctx.fillStyle = '#888';
+  ctx.fillText(dates[0], yPad, H - 6);
   const last = dates[N - 1];
-  ctx.fillText(last, W - pad - ctx.measureText(last).width, H - 4);
+  ctx.textAlign = 'right';
+  ctx.fillText(last, W - rPad, H - 6);
+  ctx.textAlign = 'left';
 
   // End value labels
   const lastPort = vals[N-1];
+  const firstPort = vals[0];
   const lastPortStr = '$' + lastPort.toLocaleString('en-US', {{maximumFractionDigits:0}});
-  ctx.fillStyle = lastPort >= 100000 ? '#2e7d32' : '#c62828';
+  ctx.fillStyle = lastPort >= firstPort ? '#2e7d32' : '#c62828';
   ctx.font = 'bold 12px sans-serif';
-  ctx.fillText(lastPortStr, toX(N-1) - ctx.measureText(lastPortStr).width - 4, toY(lastPort) - 4);
+  const lx = toX(N-1) - ctx.measureText(lastPortStr).width - 5;
+  ctx.fillText(lastPortStr, lx, toY(lastPort) - 5);
   if (hasSpy) {{
     const lastSpy = spyVals.filter(v => v != null).slice(-1)[0];
     const spyStr = 'SPY $' + lastSpy.toLocaleString('en-US', {{maximumFractionDigits:0}});
     ctx.fillStyle = '#757575'; ctx.font = '11px sans-serif';
-    ctx.fillText(spyStr, toX(N-1) - ctx.measureText(spyStr).width - 4, toY(lastSpy) + 14);
+    ctx.fillText(spyStr, toX(N-1) - ctx.measureText(spyStr).width - 5, toY(lastSpy) + 14);
   }}
 
   // Legend
   ctx.font = '11px sans-serif';
-  ctx.fillStyle = '#1a237e'; ctx.fillRect(pad, 6, 18, 3);
-  ctx.fillStyle = '#333'; ctx.fillText('Portfolio ($100k basis)', pad + 22, 12);
+  ctx.fillStyle = '#1a237e'; ctx.fillRect(yPad, 8, 18, 3);
+  ctx.fillStyle = '#444'; ctx.fillText('Portfolio (actual NAV)', yPad + 22, 14);
   if (hasSpy) {{
-    ctx.strokeStyle = '#9e9e9e'; ctx.setLineDash([4,4]); ctx.lineWidth=1.5;
-    ctx.beginPath(); ctx.moveTo(pad+148,8); ctx.lineTo(pad+166,8); ctx.stroke();
+    ctx.strokeStyle = '#bdbdbd'; ctx.setLineDash([5,4]); ctx.lineWidth=1.5;
+    ctx.beginPath(); ctx.moveTo(yPad+150,11); ctx.lineTo(yPad+168,11); ctx.stroke();
     ctx.setLineDash([]);
-    ctx.fillStyle = '#333'; ctx.fillText('SPY (buy & hold)', pad+170, 12);
+    ctx.fillStyle = '#444'; ctx.fillText('SPY (buy & hold)', yPad+172, 14);
   }}
 }})();
 

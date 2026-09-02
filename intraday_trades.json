@@ -1,5 +1,5 @@
 {
-  "capital": 42694.63,
+  "capital": 29903.5,
   "open_positions": [
     {
       "ticker": "OTIS",
@@ -88,13 +88,29 @@
       "entry_time": "12:10 ET",
       "entry_price": 62.38,
       "shares": 293,
-      "stop": 62.12,
+      "stop": 62.285,
       "trail_dist": 0.26,
-      "peak": 62.38,
+      "peak": 62.545,
       "orb_width": 0.52,
       "cost": 18277.34,
       "vol_ratio": 4.27,
       "score": 43.13,
+      "has_catalyst": false
+    },
+    {
+      "ticker": "MOS",
+      "side": "long",
+      "entry_date": "2026-09-02",
+      "entry_time": "12:36 ET",
+      "entry_price": 25.685,
+      "shares": 498,
+      "stop": 25.465,
+      "trail_dist": 0.27,
+      "peak": 25.735,
+      "orb_width": 0.54,
+      "cost": 12791.13,
+      "vol_ratio": 1.3,
+      "score": 35.39,
       "has_catalyst": false
     }
   ],
@@ -77719,7 +77735,7 @@
     "2026-08-28": 100646.3,
     "2026-08-31": 100420.08,
     "2026-09-01": 100698.9,
-    "2026-09-02": 100207.82
+    "2026-09-02": 100164.09
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -187347,6 +187363,208 @@
       },
       "portfolio_value": 100207.82,
       "note": "$100,208 | cash=$42,695 | open=6 | closed today=5 | day PnL=$-373"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "12:12 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.428,
+        "spy_vs_vwap": 1.4391,
+        "spy_vs_ema20": 1.1241
+      },
+      "portfolio_value": 100205.1,
+      "note": "$100,205 | cash=$42,695 | open=6 | closed today=5 | day PnL=$-373"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "12:14 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.425,
+        "spy_vs_vwap": 1.4169,
+        "spy_vs_ema20": 1.1041
+      },
+      "portfolio_value": 100201.76,
+      "note": "$100,202 | cash=$42,695 | open=6 | closed today=5 | day PnL=$-373"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "12:17 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.386,
+        "spy_vs_vwap": 1.1093,
+        "spy_vs_ema20": 0.8041
+      },
+      "portfolio_value": 100207.17,
+      "note": "$100,207 | cash=$42,695 | open=6 | closed today=5 | day PnL=$-373"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "12:19 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.391,
+        "spy_vs_vwap": 1.1431,
+        "spy_vs_ema20": 0.8441
+      },
+      "portfolio_value": 100222.64,
+      "note": "$100,223 | cash=$42,695 | open=6 | closed today=5 | day PnL=$-373"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "12:21 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.374,
+        "spy_vs_vwap": 1.0079,
+        "spy_vs_ema20": 0.7141
+      },
+      "portfolio_value": 100194.8,
+      "note": "$100,195 | cash=$42,695 | open=6 | closed today=5 | day PnL=$-373"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "12:24 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.347,
+        "spy_vs_vwap": 0.7989,
+        "spy_vs_ema20": 0.509
+      },
+      "portfolio_value": 100194.6,
+      "note": "$100,195 | cash=$42,695 | open=6 | closed today=5 | day PnL=$-373"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "12:26 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.321,
+        "spy_vs_vwap": 0.5975,
+        "spy_vs_ema20": 0.3141
+      },
+      "portfolio_value": 100197.87,
+      "note": "$100,198 | cash=$42,695 | open=6 | closed today=5 | day PnL=$-373"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "12:29 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.31,
+        "spy_vs_vwap": 0.5116,
+        "spy_vs_ema20": 0.2308
+      },
+      "portfolio_value": 100190.95,
+      "note": "$100,191 | cash=$42,695 | open=6 | closed today=5 | day PnL=$-373"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "12:31 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.354,
+        "spy_vs_vwap": 0.8405,
+        "spy_vs_ema20": 0.5641
+      },
+      "portfolio_value": 100181.41,
+      "note": "$100,181 | cash=$42,695 | open=6 | closed today=5 | day PnL=$-373"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "12:34 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.344,
+        "spy_vs_vwap": 0.752,
+        "spy_vs_ema20": 0.4841
+      },
+      "portfolio_value": 100184.5,
+      "note": "$100,185 | cash=$42,695 | open=6 | closed today=5 | day PnL=$-373"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "12:36 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "MOS",
+          "side": "long",
+          "price": 25.68,
+          "shares": 498,
+          "stop": 25.41,
+          "trail_dist": 0.27,
+          "score": 35.39
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.353,
+        "spy_vs_vwap": 0.8173,
+        "spy_vs_ema20": 0.5541
+      },
+      "portfolio_value": 100149.17,
+      "note": "$100,149 | cash=$29,904 | open=7 | closed today=5 | day PnL=$-373"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "12:38 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.345,
+        "spy_vs_vwap": 0.754,
+        "spy_vs_ema20": 0.4941
+      },
+      "portfolio_value": 100164.09,
+      "note": "$100,164 | cash=$29,904 | open=7 | closed today=5 | day PnL=$-373"
     }
   ]
 }
