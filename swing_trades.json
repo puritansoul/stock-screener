@@ -3695,7 +3695,8 @@
     "2026-09-02": 102691.67,
     "2026-09-03": 103165.22,
     "2026-09-04": 103745.2,
-    "2026-09-07": 103680.26
+    "2026-09-07": 103680.26,
+    "2026-09-08": 103680.26
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -8360,6 +8361,16 @@
         "SPY regime: BULL (longs only)",
         "Portfolio: $103,680  |  Cash: $19,616  |  Open: 29  |  Exits: 13  |  Entries: 3"
       ]
+    },
+    {
+      "date": "2026-09-08",
+      "run_at": "2026-09-08 17:53 UTC",
+      "entries": [],
+      "exits": [],
+      "notes": [
+        "SPY regime: BULL (longs only)",
+        "Portfolio: $103,680  |  Cash: $19,616  |  Open: 29  |  Exits: 0  |  Entries: 0"
+      ]
     }
   ],
   "last_scan": [
@@ -8420,13 +8431,6 @@
       "status": "below SMA200"
     },
     {
-      "ticker": "DASH",
-      "rsi2": 2.6,
-      "close": 211.73,
-      "sma200": 188.49,
-      "status": "LONG signal"
-    },
-    {
       "ticker": "INTC",
       "rsi2": 97.1,
       "close": 95.8,
@@ -8448,25 +8452,11 @@
       "status": "above SMA200"
     },
     {
-      "ticker": "DXCM",
-      "rsi2": 3.8,
-      "close": 87.9,
-      "sma200": 70.9,
-      "status": "LONG signal"
-    },
-    {
       "ticker": "JCI",
       "rsi2": 95.5,
       "close": 144.94,
       "sma200": 134.31,
       "status": "above SMA200"
-    },
-    {
-      "ticker": "LIN",
-      "rsi2": 4.7,
-      "close": 477.57,
-      "sma200": 477.28,
-      "status": "LONG signal"
     },
     {
       "ticker": "ECHO",
@@ -8642,6 +8632,27 @@
       "close": 59.71,
       "sma200": 61.04,
       "status": "below SMA200"
+    },
+    {
+      "ticker": "ETN",
+      "rsi2": 89.7,
+      "close": 410.85,
+      "sma200": 379.23,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "KMI",
+      "rsi2": 10.4,
+      "close": 31.4,
+      "sma200": 30.61,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "LYV",
+      "rsi2": 10.4,
+      "close": 173.5,
+      "sma200": 160.44,
+      "status": "above SMA200"
     }
   ]
 }
