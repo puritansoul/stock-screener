@@ -1,56 +1,6 @@
 {
-  "capital": 22332.79,
+  "capital": 31761.07,
   "open_positions": [
-    {
-      "ticker": "EXR",
-      "side": "long",
-      "entry_date": "2026-09-01",
-      "entry_price": 141.1,
-      "shares": 66,
-      "stop": 135.2247,
-      "cost": 9312.6,
-      "rsi2_entry": 2.68
-    },
-    {
-      "ticker": "MMM",
-      "side": "long",
-      "entry_date": "2026-09-01",
-      "entry_price": 171.83,
-      "shares": 43,
-      "stop": 164.4879,
-      "cost": 7388.69,
-      "rsi2_entry": 2.73
-    },
-    {
-      "ticker": "ABT",
-      "side": "long",
-      "entry_date": "2026-09-01",
-      "entry_price": 110.36,
-      "shares": 4,
-      "stop": 104.2358,
-      "cost": 441.44,
-      "rsi2_entry": 3.26
-    },
-    {
-      "ticker": "BKNG",
-      "side": "long",
-      "entry_date": "2026-09-01",
-      "entry_price": 199.09,
-      "shares": 1,
-      "stop": 187.7646,
-      "cost": 199.09,
-      "rsi2_entry": 4.09
-    },
-    {
-      "ticker": "INVH",
-      "side": "long",
-      "entry_date": "2026-09-01",
-      "entry_price": 29.14,
-      "shares": 10,
-      "stop": 28.1338,
-      "cost": 291.4,
-      "rsi2_entry": 4.8
-    },
     {
       "ticker": "HST",
       "side": "long",
@@ -270,6 +220,16 @@
       "stop": 467.4266,
       "cost": 5253.27,
       "rsi2_entry": 4.74
+    },
+    {
+      "ticker": "INVH",
+      "side": "long",
+      "entry_date": "2026-09-08",
+      "entry_price": 28.39,
+      "shares": 279,
+      "stop": 26.6562,
+      "cost": 7920.81,
+      "rsi2_entry": 0.33
     }
   ],
   "closed_positions": [
@@ -1854,6 +1814,76 @@
       "exit_price": 307.6499938964844,
       "pnl": 38.66,
       "exit_reason": "RSI(2) reverted (87.5)"
+    },
+    {
+      "ticker": "EXR",
+      "side": "long",
+      "entry_date": "2026-09-01",
+      "entry_price": 141.1,
+      "shares": 66,
+      "stop": 135.2247,
+      "cost": 9312.6,
+      "rsi2_entry": 2.68,
+      "exit_date": "2026-09-08",
+      "exit_price": 139.25,
+      "pnl": -122.1,
+      "exit_reason": "time exit (7d)"
+    },
+    {
+      "ticker": "MMM",
+      "side": "long",
+      "entry_date": "2026-09-01",
+      "entry_price": 171.83,
+      "shares": 43,
+      "stop": 164.4879,
+      "cost": 7388.69,
+      "rsi2_entry": 2.73,
+      "exit_date": "2026-09-08",
+      "exit_price": 168.55999755859375,
+      "pnl": -140.61,
+      "exit_reason": "time exit (7d)"
+    },
+    {
+      "ticker": "ABT",
+      "side": "long",
+      "entry_date": "2026-09-01",
+      "entry_price": 110.36,
+      "shares": 4,
+      "stop": 104.2358,
+      "cost": 441.44,
+      "rsi2_entry": 3.26,
+      "exit_date": "2026-09-08",
+      "exit_price": 108.33000183105469,
+      "pnl": -8.12,
+      "exit_reason": "time exit (7d)"
+    },
+    {
+      "ticker": "BKNG",
+      "side": "long",
+      "entry_date": "2026-09-01",
+      "entry_price": 199.09,
+      "shares": 1,
+      "stop": 187.7646,
+      "cost": 199.09,
+      "rsi2_entry": 4.09,
+      "exit_date": "2026-09-08",
+      "exit_price": 193.2899932861328,
+      "pnl": -5.8,
+      "exit_reason": "time exit (7d)"
+    },
+    {
+      "ticker": "INVH",
+      "side": "long",
+      "entry_date": "2026-09-01",
+      "entry_price": 29.14,
+      "shares": 10,
+      "stop": 28.1338,
+      "cost": 291.4,
+      "rsi2_entry": 4.8,
+      "exit_date": "2026-09-08",
+      "exit_price": 28.389999389648438,
+      "pnl": -7.5,
+      "exit_reason": "time exit (7d)"
     }
   ],
   "nav_history": {
@@ -1890,7 +1920,8 @@
     "2026-09-02": 99262.72,
     "2026-09-03": 99910.67,
     "2026-09-04": 100711.56,
-    "2026-09-07": 100938.83
+    "2026-09-07": 100938.83,
+    "2026-09-08": 100938.83
   },
   "inception_date": "2026-07-22",
   "log": [
@@ -4623,9 +4654,71 @@
         "VIX: 15.3  (entries allowed)",
         "Portfolio: $100,939  |  Cash: $22,333  |  Open: 27  |  Exits: 12  |  Entries: 4"
       ]
+    },
+    {
+      "date": "2026-09-08",
+      "run_at": "2026-09-08 17:56 UTC",
+      "entries": [
+        {
+          "ticker": "INVH",
+          "side": "long",
+          "price": 28.39,
+          "shares": 279,
+          "stop": 26.66
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "EXR",
+          "side": "long",
+          "exit_price": 139.25,
+          "pnl": -122.1,
+          "reason": "time exit (7d)"
+        },
+        {
+          "ticker": "MMM",
+          "side": "long",
+          "exit_price": 168.55999755859375,
+          "pnl": -140.61,
+          "reason": "time exit (7d)"
+        },
+        {
+          "ticker": "ABT",
+          "side": "long",
+          "exit_price": 108.33000183105469,
+          "pnl": -8.12,
+          "reason": "time exit (7d)"
+        },
+        {
+          "ticker": "BKNG",
+          "side": "long",
+          "exit_price": 193.2899932861328,
+          "pnl": -5.8,
+          "reason": "time exit (7d)"
+        },
+        {
+          "ticker": "INVH",
+          "side": "long",
+          "exit_price": 28.389999389648438,
+          "pnl": -7.5,
+          "reason": "time exit (7d)"
+        }
+      ],
+      "notes": [
+        "SPY regime: BULL (longs only)",
+        "VIX: 15.3  (entries allowed)",
+        "Portfolio: $100,939  |  Cash: $31,761  |  Open: 23  |  Exits: 5  |  Entries: 1"
+      ]
     }
   ],
   "last_scan": [
+    {
+      "ticker": "INVH",
+      "rsi2": 0.3,
+      "close": 28.39,
+      "sma200": 27.5,
+      "status": "LONG signal"
+    },
     {
       "ticker": "STZ",
       "rsi2": 0.5,
@@ -4683,13 +4776,6 @@
       "status": "below SMA200"
     },
     {
-      "ticker": "DASH",
-      "rsi2": 2.6,
-      "close": 211.73,
-      "sma200": 188.49,
-      "status": "LONG signal"
-    },
-    {
       "ticker": "INTC",
       "rsi2": 97.1,
       "close": 95.8,
@@ -4704,13 +4790,6 @@
       "status": "below SMA200"
     },
     {
-      "ticker": "LLY",
-      "rsi2": 3.6,
-      "close": 1149.36,
-      "sma200": 1060.38,
-      "status": "LONG signal"
-    },
-    {
       "ticker": "F",
       "rsi2": 96.3,
       "close": 14.62,
@@ -4718,25 +4797,11 @@
       "status": "above SMA200"
     },
     {
-      "ticker": "DXCM",
-      "rsi2": 3.8,
-      "close": 87.9,
-      "sma200": 70.9,
-      "status": "LONG signal"
-    },
-    {
       "ticker": "JCI",
       "rsi2": 95.5,
       "close": 144.94,
       "sma200": 134.31,
       "status": "above SMA200"
-    },
-    {
-      "ticker": "LIN",
-      "rsi2": 4.7,
-      "close": 477.57,
-      "sma200": 477.28,
-      "status": "LONG signal"
     },
     {
       "ticker": "ECHO",
@@ -4905,6 +4970,27 @@
       "close": 59.71,
       "sma200": 61.04,
       "status": "below SMA200"
+    },
+    {
+      "ticker": "ETN",
+      "rsi2": 89.7,
+      "close": 410.85,
+      "sma200": 379.23,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "KMI",
+      "rsi2": 10.4,
+      "close": 31.4,
+      "sma200": 30.61,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "LYV",
+      "rsi2": 10.4,
+      "close": 173.5,
+      "sma200": 160.44,
+      "status": "above SMA200"
     }
   ]
 }
