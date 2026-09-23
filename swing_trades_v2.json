@@ -1,16 +1,6 @@
 {
-  "capital": 22425.18,
+  "capital": 25080.63,
   "open_positions": [
-    {
-      "ticker": "GPC",
-      "side": "long",
-      "entry_date": "2026-09-16",
-      "entry_price": 131.01,
-      "shares": 70,
-      "stop": 126.0446,
-      "cost": 9170.7,
-      "rsi2_entry": 3.79
-    },
     {
       "ticker": "MTB",
       "side": "long",
@@ -130,6 +120,16 @@
       "stop": 195.7659,
       "cost": 5499.09,
       "rsi2_entry": 4.89
+    },
+    {
+      "ticker": "GPC",
+      "side": "long",
+      "entry_date": "2026-09-23",
+      "entry_price": 126.45,
+      "shares": 49,
+      "stop": 118.2943,
+      "cost": 6196.05,
+      "rsi2_entry": 2.88
     }
   ],
   "closed_positions": [
@@ -2848,6 +2848,20 @@
       "exit_price": 77.91000366210938,
       "pnl": 49.92,
       "exit_reason": "RSI(2) reverted (79.2)"
+    },
+    {
+      "ticker": "GPC",
+      "side": "long",
+      "entry_date": "2026-09-16",
+      "entry_price": 131.01,
+      "shares": 70,
+      "stop": 126.0446,
+      "cost": 9170.7,
+      "rsi2_entry": 3.79,
+      "exit_date": "2026-09-23",
+      "exit_price": 126.44999694824219,
+      "pnl": -319.2,
+      "exit_reason": "time exit (7d)"
     }
   ],
   "nav_history": {
@@ -2895,7 +2909,8 @@
     "2026-09-17": 99026.36,
     "2026-09-18": 99054.59,
     "2026-09-21": 98901.84,
-    "2026-09-22": 99341.14
+    "2026-09-22": 99341.14,
+    "2026-09-23": 99341.14
   },
   "inception_date": "2026-07-22",
   "log": [
@@ -6807,6 +6822,33 @@
         "VIX: 14.2  (entries allowed)",
         "Portfolio: $99,341  |  Cash: $22,425  |  Open: 13  |  Exits: 6  |  Entries: 4"
       ]
+    },
+    {
+      "date": "2026-09-23",
+      "run_at": "2026-09-23 18:25 UTC",
+      "entries": [
+        {
+          "ticker": "GPC",
+          "side": "long",
+          "price": 126.45,
+          "shares": 49,
+          "stop": 118.29
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "GPC",
+          "side": "long",
+          "exit_price": 126.44999694824219,
+          "pnl": -319.2,
+          "reason": "time exit (7d)"
+        }
+      ],
+      "notes": [
+        "SPY regime: BULL (longs only)",
+        "VIX: 15.0  (entries allowed)",
+        "Portfolio: $99,341  |  Cash: $25,081  |  Open: 13  |  Exits: 1  |  Entries: 1"
+      ]
     }
   ],
   "last_scan": [
@@ -6895,13 +6937,6 @@
       "status": "below SMA200"
     },
     {
-      "ticker": "ALL",
-      "rsi2": 1.9,
-      "close": 242.86,
-      "sma200": 221.99,
-      "status": "LONG signal"
-    },
-    {
       "ticker": "LLY",
       "rsi2": 98.1,
       "close": 1164.89,
@@ -6930,13 +6965,6 @@
       "status": "below SMA200"
     },
     {
-      "ticker": "CINF",
-      "rsi2": 2.6,
-      "close": 166.85,
-      "sma200": 166.5,
-      "status": "LONG signal"
-    },
-    {
       "ticker": "HD",
       "rsi2": 2.6,
       "close": 297.2,
@@ -6949,6 +6977,13 @@
       "close": 190.98,
       "sma200": 232.35,
       "status": "below SMA200"
+    },
+    {
+      "ticker": "GPC",
+      "rsi2": 2.9,
+      "close": 126.45,
+      "sma200": 118.0,
+      "status": "LONG signal"
     },
     {
       "ticker": "APD",
@@ -7035,13 +7070,6 @@
       "status": "above SMA200 (sector ETF below SMA200)"
     },
     {
-      "ticker": "AIZ",
-      "rsi2": 4.7,
-      "close": 277.38,
-      "sma200": 247.19,
-      "status": "LONG signal"
-    },
-    {
       "ticker": "ETN",
       "rsi2": 95.2,
       "close": 435.43,
@@ -7063,11 +7091,11 @@
       "status": "below SMA200"
     },
     {
-      "ticker": "CVX",
-      "rsi2": 4.9,
-      "close": 203.67,
-      "sma200": 181.48,
-      "status": "LONG signal"
+      "ticker": "HUBB",
+      "rsi2": 95.0,
+      "close": 458.83,
+      "sma200": 484.38,
+      "status": "below SMA200"
     },
     {
       "ticker": "AMGN",
@@ -7089,6 +7117,20 @@
       "close": 64.3,
       "sma200": 68.47,
       "status": "below SMA200"
+    },
+    {
+      "ticker": "LYB",
+      "rsi2": 5.2,
+      "close": 60.24,
+      "sma200": 60.26,
+      "status": "below SMA200"
+    },
+    {
+      "ticker": "LRCX",
+      "rsi2": 94.8,
+      "close": 302.28,
+      "sma200": 267.73,
+      "status": "above SMA200"
     }
   ]
 }
