@@ -4678,7 +4678,8 @@
     "2026-09-17": 100243.21,
     "2026-09-18": 100387.42,
     "2026-09-21": 100247.07,
-    "2026-09-22": 100474.13
+    "2026-09-22": 100474.13,
+    "2026-09-23": 100474.13
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -10460,6 +10461,16 @@
         "SPY regime: BULL (longs only)",
         "Portfolio: $100,474  |  Cash: $13,262  |  Open: 24  |  Exits: 10  |  Entries: 5"
       ]
+    },
+    {
+      "date": "2026-09-23",
+      "run_at": "2026-09-23 18:22 UTC",
+      "entries": [],
+      "exits": [],
+      "notes": [
+        "SPY regime: BULL (longs only)",
+        "Portfolio: $100,474  |  Cash: $13,262  |  Open: 24  |  Exits: 0  |  Entries: 0"
+      ]
     }
   ],
   "last_scan": [
@@ -10534,13 +10545,6 @@
       "status": "below SMA200"
     },
     {
-      "ticker": "ALL",
-      "rsi2": 1.9,
-      "close": 242.86,
-      "sma200": 221.99,
-      "status": "LONG signal"
-    },
-    {
       "ticker": "LLY",
       "rsi2": 98.1,
       "close": 1164.89,
@@ -10567,13 +10571,6 @@
       "close": 46.47,
       "sma200": 57.72,
       "status": "below SMA200"
-    },
-    {
-      "ticker": "CINF",
-      "rsi2": 2.6,
-      "close": 166.85,
-      "sma200": 166.5,
-      "status": "LONG signal"
     },
     {
       "ticker": "HD",
@@ -10667,20 +10664,6 @@
       "status": "below SMA200"
     },
     {
-      "ticker": "AWK",
-      "rsi2": 4.7,
-      "close": 133.97,
-      "sma200": 130.48,
-      "status": "LONG signal"
-    },
-    {
-      "ticker": "AIZ",
-      "rsi2": 4.7,
-      "close": 277.38,
-      "sma200": 247.19,
-      "status": "LONG signal"
-    },
-    {
       "ticker": "ETN",
       "rsi2": 95.2,
       "close": 435.43,
@@ -10702,11 +10685,11 @@
       "status": "below SMA200"
     },
     {
-      "ticker": "CVX",
-      "rsi2": 4.9,
-      "close": 203.67,
-      "sma200": 181.48,
-      "status": "LONG signal"
+      "ticker": "HUBB",
+      "rsi2": 95.0,
+      "close": 458.83,
+      "sma200": 484.38,
+      "status": "below SMA200"
     },
     {
       "ticker": "AMGN",
@@ -10741,6 +10724,34 @@
       "rsi2": 94.8,
       "close": 302.28,
       "sma200": 267.73,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "CB",
+      "rsi2": 5.4,
+      "close": 337.26,
+      "sma200": 326.6,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "DAL",
+      "rsi2": 94.6,
+      "close": 82.5,
+      "sma200": 74.83,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "CPRT",
+      "rsi2": 5.6,
+      "close": 28.91,
+      "sma200": 33.99,
+      "status": "below SMA200"
+    },
+    {
+      "ticker": "AMAT",
+      "rsi2": 94.3,
+      "close": 464.24,
+      "sma200": 416.52,
       "status": "above SMA200"
     }
   ]
