@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Factor Screener v2.0 — 2026-09-24</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body   { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+              margin: 0; padding: 16px 20px; color: #222; background:#f0f2f5; }
+    h1     { color: #1a237e; margin-bottom:4px; font-size:22px; }
+    h2     { color: #1a237e; font-size:16px; margin:0 0 10px 0; }
+    table  { border-collapse: collapse; width: 100%; font-size:13px; }
+    th     { background: #1a237e; color: white; padding: 8px 10px;
+              text-align: left; white-space: nowrap; cursor:pointer; user-select:none; }
+    th:hover { background: #283593; }
+    th.sort-asc::after  { content: " ▲"; font-size:10px; }
+    th.sort-desc::after { content: " ▼"; font-size:10px; }
+    td     { padding: 6px 10px; border-bottom: 1px solid #eee; white-space: nowrap; }
+    thead  { position: sticky; top: 0; z-index: 10; }
+    tr:hover td { filter: brightness(0.97); transition: background 0.15s; }
+    .badge { background:#e3f2fd; color:#0d47a1; padding:3px 10px;
+              border-radius:12px; font-size:12px; font-weight:bold; }
+    .card-row { display:flex; flex-wrap:wrap; gap:10px; margin:12px 0 18px 0; }
+    .card-value { font-size:28px; font-weight:bold; line-height:1; }
+    .section  { background:white; border:1px solid #e0e0e0; border-radius:8px;
+                 padding:18px 20px; margin:12px 0; overflow-x:auto; }
+    details summary {
+      cursor: pointer; font-size:16px; font-weight:bold; color:#1a237e;
+      padding: 4px 0; user-select:none; list-style:none;
+    }
+    details summary::before { content: "▶ "; font-size:12px; }
+    details[open] summary::before { content: "▼ "; font-size:12px; }
+    details summary::-webkit-details-marker { display:none; }
+  </style>
+</head>
+<body>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px">
+    <div>
+      <h1 style="margin-bottom:4px">📊 Multi-Factor S&amp;P 500 Screener v2.0</h1>
+      <p style="margin:6px 0 12px">
+        <span class="badge">2026-09-24</span>&nbsp;
+        <span class="badge">BS Q2/2026 | Flows 2025</span>&nbsp;
+        <span class="badge">6 holdings</span>&nbsp;
+        <span class="badge">Next rebalance: 2026-12-01</span>&nbsp;
+        <span class="badge">NAV: $103,432</span>
+      </p>
+    </div>
+    <div id="price-status" style="font-size:12px;padding:6px 14px;border-radius:20px;background:#fff;border:1px solid #e0e0e0;color:#888;white-space:nowrap;align-self:center">
+      ⏸ Prices as of last run
+    </div>
+  </div>
+
+  <!-- Performance -->
+  <div class="section">
+    <h2>Portfolio Performance</h2>
+    <p style="color:#666;font-size:12px;margin:-4px 0 14px">
+      Inception: 2026-07-22 &nbsp;|&nbsp; Starting value: $99,603
+      &nbsp;|&nbsp; Last rebalance: <b>Sep 4, 2026</b>
+    </p>
+    <div style="display:flex;align-items:stretch;gap:16px;margin-bottom:20px;flex-wrap:wrap">
+      <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px;box-shadow:0 2px 4px rgba(0,0,0,0.08)">
+        <div style="font-size:11px;color:#6c757d;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Current Value</div>
+        <div id="port-value" class="card-value" style="color:#1a237e">$103,432</div>
+      </div>
+      <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px;box-shadow:0 2px 4px rgba(0,0,0,0.08)">
+        <div style="font-size:11px;color:#6c757d;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Today</div>
+        <div id="port-today" class="card-value" data-pnl="446.18" style="color:#2e7d32">+$446 (+0.43%)</div>
+      </div>
+      <div style="background:#f0f4ff;border:1px solid #c5cae9;border-radius:10px;padding:16px 24px;min-width:160px;box-shadow:0 2px 4px rgba(0,0,0,0.08)">
+        <div style="font-size:11px;color:#6c757d;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Total Return</div>
+        <div id="port-total" class="card-value" style="color:#2e7d32">
+          +$3,829 <span style="font-size:16px">(+3.84%)</span>
+        </div>
+      </div>
+      <div style="background:#f5f5f5;border:1px solid #e0e0e0;border-radius:10px;padding:16px 24px;min-width:140px;box-shadow:0 2px 4px rgba(0,0,0,0.06)">
+        <div style="font-size:11px;color:#9e9e9e;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Uninvested Cash</div>
+        <div class="card-value" style="color:#616161">$407</div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:4px">
+      <div style="font-size:12px;color:#666;font-weight:bold">Portfolio</div>
+      <div style="display:flex;gap:6px;align-items:center">
+        <input id="bench-input" type="text" placeholder="Compare vs. SPY or QQQ"
+          style="padding:5px 10px;border:1px solid #c5cae9;border-radius:6px;font-size:12px;width:220px;outline:none"/>
+        <button id="bench-btn" style="padding:5px 12px;background:#1a237e;color:white;border:none;border-radius:6px;font-size:12px;cursor:pointer">Compare</button>
+        <button id="bench-clear" style="padding:5px 8px;background:#eee;color:#555;border:none;border-radius:6px;font-size:12px;cursor:pointer;display:none">✕</button>
+      </div>
+    </div>
+    <div class="card-row"><div style="background:#f8f9fa;border:1px solid #dee2e6;border-radius:8px;padding:14px 18px;min-width:110px;text-align:center"><div style="font-size:11px;color:#6c757d;margin-bottom:4px">Today</div><div style="font-size:18px" id="tile-today"><span style="color:#2ca02c;font-weight:bold">+0.43%</span></div></div><div style="background:#f8f9fa;border:1px solid #dee2e6;border-radius:8px;padding:14px 18px;min-width:110px;text-align:center"><div style="font-size:11px;color:#6c757d;margin-bottom:4px">1 Month</div><div style="font-size:18px" id="tile-1m"><span style="color:#d62728;font-weight:bold">-8.55%</span></div></div><div style="background:#f8f9fa;border:1px solid #dee2e6;border-radius:8px;padding:14px 18px;min-width:110px;text-align:center"><div style="font-size:11px;color:#6c757d;margin-bottom:4px">3 Months</div><div style="font-size:18px" id="tile-3m">—</div></div><div style="background:#f8f9fa;border:1px solid #dee2e6;border-radius:8px;padding:14px 18px;min-width:110px;text-align:center"><div style="font-size:11px;color:#6c757d;margin-bottom:4px">6 Months</div><div style="font-size:18px" id="tile-6m">—</div></div><div style="background:#f8f9fa;border:1px solid #dee2e6;border-radius:8px;padding:14px 18px;min-width:110px;text-align:center"><div style="font-size:11px;color:#6c757d;margin-bottom:4px">1 Year</div><div style="font-size:18px" id="tile-1y">—</div></div><div style="background:#f8f9fa;border:1px solid #dee2e6;border-radius:8px;padding:14px 18px;min-width:110px;text-align:center"><div style="font-size:11px;color:#6c757d;margin-bottom:4px">3 Years</div><div style="font-size:18px" id="tile-3y">—</div></div><div style="background:#f8f9fa;border:1px solid #dee2e6;border-radius:8px;padding:14px 18px;min-width:110px;text-align:center"><div style="font-size:11px;color:#6c757d;margin-bottom:4px">5 Years</div><div style="font-size:18px" id="tile-5y">—</div></div><div style="background:#f8f9fa;border:1px solid #dee2e6;border-radius:8px;padding:14px 18px;min-width:110px;text-align:center"><div style="font-size:11px;color:#6c757d;margin-bottom:4px">Since Inception</div><div style="font-size:18px" id="tile-inception"><span style="color:#2ca02c;font-weight:bold">+4.25%</span></div></div></div>
+    <div id="bench-row" style="display:none">
+      <div style="font-size:12px;color:#666;font-weight:bold;margin:6px 0 4px" id="bench-label"></div>
+      <div class="card-row" id="bench-cards"></div>
+    </div>
+    <canvas id="nav-chart" height="80" style="margin-top:12px"></canvas>
+  </div>
+
+  
+  
+            <div style="background:#fffde7;border:2px solid #f9a825;border-radius:8px;padding:20px;margin:20px 0">
+              <h2 style="color:#f57f17;margin-top:0">⭐ High-Conviction Picks (Top 5% — Not In Your Portfolio)</h2>
+              <p style="color:#555;font-size:13px">These stocks score in the top 5% today but are outside your current quarterly holdings.
+              They are <b>not a signal to trade now</b> — they are flagged so you can consider them at your next rebalance.</p>
+              <table border="1" cellpadding="8" cellspacing="0" style="border-collapse:collapse;width:100%;font-size:13px">
+                <tr style="background:#f57f17;color:white">
+                  <th>Ticker</th><th>Price</th><th>Mkt Cap</th>
+                  <th>Momentum</th><th>ROIC</th><th>FCF/EV</th><th>EV/EBITDA</th>
+                  <th>Piotroski</th><th>Accruals</th><th>EPS Surp</th><th>Score</th>
+                </tr>
+                
+            <tr style="background:#fffde7">
+              <td style="font-weight:bold;color:#f57f17;white-space:nowrap">⭐ NEM<span style="color:#888;font-size:11px;display:block;line-height:1.1;font-weight:normal">Newmont Corporation</span></td>
+              <td>$121.24</td>
+              <td>—B</td>
+              <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:89%;height:10px;border-radius:3px"></div></div> 0.90</td>
+              <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —</td>
+              <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —</td>
+              <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —x</td>
+              <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:85%;height:10px;border-radius:3px"></div></div> 6/9</td>
+              <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:73%;height:10px;border-radius:3px"></div></div> 0.73</td>
+              <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —</td>
+              <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:84%;height:10px;border-radius:3px"></div></div> <strong>0.847</strong></td>
+            </tr>
+            <tr style="background:#fffde7">
+              <td style="font-weight:bold;color:#f57f17;white-space:nowrap">⭐ BBY<span style="color:#888;font-size:11px;display:block;line-height:1.1;font-weight:normal">Best Buy</span></td>
+              <td>$91.90</td>
+              <td>19.3B</td>
+              <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:62%;height:10px;border-radius:3px"></div></div> 0.63</td>
+              <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:87%;height:10px;border-radius:3px"></div></div> 43.6%</td>
+              <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:76%;height:10px;border-radius:3px"></div></div> 7.4%</td>
+              <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:88%;height:10px;border-radius:3px"></div></div> 7.7x</td>
+              <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:85%;height:10px;border-radius:3px"></div></div> 6/9</td>
+              <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:72%;height:10px;border-radius:3px"></div></div> 0.72</td>
+              <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —</td>
+              <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:77%;height:10px;border-radius:3px"></div></div> <strong>0.779</strong></td>
+            </tr>
+            <tr style="background:#fffde7">
+              <td style="font-weight:bold;color:#f57f17;white-space:nowrap">⭐ SBUX<span style="color:#888;font-size:11px;display:block;line-height:1.1;font-weight:normal">Starbucks Corporation</span></td>
+              <td>$93.37</td>
+              <td>—B</td>
+              <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:70%;height:10px;border-radius:3px"></div></div> 0.71</td>
+              <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:92%;height:10px;border-radius:3px"></div></div> 52.4%</td>
+              <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —</td>
+              <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —x</td>
+              <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:85%;height:10px;border-radius:3px"></div></div> 6/9</td>
+              <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:92%;height:10px;border-radius:3px"></div></div> 0.93</td>
+              <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —</td>
+              <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:84%;height:10px;border-radius:3px"></div></div> <strong>0.843</strong></td>
+            </tr>
+              </table>
+            </div>
+
+  <!-- Holdings table (always visible) -->
+  <div class="section">
+    <h2>Holdings &amp; Positions</h2>
+    <p style="color:#555;font-size:12px;margin:-4px 0 6px">
+      <span style="background:#e8f5e9;padding:2px 8px;border-radius:4px">Green = held</span>&nbsp;
+      <span style="background:#fffde7;padding:2px 8px;border-radius:4px">Yellow = high-conviction alert (not held)</span>
+    </p>
+    <div id="col-toggles" style="margin-bottom:8px;display:flex;flex-wrap:wrap;gap:6px;font-size:12px"></div>
+    <table id="holdings-table">
+      <thead><tr>
+        <th data-col="0">#</th><th data-col="1">Ticker</th><th data-col="2">Price</th>
+        <th data-col="3">Alloc %</th><th data-col="4">Qty</th><th data-col="5">Buy Price</th><th data-col="6">Buy Date</th>
+        <th data-col="7">$ Invested</th><th data-col="8">Day Δ $</th><th data-col="9">Day Δ %</th><th data-col="10">Total Ret $</th><th data-col="11">Total Ret %</th><th data-col="12">Score</th>
+      </tr></thead>
+      <tbody>
+        <tr style="background:#e8f5e9" data-ticker="BMY" data-qty="307" data-buypx="67.145" data-prevpx="61.150001525878906" data-stale-val="18677.88" data-stale-cost="20613.51">
+          <td style="text-align:center;font-size:12px;color:#666">1</td>
+          <td style="font-weight:bold;white-space:nowrap">BMY <span style="background:#388e3c;color:white;border-radius:4px;padding:1px 6px;font-size:11px">HELD</span><span style="color:#888;font-size:11px;display:block;line-height:1.1;font-weight:normal">Bristol-Myers Squibb</span></td>
+          <td class="live-price" style="text-align:right">$60.84</td>
+          <td style="text-align:right;color:#1a237e;font-weight:bold">24.5%</td>
+          <td style="text-align:right">307</td>
+          <td style="text-align:right">$67.14</td>
+          <td style="text-align:right;color:#555;font-size:12px">Sep 1, 2026</td>
+          <td class="live-invested" style="text-align:right;font-weight:bold">$20,614</td>
+          <td class="live-day-d" style="text-align:right"><span data-sort="-95.17" style="color:#c62828;font-weight:bold">$95</span></td>
+          <td class="live-day-pct" style="text-align:right"><span data-sort="-0.5070" style="color:#c62828;font-weight:bold">-0.51%</span></td>
+          <td class="live-total-ret-d" style="text-align:right"><span data-sort="-1935.63" style="color:#c62828;font-weight:bold">$1,936</span></td>
+          <td class="live-total-ret-pct" style="text-align:right"><span data-sort="-9.3901" style="color:#c62828;font-weight:bold">-9.39%</span></td>
+          <td style="text-align:right;font-size:12px;color:#555">0.910</td>
+        </tr>
+        <tr style="background:#e8f5e9" data-ticker="DLTR" data-qty="156" data-buypx="130.98" data-prevpx="113.16000366210938" data-stale-val="17968.08" data-stale-cost="20432.88">
+          <td style="text-align:center;font-size:12px;color:#666">2</td>
+          <td style="font-weight:bold;white-space:nowrap">DLTR <span style="background:#388e3c;color:white;border-radius:4px;padding:1px 6px;font-size:11px">HELD</span><span style="color:#888;font-size:11px;display:block;line-height:1.1;font-weight:normal">Dollar Tree</span></td>
+          <td class="live-price" style="text-align:right">$115.18</td>
+          <td style="text-align:right;color:#1a237e;font-weight:bold">24.5%</td>
+          <td style="text-align:right">156</td>
+          <td style="text-align:right">$130.98</td>
+          <td style="text-align:right;color:#555;font-size:12px">Sep 3, 2026</td>
+          <td class="live-invested" style="text-align:right;font-weight:bold">$20,433</td>
+          <td class="live-day-d" style="text-align:right"><span data-sort="315.12" style="color:#2e7d32;font-weight:bold">+$315</span></td>
+          <td class="live-day-pct" style="text-align:right"><span data-sort="1.7851" style="color:#2e7d32;font-weight:bold">+1.79%</span></td>
+          <td class="live-total-ret-d" style="text-align:right"><span data-sort="-2464.80" style="color:#c62828;font-weight:bold">$2,465</span></td>
+          <td class="live-total-ret-pct" style="text-align:right"><span data-sort="-12.0629" style="color:#c62828;font-weight:bold">-12.06%</span></td>
+          <td style="text-align:right;font-size:12px;color:#555">0.850</td>
+        </tr>
+        <tr style="background:#fffde7" data-ticker="NEM" data-qty="0" data-buypx="0" data-prevpx="0" data-stale-val="0" data-stale-cost="0">
+          <td style="text-align:center;font-size:12px;color:#666">3</td>
+          <td style="font-weight:bold;white-space:nowrap">NEM <span style="background:#f9a825;color:#333;border-radius:4px;padding:1px 6px;font-size:11px">ALERT</span><span style="color:#888;font-size:11px;display:block;line-height:1.1;font-weight:normal">Newmont Corporation</span></td>
+          <td class="live-price" style="text-align:right">$121.24</td>
+          <td style="text-align:right;color:#1a237e;font-weight:bold">—</td>
+          <td style="text-align:right">—</td>
+          <td style="text-align:right">—</td>
+          <td style="text-align:right;color:#555;font-size:12px">—</td>
+          <td class="live-invested" style="text-align:right;font-weight:bold">—</td>
+          <td class="live-day-d" style="text-align:right">—</td>
+          <td class="live-day-pct" style="text-align:right">—</td>
+          <td class="live-total-ret-d" style="text-align:right">—</td>
+          <td class="live-total-ret-pct" style="text-align:right">—</td>
+          <td style="text-align:right;font-size:12px;color:#555">0.847</td>
+        </tr>
+        <tr style="background:#fffde7" data-ticker="SBUX" data-qty="0" data-buypx="0" data-prevpx="0" data-stale-val="0" data-stale-cost="0">
+          <td style="text-align:center;font-size:12px;color:#666">4</td>
+          <td style="font-weight:bold;white-space:nowrap">SBUX <span style="background:#f9a825;color:#333;border-radius:4px;padding:1px 6px;font-size:11px">ALERT</span><span style="color:#888;font-size:11px;display:block;line-height:1.1;font-weight:normal">Starbucks Corporation</span></td>
+          <td class="live-price" style="text-align:right">$93.37</td>
+          <td style="text-align:right;color:#1a237e;font-weight:bold">—</td>
+          <td style="text-align:right">—</td>
+          <td style="text-align:right">—</td>
+          <td style="text-align:right;color:#555;font-size:12px">—</td>
+          <td class="live-invested" style="text-align:right;font-weight:bold">—</td>
+          <td class="live-day-d" style="text-align:right">—</td>
+          <td class="live-day-pct" style="text-align:right">—</td>
+          <td class="live-total-ret-d" style="text-align:right">—</td>
+          <td class="live-total-ret-pct" style="text-align:right">—</td>
+          <td style="text-align:right;font-size:12px;color:#555">0.843</td>
+        </tr>
+        <tr style="background:#e8f5e9" data-ticker="EXPE" data-qty="67" data-buypx="264.94" data-prevpx="259.0400085449219" data-stale-val="17422.68" data-stale-cost="17750.98">
+          <td style="text-align:center;font-size:12px;color:#666">5</td>
+          <td style="font-weight:bold;white-space:nowrap">EXPE <span style="background:#388e3c;color:white;border-radius:4px;padding:1px 6px;font-size:11px">HELD</span><span style="color:#888;font-size:11px;display:block;line-height:1.1;font-weight:normal">Expedia Group</span></td>
+          <td class="live-price" style="text-align:right">$260.04</td>
+          <td style="text-align:right;color:#1a237e;font-weight:bold">24.5%</td>
+          <td style="text-align:right">67</td>
+          <td style="text-align:right">$264.94</td>
+          <td style="text-align:right;color:#555;font-size:12px">Jul 1, 2026</td>
+          <td class="live-invested" style="text-align:right;font-weight:bold">$17,751</td>
+          <td class="live-day-d" style="text-align:right"><span data-sort="67.00" style="color:#2e7d32;font-weight:bold">+$67</span></td>
+          <td class="live-day-pct" style="text-align:right"><span data-sort="0.3860" style="color:#2e7d32;font-weight:bold">+0.39%</span></td>
+          <td class="live-total-ret-d" style="text-align:right"><span data-sort="-328.30" style="color:#c62828;font-weight:bold">$328</span></td>
+          <td class="live-total-ret-pct" style="text-align:right"><span data-sort="-1.8495" style="color:#c62828;font-weight:bold">-1.85%</span></td>
+          <td style="text-align:right;font-size:12px;color:#555">0.829</td>
+        </tr>
+        <tr style="background:#e8f5e9" data-ticker="COHR" data-qty="29" data-buypx="317.22" data-prevpx="300.6000061035156" data-stale-val="8550.32" data-stale-cost="9199.38">
+          <td style="text-align:center;font-size:12px;color:#666">6</td>
+          <td style="font-weight:bold;white-space:nowrap">COHR <span style="background:#388e3c;color:white;border-radius:4px;padding:1px 6px;font-size:11px">HELD</span><span style="color:#888;font-size:11px;display:block;line-height:1.1;font-weight:normal">Coherent</span></td>
+          <td class="live-price" style="text-align:right">$294.84</td>
+          <td style="text-align:right;color:#1a237e;font-weight:bold">8.6%</td>
+          <td style="text-align:right">29</td>
+          <td style="text-align:right">$317.22</td>
+          <td style="text-align:right;color:#555;font-size:12px">Jul 1, 2026</td>
+          <td class="live-invested" style="text-align:right;font-weight:bold">$9,199</td>
+          <td class="live-day-d" style="text-align:right"><span data-sort="-167.08" style="color:#c62828;font-weight:bold">$167</span></td>
+          <td class="live-day-pct" style="text-align:right"><span data-sort="-1.9166" style="color:#c62828;font-weight:bold">-1.92%</span></td>
+          <td class="live-total-ret-d" style="text-align:right"><span data-sort="-649.06" style="color:#c62828;font-weight:bold">$649</span></td>
+          <td class="live-total-ret-pct" style="text-align:right"><span data-sort="-7.0555" style="color:#c62828;font-weight:bold">-7.06%</span></td>
+          <td style="text-align:right;font-size:12px;color:#555">0.817</td>
+        </tr>
+        <tr style="background:#fffde7" data-ticker="BBY" data-qty="0" data-buypx="0" data-prevpx="0" data-stale-val="0" data-stale-cost="0">
+          <td style="text-align:center;font-size:12px;color:#666">7</td>
+          <td style="font-weight:bold;white-space:nowrap">BBY <span style="background:#f9a825;color:#333;border-radius:4px;padding:1px 6px;font-size:11px">ALERT</span><span style="color:#888;font-size:11px;display:block;line-height:1.1;font-weight:normal">Best Buy</span></td>
+          <td class="live-price" style="text-align:right">$91.90</td>
+          <td style="text-align:right;color:#1a237e;font-weight:bold">—</td>
+          <td style="text-align:right">—</td>
+          <td style="text-align:right">—</td>
+          <td style="text-align:right;color:#555;font-size:12px">—</td>
+          <td class="live-invested" style="text-align:right;font-weight:bold">—</td>
+          <td class="live-day-d" style="text-align:right">—</td>
+          <td class="live-day-pct" style="text-align:right">—</td>
+          <td class="live-total-ret-d" style="text-align:right">—</td>
+          <td class="live-total-ret-pct" style="text-align:right">—</td>
+          <td style="text-align:right;font-size:12px;color:#555">0.779</td>
+        </tr>
+        <tr style="background:#e8f5e9" data-ticker="NTAP" data-qty="102" data-buypx="185.32" data-prevpx="196.3300018310547" data-stale-val="20249.04" data-stale-cost="18902.64">
+          <td style="text-align:center;font-size:12px;color:#666">10</td>
+          <td style="font-weight:bold;white-space:nowrap">NTAP <span style="background:#388e3c;color:white;border-radius:4px;padding:1px 6px;font-size:11px">HELD</span><span style="color:#888;font-size:11px;display:block;line-height:1.1;font-weight:normal">NetApp</span></td>
+          <td class="live-price" style="text-align:right">$198.52</td>
+          <td style="text-align:right;color:#1a237e;font-weight:bold">15.9%</td>
+          <td style="text-align:right">102</td>
+          <td style="text-align:right">$185.32</td>
+          <td style="text-align:right;color:#555;font-size:12px">Sep 4, 2026</td>
+          <td class="live-invested" style="text-align:right;font-weight:bold">$18,903</td>
+          <td class="live-day-d" style="text-align:right"><span data-sort="223.38" style="color:#2e7d32;font-weight:bold">+$223</span></td>
+          <td class="live-day-pct" style="text-align:right"><span data-sort="1.1155" style="color:#2e7d32;font-weight:bold">+1.12%</span></td>
+          <td class="live-total-ret-d" style="text-align:right"><span data-sort="1346.40" style="color:#2e7d32;font-weight:bold">+$1,346</span></td>
+          <td class="live-total-ret-pct" style="text-align:right"><span data-sort="7.1228" style="color:#2e7d32;font-weight:bold">+7.12%</span></td>
+          <td style="text-align:right;font-size:12px;color:#555">0.737</td>
+        </tr>
+        <tr id="holdings-totals" style="background:#e8eaf6;font-weight:bold;border-top:2px solid #9fa8da">
+          <td colspan="7" style="text-align:right;color:#1a237e;padding-right:12px">Totals</td>
+          <td id="tot-invested" style="text-align:right">$86,899</td>
+          <td id="tot-day-d"  style="text-align:right"><span data-sort="343.2483" style="color:#2e7d32;font-weight:bold">+$343</span></td>
+          <td id="tot-day-pct" style="text-align:right"><span data-sort="0.4159" style="color:#2e7d32;font-weight:bold">+0.42%</span></td>
+          <td id="tot-ret-d"  style="text-align:right"><span data-sort="-4031.3947" style="color:#c62828;font-weight:bold">$4,031</span></td>
+          <td id="tot-ret-pct" style="text-align:right"><span data-sort="-4.6392" style="color:#c62828;font-weight:bold">4.64%</span></td>
+          <td></td>
+        </tr></tbody>
+    </table>
+  </div>
+
+  <!-- Factor scores (collapsible) -->
+  <div class="section">
+    <details>
+      <summary>Factor Scores &amp; Composite — Full Universe Top Ranks</summary>
+      <p style="color:#555;font-size:12px;margin:8px 0">
+        Hard filters: MktCap≥$1B · ROIC≥8% · Piotroski≥5/9 · Debt/EBITDA≤3.5x · EV/EBITDA≤25x<br>
+        Weights: Momentum 20% · ROIC 20% · FCF/EV 15% · EV/EBITDA 10% · Piotroski 10% · Accruals 10% · EPS Surp 10% · Rev 5%
+      </p>
+      <table>
+        <thead><tr>
+          <th>#</th><th>Ticker</th>
+          <th>Momentum (20%)</th><th>ROIC (20%)</th><th>FCF/EV (15%)</th>
+          <th>EV/EBITDA (10%)</th><th>Piotroski (10%)</th>
+          <th>Accruals (10%)</th><th>EPS Surp (10%)</th><th>Composite</th>
+        </tr></thead>
+        <tbody>
+        <tr style="background:#e8f5e9">
+          <td style="text-align:center;font-size:12px;color:#666">1</td>
+          <td style="font-weight:bold;white-space:nowrap">BMY <span style="background:#388e3c;color:white;border-radius:4px;padding:1px 6px;font-size:11px">HELD</span><span style="color:#888;font-size:11px;display:block;line-height:1.1;font-weight:normal">Bristol-Myers Squibb</span></td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:89%;height:10px;border-radius:3px"></div></div> 0.90</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —x</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:96%;height:10px;border-radius:3px"></div></div> 7/9</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:87%;height:10px;border-radius:3px"></div></div> 0.87</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:90%;height:10px;border-radius:3px"></div></div> <strong>0.910</strong></td>
+        </tr>
+        <tr style="background:#e8f5e9">
+          <td style="text-align:center;font-size:12px;color:#666">2</td>
+          <td style="font-weight:bold;white-space:nowrap">DLTR <span style="background:#388e3c;color:white;border-radius:4px;padding:1px 6px;font-size:11px">HELD</span><span style="color:#888;font-size:11px;display:block;line-height:1.1;font-weight:normal">Dollar Tree</span></td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:81%;height:10px;border-radius:3px"></div></div> 0.81</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:90%;height:10px;border-radius:3px"></div></div> 48.3%</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:85%;height:10px;border-radius:3px"></div></div> 8.9x</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:85%;height:10px;border-radius:3px"></div></div> 6/9</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:85%;height:10px;border-radius:3px"></div></div> <strong>0.850</strong></td>
+        </tr>
+        <tr style="background:#fffde7">
+          <td style="text-align:center;font-size:12px;color:#666">3</td>
+          <td style="font-weight:bold;white-space:nowrap">NEM <span style="background:#f9a825;color:#333;border-radius:4px;padding:1px 6px;font-size:11px">ALERT</span><span style="color:#888;font-size:11px;display:block;line-height:1.1;font-weight:normal">Newmont Corporation</span></td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:89%;height:10px;border-radius:3px"></div></div> 0.90</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —x</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:85%;height:10px;border-radius:3px"></div></div> 6/9</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:73%;height:10px;border-radius:3px"></div></div> 0.73</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:84%;height:10px;border-radius:3px"></div></div> <strong>0.847</strong></td>
+        </tr>
+        <tr style="background:#fffde7">
+          <td style="text-align:center;font-size:12px;color:#666">4</td>
+          <td style="font-weight:bold;white-space:nowrap">SBUX <span style="background:#f9a825;color:#333;border-radius:4px;padding:1px 6px;font-size:11px">ALERT</span><span style="color:#888;font-size:11px;display:block;line-height:1.1;font-weight:normal">Starbucks Corporation</span></td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:70%;height:10px;border-radius:3px"></div></div> 0.71</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:92%;height:10px;border-radius:3px"></div></div> 52.4%</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —x</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:85%;height:10px;border-radius:3px"></div></div> 6/9</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:92%;height:10px;border-radius:3px"></div></div> 0.93</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:84%;height:10px;border-radius:3px"></div></div> <strong>0.843</strong></td>
+        </tr>
+        <tr style="background:#e8f5e9">
+          <td style="text-align:center;font-size:12px;color:#666">5</td>
+          <td style="font-weight:bold;white-space:nowrap">EXPE <span style="background:#388e3c;color:white;border-radius:4px;padding:1px 6px;font-size:11px">HELD</span><span style="color:#888;font-size:11px;display:block;line-height:1.1;font-weight:normal">Expedia Group</span></td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:88%;height:10px;border-radius:3px"></div></div> 0.89</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:76%;height:10px;border-radius:3px"></div></div> 28.1%</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:88%;height:10px;border-radius:3px"></div></div> 10.9%</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:78%;height:10px;border-radius:3px"></div></div> 10.3x</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:85%;height:10px;border-radius:3px"></div></div> 6/9</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:89%;height:10px;border-radius:3px"></div></div> 0.89</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:82%;height:10px;border-radius:3px"></div></div> <strong>0.829</strong></td>
+        </tr>
+        <tr style="background:#e8f5e9">
+          <td style="text-align:center;font-size:12px;color:#666">6</td>
+          <td style="font-weight:bold;white-space:nowrap">COHR <span style="background:#388e3c;color:white;border-radius:4px;padding:1px 6px;font-size:11px">HELD</span><span style="color:#888;font-size:11px;display:block;line-height:1.1;font-weight:normal">Coherent</span></td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:97%;height:10px;border-radius:3px"></div></div> 0.97</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —x</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:85%;height:10px;border-radius:3px"></div></div> 6/9</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#ff7f0e;width:46%;height:10px;border-radius:3px"></div></div> 0.46</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:81%;height:10px;border-radius:3px"></div></div> <strong>0.817</strong></td>
+        </tr>
+        <tr style="background:#fffde7">
+          <td style="text-align:center;font-size:12px;color:#666">7</td>
+          <td style="font-weight:bold;white-space:nowrap">BBY <span style="background:#f9a825;color:#333;border-radius:4px;padding:1px 6px;font-size:11px">ALERT</span><span style="color:#888;font-size:11px;display:block;line-height:1.1;font-weight:normal">Best Buy</span></td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:62%;height:10px;border-radius:3px"></div></div> 0.63</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:87%;height:10px;border-radius:3px"></div></div> 43.6%</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:76%;height:10px;border-radius:3px"></div></div> 7.4%</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:88%;height:10px;border-radius:3px"></div></div> 7.7x</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:85%;height:10px;border-radius:3px"></div></div> 6/9</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:72%;height:10px;border-radius:3px"></div></div> 0.72</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:77%;height:10px;border-radius:3px"></div></div> <strong>0.779</strong></td>
+        </tr>
+        <tr style="background:#e8f5e9">
+          <td style="text-align:center;font-size:12px;color:#666">10</td>
+          <td style="font-weight:bold;white-space:nowrap">NTAP <span style="background:#388e3c;color:white;border-radius:4px;padding:1px 6px;font-size:11px">HELD</span><span style="color:#888;font-size:11px;display:block;line-height:1.1;font-weight:normal">NetApp</span></td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:87%;height:10px;border-radius:3px"></div></div> 0.88</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:85%;height:10px;border-radius:3px"></div></div> 42.0%</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#ff7f0e;width:54%;height:10px;border-radius:3px"></div></div> 4.7%</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#d62728;width:39%;height:10px;border-radius:3px"></div></div> 21.5x</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:85%;height:10px;border-radius:3px"></div></div> 6/9</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:83%;height:10px;border-radius:3px"></div></div> 0.84</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="width:0%;height:10px"></div></div> —</td>
+          <td><div style="background:#eee;border-radius:3px;width:100px;display:inline-block;vertical-align:middle"><div style="background:#2ca02c;width:73%;height:10px;border-radius:3px"></div></div> <strong>0.737</strong></td>
+        </tr></tbody>
+      </table>
+    </details>
+  </div>
+
+  <p style="color:#bbb;font-size:11px;margin-top:16px">
+    live_monitor.py &nbsp;|&nbsp; Data: SEC EDGAR XBRL + Yahoo Finance &nbsp;|&nbsp; Not financial advice.
+    &nbsp;|&nbsp; <span id="live-status" style="color:#1a237e">⏳ Fetching live prices…</span>
+  </p>
+
+<script>
+// ── Live price refresh ────────────────────────────────────────────────────────
+(function() {
+  const PORTFOLIO_BASE = 99603.00;
+  const CASH_BUFFER    = 406.79;
+  const NAV_HISTORY = {"2026-07-22": 100646.84, "2026-07-23": 102435.05, "2026-07-24": 100648.52, "2026-07-25": 100648.52, "2026-07-27": 100804.26, "2026-07-28": 98866.85, "2026-07-29": 96938.63, "2026-07-30": 100027.9, "2026-07-31": 100700.01, "2026-08-01": 100700.01, "2026-08-03": 103204.06, "2026-08-04": 107147.08, "2026-08-05": 108819.81, "2026-08-06": 109308.51, "2026-08-07": 115284.04, "2026-08-10": 113626.07, "2026-08-11": 113704.23, "2026-08-12": 116414.3, "2026-08-13": 112995.92, "2026-08-14": 114687.32, "2026-08-17": 115763.41, "2026-08-18": 112175.49, "2026-08-19": 112714.83, "2026-08-20": 112193.37, "2026-08-21": 112779.73007202148, "2026-08-24": 112519.81949615479, "2026-08-25": 113547.81215667725, "2026-08-26": 113515.21475219727, "2026-08-27": 112752.79002380371, "2026-08-28": 110540.32111358643, "2026-08-29": 110540.32111358643, "2026-08-31": 108980.77020263672, "2026-09-01": 108980.76967864993, "2026-09-02": 108980.77, "2026-09-03": 108980.77, "2026-09-04": 108980.77, "2026-09-07": 108980.77, "2026-09-08": 106967.34112884522, "2026-09-09": 105012.04263641358, "2026-09-10": 104943.77118255616, "2026-09-11": 106820.09791900635, "2026-09-14": 105540.99729492188, "2026-09-15": 105245.22906448365, "2026-09-16": 105586.07966186524, "2026-09-17": 106264.69010879517, "2026-09-18": 106128.25923110962, "2026-09-21": 106599.0078730774, "2026-09-22": 105320.07226898194, "2026-09-23": 103394.0611529541, "2026-09-24": 103838.3205104065};
+
+  const rows = Array.from(document.querySelectorAll('tr[data-ticker]'));
+  if (!rows.length) return;
+
+  const heldRows = rows.filter(r => parseFloat(r.dataset.qty) > 0);
+  const tickers  = heldRows.map(r => r.dataset.ticker);
+
+  // Sequential requests to Finnhub with stagger to stay under 60 req/min rate limit
+  const FINNHUB_TOKEN = 'd93d6v1r01qgqnua64j0d93d6v1r01qgqnua64jg';
+  const quotes = {};
+
+  const delay = ms => new Promise(res => setTimeout(res, ms));
+  const fmt2 = n => '$' + Math.abs(n).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+  const fmtI = n => Math.abs(n).toLocaleString('en-US', {maximumFractionDigits:0});
+  const col  = n => n >= 0 ? '#2e7d32' : '#c62828';
+  const sgn  = n => n >= 0 ? '+' : '−';
+
+  // Seed totals from server-rendered stale values so portfolio cards always
+  // show correct numbers — even before Finnhub responds.
+  // As each live price arrives we replace that ticker's contribution.
+  const staleVal  = {};   // tk -> last server-rendered market value
+  const staleCost = {};   // tk -> cost basis
+  heldRows.forEach(r => {
+    staleVal[r.dataset.ticker]  = parseFloat(r.dataset.staleVal)  || 0;
+    staleCost[r.dataset.ticker] = parseFloat(r.dataset.staleCost) || 0;
+  });
+
+  // liveVal tracks the best known value per ticker (starts at stale, updates live)
+  const liveVal     = {...staleVal};
+  const livePrevVal = {};  // tk -> qty * prevClose, populated as quotes arrive
+
+  function updateSummaryCards() {
+    const posVal      = Object.values(liveVal).reduce((s,v) => s+v, 0);
+    const totalValue  = posVal + CASH_BUFFER;  // positions + uninvested cash
+    const totalDayChg = Object.values(livePrevVal).reduce((s,v) => s+v, 0);
+
+    const totalRet  = totalValue - PORTFOLIO_BASE;
+    const totalRetP = PORTFOLIO_BASE > 0 ? totalRet / PORTFOLIO_BASE : 0;
+    const prevTotal = totalValue - totalDayChg;
+    const dayPct    = prevTotal > 0 ? totalDayChg / prevTotal : 0;
+
+    document.getElementById('port-value').textContent =
+      '$' + totalValue.toLocaleString('en-US', {maximumFractionDigits:0});
+    document.getElementById('port-today').innerHTML =
+      `<span style="color:${col(totalDayChg)}">${sgn(totalDayChg)}$${fmtI(totalDayChg)} (${sgn(dayPct)}${Math.abs(dayPct*100).toFixed(2)}%)</span>`;
+    document.getElementById('port-total').innerHTML =
+      `<span style="color:${col(totalRet)}">${sgn(totalRet)}$${fmtI(totalRet)} (${sgn(totalRetP)}${Math.abs(totalRetP*100).toFixed(2)}%)</span>`;
+
+    // Period tiles
+    const tileCol = n => n >= 0 ? '#2ca02c' : '#d62728';
+    const tileSgn = n => n >= 0 ? '+' : '';
+    const fmtTile = pct => `<span style="color:${tileCol(pct)};font-weight:bold">${tileSgn(pct)}${(pct*100).toFixed(2)}%</span>`;
+    const setTile = (id, pct) => { const el = document.getElementById(id); if (el) el.innerHTML = fmtTile(pct); };
+
+    const prevTotalForDay = totalValue - totalDayChg;
+    setTile('tile-today', prevTotalForDay > 0 ? totalDayChg / prevTotalForDay : 0);
+    setTile('tile-inception', PORTFOLIO_BASE > 0 ? (totalValue - PORTFOLIO_BASE) / PORTFOLIO_BASE : 0);
+
+    // Period tiles (1m/3m/etc) are rendered server-side and never overwritten by JS
+  }
+
+  // Run once immediately with stale data so cards are never blank/wrong
+  updateSummaryCards();
+
+  function setStatus(text, color) {
+    const el = document.getElementById('price-status');
+    if (el) { el.textContent = text; el.style.color = color; el.style.borderColor = color === '#388e3c' ? '#a5d6a7' : '#e0e0e0'; }
+  }
+
+  function updateHoldingsTotals() {
+    let totInv = 0, totPrevVal = 0, totDayD = 0, totRetD = 0;
+    heldRows.forEach(r => {
+      const tk     = r.dataset.ticker;
+      const qty    = parseFloat(r.dataset.qty)    || 0;
+      const buyPx  = parseFloat(r.dataset.buypx)  || 0;
+      const prevPx = parseFloat(r.dataset.prevpx) || 0;
+      const cost   = qty * buyPx;
+      if (cost <= 0) return;
+      totInv += cost;
+      const q = quotes[tk];
+      const curPx   = q ? q.price     : (parseFloat(r.dataset.staleVal)  / qty || 0);
+      const prevPxQ = q ? q.prevClose : prevPx;
+      if (curPx  > 0 && prevPxQ > 0) {
+        totPrevVal += qty * prevPxQ;
+        totDayD    += (curPx - prevPxQ) * qty;
+      }
+      if (curPx > 0) totRetD += (curPx - buyPx) * qty;
+    });
+
+    const totDayP = totPrevVal > 0 ? totDayD / totPrevVal : null;
+    const totRetP = totInv     > 0 ? totRetD / totInv     : null;
+
+    const mkCell = (val, fmt) => {
+      if (val === null) return '—';
+      const c = val >= 0 ? '#2e7d32' : '#c62828';
+      const s = val >= 0 ? '+' : '';
+      return `<span style="color:${c};font-weight:bold">${s}${fmt(val)}</span>`;
+    };
+    const fmtD = v => '$' + Math.abs(v).toLocaleString('en-US', {maximumFractionDigits:0});
+    const fmtP = v => Math.abs(v*100).toFixed(2) + '%';
+
+    const setEl = (id, html) => { const e = document.getElementById(id); if (e) e.innerHTML = html; };
+    setEl('tot-invested', '$' + totInv.toLocaleString('en-US', {maximumFractionDigits:0}));
+    setEl('tot-day-d',   mkCell(totPrevVal > 0 ? totDayD : null, fmtD));
+    setEl('tot-day-pct', mkCell(totDayP, fmtP));
+    setEl('tot-ret-d',   mkCell(totInv > 0 ? totRetD : null, fmtD));
+    setEl('tot-ret-pct', mkCell(totRetP, fmtP));
+  }
+
+  const fetchAll = async () => {
+    setStatus('⏳ Fetching prices…', '#f57c00');
+    for (const tk of tickers) {
+      try {
+        const q = await fetch(`https://finnhub.io/api/v1/quote?symbol=${tk}&token=${FINNHUB_TOKEN}`).then(r => r.json());
+        if (!q.c) { await delay(1100); continue; }
+        quotes[tk] = { price: q.c, prevClose: q.pc };
+
+        // Update this ticker's row
+        const row   = heldRows.find(r => r.dataset.ticker === tk);
+        const qty   = parseFloat(row.dataset.qty)   || 0;
+        const buyPx = parseFloat(row.dataset.buypx) || 0;
+        const price     = q.c;
+        const prevClose = q.pc;
+        const curVal    = qty * price;
+        const dayChgD   = (price - prevClose) * qty;
+        const dayChgP   = prevClose > 0 ? (price - prevClose) / prevClose : 0;
+        const totRetD   = (price - buyPx) * qty;
+        const totRetP   = buyPx > 0 ? (price - buyPx) / buyPx : 0;
+
+        row.querySelector('.live-price').textContent    = fmt2(price);
+        row.querySelector('.live-invested').textContent = '$' + fmtI(curVal);
+        row.querySelector('.live-day-d').innerHTML      =
+          `<span data-sort="${dayChgD.toFixed(2)}" style="color:${col(dayChgD)};font-weight:bold">${sgn(dayChgD)}$${fmtI(dayChgD)}</span>`;
+        row.querySelector('.live-day-pct').innerHTML    =
+          `<span data-sort="${(dayChgP*100).toFixed(4)}" style="color:${col(dayChgP)};font-weight:bold">${sgn(dayChgP)}${Math.abs(dayChgP*100).toFixed(2)}%</span>`;
+        const _trDEl = row.querySelector('.live-total-ret-d');
+        if (_trDEl) {
+          _trDEl.innerHTML = `<span data-sort="${totRetD.toFixed(2)}" style="color:${col(totRetD)};font-weight:bold">${sgn(totRetD)}$${fmtI(totRetD)}</span>`;
+        }
+        const _trPEl = row.querySelector('.live-total-ret-pct');
+        if (_trPEl) {
+          _trPEl.innerHTML = `<span data-sort="${(totRetP*100).toFixed(4)}" style="color:${col(totRetP)};font-weight:bold">${sgn(totRetP)}${Math.abs(totRetP*100).toFixed(2)}%</span>`;
+        }
+
+        // Update running totals with live data and refresh cards incrementally
+        liveVal[tk]     = curVal;
+        livePrevVal[tk] = dayChgD;
+        updateSummaryCards();
+        updateHoldingsTotals();
+
+      } catch(e) {}
+      await delay(1100);
+    }
+  };
+
+  const runFetch = () => fetchAll().then(() => {
+    const t = new Date().toLocaleTimeString('en-US', {timeZone:'America/New_York', hour:'2-digit', minute:'2-digit'});
+    setStatus(`✅ Updated ${t} ET`, '#388e3c');
+    document.getElementById('live-status').textContent = `✅ Live prices as of ${t} ET`;
+  })
+  .catch(() => {
+    setStatus('⚠️ Fetch failed', '#c62828');
+    document.getElementById('live-status').textContent = '⚠️ Live price fetch failed — showing last run data';
+  });
+
+  runFetch();
+
+  // ── Column sort ──────────────────────────────────────────────────────────────
+  (function() {
+    const table = document.getElementById('holdings-table');
+    if (!table) return;
+    let sortCol = -1, sortAsc = true;
+    table.querySelectorAll('thead th').forEach(th => {
+      th.addEventListener('click', () => {
+        const col = parseInt(th.dataset.col);
+        sortAsc = (sortCol === col) ? !sortAsc : true;
+        sortCol = col;
+        table.querySelectorAll('thead th').forEach(t => t.classList.remove('sort-asc','sort-desc'));
+        th.classList.add(sortAsc ? 'sort-asc' : 'sort-desc');
+        const tbody = table.querySelector('tbody');
+        const totalsRow = tbody.querySelector('#holdings-totals');
+        const rows  = Array.from(tbody.querySelectorAll('tr')).filter(r => r.id !== 'holdings-totals');
+        rows.sort((a, b) => {
+          const aC = a.cells[col], bC = b.cells[col];
+          const aText = (aC ? aC.textContent : '').trim();
+          const bText = (bC ? bC.textContent : '').trim();
+          const aSpan = aC ? aC.querySelector('[data-sort]') : null;
+          const bSpan = bC ? bC.querySelector('[data-sort]') : null;
+          const aNum  = aSpan ? parseFloat(aSpan.dataset.sort) : (aC && aC.dataset.sort !== undefined ? parseFloat(aC.dataset.sort) : parseFloat(aText.replace(/[^0-9.\-]/g, '')));
+          const bNum  = bSpan ? parseFloat(bSpan.dataset.sort) : (bC && bC.dataset.sort !== undefined ? parseFloat(bC.dataset.sort) : parseFloat(bText.replace(/[^0-9.\-]/g, '')));
+          const cmp   = isNaN(aNum) || isNaN(bNum) ? aText.localeCompare(bText) : aNum - bNum;
+          return sortAsc ? cmp : -cmp;
+        });
+        rows.forEach(r => tbody.appendChild(r));
+        if (totalsRow) tbody.appendChild(totalsRow);
+      });
+    });
+  })();
+
+  // ── Benchmark comparison ─────────────────────────────────────────────────────
+  (function() {
+    const BENCH_DATA = {"QQQ": {"2021-09-24": 362.3368835449219, "2021-09-27": 359.44464111328125, "2021-09-28": 349.2732238769531, "2021-09-29": 348.7007141113281, "2021-09-30": 347.41943359375, "2021-10-01": 349.57415771484375, "2021-10-04": 342.2366943359375, "2021-10-05": 346.8565979003906, "2021-10-06": 349.07916259765625, "2021-10-07": 352.28192138671875, "2021-10-08": 350.5252990722656, "2021-10-11": 347.83685302734375, "2021-10-12": 346.6236572265625, "2021-10-13": 349.3993835449219, "2021-10-14": 355.8341979980469, "2021-10-15": 358.0761413574219, "2021-10-18": 361.67694091796875, "2021-10-19": 364.4139099121094, "2021-10-20": 363.9383544921875, "2021-10-21": 366.160888671875, "2021-10-22": 363.0842590332031, "2021-10-25": 366.8014221191406, "2021-10-26": 367.9564514160156, "2021-10-27": 368.810546875, "2021-10-28": 372.90625, "2021-10-29": 374.74053955078125, "2021-11-01": 376.0216979980469, "2021-11-02": 377.59405517578125, "2021-11-03": 381.6024475097656, "2021-11-04": 386.4940185546875, "2021-11-05": 386.86285400390625, "2021-11-08": 386.33868408203125, "2021-11-09": 383.67938232421875, "2021-11-10": 378.0404357910156, "2021-11-11": 379.088623046875, "2021-11-12": 383.0776062011719, "2021-11-15": 382.9902648925781, "2021-11-16": 385.71759033203125, "2021-11-17": 385.9214172363281, "2021-11-18": 389.9200134277344, "2021-11-19": 392.09405517578125, "2021-11-22": 387.5422058105469, "2021-11-23": 385.7758483886719, "2021-11-24": 387.01812744140625, "2021-11-26": 379.68072509765625, "2021-11-29": 387.9206848144531, "2021-11-30": 382.22357177734375, "2021-12-01": 375.7208557128906, "2021-12-02": 378.42864990234375, "2021-12-03": 371.8482971191406, "2021-12-06": 374.8279724121094, "2021-12-07": 386.11553955078125, "2021-12-08": 387.8430480957031, "2021-12-09": 382.13616943359375, "2021-12-10": 386.2901306152344, "2021-12-13": 380.7094421386719, "2021-12-14": 376.76904296875, "2021-12-15": 385.3583984375, "2021-12-16": 375.4490966796875, "2021-12-17": 373.5758972167969, "2021-12-20": 369.95208740234375, "2021-12-21": 378.2318115234375, "2021-12-22": 382.8380432128906, "2021-12-23": 385.7242736816406, "2021-12-27": 392.0992431640625, "2021-12-28": 390.281982421875, "2021-12-29": 390.22369384765625, "2021-12-30": 389.05755615234375, "2021-12-31": 386.62811279296875, "2022-01-03": 390.3500671386719, "2022-01-04": 385.28704833984375, "2022-01-05": 373.45050048828125, "2022-01-06": 373.18817138671875, "2022-01-07": 369.1455383300781, "2022-01-10": 369.38848876953125, "2022-01-11": 374.9373474121094, "2022-01-12": 376.4242858886719, "2022-01-13": 367.007568359375, "2022-01-14": 369.2912902832031, "2022-01-18": 360.0981140136719, "2022-01-19": 356.1429138183594, "2022-01-20": 351.5171813964844, "2022-01-21": 341.77008056640625, "2022-01-24": 343.3346862792969, "2022-01-25": 335.375732421875, "2022-01-26": 334.8509521484375, "2022-01-27": 331.4787902832031, "2022-01-28": 341.8769836425781, "2022-01-31": 352.8096618652344, "2022-02-01": 355.2099914550781, "2022-02-02": 358.0961608886719, "2022-02-03": 343.5776062011719, "2022-02-04": 347.9118347167969, "2022-02-07": 345.1130065917969, "2022-02-08": 348.9905090332031, "2022-02-09": 356.38580322265625, "2022-02-10": 348.3199768066406, "2022-02-11": 337.2705993652344, "2022-02-14": 337.6885681152344, "2022-02-15": 346.0848693847656, "2022-02-16": 345.9973449707031, "2022-02-17": 335.70599365234375, "2022-02-18": 331.8772888183594, "2022-02-22": 328.54388427734375, "2022-02-23": 320.1282043457031, "2022-02-24": 330.8860168457031, "2022-02-25": 336.0170593261719, "2022-02-28": 337.01800537109375, "2022-03-01": 331.8577880859375, "2022-03-02": 337.42608642578125, "2022-03-03": 332.6061096191406, "2022-03-04": 327.78594970703125, "2022-03-07": 315.69683837890625, "2022-03-08": 314.2294616699219, "2022-03-09": 325.54107666015625, "2022-03-10": 321.92608642578125, "2022-03-11": 315.24981689453125, "2022-03-14": 309.19561767578125, "2022-03-15": 318.8940124511719, "2022-03-16": 330.7207336425781, "2022-03-17": 334.72454833984375, "2022-03-18": 341.57568359375, "2022-03-21": 340.62603759765625, "2022-03-22": 347.3203430175781, "2022-03-23": 342.328857421875, "2022-03-24": 349.9376220703125, "2022-03-25": 349.6456604003906, "2022-03-28": 355.0556335449219, "2022-03-29": 361.1659851074219, "2022-03-30": 357.17669677734375, "2022-03-31": 352.7495422363281, "2022-04-01": 352.0782165527344, "2022-04-04": 359.3270568847656, "2022-04-05": 351.3485412597656, "2022-04-06": 343.72015380859375, "2022-04-07": 344.5374450683594, "2022-04-08": 339.7212219238281, "2022-04-11": 331.6842346191406, "2022-04-12": 330.28314208984375, "2022-04-13": 336.9967346191406, "2022-04-14": 329.2906799316406, "2022-04-18": 329.5436706542969, "2022-04-19": 336.90924072265625, "2022-04-20": 331.9956359863281, "2022-04-21": 325.12628173828125, "2022-04-22": 316.61248779296875, "2022-04-25": 320.67962646484375, "2022-04-26": 308.57562255859375, "2022-04-27": 308.2059631347656, "2022-04-28": 319.1520080566406, "2022-04-29": 304.79071044921875, "2022-05-02": 309.87945556640625, "2022-05-03": 310.2102966308594, "2022-05-04": 320.6991271972656, "2022-05-05": 304.5474548339844, "2022-05-06": 300.8987121582031, "2022-05-09": 289.12548828125, "2022-05-10": 292.6379699707031, "2022-05-11": 283.9588317871094, "2022-05-12": 283.2874755859375, "2022-05-13": 293.7861022949219, "2022-05-16": 290.3806457519531, "2022-05-17": 297.9017639160156, "2022-05-18": 283.2778015136719, "2022-05-19": 281.7598571777344, "2022-05-20": 280.8841247558594, "2022-05-23": 285.55462646484375, "2022-05-24": 279.4830627441406, "2022-05-25": 283.3945617675781, "2022-05-26": 291.24658203125, "2022-05-27": 300.7527770996094, "2022-05-31": 299.9549255371094, "2022-06-01": 297.7364501953125, "2022-06-02": 305.8901062011719, "2022-06-03": 297.9310607910156, "2022-06-06": 298.9235534667969, "2022-06-07": 301.501953125, "2022-06-08": 299.3321838378906, "2022-06-09": 291.31475830078125, "2022-06-10": 281.0398864746094, "2022-06-13": 267.97259521484375, "2022-06-14": 268.4590759277344, "2022-06-15": 275.1629943847656, "2022-06-16": 264.0611572265625, "2022-06-17": 267.27197265625, "2022-06-21": 274.0151062011719, "2022-06-22": 273.61541748046875, "2022-06-23": 277.6904296875, "2022-06-24": 287.2049865722656, "2022-06-27": 285.09930419921875, "2022-06-28": 276.41326904296875, "2022-06-29": 276.66680908203125, "2022-06-30": 273.23529052734375, "2022-07-01": 275.03875732421875, "2022-07-05": 279.747314453125, "2022-07-06": 281.5411071777344, "2022-07-07": 287.5657958984375, "2022-07-08": 287.92645263671875, "2022-07-11": 281.7750549316406, "2022-07-12": 279.0453796386719, "2022-07-13": 278.47027587890625, "2022-07-14": 279.46466064453125, "2022-07-15": 284.533935546875, "2022-07-18": 282.1260681152344, "2022-07-19": 290.8023376464844, "2022-07-20": 295.41339111328125, "2022-07-21": 299.6541442871094, "2022-07-22": 294.3995666503906, "2022-07-25": 292.7227478027344, "2022-07-26": 286.9710693359375, "2022-07-27": 299.09844970703125, "2022-07-28": 302.02301025390625, "2022-07-29": 307.5310363769531, "2022-08-01": 307.3458251953125, "2022-08-02": 306.4294738769531, "2022-08-03": 314.77435302734375, "2022-08-04": 316.2463073730469, "2022-08-05": 313.6629333496094, "2022-08-08": 312.6490478515625, "2022-08-09": 309.1103210449219, "2022-08-10": 317.7378845214844, "2022-08-11": 315.9342956542969, "2022-08-12": 322.085693359375, "2022-08-15": 324.6885986328125, "2022-08-16": 323.9281921386719, "2022-08-17": 320.2335205078125, "2022-08-18": 321.003662109375, "2022-08-19": 314.74505615234375, "2022-08-22": 306.4585876464844, "2022-08-23": 306.20526123046875, "2022-08-24": 307.09234619140625, "2022-08-25": 312.5222473144531, "2022-08-26": 299.712646484375, "2022-08-29": 296.7587585449219, "2022-08-30": 293.4539794921875, "2022-08-31": 291.7479248046875, "2022-09-01": 291.87469482421875, "2022-09-02": 287.7510070800781, "2022-09-06": 285.68426513671875, "2022-09-07": 291.45550537109375, "2022-09-08": 292.96649169921875, "2022-09-09": 299.3714904785156, "2022-09-12": 302.92962646484375, "2022-09-13": 286.3179016113281, "2022-09-14": 288.58935546875, "2022-09-15": 283.7832946777344, "2022-09-16": 282.048095703125, "2022-09-19": 284.2444152832031, "2022-09-20": 281.97869873046875, "2022-09-21": 276.9295349121094, "2022-09-22": 273.52117919921875, "2022-09-23": 269.0677490234375, "2022-09-26": 267.9544982910156, "2022-09-27": 268.0619201660156, "2022-09-28": 273.39422607421875, "2022-09-29": 265.5128479003906, "2022-09-30": 261.0107727050781, "2022-10-03": 267.1341247558594, "2022-10-04": 275.5330505371094, "2022-10-05": 275.3865051269531, "2022-10-06": 273.2183837890625, "2022-10-07": 262.80767822265625, "2022-10-10": 260.18060302734375, "2022-10-11": 256.60614013671875, "2022-10-12": 256.51824951171875, "2022-10-13": 262.5342712402344, "2022-10-14": 254.64308166503906, "2022-10-17": 263.05181884765625, "2022-10-18": 265.1320495605469, "2022-10-19": 264.1651306152344, "2022-10-20": 262.8174743652344, "2022-10-21": 268.97991943359375, "2022-10-24": 271.9391174316406, "2022-10-25": 277.5644226074219, "2022-10-26": 271.43121337890625, "2022-10-27": 266.4895324707031, "2022-10-28": 274.6443176269531, "2022-10-31": 271.45074462890625, "2022-11-01": 268.6771545410156, "2022-11-02": 259.4676818847656, "2022-11-03": 254.3990020751953, "2022-11-04": 258.49102783203125, "2022-11-07": 261.33294677734375, "2022-11-08": 263.2373962402344, "2022-11-09": 257.1628112792969, "2022-11-10": 276.13848876953125, "2022-11-11": 281.2266845703125, "2022-11-14": 278.765625, "2022-11-15": 282.6233215332031, "2022-11-16": 278.765625, "2022-11-17": 278.1502990722656, "2022-11-18": 278.1600646972656, "2022-11-21": 275.2987060546875, "2022-11-22": 279.263671875, "2022-11-23": 282.06658935546875, "2022-11-25": 280.2110290527344, "2022-11-28": 276.0994873046875, "2022-11-29": 274.0095520019531, "2022-11-30": 286.5003662109375, "2022-12-01": 286.85205078125, "2022-12-02": 285.7093200683594, "2022-12-05": 280.91424560546875, "2022-12-06": 275.0935363769531, "2022-12-07": 273.9704284667969, "2022-12-08": 277.2128601074219, "2022-12-09": 275.44512939453125, "2022-12-12": 278.9023132324219, "2022-12-13": 281.9005432128906, "2022-12-14": 279.8105773925781, "2022-12-15": 270.4155578613281, "2022-12-16": 267.8373107910156, "2022-12-19": 264.0731506347656, "2022-12-20": 263.86761474609375, "2022-12-21": 267.6953430175781, "2022-12-22": 261.1460876464844, "2022-12-23": 261.7335205078125, "2022-12-27": 258.03302001953125, "2022-12-28": 254.62628173828125, "2022-12-29": 260.8328857421875, "2022-12-30": 260.67620849609375, "2023-01-03": 258.9141540527344, "2023-01-04": 260.1476135253906, "2023-01-05": 256.0751037597656, "2023-01-06": 263.14324951171875, "2023-01-09": 264.84661865234375, "2023-01-10": 267.08837890625, "2023-01-11": 271.70904541015625, "2023-01-12": 273.177490234375, "2023-01-13": 275.0570373535156, "2023-01-17": 275.61517333984375, "2023-01-18": 272.0321350097656, "2023-01-19": 269.3595886230469, "2023-01-20": 276.7311096191406, "2023-01-23": 282.87890625, "2023-01-24": 282.3013610839844, "2023-01-25": 281.67486572265625, "2023-01-26": 287.166748046875, "2023-01-27": 290.02532958984375, "2023-01-30": 284.1613464355469, "2023-01-31": 288.4198303222656, "2023-02-01": 294.58721923828125, "2023-02-02": 305.1599426269531, "2023-02-03": 299.73651123046875, "2023-02-06": 297.20098876953125, "2023-02-07": 303.3586730957031, "2023-02-08": 297.9646301269531, "2023-02-09": 295.3312683105469, "2023-02-10": 293.3929748535156, "2023-02-13": 298.0919494628906, "2023-02-14": 300.29461669921875, "2023-02-15": 302.5950927734375, "2023-02-16": 296.91717529296875, "2023-02-17": 294.8221740722656, "2023-02-21": 287.84222412109375, "2023-02-22": 288.05755615234375, "2023-02-23": 290.573486328125, "2023-02-24": 285.70806884765625, "2023-02-27": 287.754150390625, "2023-02-28": 287.3821716308594, "2023-03-01": 285.0718078613281, "2023-03-02": 287.43109130859375, "2023-03-03": 293.3733825683594, "2023-03-06": 293.70611572265625, "2023-03-07": 290.1036376953125, "2023-03-08": 291.552490234375, "2023-03-09": 286.5010681152344, "2023-03-10": 282.47760009765625, "2023-03-13": 284.5725402832031, "2023-03-14": 291.1119689941406, "2023-03-15": 292.6391296386719, "2023-03-16": 300.3533020019531, "2023-03-17": 298.9338073730469, "2023-03-20": 299.9947204589844, "2023-03-21": 304.279296875, "2023-03-22": 300.1416931152344, "2023-03-23": 303.70086669921875, "2023-03-24": 304.81866455078125, "2023-03-27": 302.7301940917969, "2023-03-28": 301.1221923828125, "2023-03-29": 306.6128234863281, "2023-03-30": 309.5150146484375, "2023-03-31": 314.6625671386719, "2023-04-03": 313.8976745605469, "2023-04-04": 312.8388671875, "2023-04-05": 309.7503967285156, "2023-04-06": 311.8387451171875, "2023-04-10": 311.66229248046875, "2023-04-11": 309.6620788574219, "2023-04-12": 306.9265441894531, "2023-04-13": 312.9368591308594, "2023-04-14": 312.34857177734375, "2023-04-17": 312.6133728027344, "2023-04-18": 312.6329345703125, "2023-04-19": 312.4858703613281, "2023-04-20": 310.1033020019531, "2023-04-21": 310.4269104003906, "2023-04-24": 309.7797546386719, "2023-04-25": 303.93621826171875, "2023-04-26": 305.77947998046875, "2023-04-27": 314.0938415527344, "2023-04-28": 316.26068115234375, "2023-05-01": 315.8979187011719, "2023-05-02": 313.1427917480469, "2023-05-03": 311.0935974121094, "2023-05-04": 309.99554443359375, "2023-05-05": 316.58428955078125, "2023-05-08": 317.3686828613281, "2023-05-09": 315.358642578125, "2023-05-10": 318.790283203125, "2023-05-11": 319.8296203613281, "2023-05-12": 318.68243408203125, "2023-05-15": 320.4081115722656, "2023-05-16": 320.7708435058594, "2023-05-17": 324.65350341796875, "2023-05-18": 330.6833801269531, "2023-05-19": 329.93829345703125, "2023-05-22": 331.04620361328125, "2023-05-23": 326.8497314453125, "2023-05-24": 325.17315673828125, "2023-05-25": 333.0856018066406, "2023-05-26": 341.5960388183594, "2023-05-30": 343.1452331542969, "2023-05-31": 341.194091796875, "2023-06-01": 345.1355895996094, "2023-06-02": 347.7240295410156, "2023-06-05": 347.9690856933594, "2023-06-06": 347.9102783203125, "2023-06-07": 342.00787353515625, "2023-06-08": 346.2533264160156, "2023-06-09": 347.57696533203125, "2023-06-12": 353.44989013671875, "2023-06-13": 356.1658935546875, "2023-06-14": 358.75433349609375, "2023-06-15": 363.02911376953125, "2023-06-16": 360.74468994140625, "2023-06-20": 360.2281799316406, "2023-06-21": 355.31915283203125, "2023-06-22": 359.5115051269531, "2023-06-23": 355.94744873046875, "2023-06-26": 351.17584228515625, "2023-06-27": 357.21405029296875, "2023-06-28": 357.9111633300781, "2023-06-29": 357.19439697265625, "2023-06-30": 362.7023620605469, "2023-07-03": 363.55657958984375, "2023-07-05": 363.5467529296875, "2023-07-06": 360.7780456542969, "2023-07-07": 359.5801696777344, "2023-07-10": 359.697998046875, "2023-07-11": 361.4751281738281, "2023-07-12": 366.04058837890625, "2023-07-13": 372.25543212890625, "2023-07-14": 372.17694091796875, "2023-07-17": 375.65252685546875, "2023-07-18": 378.7255859375, "2023-07-19": 378.63726806640625, "2023-07-20": 369.90887451171875, "2023-07-21": 368.7994689941406, "2023-07-24": 369.38861083984375, "2023-07-25": 371.8921813964844, "2023-07-26": 370.6550598144531, "2023-07-27": 369.771484375, "2023-07-28": 376.5067138671875, "2023-07-31": 376.7031555175781, "2023-08-01": 375.82928466796875, "2023-08-02": 367.58203125, "2023-08-03": 366.992919921875, "2023-08-04": 365.27471923828125, "2023-08-07": 368.3674621582031, "2023-08-08": 365.2354736328125, "2023-08-09": 361.2198486328125, "2023-08-10": 361.8875427246094, "2023-08-11": 359.5801696777344, "2023-08-14": 363.6155090332031, "2023-08-15": 359.7569885253906, "2023-08-16": 355.94744873046875, "2023-08-17": 352.0595397949219, "2023-08-18": 351.61773681640625, "2023-08-21": 357.28277587890625, "2023-08-22": 356.77215576171875, "2023-08-23": 362.3980407714844, "2023-08-24": 354.65155029296875, "2023-08-25": 357.40057373046875, "2023-08-28": 360.09075927734375, "2023-08-29": 367.955078125, "2023-08-30": 370.007080078125, "2023-08-31": 371.1165466308594, "2023-09-01": 370.7237548828125, "2023-09-05": 371.195068359375, "2023-09-06": 367.9256896972656, "2023-09-07": 365.2944030761719, "2023-09-08": 365.804931640625, "2023-09-11": 370.1150817871094, "2023-09-12": 366.0111389160156, "2023-09-13": 367.4052734375, "2023-09-14": 370.4096984863281, "2023-09-15": 364.0671081542969, "2023-09-18": 364.4466552734375, "2023-09-19": 363.6699523925781, "2023-09-20": 358.42926025390625, "2023-09-21": 351.8611755371094, "2023-09-22": 351.9103698730469, "2023-09-25": 353.5819091796875, "2023-09-26": 348.2723693847656, "2023-09-27": 349.0885009765625, "2023-09-28": 352.0086975097656, "2023-09-29": 352.2643127441406, "2023-10-02": 355.2041931152344, "2023-10-03": 348.970458984375, "2023-10-04": 353.7195739746094, "2023-10-05": 352.6773376464844, "2023-10-06": 358.58660888671875, "2023-10-09": 360.41534423828125, "2023-10-10": 362.411376953125, "2023-10-11": 364.99725341796875, "2023-10-12": 363.7289123535156, "2023-10-13": 359.1568298339844, "2023-10-16": 363.2176513671875, "2023-10-17": 362.0278625488281, "2023-10-18": 357.27886962890625, "2023-10-19": 353.9358825683594, "2023-10-20": 348.6557922363281, "2023-10-23": 349.70794677734375, "2023-10-24": 353.10992431640625, "2023-10-25": 344.4672546386719, "2023-10-26": 337.8992614746094, "2023-10-27": 339.5216064453125, "2023-10-30": 343.3463439941406, "2023-10-31": 344.9883728027344, "2023-11-01": 350.9762878417969, "2023-11-02": 357.3476257324219, "2023-11-03": 361.54608154296875, "2023-11-06": 363.0209655761719, "2023-11-07": 366.4524230957031, "2023-11-08": 366.68841552734375, "2023-11-09": 363.86651611328125, "2023-11-10": 372.0469970703125, "2023-11-13": 370.8868408203125, "2023-11-14": 378.87066650390625, "2023-11-15": 379.1558532714844, "2023-11-16": 379.4803466796875, "2023-11-17": 379.56884765625, "2023-11-20": 384.19000244140625, "2023-11-21": 381.95806884765625, "2023-11-22": 383.5213928222656, "2023-11-24": 382.9806823730469, "2023-11-27": 382.6463623046875, "2023-11-28": 383.64935302734375, "2023-11-29": 383.2756652832031, "2023-11-30": 382.3120422363281, "2023-12-01": 383.4034118652344, "2023-12-04": 379.84417724609375, "2023-12-05": 380.7978820800781, "2023-12-06": 378.5953674316406, "2023-12-07": 383.88525390625, "2023-12-08": 385.5960693359375, "2023-12-11": 388.88995361328125, "2023-12-12": 391.9871520996094, "2023-12-13": 396.9721374511719, "2023-12-14": 396.6279602050781, "2023-12-15": 398.5453186035156, "2023-12-18": 401.05560302734375, "2023-12-19": 403.1047668457031, "2023-12-20": 397.1147766113281, "2023-12-21": 401.7353820800781, "2023-12-22": 402.33636474609375, "2023-12-26": 404.7993469238281, "2023-12-27": 405.6234436035156, "2023-12-28": 405.4263000488281, "2023-12-29": 403.67169189453125, "2024-01-02": 396.8406982421875, "2024-01-03": 392.6414489746094, "2024-01-04": 390.6207275390625, "2024-01-05": 391.0840759277344, "2024-01-08": 399.1669616699219, "2024-01-09": 399.95556640625, "2024-01-10": 402.6662902832031, "2024-01-11": 403.50408935546875, "2024-01-12": 403.7111511230469, "2024-01-16": 403.67169189453125, "2024-01-17": 401.3946838378906, "2024-01-18": 407.0921936035156, "2024-01-19": 415.16522216796875, "2024-01-22": 415.70733642578125, "2024-01-23": 417.4324035644531, "2024-01-24": 419.7488098144531, "2024-01-25": 420.2613525390625, "2024-01-26": 417.7575988769531, "2024-01-29": 422.0356140136719, "2024-01-30": 419.2263488769531, "2024-01-31": 411.01531982421875, "2024-02-01": 415.8551940917969, "2024-02-02": 422.8833923339844, "2024-02-05": 422.33135986328125, "2024-02-06": 421.4836730957031, "2024-02-07": 425.82086181640625, "2024-02-08": 426.609375, "2024-02-09": 430.80853271484375, "2024-02-12": 429.1229553222656, "2024-02-13": 422.4299621582031, "2024-02-14": 427.0332946777344, "2024-02-15": 428.3048400878906, "2024-02-16": 424.4211120605469, "2024-02-20": 421.217529296875, "2024-02-21": 419.53192138671875, "2024-02-22": 431.8139953613281, "2024-02-23": 430.54241943359375, "2024-02-26": 430.31573486328125, "2024-02-27": 431.3506774902344, "2024-02-28": 429.05401611328125, "2024-02-29": 432.7306823730469, "2024-03-01": 439.24627685546875, "2024-03-04": 437.67901611328125, "2024-03-05": 429.82281494140625, "2024-03-06": 432.523681640625, "2024-03-07": 439.0885925292969, "2024-03-08": 432.7503662109375, "2024-03-11": 431.1437072753906, "2024-03-12": 437.3241882324219, "2024-03-13": 433.9629211425781, "2024-03-14": 432.8686828613281, "2024-03-15": 427.7232666015625, "2024-03-18": 431.80267333984375, "2024-03-19": 432.8784484863281, "2024-03-20": 438.010986328125, "2024-03-21": 440.083740234375, "2024-03-22": 440.5871276855469, "2024-03-25": 438.9881896972656, "2024-03-26": 437.56689453125, "2024-03-27": 439.0572204589844, "2024-03-28": 438.2478942871094, "2024-04-01": 439.1756591796875, "2024-04-02": 435.3855285644531, "2024-04-03": 436.36273193359375, "2024-04-04": 429.69036865234375, "2024-04-05": 434.7538146972656, "2024-04-08": 434.88214111328125, "2024-04-09": 436.49102783203125, "2024-04-10": 432.68109130859375, "2024-04-11": 439.5902404785156, "2024-04-12": 432.5823669433594, "2024-04-15": 425.4659423828125, "2024-04-16": 425.5054626464844, "2024-04-17": 420.31365966796875, "2024-04-18": 417.915283203125, "2024-04-19": 409.2688903808594, "2024-04-22": 413.384765625, "2024-04-23": 419.5536804199219, "2024-04-24": 420.9750061035156, "2024-04-25": 418.94171142578125, "2024-04-26": 425.4067077636719, "2024-04-29": 427.13397216796875, "2024-04-30": 419.07989501953125, "2024-05-01": 416.04974365234375, "2024-05-02": 421.35992431640625, "2024-05-03": 429.8285827636719, "2024-05-06": 434.5367431640625, "2024-05-07": 434.6058044433594, "2024-05-08": 434.3491516113281, "2024-05-09": 435.29669189453125, "2024-05-10": 436.32318115234375, "2024-05-13": 437.3299865722656, "2024-05-14": 440.1429138183594, "2024-05-15": 447.02252197265625, "2024-05-16": 446.1144714355469, "2024-05-17": 445.8973388671875, "2024-05-20": 449.0064697265625, "2024-05-21": 449.8848876953125, "2024-05-22": 449.7960205078125, "2024-05-23": 447.7726745605469, "2024-05-24": 452.0069580078125, "2024-05-28": 453.71453857421875, "2024-05-29": 450.51654052734375, "2024-05-30": 445.6900634765625, "2024-05-31": 444.8609313964844, "2024-06-03": 447.24957275390625, "2024-06-04": 448.4734191894531, "2024-06-05": 457.5146179199219, "2024-06-06": 457.35662841796875, "2024-06-07": 456.95196533203125, "2024-06-10": 458.7977294921875, "2024-06-11": 461.94622802734375, "2024-06-12": 467.9967041015625, "2024-06-13": 470.53338623046875, "2024-06-14": 472.9712829589844, "2024-06-17": 478.7651672363281, "2024-06-18": 478.9131774902344, "2024-06-20": 475.22174072265625, "2024-06-21": 473.9485168457031, "2024-06-24": 468.552734375, "2024-06-25": 473.9109191894531, "2024-06-26": 474.8896179199219, "2024-06-27": 476.115478515625, "2024-06-28": 473.6440124511719, "2024-07-01": 476.4219055175781, "2024-07-02": 481.42425537109375, "2024-07-03": 485.43792724609375, "2024-07-05": 490.4994812011719, "2024-07-08": 491.6660461425781, "2024-07-09": 492.09112548828125, "2024-07-10": 497.221923828125, "2024-07-11": 486.3177185058594, "2024-07-12": 489.17474365234375, "2024-07-15": 490.4896240234375, "2024-07-16": 490.67742919921875, "2024-07-17": 476.2736511230469, "2024-07-18": 474.0196838378906, "2024-07-19": 469.818115234375, "2024-07-22": 476.8174133300781, "2024-07-23": 475.1368103027344, "2024-07-24": 458.0934753417969, "2024-07-25": 453.041748046875, "2024-07-26": 457.68817138671875, "2024-07-29": 458.60748291015625, "2024-07-30": 452.3101806640625, "2024-07-31": 465.69580078125, "2024-08-01": 454.4159240722656, "2024-08-02": 443.63037109375, "2024-08-05": 430.40301513671875, "2024-08-06": 434.5155944824219, "2024-08-07": 429.8098449707031, "2024-08-08": 442.9581298828125, "2024-08-09": 445.27142333984375, "2024-08-12": 446.23040771484375, "2024-08-13": 457.3025817871094, "2024-08-14": 457.45086669921875, "2024-08-15": 469.0075378417969, "2024-08-16": 469.6105651855469, "2024-08-19": 475.7794189453125, "2024-08-20": 474.7808837890625, "2024-08-21": 476.995361328125, "2024-08-22": 469.43255615234375, "2024-08-23": 474.5238342285156, "2024-08-26": 469.91705322265625, "2024-08-27": 471.32080078125, "2024-08-28": 465.9725646972656, "2024-08-29": 465.2904357910156, "2024-08-30": 470.83636474609375, "2024-09-03": 456.5413818359375, "2024-09-04": 455.35504150390625, "2024-09-05": 455.7801513671875, "2024-09-06": 443.571044921875, "2024-09-09": 449.2752380371094, "2024-09-10": 453.42730712890625, "2024-09-11": 463.2737121582031, "2024-09-12": 467.8212585449219, "2024-09-13": 469.91705322265625, "2024-09-16": 467.8409729003906, "2024-09-17": 468.0881652832031, "2024-09-18": 466.0615539550781, "2024-09-19": 477.8454895019531, "2024-09-20": 476.93603515625, "2024-09-23": 478.20025634765625, "2024-09-24": 480.5068664550781, "2024-09-25": 480.9523620605469, "2024-09-26": 484.5657958984375, "2024-09-27": 481.873046875, "2024-09-30": 483.1798400878906, "2024-10-01": 476.44793701171875, "2024-10-02": 477.12115478515625, "2024-10-03": 476.76470947265625, "2024-10-04": 482.4373474121094, "2024-10-07": 477.2696533203125, "2024-10-08": 484.39752197265625, "2024-10-09": 488.2088928222656, "2024-10-10": 487.6545104980469, "2024-10-11": 488.4168395996094, "2024-10-14": 492.5153503417969, "2024-10-15": 485.93194580078125, "2024-10-16": 485.9913635253906, "2024-10-17": 486.3280029296875, "2024-10-18": 489.51568603515625, "2024-10-21": 490.4561767578125, "2024-10-22": 490.99078369140625, "2024-10-23": 483.4668884277344, "2024-10-24": 487.38720703125, "2024-10-25": 490.357177734375, "2024-10-28": 490.4363708496094, "2024-10-29": 495.1487121582031, "2024-10-30": 491.40655517578125, "2024-10-31": 479.00213623046875, "2024-11-01": 482.5462646484375, "2024-11-04": 481.1404724121094, "2024-11-05": 487.2783508300781, "2024-11-06": 500.51434326171875, "2024-11-07": 508.3946228027344, "2024-11-08": 508.9886169433594, "2024-11-11": 508.6916198730469, "2024-11-12": 507.77093505859375, "2024-11-13": 507.1175842285156, "2024-11-14": 503.5932312011719, "2024-11-15": 491.59466552734375, "2024-11-18": 495.0100402832031, "2024-11-19": 498.4156188964844, "2024-11-20": 498.1285095214844, "2024-11-21": 499.9203796386719, "2024-11-22": 500.7222900390625, "2024-11-25": 501.5142822265625, "2024-11-26": 504.2070007324219, "2024-11-27": 500.2371826171875, "2024-11-29": 504.6327209472656, "2024-12-02": 510.1270446777344, "2024-12-03": 511.6912841796875, "2024-12-04": 518.0172729492188, "2024-12-05": 516.581787109375, "2024-12-06": 521.2049560546875, "2024-12-09": 517.1460571289062, "2024-12-10": 515.3838500976562, "2024-12-11": 524.6105346679688, "2024-12-12": 521.2247924804688, "2024-12-13": 525.2144775390625, "2024-12-16": 532.7777709960938, "2024-12-17": 530.4315795898438, "2024-12-18": 511.2952880859375, "2024-12-19": 509.018310546875, "2024-12-20": 513.4631958007812, "2024-12-23": 518.4658813476562, "2024-12-24": 525.4961547851562, "2024-12-26": 525.13916015625, "2024-12-27": 518.1583862304688, "2024-12-30": 511.2669677734375, "2024-12-31": 506.92388916015625, "2025-01-02": 505.9322814941406, "2025-01-03": 514.2120361328125, "2025-01-06": 520.1217651367188, "2025-01-07": 510.8406066894531, "2025-01-08": 510.92987060546875, "2025-01-10": 502.91790771484375, "2025-01-13": 501.3016357421875, "2025-01-14": 500.82562255859375, "2025-01-15": 512.3477783203125, "2025-01-16": 508.7583312988281, "2025-01-17": 517.3453369140625, "2025-01-21": 520.3795776367188, "2025-01-22": 527.0330200195312, "2025-01-23": 528.153564453125, "2025-01-24": 525.1688842773438, "2025-01-27": 509.87884521484375, "2025-01-28": 517.414794921875, "2025-01-29": 516.4430541992188, "2025-01-30": 518.644287109375, "2025-01-31": 517.8907470703125, "2025-02-03": 513.7460327148438, "2025-02-04": 520.05224609375, "2025-02-05": 522.4122924804688, "2025-02-06": 525.13916015625, "2025-02-07": 518.5154418945312, "2025-02-10": 524.7920532226562, "2025-02-11": 523.542724609375, "2025-02-12": 523.85009765625, "2025-02-13": 531.3861083984375, "2025-02-14": 533.6171875, "2025-02-18": 534.8268432617188, "2025-02-19": 534.9757080078125, "2025-02-20": 532.7048950195312, "2025-02-21": 521.6488647460938, "2025-02-24": 515.4911499023438, "2025-02-25": 508.9962158203125, "2025-02-26": 510.2257995605469, "2025-02-27": 496.0561828613281, "2025-02-28": 503.8896484375, "2025-03-03": 492.8633117675781, "2025-03-04": 491.37591552734375, "2025-03-05": 497.7815246582031, "2025-03-06": 484.0878601074219, "2025-03-07": 487.64764404296875, "2025-03-10": 468.7481689453125, "2025-03-11": 467.6277160644531, "2025-03-12": 472.9029235839844, "2025-03-13": 464.3951110839844, "2025-03-14": 475.61981201171875, "2025-03-17": 478.70355224609375, "2025-03-18": 470.54290771484375, "2025-03-19": 476.8394470214844, "2025-03-20": 475.22320556640625, "2025-03-21": 476.7898254394531, "2025-03-24": 487.252685546875, "2025-03-25": 490.0332336425781, "2025-03-26": 481.0163269042969, "2025-03-27": 478.2754821777344, "2025-03-28": 465.68353271484375, "2025-03-31": 465.6636962890625, "2025-04-01": 469.4174499511719, "2025-04-02": 472.84344482421875, "2025-04-03": 447.53045654296875, "2025-04-04": 419.73486328125, "2025-04-07": 420.74774169921875, "2025-04-08": 413.1707458496094, "2025-04-09": 462.7639465332031, "2025-04-10": 443.0815734863281, "2025-04-11": 451.2444763183594, "2025-04-14": 454.3031005859375, "2025-04-15": 454.80950927734375, "2025-04-16": 441.0954284667969, "2025-04-17": 441.0160217285156, "2025-04-21": 430.102294921875, "2025-04-22": 441.3934020996094, "2025-04-23": 451.40338134765625, "2025-04-24": 464.10455322265625, "2025-04-25": 469.27838134765625, "2025-04-28": 469.1294250488281, "2025-04-29": 472.227783203125, "2025-04-30": 472.1681823730469, "2025-05-01": 478.3350524902344, "2025-05-02": 485.4353942871094, "2025-05-05": 482.5555419921875, "2025-05-06": 478.06689453125, "2025-05-07": 479.94378662109375, "2025-05-08": 484.899169921875, "2025-05-09": 484.5813293457031, "2025-05-12": 504.3233337402344, "2025-05-13": 512.0095825195312, "2025-05-14": 515.078125, "2025-05-15": 515.64404296875, "2025-05-16": 517.8884887695312, "2025-05-19": 518.3850708007812, "2025-05-20": 516.6570434570312, "2025-05-21": 509.47723388671875, "2025-05-22": 510.4306640625, "2025-05-23": 505.70367431640625, "2025-05-27": 517.6004638671875, "2025-05-28": 515.306396484375, "2025-05-29": 516.3193969726562, "2025-05-30": 515.505126953125, "2025-06-02": 519.5765991210938, "2025-06-03": 523.63818359375, "2025-06-04": 525.0980224609375, "2025-06-05": 521.1456298828125, "2025-06-06": 526.239990234375, "2025-06-09": 527.0146484375, "2025-06-10": 530.5001831054688, "2025-06-11": 528.712646484375, "2025-06-12": 529.9541015625, "2025-06-13": 523.3006591796875, "2025-06-16": 530.5797119140625, "2025-06-17": 525.4059448242188, "2025-06-18": 525.3164672851562, "2025-06-20": 523.1715087890625, "2025-06-23": 528.551025390625, "2025-06-24": 536.6336059570312, "2025-06-25": 538.0054931640625, "2025-06-26": 543.0359497070312, "2025-06-27": 544.8951416015625, "2025-06-30": 548.4244995117188, "2025-07-01": 543.801513671875, "2025-07-02": 547.5892944335938, "2025-07-03": 552.9777221679688, "2025-07-07": 548.8121337890625, "2025-07-08": 549.1204223632812, "2025-07-09": 553.0076293945312, "2025-07-10": 552.2122802734375, "2025-07-11": 550.9695434570312, "2025-07-14": 552.9678344726562, "2025-07-15": 553.474853515625, "2025-07-16": 554.04150390625, "2025-07-17": 558.5252075195312, "2025-07-18": 557.9884033203125, "2025-07-21": 560.8814086914062, "2025-07-22": 557.9784545898438, "2025-07-23": 560.5234375, "2025-07-24": 561.7166137695312, "2025-07-25": 563.068603515625, "2025-07-28": 564.8282470703125, "2025-07-29": 563.953369140625, "2025-07-30": 564.7090454101562, "2025-07-31": 561.7166137695312, "2025-08-01": 550.6514282226562, "2025-08-04": 560.811767578125, "2025-08-05": 557.004150390625, "2025-08-06": 564.0130615234375, "2025-08-07": 565.9219360351562, "2025-08-08": 571.2008666992188, "2025-08-11": 569.5108032226562, "2025-08-12": 576.6688232421875, "2025-08-13": 576.9572143554688, "2025-08-14": 576.509765625, "2025-08-15": 573.9746704101562, "2025-08-18": 573.7459716796875, "2025-08-19": 565.961669921875, "2025-08-20": 562.6013793945312, "2025-08-21": 559.99658203125, "2025-08-22": 568.6359252929688, "2025-08-25": 566.9955444335938, "2025-08-26": 569.272216796875, "2025-08-27": 570.14697265625, "2025-08-28": 573.7161865234375, "2025-08-29": 567.0751342773438, "2025-09-02": 562.322998046875, "2025-09-03": 566.7470703125, "2025-09-04": 571.876953125, "2025-09-05": 572.7020874023438, "2025-09-08": 575.4957275390625, "2025-09-09": 577.1261596679688, "2025-09-10": 577.3150634765625, "2025-09-11": 580.6754150390625, "2025-09-12": 583.2403564453125, "2025-09-15": 588.2310791015625, "2025-09-16": 587.7339477539062, "2025-09-17": 586.5609130859375, "2025-09-18": 591.849853515625, "2025-09-19": 595.8563232421875, "2025-09-22": 599.3837890625, "2025-09-23": 595.4025268554688, "2025-09-24": 593.3123168945312, "2025-09-25": 590.75439453125, "2025-09-26": 593.1829223632812, "2025-09-29": 595.9300537109375, "2025-09-30": 597.5623168945312, "2025-10-01": 600.4288940429688, "2025-10-02": 602.897216796875, "2025-10-03": 600.3591918945312, "2025-10-06": 604.8680419921875, "2025-10-07": 601.6829833984375, "2025-10-08": 608.5805053710938, "2025-10-09": 607.8441162109375, "2025-10-10": 586.7432250976562, "2025-10-13": 599.1947021484375, "2025-10-14": 595.2034301757812, "2025-10-15": 599.4036254882812, "2025-10-16": 597.18408203125, "2025-10-17": 601.1056518554688, "2025-10-20": 608.6800537109375, "2025-10-21": 608.5208740234375, "2025-10-22": 602.6583862304688, "2025-10-23": 607.724609375, "2025-10-24": 614.214111328125, "2025-10-27": 625.1527099609375, "2025-10-28": 629.9601440429688, "2025-10-29": 632.7967529296875, "2025-10-30": 623.1222534179688, "2025-10-31": 626.1281127929688, "2025-11-03": 629.1240844726562, "2025-11-04": 616.3540649414062, "2025-11-05": 620.365234375, "2025-11-06": 608.8094482421875, "2025-11-07": 606.8884887695312, "2025-11-10": 620.3154296875, "2025-11-11": 618.6631469726562, "2025-11-12": 618.1754760742188, "2025-11-13": 605.5548095703125, "2025-11-14": 606.0125732421875, "2025-11-17": 600.8369140625, "2025-11-18": 593.5213012695312, "2025-11-19": 597.0646362304688, "2025-11-20": 582.9310302734375, "2025-11-21": 587.310546875, "2025-11-24": 602.3298950195312, "2025-11-25": 606.0425415039062, "2025-11-26": 611.3973999023438, "2025-11-28": 616.3540649414062, "2025-12-01": 614.2838134765625, "2025-12-02": 619.0911865234375, "2025-12-03": 620.6040649414062, "2025-12-04": 620.0267944335938, "2025-12-05": 622.554931640625, "2025-12-08": 621.3605346679688, "2025-12-09": 622.126953125, "2025-12-10": 624.6749267578125, "2025-12-11": 622.6544799804688, "2025-12-12": 610.7503662109375, "2025-12-15": 607.6847534179688, "2025-12-16": 608.88916015625, "2025-12-17": 597.6021118164062, "2025-12-18": 606.2614135742188, "2025-12-19": 614.164306640625, "2025-12-22": 617.1083374023438, "2025-12-23": 619.9984741210938, "2025-12-24": 621.812255859375, "2025-12-26": 621.7724609375, "2025-12-29": 618.7626342773438, "2025-12-30": 617.3275756835938, "2025-12-31": 612.2249145507812, "2026-01-02": 611.0389404296875, "2026-01-05": 615.8923950195312, "2026-01-06": 621.3040161132812, "2026-01-07": 621.9019775390625, "2026-01-08": 618.3639526367188, "2026-01-09": 624.5230712890625, "2026-01-12": 625.041259765625, "2026-01-13": 624.114501953125, "2026-01-14": 617.4471435546875, "2026-01-15": 619.6696166992188, "2026-01-16": 619.1513671875, "2026-01-20": 605.9961547851562, "2026-01-21": 614.1883544921875, "2026-01-22": 618.6530151367188, "2026-01-23": 620.6063842773438, "2026-01-26": 623.337158203125, "2026-01-27": 628.9878540039062, "2026-01-28": 631.0707397460938, "2026-01-29": 627.2935791015625, "2026-01-30": 619.7592163085938, "2026-02-02": 624.0147705078125, "2026-02-03": 614.4274291992188, "2026-02-04": 603.6939697265625, "2026-02-05": 595.0036010742188, "2026-02-06": 607.580810546875, "2026-02-09": 612.2349243164062, "2026-02-10": 609.3945922851562, "2026-02-11": 611.0289916992188, "2026-02-12": 598.6013793945312, "2026-02-13": 599.876953125, "2026-02-17": 599.2590942382812, "2026-02-18": 603.7338256835938, "2026-02-19": 601.4216918945312, "2026-02-20": 606.7435913085938, "2026-02-23": 599.3687133789062, "2026-02-24": 605.8068237304688, "2026-02-25": 614.5868530273438, "2026-02-26": 607.1721801757812, "2026-02-27": 605.228759765625, "2026-03-02": 606.0260620117188, "2026-03-03": 599.5381469726562, "2026-03-04": 608.677001953125, "2026-03-05": 606.8432006835938, "2026-03-06": 597.71435546875, "2026-03-09": 605.6972045898438, "2026-03-10": 605.7071533203125, "2026-03-11": 605.6273803710938, "2026-03-12": 595.2327880859375, "2026-03-13": 591.7047729492188, "2026-03-16": 598.3422241210938, "2026-03-17": 601.2623291015625, "2026-03-18": 592.880859375, "2026-03-19": 591.0071411132812, "2026-03-20": 580.0843505859375, "2026-03-23": 586.7431640625, "2026-03-24": 582.731689453125, "2026-03-25": 586.5635375976562, "2026-03-26": 572.5634765625, "2026-03-27": 561.37744140625, "2026-03-30": 557.0867309570312, "2026-03-31": 575.9462280273438, "2026-04-01": 583.06103515625, "2026-04-02": 583.7295532226562, "2026-04-06": 587.2420654296875, "2026-04-07": 587.3319091796875, "2026-04-08": 604.7944946289062, "2026-04-09": 608.8856811523438, "2026-04-10": 609.7637939453125, "2026-04-13": 616.0703735351562, "2026-04-14": 627.2562866210938, "2026-04-15": 636.0375366210938, "2026-04-16": 639.1009521484375, "2026-04-17": 647.4630126953125, "2026-04-20": 645.4074096679688, "2026-04-21": 642.9527587890625, "2026-04-22": 653.7096557617188, "2026-04-23": 650.0275268554688, "2026-04-24": 662.4609375, "2026-04-27": 662.8101806640625, "2026-04-28": 656.1444702148438, "2026-04-29": 660.1558837890625, "2026-04-30": 666.3126831054688, "2026-05-01": 672.7090454101562, "2026-05-04": 671.4417114257812, "2026-05-05": 680.1530151367188, "2026-05-06": 694.2827758789062, "2026-05-07": 693.4545288085938, "2026-05-08": 709.709716796875, "2026-05-11": 711.7653198242188, "2026-05-12": 705.7282104492188, "2026-05-13": 713.1823120117188, "2026-05-14": 718.2514038085938, "2026-05-15": 707.4146118164062, "2026-05-18": 704.3711547851562, "2026-05-19": 700.030517578125, "2026-05-20": 711.6256103515625, "2026-05-21": 712.9827270507812, "2026-05-22": 716.0062255859375, "2026-05-26": 728.718994140625, "2026-05-27": 727.8907470703125, "2026-05-28": 734.0276489257812, "2026-05-29": 736.7318115234375, "2026-06-01": 741.15234375, "2026-06-02": 744.5650024414062, "2026-06-03": 742.6192626953125, "2026-06-04": 739.0269165039062, "2026-06-05": 703.5528564453125, "2026-06-08": 714.5394287109375, "2026-06-09": 706.3170166015625, "2026-06-10": 692.2072143554688, "2026-06-11": 715.587158203125, "2026-06-12": 719.7981567382812, "2026-06-15": 742.40966796875, "2026-06-16": 728.2998657226562, "2026-06-17": 720.9656372070312, "2026-06-18": 739.0369262695312, "2026-06-22": 737.1818237304688, "2026-06-23": 712.9071655273438, "2026-06-24": 709.8803100585938, "2026-06-25": 715.63427734375, "2026-06-26": 705.7846069335938, "2026-06-29": 723.3262939453125, "2026-06-30": 735.6334838867188, "2026-07-01": 724.4151000976562, "2026-07-02": 711.8582153320312, "2026-07-06": 722.067626953125, "2026-07-07": 708.6915283203125, "2026-07-08": 710.699462890625, "2026-07-09": 722.5271606445312, "2026-07-10": 724.7548217773438, "2026-07-13": 710.9990844726562, "2026-07-14": 718.9408569335938, "2026-07-15": 716.9928588867188, "2026-07-16": 705.2051391601562, "2026-07-17": 694.606201171875, "2026-07-20": 695.33544921875, "2026-07-21": 708.2319946289062, "2026-07-22": 704.61572265625, "2026-07-23": 691.23974609375, "2026-07-24": 683.5177612304688, "2026-07-27": 681.4099731445312, "2026-07-28": 674.786865234375, "2026-07-29": 661.0411376953125, "2026-07-30": 682.8384399414062, "2026-07-31": 687.2738647460938, "2026-08-03": 699.34130859375, "2026-08-04": 723.0964965820312, "2026-08-05": 716.5533447265625, "2026-08-06": 713.9061279296875, "2026-08-07": 722.2774047851562, "2026-08-10": 720.11962890625, "2026-08-11": 717.7021484375, "2026-08-12": 722.9467163085938, "2026-08-13": 731.3079833984375, "2026-08-14": 730.3090209960938, "2026-08-17": 729.1102294921875, "2026-08-18": 716.7631225585938, "2026-08-19": 715.3345947265625, "2026-08-20": 710.18994140625, "2026-08-21": 712.6973876953125, "2026-08-24": 705.5847778320312, "2026-08-25": 709.9801635742188, "2026-08-26": 710.6295166015625, "2026-08-27": 720.359375, "2026-08-28": 715.6842651367188, "2026-08-31": 716.013916015625, "2026-09-01": 706.9033813476562, "2026-09-02": 708.501708984375, "2026-09-03": 716.9229125976562, "2026-09-04": 718.2116088867188, "2026-09-08": 717.6122436523438, "2026-09-09": 715.5643920898438, "2026-09-10": 707.9523315429688, "2026-09-11": 714.1358642578125, "2026-09-14": 708.4417724609375, "2026-09-15": 703.8065795898438, "2026-09-16": 703.9863891601562, "2026-09-17": 716.1737060546875, "2026-09-18": 720.6990356445312, "2026-09-21": 741.469970703125, "2026-09-22": 747.4600219726562, "2026-09-23": 741.2100219726562, "2026-09-24": 740.6500854492188}, "SPY": {"2021-09-24": 415.19012451171875, "2021-09-27": 414.0022888183594, "2021-09-28": 405.6593933105469, "2021-09-29": 406.3421325683594, "2021-09-30": 401.375732421875, "2021-10-01": 406.145751953125, "2021-10-04": 400.9080505371094, "2021-10-05": 405.07952880859375, "2021-10-06": 406.7630615234375, "2021-10-07": 410.27978515625, "2021-10-08": 409.53143310546875, "2021-10-11": 406.56658935546875, "2021-10-12": 405.5657653808594, "2021-10-13": 407.0248718261719, "2021-10-14": 413.871337890625, "2021-10-15": 417.0232849121094, "2021-10-18": 418.2578430175781, "2021-10-19": 421.4847106933594, "2021-10-20": 423.14013671875, "2021-10-21": 424.24383544921875, "2021-10-22": 423.8042297363281, "2021-10-25": 426.0769958496094, "2021-10-26": 426.4604187011719, "2021-10-27": 424.5711975097656, "2021-10-28": 428.6678161621094, "2021-10-29": 429.5377197265625, "2021-11-01": 430.2764892578125, "2021-11-02": 432.0162048339844, "2021-11-03": 434.65374755859375, "2021-11-04": 436.70208740234375, "2021-11-05": 438.21728515625, "2021-11-08": 438.5914001464844, "2021-11-09": 437.1415710449219, "2021-11-10": 433.6248779296875, "2021-11-11": 433.7652282714844, "2021-11-12": 437.03875732421875, "2021-11-15": 437.18841552734375, "2021-11-16": 438.918701171875, "2021-11-17": 437.8525390625, "2021-11-18": 439.33966064453125, "2021-11-19": 438.55401611328125, "2021-11-22": 437.3193054199219, "2021-11-23": 437.8992614746094, "2021-11-24": 439.068359375, "2021-11-26": 429.2757263183594, "2021-11-29": 434.54156494140625, "2021-11-30": 426.0863037109375, "2021-12-01": 421.35369873046875, "2021-12-02": 427.807373046875, "2021-12-03": 424.0848693847656, "2021-12-06": 429.1073913574219, "2021-12-07": 437.9834899902344, "2021-12-08": 439.1431579589844, "2021-12-09": 436.17828369140625, "2021-12-10": 440.2843017578125, "2021-12-13": 436.384033203125, "2021-12-14": 433.3818054199219, "2021-12-15": 440.15338134765625, "2021-12-16": 436.2718505859375, "2021-12-17": 431.6286315917969, "2021-12-20": 427.0389709472656, "2021-12-21": 434.6227722167969, "2021-12-22": 438.96844482421875, "2021-12-23": 441.69970703125, "2021-12-27": 447.9506530761719, "2021-12-28": 447.5846862792969, "2021-12-29": 448.1571350097656, "2021-12-30": 446.9181823730469, "2021-12-31": 445.7919616699219, "2022-01-03": 448.37310791015625, "2022-01-04": 448.22283935546875, "2022-01-05": 439.6160888671875, "2022-01-06": 439.203125, "2022-01-07": 437.4665832519531, "2022-01-10": 436.92236328125, "2022-01-11": 440.90185546875, "2022-01-12": 442.09393310546875, "2022-01-13": 436.00244140625, "2022-01-14": 436.1808166503906, "2022-01-18": 428.4562072753906, "2022-01-19": 424.00732421875, "2022-01-20": 419.31439208984375, "2022-01-21": 411.0829772949219, "2022-01-24": 412.82867431640625, "2022-01-25": 407.78851318359375, "2022-01-26": 406.7655029296875, "2022-01-27": 404.7568359375, "2022-01-28": 414.80914306640625, "2022-01-31": 422.2803039550781, "2022-02-01": 425.1336364746094, "2022-02-02": 429.26336669921875, "2022-02-03": 419.1736145019531, "2022-02-04": 421.14471435546875, "2022-02-07": 419.7930908203125, "2022-02-08": 423.2470703125, "2022-02-09": 429.4416809082031, "2022-02-10": 421.7265625, "2022-02-11": 413.41064453125, "2022-02-14": 412.0590515136719, "2022-02-15": 418.70428466796875, "2022-02-16": 419.1736145019531, "2022-02-17": 410.2193908691406, "2022-02-18": 407.56317138671875, "2022-02-22": 403.18951416015625, "2022-02-23": 396.03741455078125, "2022-02-24": 401.99737548828125, "2022-02-25": 410.8670654296875, "2022-02-28": 409.8157958984375, "2022-03-01": 403.57421875, "2022-03-02": 410.9984436035156, "2022-03-03": 408.9522705078125, "2022-03-04": 405.62982177734375, "2022-03-07": 393.67205810546875, "2022-03-08": 390.6874084472656, "2022-03-09": 401.16204833984375, "2022-03-10": 399.3506164550781, "2022-03-11": 394.2727966308594, "2022-03-14": 391.39129638671875, "2022-03-15": 399.9981994628906, "2022-03-16": 408.86785888671875, "2022-03-17": 413.9832458496094, "2022-03-18": 418.5174255371094, "2022-03-21": 418.3951110839844, "2022-03-22": 423.2908630371094, "2022-03-23": 417.8396301269531, "2022-03-24": 424.13818359375, "2022-03-25": 426.2095947265625, "2022-03-28": 429.2411193847656, "2022-03-29": 434.55126953125, "2022-03-30": 431.8680114746094, "2022-03-31": 425.220947265625, "2022-04-01": 426.42608642578125, "2022-04-04": 430.0790710449219, "2022-04-05": 424.6465759277344, "2022-04-06": 420.40045166015625, "2022-04-07": 422.51885986328125, "2022-04-08": 421.3890075683594, "2022-04-11": 414.1865539550781, "2022-04-12": 412.6518859863281, "2022-04-13": 417.37823486328125, "2022-04-14": 412.1811218261719, "2022-04-18": 412.35064697265625, "2022-04-19": 419.007080078125, "2022-04-20": 418.69635009765625, "2022-04-21": 412.435302734375, "2022-04-22": 401.11846923828125, "2022-04-25": 403.4439697265625, "2022-04-26": 391.7599182128906, "2022-04-27": 392.8614501953125, "2022-04-28": 402.7848205566406, "2022-04-29": 387.8997802734375, "2022-05-02": 390.2346496582031, "2022-05-03": 392.0235290527344, "2022-05-04": 403.9617614746094, "2022-05-05": 389.6039123535156, "2022-05-06": 387.27838134765625, "2022-05-09": 374.87872314453125, "2022-05-10": 375.7449645996094, "2022-05-11": 369.7757873535156, "2022-05-12": 369.38970947265625, "2022-05-13": 378.2210998535156, "2022-05-16": 376.6864318847656, "2022-05-17": 384.43499755859375, "2022-05-18": 368.9378356933594, "2022-05-19": 366.67822265625, "2022-05-20": 366.8383483886719, "2022-05-23": 373.701904296875, "2022-05-24": 370.8492126464844, "2022-05-25": 374.1255187988281, "2022-05-26": 381.60113525390625, "2022-05-27": 390.9690246582031, "2022-05-31": 388.7752685546875, "2022-06-01": 385.63067626953125, "2022-06-02": 392.9744567871094, "2022-06-03": 386.5251770019531, "2022-06-06": 387.7020568847656, "2022-06-07": 391.4209899902344, "2022-06-08": 387.1653747558594, "2022-06-09": 377.95751953125, "2022-06-10": 366.99835205078125, "2022-06-13": 353.0640563964844, "2022-06-14": 352.00018310546875, "2022-06-15": 357.0184020996094, "2022-06-16": 345.2024841308594, "2022-06-17": 345.9466552734375, "2022-06-21": 354.6553955078125, "2022-06-22": 354.0124816894531, "2022-06-23": 357.48272705078125, "2022-06-24": 368.8484191894531, "2022-06-27": 367.4394836425781, "2022-06-28": 359.93170166015625, "2022-06-29": 359.6386413574219, "2022-06-30": 356.71673583984375, "2022-07-01": 360.4896240234375, "2022-07-05": 361.17041015625, "2022-07-06": 362.39019775390625, "2022-07-07": 367.8177795410156, "2022-07-08": 367.51519775390625, "2022-07-11": 363.31689453125, "2022-07-12": 360.1018981933594, "2022-07-13": 358.210693359375, "2022-07-14": 357.34088134765625, "2022-07-15": 364.1678771972656, "2022-07-18": 361.1609191894531, "2022-07-19": 370.9192199707031, "2022-07-20": 373.28314208984375, "2022-07-21": 377.0843811035156, "2022-07-22": 373.58575439453125, "2022-07-25": 374.03961181640625, "2022-07-26": 369.6143493652344, "2022-07-27": 379.2119445800781, "2022-07-28": 383.9681091308594, "2022-07-29": 389.56591796875, "2022-08-01": 388.4123229980469, "2022-08-02": 385.84979248046875, "2022-08-03": 391.89202880859375, "2022-08-04": 391.6272888183594, "2022-08-05": 390.9653625488281, "2022-08-08": 390.5114440917969, "2022-08-09": 388.96075439453125, "2022-08-10": 397.13043212890625, "2022-08-11": 397.13043212890625, "2022-08-12": 403.8534851074219, "2022-08-15": 405.51763916015625, "2022-08-16": 406.31201171875, "2022-08-17": 403.4279479980469, "2022-08-18": 404.6004333496094, "2022-08-19": 399.16339111328125, "2022-08-22": 390.85186767578125, "2022-08-23": 389.9062805175781, "2022-08-24": 391.15447998046875, "2022-08-25": 396.67657470703125, "2022-08-26": 383.24951171875, "2022-08-29": 380.7153625488281, "2022-08-30": 376.5359191894531, "2022-08-31": 373.67083740234375, "2022-09-01": 374.84332275390625, "2022-09-02": 370.890869140625, "2022-09-06": 369.4914245605469, "2022-09-07": 376.1293029785156, "2022-09-08": 378.58782958984375, "2022-09-09": 384.4693298339844, "2022-09-12": 388.60137939453125, "2022-09-13": 371.7041015625, "2022-09-14": 373.1224365234375, "2022-09-15": 368.8861999511719, "2022-09-16": 366.07208251953125, "2022-09-19": 368.9109191894531, "2022-09-20": 364.67633056640625, "2022-09-21": 358.31500244140625, "2022-09-22": 355.3052978515625, "2022-09-23": 349.35223388671875, "2022-09-26": 345.8961486816406, "2022-09-27": 345.01312255859375, "2022-09-28": 351.8017272949219, "2022-09-29": 344.4530029296875, "2022-09-30": 339.12652587890625, "2022-10-03": 348.0798034667969, "2022-10-04": 358.8656921386719, "2022-10-05": 358.03021240234375, "2022-10-06": 354.3367614746094, "2022-10-07": 344.4530029296875, "2022-10-10": 341.8229675292969, "2022-10-11": 339.6581726074219, "2022-10-12": 338.537841796875, "2022-10-13": 347.47222900390625, "2022-10-14": 339.5537414550781, "2022-10-17": 348.279296875, "2022-10-18": 352.3714294433594, "2022-10-19": 349.8742980957031, "2022-10-20": 346.9405517578125, "2022-10-21": 355.3716735839844, "2022-10-24": 359.7202453613281, "2022-10-25": 365.4643859863281, "2022-10-26": 362.71099853515625, "2022-10-27": 360.7741394042969, "2022-10-28": 369.3572082519531, "2022-10-31": 366.689208984375, "2022-11-01": 365.0846252441406, "2022-11-02": 355.9223937988281, "2022-11-03": 352.25750732421875, "2022-11-04": 357.3275451660156, "2022-11-07": 360.7456359863281, "2022-11-08": 362.6920166015625, "2022-11-09": 355.2197570800781, "2022-11-10": 374.74053955078125, "2022-11-11": 378.36749267578125, "2022-11-14": 375.1489562988281, "2022-11-15": 378.34857177734375, "2022-11-16": 375.46221923828125, "2022-11-17": 374.3133239746094, "2022-11-18": 376.01287841796875, "2022-11-21": 374.64569091796875, "2022-11-22": 379.687255859375, "2022-11-23": 382.0799255371094, "2022-11-25": 381.9944763183594, "2022-11-28": 375.8988952636719, "2022-11-29": 375.2532958984375, "2022-11-30": 387.07403564453125, "2022-12-01": 386.7891540527344, "2022-12-02": 386.3428649902344, "2022-12-05": 379.3929138183594, "2022-12-06": 373.9240417480469, "2022-12-07": 373.2879638671875, "2022-12-08": 376.2121887207031, "2022-12-09": 373.4018859863281, "2022-12-12": 378.7853088378906, "2022-12-13": 381.65264892578125, "2022-12-14": 379.2125244140625, "2022-12-15": 369.93634033203125, "2022-12-16": 365.5687561035156, "2022-12-19": 362.46893310546875, "2022-12-20": 362.9648742675781, "2022-12-21": 368.39208984375, "2022-12-22": 363.1365661621094, "2022-12-23": 365.2254333496094, "2022-12-27": 363.7851867675781, "2022-12-28": 359.2641296386719, "2022-12-29": 365.7309875488281, "2022-12-30": 364.7676086425781, "2023-01-03": 363.2320251464844, "2023-01-04": 366.0362243652344, "2023-01-05": 361.8584899902344, "2023-01-06": 370.1566467285156, "2023-01-09": 369.94683837890625, "2023-01-10": 372.54119873046875, "2023-01-11": 377.2530517578125, "2023-01-12": 378.6265869140625, "2023-01-13": 380.0954284667969, "2023-01-17": 379.399169921875, "2023-01-18": 373.4091491699219, "2023-01-19": 370.6908874511719, "2023-01-20": 377.59649658203125, "2023-01-23": 382.1271057128906, "2023-01-24": 381.7169189453125, "2023-01-25": 381.8600158691406, "2023-01-26": 386.05682373046875, "2023-01-27": 386.9438171386719, "2023-01-30": 382.08892822265625, "2023-01-31": 387.7069396972656, "2023-02-01": 391.82733154296875, "2023-02-02": 397.5312194824219, "2023-02-03": 393.3057556152344, "2023-02-06": 390.9021911621094, "2023-02-07": 396.0146179199219, "2023-02-08": 391.6842956542969, "2023-02-09": 388.2886657714844, "2023-02-10": 389.19482421875, "2023-02-13": 393.7635498046875, "2023-02-14": 393.5824279785156, "2023-02-15": 394.8605041503906, "2023-02-16": 389.4237976074219, "2023-02-17": 388.4508972167969, "2023-02-21": 380.6582336425781, "2023-02-22": 380.13360595703125, "2023-02-23": 382.1556701660156, "2023-02-24": 378.0733642578125, "2023-02-27": 379.3609924316406, "2023-02-28": 377.95892333984375, "2023-03-01": 376.5090026855469, "2023-03-02": 379.43731689453125, "2023-03-03": 385.52264404296875, "2023-03-06": 385.7897033691406, "2023-03-07": 379.8760681152344, "2023-03-08": 380.49603271484375, "2023-03-09": 373.4759826660156, "2023-03-10": 368.0868835449219, "2023-03-13": 367.56231689453125, "2023-03-14": 373.63812255859375, "2023-03-15": 371.3011779785156, "2023-03-16": 377.81585693359375, "2023-03-17": 373.3981628417969, "2023-03-20": 376.988525390625, "2023-03-21": 381.9386291503906, "2023-03-22": 375.4278869628906, "2023-03-23": 376.4427795410156, "2023-03-24": 378.9131164550781, "2023-03-27": 379.6216125488281, "2023-03-28": 378.7694396972656, "2023-03-29": 384.27484130859375, "2023-03-30": 386.5248718261719, "2023-03-31": 391.9727783203125, "2023-04-03": 393.4664001464844, "2023-04-04": 391.28338623046875, "2023-04-05": 390.2589416503906, "2023-04-06": 391.7812805175781, "2023-04-10": 392.18341064453125, "2023-04-11": 392.2887268066406, "2023-04-12": 390.68975830078125, "2023-04-13": 395.87921142578125, "2023-04-14": 394.912109375, "2023-04-17": 396.3291931152344, "2023-04-18": 396.5876770019531, "2023-04-19": 396.5206604003906, "2023-04-20": 394.3569030761719, "2023-04-21": 394.66326904296875, "2023-04-24": 395.07501220703125, "2023-04-25": 388.80352783203125, "2023-04-26": 387.1567077636719, "2023-04-27": 394.8642578125, "2023-04-28": 398.2344970703125, "2023-05-01": 397.8323974609375, "2023-05-02": 393.3611145019531, "2023-05-03": 390.6610107421875, "2023-05-04": 387.8940124511719, "2023-05-05": 395.07501220703125, "2023-05-08": 395.18017578125, "2023-05-09": 393.4471740722656, "2023-05-10": 395.2855529785156, "2023-05-11": 394.5961608886719, "2023-05-12": 394.0791931152344, "2023-05-15": 395.4387512207031, "2023-05-16": 392.796142578125, "2023-05-17": 397.5643310546875, "2023-05-18": 401.3940734863281, "2023-05-19": 400.8100280761719, "2023-05-22": 400.9728698730469, "2023-05-23": 396.47283935546875, "2023-05-24": 393.6004943847656, "2023-05-25": 397.00897216796875, "2023-05-26": 402.1505126953125, "2023-05-30": 402.3037109375, "2023-05-31": 400.0728454589844, "2023-06-01": 403.8739318847656, "2023-06-02": 409.7144775390625, "2023-06-05": 408.9293518066406, "2023-06-06": 409.8197021484375, "2023-06-07": 408.4026794433594, "2023-06-08": 410.8729553222656, "2023-06-09": 411.6101379394531, "2023-06-12": 415.34423828125, "2023-06-13": 418.08258056640625, "2023-06-14": 418.5804443359375, "2023-06-15": 423.76983642578125, "2023-06-16": 422.3265075683594, "2023-06-20": 420.13531494140625, "2023-06-21": 417.9826354980469, "2023-06-22": 419.4914245605469, "2023-06-23": 416.3200988769531, "2023-06-26": 414.6190490722656, "2023-06-27": 419.1647033691406, "2023-06-28": 419.37615966796875, "2023-06-29": 421.029052734375, "2023-06-30": 425.99749755859375, "2023-07-03": 426.48760986328125, "2023-07-05": 425.85333251953125, "2023-07-06": 422.5186462402344, "2023-07-07": 421.451904296875, "2023-07-10": 422.5186462402344, "2023-07-11": 425.2094421386719, "2023-07-12": 428.63067626953125, "2023-07-13": 432.03265380859375, "2023-07-14": 431.7635803222656, "2023-07-17": 433.26275634765625, "2023-07-18": 436.4821472167969, "2023-07-19": 437.4527587890625, "2023-07-20": 434.5505065917969, "2023-07-21": 434.5505065917969, "2023-07-24": 436.4917297363281, "2023-07-25": 437.68341064453125, "2023-07-26": 437.75067138671875, "2023-07-27": 434.848388671875, "2023-07-28": 439.105712890625, "2023-07-31": 439.9418029785156, "2023-08-01": 438.682861328125, "2023-08-02": 432.5804443359375, "2023-08-03": 431.3406982421875, "2023-08-04": 429.3898620605469, "2023-08-07": 433.1378173828125, "2023-08-08": 431.2542724609375, "2023-08-09": 428.37115478515625, "2023-08-10": 428.5249938964844, "2023-08-11": 428.2751159667969, "2023-08-14": 430.63916015625, "2023-08-15": 425.6226806640625, "2023-08-16": 422.4994201660156, "2023-08-17": 419.2799987792969, "2023-08-18": 419.4818115234375, "2023-08-21": 422.2110900878906, "2023-08-22": 421.0675048828125, "2023-08-23": 425.7572326660156, "2023-08-24": 419.85662841796875, "2023-08-25": 422.8164978027344, "2023-08-28": 425.4977722167969, "2023-08-29": 431.6482849121094, "2023-08-30": 433.4261474609375, "2023-08-31": 432.7919006347656, "2023-09-01": 433.59906005859375, "2023-09-05": 431.72509765625, "2023-09-06": 428.8228759765625, "2023-09-07": 427.5063171386719, "2023-09-08": 428.1501770019531, "2023-09-11": 430.9659729003906, "2023-09-12": 428.6018371582031, "2023-09-13": 429.1015319824219, "2023-09-14": 432.80145263671875, "2023-09-15": 427.5869445800781, "2023-09-18": 427.83770751953125, "2023-09-19": 426.9503479003906, "2023-09-20": 423.0253601074219, "2023-09-21": 416.0334167480469, "2023-09-22": 415.09796142578125, "2023-09-25": 416.8435363769531, "2023-09-26": 410.71954345703125, "2023-09-27": 410.8834533691406, "2023-09-28": 413.26556396484375, "2023-09-29": 412.26263427734375, "2023-10-02": 412.0986022949219, "2023-10-03": 406.58221435546875, "2023-10-04": 409.54296875, "2023-10-05": 409.3887023925781, "2023-10-06": 414.2492980957031, "2023-10-09": 416.9013671875, "2023-10-10": 419.07122802734375, "2023-10-11": 420.7878723144531, "2023-10-12": 418.2225646972656, "2023-10-13": 416.13946533203125, "2023-10-16": 420.517822265625, "2023-10-17": 420.4985656738281, "2023-10-18": 414.89544677734375, "2023-10-19": 411.2499694824219, "2023-10-20": 406.1964416503906, "2023-10-23": 405.4925231933594, "2023-10-24": 408.54962158203125, "2023-10-25": 402.6860656738281, "2023-10-26": 397.864013671875, "2023-10-27": 396.06060791015625, "2023-10-30": 400.7958984375, "2023-10-31": 403.31292724609375, "2023-11-01": 407.61419677734375, "2023-11-02": 415.42584228515625, "2023-11-03": 419.2159423828125, "2023-11-06": 420.1802978515625, "2023-11-07": 421.37615966796875, "2023-11-08": 421.6847839355469, "2023-11-09": 418.39617919921875, "2023-11-10": 424.9251708984375, "2023-11-13": 424.5201416015625, "2023-11-14": 432.756103515625, "2023-11-15": 433.6722717285156, "2023-11-16": 434.2027282714844, "2023-11-17": 434.7427978515625, "2023-11-20": 438.0892639160156, "2023-11-21": 437.13446044921875, "2023-11-22": 438.8222351074219, "2023-11-24": 439.09228515625, "2023-11-27": 438.3014221191406, "2023-11-28": 438.7353820800781, "2023-11-29": 438.42681884765625, "2023-11-30": 440.1531066894531, "2023-12-01": 442.7569580078125, "2023-12-04": 440.4327697753906, "2023-12-05": 440.3459777832031, "2023-12-06": 438.5714416503906, "2023-12-07": 441.91790771484375, "2023-12-08": 443.8178405761719, "2023-12-11": 445.54412841796875, "2023-12-12": 447.5790100097656, "2023-12-13": 453.75115966796875, "2023-12-14": 455.2073974609375, "2023-12-15": 454.4579162597656, "2023-12-18": 457.0142822265625, "2023-12-19": 459.7933349609375, "2023-12-20": 453.421875, "2023-12-21": 457.72113037109375, "2023-12-22": 458.64105224609375, "2023-12-26": 460.5776672363281, "2023-12-27": 461.4103698730469, "2023-12-28": 461.584716796875, "2023-12-29": 460.2484436035156, "2024-01-02": 457.67266845703125, "2024-01-03": 453.93505859375, "2024-01-04": 452.47283935546875, "2024-01-05": 453.0926208496094, "2024-01-08": 459.5609436035156, "2024-01-09": 458.8637390136719, "2024-01-10": 461.4587707519531, "2024-01-11": 461.2555236816406, "2024-01-12": 461.57501220703125, "2024-01-16": 459.88043212890625, "2024-01-17": 457.32415771484375, "2024-01-18": 461.39105224609375, "2024-01-19": 467.142822265625, "2024-01-22": 468.1304931640625, "2024-01-23": 469.4958190917969, "2024-01-24": 470.009033203125, "2024-01-25": 472.56536865234375, "2024-01-26": 471.96502685546875, "2024-01-29": 475.70263671875, "2024-01-30": 475.334716796875, "2024-01-31": 467.5785827636719, "2024-02-01": 473.6983337402344, "2024-02-02": 478.68511962890625, "2024-02-05": 476.9421691894531, "2024-02-06": 478.3268127441406, "2024-02-07": 482.3162841796875, "2024-02-08": 482.529296875, "2024-02-09": 485.3179931640625, "2024-02-12": 485.1050109863281, "2024-02-13": 478.42364501953125, "2024-02-14": 482.77142333984375, "2024-02-15": 486.10235595703125, "2024-02-16": 483.68157958984375, "2024-02-20": 481.0187072753906, "2024-02-21": 481.4544677734375, "2024-02-22": 491.41839599609375, "2024-02-23": 491.75732421875, "2024-02-26": 489.9562683105469, "2024-02-27": 490.8664245605469, "2024-02-28": 490.2176818847656, "2024-02-29": 491.97998046875, "2024-03-01": 496.5987854003906, "2024-03-04": 496.0662841796875, "2024-03-05": 491.1085205078125, "2024-03-06": 493.5970764160156, "2024-03-07": 498.49676513671875, "2024-03-08": 495.5046691894531, "2024-03-11": 495.07861328125, "2024-03-12": 500.40435791015625, "2024-03-13": 499.6199645996094, "2024-03-14": 498.6322937011719, "2024-03-15": 495.2084045410156, "2024-03-18": 498.15155029296875, "2024-03-19": 500.91986083984375, "2024-03-20": 505.55291748046875, "2024-03-21": 507.2236328125, "2024-03-22": 506.26214599609375, "2024-03-25": 504.86328125, "2024-03-26": 503.9309387207031, "2024-03-27": 508.1658020019531, "2024-03-28": 508.06866455078125, "2024-04-01": 507.1847229003906, "2024-04-02": 503.9600524902344, "2024-04-03": 504.51373291015625, "2024-04-04": 498.3554992675781, "2024-04-05": 503.5617980957031, "2024-04-08": 503.8434753417969, "2024-04-09": 504.42626953125, "2024-04-10": 499.3753356933594, "2024-04-11": 503.1441650390625, "2024-04-12": 496.1991882324219, "2024-04-15": 489.98272705078125, "2024-04-16": 489.089111328125, "2024-04-17": 486.19451904296875, "2024-04-18": 485.1941223144531, "2024-04-19": 480.9591369628906, "2024-04-22": 485.38836669921875, "2024-04-23": 491.1483154296875, "2024-04-24": 490.9151916503906, "2024-04-25": 489.0502624511719, "2024-04-26": 493.6834411621094, "2024-04-29": 495.43182373046875, "2024-04-30": 487.5835876464844, "2024-05-01": 486.0002746582031, "2024-05-02": 490.5461120605469, "2024-05-03": 496.6265869140625, "2024-05-06": 501.75506591796875, "2024-05-07": 502.30877685546875, "2024-05-08": 502.3573913574219, "2024-05-09": 505.2518615722656, "2024-05-10": 505.9026794433594, "2024-05-13": 505.9705810546875, "2024-05-14": 508.2921447753906, "2024-05-15": 514.5863647460938, "2024-05-16": 513.527587890625, "2024-05-17": 514.2657470703125, "2024-05-20": 514.8582153320312, "2024-05-21": 516.1209106445312, "2024-05-22": 514.6349487304688, "2024-05-23": 510.87579345703125, "2024-05-24": 514.2559814453125, "2024-05-28": 514.615478515625, "2024-05-29": 511.01177978515625, "2024-05-30": 507.621826171875, "2024-05-31": 512.2454223632812, "2024-06-03": 512.6630249023438, "2024-06-04": 513.236083984375, "2024-06-05": 519.3359985351562, "2024-06-06": 519.3263549804688, "2024-06-07": 518.6950073242188, "2024-06-10": 520.2975463867188, "2024-06-11": 521.5505981445312, "2024-06-12": 525.8341674804688, "2024-06-13": 526.8930053710938, "2024-06-14": 527.2134399414062, "2024-06-17": 531.4094848632812, "2024-06-18": 532.7596435546875, "2024-06-20": 531.3124389648438, "2024-06-21": 530.6000366210938, "2024-06-24": 528.8753051757812, "2024-06-25": 530.911865234375, "2024-06-26": 531.5745239257812, "2024-06-27": 532.4126586914062, "2024-06-28": 530.3175048828125, "2024-07-01": 531.408935546875, "2024-07-02": 534.985107421875, "2024-07-03": 537.37255859375, "2024-07-05": 540.4713745117188, "2024-07-08": 541.094970703125, "2024-07-09": 541.6212158203125, "2024-07-10": 546.9806518554688, "2024-07-11": 542.2642211914062, "2024-07-12": 545.6846313476562, "2024-07-15": 547.185302734375, "2024-07-16": 550.4301147460938, "2024-07-17": 542.7124633789062, "2024-07-18": 538.5419311523438, "2024-07-19": 534.9656372070312, "2024-07-22": 540.4810791015625, "2024-07-23": 539.63330078125, "2024-07-24": 527.4038696289062, "2024-07-25": 524.6558837890625, "2024-07-26": 530.5318603515625, "2024-07-29": 530.84375, "2024-07-30": 528.1542358398438, "2024-07-31": 536.7391967773438, "2024-08-01": 529.138427734375, "2024-08-02": 519.2868041992188, "2024-08-05": 504.1631774902344, "2024-08-06": 508.8114013671875, "2024-08-07": 505.4104309082031, "2024-08-08": 517.0941772460938, "2024-08-09": 519.3743896484375, "2024-08-12": 519.647216796875, "2024-08-13": 528.1932373046875, "2024-08-14": 529.8594970703125, "2024-08-15": 538.9414672851562, "2024-08-16": 540.1497802734375, "2024-08-19": 545.3143310546875, "2024-08-20": 544.427490234375, "2024-08-21": 546.2987060546875, "2024-08-22": 542.010986328125, "2024-08-23": 547.77001953125, "2024-08-26": 546.464111328125, "2024-08-27": 547.214599609375, "2024-08-28": 544.0377197265625, "2024-08-29": 544.0865478515625, "2024-08-30": 549.2803344726562, "2024-09-03": 537.9766845703125, "2024-09-04": 536.8756103515625, "2024-09-05": 535.56982421875, "2024-09-06": 526.55615234375, "2024-09-09": 532.4515991210938, "2024-09-10": 534.770751953125, "2024-09-11": 540.2569580078125, "2024-09-12": 544.8076171875, "2024-09-13": 547.6530151367188, "2024-09-16": 548.4619140625, "2024-09-17": 548.68603515625, "2024-09-18": 547.0586547851562, "2024-09-19": 556.393798828125, "2024-09-20": 555.4320068359375, "2024-09-23": 556.820068359375, "2024-09-24": 558.4132690429688, "2024-09-25": 557.1817016601562, "2024-09-26": 559.3906860351562, "2024-09-27": 558.5794067382812, "2024-09-30": 560.8178100585938, "2024-10-01": 555.7937622070312, "2024-10-02": 556.0283813476562, "2024-10-03": 555.0117797851562, "2024-10-04": 560.055419921875, "2024-10-07": 554.9921875, "2024-10-08": 560.2410888671875, "2024-10-09": 564.12158203125, "2024-10-10": 563.1343383789062, "2024-10-11": 566.5065307617188, "2024-10-14": 571.1395263671875, "2024-10-15": 566.7020263671875, "2024-10-16": 569.1651611328125, "2024-10-17": 569.2140502929688, "2024-10-18": 571.403564453125, "2024-10-21": 570.4651489257812, "2024-10-22": 570.162109375, "2024-10-23": 564.9524536132812, "2024-10-24": 566.1742553710938, "2024-10-25": 565.9786376953125, "2024-10-28": 567.7283325195312, "2024-10-29": 568.6470947265625, "2024-10-30": 566.9268798828125, "2024-10-31": 555.8133544921875, "2024-11-01": 558.1591186523438, "2024-11-04": 556.9569702148438, "2024-11-05": 563.6915283203125, "2024-11-06": 577.7080688476562, "2024-11-07": 582.1749267578125, "2024-11-08": 584.69677734375, "2024-11-11": 585.25390625, "2024-11-12": 583.4358520507812, "2024-11-13": 583.7193603515625, "2024-11-14": 579.9658813476562, "2024-11-15": 572.537353515625, "2024-11-18": 574.8832397460938, "2024-11-19": 576.9846801757812, "2024-11-20": 577.18017578125, "2024-11-21": 580.2786254882812, "2024-11-22": 582.0772705078125, "2024-11-25": 584.0517578125, "2024-11-26": 587.1011962890625, "2024-11-27": 585.3223266601562, "2024-11-29": 588.9583740234375, "2024-12-02": 590.0140991210938, "2024-12-03": 590.2876586914062, "2024-12-04": 593.953125, "2024-12-05": 592.9756469726562, "2024-12-06": 594.0997314453125, "2024-12-09": 591.0404052734375, "2024-12-10": 589.2026977539062, "2024-12-11": 593.7576904296875, "2024-12-12": 590.6982421875, "2024-12-13": 590.5810546875, "2024-12-16": 593.1027221679688, "2024-12-17": 590.6590576171875, "2024-12-18": 573.0554809570312, "2024-12-19": 572.87939453125, "2024-12-20": 579.7603149414062, "2024-12-23": 583.2320556640625, "2024-12-24": 589.7147216796875, "2024-12-26": 589.7539672851562, "2024-12-27": 583.5458984375, "2024-12-30": 576.8866577148438, "2024-12-31": 574.7879028320312, "2025-01-02": 573.375732421875, "2025-01-03": 580.544921875, "2025-01-06": 583.88916015625, "2025-01-07": 577.288818359375, "2025-01-08": 578.13232421875, "2025-01-10": 569.3056030273438, "2025-01-13": 570.1883544921875, "2025-01-14": 570.9729614257812, "2025-01-15": 581.35888671875, "2025-01-16": 580.2409057617188, "2025-01-17": 586.0664672851562, "2025-01-21": 591.430908203125, "2025-01-22": 594.7557373046875, "2025-01-23": 598.0018920898438, "2025-01-24": 596.2562255859375, "2025-01-27": 587.8218383789062, "2025-01-28": 592.8726196289062, "2025-01-29": 590.2149047851562, "2025-01-30": 593.382568359375, "2025-01-31": 590.224609375, "2025-02-03": 586.252685546875, "2025-02-04": 590.1854858398438, "2025-02-05": 592.5784301757812, "2025-02-06": 594.637939453125, "2025-02-07": 589.1950073242188, "2025-02-10": 593.1962280273438, "2025-02-11": 593.6475219726562, "2025-02-12": 591.7350463867188, "2025-02-13": 597.9822998046875, "2025-02-14": 597.9528198242188, "2025-02-18": 599.7083740234375, "2025-02-19": 601.12060546875, "2025-02-20": 598.619873046875, "2025-02-21": 588.3809204101562, "2025-02-24": 585.7035522460938, "2025-02-25": 582.790771484375, "2025-02-26": 583.0850219726562, "2025-02-27": 573.77783203125, "2025-02-28": 582.73193359375, "2025-03-03": 572.5224609375, "2025-03-04": 565.7455444335938, "2025-03-05": 571.8262329101562, "2025-03-06": 561.6756591796875, "2025-03-07": 564.82373046875, "2025-03-10": 549.7792358398438, "2025-03-11": 545.2090454101562, "2025-03-12": 548.1021728515625, "2025-03-13": 540.7957763671875, "2025-03-14": 551.9662475585938, "2025-03-17": 556.2227172851562, "2025-03-18": 550.2108154296875, "2025-03-19": 556.2030639648438, "2025-03-20": 554.5947265625, "2025-03-21": 554.7776489257812, "2025-03-24": 564.712890625, "2025-03-25": 566.0704345703125, "2025-03-26": 559.3125, "2025-03-27": 557.8270874023438, "2025-03-28": 546.5933227539062, "2025-03-31": 550.2625732421875, "2025-04-01": 551.8167114257812, "2025-04-02": 555.308837890625, "2025-04-03": 527.9428100585938, "2025-04-04": 497.0354309082031, "2025-04-07": 496.150146484375, "2025-04-08": 488.3790283203125, "2025-04-09": 539.6683959960938, "2025-04-10": 516.0205688476562, "2025-04-11": 525.2278442382812, "2025-04-14": 530.3233032226562, "2025-04-15": 528.8379516601562, "2025-04-16": 517.0828857421875, "2025-04-17": 517.8206176757812, "2025-04-21": 505.4950866699219, "2025-04-22": 518.6469116210938, "2025-04-23": 526.68359375, "2025-04-24": 537.7698364257812, "2025-04-25": 541.6553955078125, "2025-04-28": 541.86181640625, "2025-04-29": 545.2753295898438, "2025-04-30": 545.4916381835938, "2025-05-01": 549.3574829101562, "2025-05-02": 557.5122680664062, "2025-05-05": 554.3153076171875, "2025-05-06": 549.68212890625, "2025-05-07": 551.9938354492188, "2025-05-08": 555.840087890625, "2025-05-09": 555.1317749023438, "2025-05-12": 573.4774169921875, "2025-05-13": 577.2647094726562, "2025-05-14": 578.0023803710938, "2025-05-15": 580.8256225585938, "2025-05-16": 584.5045776367188, "2025-05-19": 585.1439208984375, "2025-05-20": 583.1765747070312, "2025-05-21": 573.3495483398438, "2025-05-22": 573.5758056640625, "2025-05-23": 569.6607666015625, "2025-05-27": 581.50439453125, "2025-05-28": 578.1400756835938, "2025-05-29": 580.4222412109375, "2025-05-30": 579.7730712890625, "2025-06-02": 583.0388793945312, "2025-06-03": 586.3637084960938, "2025-06-04": 586.206298828125, "2025-06-05": 583.373291015625, "2025-06-06": 589.3639526367188, "2025-06-09": 589.8950805664062, "2025-06-10": 593.2396240234375, "2025-06-11": 591.5476684570312, "2025-06-12": 593.898681640625, "2025-06-13": 587.2588500976562, "2025-06-16": 592.84619140625, "2025-06-17": 587.7802734375, "2025-06-18": 587.691650390625, "2025-06-20": 586.3115234375, "2025-06-23": 592.1027221679688, "2025-06-24": 598.6438598632812, "2025-06-25": 598.979248046875, "2025-06-26": 603.6655883789062, "2025-06-27": 606.664794921875, "2025-06-30": 609.5653686523438, "2025-07-01": 609.3681640625, "2025-07-02": 612.1305541992188, "2025-07-03": 616.9549560546875, "2025-07-07": 612.357421875, "2025-07-08": 612.02197265625, "2025-07-09": 615.692138671875, "2025-07-10": 617.4285278320312, "2025-07-11": 615.2579956054688, "2025-07-14": 616.4320678710938, "2025-07-15": 613.7979736328125, "2025-07-16": 615.8499755859375, "2025-07-17": 619.6187133789062, "2025-07-18": 619.1650390625, "2025-07-21": 620.3389892578125, "2025-07-22": 620.427734375, "2025-07-23": 625.7059936523438, "2025-07-24": 625.9132080078125, "2025-07-25": 628.5572509765625, "2025-07-28": 628.3993530273438, "2025-07-29": 626.741943359375, "2025-07-30": 625.9526977539062, "2025-07-31": 623.6046752929688, "2025-08-01": 613.3834228515625, "2025-08-04": 622.7067260742188, "2025-08-05": 619.5496215820312, "2025-08-06": 624.2952270507812, "2025-08-07": 623.7723388671875, "2025-08-08": 628.6361694335938, "2025-08-11": 627.3930053710938, "2025-08-12": 634.0722045898438, "2025-08-13": 636.2428588867188, "2025-08-14": 636.3020629882812, "2025-08-15": 634.8121948242188, "2025-08-18": 634.6741943359375, "2025-08-19": 631.23095703125, "2025-08-20": 629.5537109375, "2025-08-21": 627.028076171875, "2025-08-22": 636.6572265625, "2025-08-25": 633.855224609375, "2025-08-26": 636.5091552734375, "2025-08-27": 637.95947265625, "2025-08-28": 640.21875, "2025-08-29": 636.400634765625, "2025-09-02": 631.6847534179688, "2025-09-03": 635.1082153320312, "2025-09-04": 640.4161987304688, "2025-09-05": 638.5613403320312, "2025-09-08": 640.1299438476562, "2025-09-09": 641.60986328125, "2025-09-10": 643.4646606445312, "2025-09-11": 648.8119506835938, "2025-09-12": 648.594970703125, "2025-09-15": 652.0479125976562, "2025-09-16": 651.1502075195312, "2025-09-17": 650.3412475585938, "2025-09-18": 653.3799438476562, "2025-09-19": 656.6160278320312, "2025-09-22": 659.7225341796875, "2025-09-23": 656.1312255859375, "2025-09-24": 654.043701171875, "2025-09-25": 651.0263061523438, "2025-09-26": 654.756103515625, "2025-09-29": 656.5962524414062, "2025-09-30": 659.0695190429688, "2025-10-01": 661.3153076171875, "2025-10-02": 662.0769653320312, "2025-10-03": 662.0671997070312, "2025-10-06": 664.4415893554688, "2025-10-07": 661.9781494140625, "2025-10-08": 665.925537109375, "2025-10-09": 663.9963989257812, "2025-10-10": 646.0499877929688, "2025-10-13": 655.9630126953125, "2025-10-14": 655.1616821289062, "2025-10-15": 658.0702514648438, "2025-10-16": 653.5886840820312, "2025-10-17": 657.2986450195312, "2025-10-20": 664.1348266601562, "2025-10-21": 664.1249389648438, "2025-10-22": 660.6721801757812, "2025-10-23": 664.5899658203125, "2025-10-24": 670.0213623046875, "2025-10-27": 677.926025390625, "2025-10-28": 679.7266235351562, "2025-10-29": 680.0531616210938, "2025-10-30": 672.5739135742188, "2025-10-31": 674.780029296875, "2025-11-03": 676.04638671875, "2025-11-04": 668.0328369140625, "2025-11-05": 670.3478393554688, "2025-11-06": 663.1554565429688, "2025-11-07": 663.808349609375, "2025-11-10": 674.1666259765625, "2025-11-11": 675.7099609375, "2025-11-12": 676.0859375, "2025-11-13": 664.8670043945312, "2025-11-14": 664.7581176757812, "2025-11-17": 658.56494140625, "2025-11-18": 653.0346069335938, "2025-11-19": 655.5574340820312, "2025-11-20": 645.5652465820312, "2025-11-21": 651.995849609375, "2025-11-24": 661.59228515625, "2025-11-25": 667.815185546875, "2025-11-26": 672.4254150390625, "2025-11-28": 676.0958251953125, "2025-12-01": 673.0090942382812, "2025-12-02": 674.2556762695312, "2025-12-03": 676.5905151367188, "2025-12-04": 677.085205078125, "2025-12-05": 678.3712158203125, "2025-12-08": 676.3333129882812, "2025-12-09": 675.7495727539062, "2025-12-10": 680.231201171875, "2025-12-11": 681.8141479492188, "2025-12-12": 674.4832763671875, "2025-12-15": 673.4641723632812, "2025-12-16": 671.6240844726562, "2025-12-17": 664.2338256835938, "2025-12-18": 669.2495727539062, "2025-12-19": 675.3153686523438, "2025-12-22": 679.5224609375, "2025-12-23": 682.6282348632812, "2025-12-24": 685.0294799804688, "2025-12-26": 684.9600219726562, "2025-12-29": 682.51904296875, "2025-12-30": 681.685546875, "2025-12-31": 676.635009765625, "2026-01-02": 677.8753051757812, "2026-01-05": 682.3900756835938, "2026-01-06": 686.4483642578125, "2026-01-07": 684.2356567382812, "2026-01-08": 684.1661987304688, "2026-01-09": 688.6908569335938, "2026-01-12": 689.7723388671875, "2026-01-13": 688.3931884765625, "2026-01-14": 685.009521484375, "2026-01-15": 686.875, "2026-01-16": 686.299560546875, "2026-01-20": 672.3286743164062, "2026-01-21": 680.0880737304688, "2026-01-22": 683.6403198242188, "2026-01-23": 683.8883056640625, "2026-01-26": 687.3612060546875, "2026-01-27": 690.099853515625, "2026-01-28": 690.0303955078125, "2026-01-29": 688.6610717773438, "2026-01-30": 686.6071166992188, "2026-02-02": 690.0204467773438, "2026-02-03": 684.18603515625, "2026-02-04": 680.8718872070312, "2026-02-05": 672.3683471679688, "2026-02-06": 685.267578125, "2026-02-09": 688.57177734375, "2026-02-10": 686.7559204101562, "2026-02-11": 686.5972290039062, "2026-02-12": 675.9900512695312, "2026-02-13": 676.4663696289062, "2026-02-17": 677.5578002929688, "2026-02-18": 680.9711303710938, "2026-02-19": 679.1751098632812, "2026-02-20": 684.0868530273438, "2026-02-23": 677.1013793945312, "2026-02-24": 682.0228881835938, "2026-02-25": 687.7779541015625, "2026-02-26": 683.957763671875, "2026-02-27": 680.6734008789062, "2026-03-02": 681.0604858398438, "2026-03-03": 675.057373046875, "2026-03-04": 679.8201904296875, "2026-03-05": 676.0297241210938, "2026-03-06": 667.1689453125, "2026-03-09": 673.0133056640625, "2026-03-10": 671.9317016601562, "2026-03-11": 671.0883178710938, "2026-03-12": 660.8978881835938, "2026-03-13": 657.1571655273438, "2026-03-16": 663.8449096679688, "2026-03-17": 665.5912475585938, "2026-03-18": 656.3038330078125, "2026-03-19": 654.6864013671875, "2026-03-20": 645.301025390625, "2026-03-23": 652.07666015625, "2026-03-24": 649.8877563476562, "2026-03-25": 653.5093994140625, "2026-03-26": 641.8385620117188, "2026-03-27": 630.8939819335938, "2026-03-30": 628.78466796875, "2026-03-31": 647.0620727539062, "2026-04-01": 651.9373779296875, "2026-04-02": 652.5244140625, "2026-04-06": 655.6088256835938, "2026-04-07": 655.8972778320312, "2026-04-08": 672.6027221679688, "2026-04-09": 676.4829711914062, "2026-04-10": 676.0353393554688, "2026-04-13": 682.641845703125, "2026-04-14": 690.959716796875, "2026-04-15": 696.412109375, "2026-04-16": 698.1234130859375, "2026-04-17": 706.5607299804688, "2026-04-20": 705.1477661132812, "2026-04-21": 700.53125, "2026-04-22": 707.6253051757812, "2026-04-23": 704.8792114257812, "2026-04-24": 710.341552734375, "2026-04-27": 711.5653076171875, "2026-04-28": 708.1028442382812, "2026-04-29": 707.993408203125, "2026-04-30": 715.0377197265625, "2026-05-01": 717.0177001953125, "2026-05-04": 714.3909912109375, "2026-05-05": 720.1220092773438, "2026-05-06": 730.1312866210938, "2026-05-07": 727.8926391601562, "2026-05-08": 733.9021606445312, "2026-05-11": 735.5736694335938, "2026-05-12": 734.4593505859375, "2026-05-13": 738.5685424804688, "2026-05-14": 744.3989868164062, "2026-05-15": 735.4443969726562, "2026-05-18": 734.927001953125, "2026-05-19": 730.0317993164062, "2026-05-20": 737.5138549804688, "2026-05-21": 738.9764404296875, "2026-05-22": 741.8817749023438, "2026-05-26": 746.8068237304688, "2026-05-27": 746.677490234375, "2026-05-28": 750.7965698242188, "2026-05-29": 752.6671142578125, "2026-06-01": 754.7167358398438, "2026-06-02": 755.7415771484375, "2026-06-03": 750.4384155273438, "2026-06-04": 753.2740478515625, "2026-06-05": 733.83251953125, "2026-06-08": 735.4940795898438, "2026-06-09": 733.3350219726562, "2026-06-10": 721.7736206054688, "2026-06-11": 734.04150390625, "2026-06-12": 738.0113525390625, "2026-06-15": 751.0254516601562, "2026-06-16": 746.5481567382812, "2026-06-17": 737.225341796875, "2026-06-18": 744.8902587890625, "2026-06-22": 742.546142578125, "2026-06-23": 731.7628784179688, "2026-06-24": 731.4237060546875, "2026-06-25": 732.4810791015625, "2026-06-26": 727.1842651367188, "2026-06-29": 739.1644897460938, "2026-06-30": 744.9202270507812, "2026-07-01": 743.9127197265625, "2026-07-02": 742.9351806640625, "2026-07-06": 749.4190673828125, "2026-07-07": 745.85791015625, "2026-07-08": 743.5536499023438, "2026-07-09": 749.8480224609375, "2026-07-10": 753.0799560546875, "2026-07-13": 747.3142700195312, "2026-07-14": 749.9677124023438, "2026-07-15": 752.9403076171875, "2026-07-16": 748.8604125976562, "2026-07-17": 741.4487915039062, "2026-07-20": 740.2518310546875, "2026-07-21": 746.426513671875, "2026-07-22": 745.55859375, "2026-07-23": 736.3515014648438, "2026-07-24": 737.099609375, "2026-07-27": 737.25927734375, "2026-07-28": 739.0248413085938, "2026-07-29": 727.6531372070312, "2026-07-30": 739.852783203125, "2026-07-31": 745.1796264648438, "2026-08-03": 755.793212890625, "2026-08-04": 769.4193725585938, "2026-08-05": 767.8831787109375, "2026-08-06": 766.65625, "2026-08-07": 771.3446044921875, "2026-08-10": 771.1151733398438, "2026-08-11": 768.6513061523438, "2026-08-12": 770.5764770507812, "2026-08-13": 775.9531860351562, "2026-08-14": 774.4169921875, "2026-08-17": 770.7560424804688, "2026-08-18": 765.5490112304688, "2026-08-19": 767.1549682617188, "2026-08-20": 760.7109985351562, "2026-08-21": 763.8232421875, "2026-08-24": 761.5787963867188, "2026-08-25": 764.0127563476562, "2026-08-26": 764.182373046875, "2026-08-27": 769.18994140625, "2026-08-28": 767.4442749023438, "2026-08-31": 765.1499633789062, "2026-09-01": 759.89306640625, "2026-09-02": 763.2646484375, "2026-09-03": 771.2548217773438, "2026-09-04": 768.2822265625, "2026-09-08": 764.0626831054688, "2026-09-09": 760.5115356445312, "2026-09-10": 755.9528198242188, "2026-09-11": 762.3967895507812, "2026-09-14": 758.9952392578125, "2026-09-15": 755.513916015625, "2026-09-16": 752.1821899414062, "2026-09-17": 760.7109985351562, "2026-09-18": 761.6900024414062, "2026-09-21": 773.5, "2026-09-22": 773.3800048828125, "2026-09-23": 767.8099975585938, "2026-09-24": 767.8400268554688}};
+    const input    = document.getElementById('bench-input');
+    const btn      = document.getElementById('bench-btn');
+    const clearBtn = document.getElementById('bench-clear');
+    const row      = document.getElementById('bench-row');
+    const cards    = document.getElementById('bench-cards');
+    const label    = document.getElementById('bench-label');
+    if (!input || !btn) return;
+
+    const tileCol = n => n >= 0 ? '#2ca02c' : '#d62728';
+    const tileSgn = n => n >= 0 ? '+' : '';
+    const fmtPct  = n => `<span style="color:${tileCol(n)};font-weight:bold">${tileSgn(n)}${(n*100).toFixed(2)}%</span>`;
+
+    const PERIODS = [
+      ['Today', 1], ['1 Month', 30], ['3 Months', 91],
+      ['6 Months', 182], ['1 Year', 365], ['3 Years', 1095],
+      ['5 Years', 1825], ['Since Inception', 64]
+    ];
+
+    const getPriceAtDaysAgo = (priceMap, daysAgo) => {
+      const target = new Date(); target.setDate(target.getDate() - daysAgo);
+      const tStr = target.toISOString().slice(0,10);
+      const dates = Object.keys(priceMap).sort();
+      const past  = dates.filter(d => d <= tStr);
+      return past.length ? priceMap[past[past.length-1]] : null;
+    };
+
+    const showBench = (ticker, priceMap) => {
+      const dates  = Object.keys(priceMap).sort();
+      const latest = priceMap[dates[dates.length-1]];
+      label.textContent = ticker;
+      cards.innerHTML = PERIODS.map(([name, days]) => {
+        const past = days === 1
+          ? priceMap[dates[dates.length-2]]
+          : getPriceAtDaysAgo(priceMap, days);
+        const val = (past && latest) ? fmtPct((latest - past) / past) : '—';
+        return `<div style="background:#fff8e1;border:1px solid #ffe082;border-radius:8px;padding:14px 18px;min-width:110px;text-align:center">
+          <div style="font-size:11px;color:#6c757d;margin-bottom:4px">${name}</div>
+          <div style="font-size:18px">${val}</div></div>`;
+      }).join('');
+      row.style.display = 'block';
+      clearBtn.style.display = 'inline-block';
+    };
+
+    const run = () => {
+      const ticker = input.value.trim().toUpperCase();
+      if (!ticker) return;
+      if (BENCH_DATA[ticker]) {
+        showBench(ticker, BENCH_DATA[ticker]);
+      } else {
+        label.textContent = `${ticker}: not available — only SPY and QQQ are pre-loaded`;
+        cards.innerHTML = '';
+        row.style.display = 'block';
+        clearBtn.style.display = 'inline-block';
+      }
+    };
+
+    btn.addEventListener('click', run);
+    input.addEventListener('keydown', e => { if (e.key === 'Enter') run(); });
+    clearBtn.addEventListener('click', () => {
+      row.style.display = 'none';
+      input.value = '';
+      clearBtn.style.display = 'none';
+    });
+  })();
+
+  // ── Column hide/show toggles ─────────────────────────────────────────────────
+  (function() {
+    const table   = document.getElementById('holdings-table');
+    const toggles = document.getElementById('col-toggles');
+    if (!table || !toggles) return;
+    const ths = Array.from(table.querySelectorAll('thead th'));
+    const LS_KEY = 'colhide:holdings-table';
+    const hidden = new Set(JSON.parse(localStorage.getItem(LS_KEY) || '[]'));
+
+    const setCol = (col, show) => {
+      table.querySelectorAll('tr').forEach(row => {
+        if (row.cells[col]) row.cells[col].style.display = show ? '' : 'none';
+      });
+    };
+
+    const saveHidden = () => localStorage.setItem(LS_KEY, JSON.stringify([...hidden]));
+
+    ths.forEach((th, i) => {
+      const btn = document.createElement('button');
+      btn.textContent = th.textContent.replace(/[▲▼]/g,'').trim();
+      const isHidden = hidden.has(i);
+      btn.style.cssText = `padding:2px 8px;border-radius:10px;border:1px solid #aaa;cursor:pointer;font-size:11px;background:${isHidden ? '#eee' : '#e3f2fd'};color:${isHidden ? '#999' : '#0d47a1'};text-decoration:${isHidden ? 'line-through' : ''}`;
+      btn.title = 'Click to hide/show column';
+      if (isHidden) setCol(i, false);
+      btn.addEventListener('click', () => {
+        if (hidden.has(i)) {
+          hidden.delete(i);
+          setCol(i, true);
+          btn.style.background = '#e3f2fd';
+          btn.style.color = '#0d47a1';
+          btn.style.textDecoration = '';
+        } else {
+          hidden.add(i);
+          setCol(i, false);
+          btn.style.background = '#eee';
+          btn.style.color = '#999';
+          btn.style.textDecoration = 'line-through';
+        }
+        saveHidden();
+      });
+      toggles.appendChild(btn);
+    });
+  })();
+
+  // Silent price refresh every 60 seconds during market hours — no page reload
+  const isMarketHours = () => {
+    const now = new Date();
+    const et = new Date(now.toLocaleString('en-US', {timeZone:'America/New_York'}));
+    const day = et.getDay();
+    const hour = et.getHours();
+    const min  = et.getMinutes();
+    const mins = hour * 60 + min;
+    return day >= 1 && day <= 5 && mins >= 570 && mins < 960; // 9:30–4:00
+  };
+  if (isMarketHours()) {
+    // background auto-refresh disabled — prices update on hard refresh only
+  }
+})();
+
+// ── Equity curve: $100k invested at inception, actual shares × prices ─────────
+(function() {
+  const portCurve = {"2026-07-22": 100000.0, "2026-07-23": 101220.07, "2026-07-24": 101947.58, "2026-07-27": 103884.63, "2026-07-28": 105265.58, "2026-07-29": 104807.24, "2026-07-30": 105570.89, "2026-07-31": 106800.41, "2026-08-03": 108702.24, "2026-08-04": 111864.55, "2026-08-05": 110670.6, "2026-08-06": 110969.79, "2026-08-07": 112888.1, "2026-08-10": 112871.76, "2026-08-11": 112629.68, "2026-08-12": 114519.48, "2026-08-13": 114279.13, "2026-08-14": 114877.83, "2026-08-17": 114070.25, "2026-08-18": 114121.26, "2026-08-19": 112859.61, "2026-08-20": 110776.33, "2026-08-21": 111170.84, "2026-08-24": 112297.08, "2026-08-25": 112192.67, "2026-08-26": 112606.8, "2026-08-27": 110405.71, "2026-08-28": 110277.18, "2026-08-31": 108959.28, "2026-09-01": 108035.42, "2026-09-02": 107707.06, "2026-09-03": 107775.07, "2026-09-04": 107336.16, "2026-09-08": 105345.69, "2026-09-09": 103412.68, "2026-09-10": 103345.19, "2026-09-11": 105200.13, "2026-09-14": 103936.11, "2026-09-15": 103643.21, "2026-09-16": 103980.18, "2026-09-17": 104651.05, "2026-09-18": 104516.17, "2026-09-21": 104783.76, "2026-09-22": 8898.69, "2026-09-23": 101813.15, "2026-09-24": 102252.34};
+  const spyCurve  = {"2026-07-22": 100000.0, "2026-07-23": 98765.07, "2026-07-24": 98865.42, "2026-07-27": 98886.83, "2026-07-28": 99123.64, "2026-07-29": 97598.38, "2026-07-30": 99234.69, "2026-07-31": 99949.17, "2026-08-03": 101372.75, "2026-08-04": 103200.39, "2026-08-05": 102994.34, "2026-08-06": 102829.78, "2026-08-07": 103458.62, "2026-08-10": 103427.84, "2026-08-11": 103097.37, "2026-08-12": 103355.59, "2026-08-13": 104076.75, "2026-08-14": 103870.71, "2026-08-17": 103379.67, "2026-08-18": 102681.27, "2026-08-19": 102896.67, "2026-08-20": 102032.36, "2026-08-21": 102449.79, "2026-08-24": 102148.75, "2026-08-25": 102475.21, "2026-08-26": 102497.96, "2026-08-27": 103169.62, "2026-08-28": 102935.47, "2026-08-31": 102627.74, "2026-09-01": 101922.65, "2026-09-02": 102374.87, "2026-09-03": 103446.57, "2026-09-04": 103047.87, "2026-09-08": 102481.91, "2026-09-09": 102005.6, "2026-09-10": 101394.15, "2026-09-11": 102258.47, "2026-09-14": 101802.23, "2026-09-15": 101335.28, "2026-09-16": 100888.41, "2026-09-17": 102032.36, "2026-09-18": 102163.67, "2026-09-21": 103747.71, "2026-09-22": 103731.62, "2026-09-23": 102984.53, "2026-09-24": 102988.56};
+  const dates = Object.keys(portCurve).sort();
+  if (dates.length < 2) return;
+  const canvas = document.getElementById('nav-chart');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const W = canvas.offsetWidth || 800;
+  const H = 140;
+  canvas.width  = W;
+  canvas.height = H;
+
+  const vals    = dates.map(d => portCurve[d]);
+  const spyVals = dates.map(d => spyCurve[d] || null);
+  const hasSpy  = spyVals.some(v => v != null);
+
+  const allV = [...vals, ...(hasSpy ? spyVals.filter(v => v != null) : [])];
+  const minV = Math.min(...allV), maxV = Math.max(...allV);
+  const range = maxV - minV || 1;
+  const pad = 20;
+  const N = vals.length;
+  const toX = i => pad + (i / (N - 1 || 1)) * (W - 2 * pad);
+  const toY = v => H - pad - ((v - minV) / range) * (H - 2 * pad);
+
+  ctx.clearRect(0, 0, W, H);
+
+  // Drawdown shading (red area between running peak and current value)
+  const peaks = vals.map((v, i) => Math.max(...vals.slice(0, i+1)));
+  ctx.beginPath();
+  ctx.moveTo(toX(0), toY(peaks[0]));
+  peaks.forEach((p, i) => { if (i > 0) ctx.lineTo(toX(i), toY(p)); });
+  for (let i = N - 1; i >= 0; i--) { ctx.lineTo(toX(i), toY(vals[i])); }
+  ctx.closePath();
+  ctx.fillStyle = 'rgba(198, 40, 40, 0.12)';
+  ctx.fill();
+
+  // SPY line (grey dashed)
+  if (hasSpy) {
+    ctx.strokeStyle = '#9e9e9e';
+    ctx.lineWidth = 1.5;
+    ctx.setLineDash([4, 4]);
+    ctx.beginPath();
+    let moved = false;
+    spyVals.forEach((v, i) => {
+      if (v == null) return;
+      if (!moved) { ctx.moveTo(toX(i), toY(v)); moved = true; }
+      else ctx.lineTo(toX(i), toY(v));
+    });
+    ctx.stroke();
+    ctx.setLineDash([]);
+  }
+
+  // Portfolio line
+  ctx.strokeStyle = '#1a237e';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  vals.forEach((v, i) => i === 0 ? ctx.moveTo(toX(i), toY(v)) : ctx.lineTo(toX(i), toY(v)));
+  ctx.stroke();
+
+  // Fill under portfolio
+  ctx.lineTo(toX(N - 1), H - pad); ctx.lineTo(toX(0), H - pad); ctx.closePath();
+  const grad = ctx.createLinearGradient(0, 0, 0, H);
+  grad.addColorStop(0, 'rgba(26,35,126,0.12)'); grad.addColorStop(1, 'rgba(26,35,126,0)');
+  ctx.fillStyle = grad; ctx.fill();
+
+  // Date labels
+  ctx.font = '11px sans-serif'; ctx.fillStyle = '#666';
+  ctx.fillText(dates[0], pad, H - 4);
+  const last = dates[N - 1];
+  ctx.fillText(last, W - pad - ctx.measureText(last).width, H - 4);
+
+  // End value labels
+  const lastPort = vals[N-1];
+  const lastPortStr = '$' + lastPort.toLocaleString('en-US', {maximumFractionDigits:0});
+  ctx.fillStyle = lastPort >= 100000 ? '#2e7d32' : '#c62828';
+  ctx.font = 'bold 12px sans-serif';
+  ctx.fillText(lastPortStr, toX(N-1) - ctx.measureText(lastPortStr).width - 4, toY(lastPort) - 4);
+  if (hasSpy) {
+    const lastSpy = spyVals.filter(v => v != null).slice(-1)[0];
+    const spyStr = 'SPY $' + lastSpy.toLocaleString('en-US', {maximumFractionDigits:0});
+    ctx.fillStyle = '#757575'; ctx.font = '11px sans-serif';
+    ctx.fillText(spyStr, toX(N-1) - ctx.measureText(spyStr).width - 4, toY(lastSpy) + 14);
+  }
+
+  // Legend
+  ctx.font = '11px sans-serif';
+  ctx.fillStyle = '#1a237e'; ctx.fillRect(pad, 6, 18, 3);
+  ctx.fillStyle = '#333'; ctx.fillText('Portfolio ($100k basis)', pad + 22, 12);
+  if (hasSpy) {
+    ctx.strokeStyle = '#9e9e9e'; ctx.setLineDash([4,4]); ctx.lineWidth=1.5;
+    ctx.beginPath(); ctx.moveTo(pad+148,8); ctx.lineTo(pad+166,8); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = '#333'; ctx.fillText('SPY (buy & hold)', pad+170, 12);
+  }
+})();
+
+// ── Resizable columns ─────────────────────────────────────────────────────────
+(function() {
+  document.querySelectorAll('table[id]').forEach(function(tbl) {
+    var id = tbl.id;
+    var headerRow = tbl.querySelector('thead tr:first-child');
+    if (!headerRow) return;
+    var ths = Array.from(headerRow.querySelectorAll('th'));
+    if (!ths.length) return;
+    var cg = tbl.querySelector('colgroup');
+    if (!cg) {
+      cg = document.createElement('colgroup');
+      tbl.insertBefore(cg, tbl.firstChild);
+      ths.forEach(function() { cg.appendChild(document.createElement('col')); });
+    }
+    var cols = Array.from(cg.querySelectorAll('col'));
+    ths.forEach(function(th, i) {
+      var saved = localStorage.getItem('colw:' + id + ':' + i);
+      if (saved && cols[i]) { cols[i].style.width = saved; }
+    });
+    ths.forEach(function(th, i) {
+      th.style.position = 'relative';
+      if (th.querySelector('.col-resizer')) return;
+      var rz = document.createElement('div');
+      rz.className = 'col-resizer';
+      rz.style.cssText = 'position:absolute;right:0;top:0;width:5px;height:100%;cursor:col-resize;user-select:none;background:transparent;z-index:1';
+      th.appendChild(rz);
+      rz.addEventListener('mousedown', function(e) {
+        e.preventDefault();
+        var startX = e.pageX;
+        var startW = th.offsetWidth;
+        var onMove = function(e) {
+          var w = Math.max(30, startW + e.pageX - startX);
+          if (cols[i]) cols[i].style.width = w + 'px';
+        };
+        var onUp = function(e) {
+          var w = Math.max(30, startW + e.pageX - startX);
+          localStorage.setItem('colw:' + id + ':' + i, w + 'px');
+          document.removeEventListener('mousemove', onMove);
+          document.removeEventListener('mouseup', onUp);
+        };
+        document.addEventListener('mousemove', onMove);
+        document.addEventListener('mouseup', onUp);
+      });
+    });
+  });
+})();
+
+// ── Details state persistence ─────────────────────────────────────────────────
+(function() {
+  document.querySelectorAll('details').forEach(function(el) {
+    var sumEl = el.querySelector('summary');
+    if (!sumEl) return;
+    var key = 'details:' + sumEl.textContent.trim().slice(0, 60);
+    var saved = localStorage.getItem(key);
+    if (saved !== null) { el.open = (saved === 'open'); }
+    el.addEventListener('toggle', function() {
+      localStorage.setItem(key, el.open ? 'open' : 'closed');
+    });
+  });
+})();
+</script>
+</body>
+</html>
