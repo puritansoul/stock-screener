@@ -1,5 +1,5 @@
 {
-  "capital": 34424.73,
+  "capital": 24111.79,
   "open_positions": [
     {
       "ticker": "ITW",
@@ -8,9 +8,9 @@
       "entry_time": "12:47 ET",
       "entry_price": 267.92,
       "shares": 111,
-      "stop": 269.0296,
+      "stop": 268.8296,
       "trail_dist": 1.7196,
-      "peak": 267.31,
+      "peak": 267.11,
       "orb_width": 3.4393,
       "cost": 29739.12,
       "vol_ratio": 5.28,
@@ -24,9 +24,9 @@
       "entry_time": "13:04 ET",
       "entry_price": 87.03,
       "shares": 241,
-      "stop": 87.505,
+      "stop": 87.335,
       "trail_dist": 0.615,
-      "peak": 86.89,
+      "peak": 86.72,
       "orb_width": 1.23,
       "cost": 20974.23,
       "vol_ratio": 1.39,
@@ -47,6 +47,22 @@
       "cost": 14712.52,
       "vol_ratio": 1.4,
       "score": 32.0,
+      "has_catalyst": false
+    },
+    {
+      "ticker": "ROST",
+      "side": "short",
+      "entry_date": "2026-09-29",
+      "entry_time": "13:24 ET",
+      "entry_price": 234.385,
+      "shares": 44,
+      "stop": 235.175,
+      "trail_dist": 0.79,
+      "peak": 234.385,
+      "orb_width": 1.58,
+      "cost": 10312.94,
+      "vol_ratio": 6.31,
+      "score": 50.49,
       "has_catalyst": false
     }
   ],
@@ -79047,11 +79063,6 @@
       "low": 256.7875,
       "width": 5.7124
     },
-    "IBM": {
-      "high": 221.79,
-      "low": 220.03,
-      "width": 1.76
-    },
     "IEX": {
       "high": 233.04,
       "low": 229.4,
@@ -79322,11 +79333,6 @@
       "low": 380.0,
       "width": 10.0
     },
-    "MAR": {
-      "high": 364.085,
-      "low": 359.32,
-      "width": 4.765
-    },
     "MRSH": {
       "high": 169.53,
       "low": 167.24,
@@ -79376,6 +79382,11 @@
       "high": 150.36,
       "low": 148.17,
       "width": 2.19
+    },
+    "META": {
+      "high": 727.5,
+      "low": 720.05,
+      "width": 7.45
     },
     "MET": {
       "high": 96.325,
@@ -79786,11 +79797,6 @@
       "high": 27.34,
       "low": 27.06,
       "width": 0.28
-    },
-    "RSG": {
-      "high": 212.585,
-      "low": 210.92,
-      "width": 1.665
     },
     "RMD": {
       "high": 224.22,
@@ -80312,11 +80318,6 @@
       "low": 68.9,
       "width": 1.01
     },
-    "XYL": {
-      "high": 101.49,
-      "low": 100.17,
-      "width": 1.32
-    },
     "YUM": {
       "high": 138.24,
       "low": 137.03,
@@ -80394,7 +80395,7 @@
     "2026-09-24": 100211.58,
     "2026-09-25": 100251.92,
     "2026-09-28": 100122.2,
-    "2026-09-29": 99904.75
+    "2026-09-29": 99953.09
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -215723,6 +215724,32 @@
       },
       "portfolio_value": 99904.75,
       "note": "$99,905 | cash=$34,425 | open=3 | closed today=6 | day PnL=$-272"
+    },
+    {
+      "date": "2026-09-29",
+      "time": "13:23 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "ROST",
+          "side": "short",
+          "price": 234.38,
+          "shares": 44,
+          "stop": 235.17,
+          "trail_dist": 0.79,
+          "score": 50.49
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.519,
+        "spy_vs_vwap": -1.5267,
+        "spy_vs_ema20": -2.2897
+      },
+      "portfolio_value": 99953.09,
+      "note": "$99,953 | cash=$24,112 | open=4 | closed today=6 | day PnL=$-272"
     }
   ]
 }
