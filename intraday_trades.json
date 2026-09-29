@@ -79683,11 +79683,6 @@
       "low": 28.51,
       "width": 0.25
     },
-    "PCG": {
-      "high": 12.0189,
-      "low": 11.765,
-      "width": 0.2539
-    },
     "PM": {
       "high": 192.45,
       "low": 191.0001,
@@ -80430,7 +80425,7 @@
     "2026-09-24": 100211.58,
     "2026-09-25": 100251.92,
     "2026-09-28": 100122.2,
-    "2026-09-29": 99870.01
+    "2026-09-29": 99872.23
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -216161,6 +216156,22 @@
       },
       "portfolio_value": 99870.01,
       "note": "$99,870 | cash=$70,002 | open=1 | closed today=9 | day PnL=$-381"
+    },
+    {
+      "date": "2026-09-29",
+      "time": "14:19 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.39,
+        "spy_vs_vwap": -0.3814,
+        "spy_vs_ema20": -1.2969
+      },
+      "portfolio_value": 99872.23,
+      "note": "$99,872 | cash=$70,002 | open=1 | closed today=9 | day PnL=$-381"
     }
   ]
 }
