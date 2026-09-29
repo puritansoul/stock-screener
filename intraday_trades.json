@@ -1,23 +1,6 @@
 {
-  "capital": 88307.77,
-  "open_positions": [
-    {
-      "ticker": "AVY",
-      "side": "short",
-      "entry_date": "2026-09-29",
-      "entry_time": "11:35 ET",
-      "entry_price": 170.16,
-      "shares": 68,
-      "stop": 170.5725,
-      "trail_dist": 0.6625,
-      "peak": 169.91,
-      "orb_width": 1.325,
-      "cost": 11570.88,
-      "vol_ratio": 3.13,
-      "score": 37.39,
-      "has_catalyst": false
-    }
-  ],
+  "capital": 99850.6,
+  "open_positions": [],
   "closed_today": [
     {
       "ticker": "ORCL",
@@ -123,6 +106,27 @@
       "pnl": -93.59,
       "exit_reason": "trailing stop",
       "exit_time": "12:14 ET"
+    },
+    {
+      "ticker": "AVY",
+      "side": "short",
+      "entry_date": "2026-09-29",
+      "entry_time": "11:35 ET",
+      "entry_price": 170.16,
+      "shares": 68,
+      "stop": 170.5725,
+      "trail_dist": 0.6625,
+      "peak": 169.91,
+      "orb_width": 1.325,
+      "cost": 11570.88,
+      "vol_ratio": 3.13,
+      "score": 37.39,
+      "has_catalyst": false,
+      "exit_date": "2026-09-29",
+      "exit_price": 170.5725,
+      "pnl": -28.05,
+      "exit_reason": "trailing stop",
+      "exit_time": "12:23 ET"
     }
   ],
   "all_closed": [
@@ -80346,7 +80350,7 @@
     "2026-09-24": 100211.58,
     "2026-09-25": 100251.92,
     "2026-09-28": 100122.2,
-    "2026-09-29": 99855.53
+    "2026-09-29": 99850.6
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -215237,6 +215241,30 @@
       },
       "portfolio_value": 99855.53,
       "note": "$99,856 | cash=$88,308 | open=1 | closed today=5 | day PnL=$-244"
+    },
+    {
+      "date": "2026-09-29",
+      "time": "12:23 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "AVY",
+          "side": "short",
+          "exit_price": 170.57,
+          "pnl": -28.05,
+          "reason": "trailing stop"
+        }
+      ],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.503,
+        "spy_vs_vwap": -1.6654,
+        "spy_vs_ema20": -2.1697
+      },
+      "portfolio_value": 99850.6,
+      "note": "$99,851 | cash=$99,851 | open=0 | closed today=6 | day PnL=$-272"
     }
   ]
 }
