@@ -1,5 +1,5 @@
 {
-  "capital": 55378.19,
+  "capital": 70002.13,
   "open_positions": [
     {
       "ticker": "ITW",
@@ -15,22 +15,6 @@
       "cost": 29739.12,
       "vol_ratio": 5.28,
       "score": 52.48,
-      "has_catalyst": false
-    },
-    {
-      "ticker": "ALGN",
-      "side": "short",
-      "entry_date": "2026-09-29",
-      "entry_time": "13:17 ET",
-      "entry_price": 142.84,
-      "shares": 103,
-      "stop": 143.7,
-      "trail_dist": 1.03,
-      "peak": 142.67,
-      "orb_width": 2.06,
-      "cost": 14712.52,
-      "vol_ratio": 1.4,
-      "score": 32.0,
       "has_catalyst": false
     }
   ],
@@ -202,6 +186,27 @@
       "pnl": -6.03,
       "exit_reason": "trailing stop",
       "exit_time": "13:48 ET"
+    },
+    {
+      "ticker": "ALGN",
+      "side": "short",
+      "entry_date": "2026-09-29",
+      "entry_time": "13:17 ET",
+      "entry_price": 142.84,
+      "shares": 103,
+      "stop": 143.7,
+      "trail_dist": 1.03,
+      "peak": 142.67,
+      "orb_width": 2.06,
+      "cost": 14712.52,
+      "vol_ratio": 1.4,
+      "score": 32.0,
+      "has_catalyst": false,
+      "exit_date": "2026-09-29",
+      "exit_price": 143.7,
+      "pnl": -88.58,
+      "exit_reason": "trailing stop",
+      "exit_time": "14:00 ET"
     }
   ],
   "all_closed": [
@@ -77893,6 +77898,11 @@
       "low": 14.86,
       "width": 0.05
     },
+    "AFL": {
+      "high": 113.415,
+      "low": 112.17,
+      "width": 1.245
+    },
     "A": {
       "high": 177.05,
       "low": 173.22,
@@ -78263,6 +78273,11 @@
       "low": 196.0,
       "width": 2.04
     },
+    "CAH": {
+      "high": 220.22,
+      "low": 216.7,
+      "width": 3.52
+    },
     "CCL": {
       "high": 25.16,
       "low": 24.0,
@@ -78482,6 +78497,11 @@
       "high": 394.27,
       "low": 390.23,
       "width": 4.04
+    },
+    "CTVA": {
+      "high": 77.74,
+      "low": 76.5,
+      "width": 1.24
     },
     "CSGP": {
       "high": 27.01,
@@ -79488,6 +79508,11 @@
       "low": 70.17,
       "width": 1.17
     },
+    "NEM": {
+      "high": 117.41,
+      "low": 116.26,
+      "width": 1.15
+    },
     "NWSA": {
       "high": 28.9,
       "low": 28.51,
@@ -79963,6 +79988,11 @@
       "low": 42.0,
       "width": 0.69
     },
+    "SYF": {
+      "high": 72.0,
+      "low": 71.19,
+      "width": 0.81
+    },
     "SNPS": {
       "high": 415.2674,
       "low": 403.33,
@@ -80203,6 +80233,11 @@
       "low": 365.47,
       "width": 2.79
     },
+    "VST": {
+      "high": 143.51,
+      "low": 138.8501,
+      "width": 4.6599
+    },
     "VMRK": {
       "high": 61.635,
       "low": 60.68,
@@ -80395,7 +80430,7 @@
     "2026-09-24": 100211.58,
     "2026-09-25": 100251.92,
     "2026-09-28": 100122.2,
-    "2026-09-29": 99895.75
+    "2026-09-29": 99825.61
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -215990,6 +216025,30 @@
       },
       "portfolio_value": 99895.75,
       "note": "$99,896 | cash=$55,378 | open=2 | closed today=8 | day PnL=$-292"
+    },
+    {
+      "date": "2026-09-29",
+      "time": "14:00 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "ALGN",
+          "side": "short",
+          "exit_price": 143.7,
+          "pnl": -88.58,
+          "reason": "trailing stop"
+        }
+      ],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.424,
+        "spy_vs_vwap": -0.7271,
+        "spy_vs_ema20": -1.5597
+      },
+      "portfolio_value": 99825.61,
+      "note": "$99,826 | cash=$70,002 | open=1 | closed today=9 | day PnL=$-381"
     }
   ]
 }
