@@ -1,6 +1,23 @@
 {
-  "capital": 99850.6,
-  "open_positions": [],
+  "capital": 70111.48,
+  "open_positions": [
+    {
+      "ticker": "ITW",
+      "side": "short",
+      "entry_date": "2026-09-29",
+      "entry_time": "12:47 ET",
+      "entry_price": 267.92,
+      "shares": 111,
+      "stop": 269.6396,
+      "trail_dist": 1.7196,
+      "peak": 267.92,
+      "orb_width": 3.4393,
+      "cost": 29739.12,
+      "vol_ratio": 5.28,
+      "score": 52.48,
+      "has_catalyst": false
+    }
+  ],
   "closed_today": [
     {
       "ticker": "ORCL",
@@ -78008,6 +78025,11 @@
       "low": 204.0,
       "width": 3.48
     },
+    "AJG": {
+      "high": 229.3458,
+      "low": 226.94,
+      "width": 2.4058
+    },
     "AIZ": {
       "high": 263.99,
       "low": 261.34,
@@ -78157,6 +78179,11 @@
       "high": 26.12,
       "low": 25.72,
       "width": 0.4
+    },
+    "BG": {
+      "high": 108.37,
+      "low": 107.4,
+      "width": 0.97
     },
     "BXP": {
       "high": 63.19,
@@ -78312,6 +78339,11 @@
       "high": 132.2499,
       "low": 130.76,
       "width": 1.4899
+    },
+    "CFG": {
+      "high": 65.09,
+      "low": 64.39,
+      "width": 0.7
     },
     "CLX": {
       "high": 81.915,
@@ -80028,20 +80060,10 @@
       "low": 50.5,
       "width": 0.7301
     },
-    "USB": {
-      "high": 59.045,
-      "low": 58.39,
-      "width": 0.655
-    },
     "UBER": {
       "high": 69.528,
       "low": 68.4,
       "width": 1.128
-    },
-    "UDR": {
-      "high": 34.145,
-      "low": 33.7101,
-      "width": 0.4349
     },
     "ULTA": {
       "high": 556.38,
@@ -80062,11 +80084,6 @@
       "high": 94.5399,
       "low": 93.75,
       "width": 0.7899
-    },
-    "URI": {
-      "high": 1044.61,
-      "low": 1030.225,
-      "width": 14.385
     },
     "UNH": {
       "high": 376.59,
@@ -215394,6 +215411,32 @@
       },
       "portfolio_value": 99850.6,
       "note": "$99,851 | cash=$99,851 | open=0 | closed today=6 | day PnL=$-272"
+    },
+    {
+      "date": "2026-09-29",
+      "time": "12:47 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "ITW",
+          "side": "short",
+          "price": 267.92,
+          "shares": 111,
+          "stop": 269.64,
+          "trail_dist": 1.7196,
+          "score": 52.48
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.516,
+        "spy_vs_vwap": -1.6732,
+        "spy_vs_ema20": -2.2697
+      },
+      "portfolio_value": 99850.6,
+      "note": "$99,851 | cash=$70,111 | open=1 | closed today=6 | day PnL=$-272"
     }
   ]
 }
