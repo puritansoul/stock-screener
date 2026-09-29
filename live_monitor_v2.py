@@ -317,6 +317,8 @@ def fetch_prices(tickers: list[str], lookback_months: int = 14) -> pd.DataFrame:
     close = raw["Close"] if isinstance(raw.columns, pd.MultiIndex) else raw[["Close"]]
     if isinstance(close, pd.Series):
         close = close.to_frame(tickers[0])
+    # ffill handles yfinance adding a "today" row with NaN before US market opens
+    close = close.ffill()
     return close.dropna(axis=1, how="all")
 
 # ── Factor scoring ────────────────────────────────────────────────────────────
@@ -2049,14 +2051,16 @@ def run():
     prev_prices = state.get("prev_prices", {})
     try:
         _latest_px = prices.iloc[-1]
+        _n_valid_px = sum(1 for t in holdings if t in _latest_px.index and pd.notna(_latest_px[t]))
         port_dollar_value = sum(
             positions_map.get(t, {}).get("shares", 0) * float(_latest_px[t])
             for t in holdings
             if t in _latest_px.index and pd.notna(_latest_px[t])
         ) + state.get("cash", 0.0)
     except Exception:
+        _n_valid_px = 0
         port_dollar_value = 0.0
-    if port_dollar_value > 0:
+    if port_dollar_value > 0 and _n_valid_px >= max(1, len(holdings) // 2):
         nav[today.isoformat()] = port_dollar_value
     else:
         today_nav, daily_ret = update_nav(nav, today, holdings, weights, prices, prev_prices)
@@ -2205,14 +2209,16 @@ def run_prices_only():
     positions_map_po = state.get("positions", {})
     try:
         _latest_px = prices.iloc[-1]
+        _n_valid_px = sum(1 for t in holdings if t in _latest_px.index and pd.notna(_latest_px[t]))
         port_dollar_value = sum(
             positions_map_po.get(t, {}).get("shares", 0) * float(_latest_px[t])
             for t in holdings
             if t in _latest_px.index and pd.notna(_latest_px[t])
         ) + state.get("cash", 0.0)
     except Exception:
+        _n_valid_px = 0
         port_dollar_value = 0.0
-    if port_dollar_value > 0:
+    if port_dollar_value > 0 and _n_valid_px >= max(1, len(holdings) // 2):
         nav[today.isoformat()] = port_dollar_value
     else:
         today_nav, daily_ret = update_nav(nav, today, holdings, weights, prices, prev_prices)
