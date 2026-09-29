@@ -8,9 +8,9 @@
       "entry_time": "12:47 ET",
       "entry_price": 267.92,
       "shares": 111,
-      "stop": 268.8296,
+      "stop": 268.7896,
       "trail_dist": 1.7196,
-      "peak": 267.11,
+      "peak": 267.07,
       "orb_width": 3.4393,
       "cost": 29739.12,
       "vol_ratio": 5.28,
@@ -24,9 +24,9 @@
       "entry_time": "13:04 ET",
       "entry_price": 87.03,
       "shares": 241,
-      "stop": 87.335,
+      "stop": 87.195,
       "trail_dist": 0.615,
-      "peak": 86.72,
+      "peak": 86.58,
       "orb_width": 1.23,
       "cost": 20974.23,
       "vol_ratio": 1.39,
@@ -56,9 +56,9 @@
       "entry_time": "13:24 ET",
       "entry_price": 234.385,
       "shares": 44,
-      "stop": 235.175,
+      "stop": 235.015,
       "trail_dist": 0.79,
-      "peak": 234.385,
+      "peak": 234.225,
       "orb_width": 1.58,
       "cost": 10312.94,
       "vol_ratio": 6.31,
@@ -78073,11 +78073,6 @@
       "low": 204.0,
       "width": 3.48
     },
-    "AJG": {
-      "high": 229.3458,
-      "low": 226.94,
-      "width": 2.4058
-    },
     "AIZ": {
       "high": 263.99,
       "low": 261.34,
@@ -79063,6 +79058,11 @@
       "low": 256.7875,
       "width": 5.7124
     },
+    "IBM": {
+      "high": 221.79,
+      "low": 220.03,
+      "width": 1.76
+    },
     "IEX": {
       "high": 233.04,
       "low": 229.4,
@@ -79332,6 +79332,11 @@
       "high": 390.0,
       "low": 380.0,
       "width": 10.0
+    },
+    "MAR": {
+      "high": 364.085,
+      "low": 359.32,
+      "width": 4.765
     },
     "MRSH": {
       "high": 169.53,
@@ -79797,6 +79802,11 @@
       "high": 27.34,
       "low": 27.06,
       "width": 0.28
+    },
+    "RSG": {
+      "high": 212.585,
+      "low": 210.92,
+      "width": 1.665
     },
     "RMD": {
       "high": 224.22,
@@ -80318,6 +80328,11 @@
       "low": 68.9,
       "width": 1.01
     },
+    "XYL": {
+      "high": 101.49,
+      "low": 100.17,
+      "width": 1.32
+    },
     "YUM": {
       "high": 138.24,
       "low": 137.03,
@@ -80395,7 +80410,7 @@
     "2026-09-24": 100211.58,
     "2026-09-25": 100251.92,
     "2026-09-28": 100122.2,
-    "2026-09-29": 99953.09
+    "2026-09-29": 100024.7
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -215750,6 +215765,22 @@
       },
       "portfolio_value": 99953.09,
       "note": "$99,953 | cash=$24,112 | open=4 | closed today=6 | day PnL=$-272"
+    },
+    {
+      "date": "2026-09-29",
+      "time": "13:26 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.503,
+        "spy_vs_vwap": -1.4073,
+        "spy_vs_ema20": -2.1697
+      },
+      "portfolio_value": 100024.7,
+      "note": "$100,025 | cash=$24,112 | open=4 | closed today=6 | day PnL=$-272"
     }
   ]
 }
