@@ -1110,6 +1110,33 @@ def save_html_report(
           <td>{_score_bar(comp)} <strong>{_fmt(comp, '.3f')}</strong></td>
         </tr>"""
 
+    # ── Hidden rows for off-table holdings (held but dropped off screener top-N) ─
+    # The JS reads ALL tr[data-ticker] to compute portfolio value; these ensure
+    # off-table positions are included in the stale-val sum.
+    scores_tickers = set(scores.head(max(n_target, 50)).index)
+    for tk in holdings_set:
+        if tk not in scores_tickers:
+            p     = positions.get(tk, {})
+            qty   = p.get("shares", 0)
+            buy_px = p.get("price")
+            if not qty:
+                continue
+            _cur_px = None
+            if prices_df is not None and tk in prices_df.columns:
+                _last = prices_df.iloc[-1]
+                if pd.notna(_last.get(tk)):
+                    _cur_px = float(_last[tk])
+            if _cur_px is None:
+                _cur_px = prev_prices.get(tk)
+            _sv   = round(qty * _cur_px, 2) if _cur_px else 0
+            _sc   = round(qty * buy_px, 2) if buy_px else 0
+            _ppx  = prev_prices.get(tk, 0)
+            holdings_rows += (
+                f'<tr style="display:none" data-ticker="{tk}" data-qty="{qty}" '
+                f'data-buypx="{buy_px or 0}" data-prevpx="{_ppx}" '
+                f'data-stale-val="{_sv}" data-stale-cost="{_sc}"></tr>'
+            )
+
     # ── Totals row ─────────────────────────────────────────────────────────────
     tot_day_p    = tot_acc_day_d / tot_acc_prev_val if tot_acc_prev_val > 0 else None
     tot_ret_p    = tot_acc_ret_d / tot_acc_invested if tot_acc_invested  > 0 else None
