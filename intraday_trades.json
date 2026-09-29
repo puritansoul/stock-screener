@@ -1,5 +1,5 @@
 {
-  "capital": 24111.79,
+  "capital": 34409.99,
   "open_positions": [
     {
       "ticker": "ITW",
@@ -8,9 +8,9 @@
       "entry_time": "12:47 ET",
       "entry_price": 267.92,
       "shares": 111,
-      "stop": 268.7196,
+      "stop": 268.6196,
       "trail_dist": 1.7196,
-      "peak": 267.0,
+      "peak": 266.9,
       "orb_width": 3.4393,
       "cost": 29739.12,
       "vol_ratio": 5.28,
@@ -47,22 +47,6 @@
       "cost": 14712.52,
       "vol_ratio": 1.4,
       "score": 32.0,
-      "has_catalyst": false
-    },
-    {
-      "ticker": "ROST",
-      "side": "short",
-      "entry_date": "2026-09-29",
-      "entry_time": "13:24 ET",
-      "entry_price": 234.385,
-      "shares": 44,
-      "stop": 234.72,
-      "trail_dist": 0.79,
-      "peak": 233.93,
-      "orb_width": 1.58,
-      "cost": 10312.94,
-      "vol_ratio": 6.31,
-      "score": 50.49,
       "has_catalyst": false
     }
   ],
@@ -192,6 +176,27 @@
       "pnl": -28.05,
       "exit_reason": "trailing stop",
       "exit_time": "12:23 ET"
+    },
+    {
+      "ticker": "ROST",
+      "side": "short",
+      "entry_date": "2026-09-29",
+      "entry_time": "13:24 ET",
+      "entry_price": 234.385,
+      "shares": 44,
+      "stop": 234.72,
+      "trail_dist": 0.79,
+      "peak": 233.93,
+      "orb_width": 1.58,
+      "cost": 10312.94,
+      "vol_ratio": 6.31,
+      "score": 50.49,
+      "has_catalyst": false,
+      "exit_date": "2026-09-29",
+      "exit_price": 234.72,
+      "pnl": -14.74,
+      "exit_reason": "trailing stop",
+      "exit_time": "13:38 ET"
     }
   ],
   "all_closed": [
@@ -80415,7 +80420,7 @@
     "2026-09-24": 100211.58,
     "2026-09-25": 100251.92,
     "2026-09-28": 100122.2,
-    "2026-09-29": 100026.28
+    "2026-09-29": 100005.08
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -215850,6 +215855,30 @@
       },
       "portfolio_value": 100026.28,
       "note": "$100,026 | cash=$24,112 | open=4 | closed today=6 | day PnL=$-272"
+    },
+    {
+      "date": "2026-09-29",
+      "time": "13:38 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "ROST",
+          "side": "short",
+          "exit_price": 234.72,
+          "pnl": -14.74,
+          "reason": "trailing stop"
+        }
+      ],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.481,
+        "spy_vs_vwap": -1.2149,
+        "spy_vs_ema20": -1.9997
+      },
+      "portfolio_value": 100005.08,
+      "note": "$100,005 | cash=$34,410 | open=3 | closed today=7 | day PnL=$-286"
     }
   ]
 }
