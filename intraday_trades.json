@@ -1,5 +1,5 @@
 {
-  "capital": 49137.25,
+  "capital": 34424.73,
   "open_positions": [
     {
       "ticker": "ITW",
@@ -31,6 +31,22 @@
       "cost": 20974.23,
       "vol_ratio": 1.39,
       "score": 33.97,
+      "has_catalyst": false
+    },
+    {
+      "ticker": "ALGN",
+      "side": "short",
+      "entry_date": "2026-09-29",
+      "entry_time": "13:17 ET",
+      "entry_price": 142.84,
+      "shares": 103,
+      "stop": 143.87,
+      "trail_dist": 1.03,
+      "peak": 142.84,
+      "orb_width": 2.06,
+      "cost": 14712.52,
+      "vol_ratio": 1.4,
+      "score": 32.0,
       "has_catalyst": false
     }
   ],
@@ -80383,7 +80399,7 @@
     "2026-09-24": 100211.58,
     "2026-09-25": 100251.92,
     "2026-09-28": 100122.2,
-    "2026-09-29": 99886.15
+    "2026-09-29": 99856.32
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -215654,6 +215670,32 @@
       },
       "portfolio_value": 99886.15,
       "note": "$99,886 | cash=$49,137 | open=2 | closed today=6 | day PnL=$-272"
+    },
+    {
+      "date": "2026-09-29",
+      "time": "13:16 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "ALGN",
+          "side": "short",
+          "price": 142.84,
+          "shares": 103,
+          "stop": 143.87,
+          "trail_dist": 1.03,
+          "score": 32.0
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.568,
+        "spy_vs_vwap": -1.9246,
+        "spy_vs_ema20": -2.6647
+      },
+      "portfolio_value": 99856.32,
+      "note": "$99,856 | cash=$34,425 | open=3 | closed today=6 | day PnL=$-272"
     }
   ]
 }
