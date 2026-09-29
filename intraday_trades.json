@@ -1,5 +1,5 @@
 {
-  "capital": 70111.48,
+  "capital": 49137.25,
   "open_positions": [
     {
       "ticker": "ITW",
@@ -15,6 +15,22 @@
       "cost": 29739.12,
       "vol_ratio": 5.28,
       "score": 52.48,
+      "has_catalyst": false
+    },
+    {
+      "ticker": "MDT",
+      "side": "short",
+      "entry_date": "2026-09-29",
+      "entry_time": "13:04 ET",
+      "entry_price": 87.03,
+      "shares": 241,
+      "stop": 87.645,
+      "trail_dist": 0.615,
+      "peak": 87.03,
+      "orb_width": 1.23,
+      "cost": 20974.23,
+      "vol_ratio": 1.39,
+      "score": 33.97,
       "has_catalyst": false
     }
   ],
@@ -80367,7 +80383,7 @@
     "2026-09-24": 100211.58,
     "2026-09-25": 100251.92,
     "2026-09-28": 100122.2,
-    "2026-09-29": 99876.13
+    "2026-09-29": 99879.35
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -215548,6 +215564,32 @@
       },
       "portfolio_value": 99876.13,
       "note": "$99,876 | cash=$70,111 | open=1 | closed today=6 | day PnL=$-272"
+    },
+    {
+      "date": "2026-09-29",
+      "time": "13:04 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "MDT",
+          "side": "short",
+          "price": 87.03,
+          "shares": 241,
+          "stop": 87.64,
+          "trail_dist": 0.615,
+          "score": 33.97
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.542,
+        "spy_vs_vwap": -1.7768,
+        "spy_vs_ema20": -2.4697
+      },
+      "portfolio_value": 99879.35,
+      "note": "$99,879 | cash=$49,137 | open=2 | closed today=6 | day PnL=$-272"
     }
   ]
 }
