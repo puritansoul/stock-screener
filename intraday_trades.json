@@ -79060,11 +79060,6 @@
       "low": 113.97,
       "width": 3.03
     },
-    "IBKR": {
-      "high": 87.86,
-      "low": 86.88,
-      "width": 0.98
-    },
     "ICE": {
       "high": 154.81,
       "low": 152.67,
@@ -80367,7 +80362,7 @@
     "2026-09-24": 100211.58,
     "2026-09-25": 100251.92,
     "2026-09-28": 100122.2,
-    "2026-09-29": 99877.24
+    "2026-09-29": 99880.57
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -215484,6 +215479,22 @@
       },
       "portfolio_value": 99877.24,
       "note": "$99,877 | cash=$70,111 | open=1 | closed today=6 | day PnL=$-272"
+    },
+    {
+      "date": "2026-09-29",
+      "time": "12:54 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": true,
+        "spy_change_pct": -0.515,
+        "spy_vs_vwap": -1.6374,
+        "spy_vs_ema20": -2.2597
+      },
+      "portfolio_value": 99880.57,
+      "note": "$99,881 | cash=$70,111 | open=1 | closed today=6 | day PnL=$-272"
     }
   ]
 }
