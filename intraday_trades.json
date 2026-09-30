@@ -77931,11 +77931,6 @@
       "low": 57.88,
       "width": 0.325
     },
-    "ABT": {
-      "high": 100.63,
-      "low": 99.13,
-      "width": 1.5
-    },
     "ABBV": {
       "high": 265.36,
       "low": 263.2,
@@ -80494,7 +80489,7 @@
     "2026-09-25": 100251.92,
     "2026-09-28": 100122.2,
     "2026-09-29": 99773.44,
-    "2026-09-30": 99776.7
+    "2026-09-30": 99782.94
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -217455,6 +217450,22 @@
       },
       "portfolio_value": 99776.7,
       "note": "$99,777 | cash=$69,905 | open=1 | closed today=2 | day PnL=$-180"
+    },
+    {
+      "date": "2026-09-30",
+      "time": "11:10 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.266,
+        "spy_vs_vwap": 0.8798,
+        "spy_vs_ema20": 3.3516
+      },
+      "portfolio_value": 99782.94,
+      "note": "$99,783 | cash=$69,905 | open=1 | closed today=2 | day PnL=$-180"
     }
   ]
 }
