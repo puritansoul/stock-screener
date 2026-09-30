@@ -1,6 +1,23 @@
 {
-  "capital": 99593.65,
-  "open_positions": [],
+  "capital": 69904.78,
+  "open_positions": [
+    {
+      "ticker": "VEEV",
+      "side": "long",
+      "entry_date": "2026-09-30",
+      "entry_time": "10:34 ET",
+      "entry_price": 285.4699,
+      "shares": 104,
+      "stop": 280.5859,
+      "trail_dist": 4.884,
+      "peak": 285.4699,
+      "orb_width": 9.768,
+      "cost": 29688.87,
+      "vol_ratio": 5.04,
+      "score": 49.03,
+      "has_catalyst": false
+    }
+  ],
   "closed_today": [
     {
       "ticker": "LLY",
@@ -217188,6 +217205,32 @@
       },
       "portfolio_value": 99593.65,
       "note": "$99,594 | cash=$99,594 | open=0 | closed today=2 | day PnL=$-180"
+    },
+    {
+      "date": "2026-09-30",
+      "time": "10:33 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "VEEV",
+          "side": "long",
+          "price": 285.47,
+          "shares": 104,
+          "stop": 280.59,
+          "trail_dist": 4.884,
+          "score": 49.03
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.172,
+        "spy_vs_vwap": 0.3659,
+        "spy_vs_ema20": 2.6266
+      },
+      "portfolio_value": 99593.65,
+      "note": "$99,594 | cash=$69,905 | open=1 | closed today=2 | day PnL=$-180"
     }
   ]
 }
