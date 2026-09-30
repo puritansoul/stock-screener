@@ -78321,6 +78321,11 @@
       "low": 149.03,
       "width": 2.845
     },
+    "CDNS": {
+      "high": 331.23,
+      "low": 321.28,
+      "width": 9.95
+    },
     "CPT": {
       "high": 97.82,
       "low": 96.82,
@@ -80489,7 +80494,7 @@
     "2026-09-25": 100251.92,
     "2026-09-28": 100122.2,
     "2026-09-29": 99773.44,
-    "2026-09-30": 99833.9
+    "2026-09-30": 99835.98
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -217658,6 +217663,22 @@
       },
       "portfolio_value": 99833.9,
       "note": "$99,834 | cash=$69,905 | open=1 | closed today=2 | day PnL=$-180"
+    },
+    {
+      "date": "2026-09-30",
+      "time": "11:49 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.309,
+        "spy_vs_vwap": 1.0544,
+        "spy_vs_ema20": 3.6816
+      },
+      "portfolio_value": 99835.98,
+      "note": "$99,836 | cash=$69,905 | open=1 | closed today=2 | day PnL=$-180"
     }
   ]
 }
