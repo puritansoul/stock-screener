@@ -78776,6 +78776,11 @@
       "low": 138.43,
       "width": 1.55
     },
+    "EQT": {
+      "high": 49.48,
+      "low": 48.775,
+      "width": 0.705
+    },
     "EFX": {
       "high": 141.01,
       "low": 138.27,
@@ -80056,6 +80061,11 @@
       "low": 415.24,
       "width": 14.24
     },
+    "SYY": {
+      "high": 79.07,
+      "low": 78.37,
+      "width": 0.7
+    },
     "TMUS": {
       "high": 164.19,
       "low": 162.41,
@@ -80484,7 +80494,7 @@
     "2026-09-25": 100251.92,
     "2026-09-28": 100122.2,
     "2026-09-29": 99773.44,
-    "2026-09-30": 99815.18
+    "2026-09-30": 99804.26
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -217765,6 +217775,22 @@
       },
       "portfolio_value": 99815.18,
       "note": "$99,815 | cash=$69,905 | open=1 | closed today=2 | day PnL=$-180"
+    },
+    {
+      "date": "2026-09-30",
+      "time": "12:06 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.329,
+        "spy_vs_vwap": 1.131,
+        "spy_vs_ema20": 3.8316
+      },
+      "portfolio_value": 99804.26,
+      "note": "$99,804 | cash=$69,905 | open=1 | closed today=2 | day PnL=$-180"
     }
   ]
 }
