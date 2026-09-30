@@ -78551,6 +78551,11 @@
       "low": 27.01,
       "width": 0.21
     },
+    "GLW": {
+      "high": 160.47,
+      "low": 153.4,
+      "width": 7.07
+    },
     "CPAY": {
       "high": 394.095,
       "low": 389.66,
@@ -78605,6 +78610,11 @@
       "high": 226.11,
       "low": 219.6919,
       "width": 6.4181
+    },
+    "DRI": {
+      "high": 195.31,
+      "low": 192.6701,
+      "width": 2.6399
     },
     "DDOG": {
       "high": 275.85,
@@ -80484,7 +80494,7 @@
     "2026-09-25": 100251.92,
     "2026-09-28": 100122.2,
     "2026-09-29": 99773.44,
-    "2026-09-30": 99755.9
+    "2026-09-30": 99764.22
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -217797,6 +217807,22 @@
       },
       "portfolio_value": 99755.9,
       "note": "$99,756 | cash=$69,905 | open=1 | closed today=2 | day PnL=$-180"
+    },
+    {
+      "date": "2026-09-30",
+      "time": "12:10 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.305,
+        "spy_vs_vwap": 0.9329,
+        "spy_vs_ema20": 3.6516
+      },
+      "portfolio_value": 99764.22,
+      "note": "$99,764 | cash=$69,905 | open=1 | closed today=2 | day PnL=$-180"
     }
   ]
 }
