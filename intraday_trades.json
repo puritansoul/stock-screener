@@ -1,5 +1,5 @@
 {
-  "capital": 49608.22,
+  "capital": 69826.15,
   "open_positions": [
     {
       "ticker": "FCX",
@@ -16,7 +16,9 @@
       "vol_ratio": 1.3,
       "score": 34.02,
       "has_catalyst": false
-    },
+    }
+  ],
+  "closed_today": [
     {
       "ticker": "LLY",
       "side": "long",
@@ -31,10 +33,14 @@
       "cost": 20296.47,
       "vol_ratio": 1.37,
       "score": 27.46,
-      "has_catalyst": false
+      "has_catalyst": false,
+      "exit_date": "2026-09-30",
+      "exit_price": 1189.29,
+      "pnl": -78.54,
+      "exit_reason": "trailing stop",
+      "exit_time": "10:22 ET"
     }
   ],
-  "closed_today": [],
   "all_closed": [
     {
       "ticker": "SNOW",
@@ -80467,7 +80473,7 @@
     "2026-09-25": 100251.92,
     "2026-09-28": 100122.2,
     "2026-09-29": 99773.44,
-    "2026-09-30": 99777.53
+    "2026-09-30": 99601.75
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -217082,6 +217088,30 @@
       },
       "portfolio_value": 99777.53,
       "note": "$99,778 | cash=$49,608 | open=2 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-30",
+      "time": "10:21 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [
+        {
+          "ticker": "LLY",
+          "side": "long",
+          "exit_price": 1189.29,
+          "pnl": -78.54,
+          "reason": "trailing stop"
+        }
+      ],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.33,
+        "spy_vs_vwap": 1.7016,
+        "spy_vs_ema20": 3.8416
+      },
+      "portfolio_value": 99601.75,
+      "note": "$99,602 | cash=$69,826 | open=1 | closed today=1 | day PnL=$-79"
     }
   ]
 }
