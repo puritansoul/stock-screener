@@ -1,6 +1,23 @@
 {
-  "capital": 99773.44,
-  "open_positions": [],
+  "capital": 69904.69,
+  "open_positions": [
+    {
+      "ticker": "FCX",
+      "side": "long",
+      "entry_date": "2026-09-30",
+      "entry_time": "10:09 ET",
+      "entry_price": 73.75,
+      "shares": 405,
+      "stop": 73.04,
+      "trail_dist": 0.71,
+      "peak": 73.75,
+      "orb_width": 1.42,
+      "cost": 29868.75,
+      "vol_ratio": 1.3,
+      "score": 34.02,
+      "has_catalyst": false
+    }
+  ],
   "closed_today": [],
   "all_closed": [
     {
@@ -78972,9 +78989,9 @@
       "width": 1.87
     },
     "GDDY": {
-      "high": 95.72,
+      "high": 95.73,
       "low": 93.87,
-      "width": 1.85
+      "width": 1.86
     },
     "GS": {
       "high": 916.05,
@@ -79098,8 +79115,8 @@
     },
     "ITW": {
       "high": 266.88,
-      "low": 263.56,
-      "width": 3.32
+      "low": 263.54,
+      "width": 3.34
     },
     "ILMN": {
       "high": 280.165,
@@ -79513,8 +79530,8 @@
     },
     "NEM": {
       "high": 117.64,
-      "low": 116.45,
-      "width": 1.19
+      "low": 116.44,
+      "width": 1.2
     },
     "NWSA": {
       "high": 28.725,
@@ -79783,8 +79800,8 @@
     },
     "Q": {
       "high": 126.96,
-      "low": 125.31,
-      "width": 1.65
+      "low": 125.22,
+      "width": 1.74
     },
     "RL": {
       "high": 359.06,
@@ -216949,6 +216966,32 @@
       },
       "portfolio_value": 99773.44,
       "note": "$99,773 | cash=$99,773 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-09-30",
+      "time": "10:09 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "FCX",
+          "side": "long",
+          "price": 73.75,
+          "shares": 405,
+          "stop": 73.04,
+          "trail_dist": 0.71,
+          "score": 34.02
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.275,
+        "spy_vs_vwap": 1.4546,
+        "spy_vs_ema20": 3.4216
+      },
+      "portfolio_value": 99773.44,
+      "note": "$99,773 | cash=$69,905 | open=1 | closed today=0 | day PnL=$+0"
     }
   ]
 }
