@@ -77976,6 +77976,11 @@
       "low": 279.845,
       "width": 1.965
     },
+    "ABNB": {
+      "high": 160.4138,
+      "low": 157.0,
+      "width": 3.4138
+    },
     "AKAM": {
       "high": 110.495,
       "low": 108.7305,
@@ -79185,6 +79190,11 @@
       "high": 86.93,
       "low": 86.125,
       "width": 0.805
+    },
+    "ICE": {
+      "high": 153.245,
+      "low": 151.94,
+      "width": 1.305
     },
     "IFF": {
       "high": 85.715,
@@ -80484,7 +80494,7 @@
     "2026-09-25": 100251.92,
     "2026-09-28": 100122.2,
     "2026-09-29": 99773.44,
-    "2026-09-30": 99601.98
+    "2026-09-30": 99618.1
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -217973,6 +217983,22 @@
       },
       "portfolio_value": 99601.98,
       "note": "$99,602 | cash=$69,905 | open=1 | closed today=2 | day PnL=$-180"
+    },
+    {
+      "date": "2026-09-30",
+      "time": "14:27 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": false,
+        "short_ok": false,
+        "spy_change_pct": 0.033,
+        "spy_vs_vwap": -1.0762,
+        "spy_vs_ema20": 1.5616
+      },
+      "portfolio_value": 99618.1,
+      "note": "$99,618 | cash=$69,905 | open=1 | closed today=2 | day PnL=$-180"
     }
   ]
 }
