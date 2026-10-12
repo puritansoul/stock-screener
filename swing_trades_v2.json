@@ -1,16 +1,6 @@
 {
-  "capital": 66187.62,
+  "capital": 56399.84,
   "open_positions": [
-    {
-      "ticker": "BIIB",
-      "side": "long",
-      "entry_date": "2026-10-05",
-      "entry_price": 219.88,
-      "shares": 19,
-      "stop": 207.7399,
-      "cost": 4177.72,
-      "rsi2_entry": 3.05
-    },
     {
       "ticker": "GRMN",
       "side": "long",
@@ -30,6 +20,16 @@
       "stop": 93.6544,
       "cost": 8887.64,
       "rsi2_entry": 4.91
+    },
+    {
+      "ticker": "IVZ",
+      "side": "long",
+      "entry_date": "2026-10-12",
+      "entry_price": 29.51,
+      "shares": 477,
+      "stop": 28.6136,
+      "cost": 14076.27,
+      "rsi2_entry": 4.9
     }
   ],
   "closed_positions": [
@@ -3588,6 +3588,20 @@
       "exit_price": 373.1000061035156,
       "pnl": 432.0,
       "exit_reason": "RSI(2) reverted (81.1)"
+    },
+    {
+      "ticker": "BIIB",
+      "side": "long",
+      "entry_date": "2026-10-05",
+      "entry_price": 219.88,
+      "shares": 19,
+      "stop": 207.7399,
+      "cost": 4177.72,
+      "rsi2_entry": 3.05,
+      "exit_date": "2026-10-12",
+      "exit_price": 225.7100067138672,
+      "pnl": 110.77,
+      "exit_reason": "time exit (7d)"
     }
   ],
   "nav_history": {
@@ -3648,7 +3662,8 @@
     "2026-10-06": 97035.96,
     "2026-10-07": 96926.16,
     "2026-10-08": 96911.48,
-    "2026-10-09": 97747.79
+    "2026-10-09": 97747.79,
+    "2026-10-12": 97683.05
   },
   "inception_date": "2026-07-22",
   "log": [
@@ -8519,288 +8534,315 @@
         "VIX: 14.8  (entries allowed)",
         "Portfolio: $97,748  |  Cash: $66,188  |  Open: 3  |  Exits: 5  |  Entries: 2"
       ]
+    },
+    {
+      "date": "2026-10-12",
+      "run_at": "2026-10-12 22:09 UTC",
+      "entries": [
+        {
+          "ticker": "IVZ",
+          "side": "long",
+          "price": 29.51,
+          "shares": 477,
+          "stop": 28.61
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "BIIB",
+          "side": "long",
+          "exit_price": 225.7100067138672,
+          "pnl": 110.77,
+          "reason": "time exit (7d)"
+        }
+      ],
+      "notes": [
+        "SPY regime: BULL (longs only)",
+        "VIX: 15.2  (entries allowed)",
+        "Portfolio: $97,683  |  Cash: $56,400  |  Open: 3  |  Exits: 1  |  Entries: 1"
+      ]
     }
   ],
   "last_scan": [
     {
-      "ticker": "STZ",
-      "rsi2": 99.8,
-      "close": 123.63,
-      "sma200": 141.4,
-      "status": "below SMA200"
-    },
-    {
-      "ticker": "COP",
-      "rsi2": 99.2,
-      "close": 134.19,
-      "sma200": 116.14,
+      "ticker": "AMT",
+      "rsi2": 99.6,
+      "close": 182.24,
+      "sma200": 173.23,
       "status": "above SMA200"
-    },
-    {
-      "ticker": "EBAY",
-      "rsi2": 99.1,
-      "close": 111.98,
-      "sma200": 101.08,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "MPC",
-      "rsi2": 99.0,
-      "close": 463.34,
-      "sma200": 266.03,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "INTU",
-      "rsi2": 98.9,
-      "close": 303.88,
-      "sma200": 382.59,
-      "status": "below SMA200"
-    },
-    {
-      "ticker": "CASY",
-      "rsi2": 98.7,
-      "close": 642.28,
-      "sma200": 733.15,
-      "status": "below SMA200"
-    },
-    {
-      "ticker": "MO",
-      "rsi2": 98.6,
-      "close": 71.42,
-      "sma200": 65.7,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "CMS",
-      "rsi2": 98.6,
-      "close": 65.34,
-      "sma200": 71.9,
-      "status": "below SMA200"
     },
     {
       "ticker": "BRK-B",
-      "rsi2": 98.5,
-      "close": 511.05,
-      "sma200": 492.89,
+      "rsi2": 99.4,
+      "close": 515.62,
+      "sma200": 492.97,
       "status": "above SMA200"
     },
     {
-      "ticker": "CHD",
-      "rsi2": 98.4,
-      "close": 97.73,
-      "sma200": 95.79,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "EOG",
-      "rsi2": 98.4,
-      "close": 148.51,
-      "sma200": 131.75,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "FE",
-      "rsi2": 98.4,
-      "close": 44.85,
-      "sma200": 46.77,
-      "status": "below SMA200"
-    },
-    {
-      "ticker": "COF",
-      "rsi2": 98.2,
-      "close": 199.4,
-      "sma200": 203.55,
-      "status": "below SMA200"
-    },
-    {
-      "ticker": "CB",
-      "rsi2": 98.2,
-      "close": 343.78,
-      "sma200": 328.69,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "COST",
-      "rsi2": 98.2,
-      "close": 947.92,
-      "sma200": 961.07,
-      "status": "below SMA200"
-    },
-    {
-      "ticker": "CSGP",
-      "rsi2": 97.9,
-      "close": 29.81,
-      "sma200": 39.34,
-      "status": "below SMA200"
-    },
-    {
-      "ticker": "ES",
-      "rsi2": 97.9,
-      "close": 65.69,
-      "sma200": 68.75,
-      "status": "below SMA200"
-    },
-    {
-      "ticker": "HIG",
-      "rsi2": 97.9,
-      "close": 129.48,
-      "sma200": 134.68,
-      "status": "below SMA200"
-    },
-    {
-      "ticker": "BALL",
-      "rsi2": 97.8,
-      "close": 58.37,
-      "sma200": 59.84,
-      "status": "below SMA200"
-    },
-    {
-      "ticker": "CME",
-      "rsi2": 97.8,
-      "close": 276.44,
-      "sma200": 274.67,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "COO",
-      "rsi2": 2.3,
-      "close": 54.3,
-      "sma200": 70.85,
+      "ticker": "CCI",
+      "rsi2": 99.3,
+      "close": 79.64,
+      "sma200": 80.62,
       "status": "below SMA200"
     },
     {
       "ticker": "ABBV",
-      "rsi2": 97.6,
-      "close": 272.42,
-      "sma200": 230.48,
+      "rsi2": 99.2,
+      "close": 276.47,
+      "sma200": 230.75,
       "status": "above SMA200"
     },
     {
-      "ticker": "AEP",
-      "rsi2": 97.6,
-      "close": 122.32,
-      "sma200": 125.84,
+      "ticker": "CASY",
+      "rsi2": 99.1,
+      "close": 646.27,
+      "sma200": 733.52,
       "status": "below SMA200"
     },
     {
+      "ticker": "CMS",
+      "rsi2": 99.1,
+      "close": 65.49,
+      "sma200": 71.89,
+      "status": "below SMA200"
+    },
+    {
+      "ticker": "EBAY",
+      "rsi2": 99.1,
+      "close": 112.19,
+      "sma200": 101.22,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "CHD",
+      "rsi2": 99.0,
+      "close": 98.11,
+      "sma200": 95.86,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "CME",
+      "rsi2": 99.0,
+      "close": 280.56,
+      "sma200": 274.75,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "MO",
+      "rsi2": 98.9,
+      "close": 71.68,
+      "sma200": 65.79,
+      "status": "above SMA200"
+    },
+    {
       "ticker": "CBOE",
-      "rsi2": 97.4,
-      "close": 294.08,
-      "sma200": 286.6,
+      "rsi2": 98.9,
+      "close": 304.16,
+      "sma200": 286.87,
       "status": "above SMA200"
     },
     {
-      "ticker": "MRSH",
-      "rsi2": 97.3,
-      "close": 176.67,
-      "sma200": 174.74,
-      "status": "above SMA200"
+      "ticker": "FE",
+      "rsi2": 98.9,
+      "close": 45.0,
+      "sma200": 46.78,
+      "status": "below SMA200"
     },
     {
-      "ticker": "AIG",
-      "rsi2": 97.0,
-      "close": 77.05,
-      "sma200": 76.02,
-      "status": "above SMA200"
+      "ticker": "AEP",
+      "rsi2": 98.8,
+      "close": 122.81,
+      "sma200": 125.9,
+      "status": "below SMA200"
     },
     {
       "ticker": "COR",
-      "rsi2": 97.0,
-      "close": 321.35,
-      "sma200": 316.73,
+      "rsi2": 98.4,
+      "close": 323.85,
+      "sma200": 316.65,
       "status": "above SMA200"
     },
     {
-      "ticker": "DPZ",
-      "rsi2": 97.0,
-      "close": 308.65,
-      "sma200": 347.28,
+      "ticker": "DE",
+      "rsi2": 1.7,
+      "close": 620.93,
+      "sma200": 589.6,
+      "status": "above SMA200 (sector ETF below SMA200)"
+    },
+    {
+      "ticker": "BALL",
+      "rsi2": 98.1,
+      "close": 58.46,
+      "sma200": 59.87,
+      "status": "below SMA200"
+    },
+    {
+      "ticker": "ES",
+      "rsi2": 98.1,
+      "close": 65.73,
+      "sma200": 68.76,
       "status": "below SMA200"
     },
     {
       "ticker": "CI",
-      "rsi2": 96.9,
-      "close": 281.03,
-      "sma200": 277.36,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "HON",
-      "rsi2": 3.1,
-      "close": 206.6,
-      "sma200": 229.02,
-      "status": "below SMA200"
-    },
-    {
-      "ticker": "T",
-      "rsi2": 96.4,
-      "close": 24.87,
-      "sma200": 24.81,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "LH",
-      "rsi2": 96.2,
-      "close": 314.2,
-      "sma200": 280.44,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "CTAS",
-      "rsi2": 95.6,
-      "close": 201.12,
-      "sma200": 187.56,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "AAPL",
-      "rsi2": 95.5,
-      "close": 340.42,
-      "sma200": 290.07,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "BRO",
-      "rsi2": 95.5,
-      "close": 63.75,
-      "sma200": 67.3,
-      "status": "below SMA200"
-    },
-    {
-      "ticker": "EFX",
-      "rsi2": 95.4,
-      "close": 145.54,
-      "sma200": 180.09,
-      "status": "below SMA200"
-    },
-    {
-      "ticker": "XOM",
-      "rsi2": 95.3,
-      "close": 168.5,
-      "sma200": 148.67,
+      "rsi2": 97.9,
+      "close": 282.43,
+      "sma200": 277.42,
       "status": "above SMA200"
     },
     {
       "ticker": "CDW",
-      "rsi2": 95.2,
-      "close": 139.88,
-      "sma200": 130.46,
+      "rsi2": 97.6,
+      "close": 142.17,
+      "sma200": 130.48,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "DPZ",
+      "rsi2": 97.5,
+      "close": 309.36,
+      "sma200": 346.73,
+      "status": "below SMA200"
+    },
+    {
+      "ticker": "HRL",
+      "rsi2": 2.5,
+      "close": 19.19,
+      "sma200": 22.73,
+      "status": "below SMA200"
+    },
+    {
+      "ticker": "CF",
+      "rsi2": 2.7,
+      "close": 111.54,
+      "sma200": 112.65,
+      "status": "below SMA200"
+    },
+    {
+      "ticker": "EVRG",
+      "rsi2": 97.2,
+      "close": 80.96,
+      "sma200": 80.22,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "CTAS",
+      "rsi2": 97.1,
+      "close": 202.41,
+      "sma200": 187.62,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "EL",
+      "rsi2": 97.1,
+      "close": 98.05,
+      "sma200": 91.28,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "GILD",
+      "rsi2": 96.2,
+      "close": 151.17,
+      "sma200": 135.9,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "HCA",
+      "rsi2": 96.2,
+      "close": 451.09,
+      "sma200": 443.69,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "AXP",
+      "rsi2": 96.1,
+      "close": 308.17,
+      "sma200": 328.45,
+      "status": "below SMA200"
+    },
+    {
+      "ticker": "EFX",
+      "rsi2": 96.0,
+      "close": 145.78,
+      "sma200": 179.73,
+      "status": "below SMA200"
+    },
+    {
+      "ticker": "XOM",
+      "rsi2": 96.0,
+      "close": 168.94,
+      "sma200": 148.94,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "AIG",
+      "rsi2": 95.9,
+      "close": 77.04,
+      "sma200": 75.98,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "COP",
+      "rsi2": 95.9,
+      "close": 134.1,
+      "sma200": 116.36,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "EIX",
+      "rsi2": 95.7,
+      "close": 55.3,
+      "sma200": 66.13,
+      "status": "below SMA200"
+    },
+    {
+      "ticker": "CL",
+      "rsi2": 95.5,
+      "close": 88.27,
+      "sma200": 88.08,
       "status": "above SMA200"
     },
     {
       "ticker": "DLTR",
-      "rsi2": 95.2,
-      "close": 118.62,
-      "sma200": 117.03,
+      "rsi2": 95.3,
+      "close": 118.64,
+      "sma200": 117.02,
       "status": "above SMA200"
     },
     {
-      "ticker": "GRMN",
-      "rsi2": 4.8,
-      "close": 268.44,
-      "sma200": 246.13,
+      "ticker": "IVZ",
+      "rsi2": 4.9,
+      "close": 29.51,
+      "sma200": 27.63,
       "status": "LONG signal"
+    },
+    {
+      "ticker": "ADP",
+      "rsi2": 95.1,
+      "close": 270.88,
+      "sma200": 235.25,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "ISRG",
+      "rsi2": 95.1,
+      "close": 423.96,
+      "sma200": 443.41,
+      "status": "below SMA200"
+    },
+    {
+      "ticker": "FANG",
+      "rsi2": 94.9,
+      "close": 192.13,
+      "sma200": 184.1,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "LRCX",
+      "rsi2": 5.3,
+      "close": 318.84,
+      "sma200": 278.72,
+      "status": "above SMA200"
     }
   ]
 }
