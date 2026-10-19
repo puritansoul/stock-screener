@@ -1,36 +1,6 @@
 {
-  "capital": 10417.08,
+  "capital": 8994.22,
   "open_positions": [
-    {
-      "ticker": "INTC",
-      "side": "long",
-      "entry_date": "2026-10-09",
-      "entry_price": 107.08,
-      "shares": 125,
-      "stop": 93.6544,
-      "cost": 13385.0,
-      "rsi2_entry": 4.91
-    },
-    {
-      "ticker": "LRCX",
-      "side": "long",
-      "entry_date": "2026-10-13",
-      "entry_price": 309.56,
-      "shares": 32,
-      "stop": 275.5213,
-      "cost": 9905.92,
-      "rsi2_entry": 1.77
-    },
-    {
-      "ticker": "KLAC",
-      "side": "long",
-      "entry_date": "2026-10-13",
-      "entry_price": 190.12,
-      "shares": 46,
-      "stop": 173.9318,
-      "cost": 8745.52,
-      "rsi2_entry": 2.34
-    },
     {
       "ticker": "BEN",
       "side": "long",
@@ -60,16 +30,6 @@
       "stop": 25.8806,
       "cost": 7038.36,
       "rsi2_entry": 0.39
-    },
-    {
-      "ticker": "DELL",
-      "side": "long",
-      "entry_date": "2026-10-15",
-      "entry_price": 507.93,
-      "shares": 8,
-      "stop": 453.6896,
-      "cost": 4063.44,
-      "rsi2_entry": 2.84
     },
     {
       "ticker": "CDNS",
@@ -150,6 +110,106 @@
       "stop": 375.1709,
       "cost": 2414.88,
       "rsi2_entry": 4.69
+    },
+    {
+      "ticker": "DELL",
+      "side": "long",
+      "entry_date": "2026-10-19",
+      "entry_price": 451.71,
+      "shares": 8,
+      "stop": 348.9322,
+      "cost": 3613.68,
+      "rsi2_entry": 0.89
+    },
+    {
+      "ticker": "FTNT",
+      "side": "long",
+      "entry_date": "2026-10-19",
+      "entry_price": 169.13,
+      "shares": 41,
+      "stop": 150.78,
+      "cost": 6934.33,
+      "rsi2_entry": 1.32
+    },
+    {
+      "ticker": "CRWD",
+      "side": "long",
+      "entry_date": "2026-10-19",
+      "entry_price": 227.39,
+      "shares": 18,
+      "stop": 193.8902,
+      "cost": 4093.02,
+      "rsi2_entry": 1.71
+    },
+    {
+      "ticker": "INTC",
+      "side": "long",
+      "entry_date": "2026-10-19",
+      "entry_price": 89.85,
+      "shares": 21,
+      "stop": 65.176,
+      "cost": 1886.85,
+      "rsi2_entry": 2.18
+    },
+    {
+      "ticker": "P",
+      "side": "long",
+      "entry_date": "2026-10-19",
+      "entry_price": 124.01,
+      "shares": 18,
+      "stop": 97.1264,
+      "cost": 2232.18,
+      "rsi2_entry": 2.54
+    },
+    {
+      "ticker": "DDOG",
+      "side": "long",
+      "entry_date": "2026-10-19",
+      "entry_price": 247.11,
+      "shares": 16,
+      "stop": 220.1331,
+      "cost": 3953.76,
+      "rsi2_entry": 2.55
+    },
+    {
+      "ticker": "CSCO",
+      "side": "long",
+      "entry_date": "2026-10-19",
+      "entry_price": 107.39,
+      "shares": 34,
+      "stop": 97.0162,
+      "cost": 3651.26,
+      "rsi2_entry": 2.64
+    },
+    {
+      "ticker": "AMD",
+      "side": "long",
+      "entry_date": "2026-10-19",
+      "entry_price": 528.75,
+      "shares": 3,
+      "stop": 445.1832,
+      "cost": 1586.25,
+      "rsi2_entry": 3.02
+    },
+    {
+      "ticker": "JCI",
+      "side": "long",
+      "entry_date": "2026-10-19",
+      "entry_price": 145.47,
+      "shares": 18,
+      "stop": 135.1084,
+      "cost": 2618.46,
+      "rsi2_entry": 4.24
+    },
+    {
+      "ticker": "FFIV",
+      "side": "long",
+      "entry_date": "2026-10-19",
+      "entry_price": 442.03,
+      "shares": 4,
+      "stop": 408.7198,
+      "cost": 1768.12,
+      "rsi2_entry": 4.63
     }
   ],
   "closed_positions": [
@@ -5640,6 +5700,62 @@
       "exit_price": 142.08999633789062,
       "pnl": 182.45,
       "exit_reason": "RSI(2) reverted (66.8)"
+    },
+    {
+      "ticker": "INTC",
+      "side": "long",
+      "entry_date": "2026-10-09",
+      "entry_price": 107.08,
+      "shares": 125,
+      "stop": 93.6544,
+      "cost": 13385.0,
+      "rsi2_entry": 4.91,
+      "exit_date": "2026-10-19",
+      "exit_price": 89.8499984741211,
+      "pnl": -2153.75,
+      "exit_reason": "stop loss"
+    },
+    {
+      "ticker": "LRCX",
+      "side": "long",
+      "entry_date": "2026-10-13",
+      "entry_price": 309.56,
+      "shares": 32,
+      "stop": 275.5213,
+      "cost": 9905.92,
+      "rsi2_entry": 1.77,
+      "exit_date": "2026-10-19",
+      "exit_price": 263.94000244140625,
+      "pnl": -1459.84,
+      "exit_reason": "stop loss"
+    },
+    {
+      "ticker": "KLAC",
+      "side": "long",
+      "entry_date": "2026-10-13",
+      "entry_price": 190.12,
+      "shares": 46,
+      "stop": 173.9318,
+      "cost": 8745.52,
+      "rsi2_entry": 2.34,
+      "exit_date": "2026-10-19",
+      "exit_price": 165.74000549316406,
+      "pnl": -1121.48,
+      "exit_reason": "stop loss"
+    },
+    {
+      "ticker": "DELL",
+      "side": "long",
+      "entry_date": "2026-10-15",
+      "entry_price": 507.93,
+      "shares": 8,
+      "stop": 453.6896,
+      "cost": 4063.44,
+      "rsi2_entry": 2.84,
+      "exit_date": "2026-10-19",
+      "exit_price": 451.7099914550781,
+      "pnl": -449.76,
+      "exit_reason": "stop loss"
     }
   ],
   "nav_history": {
@@ -5712,7 +5828,8 @@
     "2026-10-13": 98028.29,
     "2026-10-14": 97435.17,
     "2026-10-15": 95381.6,
-    "2026-10-16": 95003.12
+    "2026-10-16": 95003.12,
+    "2026-10-19": 91820.09
   },
   "inception_date": "2026-07-09",
   "log": [
@@ -12767,287 +12884,397 @@
         "SPY regime: BULL (longs only)",
         "Portfolio: $95,003  |  Cash: $10,417  |  Open: 15  |  Exits: 3  |  Entries: 7"
       ]
+    },
+    {
+      "date": "2026-10-19",
+      "run_at": "2026-10-19 19:51 UTC",
+      "entries": [
+        {
+          "ticker": "DELL",
+          "side": "long",
+          "price": 451.71,
+          "shares": 8,
+          "stop": 348.93
+        },
+        {
+          "ticker": "FTNT",
+          "side": "long",
+          "price": 169.13,
+          "shares": 41,
+          "stop": 150.78
+        },
+        {
+          "ticker": "CRWD",
+          "side": "long",
+          "price": 227.39,
+          "shares": 18,
+          "stop": 193.89
+        },
+        {
+          "ticker": "INTC",
+          "side": "long",
+          "price": 89.85,
+          "shares": 21,
+          "stop": 65.18
+        },
+        {
+          "ticker": "P",
+          "side": "long",
+          "price": 124.01,
+          "shares": 18,
+          "stop": 97.13
+        },
+        {
+          "ticker": "DDOG",
+          "side": "long",
+          "price": 247.11,
+          "shares": 16,
+          "stop": 220.13
+        },
+        {
+          "ticker": "CSCO",
+          "side": "long",
+          "price": 107.39,
+          "shares": 34,
+          "stop": 97.02
+        },
+        {
+          "ticker": "AMD",
+          "side": "long",
+          "price": 528.75,
+          "shares": 3,
+          "stop": 445.18
+        },
+        {
+          "ticker": "JCI",
+          "side": "long",
+          "price": 145.47,
+          "shares": 18,
+          "stop": 135.11
+        },
+        {
+          "ticker": "FFIV",
+          "side": "long",
+          "price": 442.03,
+          "shares": 4,
+          "stop": 408.72
+        }
+      ],
+      "exits": [
+        {
+          "ticker": "INTC",
+          "side": "long",
+          "exit_price": 89.8499984741211,
+          "pnl": -2153.75,
+          "reason": "stop loss"
+        },
+        {
+          "ticker": "LRCX",
+          "side": "long",
+          "exit_price": 263.94000244140625,
+          "pnl": -1459.84,
+          "reason": "stop loss"
+        },
+        {
+          "ticker": "KLAC",
+          "side": "long",
+          "exit_price": 165.74000549316406,
+          "pnl": -1121.48,
+          "reason": "stop loss"
+        },
+        {
+          "ticker": "DELL",
+          "side": "long",
+          "exit_price": 451.7099914550781,
+          "pnl": -449.76,
+          "reason": "stop loss"
+        }
+      ],
+      "notes": [
+        "SPY regime: BULL (longs only)",
+        "Portfolio: $91,820  |  Cash: $8,994  |  Open: 21  |  Exits: 4  |  Entries: 10"
+      ]
     }
   ],
   "last_scan": [
     {
       "ticker": "BALL",
       "rsi2": 100.0,
-      "close": 62.8,
-      "sma200": 60.04,
+      "close": 63.2,
+      "sma200": 60.09,
       "status": "above SMA200"
     },
     {
       "ticker": "CHD",
       "rsi2": 100.0,
-      "close": 103.08,
-      "sma200": 96.2,
+      "close": 104.53,
+      "sma200": 96.31,
       "status": "above SMA200"
     },
     {
       "ticker": "CMS",
       "rsi2": 100.0,
-      "close": 66.94,
+      "close": 68.7,
       "sma200": 71.85,
       "status": "below SMA200"
     },
     {
-      "ticker": "EBAY",
-      "rsi2": 100.0,
-      "close": 122.91,
-      "sma200": 101.88,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "EFX",
-      "rsi2": 100.0,
-      "close": 161.26,
-      "sma200": 178.38,
+      "ticker": "ATO",
+      "rsi2": 99.9,
+      "close": 167.34,
+      "sma200": 172.66,
       "status": "below SMA200"
     },
     {
-      "ticker": "COR",
+      "ticker": "ADP",
       "rsi2": 99.9,
-      "close": 341.41,
-      "sma200": 316.55,
+      "close": 288.9,
+      "sma200": 235.95,
       "status": "above SMA200"
     },
     {
       "ticker": "CTAS",
       "rsi2": 99.9,
-      "close": 213.06,
-      "sma200": 187.99,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "AMAT",
-      "rsi2": 0.2,
-      "close": 430.01,
-      "sma200": 437.63,
-      "status": "below SMA200"
-    },
-    {
-      "ticker": "ADP",
-      "rsi2": 99.8,
-      "close": 285.65,
-      "sma200": 235.78,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "JKHY",
-      "rsi2": 99.7,
-      "close": 156.47,
-      "sma200": 155.04,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "IFF",
-      "rsi2": 99.6,
-      "close": 90.29,
-      "sma200": 76.57,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "ACN",
-      "rsi2": 99.5,
-      "close": 224.92,
-      "sma200": 189.36,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "APD",
-      "rsi2": 99.4,
-      "close": 296.6,
-      "sma200": 284.07,
+      "close": 213.69,
+      "sma200": 188.11,
       "status": "above SMA200"
     },
     {
       "ticker": "ED",
-      "rsi2": 99.4,
-      "close": 109.86,
-      "sma200": 106.98,
+      "rsi2": 99.9,
+      "close": 112.26,
+      "sma200": 107.06,
       "status": "above SMA200"
     },
     {
-      "ticker": "MAR",
-      "rsi2": 99.4,
-      "close": 385.71,
-      "sma200": 350.82,
-      "status": "above SMA200"
+      "ticker": "AMAT",
+      "rsi2": 0.1,
+      "close": 409.29,
+      "sma200": 438.38,
+      "status": "below SMA200"
+    },
+    {
+      "ticker": "KLAC",
+      "rsi2": 0.1,
+      "close": 165.74,
+      "sma200": 180.73,
+      "status": "below SMA200"
+    },
+    {
+      "ticker": "LRCX",
+      "rsi2": 0.1,
+      "close": 263.94,
+      "sma200": 281.52,
+      "status": "below SMA200"
+    },
+    {
+      "ticker": "CNP",
+      "rsi2": 99.8,
+      "close": 40.55,
+      "sma200": 41.08,
+      "status": "below SMA200"
     },
     {
       "ticker": "KO",
-      "rsi2": 99.3,
-      "close": 92.0,
-      "sma200": 80.02,
+      "rsi2": 99.8,
+      "close": 93.9,
+      "sma200": 80.14,
       "status": "above SMA200"
     },
     {
-      "ticker": "MRSH",
-      "rsi2": 99.3,
-      "close": 186.54,
-      "sma200": 174.65,
-      "status": "above SMA200"
+      "ticker": "EFX",
+      "rsi2": 99.8,
+      "close": 161.25,
+      "sma200": 178.1,
+      "status": "below SMA200"
     },
     {
-      "ticker": "ABT",
-      "rsi2": 99.2,
-      "close": 104.68,
-      "sma200": 101.52,
+      "ticker": "ACN",
+      "rsi2": 99.7,
+      "close": 229.68,
+      "sma200": 189.19,
       "status": "above SMA200"
     },
     {
       "ticker": "AWK",
-      "rsi2": 99.1,
-      "close": 133.04,
-      "sma200": 130.65,
+      "rsi2": 99.7,
+      "close": 134.94,
+      "sma200": 130.68,
       "status": "above SMA200"
     },
     {
-      "ticker": "CNC",
+      "ticker": "IFF",
+      "rsi2": 99.7,
+      "close": 90.68,
+      "sma200": 76.69,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "APD",
+      "rsi2": 99.6,
+      "close": 299.59,
+      "sma200": 284.35,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "HIG",
+      "rsi2": 99.6,
+      "close": 135.12,
+      "sma200": 134.51,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "MAR",
+      "rsi2": 99.6,
+      "close": 388.05,
+      "sma200": 351.2,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "MRSH",
+      "rsi2": 99.5,
+      "close": 188.35,
+      "sma200": 174.67,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "CLX",
+      "rsi2": 99.4,
+      "close": 87.09,
+      "sma200": 99.1,
+      "status": "below SMA200"
+    },
+    {
+      "ticker": "FIX",
+      "rsi2": 0.7,
+      "close": 1439.07,
+      "sma200": 1589.77,
+      "status": "below SMA200"
+    },
+    {
+      "ticker": "ABT",
+      "rsi2": 99.3,
+      "close": 104.89,
+      "sma200": 101.43,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "MO",
+      "rsi2": 99.3,
+      "close": 75.11,
+      "sma200": 66.24,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "CB",
+      "rsi2": 99.2,
+      "close": 359.79,
+      "sma200": 329.85,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "DELL",
+      "rsi2": 0.9,
+      "close": 451.71,
+      "sma200": 313.54,
+      "status": "LONG signal"
+    },
+    {
+      "ticker": "ALL",
       "rsi2": 99.1,
-      "close": 70.51,
-      "sma200": 54.01,
+      "close": 247.88,
+      "sma200": 224.43,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "BRO",
+      "rsi2": 99.1,
+      "close": 69.4,
+      "sma200": 66.87,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "STZ",
+      "rsi2": 99.1,
+      "close": 131.35,
+      "sma200": 141.11,
+      "status": "below SMA200"
+    },
+    {
+      "ticker": "BF-B",
+      "rsi2": 99.0,
+      "close": 28.88,
+      "sma200": 26.54,
       "status": "above SMA200"
     },
     {
       "ticker": "CAH",
       "rsi2": 99.0,
-      "close": 253.71,
-      "sma200": 218.7,
+      "close": 254.06,
+      "sma200": 218.95,
       "status": "above SMA200"
-    },
-    {
-      "ticker": "CNP",
-      "rsi2": 99.0,
-      "close": 39.8,
-      "sma200": 41.07,
-      "status": "below SMA200"
-    },
-    {
-      "ticker": "DHR",
-      "rsi2": 99.0,
-      "close": 231.5,
-      "sma200": 200.61,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "ECL",
-      "rsi2": 99.0,
-      "close": 290.81,
-      "sma200": 273.42,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "GEN",
-      "rsi2": 99.0,
-      "close": 24.82,
-      "sma200": 24.24,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "AVY",
-      "rsi2": 98.9,
-      "close": 175.88,
-      "sma200": 170.57,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "ATO",
-      "rsi2": 98.8,
-      "close": 163.95,
-      "sma200": 172.65,
-      "status": "below SMA200"
-    },
-    {
-      "ticker": "EL",
-      "rsi2": 98.8,
-      "close": 107.19,
-      "sma200": 91.2,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "CLX",
-      "rsi2": 98.7,
-      "close": 86.2,
-      "sma200": 99.15,
-      "status": "below SMA200"
     },
     {
       "ticker": "CAT",
-      "rsi2": 1.3,
-      "close": 735.64,
-      "sma200": 803.37,
+      "rsi2": 1.0,
+      "close": 730.76,
+      "sma200": 804.16,
       "status": "below SMA200"
     },
     {
-      "ticker": "FIX",
-      "rsi2": 1.3,
-      "close": 1481.27,
-      "sma200": 1587.31,
-      "status": "below SMA200"
-    },
-    {
-      "ticker": "HIG",
-      "rsi2": 98.6,
-      "close": 132.81,
-      "sma200": 134.52,
-      "status": "below SMA200"
-    },
-    {
-      "ticker": "BR",
-      "rsi2": 98.5,
-      "close": 174.11,
-      "sma200": 166.49,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "BRO",
-      "rsi2": 98.5,
-      "close": 67.98,
-      "sma200": 66.92,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "CTSH",
-      "rsi2": 98.5,
-      "close": 65.77,
-      "sma200": 59.3,
+      "ticker": "CI",
+      "rsi2": 99.0,
+      "close": 302.3,
+      "sma200": 277.93,
       "status": "above SMA200"
     },
     {
       "ticker": "DRI",
-      "rsi2": 98.5,
-      "close": 214.31,
-      "sma200": 201.46,
+      "rsi2": 99.0,
+      "close": 216.35,
+      "sma200": 201.64,
       "status": "above SMA200"
     },
     {
-      "ticker": "BF-B",
-      "rsi2": 98.4,
-      "close": 28.58,
-      "sma200": 26.52,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "CI",
-      "rsi2": 98.4,
-      "close": 298.81,
-      "sma200": 277.78,
-      "status": "above SMA200"
-    },
-    {
-      "ticker": "LVS",
-      "rsi2": 98.4,
-      "close": 38.32,
-      "sma200": 49.94,
+      "ticker": "FERG",
+      "rsi2": 98.9,
+      "close": 231.61,
+      "sma200": 236.2,
       "status": "below SMA200"
     },
     {
-      "ticker": "A",
-      "rsi2": 98.3,
-      "close": 175.55,
-      "sma200": 133.89,
+      "ticker": "BR",
+      "rsi2": 98.8,
+      "close": 175.11,
+      "sma200": 166.26,
+      "status": "above SMA200"
+    },
+    {
+      "ticker": "DOV",
+      "rsi2": 98.8,
+      "close": 195.8,
+      "sma200": 208.89,
+      "status": "below SMA200"
+    },
+    {
+      "ticker": "HAL",
+      "rsi2": 98.8,
+      "close": 33.5,
+      "sma200": 35.41,
+      "status": "below SMA200"
+    },
+    {
+      "ticker": "AON",
+      "rsi2": 98.7,
+      "close": 292.55,
+      "sma200": 327.03,
+      "status": "below SMA200"
+    },
+    {
+      "ticker": "CTSH",
+      "rsi2": 98.7,
+      "close": 66.03,
+      "sma200": 59.22,
       "status": "above SMA200"
     }
   ]
