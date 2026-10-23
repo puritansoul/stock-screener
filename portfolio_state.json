@@ -27,28 +27,28 @@
   "last_run": "2026-10-23",
   "inception_date": "2026-07-01",
   "prev_prices": {
-    "APA": 51.72999954223633,
-    "EXPE": 291.1600036621094,
-    "COHR": 209.9499969482422,
-    "BMY": 61.59000015258789,
-    "JBHT": 224.9250030517578,
-    "DLTR": 123.57499694824219,
-    "LMT": 606.1799926757812,
-    "NTAP": 215.7449951171875,
-    "UAL": 98.45999908447266,
-    "STT": 168.1300048828125,
-    "TRV": 400.4599914550781,
-    "NEM": 109.73999786376953,
-    "FCX": 65.5250015258789,
-    "SBUX": 100.65499877929688,
-    "BBY": 100.15499877929688,
-    "AIZ": 284.9599914550781,
-    "LVS": 35.459999084472656,
-    "WMB": 72.08499908447266,
-    "CASY": 695.8699951171875,
-    "KLAC": 146.9199981689453,
-    "GLW": 125.04000091552734,
-    "ADBE": 265.2099914550781
+    "APA": 51.900001525878906,
+    "EXPE": 289.010009765625,
+    "COHR": 209.2899932861328,
+    "BMY": 61.47999954223633,
+    "JBHT": 226.02999877929688,
+    "DLTR": 125.30999755859375,
+    "LMT": 604.1799926757812,
+    "NTAP": 215.47999572753906,
+    "UAL": 97.93000030517578,
+    "STT": 167.8300018310547,
+    "TRV": 398.2799987792969,
+    "NEM": 108.87000274658203,
+    "FCX": 65.18000030517578,
+    "SBUX": 100.80000305175781,
+    "BBY": 99.87000274658203,
+    "AIZ": 284.75,
+    "LVS": 35.68000030517578,
+    "WMB": 71.69999694824219,
+    "CASY": 699.260009765625,
+    "KLAC": 145.61000061035156,
+    "GLW": 123.69000244140625,
+    "ADBE": 263.82000732421875
   },
   "positions": {
     "APA": {
@@ -163,28 +163,28 @@
     }
   },
   "weights": {
-    "APA": 0.04795793208249939,
-    "EXPE": 0.03871948285680226,
-    "COHR": 0.01920713296179768,
-    "BMY": 0.06635738131056235,
-    "JBHT": 0.04510745179204662,
-    "DLTR": 0.05057604298119135,
-    "LMT": 0.05705652829285352,
-    "NTAP": 0.03978457353214536,
-    "UAL": 0.04424106827391407,
+    "APA": 0.047767033275250996,
+    "EXPE": 0.038539983209642636,
+    "COHR": 0.019206952687203127,
+    "BMY": 0.06617661873764762,
+    "JBHT": 0.045187326546629686,
+    "DLTR": 0.05162847346787406,
+    "LMT": 0.057264332766743024,
+    "NTAP": 0.03977052447897779,
+    "UAL": 0.04404720233966258,
     "STT": 0.019230769230769232,
-    "TRV": 0.0891307923114449,
-    "NEM": 0.0427722821257805,
+    "TRV": 0.08832063239698662,
+    "NEM": 0.042432813117106644,
     "FCX": 0.019230769230769232,
-    "SBUX": 0.0782253197619035,
-    "BBY": 0.042836589535676824,
-    "AIZ": 0.07092851673859595,
-    "LVS": 0.05539566712468389,
-    "WMB": 0.05652891161465864,
-    "CASY": 0.03513042895700625,
-    "KLAC": 0.02390008063695591,
-    "GLW": 0.022320527775060658,
-    "ADBE": 0.03536175087288187
+    "SBUX": 0.07827650515024934,
+    "BBY": 0.04280720927865479,
+    "AIZ": 0.0708303683328658,
+    "LVS": 0.055846030361074286,
+    "WMB": 0.056769149965724526,
+    "CASY": 0.0351861996312485,
+    "KLAC": 0.02391159263785424,
+    "GLW": 0.022314021404110384,
+    "ADBE": 0.03525549175295483
   },
   "yq": [
     2026,
@@ -209,7 +209,7 @@
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.877675055541054,
-      "price": 51.72999954223633,
+      "price": 51.900001525878906,
       "market_cap_bn": NaN
     },
     "BMY": {
@@ -227,7 +227,7 @@
       "debt_ebitda": NaN,
       "piotroski": 7.0,
       "composite": 0.8243645973909132,
-      "price": 61.59000015258789,
+      "price": 61.47999954223633,
       "market_cap_bn": NaN
     },
     "NEM": {
@@ -245,7 +245,7 @@
       "debt_ebitda": NaN,
       "piotroski": 6.0,
       "composite": 0.8210610352084249,
-      "price": 109.73999786376953,
+      "price": 108.87000274658203,
       "market_cap_bn": NaN
     },
     "COHR": {
@@ -263,7 +263,7 @@
       "debt_ebitda": NaN,
       "piotroski": 6.0,
       "composite": 0.8158162799636696,
-      "price": 209.9499969482422,
+      "price": 209.2899932861328,
       "market_cap_bn": NaN
     },
     "EXPE": {
@@ -276,13 +276,31 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.2805938812237552,
-      "fcf_ev": 0.09686373569013161,
-      "ev_ebitda": 11.641391986661583,
+      "fcf_ev": 0.09761198141702479,
+      "ev_ebitda": 11.552154767186508,
       "debt_ebitda": 1.9793328498912255,
       "piotroski": 6.0,
       "composite": 0.789212114904721,
-      "price": 291.1600036621094,
-      "market_cap_bn": 33.33
+      "price": 289.010009765625,
+      "market_cap_bn": 33.08
+    },
+    "UAL": {
+      "r_momentum": 0.6174089068825911,
+      "r_roic": 0.7679083094555874,
+      "r_fcf_ev": 0.98828125,
+      "r_ev_ebitda": 0.9898477157360406,
+      "r_piotroski": 0.6411290322580645,
+      "r_accruals": 0.7655502392344498,
+      "r_eps_surprise": NaN,
+      "r_rev_growth": NaN,
+      "roic": 0.28226627537881055,
+      "fcf_ev": 0.38995417922782016,
+      "ev_ebitda": 2.8254690134625076,
+      "debt_ebitda": NaN,
+      "piotroski": 5.0,
+      "composite": 0.7823039170476368,
+      "price": 97.93000030517578,
+      "market_cap_bn": 31.79
     },
     "TRV": {
       "r_momentum": 0.8157894736842105,
@@ -294,13 +312,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.7543859649122807,
       "roic": NaN,
-      "fcf_ev": 0.12696329501883422,
+      "fcf_ev": 0.1276582308782357,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 6.0,
       "composite": 0.7821215892745366,
-      "price": 400.4599914550781,
-      "market_cap_bn": 83.54
+      "price": 398.2799987792969,
+      "market_cap_bn": 83.08
     },
     "JBHT": {
       "r_momentum": 0.8522267206477733,
@@ -317,26 +335,8 @@
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.7820387509619052,
-      "price": 224.9250030517578,
+      "price": 226.02999877929688,
       "market_cap_bn": NaN
-    },
-    "UAL": {
-      "r_momentum": 0.6174089068825911,
-      "r_roic": 0.7679083094555874,
-      "r_fcf_ev": 0.98828125,
-      "r_ev_ebitda": 0.9847715736040609,
-      "r_piotroski": 0.6411290322580645,
-      "r_accruals": 0.7655502392344498,
-      "r_eps_surprise": NaN,
-      "r_rev_growth": NaN,
-      "roic": 0.28226627537881055,
-      "fcf_ev": 0.38687590121648074,
-      "ev_ebitda": 2.8479505872915163,
-      "debt_ebitda": NaN,
-      "piotroski": 5.0,
-      "composite": 0.781706723855639,
-      "price": 98.45999908447266,
-      "market_cap_bn": 31.96
     },
     "SBUX": {
       "r_momentum": 0.5870445344129555,
@@ -353,26 +353,26 @@
       "debt_ebitda": 2.8203733990357045,
       "piotroski": 6.0,
       "composite": 0.7777806205742672,
-      "price": 100.65499877929688,
+      "price": 100.80000305175781,
       "market_cap_bn": NaN
     },
     "DLTR": {
       "r_momentum": 0.5769230769230769,
       "r_roic": 0.9054441260744985,
       "r_fcf_ev": NaN,
-      "r_ev_ebitda": 0.8527918781725888,
+      "r_ev_ebitda": 0.8426395939086294,
       "r_piotroski": 0.8598790322580645,
       "r_accruals": NaN,
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.6798245614035088,
       "roic": 0.48261466148950455,
       "fcf_ev": NaN,
-      "ev_ebitda": 9.618278772528523,
+      "ev_ebitda": 9.759775672920263,
       "debt_ebitda": NaN,
       "piotroski": 6.0,
-      "composite": 0.7718950149427013,
-      "price": 123.57499694824219,
-      "market_cap_bn": 23.19
+      "composite": 0.7703331250559383,
+      "price": 125.30999755859375,
+      "market_cap_bn": 23.52
     },
     "NTAP": {
       "r_momentum": 0.9251012145748988,
@@ -384,13 +384,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.4202862164197841,
-      "fcf_ev": 0.04326286836292099,
-      "ev_ebitda": 23.314095543965866,
+      "fcf_ev": 0.04331494521486986,
+      "ev_ebitda": 23.28606538726263,
       "debt_ebitda": 1.342687533729088,
       "piotroski": 6.0,
       "composite": 0.7517989471074743,
-      "price": 215.7449951171875,
-      "market_cap_bn": 42.29
+      "price": 215.47999572753906,
+      "market_cap_bn": 42.23
     },
     "AIZ": {
       "r_momentum": 0.7651821862348178,
@@ -402,13 +402,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.6710526315789473,
       "roic": NaN,
-      "fcf_ev": 0.1291819505453116,
+      "fcf_ev": 0.12929030685708773,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 6.0,
       "composite": 0.7502930719402627,
-      "price": 284.9599914550781,
-      "market_cap_bn": 14.07
+      "price": 284.75,
+      "market_cap_bn": 14.06
     },
     "TXN": {
       "r_momentum": 0.9210526315789473,
@@ -425,7 +425,7 @@
       "debt_ebitda": 2.3330566163041673,
       "piotroski": 5.0,
       "composite": 0.7406833210904145,
-      "price": 284.489990234375,
+      "price": 284.69000244140625,
       "market_cap_bn": NaN
     },
     "COP": {
@@ -443,7 +443,7 @@
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.7393732941271142,
-      "price": 151.42010498046875,
+      "price": 150.8000030517578,
       "market_cap_bn": NaN
     },
     "BBY": {
@@ -456,13 +456,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.12280701754385964,
       "roic": 0.4363807728557964,
-      "fcf_ev": 0.06685226675786836,
-      "ev_ebitda": 8.476401686109938,
+      "fcf_ev": 0.06706597550203823,
+      "ev_ebitda": 8.449391251297685,
       "debt_ebitda": NaN,
       "piotroski": 6.0,
       "composite": 0.7371846988189991,
-      "price": 100.15499877929688,
-      "market_cap_bn": 21.07
+      "price": 99.87000274658203,
+      "market_cap_bn": 21.01
     },
     "MO": {
       "r_momentum": 0.5951417004048583,
@@ -479,7 +479,7 @@
       "debt_ebitda": 2.417806197737334,
       "piotroski": 5.0,
       "composite": 0.7360139342765547,
-      "price": 74.46499633789062,
+      "price": 74.30999755859375,
       "market_cap_bn": NaN
     },
     "DVA": {
@@ -492,13 +492,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.5350877192982456,
       "roic": 0.11539661025792444,
-      "fcf_ev": 0.11667996169571199,
-      "ev_ebitda": 4.0818625329894465,
+      "fcf_ev": 0.11833401734696647,
+      "ev_ebitda": 4.02480685329813,
       "debt_ebitda": NaN,
       "piotroski": 6.0,
       "composite": 0.7284665669350756,
-      "price": 186.09500122070312,
-      "market_cap_bn": 11.9
+      "price": 183.63999938964844,
+      "market_cap_bn": 11.74
     },
     "GLW": {
       "r_momentum": 0.9412955465587044,
@@ -515,7 +515,7 @@
       "debt_ebitda": NaN,
       "piotroski": 7.0,
       "composite": 0.7181120125673969,
-      "price": 125.04000091552734,
+      "price": 123.69000244140625,
       "market_cap_bn": NaN
     },
     "LMT": {
@@ -533,7 +533,7 @@
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.7161027401350039,
-      "price": 606.1799926757812,
+      "price": 604.1799926757812,
       "market_cap_bn": NaN
     },
     "LRCX": {
@@ -551,44 +551,44 @@
       "debt_ebitda": NaN,
       "piotroski": 3.0,
       "composite": 0.7139423076923076,
-      "price": 230.85000610351562,
-      "market_cap_bn": 288.86
+      "price": 230.10000610351562,
+      "market_cap_bn": 287.92
     },
     "QCOM": {
       "r_momentum": 0.6578947368421053,
       "r_roic": 0.6561604584527221,
-      "r_fcf_ev": 0.78515625,
+      "r_fcf_ev": 0.78125,
       "r_ev_ebitda": 0.6548223350253808,
       "r_piotroski": 0.8598790322580645,
       "r_accruals": 0.9880382775119617,
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.18421052631578946,
       "roic": 0.21536772011783778,
-      "fcf_ev": 0.07253906883337374,
-      "ev_ebitda": 13.839999479952656,
+      "fcf_ev": 0.07215804053470838,
+      "ev_ebitda": 13.913081168650113,
       "debt_ebitda": 0.9157412051300423,
       "piotroski": 6.0,
-      "composite": 0.711187741504773,
-      "price": 174.94500732421875,
-      "market_cap_bn": 184.92
+      "composite": 0.7105366998381062,
+      "price": 175.91000366210938,
+      "market_cap_bn": 185.94
     },
     "ADBE": {
       "r_momentum": 0.058704453441295545,
       "r_roic": 0.9312320916905444,
-      "r_fcf_ev": 0.859375,
-      "r_ev_ebitda": 0.7817258883248731,
+      "r_fcf_ev": 0.86328125,
+      "r_ev_ebitda": 0.7766497461928934,
       "r_piotroski": 0.9959677419354839,
       "r_accruals": 0.9114832535885168,
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.7807017543859649,
       "roic": 0.5334558823529412,
-      "fcf_ev": 0.09320561475616869,
-      "ev_ebitda": 11.098465622698043,
+      "fcf_ev": 0.09369723207205985,
+      "ev_ebitda": 11.040233402180101,
       "debt_ebitda": 0.50419991600168,
       "piotroski": 8.0,
-      "composite": 0.7053848168117262,
-      "price": 265.2099914550781,
-      "market_cap_bn": 105.82
+      "composite": 0.7054718426859506,
+      "price": 263.82000732421875,
+      "market_cap_bn": 105.26
     },
     "SNDK": {
       "r_momentum": 1.0,
@@ -605,8 +605,8 @@
       "debt_ebitda": NaN,
       "piotroski": 2.0,
       "composite": 0.7046370967741935,
-      "price": 1262.1800537109375,
-      "market_cap_bn": 184.28
+      "price": 1238.030029296875,
+      "market_cap_bn": 180.75
     },
     "DAL": {
       "r_momentum": 0.8441295546558705,
@@ -623,7 +623,7 @@
       "debt_ebitda": 1.5614035087719298,
       "piotroski": 6.0,
       "composite": 0.7038388199235072,
-      "price": 76.41999816894531,
+      "price": 76.77999877929688,
       "market_cap_bn": NaN
     },
     "WMB": {
@@ -641,7 +641,7 @@
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.7024704136974387,
-      "price": 72.08499908447266,
+      "price": 71.69999694824219,
       "market_cap_bn": NaN
     },
     "ROST": {
@@ -654,13 +654,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.3488099765824377,
-      "fcf_ev": 0.03157190936585759,
-      "ev_ebitda": 21.7372235715514,
+      "fcf_ev": 0.03152362930878299,
+      "ev_ebitda": 21.77051524569202,
       "debt_ebitda": 0.31662784899532076,
       "piotroski": 6.0,
       "composite": 0.7003365286722892,
-      "price": 228.96499633789062,
-      "market_cap_bn": 73.19
+      "price": 229.3000030517578,
+      "market_cap_bn": 73.3
     },
     "HSIC": {
       "r_momentum": 0.8016194331983806,
@@ -672,13 +672,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.20684193854925562,
-      "fcf_ev": 0.07458266641959628,
-      "ev_ebitda": 9.902960661972203,
+      "fcf_ev": 0.07488114102819597,
+      "ev_ebitda": 9.863487674956056,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.6986506134550281,
-      "price": 85.30000305175781,
-      "market_cap_bn": 9.55
+      "price": 84.95999908447266,
+      "market_cap_bn": 9.51
     },
     "APH": {
       "r_momentum": 0.6983805668016194,
@@ -695,7 +695,7 @@
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.6979693561703841,
-      "price": 74.18000030517578,
+      "price": 74.08999633789062,
       "market_cap_bn": NaN
     },
     "WDC": {
@@ -713,8 +713,8 @@
       "debt_ebitda": NaN,
       "piotroski": 2.0,
       "composite": 0.6978894584476077,
-      "price": 344.6600036621094,
-      "market_cap_bn": 124.42
+      "price": 343.6700134277344,
+      "market_cap_bn": 124.06
     },
     "CF": {
       "r_momentum": 0.8502024291497976,
@@ -731,26 +731,26 @@
       "debt_ebitda": 1.0056285178236397,
       "piotroski": 5.0,
       "composite": 0.6942186944230133,
-      "price": 121.44999694824219,
+      "price": 120.68000030517578,
       "market_cap_bn": NaN
     },
     "INCY": {
       "r_momentum": 0.8360323886639676,
       "r_roic": 0.6991404011461319,
-      "r_fcf_ev": 0.796875,
+      "r_fcf_ev": 0.79296875,
       "r_ev_ebitda": 0.7461928934010152,
       "r_piotroski": 0.6411290322580645,
       "r_accruals": 0.23444976076555024,
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.2387700260401767,
-      "fcf_ev": 0.07337238554096168,
-      "ev_ebitda": 11.979463100211028,
+      "fcf_ev": 0.07334177953492621,
+      "ev_ebitda": 11.984462208799226,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
-      "composite": 0.6926387960052739,
-      "price": 115.66999816894531,
-      "market_cap_bn": 23.25
+      "composite": 0.69194945776998,
+      "price": 115.70999908447266,
+      "market_cap_bn": 23.26
     },
     "MA": {
       "r_momentum": 0.3825910931174089,
@@ -767,62 +767,62 @@
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.6888742814366426,
-      "price": 622.0700073242188,
+      "price": 623.5999755859375,
       "market_cap_bn": NaN
-    },
-    "HST": {
-      "r_momentum": 0.8582995951417004,
-      "r_roic": 0.4355300859598854,
-      "r_fcf_ev": 0.87890625,
-      "r_ev_ebitda": 0.5380710659898478,
-      "r_piotroski": 0.6411290322580645,
-      "r_accruals": 0.7296650717703349,
-      "r_eps_surprise": NaN,
-      "r_rev_growth": NaN,
-      "roic": 0.13384470882905447,
-      "fcf_ev": 0.10054685008854927,
-      "ev_ebitda": 17.564765776249402,
-      "debt_ebitda": NaN,
-      "piotroski": 5.0,
-      "composite": 0.6841039890848728,
-      "price": 24.774999618530273,
-      "market_cap_bn": 16.97
     },
     "DXCM": {
       "r_momentum": 0.708502024291498,
       "r_roic": 0.8194842406876791,
-      "r_fcf_ev": 0.43359375,
-      "r_ev_ebitda": 0.31979695431472077,
+      "r_fcf_ev": 0.44921875,
+      "r_ev_ebitda": 0.3299492385786802,
       "r_piotroski": 0.8598790322580645,
       "r_accruals": 0.9043062200956937,
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.3478294041351949,
-      "fcf_ev": 0.03769397607745722,
-      "ev_ebitda": 24.55956563756162,
+      "fcf_ev": 0.03805075448518303,
+      "ev_ebitda": 24.32928576949701,
       "debt_ebitda": NaN,
       "piotroski": 6.0,
-      "composite": 0.6812171013678627,
-      "price": 78.6500015258789,
-      "market_cap_bn": 29.68
+      "composite": 0.6851688406930345,
+      "price": 77.94000244140625,
+      "market_cap_bn": 29.41
+    },
+    "HST": {
+      "r_momentum": 0.8582995951417004,
+      "r_roic": 0.4355300859598854,
+      "r_fcf_ev": 0.87890625,
+      "r_ev_ebitda": 0.5279187817258884,
+      "r_piotroski": 0.6411290322580645,
+      "r_accruals": 0.7296650717703349,
+      "r_eps_surprise": NaN,
+      "r_rev_growth": NaN,
+      "roic": 0.13384470882905447,
+      "fcf_ev": 0.10079972546503851,
+      "ev_ebitda": 17.520701204266466,
+      "debt_ebitda": NaN,
+      "piotroski": 5.0,
+      "composite": 0.6829096027008776,
+      "price": 24.719999313354492,
+      "market_cap_bn": 16.93
     },
     "VRSN": {
       "r_momentum": 0.659919028340081,
       "r_roic": 0.9484240687679083,
-      "r_fcf_ev": 0.46875,
-      "r_ev_ebitda": 0.3350253807106599,
+      "r_fcf_ev": 0.47265625,
+      "r_ev_ebitda": 0.3451776649746193,
       "r_piotroski": 0.6411290322580645,
       "r_accruals": 0.9832535885167464,
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.4956140350877193,
       "roic": 0.6218105169735966,
-      "fcf_ev": 0.0397349024370613,
-      "ev_ebitda": 23.98366032786714,
+      "fcf_ev": 0.04060737555522884,
+      "ev_ebitda": 23.468357414905775,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
-      "composite": 0.68078069036059,
-      "price": 306.7099914550781,
-      "market_cap_bn": 27.73
+      "composite": 0.682559763612141,
+      "price": 300.32000732421875,
+      "market_cap_bn": 27.15
     },
     "SWK": {
       "r_momentum": 0.8117408906882592,
@@ -839,7 +839,7 @@
       "debt_ebitda": NaN,
       "piotroski": 7.0,
       "composite": 0.6786122016385174,
-      "price": 99.43000030517578,
+      "price": 99.23999786376953,
       "market_cap_bn": NaN
     },
     "STX": {
@@ -857,8 +857,8 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.6763895237473335,
-      "price": 642.0,
-      "market_cap_bn": 145.6
+      "price": 630.489990234375,
+      "market_cap_bn": 142.99
     },
     "WM": {
       "r_momentum": 0.3724696356275304,
@@ -870,13 +870,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.43405541561712846,
-      "fcf_ev": 0.06369836235013089,
-      "ev_ebitda": 13.229535765801492,
+      "fcf_ev": 0.06348022349929291,
+      "ev_ebitda": 13.274996786100266,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.6746122750022898,
-      "price": 238.56500244140625,
-      "market_cap_bn": 95.43
+      "price": 239.3800048828125,
+      "market_cap_bn": 95.75
     },
     "JBL": {
       "r_momentum": 0.888663967611336,
@@ -888,13 +888,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.25143586470963625,
-      "fcf_ev": 0.03805890957835693,
-      "ev_ebitda": 16.591792151619515,
+      "fcf_ev": 0.0381302957238267,
+      "ev_ebitda": 16.560729605010426,
       "debt_ebitda": 1.8200431034482758,
       "piotroski": 5.0,
       "composite": 0.6734402032391877,
-      "price": 274.5199890136719,
-      "market_cap_bn": 28.78
+      "price": 273.9700012207031,
+      "market_cap_bn": 28.72
     },
     "PSX": {
       "r_momentum": 0.9493927125506073,
@@ -911,7 +911,7 @@
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.6726580401771404,
-      "price": 284.3800048828125,
+      "price": 283.17999267578125,
       "market_cap_bn": NaN
     },
     "NDSN": {
@@ -929,7 +929,7 @@
       "debt_ebitda": 2.18840590703537,
       "piotroski": 6.0,
       "composite": 0.6724557983806305,
-      "price": 319.44500732421875,
+      "price": 318.8399963378906,
       "market_cap_bn": NaN
     },
     "UNP": {
@@ -942,13 +942,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.4762734000870701,
-      "fcf_ev": 0.03178495211567997,
-      "ev_ebitda": 17.571236604168615,
+      "fcf_ev": 0.03190819094869883,
+      "ev_ebitda": 17.50337131223534,
       "debt_ebitda": NaN,
       "piotroski": 6.0,
       "composite": 0.6705507481471642,
-      "price": 293.9949951171875,
-      "market_cap_bn": 174.62
+      "price": 292.8699951171875,
+      "market_cap_bn": 173.95
     },
     "CHRW": {
       "r_momentum": 0.6821862348178138,
@@ -960,49 +960,49 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.23997323035209572,
-      "fcf_ev": 0.04966277471265662,
-      "ev_ebitda": 22.666963059269186,
+      "fcf_ev": 0.04954202919858979,
+      "ev_ebitda": 22.72220775051819,
       "debt_ebitda": 2.1196222204611295,
       "piotroski": 6.0,
       "composite": 0.6679996016180425,
-      "price": 140.7949981689453,
-      "market_cap_bn": 16.49
-    },
-    "KVUE": {
-      "r_momentum": 0.7145748987854251,
-      "r_roic": 0.6762177650429799,
-      "r_fcf_ev": 0.60546875,
-      "r_ev_ebitda": 0.7411167512690355,
-      "r_piotroski": 0.8598790322580645,
-      "r_accruals": 0.3827751196172249,
-      "r_eps_surprise": NaN,
-      "r_rev_growth": NaN,
-      "roic": 0.22875011844972992,
-      "fcf_ev": 0.04739271080901325,
-      "ev_ebitda": 12.229788451363177,
-      "debt_ebitda": NaN,
-      "piotroski": 6.0,
-      "composite": 0.6674775712707217,
-      "price": 19.5,
-      "market_cap_bn": 37.44
+      "price": 141.1699981689453,
+      "market_cap_bn": 16.53
     },
     "HCA": {
       "r_momentum": 0.4068825910931174,
       "r_roic": NaN,
-      "r_fcf_ev": 0.65625,
+      "r_fcf_ev": 0.66015625,
       "r_ev_ebitda": NaN,
       "r_piotroski": 0.96875,
       "r_accruals": 0.9019138755980861,
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.6666666666666666,
       "roic": NaN,
-      "fcf_ev": 0.05203891101113722,
+      "fcf_ev": 0.052310045356620045,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 7.0,
-      "composite": 0.667022898519609,
-      "price": 472.5450134277344,
-      "market_cap_bn": 103.0
+      "composite": 0.667999461019609,
+      "price": 469.0299987792969,
+      "market_cap_bn": 102.23
+    },
+    "KVUE": {
+      "r_momentum": 0.7145748987854251,
+      "r_roic": 0.6762177650429799,
+      "r_fcf_ev": 0.6015625,
+      "r_ev_ebitda": 0.7411167512690355,
+      "r_piotroski": 0.8598790322580645,
+      "r_accruals": 0.3827751196172249,
+      "r_eps_surprise": NaN,
+      "r_rev_growth": NaN,
+      "roic": 0.22875011844972992,
+      "fcf_ev": 0.04721803281290981,
+      "ev_ebitda": 12.275031228585972,
+      "debt_ebitda": NaN,
+      "piotroski": 6.0,
+      "composite": 0.6667882330354277,
+      "price": 19.56999969482422,
+      "market_cap_bn": 37.58
     },
     "SW": {
       "r_momentum": 0.5647773279352226,
@@ -1014,13 +1014,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.09530938123752496,
-      "fcf_ev": 0.15920581086736255,
-      "ev_ebitda": 4.990806979209219,
+      "fcf_ev": 0.15944133186689166,
+      "ev_ebitda": 4.983434738683898,
       "debt_ebitda": NaN,
       "piotroski": 6.0,
       "composite": 0.6664726865916498,
-      "price": 41.90999984741211,
-      "market_cap_bn": 21.98
+      "price": 41.849998474121094,
+      "market_cap_bn": 21.95
     },
     "LITE": {
       "r_momentum": 0.9959514170040485,
@@ -1037,44 +1037,44 @@
       "debt_ebitda": NaN,
       "piotroski": 0.0,
       "composite": 0.6649756758521613,
-      "price": 762.6199951171875,
-      "market_cap_bn": 67.57
+      "price": 756.1699829101562,
+      "market_cap_bn": 67.0
     },
     "ULTA": {
       "r_momentum": 0.4534412955465587,
       "r_roic": 0.9426934097421203,
-      "r_fcf_ev": 0.47265625,
+      "r_fcf_ev": 0.46875,
       "r_ev_ebitda": 0.6345177664974619,
       "r_piotroski": 0.8598790322580645,
       "r_accruals": 0.6794258373205742,
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.6140350877192983,
       "roic": 0.5798571040052714,
-      "fcf_ev": 0.04046463383953284,
-      "ev_ebitda": 14.392368476006267,
+      "fcf_ev": 0.040191505140547014,
+      "ev_ebitda": 14.490174439316919,
       "debt_ebitda": NaN,
       "piotroski": 6.0,
-      "composite": 0.6646771072792343,
-      "price": 620.27001953125,
-      "market_cap_bn": 26.55
+      "composite": 0.6640260656125675,
+      "price": 624.4600219726562,
+      "market_cap_bn": 26.73
     },
     "DECK": {
       "r_momentum": 0.12955465587044535,
       "r_roic": 0.9369627507163324,
-      "r_fcf_ev": 0.91796875,
+      "r_fcf_ev": 0.9140625,
       "r_ev_ebitda": 0.9035532994923858,
       "r_piotroski": 0.6411290322580645,
       "r_accruals": 0.5885167464114833,
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.5486870036781797,
-      "fcf_ev": 0.11667363573718109,
-      "ev_ebitda": 7.447239449170769,
+      "fcf_ev": 0.11569812380147021,
+      "ev_ebitda": 7.510031054877608,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
-      "composite": 0.6639043548629987,
-      "price": 80.51000213623047,
-      "market_cap_bn": 11.01
+      "composite": 0.6632150166277048,
+      "price": 81.08999633789062,
+      "market_cap_bn": 11.09
     },
     "OXY": {
       "r_momentum": 0.819838056680162,
@@ -1086,13 +1086,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.008771929824561403,
       "roic": NaN,
-      "fcf_ev": 0.05623191986562694,
+      "fcf_ev": 0.05638635892365513,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.662116347106134,
-      "price": 64.37000274658203,
-      "market_cap_bn": 64.35
+      "price": 64.16999816894531,
+      "market_cap_bn": 64.15
     },
     "MCK": {
       "r_momentum": 0.5668016194331984,
@@ -1109,7 +1109,7 @@
       "debt_ebitda": 1.4969995383905217,
       "piotroski": 5.0,
       "composite": 0.6607137882857135,
-      "price": 1001.8699951171875,
+      "price": 1000.77001953125,
       "market_cap_bn": NaN
     },
     "RL": {
@@ -1127,7 +1127,7 @@
       "debt_ebitda": NaN,
       "piotroski": 7.0,
       "composite": 0.6591437080391931,
-      "price": 377.135009765625,
+      "price": 377.3999938964844,
       "market_cap_bn": NaN
     },
     "CMI": {
@@ -1145,26 +1145,26 @@
       "debt_ebitda": NaN,
       "piotroski": 3.0,
       "composite": 0.6576725472536812,
-      "price": 520.1849975585938,
+      "price": 517.4000244140625,
       "market_cap_bn": NaN
     },
     "SYF": {
       "r_momentum": 0.38461538461538464,
       "r_roic": NaN,
-      "r_fcf_ev": 1.0,
+      "r_fcf_ev": 0.99609375,
       "r_ev_ebitda": NaN,
       "r_piotroski": 0.6411290322580645,
       "r_accruals": 0.6889952153110048,
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": NaN,
-      "fcf_ev": 0.4088569684254784,
+      "fcf_ev": 0.4075376502085431,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
-      "composite": 0.654428184872698,
-      "price": 73.4000015258789,
-      "market_cap_bn": 23.86
+      "composite": 0.6533628439636071,
+      "price": 73.63999938964844,
+      "market_cap_bn": 23.93
     },
     "MAR": {
       "r_momentum": 0.7854251012145749,
@@ -1181,7 +1181,7 @@
       "debt_ebitda": 0.005554213957981164,
       "piotroski": 7.0,
       "composite": 0.6431962995706427,
-      "price": 391.19500732421875,
+      "price": 390.7099914550781,
       "market_cap_bn": NaN
     },
     "CASY": {
@@ -1199,7 +1199,7 @@
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.6419414861689904,
-      "price": 695.8699951171875,
+      "price": 699.260009765625,
       "market_cap_bn": NaN
     },
     "CBOE": {
@@ -1212,31 +1212,31 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.207522349213534,
-      "fcf_ev": 0.04844425334747907,
-      "ev_ebitda": 21.83835390554705,
+      "fcf_ev": 0.048377221187047424,
+      "ev_ebitda": 21.86861343692649,
       "debt_ebitda": 0.9083359547027368,
       "piotroski": 6.0,
       "composite": 0.6416056936518468,
-      "price": 339.9599914550781,
-      "market_cap_bn": 35.54
+      "price": 340.4200134277344,
+      "market_cap_bn": 35.59
     },
     "EME": {
       "r_momentum": 0.5222672064777328,
       "r_roic": 0.8538681948424068,
-      "r_fcf_ev": 0.5859375,
-      "r_ev_ebitda": 0.5939086294416244,
+      "r_fcf_ev": 0.58984375,
+      "r_ev_ebitda": 0.5888324873096447,
       "r_piotroski": 0.96875,
       "r_accruals": 0.13397129186602874,
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.868421052631579,
       "roic": 0.42006792505933577,
-      "fcf_ev": 0.04654387872836222,
-      "ev_ebitda": 16.32698901858641,
+      "fcf_ev": 0.04695825380099571,
+      "ev_ebitda": 16.18291429874835,
       "debt_ebitda": NaN,
       "piotroski": 7.0,
-      "composite": 0.640224166695969,
-      "price": 653.239990234375,
-      "market_cap_bn": 28.9
+      "composite": 0.6403111925701935,
+      "price": 647.6599731445312,
+      "market_cap_bn": 28.65
     },
     "ALL": {
       "r_momentum": 0.6558704453441295,
@@ -1248,13 +1248,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.7368421052631579,
       "roic": NaN,
-      "fcf_ev": 0.13700761011310286,
+      "fcf_ev": 0.13762797876633026,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.6387601934974335,
-      "price": 254.47000122070312,
-      "market_cap_bn": 64.64
+      "price": 253.19000244140625,
+      "market_cap_bn": 64.31
     },
     "KMB": {
       "r_momentum": 0.2125506072874494,
@@ -1266,13 +1266,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.14912280701754385,
       "roic": 1.3434285714285714,
-      "fcf_ev": 0.07810763865704248,
-      "ev_ebitda": 11.265367833803513,
+      "fcf_ev": 0.07783095633142982,
+      "ev_ebitda": 11.3054152431899,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.6339896726932401,
-      "price": 109.7699966430664,
-      "market_cap_bn": 36.51
+      "price": 110.1500015258789,
+      "market_cap_bn": 36.64
     },
     "LLY": {
       "r_momentum": 0.8481781376518218,
@@ -1289,7 +1289,7 @@
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.6329003323909945,
-      "price": 1264.030517578125,
+      "price": 1273.4599609375,
       "market_cap_bn": NaN
     },
     "GEN": {
@@ -1302,13 +1302,31 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.19607843137254902,
-      "fcf_ev": 0.06583385330094223,
-      "ev_ebitda": 8.853423075889474,
+      "fcf_ev": 0.06604762164393926,
+      "ev_ebitda": 8.82476827298094,
       "debt_ebitda": 3.1213164944508227,
       "piotroski": 6.0,
       "composite": 0.6327883478282256,
-      "price": 25.0049991607666,
-      "market_cap_bn": 14.98
+      "price": 24.8799991607666,
+      "market_cap_bn": 14.9
+    },
+    "MAS": {
+      "r_momentum": 0.4089068825910931,
+      "r_roic": 0.6819484240687679,
+      "r_fcf_ev": 0.76953125,
+      "r_ev_ebitda": 0.8324873096446701,
+      "r_piotroski": 0.6411290322580645,
+      "r_accruals": 0.5669856459330144,
+      "r_eps_surprise": NaN,
+      "r_rev_growth": NaN,
+      "roic": 0.2310683206813553,
+      "fcf_ev": 0.0707698772777689,
+      "ev_ebitda": 10.344679384860063,
+      "debt_ebitda": NaN,
+      "piotroski": 5.0,
+      "composite": 0.6325422913124085,
+      "price": 76.01000213623047,
+      "market_cap_bn": 14.99
     },
     "EG": {
       "r_momentum": 0.5303643724696356,
@@ -1320,13 +1338,31 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.8421052631578947,
       "roic": NaN,
-      "fcf_ev": 0.10244209145361709,
+      "fcf_ev": 0.10331461972681605,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.631539070322363,
-      "price": 401.9949951171875,
-      "market_cap_bn": 29.95
+      "price": 398.6000061035156,
+      "market_cap_bn": 29.7
+    },
+    "APP": {
+      "r_momentum": 0.02631578947368421,
+      "r_roic": 0.9885386819484241,
+      "r_fcf_ev": 0.59765625,
+      "r_ev_ebitda": 0.4517766497461929,
+      "r_piotroski": 0.96875,
+      "r_accruals": 0.8564593301435407,
+      "r_eps_surprise": NaN,
+      "r_rev_growth": 0.956140350877193,
+      "roic": 1.312644008123892,
+      "fcf_ev": 0.047159177073076174,
+      "ev_ebitda": 19.37247376855779,
+      "debt_ebitda": NaN,
+      "piotroski": 7.0,
+      "composite": 0.6312499414636163,
+      "price": 260.25,
+      "market_cap_bn": 87.26
     },
     "CB": {
       "r_momentum": 0.6720647773279352,
@@ -1338,49 +1374,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.7982456140350878,
       "roic": NaN,
-      "fcf_ev": 0.08256270489856182,
+      "fcf_ev": 0.0830081374414063,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.6311831579598718,
-      "price": 357.2699890136719,
-      "market_cap_bn": 137.78
-    },
-    "MAS": {
-      "r_momentum": 0.4089068825910931,
-      "r_roic": 0.6819484240687679,
-      "r_fcf_ev": 0.76171875,
-      "r_ev_ebitda": 0.8274111675126904,
-      "r_piotroski": 0.6411290322580645,
-      "r_accruals": 0.5669856459330144,
-      "r_eps_surprise": NaN,
-      "r_rev_growth": NaN,
-      "roic": 0.2310683206813553,
-      "fcf_ev": 0.07020426701283577,
-      "ev_ebitda": 10.428022707089312,
-      "debt_ebitda": NaN,
-      "piotroski": 5.0,
-      "composite": 0.6305664216498225,
-      "price": 76.5999984741211,
-      "market_cap_bn": 15.11
-    },
-    "APP": {
-      "r_momentum": 0.02631578947368421,
-      "r_roic": 0.9885386819484241,
-      "r_fcf_ev": 0.58984375,
-      "r_ev_ebitda": 0.4416243654822335,
-      "r_piotroski": 0.96875,
-      "r_accruals": 0.8564593301435407,
-      "r_eps_surprise": NaN,
-      "r_rev_growth": 0.956140350877193,
-      "roic": 1.312644008123892,
-      "fcf_ev": 0.04660432913384965,
-      "ev_ebitda": 19.6031127960467,
-      "debt_ebitda": NaN,
-      "piotroski": 7.0,
-      "composite": 0.6288198265453985,
-      "price": 263.239990234375,
-      "market_cap_bn": 88.26
+      "price": 355.1099853515625,
+      "market_cap_bn": 136.94
     },
     "DPZ": {
       "r_momentum": 0.07489878542510121,
@@ -1397,7 +1397,7 @@
       "debt_ebitda": NaN,
       "piotroski": 7.0,
       "composite": 0.6280057644736078,
-      "price": 313.7049865722656,
+      "price": 313.6099853515625,
       "market_cap_bn": NaN
     },
     "KO": {
@@ -1415,7 +1415,7 @@
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.6256815878308544,
-      "price": 92.80500030517578,
+      "price": 92.70999908447266,
       "market_cap_bn": NaN
     },
     "GL": {
@@ -1428,13 +1428,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.4517543859649123,
       "roic": NaN,
-      "fcf_ev": 0.0874613436335818,
+      "fcf_ev": 0.08784274215043796,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.625645869270856,
-      "price": 155.46499633789062,
-      "market_cap_bn": 14.34
+      "price": 154.7899932861328,
+      "market_cap_bn": 14.27
     },
     "CMG": {
       "r_momentum": 0.1396761133603239,
@@ -1451,7 +1451,7 @@
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.6250976609711598,
-      "price": 27.395000457763672,
+      "price": 27.520000457763672,
       "market_cap_bn": NaN
     },
     "BNY": {
@@ -1482,13 +1482,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.26321733420879845,
-      "fcf_ev": 0.04286510609241621,
-      "ev_ebitda": 22.011475828921004,
+      "fcf_ev": 0.04300300074298912,
+      "ev_ebitda": 21.9408932017652,
       "debt_ebitda": 2.618838555178607,
       "piotroski": 5.0,
       "composite": 0.6181178978343547,
-      "price": 156.61000061035156,
-      "market_cap_bn": 194.35
+      "price": 156.0399932861328,
+      "market_cap_bn": 193.65
     },
     "FDX": {
       "r_momentum": 0.902834008097166,
@@ -1505,26 +1505,26 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.6170103064733794,
-      "price": 299.2449951171875,
+      "price": 298.7200012207031,
       "market_cap_bn": NaN
     },
     "NSC": {
       "r_momentum": 0.5850202429149798,
       "r_roic": 0.7507163323782235,
       "r_fcf_ev": 0.33203125,
-      "r_ev_ebitda": 0.7157360406091371,
+      "r_ev_ebitda": 0.7208121827411167,
       "r_piotroski": 0.8598790322580645,
       "r_accruals": 0.4832535885167464,
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.268012059312127,
-      "fcf_ev": 0.029362697965639666,
-      "ev_ebitda": 12.777970425107124,
+      "fcf_ev": 0.029527916859225883,
+      "ev_ebitda": 12.706473267147132,
       "debt_ebitda": NaN,
       "piotroski": 6.0,
-      "composite": 0.615104551408277,
-      "price": 331.82000732421875,
-      "market_cap_bn": 74.53
+      "composite": 0.6157017446002746,
+      "price": 329.989990234375,
+      "market_cap_bn": 74.12
     },
     "APO": {
       "r_momentum": 0.44129554655870445,
@@ -1536,67 +1536,67 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.9824561403508771,
       "roic": NaN,
-      "fcf_ev": 0.09217631137514752,
+      "fcf_ev": 0.09205490475915178,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 6.0,
       "composite": 0.6136621818143067,
-      "price": 112.6500015258789,
-      "market_cap_bn": 64.88
-    },
-    "LDOS": {
-      "r_momentum": 0.05465587044534413,
-      "r_roic": 0.8510028653295129,
-      "r_fcf_ev": 0.8984375,
-      "r_ev_ebitda": 0.934010152284264,
-      "r_piotroski": 0.8598790322580645,
-      "r_accruals": 0.2703349282296651,
-      "r_eps_surprise": NaN,
-      "r_rev_growth": 0.5657894736842105,
-      "roic": 0.39912944738834216,
-      "fcf_ev": 0.10666336530098867,
-      "ev_ebitda": 6.838998663663514,
-      "debt_ebitda": NaN,
-      "piotroski": 6.0,
-      "composite": 0.6117880634626459,
-      "price": 136.6999969482422,
-      "market_cap_bn": 17.15
-    },
-    "MNST": {
-      "r_momentum": 0.7307692307692307,
-      "r_roic": 0.7335243553008596,
-      "r_fcf_ev": 0.5703125,
-      "r_ev_ebitda": 0.5736040609137056,
-      "r_piotroski": 0.21875,
-      "r_accruals": NaN,
-      "r_eps_surprise": NaN,
-      "r_rev_growth": NaN,
-      "roic": 0.258363494468477,
-      "fcf_ev": 0.04564973784770678,
-      "ev_ebitda": 16.996210523542654,
-      "debt_ebitda": NaN,
-      "piotroski": 3.0,
-      "composite": 0.6101879977405181,
-      "price": 46.20500183105469,
-      "market_cap_bn": 45.26
+      "price": 112.83000183105469,
+      "market_cap_bn": 64.99
     },
     "LH": {
       "r_momentum": 0.520242914979757,
       "r_roic": 0.5300859598853869,
-      "r_fcf_ev": 0.5546875,
+      "r_fcf_ev": 0.5625,
       "r_ev_ebitda": 0.700507614213198,
       "r_piotroski": 0.9959677419354839,
       "r_accruals": 0.5909090909090908,
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.5394736842105263,
       "roic": 0.1608844169726263,
-      "fcf_ev": 0.04527552217979079,
-      "ev_ebitda": 12.894234577422337,
+      "fcf_ev": 0.045560571857230336,
+      "ev_ebitda": 12.813561810218234,
       "debt_ebitda": NaN,
       "piotroski": 8.0,
-      "composite": 0.6099789209881471,
-      "price": 331.010009765625,
-      "market_cap_bn": 26.78
+      "composite": 0.6112810043214805,
+      "price": 328.95001220703125,
+      "market_cap_bn": 26.61
+    },
+    "LDOS": {
+      "r_momentum": 0.05465587044534413,
+      "r_roic": 0.8510028653295129,
+      "r_fcf_ev": 0.89453125,
+      "r_ev_ebitda": 0.934010152284264,
+      "r_piotroski": 0.8598790322580645,
+      "r_accruals": 0.2703349282296651,
+      "r_eps_surprise": NaN,
+      "r_rev_growth": 0.5657894736842105,
+      "roic": 0.39912944738834216,
+      "fcf_ev": 0.10717159646086276,
+      "ev_ebitda": 6.806566635607644,
+      "debt_ebitda": NaN,
+      "piotroski": 6.0,
+      "composite": 0.6111370217959792,
+      "price": 136.0800018310547,
+      "market_cap_bn": 17.08
+    },
+    "MNST": {
+      "r_momentum": 0.7307692307692307,
+      "r_roic": 0.7335243553008596,
+      "r_fcf_ev": 0.5703125,
+      "r_ev_ebitda": 0.5786802030456852,
+      "r_piotroski": 0.21875,
+      "r_accruals": NaN,
+      "r_eps_surprise": NaN,
+      "r_rev_growth": NaN,
+      "roic": 0.258363494468477,
+      "fcf_ev": 0.04566532070043648,
+      "ev_ebitda": 16.990410729705907,
+      "debt_ebitda": NaN,
+      "piotroski": 3.0,
+      "composite": 0.6108648166914487,
+      "price": 46.189998626708984,
+      "market_cap_bn": 45.24
     },
     "HAL": {
       "r_momentum": 0.7105263157894737,
@@ -1613,7 +1613,7 @@
       "debt_ebitda": 2.0821554770318023,
       "piotroski": 5.0,
       "composite": 0.608036158772011,
-      "price": 34.875,
+      "price": 34.91999816894531,
       "market_cap_bn": NaN
     },
     "LVS": {
@@ -1626,13 +1626,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.9868421052631579,
       "roic": 0.1415440253151841,
-      "fcf_ev": 0.09463281734091626,
-      "ev_ebitda": 6.956025339509681,
+      "fcf_ev": 0.09394954688569201,
+      "ev_ebitda": 7.006614690473352,
       "debt_ebitda": NaN,
       "piotroski": 6.0,
       "composite": 0.6076956541167361,
-      "price": 35.459999084472656,
-      "market_cap_bn": 22.98
+      "price": 35.68000030517578,
+      "market_cap_bn": 23.12
     },
     "ABBV": {
       "r_momentum": 0.6639676113360324,
@@ -1649,7 +1649,7 @@
       "debt_ebitda": NaN,
       "piotroski": 6.0,
       "composite": 0.605239836416138,
-      "price": 285.6300048828125,
+      "price": 285.6400146484375,
       "market_cap_bn": NaN
     },
     "DGX": {
@@ -1667,7 +1667,7 @@
       "debt_ebitda": 2.653809971777987,
       "piotroski": 5.0,
       "composite": 0.6052106401494783,
-      "price": 242.9499969482422,
+      "price": 241.88999938964844,
       "market_cap_bn": NaN
     },
     "JCI": {
@@ -1685,7 +1685,7 @@
       "debt_ebitda": NaN,
       "piotroski": 3.0,
       "composite": 0.6032810391363023,
-      "price": 144.7050018310547,
+      "price": 143.9600067138672,
       "market_cap_bn": NaN
     },
     "PM": {
@@ -1703,7 +1703,7 @@
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.6013559265224828,
-      "price": 199.52749633789062,
+      "price": 199.47000122070312,
       "market_cap_bn": NaN
     },
     "PODD": {
@@ -1721,7 +1721,7 @@
       "debt_ebitda": NaN,
       "piotroski": 6.0,
       "composite": 0.6011732374543499,
-      "price": 148.73500061035156,
+      "price": 149.00999450683594,
       "market_cap_bn": NaN
     },
     "WRB": {
@@ -1734,31 +1734,31 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.7412280701754386,
       "roic": NaN,
-      "fcf_ev": 0.14515649060450206,
+      "fcf_ev": 0.1456162227861739,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.6003427047818364,
-      "price": 73.54000091552734,
-      "market_cap_bn": 27.29
+      "price": 73.33000183105469,
+      "market_cap_bn": 27.21
     },
     "APTV": {
       "r_momentum": 0.020242914979757085,
       "r_roic": 0.44412607449856734,
       "r_fcf_ev": 0.98046875,
-      "r_ev_ebitda": 0.9238578680203046,
+      "r_ev_ebitda": 0.9289340101522843,
       "r_piotroski": 0.8598790322580645,
       "r_accruals": 0.9401913875598086,
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.5131578947368421,
       "roic": 0.1352679081457786,
-      "fcf_ev": 0.26779824712148415,
-      "ev_ebitda": 6.891154848941275,
+      "fcf_ev": 0.2686214634919951,
+      "ev_ebitda": 6.870036240585752,
       "debt_ebitda": NaN,
       "piotroski": 6.0,
-      "composite": 0.5977720376848052,
-      "price": 42.810001373291016,
-      "market_cap_bn": 8.92
+      "composite": 0.5983360534772475,
+      "price": 42.689998626708984,
+      "market_cap_bn": 8.9
     },
     "COF": {
       "r_momentum": 0.25708502024291496,
@@ -1770,49 +1770,49 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.881578947368421,
       "roic": NaN,
-      "fcf_ev": 0.21246092988132612,
+      "fcf_ev": 0.21162730163445703,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.5976955666495009,
-      "price": 200.5500030517578,
-      "market_cap_bn": 123.03
+      "price": 201.33999633789062,
+      "market_cap_bn": 123.52
     },
     "KMI": {
       "r_momentum": 0.7206477732793523,
       "r_roic": 0.501432664756447,
-      "r_fcf_ev": 0.4296875,
+      "r_fcf_ev": 0.43359375,
       "r_ev_ebitda": 0.8121827411167513,
       "r_piotroski": 0.8598790322580645,
       "r_accruals": 0.5550239234449761,
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.09649122807017543,
       "roic": 0.1493471594322026,
-      "fcf_ev": 0.03756124273707395,
-      "ev_ebitda": 10.724207111238488,
+      "fcf_ev": 0.037785144479137896,
+      "ev_ebitda": 10.660659156412313,
       "debt_ebitda": NaN,
       "piotroski": 6.0,
-      "composite": 0.596002604102942,
-      "price": 34.6349983215332,
-      "market_cap_bn": 77.06
+      "composite": 0.5966536457696087,
+      "price": 34.43000030517578,
+      "market_cap_bn": 76.6
     },
     "FSLR": {
       "r_momentum": 0.18016194331983806,
       "r_roic": 0.5071633237822349,
       "r_fcf_ev": 0.765625,
-      "r_ev_ebitda": 0.817258883248731,
+      "r_ev_ebitda": 0.8223350253807107,
       "r_piotroski": 0.96875,
       "r_accruals": 0.5741626794258373,
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.9605263157894737,
       "roic": 0.1547298160195916,
-      "fcf_ev": 0.0705119837559705,
-      "ev_ebitda": 10.543966050654564,
+      "fcf_ev": 0.07068794693300262,
+      "ev_ebitda": 10.517719005079021,
       "debt_ebitda": NaN,
       "piotroski": 7.0,
-      "composite": 0.5959469727526057,
-      "price": 172.3800048828125,
-      "market_cap_bn": 18.53
+      "composite": 0.5965109885450479,
+      "price": 171.99000549316406,
+      "market_cap_bn": 18.48
     },
     "CHD": {
       "r_momentum": 0.5728744939271255,
@@ -1829,7 +1829,7 @@
       "debt_ebitda": 1.665132075471698,
       "piotroski": 5.0,
       "composite": 0.5957113047189109,
-      "price": 105.69999694824219,
+      "price": 105.19000244140625,
       "market_cap_bn": NaN
     },
     "O": {
@@ -1842,13 +1842,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.9254385964912281,
       "roic": NaN,
-      "fcf_ev": 0.07523501401998524,
+      "fcf_ev": 0.07498114112515969,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.5952128462905469,
-      "price": 56.70000076293945,
-      "market_cap_bn": 53.65
+      "price": 56.88999938964844,
+      "market_cap_bn": 53.83
     },
     "IEX": {
       "r_momentum": 0.8279352226720648,
@@ -1865,7 +1865,7 @@
       "debt_ebitda": 2.66966966966967,
       "piotroski": 6.0,
       "composite": 0.5917475612972374,
-      "price": 229.94000244140625,
+      "price": 229.0500030517578,
       "market_cap_bn": NaN
     },
     "KEYS": {
@@ -1883,44 +1883,8 @@
       "debt_ebitda": 2.8732876712328768,
       "piotroski": 5.0,
       "composite": 0.5914810585170459,
-      "price": 316.7200012207031,
+      "price": 314.7699890136719,
       "market_cap_bn": NaN
-    },
-    "MSI": {
-      "r_momentum": 0.46963562753036436,
-      "r_roic": 0.9770773638968482,
-      "r_fcf_ev": 0.40625,
-      "r_ev_ebitda": 0.36548223350253806,
-      "r_piotroski": 0.6411290322580645,
-      "r_accruals": 0.5143540669856459,
-      "r_eps_surprise": NaN,
-      "r_rev_growth": NaN,
-      "roic": 1.1182634730538923,
-      "fcf_ev": 0.036179805552730454,
-      "ev_ebitda": 22.97506872132975,
-      "debt_ebitda": NaN,
-      "piotroski": 5.0,
-      "composite": 0.5910313312471381,
-      "price": 478.090087890625,
-      "market_cap_bn": 79.12
-    },
-    "SWKS": {
-      "r_momentum": 0.7246963562753036,
-      "r_roic": 0.22063037249283668,
-      "r_fcf_ev": 0.8515625,
-      "r_ev_ebitda": 0.3248730964467005,
-      "r_piotroski": 0.8598790322580645,
-      "r_accruals": 0.937799043062201,
-      "r_eps_surprise": NaN,
-      "r_rev_growth": 0.04824561403508772,
-      "roic": 0.08018988965871184,
-      "fcf_ev": 0.09038360549155765,
-      "ev_ebitda": 24.469039356994628,
-      "debt_ebitda": 0.9938,
-      "piotroski": 6.0,
-      "composite": 0.5905190207023101,
-      "price": 83.23999786376953,
-      "market_cap_bn": 12.53
     },
     "EFX": {
       "r_momentum": 0.05668016194331984,
@@ -1932,13 +1896,49 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.2500342450116433,
-      "fcf_ev": 0.0754416359782591,
-      "ev_ebitda": 11.75377625426191,
+      "fcf_ev": 0.07594203919247916,
+      "ev_ebitda": 11.676327354029604,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.5902755860304308,
-      "price": 183.55999755859375,
-      "market_cap_bn": 21.59
+      "price": 182.36000061035156,
+      "market_cap_bn": 21.45
+    },
+    "SWKS": {
+      "r_momentum": 0.7246963562753036,
+      "r_roic": 0.22063037249283668,
+      "r_fcf_ev": 0.8515625,
+      "r_ev_ebitda": 0.31979695431472077,
+      "r_piotroski": 0.8598790322580645,
+      "r_accruals": 0.937799043062201,
+      "r_eps_surprise": NaN,
+      "r_rev_growth": 0.04824561403508772,
+      "roic": 0.08018988965871184,
+      "fcf_ev": 0.09017284726258012,
+      "ev_ebitda": 24.52623009185791,
+      "debt_ebitda": 0.9938,
+      "piotroski": 6.0,
+      "composite": 0.5899550049098679,
+      "price": 83.43000030517578,
+      "market_cap_bn": 12.56
+    },
+    "MSI": {
+      "r_momentum": 0.46963562753036436,
+      "r_roic": 0.9770773638968482,
+      "r_fcf_ev": 0.40625,
+      "r_ev_ebitda": 0.35532994923857864,
+      "r_piotroski": 0.6411290322580645,
+      "r_accruals": 0.5143540669856459,
+      "r_eps_surprise": NaN,
+      "r_rev_growth": NaN,
+      "roic": 1.1182634730538923,
+      "fcf_ev": 0.03589646003308049,
+      "ev_ebitda": 23.156420386085543,
+      "debt_ebitda": NaN,
+      "piotroski": 5.0,
+      "composite": 0.5898369448631429,
+      "price": 481.8299865722656,
+      "market_cap_bn": 79.74
     },
     "PH": {
       "r_momentum": 0.7591093117408907,
@@ -1955,26 +1955,26 @@
       "debt_ebitda": 1.7188865884518059,
       "piotroski": 3.0,
       "composite": 0.5892275355846084,
-      "price": 878.9600219726562,
+      "price": 880.5700073242188,
       "market_cap_bn": NaN
     },
     "TSCO": {
       "r_momentum": 0.03441295546558704,
       "r_roic": 0.9398280802292264,
       "r_fcf_ev": 0.51171875,
-      "r_ev_ebitda": 0.8781725888324873,
+      "r_ev_ebitda": 0.8730964467005076,
       "r_piotroski": 0.8598790322580645,
       "r_accruals": 0.6220095693779905,
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.3333333333333333,
       "roic": 0.5576107753371092,
-      "fcf_ev": 0.04307621331905222,
-      "ev_ebitda": 8.764253313500813,
+      "fcf_ev": 0.04303049366729576,
+      "ev_ebitda": 8.77356528218276,
       "debt_ebitda": NaN,
       "piotroski": 6.0,
-      "composite": 0.5825320059472041,
-      "price": 33.3849983215332,
-      "market_cap_bn": 17.42
+      "composite": 0.5819679901547619,
+      "price": 33.41999816894531,
+      "market_cap_bn": 17.44
     },
     "CTSH": {
       "r_momentum": 0.23684210526315788,
@@ -1986,31 +1986,31 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.31140350877192985,
       "roic": 0.23433826580002765,
-      "fcf_ev": 0.08371032885166249,
-      "ev_ebitda": 7.869956526667917,
+      "fcf_ev": 0.08412738231848406,
+      "ev_ebitda": 7.830941968473816,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.5811418304563944,
-      "price": 70.87999725341797,
-      "market_cap_bn": 32.04
+      "price": 70.54000091552734,
+      "market_cap_bn": 31.88
     },
     "KLAC": {
       "r_momentum": 0.9230769230769231,
       "r_roic": NaN,
-      "r_fcf_ev": 0.16796875,
+      "r_fcf_ev": 0.171875,
       "r_ev_ebitda": NaN,
       "r_piotroski": 0.96875,
       "r_accruals": 0.11483253588516751,
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": NaN,
-      "fcf_ev": 0.019090254242264335,
+      "fcf_ev": 0.01925826101005321,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 7.0,
-      "composite": 0.5784890012798207,
-      "price": 146.9199981689453,
-      "market_cap_bn": 192.02
+      "composite": 0.5795543421889118,
+      "price": 145.61000061035156,
+      "market_cap_bn": 190.31
     },
     "BXP": {
       "r_momentum": 0.22469635627530365,
@@ -2022,13 +2022,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.3991228070175439,
       "roic": NaN,
-      "fcf_ev": 0.13268342091583132,
+      "fcf_ev": 0.132289893837751,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 6.0,
       "composite": 0.5775537304612008,
-      "price": 61.92499923706055,
-      "market_cap_bn": 9.88
+      "price": 62.099998474121094,
+      "market_cap_bn": 9.91
     },
     "VRSK": {
       "r_momentum": 0.09716599190283401,
@@ -2040,13 +2040,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.2989167908538891,
-      "fcf_ev": 0.0475382908203312,
-      "ev_ebitda": 15.639960162255363,
+      "fcf_ev": 0.04779130584367615,
+      "ev_ebitda": 15.557159644133705,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.5753190522992032,
-      "price": 196.89999389648438,
-      "market_cap_bn": 25.62
+      "price": 195.8800048828125,
+      "market_cap_bn": 25.49
     },
     "FDS": {
       "r_momentum": 0.3967611336032389,
@@ -2058,31 +2058,31 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.21867474227722983,
-      "fcf_ev": 0.055953521413351935,
-      "ev_ebitda": 14.326476109113305,
+      "fcf_ev": 0.05605859441951072,
+      "ev_ebitda": 14.299623386028927,
       "debt_ebitda": 1.5338964717205632,
       "piotroski": 5.0,
       "composite": 0.573959065962189,
-      "price": 332.0,
-      "market_cap_bn": 11.88
+      "price": 331.32000732421875,
+      "market_cap_bn": 11.85
     },
     "LOW": {
       "r_momentum": 0.15182186234817813,
       "r_roic": 0.5787965616045845,
-      "r_fcf_ev": 0.76953125,
-      "r_ev_ebitda": 0.8730964467005076,
+      "r_fcf_ev": 0.76171875,
+      "r_ev_ebitda": 0.8781725888324873,
       "r_piotroski": 0.6411290322580645,
       "r_accruals": 0.7464114832535885,
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.18168966196023692,
-      "fcf_ev": 0.07061976658194649,
-      "ev_ebitda": 8.77466360864402,
+      "fcf_ev": 0.07065452340668961,
+      "ev_ebitda": 8.770347120038332,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
-      "composite": 0.5736671394256101,
-      "price": 198.77499389648438,
-      "market_cap_bn": 111.51
+      "composite": 0.5728856561470195,
+      "price": 198.67999267578125,
+      "market_cap_bn": 111.46
     },
     "CFG": {
       "r_momentum": 0.7813765182186235,
@@ -2094,13 +2094,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.2412280701754386,
       "roic": NaN,
-      "fcf_ev": 0.05170311921111584,
+      "fcf_ev": 0.05175171417029327,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.5708368830268369,
-      "price": 65.23500061035156,
-      "market_cap_bn": 27.57
+      "price": 65.13999938964844,
+      "market_cap_bn": 27.53
     },
     "TXT": {
       "r_momentum": 0.35020242914979755,
@@ -2112,13 +2112,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.4605263157894737,
       "roic": NaN,
-      "fcf_ev": 0.09901643679250308,
+      "fcf_ev": 0.09931929924892006,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 6.0,
       "composite": 0.568609914773964,
-      "price": 77.06500244140625,
-      "market_cap_bn": 13.25
+      "price": 76.83000183105469,
+      "market_cap_bn": 13.21
     },
     "PGR": {
       "r_momentum": 0.3805668016194332,
@@ -2135,7 +2135,7 @@
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.5658669758839538,
-      "price": 228.7899932861328,
+      "price": 228.07000732421875,
       "market_cap_bn": NaN
     },
     "IBKR": {
@@ -2153,26 +2153,26 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.5657282551913282,
-      "price": 81.19000244140625,
+      "price": 80.27999877929688,
       "market_cap_bn": NaN
     },
     "PYPL": {
       "r_momentum": 0.12550607287449392,
       "r_roic": 0.5931232091690545,
-      "r_fcf_ev": 0.88671875,
+      "r_fcf_ev": 0.890625,
       "r_ev_ebitda": 0.8984771573604061,
       "r_piotroski": 0.8598790322580645,
       "r_accruals": 0.20813397129186606,
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.5964912280701754,
       "roic": 0.1863401745114907,
-      "fcf_ev": 0.1034748891141218,
-      "ev_ebitda": 7.651038702333523,
+      "fcf_ev": 0.10385782078923181,
+      "ev_ebitda": 7.622828741404708,
       "debt_ebitda": 1.8110415480933408,
       "piotroski": 6.0,
-      "composite": 0.5591191626702801,
-      "price": 57.25,
-      "market_cap_bn": 49.35
+      "composite": 0.5597702043369468,
+      "price": 57.02000045776367,
+      "market_cap_bn": 49.15
     },
     "DD": {
       "r_momentum": 0.7793522267206477,
@@ -2189,44 +2189,26 @@
       "debt_ebitda": NaN,
       "piotroski": 2.0,
       "composite": 0.5575385812546253,
-      "price": 136.22000122070312,
+      "price": 136.5500030517578,
       "market_cap_bn": NaN
     },
     "AMZN": {
       "r_momentum": 0.5809716599190283,
       "r_roic": 0.36962750716332377,
       "r_fcf_ev": 0.64453125,
-      "r_ev_ebitda": 0.47715736040609136,
+      "r_ev_ebitda": 0.48223350253807107,
       "r_piotroski": 0.6411290322580645,
       "r_accruals": 0.7344497607655502,
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.11681748135813559,
-      "fcf_ev": 0.05096731816948691,
-      "ev_ebitda": 18.783393781596168,
+      "fcf_ev": 0.05112339252302887,
+      "ev_ebitda": 18.726050051121586,
       "debt_ebitda": 0.9126061030254373,
       "piotroski": 5.0,
-      "composite": 0.5553801603052249,
-      "price": 248.77499389648438,
-      "market_cap_bn": 2682.54
-    },
-    "EBAY": {
-      "r_momentum": 0.6133603238866396,
-      "r_roic": 0.9140401146131805,
-      "r_fcf_ev": 0.30078125,
-      "r_ev_ebitda": 0.46700507614213194,
-      "r_piotroski": 0.6411290322580645,
-      "r_accruals": 0.07655502392344493,
-      "r_eps_surprise": NaN,
-      "r_rev_growth": NaN,
-      "roic": 0.48810289389067524,
-      "fcf_ev": 0.027867861600224537,
-      "ev_ebitda": 19.07232158708961,
-      "debt_ebitda": NaN,
-      "piotroski": 5.0,
-      "composite": 0.5518425746262684,
-      "price": 120.82499694824219,
-      "market_cap_bn": 53.77
+      "composite": 0.5559773534972223,
+      "price": 248.0,
+      "market_cap_bn": 2674.18
     },
     "GD": {
       "r_momentum": 0.4352226720647773,
@@ -2243,8 +2225,26 @@
       "debt_ebitda": NaN,
       "piotroski": 6.0,
       "composite": 0.5515108248811337,
-      "price": 350.3800048828125,
+      "price": 349.3599853515625,
       "market_cap_bn": NaN
+    },
+    "EBAY": {
+      "r_momentum": 0.6133603238866396,
+      "r_roic": 0.9140401146131805,
+      "r_fcf_ev": 0.30078125,
+      "r_ev_ebitda": 0.46192893401015234,
+      "r_piotroski": 0.6411290322580645,
+      "r_accruals": 0.07655502392344493,
+      "r_eps_surprise": NaN,
+      "r_rev_growth": NaN,
+      "roic": 0.48810289389067524,
+      "fcf_ev": 0.027727584303055473,
+      "ev_ebitda": 19.16881083381715,
+      "debt_ebitda": NaN,
+      "piotroski": 5.0,
+      "composite": 0.5512453814342708,
+      "price": 121.41000366210938,
+      "market_cap_bn": 54.03
     },
     "SOLV": {
       "r_momentum": 0.6963562753036437,
@@ -2256,67 +2256,67 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.2324561403508772,
       "roic": 0.454375,
-      "fcf_ev": -0.0007103324085389593,
-      "ev_ebitda": 5.272627726170412,
+      "fcf_ev": -0.000707894488196977,
+      "ev_ebitda": 5.290786147522258,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.5508858328543862,
-      "price": 85.125,
-      "market_cap_bn": 14.48
-    },
-    "ALGN": {
-      "r_momentum": 0.5404858299595142,
-      "r_roic": 0.42120343839541546,
-      "r_fcf_ev": 0.63671875,
-      "r_ev_ebitda": 0.7309644670050761,
-      "r_piotroski": 0.6411290322580645,
-      "r_accruals": 0.42105263157894735,
-      "r_eps_surprise": NaN,
-      "r_rev_growth": NaN,
-      "roic": 0.1289453184713451,
-      "fcf_ev": 0.049719581903749845,
-      "ev_ebitda": 12.603464148790051,
-      "debt_ebitda": NaN,
-      "piotroski": 5.0,
-      "composite": 0.5496003285355233,
-      "price": 154.02499389648438,
-      "market_cap_bn": 10.97
+      "price": 85.41000366210938,
+      "market_cap_bn": 14.53
     },
     "INTU": {
       "r_momentum": 0.008097165991902834,
       "r_roic": 0.5902578796561605,
       "r_fcf_ev": 0.7421875,
-      "r_ev_ebitda": 0.4517766497461929,
+      "r_ev_ebitda": 0.4568527918781726,
       "r_piotroski": 0.96875,
       "r_accruals": 0.7870813397129186,
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.8552631578947368,
       "roic": 0.18465173849443006,
-      "fcf_ev": 0.06387590585197134,
-      "ev_ebitda": 19.47140775640171,
+      "fcf_ev": 0.06436835261006227,
+      "ev_ebitda": 19.32244275673497,
       "debt_ebitda": 1.5577899654682104,
       "piotroski": 7.0,
-      "composite": 0.5494701010780675,
-      "price": 346.12249755859375,
-      "market_cap_bn": 92.89
+      "composite": 0.5500341168705095,
+      "price": 343.3900146484375,
+      "market_cap_bn": 92.16
+    },
+    "ALGN": {
+      "r_momentum": 0.5404858299595142,
+      "r_roic": 0.42120343839541546,
+      "r_fcf_ev": 0.63671875,
+      "r_ev_ebitda": 0.7258883248730965,
+      "r_piotroski": 0.6411290322580645,
+      "r_accruals": 0.42105263157894735,
+      "r_eps_surprise": NaN,
+      "r_rev_growth": NaN,
+      "roic": 0.1289453184713451,
+      "fcf_ev": 0.049546142049104236,
+      "ev_ebitda": 12.647583486837217,
+      "debt_ebitda": NaN,
+      "piotroski": 5.0,
+      "composite": 0.5490031353435256,
+      "price": 154.50999450683594,
+      "market_cap_bn": 11.01
     },
     "WELL": {
       "r_momentum": 0.791497975708502,
       "r_roic": NaN,
-      "r_fcf_ev": 0.1328125,
+      "r_fcf_ev": 0.12890625,
       "r_ev_ebitda": NaN,
       "r_piotroski": 0.6411290322580645,
       "r_accruals": 0.3995215311004785,
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.9473684210526315,
       "roic": NaN,
-      "fcf_ev": 0.015534558940390006,
+      "fcf_ev": 0.015462052220385606,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
-      "composite": 0.5494249125503105,
-      "price": 236.11000061035156,
-      "market_cap_bn": 169.74
+      "composite": 0.5484483500503106,
+      "price": 237.32000732421875,
+      "market_cap_bn": 170.61
     },
     "KEY": {
       "r_momentum": 0.6761133603238867,
@@ -2333,26 +2333,26 @@
       "debt_ebitda": NaN,
       "piotroski": 6.0,
       "composite": 0.547001703729208,
-      "price": 21.075000762939453,
+      "price": 21.079999923706055,
       "market_cap_bn": NaN
     },
     "INVH": {
       "r_momentum": 0.3340080971659919,
       "r_roic": NaN,
-      "r_fcf_ev": 0.625,
+      "r_fcf_ev": 0.62890625,
       "r_ev_ebitda": NaN,
       "r_piotroski": 0.8598790322580645,
       "r_accruals": 0.49282296650717705,
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.6271929824561403,
       "roic": NaN,
-      "fcf_ev": 0.04886703964021189,
+      "fcf_ev": 0.04880281535694234,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 6.0,
-      "composite": 0.5453024473875494,
-      "price": 27.485000610351562,
-      "market_cap_bn": 16.23
+      "composite": 0.5462790098875493,
+      "price": 27.540000915527344,
+      "market_cap_bn": 16.27
     },
     "PSA": {
       "r_momentum": 0.3684210526315789,
@@ -2369,7 +2369,7 @@
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.5416402279729953,
-      "price": 307.864990234375,
+      "price": 309.8900146484375,
       "market_cap_bn": NaN
     },
     "HIG": {
@@ -2387,7 +2387,7 @@
       "debt_ebitda": NaN,
       "piotroski": 6.0,
       "composite": 0.5410174345870441,
-      "price": 137.3800048828125,
+      "price": 136.75999450683594,
       "market_cap_bn": NaN
     },
     "CPT": {
@@ -2400,31 +2400,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": NaN,
-      "fcf_ev": 0.05502949256365691,
+      "fcf_ev": 0.05490826281936869,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.538975082353208,
-      "price": 101.66999816894531,
-      "market_cap_bn": 10.22
-    },
-    "RMD": {
-      "r_momentum": 0.1882591093117409,
-      "r_roic": 0.7048710601719198,
-      "r_fcf_ev": 0.59375,
-      "r_ev_ebitda": 0.47208121827411165,
-      "r_piotroski": 0.8598790322580645,
-      "r_accruals": 0.562200956937799,
-      "r_eps_surprise": NaN,
-      "r_rev_growth": NaN,
-      "roic": 0.241289810686278,
-      "fcf_ev": 0.04669437058512758,
-      "ev_ebitda": 18.890828847512818,
-      "debt_ebitda": 0.21202217178140773,
-      "piotroski": 6.0,
-      "composite": 0.5377701819337997,
-      "price": 254.13999938964844,
-      "market_cap_bn": 36.66
+      "price": 102.0,
+      "market_cap_bn": 10.25
     },
     "C": {
       "r_momentum": 0.8340080971659919,
@@ -2441,8 +2423,26 @@
       "debt_ebitda": NaN,
       "piotroski": 0.0,
       "composite": 0.5375904867628127,
-      "price": 121.04000091552734,
+      "price": 120.62000274658203,
       "market_cap_bn": NaN
+    },
+    "RMD": {
+      "r_momentum": 0.1882591093117409,
+      "r_roic": 0.7048710601719198,
+      "r_fcf_ev": 0.5859375,
+      "r_ev_ebitda": 0.47208121827411165,
+      "r_piotroski": 0.8598790322580645,
+      "r_accruals": 0.562200956937799,
+      "r_eps_surprise": NaN,
+      "r_rev_growth": NaN,
+      "roic": 0.241289810686278,
+      "fcf_ev": 0.046937884261797985,
+      "ev_ebitda": 18.792823254368663,
+      "debt_ebitda": 0.21202217178140773,
+      "piotroski": 6.0,
+      "composite": 0.5363915054632115,
+      "price": 252.86000061035156,
+      "market_cap_bn": 36.47
     },
     "ADSK": {
       "r_momentum": 0.06275303643724696,
@@ -2459,7 +2459,7 @@
       "debt_ebitda": 1.5842839036755387,
       "piotroski": 5.0,
       "composite": 0.5336713489977607,
-      "price": 253.32000732421875,
+      "price": 252.1999969482422,
       "market_cap_bn": NaN
     },
     "AMT": {
@@ -2472,13 +2472,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.3684210526315789,
       "roic": 1.3027394682366857,
-      "fcf_ev": 0.0439996672903612,
-      "ev_ebitda": 17.74558572850642,
+      "fcf_ev": 0.04384760646921905,
+      "ev_ebitda": 17.807126335960543,
       "debt_ebitda": NaN,
       "piotroski": 3.0,
       "composite": 0.5333891080252264,
-      "price": 188.3300018310547,
-      "market_cap_bn": 87.75
+      "price": 188.97000122070312,
+      "market_cap_bn": 88.05
     },
     "TFC": {
       "r_momentum": 0.5748987854251012,
@@ -2490,13 +2490,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": NaN,
-      "fcf_ev": 0.056161075642411386,
+      "fcf_ev": 0.05618122621905044,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 3.0,
       "composite": 0.5306841824111561,
-      "price": 48.470001220703125,
-      "market_cap_bn": 59.21
+      "price": 48.439998626708984,
+      "market_cap_bn": 59.18
     },
     "EMR": {
       "r_momentum": 0.6437246963562753,
@@ -2508,13 +2508,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": NaN,
-      "fcf_ev": 0.029483157601183398,
+      "fcf_ev": 0.0295889827499024,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 6.0,
       "composite": 0.5303245298554664,
-      "price": 162.1699981689453,
-      "market_cap_bn": 90.46
+      "price": 161.58999633789062,
+      "market_cap_bn": 90.13
     },
     "EXR": {
       "r_momentum": 0.3016194331983806,
@@ -2526,13 +2526,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.9298245614035088,
       "roic": 0.10655469816286824,
-      "fcf_ev": 0.06289186539830226,
-      "ev_ebitda": 13.825405364132132,
+      "fcf_ev": 0.06249912678643843,
+      "ev_ebitda": 13.91228290611312,
       "debt_ebitda": NaN,
       "piotroski": 6.0,
       "composite": 0.529741959555262,
-      "price": 142.53500366210938,
-      "market_cap_bn": 30.11
+      "price": 143.41000366210938,
+      "market_cap_bn": 30.3
     },
     "CI": {
       "r_momentum": 0.25303643724696356,
@@ -2549,7 +2549,7 @@
       "debt_ebitda": NaN,
       "piotroski": 6.0,
       "composite": 0.5290750051876778,
-      "price": 307.4100036621094,
+      "price": 306.95001220703125,
       "market_cap_bn": NaN
     },
     "CINF": {
@@ -2567,7 +2567,7 @@
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.5286390965508114,
-      "price": 176.47000122070312,
+      "price": 176.3000030517578,
       "market_cap_bn": NaN
     },
     "VTR": {
@@ -2580,13 +2580,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.8289473684210527,
       "roic": NaN,
-      "fcf_ev": 0.03734369148163988,
+      "fcf_ev": 0.03715138132114268,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 2.0,
       "composite": 0.526614178611075,
-      "price": 86.3550033569336,
-      "market_cap_bn": 44.3
+      "price": 86.80000305175781,
+      "market_cap_bn": 44.52
     },
     "PPG": {
       "r_momentum": 0.4979757085020243,
@@ -2603,26 +2603,26 @@
       "debt_ebitda": NaN,
       "piotroski": 6.0,
       "composite": 0.5231681386313177,
-      "price": 111.05999755859375,
+      "price": 110.61000061035156,
       "market_cap_bn": NaN
     },
     "COR": {
       "r_momentum": 0.3259109311740891,
       "r_roic": 0.5702005730659025,
-      "r_fcf_ev": 0.53125,
-      "r_ev_ebitda": 0.4365482233502538,
+      "r_fcf_ev": 0.53515625,
+      "r_ev_ebitda": 0.4314720812182741,
       "r_piotroski": 0.8598790322580645,
       "r_accruals": 0.38995215311004783,
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.7675438596491229,
       "roic": 0.17791834264585174,
-      "fcf_ev": 0.044190517507383065,
-      "ev_ebitda": 19.723278868592974,
+      "fcf_ev": 0.044499412161942406,
+      "ev_ebitda": 19.586368848507313,
       "debt_ebitda": 3.1859438167925656,
       "piotroski": 6.0,
-      "composite": 0.5176943718914345,
-      "price": 333.6400146484375,
-      "market_cap_bn": 63.67
+      "composite": 0.517781397765659,
+      "price": 331.0,
+      "market_cap_bn": 63.16
     },
     "XOM": {
       "r_momentum": 0.8643724696356275,
@@ -2639,7 +2639,7 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.5162864512397619,
-      "price": 182.53509521484375,
+      "price": 183.2100067138672,
       "market_cap_bn": NaN
     },
     "PFE": {
@@ -2657,26 +2657,26 @@
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.5162343473039569,
-      "price": 30.03499984741211,
+      "price": 30.030000686645508,
       "market_cap_bn": NaN
     },
     "STE": {
       "r_momentum": 0.22672064777327935,
       "r_roic": 0.3954154727793696,
-      "r_fcf_ev": 0.48046875,
+      "r_fcf_ev": 0.484375,
       "r_ev_ebitda": 0.6192893401015229,
       "r_piotroski": 0.9959677419354839,
       "r_accruals": 0.69377990430622,
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.7192982456140351,
       "roic": 0.12440018516636747,
-      "fcf_ev": 0.04078681589597692,
-      "ev_ebitda": 15.010411963402486,
+      "fcf_ev": 0.04085280970448353,
+      "ev_ebitda": 14.986164077886562,
       "debt_ebitda": 1.0389724863061134,
       "piotroski": 8.0,
-      "composite": 0.5148512750283937,
-      "price": 232.5449981689453,
-      "market_cap_bn": 22.67
+      "composite": 0.5155023166950603,
+      "price": 232.14999389648438,
+      "market_cap_bn": 22.63
     },
     "MDT": {
       "r_momentum": 0.3623481781376518,
@@ -2688,13 +2688,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.1287426341774168,
-      "fcf_ev": 0.04483293549260243,
-      "ev_ebitda": 12.841071222447079,
+      "fcf_ev": 0.04505212284102558,
+      "ev_ebitda": 12.778596911034654,
       "debt_ebitda": NaN,
       "piotroski": 6.0,
       "composite": 0.5091212515015536,
-      "price": 95.87000274658203,
-      "market_cap_bn": 122.72
+      "price": 95.41000366210938,
+      "market_cap_bn": 122.13
     },
     "CAT": {
       "r_momentum": 0.9068825910931174,
@@ -2706,49 +2706,31 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.42543859649122806,
       "roic": 0.1086746776598544,
-      "fcf_ev": 0.028814138577107535,
-      "ev_ebitda": 23.074691475089175,
+      "fcf_ev": 0.028851420361441848,
+      "ev_ebitda": 23.044874375605755,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.5085897831843924,
-      "price": 687.8699951171875,
-      "market_cap_bn": 316.21
+      "price": 687.0,
+      "market_cap_bn": 315.81
     },
     "CCI": {
       "r_momentum": 0.11538461538461539,
       "r_roic": 0.2693409742120344,
       "r_fcf_ev": 0.83984375,
-      "r_ev_ebitda": 0.5583756345177665,
+      "r_ev_ebitda": 0.5634517766497462,
       "r_piotroski": 0.96875,
       "r_accruals": 0.9521531100478469,
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.017543859649122806,
       "roic": 0.09645779100037188,
-      "fcf_ev": 0.08519193095369909,
-      "ev_ebitda": 17.2933398216891,
+      "fcf_ev": 0.08591610842241906,
+      "ev_ebitda": 17.14757615422628,
       "debt_ebitda": NaN,
       "piotroski": 7.0,
-      "composite": 0.5019186087314972,
-      "price": 86.68000030517578,
-      "market_cap_bn": 36.93
-    },
-    "ROL": {
-      "r_momentum": 0.032388663967611336,
-      "r_roic": 0.833810888252149,
-      "r_fcf_ev": 0.4609375,
-      "r_ev_ebitda": 0.3451776649746193,
-      "r_piotroski": 0.8598790322580645,
-      "r_accruals": 0.631578947368421,
-      "r_eps_surprise": NaN,
-      "r_rev_growth": NaN,
-      "roic": 0.3788107083827237,
-      "fcf_ev": 0.03808907810801937,
-      "ev_ebitda": 23.50442491044689,
-      "debt_ebitda": 0.6708834434240319,
-      "piotroski": 6.0,
-      "composite": 0.5012283528283089,
-      "price": 34.685001373291016,
-      "market_cap_bn": 16.69
+      "composite": 0.5024826245239393,
+      "price": 85.97000122070312,
+      "market_cap_bn": 36.62
     },
     "EQT": {
       "r_momentum": 0.3441295546558704,
@@ -2765,8 +2747,44 @@
       "debt_ebitda": 0.9667872305837478,
       "piotroski": 6.0,
       "composite": 0.5004882643490434,
-      "price": 55.70000076293945,
+      "price": 55.630001068115234,
       "market_cap_bn": NaN
+    },
+    "ROL": {
+      "r_momentum": 0.032388663967611336,
+      "r_roic": 0.833810888252149,
+      "r_fcf_ev": 0.4453125,
+      "r_ev_ebitda": 0.3401015228426396,
+      "r_piotroski": 0.8598790322580645,
+      "r_accruals": 0.631578947368421,
+      "r_eps_surprise": NaN,
+      "r_rev_growth": NaN,
+      "roic": 0.3788107083827237,
+      "fcf_ev": 0.037944664129082276,
+      "ev_ebitda": 23.59388063767111,
+      "debt_ebitda": 0.6708834434240319,
+      "piotroski": 6.0,
+      "composite": 0.4978738066951348,
+      "price": 34.81999969482422,
+      "market_cap_bn": 16.75
+    },
+    "CBRE": {
+      "r_momentum": 0.17408906882591094,
+      "r_roic": 0.6532951289398281,
+      "r_fcf_ev": 0.55859375,
+      "r_ev_ebitda": 0.4365482233502538,
+      "r_piotroski": 0.96875,
+      "r_accruals": 0.2009569377990431,
+      "r_eps_surprise": NaN,
+      "r_rev_growth": 0.7324561403508771,
+      "roic": 0.2087401762324363,
+      "fcf_ev": 0.045519121501794206,
+      "ev_ebitda": 19.53756011520135,
+      "debt_ebitda": NaN,
+      "piotroski": 7.0,
+      "composite": 0.4961269168729126,
+      "price": 123.30000305175781,
+      "market_cap_bn": 35.74
     },
     "L": {
       "r_momentum": 0.48380566801619435,
@@ -2783,62 +2801,26 @@
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.495279181611949,
-      "price": 112.33000183105469,
+      "price": 112.01000213623047,
       "market_cap_bn": NaN
     },
     "BR": {
       "r_momentum": 0.07894736842105263,
       "r_roic": 0.6103151862464183,
-      "r_fcf_ev": 0.609375,
+      "r_fcf_ev": 0.60546875,
       "r_ev_ebitda": 0.41624365482233505,
       "r_piotroski": 0.96875,
       "r_accruals": 0.5263157894736843,
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.19500910567505045,
-      "fcf_ev": 0.04747104540256638,
-      "ev_ebitda": 19.982601555393096,
+      "fcf_ev": 0.047482441250540686,
+      "ev_ebitda": 19.977805704896387,
       "debt_ebitda": 2.7381793706882047,
       "piotroski": 7.0,
-      "composite": 0.4945761239565837,
-      "price": 183.3300018310547,
-      "market_cap_bn": 20.9
-    },
-    "CBRE": {
-      "r_momentum": 0.17408906882591094,
-      "r_roic": 0.6532951289398281,
-      "r_fcf_ev": 0.55078125,
-      "r_ev_ebitda": 0.4314720812182741,
-      "r_piotroski": 0.96875,
-      "r_accruals": 0.2009569377990431,
-      "r_eps_surprise": NaN,
-      "r_rev_growth": 0.7324561403508771,
-      "roic": 0.2087401762324363,
-      "fcf_ev": 0.04507471997698862,
-      "ev_ebitda": 19.73018519441668,
-      "debt_ebitda": NaN,
-      "piotroski": 7.0,
-      "composite": 0.4942608177471371,
-      "price": 124.46499633789062,
-      "market_cap_bn": 36.08
-    },
-    "ITW": {
-      "r_momentum": 0.5242914979757085,
-      "r_roic": 0.7277936962750716,
-      "r_fcf_ev": 0.38671875,
-      "r_ev_ebitda": 0.5076142131979695,
-      "r_piotroski": 0.11391129032258064,
-      "r_accruals": NaN,
-      "r_eps_surprise": NaN,
-      "r_rev_growth": NaN,
-      "roic": 0.2556080999151206,
-      "fcf_ev": 0.034730786861020255,
-      "ev_ebitda": 18.487280505069972,
-      "debt_ebitda": NaN,
-      "piotroski": 2.0,
-      "composite": 0.49410320226961474,
-      "price": 276.6199951171875,
-      "market_cap_bn": 78.78
+      "composite": 0.4938867857212896,
+      "price": 183.27999877929688,
+      "market_cap_bn": 20.89
     },
     "BF-B": {
       "r_momentum": 0.3522267206477733,
@@ -2855,8 +2837,44 @@
       "debt_ebitda": 2.080919080919081,
       "piotroski": 5.0,
       "composite": 0.4936115746595969,
-      "price": 29.530000686645508,
+      "price": 29.40999984741211,
       "market_cap_bn": NaN
+    },
+    "ITW": {
+      "r_momentum": 0.5242914979757085,
+      "r_roic": 0.7277936962750716,
+      "r_fcf_ev": 0.390625,
+      "r_ev_ebitda": 0.4974619289340102,
+      "r_piotroski": 0.11391129032258064,
+      "r_accruals": NaN,
+      "r_eps_surprise": NaN,
+      "r_rev_growth": NaN,
+      "roic": 0.2556080999151206,
+      "fcf_ev": 0.03484154625932819,
+      "ev_ebitda": 18.42851043643264,
+      "debt_ebitda": NaN,
+      "piotroski": 2.0,
+      "composite": 0.49353081436775353,
+      "price": 275.75,
+      "market_cap_bn": 78.53
+    },
+    "ICE": {
+      "r_momentum": 0.41700404858299595,
+      "r_roic": 0.5530085959885387,
+      "r_fcf_ev": 0.609375,
+      "r_ev_ebitda": 0.5177664974619289,
+      "r_piotroski": 0.6411290322580645,
+      "r_accruals": 0.16267942583732053,
+      "r_eps_surprise": NaN,
+      "r_rev_growth": NaN,
+      "roic": 0.16679638590910628,
+      "fcf_ev": 0.04753400419766744,
+      "ev_ebitda": 18.30597343916921,
+      "debt_ebitda": NaN,
+      "piotroski": 5.0,
+      "composite": 0.4912544405529862,
+      "price": 162.74000549316406,
+      "market_cap_bn": 91.3
     },
     "RTX": {
       "r_momentum": 0.5344129554655871,
@@ -2873,44 +2891,8 @@
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.49044164349992064,
-      "price": 191.77000427246094,
+      "price": 191.00999450683594,
       "market_cap_bn": NaN
-    },
-    "NOC": {
-      "r_momentum": 0.20850202429149797,
-      "r_roic": 0.7220630372492837,
-      "r_fcf_ev": 0.51953125,
-      "r_ev_ebitda": 0.7258883248730965,
-      "r_piotroski": 0.6411290322580645,
-      "r_accruals": 0.18181818181818177,
-      "r_eps_surprise": NaN,
-      "r_rev_growth": 0.4473684210526316,
-      "roic": 0.25223663609930663,
-      "fcf_ev": 0.04359643755385901,
-      "ev_ebitda": 12.678392405075284,
-      "debt_ebitda": NaN,
-      "piotroski": 5.0,
-      "composite": 0.4903274163952468,
-      "price": 550.1925048828125,
-      "market_cap_bn": 78.16
-    },
-    "ICE": {
-      "r_momentum": 0.41700404858299595,
-      "r_roic": 0.5530085959885387,
-      "r_fcf_ev": 0.6015625,
-      "r_ev_ebitda": 0.5177664974619289,
-      "r_piotroski": 0.6411290322580645,
-      "r_accruals": 0.16267942583732053,
-      "r_eps_surprise": NaN,
-      "r_rev_growth": NaN,
-      "roic": 0.16679638590910628,
-      "fcf_ev": 0.047376418134378574,
-      "ev_ebitda": 18.366863780873956,
-      "debt_ebitda": NaN,
-      "piotroski": 5.0,
-      "composite": 0.48987576408239797,
-      "price": 163.27499389648438,
-      "market_cap_bn": 91.6
     },
     "FERG": {
       "r_momentum": 0.27530364372469635,
@@ -2927,13 +2909,31 @@
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.4897711966625255,
-      "price": 227.6300048828125,
+      "price": 226.86000061035156,
       "market_cap_bn": NaN
+    },
+    "NOC": {
+      "r_momentum": 0.20850202429149797,
+      "r_roic": 0.7220630372492837,
+      "r_fcf_ev": 0.51953125,
+      "r_ev_ebitda": 0.7157360406091371,
+      "r_piotroski": 0.6411290322580645,
+      "r_accruals": 0.18181818181818177,
+      "r_eps_surprise": NaN,
+      "r_rev_growth": 0.4473684210526316,
+      "roic": 0.25223663609930663,
+      "fcf_ev": 0.04349481875879487,
+      "ev_ebitda": 12.7080134725109,
+      "debt_ebitda": NaN,
+      "piotroski": 5.0,
+      "composite": 0.4891993848103625,
+      "price": 551.4400024414062,
+      "market_cap_bn": 78.34
     },
     "AXP": {
       "r_momentum": 0.20242914979757085,
       "r_roic": NaN,
-      "r_fcf_ev": 0.71484375,
+      "r_fcf_ev": 0.7109375,
       "r_ev_ebitda": NaN,
       "r_piotroski": 0.8598790322580645,
       "r_accruals": 0.35167464114832536,
@@ -2944,7 +2944,7 @@
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 6.0,
-      "composite": 0.4888504723639149,
+      "composite": 0.48778513145482405,
       "price": 313.2200012207031,
       "market_cap_bn": 211.42
     },
@@ -2963,7 +2963,7 @@
       "debt_ebitda": NaN,
       "piotroski": 2.0,
       "composite": 0.487363142658134,
-      "price": 65.13500213623047,
+      "price": 64.76000213623047,
       "market_cap_bn": NaN
     },
     "PNC": {
@@ -2981,26 +2981,26 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.48288564152316266,
-      "price": 224.0850067138672,
+      "price": 224.4600067138672,
       "market_cap_bn": NaN
     },
     "LHX": {
       "r_momentum": 0.1720647773279352,
       "r_roic": 0.3209169054441261,
-      "r_fcf_ev": 0.70703125,
+      "r_fcf_ev": 0.69921875,
       "r_ev_ebitda": 0.6649746192893401,
       "r_piotroski": 0.8598790322580645,
       "r_accruals": 0.507177033492823,
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.10612614425108138,
-      "fcf_ev": 0.05880538948544852,
-      "ev_ebitda": 13.67968343065943,
+      "fcf_ev": 0.05861399566564021,
+      "ev_ebitda": 13.724352060324227,
       "debt_ebitda": NaN,
       "piotroski": 6.0,
-      "composite": 0.4798283441863942,
-      "price": 253.1699981689453,
-      "market_cap_bn": 47.13
+      "composite": 0.47844966771580594,
+      "price": 253.97000122070312,
+      "market_cap_bn": 47.28
     },
     "EXE": {
       "r_momentum": 0.19230769230769232,
@@ -3017,7 +3017,7 @@
       "debt_ebitda": NaN,
       "piotroski": 6.0,
       "composite": 0.47702481126017116,
-      "price": 93.51499938964844,
+      "price": 93.2300033569336,
       "market_cap_bn": NaN
     },
     "SCHW": {
@@ -3035,7 +3035,7 @@
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.4748283848453628,
-      "price": 90.625,
+      "price": 90.58000183105469,
       "market_cap_bn": NaN
     },
     "BDX": {
@@ -3053,26 +3053,8 @@
       "debt_ebitda": NaN,
       "piotroski": 3.0,
       "composite": 0.47394792471892466,
-      "price": 199.3000030517578,
+      "price": 198.91000366210938,
       "market_cap_bn": NaN
-    },
-    "ALLE": {
-      "r_momentum": 0.26720647773279355,
-      "r_roic": 0.5214899713467048,
-      "r_fcf_ev": 0.5625,
-      "r_ev_ebitda": 0.5431472081218274,
-      "r_piotroski": 0.6411290322580645,
-      "r_accruals": 0.3708133971291866,
-      "r_eps_surprise": NaN,
-      "r_rev_growth": NaN,
-      "roic": 0.16033054767945082,
-      "fcf_ev": 0.04533529763429854,
-      "ev_ebitda": 17.47771608263891,
-      "debt_ebitda": 2.053275374039628,
-      "piotroski": 5.0,
-      "composite": 0.4677920630197736,
-      "price": 179.3800048828125,
-      "market_cap_bn": 15.26
     },
     "AIG": {
       "r_momentum": 0.3866396761133603,
@@ -3084,13 +3066,31 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.10526315789473684,
       "roic": NaN,
-      "fcf_ev": 0.0774113294896893,
+      "fcf_ev": 0.07772569435804823,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.4675678647187561,
-      "price": 81.58999633789062,
-      "market_cap_bn": 42.81
+      "price": 81.26000213623047,
+      "market_cap_bn": 42.64
+    },
+    "STLD": {
+      "r_momentum": 0.9048582995951417,
+      "r_roic": 0.32951289398280803,
+      "r_fcf_ev": 0.11328125,
+      "r_ev_ebitda": 0.46700507614213194,
+      "r_piotroski": 0.6411290322580645,
+      "r_accruals": 0.2272727272727273,
+      "r_eps_surprise": NaN,
+      "r_rev_growth": NaN,
+      "roic": 0.10837273997373771,
+      "fcf_ev": 0.01308793213452501,
+      "ev_ebitda": 18.90050446164636,
+      "debt_ebitda": 2.071643345881573,
+      "piotroski": 5.0,
+      "composite": 0.46753777621515563,
+      "price": 241.52999877929688,
+      "market_cap_bn": 34.69
     },
     "URI": {
       "r_momentum": 0.5910931174089069,
@@ -3107,80 +3107,62 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.4672696785387787,
-      "price": 1097.260009765625,
+      "price": 1098.8800048828125,
       "market_cap_bn": NaN
-    },
-    "STLD": {
-      "r_momentum": 0.9048582995951417,
-      "r_roic": 0.32951289398280803,
-      "r_fcf_ev": 0.11328125,
-      "r_ev_ebitda": 0.46192893401015234,
-      "r_piotroski": 0.6411290322580645,
-      "r_accruals": 0.2272727272727273,
-      "r_eps_surprise": NaN,
-      "r_rev_growth": NaN,
-      "roic": 0.10837273997373771,
-      "fcf_ev": 0.012928041058584177,
-      "ev_ebitda": 19.134261608649737,
-      "debt_ebitda": 2.071643345881573,
-      "piotroski": 5.0,
-      "composite": 0.4669405830231581,
-      "price": 244.8300018310547,
-      "market_cap_bn": 35.16
     },
     "AVY": {
       "r_momentum": 0.31376518218623484,
       "r_roic": NaN,
-      "r_fcf_ev": 0.66015625,
+      "r_fcf_ev": 0.6640625,
       "r_ev_ebitda": NaN,
       "r_piotroski": 0.6411290322580645,
       "r_accruals": 0.3014354066985646,
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": NaN,
-      "fcf_ev": 0.052112177412657286,
+      "fcf_ev": 0.05248225343784046,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
-      "composite": 0.4655143960598362,
-      "price": 183.10000610351562,
-      "market_cap_bn": 13.9
+      "composite": 0.46657973696892713,
+      "price": 181.8300018310547,
+      "market_cap_bn": 13.8
+    },
+    "ALLE": {
+      "r_momentum": 0.26720647773279355,
+      "r_roic": 0.5214899713467048,
+      "r_fcf_ev": 0.5546875,
+      "r_ev_ebitda": 0.5431472081218274,
+      "r_piotroski": 0.6411290322580645,
+      "r_accruals": 0.3708133971291866,
+      "r_eps_surprise": NaN,
+      "r_rev_growth": NaN,
+      "roic": 0.16033054767945082,
+      "fcf_ev": 0.045424692513404336,
+      "ev_ebitda": 17.443320289738566,
+      "debt_ebitda": 2.053275374039628,
+      "piotroski": 5.0,
+      "composite": 0.4664133865491853,
+      "price": 178.97999572753906,
+      "market_cap_bn": 15.22
     },
     "NI": {
       "r_momentum": 0.2813765182186235,
       "r_roic": 0.6074498567335244,
       "r_fcf_ev": 0.04296875,
-      "r_ev_ebitda": 0.9289340101522843,
+      "r_ev_ebitda": 0.9238578680203046,
       "r_piotroski": 0.6411290322580645,
       "r_accruals": 0.5430622009569378,
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.19168424790591773,
-      "fcf_ev": -0.020361134884204758,
-      "ev_ebitda": 6.869204401324912,
+      "fcf_ev": -0.02030685087804761,
+      "ev_ebitda": 6.887567068006003,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
-      "composite": 0.4653213080319509,
-      "price": 43.165000915527344,
-      "market_cap_bn": 20.7
-    },
-    "BX": {
-      "r_momentum": 0.15384615384615385,
-      "r_roic": NaN,
-      "r_fcf_ev": 0.58203125,
-      "r_ev_ebitda": NaN,
-      "r_piotroski": 0.6411290322580645,
-      "r_accruals": 0.48086124401913877,
-      "r_eps_surprise": NaN,
-      "r_rev_growth": 0.9210526315789473,
-      "roic": NaN,
-      "fcf_ev": 0.04610150005567163,
-      "ev_ebitda": NaN,
-      "debt_ebitda": NaN,
-      "piotroski": 5.0,
-      "composite": 0.46054262912649746,
-      "price": 116.69999694824219,
-      "market_cap_bn": 87.83
+      "composite": 0.46472411483995335,
+      "price": 43.279998779296875,
+      "market_cap_bn": 20.75
     },
     "DRI": {
       "r_momentum": 0.631578947368421,
@@ -3197,8 +3179,26 @@
       "debt_ebitda": NaN,
       "piotroski": 2.0,
       "composite": 0.45902306168647417,
-      "price": 211.3800048828125,
-      "market_cap_bn": 24.12
+      "price": 212.39999389648438,
+      "market_cap_bn": 24.23
+    },
+    "BX": {
+      "r_momentum": 0.15384615384615385,
+      "r_roic": NaN,
+      "r_fcf_ev": 0.56640625,
+      "r_ev_ebitda": NaN,
+      "r_piotroski": 0.6411290322580645,
+      "r_accruals": 0.48086124401913877,
+      "r_eps_surprise": NaN,
+      "r_rev_growth": 0.9210526315789473,
+      "roic": NaN,
+      "fcf_ev": 0.04565907107168537,
+      "ev_ebitda": NaN,
+      "debt_ebitda": NaN,
+      "piotroski": 5.0,
+      "composite": 0.4566363791264975,
+      "price": 117.97000122070312,
+      "market_cap_bn": 88.78
     },
     "MCD": {
       "r_momentum": 0.14777327935222673,
@@ -3215,7 +3215,7 @@
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.4540927970524763,
-      "price": 247.65499877929688,
+      "price": 248.4600067138672,
       "market_cap_bn": NaN
     },
     "PLD": {
@@ -3233,7 +3233,7 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.4496776214730374,
-      "price": 125.94999694824219,
+      "price": 126.44999694824219,
       "market_cap_bn": NaN
     },
     "ETN": {
@@ -3246,13 +3246,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": NaN,
-      "fcf_ev": 0.022015313008648934,
+      "fcf_ev": 0.022173804414825027,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.4459158352307132,
-      "price": 369.0799865722656,
-      "market_cap_bn": 143.35
+      "price": 366.1099853515625,
+      "market_cap_bn": 142.2
     },
     "STZ": {
       "r_momentum": 0.20647773279352227,
@@ -3269,7 +3269,7 @@
       "debt_ebitda": 3.2461641306423887,
       "piotroski": 5.0,
       "composite": 0.44498173719700423,
-      "price": 137.97999572753906,
+      "price": 138.67999267578125,
       "market_cap_bn": NaN
     },
     "VMC": {
@@ -3282,31 +3282,31 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.12624522566061266,
-      "fcf_ev": 0.029597799268035598,
-      "ev_ebitda": 16.197619010848292,
+      "fcf_ev": 0.029850560791672517,
+      "ev_ebitda": 16.060464640816676,
       "debt_ebitda": 1.8429542671339894,
       "piotroski": 6.0,
       "composite": 0.44462778224731103,
-      "price": 264.20001220703125,
-      "market_cap_bn": 34.19
+      "price": 261.69000244140625,
+      "market_cap_bn": 33.86
     },
     "CPRT": {
       "r_momentum": 0.048582995951417005,
       "r_roic": 0.5616045845272206,
       "r_fcf_ev": 0.578125,
-      "r_ev_ebitda": 0.649746192893401,
+      "r_ev_ebitda": 0.6446700507614214,
       "r_piotroski": 0.6411290322580645,
       "r_accruals": 0.3564593301435407,
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.16920085242939387,
-      "fcf_ev": 0.046015115504183426,
-      "ev_ebitda": 13.98482727647403,
+      "fcf_ev": 0.04581677448907919,
+      "ev_ebitda": 14.045367654294264,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
-      "composite": 0.4393996725002684,
-      "price": 28.875,
-      "market_cap_bn": 26.75
+      "composite": 0.4388024793082709,
+      "price": 29.0,
+      "market_cap_bn": 26.86
     },
     "GPC": {
       "r_momentum": 0.4149797570850202,
@@ -3318,13 +3318,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": NaN,
-      "fcf_ev": 0.02479217851435538,
+      "fcf_ev": 0.024819385449427536,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.4383057905206386,
-      "price": 123.15499877929688,
-      "market_cap_bn": 16.98
+      "price": 123.0199966430664,
+      "market_cap_bn": 16.96
     },
     "ADP": {
       "r_momentum": 0.340080971659919,
@@ -3336,13 +3336,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.6578947368421053,
       "roic": NaN,
-      "fcf_ev": 0.04218471725474355,
+      "fcf_ev": 0.042304719729031826,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.4353065576322022,
-      "price": 304.9949951171875,
-      "market_cap_bn": 121.33
+      "price": 304.1600036621094,
+      "market_cap_bn": 120.99
     },
     "MRSH": {
       "r_momentum": 0.2874493927125506,
@@ -3354,13 +3354,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.10426929392446634,
-      "fcf_ev": 0.04458969317272599,
-      "ev_ebitda": 17.03462386102317,
+      "fcf_ev": 0.044559310044409994,
+      "ev_ebitda": 17.046239057983545,
       "debt_ebitda": 2.967345078979344,
       "piotroski": 6.0,
       "composite": 0.4336288885251104,
-      "price": 197.32000732421875,
-      "market_cap_bn": 94.32
+      "price": 197.47999572753906,
+      "market_cap_bn": 94.4
     },
     "GE": {
       "r_momentum": 0.47368421052631576,
@@ -3372,13 +3372,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.8859649122807017,
       "roic": NaN,
-      "fcf_ev": 0.02857815938408644,
+      "fcf_ev": 0.02880527079882532,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.4334109009770884,
-      "price": 287.9100036621094,
-      "market_cap_bn": 298.72
+      "price": 285.6400146484375,
+      "market_cap_bn": 296.37
     },
     "PTC": {
       "r_momentum": 0.06072874493927125,
@@ -3390,13 +3390,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.2018053058514572,
-      "fcf_ev": 0.038031269359672215,
-      "ev_ebitda": 20.763308504372336,
+      "fcf_ev": 0.038068691081010936,
+      "ev_ebitda": 20.74289806411667,
       "debt_ebitda": 1.2888332354738596,
       "piotroski": 6.0,
       "composite": 0.4283586536770871,
-      "price": 194.0,
-      "market_cap_bn": 21.48
+      "price": 193.8000030517578,
+      "market_cap_bn": 21.46
     },
     "PNW": {
       "r_momentum": 0.4473684210526316,
@@ -3413,7 +3413,7 @@
       "debt_ebitda": NaN,
       "piotroski": 2.0,
       "composite": 0.4253840985489376,
-      "price": 105.68000030517578,
+      "price": 105.87999725341797,
       "market_cap_bn": NaN
     },
     "TJX": {
@@ -3426,13 +3426,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": NaN,
-      "fcf_ev": 0.03192034134010023,
+      "fcf_ev": 0.031984361181284435,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.42399171793054924,
-      "price": 145.33999633789062,
-      "market_cap_bn": 160.04
+      "price": 145.05999755859375,
+      "market_cap_bn": 159.74
     },
     "ZTS": {
       "r_momentum": 0.01417004048582996,
@@ -3444,13 +3444,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.5263157894736842,
       "roic": NaN,
-      "fcf_ev": 0.07124216425213081,
+      "fcf_ev": 0.07115939858732019,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 6.0,
       "composite": 0.422735606790281,
-      "price": 80.94000244140625,
-      "market_cap_bn": 33.52
+      "price": 81.02999877929688,
+      "market_cap_bn": 33.56
     },
     "PCG": {
       "r_momentum": 0.13157894736842105,
@@ -3462,13 +3462,31 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.4649122807017544,
       "roic": 0.14008436329311819,
-      "fcf_ev": -0.11539628246957628,
-      "ev_ebitda": 5.603841314595445,
+      "fcf_ev": -0.11440218876746522,
+      "ev_ebitda": 5.652535692023767,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.4203844858584835,
-      "price": 12.524999618530273,
-      "market_cap_bn": 27.58
+      "price": 12.630000114440918,
+      "market_cap_bn": 27.82
+    },
+    "UBER": {
+      "r_momentum": 0.09109311740890688,
+      "r_roic": 0.45272206303724927,
+      "r_fcf_ev": 0.75390625,
+      "r_ev_ebitda": 0.36548223350253806,
+      "r_piotroski": 0.6411290322580645,
+      "r_accruals": 0.10765550239234445,
+      "r_eps_surprise": NaN,
+      "r_rev_growth": 0.8991228070175439,
+      "roic": 0.13898948525187943,
+      "fcf_ev": 0.06783601816477226,
+      "ev_ebitda": 22.902704260730804,
+      "debt_ebitda": 2.0246658179503503,
+      "piotroski": 5.0,
+      "composite": 0.4202575452837812,
+      "price": 66.69999694824219,
+      "market_cap_bn": 136.07
     },
     "ES": {
       "r_momentum": 0.2834008097165992,
@@ -3480,13 +3498,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.36403508771929827,
       "roic": 0.18289820238789334,
-      "fcf_ev": -0.0019149284497020568,
-      "ev_ebitda": 4.366741800015568,
+      "fcf_ev": -0.0019120237197794761,
+      "ev_ebitda": 4.37337571644635,
       "debt_ebitda": NaN,
       "piotroski": 4.0,
       "composite": 0.42010736781742886,
-      "price": 67.36499786376953,
-      "market_cap_bn": 25.37
+      "price": 67.45999908447266,
+      "market_cap_bn": 25.41
     },
     "DOW": {
       "r_momentum": 0.7024291497975709,
@@ -3503,26 +3521,8 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.41998801283606035,
-      "price": 32.71500015258789,
+      "price": 32.61000061035156,
       "market_cap_bn": NaN
-    },
-    "UBER": {
-      "r_momentum": 0.09109311740890688,
-      "r_roic": 0.45272206303724927,
-      "r_fcf_ev": 0.75390625,
-      "r_ev_ebitda": 0.35532994923857864,
-      "r_piotroski": 0.6411290322580645,
-      "r_accruals": 0.10765550239234445,
-      "r_eps_surprise": NaN,
-      "r_rev_growth": 0.8991228070175439,
-      "roic": 0.13898948525187943,
-      "fcf_ev": 0.06728759942649426,
-      "ev_ebitda": 23.08936974264542,
-      "debt_ebitda": 2.0246658179503503,
-      "piotroski": 5.0,
-      "composite": 0.41912951369889684,
-      "price": 67.2750015258789,
-      "market_cap_bn": 137.24
     },
     "FRT": {
       "r_momentum": 0.5708502024291497,
@@ -3539,7 +3539,7 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.41873488000398007,
-      "price": 108.42500305175781,
+      "price": 108.72000122070312,
       "market_cap_bn": NaN
     },
     "FISV": {
@@ -3557,7 +3557,7 @@
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.418433637006694,
-      "price": 49.630001068115234,
+      "price": 49.86000061035156,
       "market_cap_bn": NaN
     },
     "BRO": {
@@ -3570,31 +3570,31 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.9122807017543859,
       "roic": NaN,
-      "fcf_ev": 0.04473975995273513,
+      "fcf_ev": 0.04469439903482297,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 6.0,
       "composite": 0.41056274105039225,
-      "price": 72.875,
-      "market_cap_bn": 24.05
+      "price": 72.97000122070312,
+      "market_cap_bn": 24.08
     },
     "SPGI": {
       "r_momentum": 0.24898785425101214,
       "r_roic": 0.4498567335243553,
       "r_fcf_ev": 0.46484375,
-      "r_ev_ebitda": 0.48223350253807107,
+      "r_ev_ebitda": 0.47715736040609136,
       "r_piotroski": 0.6411290322580645,
       "r_accruals": 0.2583732057416268,
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.1388013970131345,
-      "fcf_ev": 0.03933253161346105,
-      "ev_ebitda": 18.763539239714785,
+      "fcf_ev": 0.03930108270890931,
+      "ev_ebitda": 18.778553908877292,
       "debt_ebitda": 1.9811936789865483,
       "piotroski": 5.0,
-      "composite": 0.40902241659864663,
-      "price": 449.9200134277344,
-      "market_cap_bn": 132.64
+      "composite": 0.4084252234066491,
+      "price": 450.30999755859375,
+      "market_cap_bn": 132.75
     },
     "SYK": {
       "r_momentum": 0.07692307692307693,
@@ -3611,7 +3611,7 @@
       "debt_ebitda": NaN,
       "piotroski": 7.0,
       "composite": 0.4059831870950684,
-      "price": 308.0400085449219,
+      "price": 307.1499938964844,
       "market_cap_bn": NaN
     },
     "FOXA": {
@@ -3629,7 +3629,7 @@
       "debt_ebitda": NaN,
       "piotroski": 2.0,
       "composite": 0.40504195507378865,
-      "price": 67.32499694824219,
+      "price": 66.5999984741211,
       "market_cap_bn": NaN
     },
     "TROW": {
@@ -3647,7 +3647,7 @@
       "debt_ebitda": NaN,
       "piotroski": 2.0,
       "composite": 0.4026947920599775,
-      "price": 104.37999725341797,
+      "price": 104.19999694824219,
       "market_cap_bn": NaN
     },
     "DLR": {
@@ -3665,26 +3665,26 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.40196217902075276,
-      "price": 170.99749755859375,
+      "price": 172.3699951171875,
       "market_cap_bn": NaN
     },
     "ORLY": {
       "r_momentum": 0.22064777327935223,
       "r_roic": 0.6246418338108882,
       "r_fcf_ev": 0.2109375,
-      "r_ev_ebitda": 0.4923857868020305,
+      "r_ev_ebitda": 0.5076142131979695,
       "r_piotroski": 0.6411290322580645,
       "r_accruals": 0.19617224880382778,
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.19901023145742427,
-      "fcf_ev": 0.02165220050120694,
-      "ev_ebitda": 18.525515286309176,
+      "fcf_ev": 0.021786320409303665,
+      "ev_ebitda": 18.41146939140977,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
-      "composite": 0.39254970965228275,
-      "price": 90.4749984741211,
-      "market_cap_bn": 73.84
+      "composite": 0.3943412892282756,
+      "price": 89.91999816894531,
+      "market_cap_bn": 73.39
     },
     "BAC": {
       "r_momentum": 0.562753036437247,
@@ -3696,13 +3696,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.5614035087719298,
       "roic": NaN,
-      "fcf_ev": 0.01812970515081,
+      "fcf_ev": 0.018156262181428986,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.39065213607605376,
-      "price": 50.70500183105469,
-      "market_cap_bn": 355.85
+      "price": 50.560001373291016,
+      "market_cap_bn": 354.83
     },
     "MTD": {
       "r_momentum": 0.45546558704453444,
@@ -3714,13 +3714,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.23684210526315788,
       "roic": NaN,
-      "fcf_ev": 0.02234654923163454,
+      "fcf_ev": 0.02220921364689449,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
       "composite": 0.3885236906910295,
-      "price": 1659.4599609375,
-      "market_cap_bn": 35.98
+      "price": 1670.2900390625,
+      "market_cap_bn": 36.22
     },
     "Q": {
       "r_momentum": NaN,
@@ -3737,7 +3737,7 @@
       "debt_ebitda": NaN,
       "piotroski": 3.0,
       "composite": 0.3797099282296651,
-      "price": 110.02999877929688,
+      "price": 109.83000183105469,
       "market_cap_bn": NaN
     },
     "DOV": {
@@ -3755,7 +3755,7 @@
       "debt_ebitda": 1.859728067963613,
       "piotroski": 2.0,
       "composite": 0.3775726945922472,
-      "price": 197.98500061035156,
+      "price": 199.1999969482422,
       "market_cap_bn": NaN
     },
     "REG": {
@@ -3773,7 +3773,7 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.3768513249625304,
-      "price": 73.86990356445312,
+      "price": 73.9800033569336,
       "market_cap_bn": NaN
     },
     "IBM": {
@@ -3791,7 +3791,7 @@
       "debt_ebitda": NaN,
       "piotroski": 6.0,
       "composite": 0.368386946167082,
-      "price": 252.92999267578125,
+      "price": 253.55999755859375,
       "market_cap_bn": NaN
     },
     "D": {
@@ -3809,7 +3809,7 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.36489836564115,
-      "price": 64.95999908447266,
+      "price": 65.19999694824219,
       "market_cap_bn": NaN
     },
     "XYL": {
@@ -3827,7 +3827,7 @@
       "debt_ebitda": 1.639043381535039,
       "piotroski": 6.0,
       "composite": 0.3479451684687086,
-      "price": 108.86000061035156,
+      "price": 108.73999786376953,
       "market_cap_bn": NaN
     },
     "AEE": {
@@ -3840,13 +3840,13 @@
       "r_eps_surprise": NaN,
       "r_rev_growth": 0.37280701754385964,
       "roic": 0.14802367209761086,
-      "fcf_ev": -0.02601693570397077,
-      "ev_ebitda": 14.703005436165782,
+      "fcf_ev": -0.025925392454581378,
+      "ev_ebitda": 14.754922138903241,
       "debt_ebitda": NaN,
       "piotroski": 2.0,
       "composite": 0.34535159739622134,
-      "price": 107.66000366210938,
-      "market_cap_bn": 29.8
+      "price": 108.04000091552734,
+      "market_cap_bn": 29.91
     },
     "AEP": {
       "r_momentum": 0.4757085020242915,
@@ -3863,7 +3863,7 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.33930553741674285,
-      "price": 128.94000244140625,
+      "price": 129.69000244140625,
       "market_cap_bn": NaN
     },
     "ED": {
@@ -3881,26 +3881,26 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.3309673843417476,
-      "price": 115.33000183105469,
+      "price": 115.73999786376953,
       "market_cap_bn": NaN
     },
     "MLM": {
       "r_momentum": 0.14979757085020243,
       "r_roic": 0.22922636103151864,
       "r_fcf_ev": 0.28125,
-      "r_ev_ebitda": 0.5279187817258884,
+      "r_ev_ebitda": 0.5380710659898478,
       "r_piotroski": 0.6411290322580645,
       "r_accruals": 0.4449760765550239,
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": 0.08212836486254786,
-      "fcf_ev": 0.026806599153757136,
-      "ev_ebitda": 17.590913071206103,
+      "fcf_ev": 0.026945864049105036,
+      "ev_ebitda": 17.499997572505777,
       "debt_ebitda": 2.869334619093539,
       "piotroski": 5.0,
-      "composite": 0.32869961815322574,
-      "price": 510.30999755859375,
-      "market_cap_bn": 30.64
+      "composite": 0.329894004537221,
+      "price": 507.1700134277344,
+      "market_cap_bn": 30.46
     },
     "CTAS": {
       "r_momentum": 0.4251012145748988,
@@ -3917,8 +3917,8 @@
       "debt_ebitda": NaN,
       "piotroski": 2.0,
       "composite": 0.3213712398241261,
-      "price": 224.32000732421875,
-      "market_cap_bn": 89.76
+      "price": 224.10000610351562,
+      "market_cap_bn": 89.67
     },
     "ETR": {
       "r_momentum": 0.5,
@@ -3935,7 +3935,7 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.31684554127253617,
-      "price": 107.20999908447266,
+      "price": 107.33999633789062,
       "market_cap_bn": NaN
     },
     "FE": {
@@ -3953,7 +3953,7 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.3111100486949383,
-      "price": 46.029998779296875,
+      "price": 46.150001525878906,
       "market_cap_bn": NaN
     },
     "PNR": {
@@ -3971,7 +3971,7 @@
       "debt_ebitda": 1.8728862973760934,
       "piotroski": 5.0,
       "composite": 0.3081601437700723,
-      "price": 55.224998474121094,
+      "price": 55.29999923706055,
       "market_cap_bn": NaN
     },
     "EVRG": {
@@ -3989,7 +3989,7 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.30624210961647297,
-      "price": 84.23999786376953,
+      "price": 84.43000030517578,
       "market_cap_bn": NaN
     },
     "COST": {
@@ -4007,7 +4007,7 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.29785575912485923,
-      "price": 1005.4149780273438,
+      "price": 1003.3200073242188,
       "market_cap_bn": NaN
     },
     "SYY": {
@@ -4025,26 +4025,26 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.2971722497932175,
-      "price": 81.66999816894531,
+      "price": 81.37000274658203,
       "market_cap_bn": NaN
     },
     "AJG": {
       "r_momentum": 0.1680161943319838,
       "r_roic": NaN,
-      "r_fcf_ev": 0.30859375,
+      "r_fcf_ev": 0.3125,
       "r_ev_ebitda": NaN,
       "r_piotroski": 0.6411290322580645,
       "r_accruals": 0.1435406698564593,
       "r_eps_surprise": NaN,
       "r_rev_growth": NaN,
       "roic": NaN,
-      "fcf_ev": 0.02803826859657666,
+      "fcf_ev": 0.02809370900717228,
       "ev_ebitda": NaN,
       "debt_ebitda": NaN,
       "piotroski": 5.0,
-      "composite": 0.28792594832336216,
-      "price": 268.57000732421875,
-      "market_cap_bn": 68.83
+      "composite": 0.28899128923245304,
+      "price": 268.0400085449219,
+      "market_cap_bn": 68.7
     },
     "TPR": {
       "r_momentum": 0.36639676113360325,
@@ -4061,8 +4061,8 @@
       "debt_ebitda": NaN,
       "piotroski": 2.0,
       "composite": 0.282234937529929,
-      "price": 111.27999877929688,
-      "market_cap_bn": 22.3
+      "price": 110.37000274658203,
+      "market_cap_bn": 22.12
     },
     "EIX": {
       "r_momentum": 0.3603238866396761,
@@ -4079,7 +4079,7 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.2771308699789175,
-      "price": 57.10499954223633,
+      "price": 57.349998474121094,
       "market_cap_bn": NaN
     },
     "MKC": {
@@ -4097,7 +4097,7 @@
       "debt_ebitda": 2.770063743184087,
       "piotroski": 5.0,
       "composite": 0.2700712119108605,
-      "price": 47.66999816894531,
+      "price": 48.119998931884766,
       "market_cap_bn": NaN
     },
     "EXC": {
@@ -4115,7 +4115,7 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.24445302151159537,
-      "price": 44.3650016784668,
+      "price": 44.43000030517578,
       "market_cap_bn": NaN
     },
     "LNT": {
@@ -4133,7 +4133,7 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.23437976143833525,
-      "price": 69.5,
+      "price": 69.66000366210938,
       "market_cap_bn": NaN
     },
     "PHM": {
@@ -4151,7 +4151,7 @@
       "debt_ebitda": NaN,
       "piotroski": 2.0,
       "composite": 0.23260921750151375,
-      "price": 120.83999633789062,
+      "price": 121.19000244140625,
       "market_cap_bn": NaN
     },
     "CNP": {
@@ -4169,7 +4169,7 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.22960821719310684,
-      "price": 41.04999923706055,
+      "price": 41.06999969482422,
       "market_cap_bn": NaN
     },
     "NEE": {
@@ -4187,7 +4187,7 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.2283463388620434,
-      "price": 81.69000244140625,
+      "price": 82.0999984741211,
       "market_cap_bn": NaN
     },
     "DUK": {
@@ -4205,7 +4205,7 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.21350153454355486,
-      "price": 124.62000274658203,
+      "price": 124.9800033569336,
       "market_cap_bn": NaN
     },
     "PPL": {
@@ -4223,7 +4223,7 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.21273912137664258,
-      "price": 34.91999816894531,
+      "price": 34.97999954223633,
       "market_cap_bn": NaN
     },
     "MAA": {
@@ -4241,7 +4241,7 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.21158238337779933,
-      "price": 119.55000305175781,
+      "price": 119.77999877929688,
       "market_cap_bn": NaN
     },
     "BSX": {
@@ -4259,7 +4259,7 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.20910970232306114,
-      "price": 45.38999938964844,
+      "price": 45.689998626708984,
       "market_cap_bn": NaN
     },
     "PAYX": {
@@ -4277,8 +4277,8 @@
       "debt_ebitda": NaN,
       "piotroski": 2.0,
       "composite": 0.18641847329241215,
-      "price": 117.86000061035156,
-      "market_cap_bn": 41.91
+      "price": 118.04000091552734,
+      "market_cap_bn": 41.98
     },
     "DTE": {
       "r_momentum": 0.25101214574898784,
@@ -4295,7 +4295,7 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.1824623982412607,
-      "price": 131.67999267578125,
+      "price": 131.88999938964844,
       "market_cap_bn": NaN
     },
     "SO": {
@@ -4331,7 +4331,7 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.16309578225961927,
-      "price": 84.0250015258789,
+      "price": 84.05999755859375,
       "market_cap_bn": NaN
     },
     "AZO": {
@@ -4349,7 +4349,7 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.1400092196993725,
-      "price": 3218.889892578125,
+      "price": 3200.760009765625,
       "market_cap_bn": NaN
     },
     "CLX": {
@@ -4367,7 +4367,7 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.08664593400374385,
-      "price": 86.1500015258789,
+      "price": 86.4000015258789,
       "market_cap_bn": NaN
     },
     "FDXF": {
@@ -4385,8 +4385,8 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.04536290322580645,
-      "price": 110.63500213623047,
-      "market_cap_bn": 16.54
+      "price": 110.05000305175781,
+      "market_cap_bn": 16.45
     },
     "NKE": {
       "r_momentum": 0.024291497975708502,
@@ -4403,7 +4403,7 @@
       "debt_ebitda": NaN,
       "piotroski": 1.0,
       "composite": 0.031315299725741146,
-      "price": 37.4817008972168,
+      "price": 37.29999923706055,
       "market_cap_bn": NaN
     }
   },
