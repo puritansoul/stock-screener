@@ -1,6 +1,23 @@
 {
-  "capital": 100000.0,
-  "open_positions": [],
+  "capital": 70229.35,
+  "open_positions": [
+    {
+      "ticker": "AMZN",
+      "side": "long",
+      "entry_date": "2026-10-27",
+      "entry_time": "15:27 ET",
+      "entry_price": 254.45,
+      "shares": 117,
+      "stop": 253.175,
+      "trail_dist": 1.275,
+      "peak": 254.45,
+      "orb_width": 2.5499,
+      "cost": 29770.65,
+      "vol_ratio": 8.25,
+      "score": 57.82,
+      "has_catalyst": false
+    }
+  ],
   "closed_today": [],
   "all_closed": [
     {
@@ -635,6 +652,11 @@
       "low": 114.9,
       "width": 0.69
     },
+    "STZ": {
+      "high": 134.335,
+      "low": 132.1,
+      "width": 2.235
+    },
     "CEG": {
       "high": 259.8,
       "low": 256.2,
@@ -1206,9 +1228,9 @@
       "width": 0.27
     },
     "HWM": {
-      "high": 195.565,
+      "high": 195.61,
       "low": 192.54,
-      "width": 3.025
+      "width": 3.07
     },
     "HPQ": {
       "high": 34.15,
@@ -1666,9 +1688,9 @@
       "width": 0.9575
     },
     "NEM": {
-      "high": 111.83,
+      "high": 111.7766,
       "low": 110.22,
-      "width": 1.61
+      "width": 1.5566
     },
     "NWSA": {
       "high": 30.59,
@@ -1786,9 +1808,9 @@
       "width": 1.36
     },
     "PCAR": {
-      "high": 105.175,
+      "high": 105.34,
       "low": 102.01,
-      "width": 3.165
+      "width": 3.33
     },
     "PKG": {
       "high": 255.81,
@@ -2066,9 +2088,9 @@
       "width": 15.43
     },
     "SPG": {
-      "high": 212.895,
+      "high": 213.0,
       "low": 211.72,
-      "width": 1.175
+      "width": 1.28
     },
     "SKYD": {
       "high": 7.8,
@@ -2091,9 +2113,9 @@
       "width": 0.41
     },
     "SNA": {
-      "high": 358.69,
+      "high": 358.17,
       "low": 355.67,
-      "width": 3.02
+      "width": 2.5
     },
     "SOLV": {
       "high": 85.81,
@@ -2172,8 +2194,8 @@
     },
     "TTWO": {
       "high": 204.51,
-      "low": 201.34,
-      "width": 3.17
+      "low": 201.36,
+      "width": 3.15
     },
     "TPR": {
       "high": 111.6064,
@@ -6998,6 +7020,32 @@
       },
       "portfolio_value": 100000.0,
       "note": "$100,000 | cash=$100,000 | open=0 | closed today=0 | day PnL=$+0"
+    },
+    {
+      "date": "2026-10-27",
+      "time": "15:24 ET",
+      "phase": "trading",
+      "entries": [
+        {
+          "ticker": "AMZN",
+          "side": "long",
+          "price": 254.45,
+          "shares": 117,
+          "stop": 253.17,
+          "trail_dist": 1.275,
+          "score": 57.82
+        }
+      ],
+      "exits": [],
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": false,
+        "spy_change_pct": 0.384,
+        "spy_vs_vwap": 1.2337,
+        "spy_vs_ema20": 2.4602
+      },
+      "portfolio_value": 100000.0,
+      "note": "$100,000 | cash=$70,229 | open=1 | closed today=0 | day PnL=$+0"
     }
   ]
 }
