@@ -791,11 +791,6 @@
       "low": 131.56,
       "width": 1.455
     },
-    "DLTR": {
-      "high": 135.55,
-      "low": 134.0931,
-      "width": 1.4569
-    },
     "D": {
       "high": 66.35,
       "low": 65.85,
@@ -1700,6 +1695,11 @@
       "high": 29.77,
       "low": 29.34,
       "width": 0.43
+    },
+    "NWS": {
+      "high": 32.61,
+      "low": 32.11,
+      "width": 0.5
     },
     "NEE": {
       "high": 83.5025,
@@ -7170,6 +7170,20 @@
     {
       "date": "2026-10-30",
       "time": "14:46 ET",
+      "phase": "trading",
+      "entries": [],
+      "exits": [],
+      "note": "$99,842 | cash=$99,842 | open=0 | closed today=0 | day PnL=$+0",
+      "spy_regime": {
+        "long_ok": true,
+        "short_ok": true,
+        "spy_change_pct": 0.0
+      },
+      "portfolio_value": 99842.05
+    },
+    {
+      "date": "2026-10-30",
+      "time": "15:15 ET",
       "phase": "trading",
       "entries": [],
       "exits": [],
